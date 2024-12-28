@@ -275,9 +275,9 @@
   <p>「fade-in-out」クラスを持つ画像があります。<br>
    これが「visible」クラスが追加されたときにフェードインし、「visible」クラスが削除されたときにフェードアウトするようになっています。</p>
 
+  <p class="codegra" id="fadeanimation_style">フェードインとフェードアウトの画像アニメーションstyle.css</p>
   <div class="code-container">
    <pre><code class="language-css">
-/* フェードイン・フェードアウトのアニメーション */
 img.fade-in-out {
     opacity: 0;
     transition: opacity 1s ease-in-out;
@@ -650,7 +650,10 @@ document.addEventListener("DOMContentLoaded", function() {
    ドキュメント全体が読み込まれたときに実行される関数の終了を示します。</p>
 
   <h2>ヘッダーのロゴ画像スクロール</h2>
-  <p class="codegra">コードに合う解説文の出庫待ち</p>
+  <p>Webページが読み込まれた際に特定の画像要素（.header-image クラスの要素）にアニメーションを適用しています。<br>
+   画像がスライドインしてフェードインする、一番目立つ効果を実現していますね。</p>
+
+  <p class="codegra" id="imagescroll_feinScroll_js">ヘッダーのロゴ画像をスクロールするfeinScroll.js</p>
   <div class="code-container">
    <pre><code class="language-javascript">
 document.addEventListener("DOMContentLoaded", function() {
@@ -665,10 +668,59 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("Header image is visible"); // コンソールにメッセージを表示
     }, 100); // 100ミリ秒後に実行
 });
+
 </code></pre>
   </div>
-  <h4>ヘッダーのロゴ画像スクロール</h4>
-  <p class="codegra">コードに合う解説文の出庫待ち</p>
+
+  <p><strong>1. イベントリスナーの設定</strong><br>
+   Webページのコンテンツが完全に読み込まれたときに実行される関数を設定しています。</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+   document.addEventListener("DOMContentLoaded", function () {
+
+</code></pre>
+  </div>
+
+  <p><strong>2. 対象要素の取得</strong><br>
+   クラス名が.header-imageの要素を取得し、headerImage変数に格納しています。</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+   const headerImage = document.querySelector('.header-image');
+
+</code></pre>
+  </div>
+
+  <p><strong>3. 初期スタイルの設定</strong><br>
+   画像の不透明度（opacity）を0に設定し、初期位置を右方向に100%ずらしています。<br>
+   つまり、画像は最初は表示されません。</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+   headerImage.style.opacity = 0;
+   headerImage.style.transform = 'translateX(100%)';
+
+</code></pre>
+  </div>
+
+  <p><strong>4. アニメーションの設定</strong><br>
+   100ミリ秒後に、画像の不透明度を1（完全に表示）にしてから、位置を元の位置に戻します。<br>
+   画像がスライドインしながらフェードインするアニメーションが実行されることになります。<br>
+   一方、console.log("Header image is visible");は、アニメーションが実行されたことを確認するためのログをコンソールに出力します。<br>
+   普段やらないんだけど…なんでここだけログが出るようにしたんだろう？<br>
+   学生時代の私に聞きに行きたいですね（笑）</p>
+
+  <div class="code-container">
+   <pre><code class="language-javascript">
+   setTimeout(() => {
+       headerImage.style.opacity = 1;
+       headerImage.style.transform = 'translateX(0)';
+       console.log("Header image is visible");
+   }, 100);
+
+</code></pre>
+  </div>
+
+  <p>要するにこのコードは、Webページの読み込み完了時に特定の画像がスライドインしてフェードインするアニメーションを実現するためのものです。<br>
+   視覚的な効果を加えることで、ページのデザインをより魅力的にする小さな工夫と言ったところですね。</p>
 
   <!-- ●ここから人間用のフッター● -->
   <hr id="feinhr">

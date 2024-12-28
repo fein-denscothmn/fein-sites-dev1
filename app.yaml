@@ -22,7 +22,3 @@ handlers:
 - url: /(.*)
   static_files: www/\1
   upload: www/(.*)
-
-# .gitフォルダを除外
-skip_files:
-- ^(.*/)?\.git(/.*)?$

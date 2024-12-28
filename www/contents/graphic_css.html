@@ -244,23 +244,33 @@ img.moray {
     ここなら、img.biggraphicやimg.graphicに対してスタイルを適用していることになります。</p>
   </div>
 
+  <p class="codegra" id="imagesize_style">画像によって大きさを使い分けるstyle.css</p>
   <div class="code-container">
    <pre><code class="language-css">
-/* とても大きいイラスト */
 img.biggraphic {
-    margin: 20px;
-    display: block;
-    width: 80%;
-    height: auto;
+ margin: 10px;
+ display: block;
+ width: 80%;
+ height: auto;
+ border-radius: 10px;
 }
 
-/* 大きいイラスト */
 img.graphic {
-    margin: 20px;
-    display: block;
-    width: 50%;
-    height: auto;
+ margin: 10px;
+ display: block;
+ width: 50%;
+ height: auto;
+ border-radius: 10px;
 }
+
+img.graphicmini {
+ margin: 10px;
+ display: block;
+ width: 30%;
+ height: auto;
+ border-radius: 10px;
+}
+
         </code></pre>
   </div>
 
@@ -310,9 +320,10 @@ div.content {
   <p>画像を２つ横に並べたいとき、tableタグを使って配置するのは止めましょう。<br>
    私はその世代じゃないのですが、昔はそうやって画像を配置するのが流行ったとか？<br>
    htmlタグは本来あるべき形で使わないと、ブラウザが正しくコンテンツを認識できません。</p>
+
+  <p class="codegra" id="grastaimage_style">グラスタ表の火力20倍の話に添える画像style.css</p>
   <div class="code-container">
    <pre><code class="language-css">
-/* グラスタ表の火力20倍の話に添えるイラスト */
 .grastaimage {
     display: flex;
     justify-content: space-between;
@@ -347,9 +358,9 @@ div.content {
    本来であれば、表の中に画像を入れるのは望ましくないと思っています。<br>
    表を使ってレイアウトを整えているのと変わらないからね。<br>
    ただ、この場合は広すぎるセル内に彩りを添えたいからやってます。</p>
+  <p class="codegra" id="tableimage_style">敢えて表の中に画像を入れるstyle.css</p>
   <div class="code-container">
    <pre><code class="language-css">
-/* グラスタ表内部の画像 */
 div.gtable {
   display: flex;
   flex-direction: column;

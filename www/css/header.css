@@ -151,7 +151,6 @@
  transform: translateX(0);
 }
 
-/* Animation of moray eel and gray heron frame */
 @keyframes border-draw {
  0% {
   border-color: transparent;

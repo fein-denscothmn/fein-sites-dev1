@@ -1,3 +1,4 @@
+// ★スクロールを追いかけるボタンを実装する
 window.onscroll = function () {
  var scrollToTopBtn = document.getElementById("scrollToTopBtn");
  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -19,7 +20,7 @@ function scrollToTop() {
  }, 15);
 }
 
-
+// ★ヘッダーのロゴ画像をスクロールする
 document.addEventListener("DOMContentLoaded", function () {
  const headerImage = document.querySelector('.header-image');
 
