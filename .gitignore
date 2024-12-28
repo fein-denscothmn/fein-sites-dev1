@@ -1,0 +1,9 @@
+# .gitディレクトリを除外
+/.git/
+
+# 特定のファイルを除外
+/www/image_sitemap.xml
+/www/pdf_sitemap.xml
+/www/sitemap.xml
+/www/robots.txt
+/app.yaml

@@ -60,6 +60,7 @@
  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-json.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-bash.min.js"></script>
  <script src="/script/collapsible.js"></script>
  <script src="/script/fengari-web.js"></script>
  <script src="/script/brython.js"></script>
@@ -420,7 +421,7 @@ for container in document.select('.atelier-container'):
    });
   </script>
 
-  <h3>ビジュアル アトリエ コード</h3>
+  <h3>🌟ビジュアル アトリエ コード</h3>
   <p>私の開発環境は「ビジュアル アトリエ コード」です🎨✨<br>
    なーんて、半分冗談なんだけどね。<br>
    でもAtelierとStudioは同じような意味だから、言語が混ざっているだけで通りますよ。<br>
@@ -430,8 +431,8 @@ for container in document.select('.atelier-container'):
   <div class="atelier-container">
    <div class="atelier-tabs">
     <div class="atelier-tab" data-tab="1">settings.json</div>
-    <div class="atelier-tab" data-tab="2">GitHub</div>
-    <div class="atelier-tab" data-tab="3">source code</div>
+    <div class="atelier-tab" data-tab="2">Git</div>
+    <div class="atelier-tab" data-tab="3">GitHub</div>
    </div>
    <div class="atelier-tab-content" data-content="1">
 
@@ -635,79 +636,96 @@ for container in document.select('.atelier-container'):
      それぞれの意味と、続く操作を説明しますね。</p>
 
     <dl>
-     <dt><span style="color: darkgreen;">緑色のファイル名</span></dt>
+     <dt><span style="color: darkgreen;">緑色のファイル名 A</span></dt>
      <dd>ファイルがGitに新規追加されたことを意味します。<br>
-      ステージングエリアに追加されており、次のコミットでリポジトリに追加される予定のファイルです。
-     </dd>
-
-     <dt><span style="color: darkgreen;">A</span>の表示</dt>
-     <dd>「A」は「Added」（追加）を意味します。<br>
+      ステージングエリアに追加されており、次のコミットでリポジトリに追加される予定のファイルです。<br>
+      「A」は「Added」（追加）を意味します。<br>
       そのファイルが新しく追加されたことを示しています。
      </dd>
     </dl>
 
     <dl>
-     <dt>変更を確認</dt>
-     <dd>ステージングエリアにあるファイルを確認し、必要な変更が正しく含まれていることを確認します。</dd>
-
-     <dt>コミット</dt>
-     <dd>ファイルがステージされていることを確認したら、コミットメッセージを入力して「コミット」ボタンをクリックします。<br>
-      変更がリポジトリに保存されるでしょう。
+     <dt><span style="color: darkgreen;">緑色のファイル名 U</span></dt>
+     <dd>Gitがそのファイルを「未追跡」（Untracked）として認識していることを示しています。<br>
+      Gitがまだそのファイルを追跡しておらず、リポジトリにコミットされていないという意味ですね。
      </dd>
-
-     <dt>プッシュ</dt>
-     <dd>コミットが完了したら、リモートリポジトリに変更を反映させるために「プッシュ」ボタンをクリックします。</dd>
     </dl>
 
-
     <dl>
-     <dt><span style="color: darkorange;">橙色のファイル名</span></dt>
+     <dt><span style="color: darkorange;">橙色のファイル名 M</span></dt>
      <dd>ファイルが変更されたことを示しています。<br>
-      既存のファイルに対して何らかの編集が加えられた状態です。
-     </dd>
-
-     <dt><span style="color: darkorange;">M</span>の表示</dt>
-     <dd>「M」は「Modified」（変更）の略で、そのファイルが修正されたことを意味します。
+      既存のファイルに対して何らかの編集が加えられた状態です。<br>
+      「M」は「Modified」（変更）の略で、そのファイルが修正されたことを意味します。
      </dd>
     </dl>
 
-    <p>次に取るべきステップは、変更をステージングエリアに追加し、コミットすることです。</p>
+    <p class="gra">GitHubのリポジトリにプッシュする</p>
+    <div class="content">
+     <img src="/another-eden/anaimage/githubpush.png" alt="githubpush" class="biggraphic fade-in-out">
+     <p>Gitが開発者のコミットを追跡するために、まずはユーザー名とメールアドレスを設定する必要があります。</p>
+    </div>
+
+    <p><strong>1. VSCodeのターミナルを開く</strong></p>
+    <p><strong>2.グローバルなユーザー名とメールアドレスの設定</strong></p>
+
+    <div class="code-container">
+     <pre><code class="language-bash">
+git config --global user.name "your_name"
+git config --global user.email "your_email@example.com"
+
+</code></pre>
+    </div>
+
+    <p><strong>3. 設定の確認</strong></p>
+
+    <div class="code-container">
+     <pre><code class="language-bash">
+git config --global --list
+
+</code></pre>
+    </div>
+
+    <p>これでユーザー名とメールアドレスが設定され、コミットを行う準備が整いました。<br>
+     次は新しいリポジトリのセットアップです。</p>
 
     <dl>
-     <dt>変更をステージング</dt>
-     <dd>ソース管理ビュー（Gitアイコン）で、変更されたファイル名の横にあるプラスアイコン（+）をクリックして、変更をステージングエリアに追加します。</dd>
-
-     <dt>コミット</dt>
-     <dd>コミットメッセージを入力して、「コミット」ボタンをクリックします。<br>
-      これでステージされた変更がリポジトリに保存されます。
+     <dt>1. リポジトリの初期設定</dt>
+     <dd>
+      GitHubリポジトリにおける標準的なファイル構成を設定します。<br>
+      README・LICENSE・.gitignoreの3つを登録するほうが良いのですが、とりあえず静的ウェブサイトのソースコードならLICENSEは後回しで良いでしょう。
      </dd>
 
-     <dt>リモートリポジトリにプッシュ</dt>
-     <dd>リモートリポジトリ（例えばGitHub）に変更を反映させるために「プッシュ」ボタンをクリックします。</dd>
+     <dt>2. ローカルリポジトリの初期化</dt>
+     <dd>
+      既にローカルにプロジェクトが存在する場合、ローカルリポジトリを初期化してリモートリポジトリに接続します。</dd>
     </dl>
 
-    <p>この手順を踏むことで、変更をしっかりとリポジトリに保存し、必要に応じてリモートリポジトリにも反映させることができます。<br>
-     一応、VSCodeのソース管理に表示されるであろうボタン名と意味を説明しておきます。</p>
+    <div class="code-container">
+     <pre><code class="language-bash">
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/fein-denscothmn/fein-sites-dev1.git
+git branch -M main
+git push -u origin main
+
+</code></pre>
+    </div>
 
     <dl>
-     <dt>コミット</dt>
-     <dd>作業中の変更をローカルに保存したい</dd>
-
-     <dt>コミット（修正）</dt>
-     <dd>既存のコミットを修正したい</dd>
-
-     <dt>コミットしてプッシュ</dt>
-     <dd>リモートリポジトリにも変更を反映させたい</dd>
-
-     <dt>コミットして同期</dt>
-     <dd>他のメンバーの変更も含めて最新の状態にしたい</dd>
+     <dt>3. リポジトリにファイルをアップロード</dt>
+     <dd>
+      GitHubのウェブインターフェースからもファイルをアップロードできます。
+     </dd>
     </dl>
+
+    <p>これでリポジトリが初期設定され、プロジェクトのコードやファイルを簡単に管理できるようになります。</p>
 
    </div><!--3タブの分岐点-->
   </div>
 
 
-  <h2>🌟頻用する素材と錬金釜</h2>
+  <h3>🌟頻用する素材と錬金釜</h3>
 
   <p>このアトリエページは、表面上は子供っぽいキャラクターごっこです。<br>
    でも実際は、「私自身のコード管理」と「訪問者向けのコード解説」を両立させたUIとして、機能しています。</p>
@@ -767,12 +785,16 @@ for container in document.select('.atelier-container'):
     <p>🌟フェイタルドライブの「ヘブンズクエーサー」をキメる！！🌟<br>
      じゃなくて…<br>
      Google Cloud SDK Shell で gcloud app deploy を実行して公開！</p>
-    <p class="gra">暫定対処</p>
+
+    <p class="gra">コード管理</p>
     <ul>
-     <li>クリアしたWebページから順に長文を削除する。</li>
-     <li>👉：<a href="/contents/site_create.html">個人サイト制作</a></li>
+     <li>クリアしたWebページから順に長文を削除する。<br>
+      👉：<a href="/contents/site_create.html">個人サイト制作</a></li>
+     <li><a href="https://github.com/fein-denscothmn">GitHub</a>のリポジトリにソースコードをプッシュする</li>
     </ul>
    </div>
+
+
 
    <p class="gra">基礎デザインを作っているstyle.css</p>
    <p>下部の「CSS elements」をタップすると、コード全体をチェックできます。</p>
@@ -787,6 +809,7 @@ for container in document.select('.atelier-container'):
     <li><a href="/contents\codeinfo.html#body_style">bodyを綺麗に整える</a></li>
     <li><a href="/contents\codeinfo.html#utf8_style">文字コードをutf-8とする</a></li>
     <li><a href="/contents\heading_css.html#heading_style">統一感を持たせた見出しを作る</a></li>
+    <li><a href="/contents\table_css.html#table_style">浮かび上がる表を作る</a></li>
    </ul>
 
   </div>
@@ -1148,7 +1171,7 @@ span.small-text {
 
 /* Text settings ●end● */
 
-/* Table settings ●start● */
+/* ★浮かび上がる表を作る */
 table {
  width: 100%;
  border-collapse: collapse;
@@ -1218,8 +1241,6 @@ caption {
  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
  margin: 10px 0;
 }
-
-/* Table settings ●end● */
 
 /* Image settings ●start● */
 /* large image */
