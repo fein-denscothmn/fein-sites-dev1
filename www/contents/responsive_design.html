@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <!-- Meta tags -->
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="レスポンシブデザインに関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta name="keywords" content="個人サイト, CSS, レスポンシブデザイン">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="個人サイトをレスポンシブデザインにする方法">
+ <meta property="og:description" content="レスポンシブデザインに関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/responsive_design.html">
+ <!-- Structured Data -->
+ <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "個人サイトをレスポンシブデザインにする方法",
+      "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/responsive_design.html",
+      "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+  }
+  </script>
+
+ <!-- CSS -->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <!-- JavaScript -->
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+
+ <!-- Google Fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+
+ <!-- Page Title -->
+ <title>個人サイトをレスポンシブデザインにする方法</title>
+
+ <!-- Favicon -->
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">個人サイトをレスポンシブデザインにする方法</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="個人サイトをレスポンシブデザインにする方法の目次を開く ▼"
+   data-close-text="個人サイトをレスポンシブデザインにする方法の目次を閉じる ▲">個人サイトをレスポンシブデザインにする方法の目次を開く
+   ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>個人サイトをレスポンシブデザインにする方法</span></h1>
+
+  <p>個人サイトに限らず、およそ現代のWebサイトであればレスポンシブデザインにしたほうが良いです。<br>
+   ちょっと気合いを入れて頂ければ思うほど難しいものではありません。<br>
+   手書きコードを避けるのであれば、レスポンシブデザインに対応したWebサイトビルダーを選ぶようにしましょう。<br>
+   例えばGoogleサイトやBloggerであれば、こちらが特に意識しなくてもレスポンシブデザインに対応してくれます。<br>
+   他には次のようなサービスもありますよ。</p>
+
+  <p class="gra">IT初心者向けのレスポンシブデザイン対応Webサイトビルダー</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(24).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <dl>
+    <dt>Wix</dt>
+    <dd>インターフェースが直感的で、レスポンシブデザインを簡単に設定できます。</dd>
+    <dt>Weebly</dt>
+    <dd>レスポンシブデザインが標準でサポートされており、初心者にも使いやすいです。</dd>
+    <dt>WordPress</dt>
+    <dd>多くのレスポンシブテーマやプラグインがあり、カスタマイズが可能です。</dd>
+    <dt>Squarespace</dt>
+    <dd>高品質なテンプレートが豊富で、レスポンシブデザインが簡単に設定できます。</dd>
+    <dt>Webflow</dt>
+    <dd>レスポンシブデザインを考慮したデザインツールが充実しており、初心者でも学びやすいです。</dd>
+   </dl>
+  </div>
+
+  <h3>このページに関する注意事項</h3>
+  <p>当Webサイト作成者は、例示を目的としてマークアップ及びプログラミング例を提供しており、明示または黙示にかかわらず、いかなる責任も負わないものとします。<br>
+   このページは、説明されているマークアップ及びプログラミング言語、手順を作成およびデバッグするために使用される各種ツールに読者が精通していることを前提にしています。<br>
+   このページは、特定の機能を説明するのに役立つ可能性がありますが、当Webサイト作成者がこれらの例を変更した上で、特定の要件を満たすために追加の機能を提供したり、システムを構築したりすることはできません。<br>
+   加えて、この例の手順に従う場合は、読者の各種ファイルを事前にバックアップすることを推奨いたします。</p>
+
+  <h2>レスポンシブデザインの簡単な例</h2>
+  <p>これはやった方が良いです。<br>
+   強制じゃないけど…と言いたいところですが、事実上の強制事項と言って良いです。<br>
+   辛うじてスマホでもPC表示にブラウザを変えられるけど、そんな作業を閲覧する一般のお客様にいちいち要求してはいけません。<br>
+   次に紹介するコードもこれから少しずつ手を加えていきますよ。<br>
+   無駄が多いと思うから。</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* ●レスポンシブデザイン● */
+/* PCスマホ共通のスタイル設定 */
+    .feincontainer {
+      width: 90%;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    /* スマホ表示の調整 */
+    @media (max-width: 600px) {
+      .feincontainer {
+        font-size: 0.875em;
+        padding: 10px 0;
+      }
+    }
+
+    /* パソコン表示の調整 */
+    @media (min-width: 601px) {
+      .feincontainer {
+        width: 100%;
+        max-width: 1200px;
+        padding: 20px 150px;
+      }
+    }
+        </code></pre>
+  </div>
+  <p>このコードはwebページのデザインが異なるデバイスで適切に表示されるように設定してます。<br>
+   共通のスタイル設定をやってからメディアクエリを使ってる流れですね。</p>
+
+  <h4>.feincontainer</h4>
+  <p>このクラスはウェブページのコンテナ要素に適用されています。<br>
+   名称は何でも良いですが、「container」とかそこらじゅうでよく見るタイプの名称をそのまま適用すると、後でコードが自分で分からなくなります。<br>
+   ちょっとオリジナルっぽいスペルを追加すると良いでしょう。</p>
+  <p><span class="codecolor">width: 90%;</span><br>
+   コンテナの幅を親要素の90%に設定しています。少し余裕を持たせる感じで。</p>
+
+  <p><span class="codecolor">margin: 0 auto;</span><br>
+   コンテナを中央に配置しています。上下のマージンは0でいいと思うけど、左右のマージンは自動です。</p>
+
+  <p><span class="codecolor">box-sizing: border-box;</span><br>
+   パディングとボーダーを含めて要素の全体の幅と高さを計算させています。</p>
+
+  <h4>@media (max-width: 600px)</h4>
+  <p>後述しますが、こういうところでメディアクエリを使います。<br>
+   画面幅が600ピクセル以下のデバイス、すまわちモバイル機器に適用されるスタイルを指定します。<br>
+   この600という数字も今後検討するけどさ。<br>
+   あるいはもうちょい狭いほうが良いかも？</p>
+  <p><span class="codecolor">font-size: 0.875em;</span><br>
+   フォントサイズを通常の87.5%に設定しています。スマホ画面は小さいからね。</p>
+  <p><span class="codecolor">padding: 10px 0;</span><br>
+   コンテナの上下に10ピクセルのパディングを追加し、左右のパディングは0に設定しています。<br>
+   ここらへんが冗長と感じてますね…<br>
+   改善の余地があると思う。<br>
+   無駄に長いコードは混乱及びミスを招きます。</p>
+
+  <h4>@media (min-width: 601px)</h4>
+  <p>こちらはパソコン用のスタイル。<br>
+   画面幅が601ピクセル以上のデバイスに適用されるスタイルを指定します。</p>
+  <p><span class="codecolor">width: 100%;</span><br>
+   コンテナの幅を親要素の100%に設定しています。</p>
+  <p><span class="codecolor">max-width: 1200px;</span><br>
+   コンテナの最大幅を1200ピクセルに制限します。<br>
+   一般家庭を想定していますね。<br>
+   大きなサブモニターまで使っている家庭のほうが、少ないでしょう。</p>
+  <p><span class="codecolor">padding: 20px 150px;</span><br>
+   コンテナの上下に20ピクセル、左右に150ピクセルのパディングを追加しています。<br>
+   上述したように、ここらへんは改善の余地あり。</p>
+
+  <h2>メディアクエリ「@media」</h2>
+  <p>@mediaはCSSのメディアクエリと呼ばれます。<br>
+   メディアクエリは、異なるデバイスや画面サイズに応じてスタイルを適用するための方法で、それの実例が上述したコードです。<br>
+   レスポンシブデザインを実現し、ウェブサイトがさまざまなデバイスで適切に表示されるようになります。</p>
+
+  <p>メディアクエリの基本的な構文を書いてみましょう。</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+@media (条件) {
+  /* 条件が満たされた場合に適用されるスタイル */
+}
+        </code></pre>
+  </div>
+  <p>この構文を覚えれば、さまざまな条件を組み合わせて使用することができます。<br>
+   例えば、画面幅が600ピクセル以上かつ800ピクセル以下の場合にスタイルを適用するには、次のように書きますね。</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+@media (min-width: 600px) and (max-width: 800px) {
+  .feincontainer {
+    background-color: lightblue;
+  }
+}
+       </code></pre>
+  </div>
+  <p>このように、メディアクエリを使うことで、異なるデバイスや画面サイズに応じた柔軟なデザインを実現できます。<br>
+   このサイトの場合、body {}はGoogle fontsを指定する役割となっています。<br>
+   画面の表示制御はメディアクエリでやるから、body {}側にいろいろ書いちゃうとトラブルの元になるからね。<br>
+  </p>
+
+  <p>次は、もう少し手を加えてみましょう。どの画面もちゃんとレスポンシブデザインでなければ意味がないからね。</p>
+
+  <h2>ちょっと工夫したレスポンシブデザイン</h2>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* responsive design ●start●*/
+.abcdcontainer { /* コンテナの幅を90%に設定し、中央揃えにします */
+  width: 90%;
+  margin: 0 auto;
+  box-sizing: border-box; /* パディングとボーダーを含めたボックスサイズを設定します */
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) { /* 画面幅が600px以下の場合のスタイルを設定します */
+  .abcdcontainer { /* フォントサイズを0.875emに設定し、上下のパディングを10pxにします */
+    font-size: 0.875em;
+    padding: 10px 0;
+  }
+
+  .responsive-iframe { /* iframeの幅を100%、高さを画面の高さから20px引いた値に設定します */
+    width: 100%;
+    height: calc(100vh - 20px);
+  }
+}
+
+/* Computer adjustments */
+@media (min-width: 601px) { /* 画面幅が601px以上の場合のスタイルを設定します */
+  .abcdcontainer { /* コンテナの最大幅を1200pxに設定し、左右のパディングを150pxにします */
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px 150px;
+  }
+
+  .responsive-iframe { /* iframeの幅を80%、高さを画面の高さの80%に設定します */
+    width: 80%;
+    height: 80vh;
+  }
+}
+/* responsive design ●end●*/
+    </code></pre>
+  </div>
+
+  <h3>CSSにおける「コンテナ」とは何か</h3>
+  <p>CSSで「コンテナ」という言葉は、一般的に<strong>要素を囲むためのボックス</strong>のことです。<br>
+   このボックスは、他の要素をまとめて整理し、レイアウトを整えるために使用されます。<br>
+   具体的な役割を書いていきますね。</p>
+
+  <dl>
+   <dt>レイアウトの管理</dt>
+   <dd>コンテナは、ページ内の要素をグループ化し、配置を制御します。</dd>
+   <dd>例えば、ヘッダー、メインコンテンツ、フッターなどをそれぞれのコンテナに入れることで、ページ全体のレイアウトを整えやすくなります。</dd>
+   <dt>スタイルの適用</dt>
+   <dd>コンテナに対してスタイルを適用することで、その中に含まれるすべての要素に一貫したデザインを適用できます。</dd>
+   <dd>例えば、背景色やパディング、マージンなどを設定します。</dd>
+   <dt>レスポンシブデザイン</dt>
+   <dd>コンテナを使って、異なる画面サイズに応じたレイアウトを作成することができます。</dd>
+   <dd>メディアクエリを使用して、コンテナのスタイルを変更することで、モバイルデバイスやデスクトップなど、さまざまなデバイスに対応したデザインを実現します。</dd>
+  </dl>
+
+  <p>簡単なコードの例をお見せします。<br>
+   次のようなコードでコンテナを定義します。</p>
+
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;div class=&quot;container&quot;&gt;
+    &lt;!-- コンテナ内のコンテンツ --&gt;
+&lt;/div&gt;
+    </code></pre>
+  </div>
+
+  <p>そして、次のようにCSSでスタイルを設定します。</p>
+
+  <div class="code-container">
+   <pre><code class="language-css">
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+    </code></pre>
+  </div>
+
+  <p>コンテナはウェブページの構造を整理し、スタイルを適用するための重要な要素です。<br>
+   何も「.container」という名称でなければならないというわけではなく、そういう要素であるという意味ですね。</p>
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/responsive_design.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

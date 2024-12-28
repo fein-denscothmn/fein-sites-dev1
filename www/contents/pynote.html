@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <meta charset="UTF-8">
+ <title>Webサイト制作の効率を上げるPython</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="主にPythonの書き方を紹介しているページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta name="keywords" content="個人サイト, Python, コマンドプロンプト">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="Webサイト制作の効率を上げるPython">
+ <meta property="og:description" content="主にPythonの書き方を紹介しているページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/pynote.html">
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-bash.min.js"></script>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+ <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Webサイト制作の効率を上げるPython",
+        "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/pynote.html",
+        "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+    }
+    </script>
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Webサイト制作の効率を上げるPython</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!--ハンバーガーメニュー-->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰
+    メニューを開く</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!--ハンバーガーメニューここまで-->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="Webサイト制作の効率を上げるPythonの目次を開く ▼"
+   data-close-text="Webサイト制作の効率を上げるPythonの目次を閉じる ▲">Webサイト制作の効率を上げるPythonの目次を開く ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>Webサイト制作の効率を上げるPython</span></h1>
+
+  <p>個人でサイトを作っていくとき、とにかく「金と時間をかけない」のがコツだと思ってます。<br>
+   もうちょっとやりたいなぁー…と思ったところで、敢えて手を止める感じでしょうか。<br>
+   そうしないと長続きしないし、Web制作みたいな奥が深い作業を「根性」だけで続けていても、辛いだけです。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(2).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>さて、ここではサイト制作をラクにしてくれるPythonというプログラムについて書いていきます。<br>
+    プログラミングも昔はハマりましたねー<br>
+    ここに置いていくのは私が学生時代に作っていたノートの写しですから、あるいは間違いがあったり、その人の環境次第では動作しないケースもあるでしょう。<br>
+    可能な限りミスがないよう修正していますが、もし動作しなかったらご容赦ください。</p>
+  </div>
+
+  <p>参考サイト：<i class="fab fa-python"></i> <a href="https://docs.python.org/ja/3/">Python公式ドキュメント</a></p>
+
+  <h2>このpythonページの要約</h2>
+  <ul>
+   <li>pythonについて、大まかで簡単な説明をしています。</li>
+   <li>pythonのライブラリや環境変数などの設定について、説明しています。</li>
+   <li>コードの例を示し、具体的に説明しています。</li>
+  </ul>
+
+  <h3>このページに関する注意事項</h3>
+  <p>当Webサイト作成者は、例示を目的としてマークアップ及びプログラミング例を提供しており、明示または黙示にかかわらず、いかなる責任も負わないものとします。<br>
+   このページは、説明されているマークアップ及びプログラミング言語、手順を作成およびデバッグするために使用される各種ツールに読者が精通していることを前提にしています。<br>
+   このページは、特定の機能を説明するのに役立つ可能性がありますが、当Webサイト作成者がこれらの例を変更した上で、特定の要件を満たすために追加の機能を提供したり、システムを構築したりすることはできません。<br>
+   加えて、この例の手順に従う場合は、読者の各種ファイルを事前にバックアップすることを推奨いたします。</p>
+
+
+  <h2>Pythonについて</h2>
+  <p>参考サイト：<i class="fab fa-python"></i> <a href="https://www.python.org/">python.org</a></p>
+  Pythonは非常に多用途なプログラミング言語で、次のようなカテゴリに分類されると思われます。
+  <ol>
+   <li>高水準プログラミング言語：人間が理解しやすい形で書かれた言語です。</li>
+   <li>汎用プログラミング言語：特定の用途に限定されず、幅広い分野で使用されます。</li>
+   <li>インタープリタ言語：コードが逐次実行されるため、コンパイルが不要です。</li>
+   <li>オブジェクト指向プログラミング言語：オブジェクトとクラスを使用してプログラムを構築します。</li>
+  </ol>
+  <p>また、Pythonはサーバーサイドスクリプトとしても広く使用されています。<br>
+   ウェブ開発だと、いろんなフレームワークを使ったものが人気ですよね。<br>
+   Djangoは高機能なフルスタックフレームワークで、ウェブアプリケーションの開発に使えます。<br>
+   管理画面の自動生成、認証機能、ORM（オブジェクトリレーショナルマッピング）などが標準で備わっていますね。<br>
+   軽量なマイクロフレームワークとしてはFlaskとか。<br>
+   FastAPIなんかは高速なAPIフレームワークとして有名で、高性能なAPIの開発ができます。<br>
+   こういったいろんなフレームワークを使うことで、ウェブアプリケーションやAPIの開発が効率的に行えるってことです。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(4).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>PythonはGuido van Rossum（グイド・ヴァンロッサム）によって作られました。<br>
+    身近な話題を選んでpythonを語るなら、グイド・ヴァンロッサムがGoogleやDropboxに入社して働いていたのは有名な話です。<br>
+    Google・Dropboxともにpythonを頻用しており、彼は大いに活躍したそうですよ？<br>
+    InstagramはバックエンドシステムにDjangoというPythonで実装されたWebフレームワークを使っていることもよく知られていることです。</p>
+  </div>
+
+  <p>
+   最近だと機械学習分野でpythonの話はよく聞きますが、私は上述している、主にWeb開発のフレームワーク（Django、Flaskなど）を利用したWebアプリケーションの開発という方向でpythonにはお世話になってきましたね。<br>
+   まだこのサイトでDjangoやFlaskなどを導入するのは時期早々だと思いますが、いずれはそれらを込みとして作っていく方向性もあるでしょう。<br>
+   このように、言語の特性というよりも、私の趣味により近いのがpythonであったということなんです。<br>
+   グイド・ヴァンロッサム本人のブログである <a href="https://python-history.blogspot.com/">The History of Python</a>
+   がBloggerで作られているのもおもしろいですね。<br>
+   独自ドメインでもない、プレーンなブログそのままなんです。</p>
+
+  <p>Pythonライブラリは、特定の機能やタスクを簡単に実行できるようにするための、コードの集まりみたいな感じでしょうか。<br>
+   これらのライブラリは、Pythonプログラムにインポートして使えます。<br>
+   多くのPythonライブラリは有志の開発者やコミュニティによって作成されていて、開発者は自分で一からコードを書く必要がなく、既存のライブラリを利用して効率的に開発を進めることができるってことですね。<br>
+   例えば、Pillowは画像処理のためのライブラリであり、NumPyは数値計算のためのライブラリです。<br>
+   これらのライブラリを使うことで、複雑な処理を簡単に実行できるようになります。</p>
+
+  <h2>PythonによるHTTPサーバー構築</h2>
+  <p>デプロイする前にサーバーを立てつつWebページを確認することもあります。<br>
+   ローカル環境にHTTPサーバーを構築する方法はいろいろありますが、Pythonでやるのが一番ラクだと感じますね。<br>
+   Web制作をやってる人は既にpythonをインストールしていろんな環境設定をしていることもあります。<br>
+   もしやっているなら、ここから下のインストールとダウンロードの各項目は飛ばしてよろしいかと思います。</p>
+  <ol>
+   <li><a href="https://www.python.org/">Python公式サイト</a>から最新パッケージをダウンロード。</li>
+   <li>Add python.exe to Pathにチェックを入れつつInstall Nowをクリック。このチェックを忘れがちなので注意しましょう。</li>
+   <li>cmdを起動してpythonと入力し、バージョン表示されるかチェックします。</li>
+   <li>そのままhtmlファイルを保存しているディレクトリにcdします。</li>
+   <li>python -m http.server 8000 とコマンドすればサーバーが起動するはず。Serving HTTP on :: port
+    8000(http://[::]:8000/)...と表示されればサーバーが起動している合図です。</li>
+   <li>ブラウザのアドレスバーにhttp://localhost:8000と入力すると自分のサイトが出ます。</li>
+  </ol>
+  <p>これで、ローカル環境でありつつ、Webサーバーに上げた状態をチェックすることができます。</p>
+
+  <h4>ローカルサーバー起動のbatファイルを書く</h4>
+  <p>win+r→cmd でもいいんだけどね。<br>
+   私はめんどくさくてbatファイルを作っちゃってます。<br>
+   コマンドプロンプト起動からローカルサーバー起動、そのままブラウザ起動までフルオートでやってくれるやつ。<br>
+   個人の環境次第でこういうのも良いと思います。</p>
+  <div class="code-container">
+   <pre><code class="language-bash">
+@echo off
+cd C:\Users\アレコレ\google cloud\fein-sites-dev1\www
+start python -m http.server 8000
+timeout /t 5
+start "" "http://localhost:8000"
+pause
+        </code></pre>
+  </div>
+  <p>私はこんな感じです。<br>
+   でもこの手のbatファイルがあんまり多すぎても自分が混乱しちゃいますけどね。</p>
+
+  <h2>pythonでExcelの表をhtmlに変換する</h2>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(5).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>こういうところに来る人なら分かると思うけど、変換元のExcelは綺麗にしておかないとダメですよ。<br>
+    変にセル結合などをせず、体裁を整えておきます。<br>
+    手間を除くためにプログラミングで処理をするのですから、tableタグになってから手書きでいろいろ触っていると意味がないのでね。</p>
+   <p>Excelの表を手作業でチクチクとtableタグに置き換えるなんて…想像もしたくないです。<br>
+    大変な作業になりますし、ミスも出ると思うんですよね。<br>
+    あまり機会は多くないけど、ミスを防ぐという意味でも、プログラムで一括処理しちゃってます。</p>
+  </div>
+
+
+  <h3>Excelの読み書きに必要なPythonライブラリをインストール</h3>
+  <p>次の２つをインストールします。</p>
+  <ul>
+   <li>pandas：Excelファイルを読み込んでデータフレームに変換する。</li>
+   <li>openpyxl：Excelファイルの読み書きに必要なエンジン。</li>
+  </ul>
+  <div class="code-container">
+   <pre><code class="language-bash">
+pip install pandas openpyxl
+        </code></pre>
+  </div>
+
+  <p>上記２つのライブラリがインストールできたら、次のようにスクリプトを書きます。</p>
+
+  <p class="codegra" id="table_py">Excelの表をhtmlにするtable.py</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+# pandasライブラリをインポート
+import pandas as pd
+
+# Excelファイルのパスを指定
+excel_file = r'C:\Users\アレコレ\google cloud\web tools\office\表好きのための表.xlsx'
+
+# Excelファイルを読み込み、データフレームに変換
+df = pd.read_excel(excel_file)
+
+# データフレームをHTMLテーブルに変換
+html_table = df.to_html()
+
+# HTMLテーブルの出力先ファイルを指定
+output_file = r'C:\Users\アレコレ\google cloud\web tools\office\table.html'
+
+# 指定したファイルにHTMLテーブルを書き込む
+with open(output_file, 'w', encoding='utf-8') as file:
+    file.write(html_table)
+
+# HTMLテーブルの作成完了メッセージを出力
+print(f"HTMLテーブルが作成されました: {output_file}")
+    </code></pre>
+  </div>
+
+  <p>このスクリプトに関しては構造も複雑じゃないから、１行ずつ説明しないけど、丁寧にコメントアウトを付けさせていただきました。<br>
+   ライブラリの機能を使って変換しているだけです。</p>
+
+  <h3>レスポンシブデザインと表</h3>
+  <p>スマホでもまともに表示させるために、表の列に関しては多くても３列までとしていますね。<br>
+   人によってやり方は違うでしょうけど、パソコンを使っていても横に長い表は扱いにくいです。<br>
+   あと、過度に縦に伸びないように工夫もしています。</p>
+
+  <p>表というのは視覚的に構造が分かりやすいから、何かと用いられることが多いレイアウトです。<br>
+   でも、モバイル表示という観点から言うなら、あまり望ましくない、ないしはできれば避けたいと考えていますね。<br>
+   単純な２列の表であっても文節が折り返されて読みにくいことがある。</p>
+
+  <h3>PDFを操作するためのPythonライブラリをインストール</h3>
+  <p>まずは手軽なPDFファイルの操作からいきますか。<br>
+   必要なのは次の４つです。</p>
+  <ul>
+   <li>PyMuPDF：PDFや画像ファイルを操作するためのライブラリです。PDFのページを画像として抽出したり、PDFにテキストや画像を追加することができます。</li>
+   <li>pikepdf：PDFファイルを編集するためのライブラリです。ページの追加や削除、PDFの暗号化や復号化などが可能です。</li>
+   <li>pdf2image：PDFファイルを画像に変換するためのライブラリです。PDFの各ページを画像ファイルとして保存できます。</li>
+   <li>pytesseract：OCR（光学文字認識）エンジンであるTesseractをPythonから利用するためのライブラリです。画像からテキストを抽出することができます。</li>
+  </ul>
+  <p>これらをまとめてインストールしちゃいます。<br>
+   次のようにコマンドプロンプトへ入力します。</p>
+  <div class="code-container">
+   <pre><code class="language-bash">
+pip install pymupdf pikepdf pdf2image pytesseract
+
+</code></pre>
+  </div>
+  <p>このコマンドを実行すると、上記4つのPythonパッケージがインストールされます。<br>
+   これらのパッケージを使うことで、PDFや画像ファイルの操作やテキスト抽出が簡単に行えるようになります。</p>
+
+
+  <h4>Popplerのバイナリをインストール</h4>
+  <p>これもコマンドプロンプトでやれないことはないけど、一発ではないからね。<br>
+   追加で説明書きたいこともあるから、GUIベースで行きましょう。</p>
+
+  <p class="gra">簡単な事前説明</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(7).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>Popplerのバイナリは、PDFファイルを操作するためのコマンドラインツールです。<br>
+    Poppler自体は、PDFのレンダリングライブラリであり、xpdf-3.0コードベースに基づいています。<br>
+    バイナリとは、ソースコードをコンパイルして生成された実行可能ファイルのことですね。<br>
+    Popplerのバイナリを使用すると、PDFの変換、結合、抽出などの操作をコマンドラインから実行できます。<br>
+    例えば、Windows環境では、コマンドプロンプトを開いて「pdfinfo」や「pdftotext」などのコマンドを実行することで、PDFの情報を取得したり、テキストを抽出したりすることができます。<br>
+    Popplerのバイナリは公式サイトから直接ダウンロードすることはできませんが、GitHubなどのリポジトリから入手することができます。</p>
+  </div>
+
+
+  <p>PopplerはPythonと密接に関連しています。
+   「python-poppler」というライブラリがあり、これはPopplerのC++ライブラリであるpoppler-cppのPythonバインディングです。─
+   バインディングというのは「つなぎ役」と捉えてもらえれば良いですね ─<br>
+   これを使ってPythonからPDFドキュメントを読み込み、レンダリングし、または修正することができます。─ レンダリングというのは「表示」と考えてください ─</p>
+
+  <p>例えば、上でお話ししたpdf2imageというPythonモジュールは、PDFを画像に変換する際にPopplerを使用します。<br>
+   このモジュールを使うことで、PDFページを画像として抽出することが可能となるわけです。</p>
+
+  <p class="gra">参考サイト：</p>
+  <ul>
+   <li><a href="https://poppler.freedesktop.org">poppler公式サイト</a></li>
+   <li><a href="https://pypi.org/project/python-poppler/">python-popplerのプロジェクトの説明</a></li>
+   <li><a href="https://www.python.org/psf-landing/">Python Software Foundation</a></li>
+  </ul>
+
+  <p>では、ダウンロードとインストールへ進みます。<br>
+   ご案内するのは2024年10月現在の確認状況ですから、時間が経っているようであれば都度読み替えてください。</p>
+
+  <p class="gra">１．Popplerのバイナリをダウンロード</p>
+  <ol>
+   <li><a href="https://github.com/oschwartz10612/poppler-windows">GitHubのpoppler-windowsリポジトリ</a>にアクセスします。
+   </li>
+   <li>ページ内にDownloadというエリアがあり、そこにYou can download the latest build from
+    releases.という文章があります。ここの「Releases」はリンクになっているので、そこをクリックします。</li>
+   <li>最新のZIPファイルをダウンロードします。おそらくRelease 24.07.0-0と書いてあるでしょう。その右側に「Latest」とアイコンがあると思います。zipはその下です。</li>
+  </ol>
+
+  <p class="gra">２．ZIPファイルを解凍</p>
+  <ol>
+   <li>ダウンロードしたZIPファイルを右クリックし、「すべて展開」を選択します。</li>
+   <li>この時点で解凍先のフォルダを指定しても良いですし、後から解凍したフォルダを移動しても良いですが、Cドライブの配下にしておきましょう。</li>
+  </ol>
+
+  <p class="gra">３．環境変数に追加</p>
+  <ol>
+   <li>スタートメニューを開き、「環境変数」と入力し、「システム環境変数の編集」を選択。</li>
+   <li>「システムのプロパティ」ウィンドウが開いたら、「環境変数」ボタンをクリック。</li>
+   <li>「システム環境変数」セクションで、「Path」を選択し、「編集」ボタンをクリック。そのPathにはC:\Users\ユーザー名\AppData\Local\Programs\Python…と書いてあるはずです。
+   </li>
+   <li>「新規」ボタンをクリックし、先ほど解凍したpoppler内部にあるbinディレクトリのパスを入力。例えばC:\Users\ユーザー名\poppler-24.07.0\Library\binといった形で入力してください。
+   </li>
+   <li>「OK」ボタンをクリックしてすべてのウィンドウを閉じていきます。</li>
+  </ol>
+
+  <p class="gra">４．動作確認</p>
+  <ol>
+   <li>すでにコマンドプロンプトが開いているなら、再起動します。</li>
+   <li>次のコマンドを入力して、popplerが正しくインストールされているか確認します。</li>
+  </ol>
+
+  <div class="code-container">
+   <pre><code class="language-bash">
+pdfinfo -v
+
+</code></pre>
+  </div>
+
+  <p>コマンドプロンプトを再起動しないとpdfinfo -vが正常に動作しない理由は、環境変数の変更が現在のセッションに反映されないためです。<br>
+   環境変数を設定または変更した場合、その変更は新しいコマンドプロンプトセッションにのみ適用されます。<br>
+   既存のセッションでは変更前の環境変数が引き続き使用されるため、再起動が必要となります。<br>
+   ちょっとめんどうですが、初期の環境設定ですから。<br>
+   コマンドプロンプトを再起動すれば新しい環境変数の設定が反映され、pdfinfo -vが正常に動作するようになります。</p>
+
+  <p>正常にインストールされていれば、popplerのバージョン情報が表示されます。<br>
+   これでpopplerがインストールされ、環境変数に追加されたことになります。</p>
+
+
+  <h3>環境変数</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(21).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>環境変数とは、オペレーティングシステムやアプリケーションが動作する際に使用する設定情報を格納するための変数です。<br>
+    これらの変数は、システム全体や特定のユーザーの設定を定義するために使用されます。<br>
+    例えば、環境変数には次のようなものがありますね。</p>
+
+   <ul>
+    <li>PATH：実行可能ファイルの検索パスを指定</li>
+    <li>HOME：ユーザーのホームディレクトリを示す</li>
+    <li>LANG：システムの言語設定を指定</li>
+   </ul>
+  </div>
+
+
+  <p>環境変数は、システムの動作やアプリケーションの設定に大きな影響を与えるため、丁寧に作業することが必要です。<br>
+   Pythonでの環境変数は、プログラムの実行時に外部から設定される変数で、プログラムの動作に影響を与える設定情報を提供します。</p>
+
+  <p>ここで、上記でPopplerをインストールした後に環境変数に追加する手順を踏んでいるのは、システムや他のアプリケーションがPopplerの実行ファイルやライブラリにアクセスできるようにするためです。<br>
+   具体的な理由としては、次のようなものがあります。</p>
+  <ol>
+   <li>
+    <strong>パスの設定</strong>：Popplerの実行ファイル（例えば、pdftotextやpdfinfoなど）をコマンドラインから直接実行できるようにするために、PATH環境変数にPopplerのインストールディレクトリを追加する必要があります。これでどのディレクトリからでもPopplerのコマンドを実行できるようになります。
+   </li>
+   <li>
+    <strong>ライブラリのパス</strong>：Popplerのライブラリを使用するアプリケーションが正しく動作するために、例えばLinuxの場合ならLD_LIBRARY_PATHの環境変数にPopplerのライブラリパスを追加することがあります。これでアプリケーションが必要なライブラリを見つけてロードできるようになります。
+   </li>
+   <li><strong>設定ファイルのパス</strong>：一部のアプリケーションでは、Popplerの設定ファイルやリソースファイルのパスを環境変数で指定することがあります。これでカスタム設定やリソースを使用することができます。
+   </li>
+  </ol>
+
+  <p>Windowsの場合、LD_LIBRARY_PATHのような環境変数は使用しません。その代わりに、PATH環境変数にPopplerの実行ファイルやライブラリのパスを追加します。<br>
+   これでシステムやアプリケーションがPopplerの実行ファイルやライブラリにアクセスできるようになります。<br>
+   上記手順は、Popplerをインストールしたディレクトリを確認して環境変数の設定を行うという作業なんです。</p>
+
+
+
+  <h4>Tesseractのインストール</h4>
+  <p>PythonのTesseractは、正式にはpytesseractと呼ばれます。<br>
+   このライブラリはPythonで使用できる光学文字認識（OCR）ツールです。<br>
+   GoogleのTesseract-OCRエンジンのラッパーであり、画像に埋め込まれたテキストを認識して「読み取る」ことができます。</p>
+
+  <p>ラッパーという表現について、少し詳しくお話ししようかな…<br>
+   ここで言う「GoogleのTesseract-OCRエンジンのラッパー」というのは、Tesseract-OCRエンジンをPythonなどのプログラミング言語から簡単に利用できるようにするためのインターフェースを提供するものなんだという意味です。<br>
+   Tesseract-OCRエンジンの機能を呼び出すためのコードを簡略化し、使いやすくするためのPythonライブラリが「pytesseract」、すなわち今からインストールしようとしているTesseractとなります。<br>
+   Tesseract-OCRエンジン自体は、画像からテキストを抽出するツールなのですが、直接使うにはコマンドライン操作や複雑な設定が必要になることがあります。<br>
+   pytesseractは、これらの操作をPythonコード内で簡単に行えるようにするためのラッパーということです。</p>
+
+  <p>では、ダウンロードとインストールへ進みます。<br>
+   ご案内するのは2024年10月現在の確認状況ですから、時間が経っているようであれば都度読み替えてください。</p>
+
+  <p class="gra">１．Tesseractのインストール</p>
+  <ol>
+   <li><a href="https://github.com/UB-Mannheim/tesseract/wiki">Tesseractの公式リリースページ</a>にアクセスします。</li>
+   <li>Windows用のインストーラーをダウンロードします。おそらく「tesseract-ocr-w64-setup-5.4.0.20240606.exe (64 bit)」と書いてあるはず。</li>
+   <li>ダウンロードしたインストーラーを実行し、指示に従ってインストールします。</li>
+  </ol>
+
+  <p class="gra">２．環境変数に追加</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(22).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>ここは、上述の「Popplerのバイナリをインストール」した時と同じです。でもササっと手順を書いておきます。</p>
+   <ol>
+    <li>スタートメニューを開き、「環境変数」と入力し、「システム環境変数の編集」を選択。</li>
+    <li>「システムのプロパティ」ウィンドウが開いたら、「環境変数」ボタンをクリック。</li>
+    <li>「システム環境変数」セクションで、「Path」を選択し、「編集」ボタンをクリック。</li>
+    <li>「新規」ボタンをクリックし、`Tesseract`のインストールディレクトリのパスを入力。おそらく多くの人がC:\Program Files\Tesseract-OCRだと思います。</li>
+    <li>「OK」ボタンをクリックしてすべてのウィンドウを閉じる。</li>
+   </ol>
+  </div>
+
+
+  <p class="gra">３．動作確認</p>
+  <ol>
+   <li>コマンドプロンプトを開きますが、すでに開いているなら、再起動をお忘れなく。</li>
+   <li>次のコマンドを入力して、Tesseract が正しくインストールされているか確認します。</li>
+  </ol>
+
+  <div class="code-container">
+   <pre><code class="language-bash">
+tesseract -v
+
+</code></pre>
+  </div>
+
+  <p>正常にインストールされていれば、Tesseractのバージョン情報が表示されます。<br>
+   これでTesseractがインストールされ、環境変数に追加されたことになります。</p>
+
+
+  <h2>pythonでPDFをまとめて圧縮する</h2>
+  <p>ここまでは環境が整っている人が多いかな？<br>
+   そろそろ具体的なpythonスクリプトに話題を移していきます。<br>
+   あんまり深入りすると大変ですからね。<br>
+   あくまでも当初の目的である「Webサイト制作でラクをする」という側面を大切にしていきましょう。</p>
+
+  <p>まず、次のコードを見てみましょう。<br>
+   ファイル名は「pdf.py」という名で保存されているものです。</p>
+
+  <p class="codegra" id="pdf_py">PDFをまとめて圧縮するpdf.py</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+import pikepdf
+import os
+
+def compress_pdf(input_path, output_path):
+    try:
+        with pikepdf.open(input_path) as pdf:
+            pdf.save(output_path)
+    except Exception as e:
+        print(f"Error compressing {input_path}: {e}")
+
+def compress_pdfs_in_directory(input_dir, output_dir):
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    for filename in os.listdir(input_dir):
+        if filename.endswith(".pdf"):
+            input_path = os.path.join(input_dir, filename)
+            output_path = os.path.join(output_dir, filename)
+            compress_pdf(input_path, output_path)
+
+input_directory = r"C:/Users/アレコレ/google cloud/fein-sites-dev1/www/another-eden/fein_report"
+output_directory = r"C:/Users/アレコレ/Documents/pdf"
+
+compress_pdfs_in_directory(input_directory, output_directory)
+
+</code></pre>
+  </div>
+
+
+  <p>それぞれを簡単に説明していきます。<br>
+   このコードは指定されたディレクトリ内のPDFファイルを圧縮し、別のディレクトリに保存する一連の処理を行っています。</p>
+
+  <p><span class="codecolor">import pikepdf</span><br>
+   PDFファイルを操作するためのライブラリ pikepdf をインポートしています。</p>
+
+  <p><span class="codecolor">import os</span><br>
+   ファイルやディレクトリの操作を行うための標準ライブラリ os をインポートしています。</p>
+
+  <p><span class="codecolor">def compress_pdf(input_path, output_path):</span><br>
+   ここでは、PDFファイルを圧縮する関数 compress_pdf を定義しています。<br>
+   この関数は、入力ファイルのパスと出力ファイルのパスを引数に取ります。</p>
+
+  <p><span class="codecolor">try:</span><br>
+   ここから、エラーが発生する可能性のある処理となります。</p>
+
+  <p><span class="codecolor">with pikepdf.open(input_path) as pdf:</span><br>
+   指定されたパスのPDFファイルを開きます。
+   with文を使うことで、ファイルを自動的に閉じることができます。</p>
+
+  <p><span class="codecolor">pdf.save(output_path)</span><br>
+   開いたPDFファイルを指定された出力パスに保存します。</p>
+
+  <p><span class="codecolor">except Exception as e:</span><br>
+   もしエラーが発生した場合、このブロックが実行されます。</p>
+
+  <p><span class="codecolor">print(f"Error compressing {input_path}: {e}")</span><br>
+   エラーが発生した場合、そのエラーメッセージを表示します。</p>
+
+  <p><span class="codecolor">def compress_pdfs_in_directory(input_dir, output_dir):</span><br>
+   ここでは、ディレクトリ内のすべてのPDFファイルを圧縮する関数 compress_pdfs_in_directory を定義しています。<br>
+   この関数は、入力ディレクトリと出力ディレクトリを引数に取ります。</p>
+
+  <p><span class="codecolor">if not os.path.exists(output_dir):</span><br>
+   出力ディレクトリが存在しない場合をチェックします。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(23).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p><span class="codecolor">os.makedirs(output_dir)</span><br>
+    出力ディレクトリが存在しない場合、新しく作成します。</p>
+
+   <p><span class="codecolor">for filename in os.listdir(input_dir):</span><br>
+    入力ディレクトリ内のすべてのファイルをループで処理します。</p>
+
+   <p><span class="codecolor">if filename.endswith(".pdf"):</span><br>
+    ファイル名が「.pdf」で終わる場合のみ処理を行います。</p>
+
+   <p><span class="codecolor">input_path = os.path.join(input_dir, filename)</span><br>
+    入力ファイルのフルパスを作成します。</p>
+  </div>
+
+
+  <p><span class="codecolor">output_path = os.path.join(output_dir, filename)</span><br>
+   出力ファイルのフルパスを作成します。</p>
+
+  <p><span class="codecolor">compress_pdf(input_path, output_path)</span><br>
+   先ほど定義した compress_pdf 関数を使って、PDFファイルを圧縮します。</p>
+
+  <p><span class="codecolor">input_directory = r"C:/Users/アレコレ/google
+    cloud/fein-sites-dev1/www/another-eden/fein_report"</span><br>
+   圧縮するPDFファイルが保存されているディレクトリのパスを指定します。</p>
+
+  <p><span class="codecolor">output_directory = r"C:/Users/アレコレ/Documents/pdf"</span><br>
+   圧縮されたPDFファイルを保存するディレクトリのパスを指定します。</p>
+
+  <p><span class="codecolor">compress_pdfs_in_directory(input_directory, output_directory)</span><br>
+   指定されたディレクトリ内のPDFファイルを圧縮する処理を実行します。</p>
+
+
+  <p class="gra">このコードのポイント</p>
+
+  <p><strong>コードの概要</strong></p>
+  <ol>
+   <li>ライブラリのインポート<br>
+    pikepdf：PDFファイルを操作するためのライブラリ。<br>
+    os：ファイルやディレクトリの操作を行うための標準ライブラリ。</li>
+
+   <li>関数 compress_pdf<br>
+    input_path から PDF ファイルを読み込み、output_path に保存します。<br>
+    エラーが発生した場合は、エラーメッセージを表示します。</li>
+
+   <li>関数compress_pdfs_in_directory<br>
+    input_dir 内のすべての PDF ファイルを探し、output_dir に圧縮して保存します。<br>
+    output_dir が存在しない場合は、新しく作成します。</li>
+  </ol>
+
+  <p><strong>このコードの対応関係</strong></p>
+
+  <p><span class="codecolor">input_path と output_path</span><br>
+   compress_pdf 関数内で使用され、個々のPDFファイルの入力パスと出力パスを指定します。<br>
+   例：input_path が C:/Users/アレコレ/google cloud/fein-sites-dev1/www/another-eden/fein_report/sample.pdf
+   で、output_path が C:/Users/アレコレ/Documents/pdf/sample.pdf になります。</p>
+
+  <p><span class="codecolor">input_directory と output_directory</span><br>
+   compress_pdfs_in_directory 関数内で使用され、ディレクトリ全体の入力パスと出力パスを指定します。<br>
+   例：input_directory が C:/Users/アレコレ/google cloud/fein-sites-dev1/www/another-eden/fein_report
+   で、output_directory が C:/Users/アレコレ/Documents/pdf になります。</p>
+
+
+  <p><strong>このコードのポイント</strong></p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(24).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <ul>
+    <li>ディレクトリの操作：os.listdir を使ってディレクトリ内のファイルをリスト化し、.pdf 拡張子のファイルをフィルタリングします。</li>
+    <li>ファイルパスの結合：os.path.join を使って、ディレクトリパスとファイル名を結合し、完全なファイルパスを作成します。</li>
+    <li>エラーハンドリング：try-except ブロックを使って、エラーが発生した場合に適切に処理します。</li>
+   </ul>
+  </div>
+
+
+  <h4>defで関数を定義する</h4>
+  <p>def はPythonで関数を定義するためのキーワードです。<br>
+   関数は特定のタスクを実行するためのコードのブロックで、再利用可能な形でまとめられています。<br>
+   とりあえず def を使って関数を定義する基本的な構文から。</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+def 関数名(引数1, 引数2, ...):
+    # 関数の処理内容
+    return 戻り値
+
+</code></pre>
+  </div>
+
+  <p>例えば…足し算する関数を定義する場合です。</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+def add_numbers(a, b):
+    result = a + b
+    return result
+
+</code></pre>
+  </div>
+
+  <p>この関数 add_numbers は、引数 a と b を受け取り、それらを足し合わせた結果を返します。</p>
+
+  <p class="gra">ここで紹介しているPDF圧縮プログラムの場合</p>
+  <p>次のように def を使って関数を定義しています。</p>
+
+  <ul>
+   <li>compress_pdf 関数：PDFファイルを圧縮するための関数。
+   <li>compress_pdfs_in_directory 関数：ディレクトリ内のすべてのPDFファイルを圧縮するための関数。
+  </ul>
+
+  <p>このように関数を使うことで、コードを整理し、再利用可能にすることができます。</p>
+
+  <p>def はPythonで関数を定義するために必ず使用しなければならないキーワードです。<br>
+   これはPythonの構文の一部であり、他の言葉に置き換えることはできません。<br>
+   プログラミング言語にはそれぞれのルールや構文があり、Pythonでは関数を定義するために def を使うと決められています。<br>
+   例えば、他のプログラミング言語では異なるキーワードを使いますが、それぞれの言語のルールに従う必要があります。<br>
+   もし def を別の言葉に置き換えようとすると、Pythonはエラーを出してしまいます。<br>
+   ここで、正しい使い方と間違った使い方の例です。</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+def my_function():  # 正しい使い方です
+    print("Hello, World!")
+
+</code></pre>
+  </div>
+
+  <div class="spacer"></div>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+define my_function():  # これはエラーになります
+    print("Hello, World!")
+
+</code></pre>
+  </div>
+
+  <p>プログラミング言語の構文を守ることで、コードが正しく動作し、他のプログラマーとも共有しやすくなります。</p>
+
+
+  <h4>withでリソースを扱う</h4>
+  <p>with はPythonでリソースの管理を簡単にするためのキーワードです。<br>
+   特にファイルの操作やネットワーク接続など、リソースの解放が必要な処理でよく使われます。<br>
+   with を使うことで、リソースの解放も自動的に行うことができます。<br>
+   基本的な使い方を挙げてみます。<br>
+   with を使ってファイルを開く例です。</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+with open('example.txt', 'r') as file:
+    content = file.read()
+    print(content)
+
+</code></pre>
+  </div>
+
+  <p>このコードは、Pythonでファイルを読み込んでその内容を表示するものです。<br>
+   実行すると、次のように動作します。</p>
+
+  with open('example.txt', 'r') as file:
+  example.txt という名前のファイルを読み取りモード（ 'r' ）で開きます。<br>
+  with ステートメントを使うことで、ファイルのクローズを自動的に行います。
+
+  content = file.read()
+  ファイルの内容をすべて読み込み、content という変数に格納します。
+
+  print(content)
+  読み込んだファイルの内容をコンソールに表示します。
+
+  <p>このコードを実行すると、example.txt ファイルの中身がそのままコンソールに出力されます。<br>
+   例えば、example.txt に「Hello, World!」と書かれていた場合、実行結果はそのまんま「Hello, World!」となりますね。</p>
+
+  <p class="gra">with の役割</p>
+  <ul>
+   <li>リソースの自動解放：with ブロックを抜けると、自動的にリソースが解放されます。<br>
+    例えば、ファイルを開いた場合は自動的に閉じられます。</li>
+   <li>コードの簡潔さ：明示的にリソースを解放するコードを書く必要がないため、コードが簡潔になります。</li>
+   <li>エラーハンドリング：with ブロック内でエラーが発生しても、リソースは適切に解放されます。</li>
+  </ul>
+
+  <p class="gra">ここで紹介しているPDF圧縮プログラムの場合</p>
+  <p>次のように with を使ってPDFファイルを開いています。</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+with pikepdf.open(input_path) as pdf:
+    pdf.save(output_path)
+
+</code></pre>
+  </div>
+
+  <p>この部分では、input_path からPDFファイルを開き、output_path に保存しています。<br>
+   with を使うことで、PDFファイルが自動的に閉じられ、リソースが適切に解放されています。</p>
+
+  <p>仕上げに、丁寧にコメントアウトが書かれたpythonコードを置いておきましょう。</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+# pikepdfとosモジュールをインポート
+import pikepdf
+import os
+
+# PDFファイルを圧縮する関数
+def compress_pdf(input_path, output_path):
+    try:
+        # 入力ファイルを開く
+        with pikepdf.open(input_path) as pdf:
+            # 出力ファイルとして保存
+            pdf.save(output_path)
+    except Exception as e:
+        # エラーが発生した場合のメッセージを表示
+        print(f"{input_path}の圧縮中にエラーが発生しました: {e}")
+
+# ディレクトリ内のすべてのPDFファイルを圧縮する関数
+def compress_pdfs_in_directory(input_dir, output_dir):
+    # 出力ディレクトリが存在しない場合は作成
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    # 入力ディレクトリ内のすべてのファイルをループ
+    for filename in os.listdir(input_dir):
+        # PDFファイルのみを対象
+        if filename.endswith(".pdf"):
+            # 入力ファイルと出力ファイルのパスを作成
+            input_path = os.path.join(input_dir, filename)
+            output_path = os.path.join(output_dir, filename)
+            # PDFファイルを圧縮
+            compress_pdf(input_path, output_path)
+
+# 入力ディレクトリのパス
+input_directory = r"C:/Users/アレコレ/google cloud/fein-sites-dev1/www/another-eden/fein_report"
+# 出力ディレクトリのパス
+output_directory = r"C:/Users/アレコレ/Documents/pdf"
+
+# ディレクトリ内のPDFファイルを圧縮
+compress_pdfs_in_directory(input_directory, output_directory)
+        </code></pre>
+  </div>
+
+  <h2>pythonでPDFを画像化する</h2>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(25).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>これは昔から使用頻度が極めて高かったです。</p>
+
+   <p>スクリプトとしては単純ですが、重要なのはその使い道にあると思います。<br>
+    html+css+JavaScriptだけだと、どうしても細かいレイアウトやいかにも文書レポートらしい味わいが出ないことがあります。<br>
+    やれないことはないけど、手間に見合わない。<br>
+    そういう時、次のような流れを踏むと、Webサイトに掲載する凝った文書レポートを簡単に作成できます。
+   </p>
+  </div>
+
+
+  <ol>
+   <li>WordやExcelで文書レポートを作成</li>
+   <li>まずはそれらを保存ないしは印刷でPDF化</li>
+   <li>PDF化した原本は保管しておき、別途画像化する</li>
+   <li>画像化したものはSNS投稿用とする</li>
+   <li>PDF原本はhtmlで枠を作って改めて個人サイトへ掲載する</li>
+  </ol>
+
+  <p>こうすると、単に画像を貼るだけより目を引くコンテンツをWebサイトへ掲載できます。<br>
+   PDF専用の枠組みやUIを用意して掲示すれば、専用文書みたいなムードが出るんですよね。</p>
+
+  <p class="codegra" id="pdfimg_py">PDFを高解像度の画像に変換するpdfimg.py</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+from pdf2image import convert_from_path  # pdf2imageライブラリから、convert_from_path関数をインポート
+
+pdf_path = r'C:\UsersアレコレOneDrive\_fein\google cloud\web tools\20241019サイト更新案内.pdf'  # 処理するPDFファイルのパスを指定
+
+images = convert_from_path(pdf_path, dpi=300)  # PDFファイルを300dpiの解像度で画像に変換
+
+for i, image in enumerate(images):  # 各画像をループして処理
+    image.save(f'output_image_{i + 1}.png', 'PNG')  # 画像をPNG形式で保存
+
+</code></pre>
+  </div>
+
+  <p>
+   このスクリプトは指定されたPDFファイルを読み込み、そのPDFの各ページを画像に変換し、それぞれの画像をPNG形式で保存するものです。<br>
+   pdf2imageライブラリのconvert_from_path関数を使って、PDFファイルを画像に変換します。<br>
+   変換された画像はリストとして返され、forループを使って各画像を処理し、ファイル名にページ番号を付けてPNG形式で保存しています。<br>
+   保存される画像ファイルの名前はoutput_image_1.png、output_image_2.pngというように、ページごとに異なる名前になります。</p>
+
+  <p>学生時代のスクリプトだからちょっと曖昧な部分もあるのですが、pdf2imageライブラリが動作するためには、PyMuPDF または Poppler のいずれかが必要だったはずです。</p>
+
+  <ul>
+   <li>pdf2imageライブラリ: このライブラリそのものは必須です。</li>
+   <li>PyMuPDF または Poppler: どちらか一つがインストールされていれば動作します。</li>
+  </ul>
+
+  <p>pdf2imageライブラリと併せて、せっかくなので両方とも紹介しましょう。</p>
+
+  <h3>pdf2imageライブラリ</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(36).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>pdf2imageライブラリはPython用のライブラリで、PDFファイルの各ページを画像に変換するためのツールです。<br>
+    これを使うと、PDFの内容をプログラム的に画像ファイルとして取り扱うことができるようになります。<br>
+    例えば、PDFの各ページをJPEGやPNG形式の画像に変換して保存することが可能です。<br>
+    このライブラリは、PyMuPDFやPopplerなどのバックエンドを使用して、PDFファイルから画像を抽出します。</p>
+  </div>
+
+
+  <p>次のコードでpdf2imageがインストールされます。<br>
+   pipはPythonのパッケージマネージャですね。</p>
+
+  <p class="gra">pdf2imageのインストール</p>
+  <div class="code-container">
+   <pre><code class="language-bash">
+pip install pdf2image
+
+</code></pre>
+  </div>
+
+  <p>pdf2imageライブラリは単独でPDFから画像を抽出できるわけではなく、他のプログラム（バックエンド）を利用してその機能を実現しています。<br>
+   そのバックエンドというのが、PyMuPDF または Poppler のどちらか一つなんですよね。</p>
+
+  <dl>
+   <dt>PyMuPDF</dt>
+   <dd>これはMuPDFというPDF処理ライブラリのPythonバインディングです。PDFのページを画像として抽出するのに使えます。</dd>
+   <dt>Poppler</dt>
+   <dd>これはオープンソースのPDFレンダリングライブラリで、PDFの各ページを画像に変換するためのツールです。</dd>
+  </dl>
+
+  <p>そう、なので…スクリプトによってはどちらか１つでも良かったはずです。</p>
+
+  <p class="gra">PyMuPDFのインストール</p>
+  <p>これは特にややこしいことはないです。<br>
+   Windowsなら次のコマンドでOK。</p>
+  <div class="code-container">
+   <pre><code class="language-bash">
+pip install pymupdf
+
+</code></pre>
+  </div>
+
+  <p class="gra">Popplerのインストール手順（Windows）</p>
+  <p>Windowsではpopplerを直接インストールするのではなく、バイナリをダウンロードしてパスを通す必要があります。</p>
+
+  <ol>
+   <li>バイナリのダウンロード: Popplerのバイナリを提供しているサイト（<a href="https://poppler.freedesktop.org/">Poppler公式サイト</a>）からバイナリをダウンロードします。
+   </li>
+   <li>解凍: ダウンロードしたZIPファイルを解凍します。解凍すると、フォルダにbinやincludeなどのディレクトリが含まれています。</li>
+   <li>パスを通す: 解凍したフォルダのパスを環境変数に追加します。</li>
+   <li>スタートメニューで「環境変数」と検索し、「システム環境変数の編集」を選択。</li>
+   <li>「システム環境変数」の下にある「環境変数」をクリック。</li>
+   <li>「システム環境変数」セクションの中から「Path」を選択し、「編集」をクリック。</li>
+   <li>「新規」をクリックし、Popplerのbinフォルダへのパス（例: C:\path\to\poppler\bin）を追加。</li>
+   <li>すべてのウィンドウを「OK」で閉じて保存。</li>
+  </ol>
+
+  <p>これで、Popplerが正しくインストールされ、パスが通った状態になります。</p>
+
+  <p class="gra">Popplerのインストール手順（Linux）</p>
+  私はDebian系のUbuntuを使ってたから、そっちのパッケージマネージャーを使用したインストール方法を書きましょうか。
+  <p>Debian系でPopplerのインストール</p>
+  <pre><code class="language-bash">
+sudo apt-get update
+sudo apt-get install poppler-utils
+
+</code></pre>
+
+  <p>こういうところを見ると、やはりWindowsよりLinuxのほうが個人サイトは作りやすいと思います。<br>
+   そこらへんのウェブサイトビルダーを使うならWindowsでも良いですが、コードを全て書くことで完全オリジナルな個人サイトを作ろうとしたとき、慣れた人ならともかく、そうでないと環境構築に手間がかかる。<br>
+   Linuxのほうが手順が単純です。</p>
+
+  <h5>アナデンのPDFレポートで大活躍したスクリプト</h5>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(40).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p><a href="/another-eden/another-eden_feinpdf.html">アナザーエデン：feinが書いたレポート集</a>にあるPDFの数々は、こうやって画像化してからTweetしていたのです。
+   </p>
+   <p>Twitterでは無料で画像化してくれるWebサービスを紹介しておりましたが、実際の私の手元ではpythonスクリプトで処理していました。<br>
+    周りを見ると、あまりプログラミングをやるような人が見られなかったこともありますね。<br>
+    アカウントから出るコンテンツの作成過程については、たとえこのスクリプトのような簡単なことであったとしても、あまり大っぴらにしない方がいい。<br>
+    イーロンマスクの話ではないけど、SNSはどこも対抗意識や競争意識の魔窟です。<br>
+    全てが終わってから表に出す方が、SNSアカウントの話題コントロールもやりやすいってことよね。<br>
+    でも、もうこうして生コードの個人サイトも公開しており、アナデンの高難易度バトルについてPDFレポートを作成する必要もなくなったから。<br>
+    このスクリプトは学生時代からずっと大活躍していたのですよ？</p>
+  </div>
+
+
+  <h2>PDFがテキストベースかまとめてチェックするpython</h2>
+  <p>このスクリプトはPDFファイルが既にテキストベースかどうか、まとめてチェックします。<br>
+   画像からテキストを抽出できるかを確認することで、OCR処理が可能かどうかを判断するんです。<br>
+   小さなことですが、Webサイトに大量のPDFがある場合、それらも検索エンジンに載せる必要があります。<br>
+   この時、PDFがテキストベースでなければほとんど意味を成しません。</p>
+
+  <p>例えばマニアックな魚の生態などを調べていると、どこかの大学が書いた論文等がたくさん出てきますよ。<br>
+   検索ワードの組み合わせによって出てくることもあるし、手持ち資料にPDFがあるなら、それらもしっかりWebサイトに載せておくと時間をかけて効いてきます。</p>
+
+  <p class="codegra" id="pdfocr_py">PDFがテキストベースになっているかチェックするpdfocr.py</p>
+  <div class="code-container">
+   <pre><code class="language-python">
+import os
+import fitz  # PyMuPDFライブラリをインポート
+import pytesseract  # OCRライブラリをインポート
+from pdf2image import convert_from_path  # PDFを画像に変換するライブラリをインポート
+
+# PDFがテキストベースかどうかを確認する関数
+def is_text_based_pdf(pdf_path):
+    try:
+        # PDFドキュメントを開く
+        pdf_document = fitz.open(pdf_path)
+        # 各ページをチェック
+        for page_num in range(len(pdf_document)):
+            page = pdf_document.load_page(page_num)
+            text = page.get_text()
+            # テキストが含まれている場合はTrueを返す
+            if text.strip():
+                return True
+        # テキストが含まれていない場合はFalseを返す
+        return False
+    except Exception as e:
+        # エラーが発生した場合の処理
+        print(f"エラーが発生しました: {e}")
+        return False
+
+# OCRが可能かどうかを確認する関数
+def is_ocr_possible(pdf_path):
+    # PDFがテキストベースの場合はTrueを返す
+    if is_text_based_pdf(pdf_path):
+        return True
+    try:
+        # PDFドキュメントを開く
+        pdf_document = fitz.open(pdf_path)
+        # 各ページをチェック
+        for page_num in range(len(pdf_document)):
+            page = pdf_document.load_page(page_num)
+            # ページを画像に変換
+            pix = page.get_pixmap()
+            image = convert_from_path(pdf_path, first_page=page_num+1, last_page=page_num+1)[0]
+            # 画像からテキストを抽出
+            text = pytesseract.image_to_string(image)
+            # テキストが含まれている場合はTrueを返す
+            if text.strip():
+                return True
+        # テキストが含まれていない場合はFalseを返す
+        return False
+    except Exception as e:
+        # エラーが発生した場合の処理
+        print(f"エラーが発生しました: {e}")
+        return False
+
+# ディレクトリ内のPDFファイルをチェックしてOCRが可能かどうかを確認する関数
+def check_directory_for_ocr(directory_path):
+    # ディレクトリ内のPDFファイルをリストアップ
+    pdf_files = [f for f in os.listdir(directory_path) if f.lower().endswith('.pdf')]
+    results = {}
+    # 各PDFファイルをチェック
+    for pdf_file in pdf_files:
+        pdf_path = os.path.join(directory_path, pdf_file)
+        results[pdf_file] = is_ocr_possible(pdf_path)
+    return results
+
+# 使用例
+directory_path = r"C:\Users\アレコレ\Downloads\drive-download"
+ocr_results = check_directory_for_ocr(directory_path)
+# 各PDFファイルのOCR可能性を表示
+for pdf_file, is_ocrable in ocr_results.items():
+    print(f"{pdf_file}: {'OCR可能' if is_ocrable else 'OCR不可能'}")
+
+</code></pre>
+  </div>
+
+  <p>このスクリプトは、指定されたディレクトリ内のPDFファイルがOCR（光学文字認識）可能かどうかをチェックしています。<br>
+   OCRのライブラリについては、このページの上部ですでに触れましたね。</p>
+
+  <p><strong>必要なライブラリのインポート</strong></p>
+
+  <dl>
+   <dt>os</dt>
+   <dd>ファイルやディレクトリの操作を行うための標準ライブラリ</dd>
+   <dt>fitz（PyMuPDF）</dt>
+   <dd>PDFファイルを操作するためのライブラリ</dd>
+   <dt>pytesseract</dt>
+   <dd>画像からテキストを抽出するためのOCRライブラリ</dd>
+   <dt>convert_from_path（pdf2image）</dt>
+   <dd>PDFを画像に変換するための関数</dd>
+  </dl>
+
+  <dl>
+   <dt>PDFがテキストベースかどうかを確認する関数 is_text_based_pdf</dt>
+   <dd>PDFファイルを開き、各ページからテキストを抽出します。
+    テキストが含まれている場合は True を返し、含まれていない場合は False を返します。
+    エラーが発生した場合は、エラーメッセージを表示し、False を返します。</dd>
+  </dl>
+
+  <dl>
+   <dt>OCRが可能かどうかを確認する関数 is_ocr_possible</dt>
+   <dd>まず、PDFがテキストベースかどうかを確認します。テキストベースであれば True を返します。
+    テキストベースでない場合、PDFを画像に変換し、各ページの画像からテキストを抽出します。
+    画像からテキストが抽出できれば True を返し、抽出できなければ False を返します。
+    エラーが発生した場合は、エラーメッセージを表示し、False を返します。</dd>
+  </dl>
+
+  <dl>
+   <dt>ディレクトリ内のPDFファイルをチェックする関数 check_directory_for_ocr</dt>
+   <dd>指定されたディレクトリ内のPDFファイルをリストアップします。
+    各PDFファイルに対して is_ocr_possible 関数を呼び出し、OCRが可能かどうかを確認します。
+    結果を辞書形式で返します（ファイル名をキー、OCR可能かどうかを値とする辞書）。</dd>
+  </dl>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(44).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p><strong>使用例</strong></p>
+   <p>チェックするディレクトリのパスを指定します。<br>
+    check_directory_for_ocr 関数を呼び出し、結果を取得します。<br>
+    各PDFファイルのOCR可能性を表示します。<br>
+    ちょっと分かりにくいかもしれないので、改めて該当部分を書いてみます。</p>
+  </div>
+
+
+  <div class="code-container">
+   <pre><code class="language-python">
+# 使用例
+directory_path = r"C:\Users\アレコレ\Downloads\drive-download"
+ocr_results = check_directory_for_ocr(directory_path)
+# 各PDFファイルのOCR可能性を表示
+for pdf_file, is_ocrable in ocr_results.items():
+    print(f"{pdf_file}: {'OCR可能' if is_ocrable else 'OCR不可能'}")
+            </code></pre>
+  </div>
+
+  <p>この「# 使用例」の部分は、単なる説明文ではなく、スクリプトの実行例を示す重要な部分です。<br>
+   この部分がなければ、スクリプトは実際に動作しません。<br>
+   関数がどのように動作するかを確認することができませんし、スクリプト全体の動作をテストすることもできません。<br>
+   つまり、「# 使用例」の部分は、スクリプトの動作を確認するための実行例であり、スクリプトの一部として重要な役割を果たしています。<br>
+   この部分では、次のように動作しています。</p>
+
+  <dl>
+   <dt>ディレクトリパスの指定</dt>
+   <dd>directory_path 変数に、チェックしたいディレクトリのパスを指定しています。</dd>
+   <dt>関数の呼び出し</dt>
+   <dd>check_directory_for_ocr 関数を呼び出し、指定したディレクトリ内のPDFファイルがOCR可能かどうかをチェックしています。</dd>
+   <dt>結果の表示</dt>
+   <dd>ocr_results 辞書に格納された結果をループで回し、各PDFファイルがOCR可能かどうかを表示しています。</dd>
+  </dl>
+
+  <p>このように、「# 使用例」は、スクリプトの機能を実際にどのように使うかを示すための例として書かれています。<br>
+   あるいは実行例とか、サンプルコードといった用語でも良いかもしれない。<br>
+   いずれにしても、これで全てのPDFがOCR可能であることを確認してから、このサイトではPDFを掲載しています。<br>
+   でももともとWordやExcelで書いたレポートをPDF化しているだけですから、まず問題が出ることはないでしょう。</p>
+
+  <h2>プログラミングでhtmlコーディングのミスを防ぐ</h2>
+  <p>例えば report.html というページがあるとしましょう。<br>
+   そのhtmlファイルがある場所に「pdf」というディレクトリがあります。<br>
+   そのpdfディレクトリに大量のpdfが格納されている。
+  </p>
+
+  <p>この状況で、report.htmlにpdfファイルへのハイパーリンクを記述していくのは大変な作業となります。<br>
+   ５つや６つくらいならともかく、100を超えてくると人力では難しいでしょう。<br>
+   ハイパーリンクというのは &lt;a href=&quot;&quot;&gt;&lt;/a&gt; と書かれます。<br>
+   report.htmlに記述されるpdfファイルへのハイパーリンクは当然 &lt;a href=&quot;pdf/explanation.pdf&quot;&gt;&lt;/a&gt;
+   となりますが、大量にあるファイルへのハイパーリンクの記述を延々と手書きしていると、必ずと言って良いほどミスに繋がるんです。<br>
+  </p>
+  <p>あまり好きな表現ではないのですが、いわゆる「個人サイト臭さ」というのは、こういうところから出てきます。<br>
+   たまに１つや２つのミスが見つかるくらいなら許容できるし、むしろ可愛げさえ出てくる。<br>
+   しかし…どこのページに行っても、いつ見ても何かしらミスがあったり、中途半端だったり。<br>
+   これが続くと、人はそのWebサイトに訪問しなくなります。<br>
+   使いにくいことが分かっているからね。<br>
+   悪印象が定着してしまうのです。
+  </p>
+
+  <h3>大量のハイパーリンクをまとめて記述するpython</h3>
+  <p>ここで紹介するスクリプトは、人間の手作業によるケアレスミスを防ぐためのスクリプトです。<br>
+   どんなに工夫してもミスをゼロにすることはできませんが、やれることはやったほうが良いですね。
+  </p>
+
+  <p class="codegra" id="pdfhtml_py">大量のハイパーリンクをまとめて記述するpdfhtml.py</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+import os  # osモジュールをインポートして、ファイルやディレクトリの操作を行う
+
+# PDFファイルが保存されているディレクトリのパスを指定
+directory = r'C:\Users\アレコレ\OneDrive\_fein\google cloud\fein-sites-dev1\www\another-eden\fein_report'
+
+# HTMLファイルの出力先のパスを指定
+output_file = r'C:\Users\アレコレ\OneDrive\_fein\google cloud\web tools\pdfhtml.html'
+
+# HTMLファイルを作成して書き込みモードで開く
+with open(output_file, 'w', encoding='utf-8') as f:
+    f.write('&lt;html&gt;&lt;body&gt;\n')  # HTMLファイルの基本構造を作成
+
+    # 指定したディレクトリ内のすべてのファイルをループで処理
+    for filename in os.listdir(directory):
+        print(f'Found file: {filename}')  # デバッグ用にファイル名をコンソールに表示
+        if filename.endswith('.pdf'):  # ファイル名が.pdfで終わる場合
+            # HTMLリンクを作成してファイルに書き込む
+            f.write(f'&lt;p&gt;&lt;a href=&quot;fein_report/{filename}&quot;&gt;{filename}&lt;/a&gt;&lt;/p&gt;\n')
+
+    f.write('&lt;/body&gt;&lt;/html&gt;')  # HTMLファイルの終了タグを追加
+
+print(f'HTML file has been created: {output_file}')  # 完了メッセージをコンソールに表示
+                </code></pre>
+  </div>
+
+  <p>このコードは、指定されたディレクトリ内のすべてのPDFファイルをリスト化し、それらのファイルへのリンクを含むhtmlファイルを生成します。<br>
+   なんでhtmlファイルを生成するかというと、そのまんまコピペできるからですよ。<br>
+   pythonにhtmlコードを書かせるだけ書かせて、自分はコピペするだけです。</p>
+
+  <dl>
+   <dt>ディレクトリとファイルの設定</dt>
+   <dd>directory：変数にPDFファイルが保存されているディレクトリのパスを指定しています</dd>
+   <dd>output_file：変数にHTMLファイルの出力先のパスを指定しています</dd>
+
+   <dt>HTMLファイルの作成</dt>
+   <dd>with open(output_file, 'w', encoding='utf-8') as f: で指定されたパスに新しいHTMLファイルを作成し、書き込みモードで開きます
+    &lt;html&gt;&lt;body&gt;\n を書き込んでHTMLファイルの基本構造を作成します</dd>
+
+   <dt>ディレクトリ内のファイルをループ</dt>
+   <dd>os.listdir(directory) を使って指定されたディレクトリ内のすべてのファイルをリスト化し、ループで処理します</dd>
+   <dd>各ファイル名をデバッグ出力としてコンソールに表示します（print(f'Found file: {filename}')）</dd>
+
+   <dt>PDFファイルのリンクをHTMLに追加</dt>
+   <dd>ファイル名が .pdf で終わる場合、HTMLリンクとして書き込みます（f.write(f'&lt;p&gt;&lt;a
+    href=&quot;fein_report/{filename}&quot;&gt;{filename}&lt;/a&gt;&lt;/p&gt;\n')）</dd>
+
+   <dt>HTMLファイルの終了タグを追加</dt>
+   <dd>&lt;/body&gt;&lt;/html&gt; を書き込んでHTMLファイルを閉じます</dd>
+
+   <dt>完了メッセージの表示</dt>
+   <dd>最後に、HTMLファイルが作成されたことをコンソールに表示します（print(f'HTML file has been created: {output_file}')）</dd>
+  </dl>
+
+  <p>こういう小さなミスを防げるスクリプトを書けると、格段に個人サイト作成がラクになりますよ？<br>
+   何百回も似たような作業をしていれば必ずミスは発生するのですから、とりあえず自動化できる部分は自動化しちゃった方がいいよね。<br>
+   とにかくラクをして金もかけないこと。<br>
+   これが個人サイトを継続するために必要な、最も重要なポイントであるとみて間違いないです。<br>
+   大変な思いをするから放置しちゃう。<br>
+   そこをプログラミングで何とかするっていう。
+  </p>
+
+
+  <h2>手間のかかるhtmlコーディングをpythonに任せる</h2>
+  <p>当サイトでは、PDFを気軽に閲覧できるようプレビューボタンを設置しています。<br>
+   通常のハイパーリンク以外にボタンを設置しており、そこを押すとPDFがプレビュー表示できます。<br>
+   この機能があればいちいちWebサイトから外部のアプリに出ずとも、そのままブラウザでPDFファイルの中身を閲覧できるからです。</p>
+
+  <p>JavaScriptとCSSに関しては <a href="">個人サイトでよく使うJavaScript</a> で説明しています。<br>
+   ここではpythonによるhtmlコード出力について、説明します。</p>
+
+  <p>このPDFプレビューボタンが、けっこう手間のかかるコードなんですよねー<br>
+   CSSはともかくJavaScriptでページ送りやらページ数やらを制御していることもあって、それらのボタンまでhtmlで作ってあげないといけない。<br>
+   見た目は単なるボタンだけどコードがちょっと長いので、複数のPDFを扱うと非常に面倒です。<br>
+   そこで、pythonに作ってもらうんだよね。</p>
+
+
+  <h3>PDFプレビューボタン設置に使うpython</h3>
+  <p>やっていることは単純です。<br>
+   ワンパターンなhtmlコードがあり、そこにpdfファイルを当てはめていくだけのお仕事をpythonにやってもらいます。<br>
+   こういう作業が人間が100回200回とやっていくと、ミスに繋がるわけですよ。</p>
+
+  <p>実際のpythonスクリプトに入る前に、Webページに載せる予定のpdfファイルリストを用意します。</p>
+
+  <p class="gra">ファイル名と拡張子だけを抽出するコマンド</p>
+  <div class="code-container">
+   <pre><code class="language-bash">
+dir /b "C:\path\to\directory" > filelist.txt
+        </code></pre>
+  </div>
+
+  <p>このコマンドをコマンドプロンプトで実行すれば、ある任意のディレクトリに格納されているファイルの名称と拡張子だけを抽出できます。<br>
+   こんなの手作業でやってたらキリないですよ。<br>
+   実際にはこの作業もpythonにやってもらうことができますが、私の環境ではpdfファイル以外にいろいろ入っていたものでね。<br>
+   いきなりhtmlを書く前に少し確認することにしたのです。</p>
+
+  <p>取得したpdfファイル名と拡張子のリストを使って、次のようなスクリプトを用意します。</p>
+
+
+  <p class="codegra" id="pdfpreview_py">PDFプレビューボタンhtmlを書くpdfpreview.py</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+# PDFファイル名称リスト
+pdf_files = [
+    "高難易度対策ノート：最終更新＝20210404.pdf",
+    "魚のさばき方.pdf",
+    "黒衣の刀使いの影.pdf",
+    "２部結戦役.pdf",
+    "３部直前アナデンプレイ状況アンケート結果.pdf"
+]
+
+# HTMLテンプレート
+html_template = """
+&lt;div class=&quot;pdf-list-add&quot;&gt;
+    &lt;button class=&quot;pdf-link-add&quot; data-url=&quot;fein_report/{0}&quot;&gt;{0}を開く&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class=&quot;feinpdf-container-add addpdfhidden&quot;&gt;
+    &lt;div class=&quot;feinpdf-viewer-add&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;feinpdfcontrols-add&quot;&gt;
+        &lt;button class=&quot;prev-page-add&quot;&gt;前のページへ&lt;/button&gt;
+        &lt;span&gt;Page: &lt;span class=&quot;page-num-add&quot;&gt;&lt;/span&gt; / &lt;span class=&quot;page-count-add&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+        &lt;button class=&quot;next-page-add&quot;&gt;次のページへ&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+"""
+
+# HTMLファイルに出力
+# "output.html" という名前のファイルを作成し、書き込みモードで開きます
+with open("output.html", "w", encoding="utf-8") as f:
+# PDFファイルリストの各ファイル名についてループします
+for pdf in pdf_files:
+# HTMLテンプレートにPDFファイル名を挿入し、ファイルに書き込みます
+f.write(html_template.format(pdf))
+        </code></pre>
+  </div>
+
+  <p>このスクリプトは指定されたPDFファイル名を使ってHTMLボタンを生成し、それを output.html ファイルに書き出すものです。<br>
+   大量のpdf資料があっても、このスクリプトを使えば一気にWebサイトへ掲載できるのですよ。</p>
+
+
+  <dl>
+   <dt>PDFファイル名称リストの定義</dt>
+   <dd>pdf_files というリストに、PDFファイルの名前を格納しています。</dd>
+
+   <dt>HTMLテンプレートの定義</dt>
+   <dd>html_template という変数に、HTMLのテンプレートを文字列として格納しています。</dd>
+   <dd>{0} はプレースホルダーで、後でPDFファイル名がここに挿入されます。</dd>
+
+   <dt>HTMLファイルに出力</dt>
+   <dd>with open("output.html", "w", encoding="utf-8") as f:</dd>
+   <dd>output.html という名前のファイルを作成し、書き込みモードで開きます。</dd>
+
+   <dt>for pdf in pdf_files:</dt>
+   <dd>pdf_files リストの各PDFファイル名についてループします。</dd>
+
+   <dt>f.write(html_template.format(pdf))</dt>
+   <dd>html_template の {0} に pdf を挿入し、生成されたHTMLコードを output.html ファイルに書き込みます。</dd>
+  </dl>
+
+  <p>officeソフトで作られた文書類をwebサイトに掲載するなら、pdfにしてからプレビュー機能付きでハイパーリンクを添えるのが一番無難だと思います。</p>
+
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/pynote.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

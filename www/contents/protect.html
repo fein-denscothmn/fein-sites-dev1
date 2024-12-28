@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <meta charset="UTF-8">
+ <title>X（旧：Twitter）のAIからイラストなどを守る試み</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="AI学習からイラストなどのコンテンツを守るにはどうすれば良いかを考えているページです。完璧は難しいでしょうが、やれることはあるはずです。">
+ <meta name="keywords" content="個人サイト, イラスト, AI学習">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="X（旧：Twitter）のAIからイラストなどを守る試み">
+ <meta property="og:description" content="AI学習からイラストなどのコンテンツを守るにはどうすれば良いかを考えているページです。完璧は難しいでしょうが、やれることはあるはずです。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/protect.html">
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+ <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "X（旧：Twitter）のAIからイラストなどを守る試み",
+        "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/protect.html",
+        "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+    }
+    </script>
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">X（旧：Twitter）のAIからイラストなどを守る試み</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!--ハンバーガーメニュー-->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰
+    メニューを開く</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!--ハンバーガーメニューここまで-->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="X（旧：Twitter）のAIからイラストなどを守る試みの目次を開く ▼"
+   data-close-text="X（旧：Twitter）のAIからイラストなどを守る試みの目次を閉じる ▲">X（旧：Twitter）のAIからイラストなどを守る試みの目次を開く ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>X（旧：Twitter）のAIからイラストなどを守る試み</span></h1>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(12).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>イーロン・マスクが開発中のAIは、Grokだけではありません。<br>
+    彼のAI関連プロジェクトには他にもいくつかあります。<br>
+    これらのAIは、それぞれ異なる目的と機能を持っており、マスク氏のビジョンに基づいて開発されています。</p>
+
+   <dl>
+    <dt>Grok</dt>
+    <dd>これはX（旧Twitter）で利用できる対話型AIで、xAI社が開発しました。</dd>
+    <dt>TruthGPT</dt>
+    <dd>これは「真実を追求するAI」として開発されているチャットボットで、xAI社のもう一つのプロジェクトです。</dd>
+   </dl>
+
+   <p>このようなAIから自分のイラストや文章などを守ろうと考えるなら、次のような方法が考えられます。<br>
+    でもインターネットにアップロードしている以上、完璧にはならないかもしれません。</p>
+  </div>
+
+  <h2>まずはTwitterの設定でAI学習をoffにする</h2>
+  <p>真っ先に設定方法から手っ取り早く書きます。</p>
+
+  <p class="gra">AI学習設定をオフにする手順</p>
+
+  <ol>
+   <li>Xのサイドバーから「設定とプライバシー」をタップ</li>
+   <li>「プライバシーと安全」を選択</li>
+   <li>「Grok」をタップ</li>
+   <li>チェックボックスをオフにする</li>
+  </ol>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(13).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>これでAI学習をオフにすることができます。<br>
+    この設定をオフにすることで、あなたの投稿やインタラクションがGrokなどのAIの学習に使用されないようにすることができます。<br>
+    ただし、効果については議論がありますね…<br>
+    設定をオフにすることで、AIがあなたのデータを直接学習に使用することは防げますが、完全に情報収集を防ぐことは難しいかもしれません。<br>
+    設定をオフにしても、他のユーザーのデータや公開情報から間接的に学習する可能性だってあるのですから。</p>
+  </div>
+
+
+  <p>とはいえこの設定を行うことで、少なくとも直接的なデータ利用なら防ぐことができます。</p>
+
+  <h2>AI学習からイラストを守る手順のまとめ</h2>
+  <p>ご興味のある方は、ここだけ読んで頂ければ良いかも？<br>
+   ざざっと箇条書きにしちゃいますよ。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(21).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <dl>
+    <dt>Twitterの設定でAI学習をoffにする</dt>
+    <dd>これだけでもそれなりに違うと思います。</dd>
+    <dt>可視的ウォーターマークを入れる</dt>
+    <dd>効果が見込めるはず。楽しみながら作れますしね。</dd>
+    <dt>不可視的ウォーターマークを入れる</dt>
+    <dd>転載防止に効果を発揮するでしょうけど、複数のイラストに入力しようとすると手間ですね。</dd>
+   </dl>
+  </div>
+
+  <p>いろんなプラットフォームがあるので、手順を厳密に区分することは難しいです。<br>
+   xfolioも素晴らしいプラットフォームですよね。<br>
+   私のような個人サイト趣味勢から見ても、お勧めできるかと？！<br>
+   とりあえず、ここまでは個人サイトがなくてもできることだと思います。</p>
+
+  <p>次は個人サイトを作れる、特にhtmlを始めとするソースコードを触れる方向けです。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(22).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <dl>
+    <dt>個人サイトを制作する</dt>
+    <dd>クローラーの仕様はともかくとして、安寧を得られるという意味でもお勧めです。<br>
+     CSSやJavaScriptみたいな難しい勉強は後回し！</dd>
+    <dt>robots.txtを設置する</dt>
+    <dd>これでクローラーは形式的にでも排除できます。</dd>
+    <dt>ステガノグラフィを使ってイラストに情報を埋め込む</dt>
+    <dd>上記の不可視的ウォーターマークの続きです。<br>
+     プログラミングを視野に入れれば、一気に複数画像へ挿入できます。</dd>
+    <dt>イラストをスライスして掲載する</dt>
+    <dd>いよいよ大変かと…。<br>
+     コードに慣れていて、プログラミングもできればスムーズに実装もできるでしょう。</dd>
+    <dt>イラストのメタデータに著作権情報を追加</dt>
+    <dd>複数画像かつ日本語入力しようとするとかなり面倒です。</dd>
+   </dl>
+  </div>
+
+  <p>私は繰り返される作業をプログラミングでやっつけるタイプです。<br>
+   でもそれは「個人サイト」という文脈においては、非現実的だと言って良いと思います。<br>
+   探せば気の利いたソフトウェアやウェブサイトビルダーがあると思うので、引き続き調べていきたいと思います。<br>
+   私自身の勉強にもなるしね🎵</p>
+
+
+  <h2>小説コンテンツでAI学習を阻止する工夫</h2>
+
+  <p>いきなり結論から書いちゃうけど、小説ならPDFか画像にしてしまえば、生のテキストデータより収集がやりにくい状態にできると思われます。<br>
+   いろんな対策を組み合わせればかなりマシになるかと。<br>
+   少なくとも「字書きや小説は諦める」なんて…<br>
+   私も子供の頃、ネット小説をいろいろ読んだりしましたよ？</p>
+
+  <p>例えば、次のように画像化してノイズを載せた文書なんてのはいかがでしょうか？<br>
+   私が以前書いたゲームの攻略レポートを載せてみました。<br>
+   これに加えてウォーターマーク付きでやればいいし、手間を惜しまないならAI学習妨害ツールを通しても良いですね。</p>
+
+  <div class="content">
+   <img src="/contents/itimages/noiseimage.png" alt="アナザーエデンのハイエンドコンテンツ対策レポート" class="graphic right-image fade-in-out">
+   <p class="gra">画像化する</p>
+   <p>PDFやテキストを画像形式に変換することで、OCRがテキストを認識しにくくなります。</p>
+   <dl>
+    <dt>PDFを画像に変換</dt>
+    <dd>PDFを開き、各ページをJPEGやPNGなどの画像形式で保存します。<br>
+     PDF編集ソフトを使っても良いですし、Webサービスなどもありますよ。</dd>
+
+    <dt>解像度の調整</dt>
+    <dd>画像の解像度を適度に下げることで、OCRの精度をさらに低下させることができます。<br>
+     あまり解像度を下げると読みにくくなりますが、限界まで解像度を落とせば良いでしょう。</dd>
+   </dl>
+
+   <p>テキストデータの画像化については、また後日プログラムや各種ツール類をご紹介します。<br>
+    でも普通にググって頂ければいくらでも出てきますし、何ならスクリーンショットでも良いわけですよ。</p>
+
+   <p class="gra">テキストを歪ませる</p>
+   <p>テキストを少し歪ませたり、ノイズを加えたりすることで、OCRの精度を下げることができます。</p>
+   <dl>
+    <dt>画像編集ソフトを使用</dt>
+    <dd>PhotoshopやGIMPなどの画像編集ソフトを使って、テキストをわずかに回転させたり、波状に変形させたりします。</dd>
+
+    <dt>ノイズの追加</dt>
+    <dd>テキストの背景にランダムなノイズを加えることで、OCRがテキストを認識しにくくなります。<br>
+     これも画像編集ソフトで簡単に行えます。</dd>
+   </dl>
+  </div>
+
+  <p class="gra">透かしを入れる</p>
+  <p>透かしを入れることで、OCRが正確にテキストを認識するのを妨げることができます。</p>
+  <dl>
+   <dt>透かしの作成</dt>
+   <dd>画像編集ソフトで透かしを作成します。透かしはテキストやロゴなど、透明度を調整したものが一般的です。</dd>
+
+   <dt>透かしの配置</dt>
+   <dd>透かしをテキストの上に重ねて配置します。透かしがテキストと重なることで、OCRがテキストを正確に読み取るのを妨げます。</dd>
+  </dl>
+
+  <p>これなんかまさに「小説に載せるウォーターマーク」ですよね。<br>
+   イラストと同じ防御策が、小説でもやれちゃうわけです。</p>
+
+  <h4>当サイトではPDFにしています</h4>
+  <p>PDFでも良いと思いますよ？<br>
+   生のテキストデータを公開しなければ、AI学習もやりにくくなります。<br>
+   これにしても後日詳しく紹介しますが、例えば<a href="/">ホーム（アナザーエデン グラスタの入手場所一覧）</a>であったり、<a
+    href="another-eden/another-eden_feinpdf.html">アナザーエデン：feinが書いたレポート集</a>であったり。<br>
+   ただ、OCR対策まではやっていませんけどね。<br>
+   私の場合はむしろガンガンSEO対策の足しにしたいので。<br>
+   でも創作をやる方々の事情は違います。<br>
+   こういう形でPDF化なり画像化していただき、ウォーターマークまで付けていただければ、小説がAI学習やり放題なんてことにはならないでしょう。</p>
+
+  <h4>OCRとはどういうものか</h4>
+  <p>OCRは画像やスキャンされた文書からテキストを読み取り、デジタルデータに変換する技術です。
+   紙の文書や画像に含まれるテキストをコンピュータで編集、検索、保存することが可能になります。</p>
+
+  <p>OCRは次のように動作しているのです。</p>
+  <dl>
+   <dt>スキャン</dt>
+   <dd>紙の文書や画像をスキャンしてデジタル画像に変換します。</dd>
+
+   <dt>画像解析</dt>
+   <dd>スキャンされた画像のレイアウトを解析し、テキスト部分を特定します。</dd>
+
+   <dt>文字認識</dt>
+   <dd>各文字をパターン認識技術を用いて識別し、対応するデジタル文字コードに変換します。</dd>
+  </dl>
+
+  <p>ただ、OCRには利点もあるんです。
+   手動でのデータ入力を自動化し、時間と労力を節約できます。<br>
+   デジタル化されたテキストは簡単に検索、編集、共有が可能です。─ だからAI学習されるんだけどね ─<br>
+   紙媒体の文書をデジタル形式で保存することで、物理的なスペースを節約し、管理が容易になるという点もあるでしょう。</p>
+
+  <h4>OCRを完璧に防ぐのは難しいけど…</h4>
+  <p>完全にOCRを除去することは難しいです。<br>
+   技術は日々進化しており、手書き文字や複雑なフォントも高精度で認識できるようになっているので。<br>
+   特に画像の解像度や品質が高い場合、OCRは非常に高い精度でテキストを認識します。</p>
+  <p>しかしながら、先ほど説明したように画像化、テキストの歪み、透かしの追加などの方法を組み合わせることで、OCRの精度を下げることができます。<br>
+   だから創作で小説を書いている人も、諦めなくて良いんじゃないかな。<br>
+   ここはちょっとオマケで、プログラミングによるAI学習妨害手段まで紹介しちゃいます。</p>
+
+
+  <h4>ランダムなノイズをテキストに加えるプログラム</h4>
+  <p>ランダムなノイズをテキストの背景に加えることで、OCR（光学文字認識）がテキストを認識しにくくすることができます。<br>
+   PythonとPillow（PIL）ライブラリを使って、画像にランダムなノイズを加えるプログラムを試してみましょう。
+
+  <p>Pythonをインストールした後、コマンドプロンプトでPillowライブラリのインストールを行います。─ この部分は後述のイラスト関連セクションでもご紹介しています。─</p>
+
+  <p class="codegra">Pillowライブラリをインストールするコマンド</p>
+  <div class="code-container">
+   <pre><code class="language-bash">
+pip install pillow
+  </code></pre>
+  </div>
+
+  <p>次に、指定した画像にノイズを加え、ノイズを加えた画像を任意の場所に保存するプログラムを用意します。</p>
+
+  <p class="codegra" id="textnoise_py">ノイズを加えるプログラムtextnoise.py</p>
+  <div class="code-container">
+   <pre><code class="language-python">
+import random
+from PIL import Image, ImageDraw
+
+def add_noise(image, noise_level=100):
+    width, height = image.size
+    draw = ImageDraw.Draw(image)
+
+    for _ in range(noise_level):
+        x = random.randint(0, width - 1)
+        y = random.randint(0, height - 1)
+        r = random.randint(0, 255)
+        g = random.randint(0, 255)
+        b = random.randint(0, 255)
+        draw.point((x, y), fill=(r, g, b))
+
+    return image
+
+def process_image(input_image_path, output_image_path, noise_level=1000):
+    image = Image.open(input_image_path)
+    noise_image = add_noise(image, noise_level)
+    noise_image.save(output_image_path)
+    print(f"Saved noisy image at {output_image_path}")
+
+# 入力画像のパスと出力画像のパスを指定
+input_image_path = r'C:\Users\アレコレ\OneDrive\_fein\google cloud\fein-sites-dev1\www\another-eden\anaimage\ハイエンドコンテンツ対策.png'
+output_image_path = r'C:\Users\アレコレ\OneDrive\_fein\google cloud\web tools\aiprotect\output_image.png'
+
+# 画像を処理
+process_image(input_image_path, output_image_path)
+  </code></pre>
+  </div>
+
+  <p>このプログラムの説明をしますね。</p>
+
+  <dl>
+   <dt>add_noise関数</dt>
+   <dd>指定した画像にランダムなノイズを加えます。</dd>
+
+   <dt>process_image関数</dt>
+   <dd>入力画像を読み込み、add_noise関数を使用してノイズを加え、指定された場所に保存します。</dd>
+
+   <dt>ファイルパスの設定</dt>
+   <dd>input_image_pathにノイズを加えたい画像のパスを指定します。</dd>
+   <dd>output_image_pathにノイズを加えた画像を保存したい場所のパスを指定します。</dd>
+  </dl>
+
+  <p>その気になれば、こういうプログラミングでOCRがテキストを認識しにくい画像を作成することだってできます。<br>
+   指定した画像にノイズを加えてから任意の場所に保存するようにすれば、作業もしやすいですよね。</p>
+
+
+  <h2>AI学習妨害ツールについて</h2>
+  <p>こちらのページと併せて<a
+    href="/contents/x_exodus.html">X（旧：Twitter）の変化にどう対処するか</a>もご覧いただけると、現在の「SNS移住」に関する対応について、ある程度は掴めるかと思います。<br>
+   Glaze等のAI学習妨害ツールは、ちゃんと効いていると思います。<br>
+   技術的にも当然のようにAI学習を妨害できるでしょうし、AIイラストを頻用する層が具体的に対応しているという点でも、効いています。<br>
+   例えばAIイラストの生成ツールをローカルで稼働させようとしたり、妨害ツールを通したイラストを避けるような動きが出ていますよね。<br>
+   可能ならみんなで妨害ツールを使うと良いかもしれませんが、他人様に強要はできませんしね…<br>
+   しかし、やれる人はやったほうが、AIに対する防御として良い効果を見込めるでしょう。</p>
+
+
+  <h4>AI学習妨害ツールのリスト</h4>
+  <p><a href="/contents/sitestep.html">個人サイトの「やることリスト」</a>にも同じことは書いてありますが、こちらもことあるごとに更新していきますね。</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(36).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <ul>
+    <li>
+     <p><a href="https://nightshade.cs.uchicago.edu/whatis.html">Nightshade</a><br>
+      特徴: 画像に目に見えない変更を加えることで、AIがその画像を学習できなくします。</p>
+    </li>
+    <li>
+     <p><a href="https://glaze.cs.uchicago.edu/jp/what-is-glaze.html">Glaze</a><br>
+      特徴: 画像に目に見えない摂動を加えることで、AIがその画像のスタイルを学習できなくします。AIがアーティストのスタイルを模倣するのを防ぎます。</p>
+    </li>
+
+    <li>
+     <p><a href="https://emamori.com/">emamori</a><br>
+      特徴: イラストに特殊な電子透かしやノイズを挿入することで、AIがその画像を正確に学習できないようにします。無断でイラストが模倣されるのを防ぎます。</p>
+    </li>
+
+    <li>
+     <p><strong>Mist</strong><br>
+      特徴: 画像に見えない透かしを入れることで、AIがその画像を認識できなくして、学習を防ぎます。上海交通大学の研究チームが開発しました。（現在、公式サイトが404エラーになります。）
+     </p>
+    </li>
+   </ul>
+  </div>
+
+  <h2>画像にウォーターマークを追加</h2>
+  <p>画像にウォーターマークを追加する方法はいくつかあります。<br>
+   とりあえずツールを紹介しちゃいましょう。</p>
+
+  <div class="content">
+   <img src="/contents/itimages/feinne/ねここwallpaper.jpeg" alt="ノーマルねここの壁紙" class="wallpaper right-image fade-in-out">
+   <p class="gra">スマホアプリを使う方法</p>
+   <ul>
+    <li>PhotoDirector モバイル</li>
+    <li>Photoshop Express</li>
+    <li>PicsArt</li>
+   </ul>
+
+   <p class="gra">PCソフトを使う方法</p>
+   <ul>
+    <li>PhotoDirector</li>
+    <li>Promeo</li>
+    <li>GIMP</li>
+   </ul>
+
+   <p><a href="https://www.gimp.org/">GIMP</a>なら、私も以前使っていましたね。<br>
+    次のようにしていたはず。</p>
+   <ol>
+    <li>フリーソフトをダウンロードしてインストールします。</li>
+    <li>画像をインポートし、レイヤー機能を使ってテキストや画像を追加します。</li>
+    <li>不透明度や位置を調整して保存します。</li>
+   </ol>
+
+  </div>
+
+  <p class="gra">オンラインツールを使う方法</p>
+
+  <ul>
+   <li><a href="https://www.canva.com/ja_jp/features/watermark-photos/">Canva</a>のウェブサイトにアクセスし、アカウントを作成します。
+    <ul>
+     <li>画像をアップロードし、テキストや画像を追加してウォーターマークを作成します。</li>
+     <li>不透明度や位置を調整して保存します。</li>
+    </ul>
+   </li>
+  </ul>
+
+  <p>これらの方法を使って、簡単に画像にウォーターマークを追加することができます。<br>
+   使用するデバイスやソフトウェアの好みによって使い分けて頂ければ。<br>
+   あるいはオンラインツールを使うとAI学習され…って、もうキリがないよね…</p>
+
+  <h3>ウォーターマークはAI学習を防げるのか</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(34).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>ウォーターマークというのは、画像や動画にロゴやテキストを重ねて表示することで著作権を主張したり、無断使用を防ぐための手段です。<br>
+    ウォーターマークには大きく分けて可視的ウォーターマークと不可視的ウォーターマークの2種類があります。<br>
+    まずはこれを説明しましょう。<br>
+    いずれにしても完璧に防ぐことは難しいです。</p>
+  </div>
+
+
+  <h5>可視的ウォーターマーク</h5>
+  <p>画像や動画の上にロゴやテキストを重ねることで、視覚的に著作権を主張します。<br>
+   著作権保護や改ざん防止に有効です。例えば、イラストに「©2024fein（私の名前です）」といったテキストを入れることで、無断使用を防ぐことができます。<br>
+   しかし、高度な画像編集ソフトウェアを使われると簡単に除去される可能性があります。─ 法的な側面は後述します。 ─</p>
+
+  <h5>不可視的ウォーターマーク</h5>
+  <p>デジタルデータに埋め込まれるもので、肉眼では見えません。<br>
+   しかし、特定のソフトウェアで検出可能です。<br>
+   これなら視覚的な影響を与えずに著作権を主張できます。<br>
+   特定のソフトウェアが必要であり、一般的な利用者には認識されにくいです。</p>
+
+  <h2>不可視的ウォーターマークの入れ方</h2>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(36).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>不可視的ウォーターマークは画像や動画に肉眼では見えない形で情報を埋め込む技術です。<br>
+    これに関しては、より詳しく説明するセクションが必要かと思われます。<br>
+    著作権保護や無断使用防止に有効な手段ですが、これもAI学習を完全に防ぐことは難しいでしょう。<br>
+    他の対策と併用することをお勧めします。<br>
+    注意点としては、不可視的ウォーターマークを検出するためには専用のソフトウェアが必要であることです。</p>
+  </div>
+
+  <h4>不可視的ウォーターマークを入れるツール</h4>
+  <p>ソフトウェアならAdobe PhotoshopやGIMP。<br>
+   専用ツールならDigimarcやStegano。<br>
+   オンラインサービスなら<a href="https://watermarkly.com/">Watermarkly</a>や<a href="https://photomarks.app/">PhotoMarks</a>。<br>
+   私は不可視的ウォーターマークを積極的に用いるタイプではありませんでしたが、Steganoなら説明できます。─ 発展編のプログラミングのところでお話しします。 ─</p>
+
+
+
+  <h3>AI学習を防ぐ観点からのウォーターマーク</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(38).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>あるいは、ウォーターマークを画像全体に濃く入れると良いのかもしれません。<br>
+    AIが画像を学習する際にノイズとして認識され、学習の質が低下するでしょう。<br>
+    しかし最新のAIアルゴリズムは、ウォーターマークをノイズとして除去する能力が向上しており、完全に防ぐことは難しいようです。<br>
+    また、ウォーターマークが薄い場合や部分的にしか入っていない場合、効果はさらに低くなります。</p>
+
+   <p>このように著作権保護や無断使用防止に有効な手段ではありますが…AI学習を完全に防ぐことは難しいかと。<br>
+    ウォーターマークの他にも画像のメタデータに著作権情報を追加する、画像の表示方法を工夫するなど、複数の対策を併用することが重要と考えています。</p>
+  </div>
+
+  <h5>ウォーターマークと著作権</h5>
+  <p>ウォーターマークを無断で除去してはいけませんよ？<br>
+   法的問題に発展する可能性があります。<br>
+   ウォーターマークは、オリジナルコンテンツの所有権を示すために使用されるものであり、これを除去する行為は著作権侵害と見なされることがあります。<br>
+   私は少しだけホームページ作成が趣味なだけで、法律の専門家ではありません。<br>
+   でも、次のレベルくらいなら、ITの教科書にも普通に書いてあります。</p>
+
+  <dl>
+   <dt>著作権侵害</dt>
+   <dd>ウォーターマークを除去して他人の作品を無断で使用することは、著作権法に違反する行為です。</dd>
+   <dt>契約違反</dt>
+   <dd>画像や動画の使用に関する契約でウォーターマークの保持が義務付けられている場合、その除去は契約違反となります。</dd>
+   <dt>不正競争防止法</dt>
+   <dd>商業的な目的でウォーターマークを除去し、他人の作品を自分のものとして偽る行為は、不正競争防止法に抵触する可能性があります。</dd>
+  </dl>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(95).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>だからさー…<br>
+    技術が何であろうが、どういう理由であろうが、他人様の作ったものを勝手にパクるのはダメなんだよ。<br>
+    私のように弁護士でもない一般人であるなら、他人様の作品を勝手に盗むのは手段がどうであれ<strong>ダメなものはダメだ</strong>と考えて頂ければ良いでしょう。<br>
+    そっちのほうが、ややこしい議論するより安心してインターネットで遊べますよ？<br>
+    したがって、ウォーターマークを除去する前に、その行為が法的に許されるかどうかを確認することが重要です。<br>
+    著作権者の許可を得ることが、最善の方法であると言えましょう。</p>
+
+   <p>では、ここから発展編へ移ります。<br>
+    個人サイト制作からプログラミングまで。<br>
+    それもAI学習からイラストを守ることを目的として、書いていきます。<br>
+    普通のhtml・css・JavaScriptの勉強であれば、書店で専用の教科書を買った方が良いです。<br>
+    プログラミングまで視野に入れば…<br>
+    例えば、複数画像へ一気に不可視的ウォーターマークを挿入なんてこともできます。
+   </p>
+  </div>
+
+  <h2>発展編：個人サイトでAI学習を防ぐ！</h2>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(96).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>SNSやイラストコミュニケーションサービスを使っている、言い換えるとインターネットにコンテンツをアップロードしている以上、何らかのリスクはあるでしょうね。<br>
+    これはイラストに限らず全ての媒体においてです。<br>
+    <a href="https://xfolio.jp/">xfolio</a>はとても優秀なプラットフォームだと思いますが、動作が重いという話を聞きます…<br>
+    早くインフラ整備が終わると良いですね。
+   </p>
+  </div>
+
+
+  <p>それで…そういう状況だからいっそのこと個人サイトを作ってしまおうというのが現在の潮流なのですが、さすがに個人サイトともなれば、かなりの自由が利きますよ？<br>
+   だって自分でプラットフォームを用意しちゃおうという試みなのですから。</p>
+
+  <h3>プラットフォームを作るとはどういうことか</h3>
+  <p>プラットフォームとは、コンピュータやソフトウェアが動くための土台のようなものです。<br>
+   例えば、X(旧：Twitter)や個人サイト、pixivなどは、特定のプラットフォーム上で動いています。</p>
+
+  <p class="gra">X(旧：Twitter)</p>
+  <p>X(旧：Twitter)は、インターネット上にあるソーシャルメディアプラットフォームです。<br>
+   このプラットフォームは、ユーザーがメッセージを投稿したり、他の人の投稿を読んだりするための土台を提供しています。<br>
+   X(旧：Twitter)自体が一つの大きなプラットフォームであり、その上で様々な機能やサービスが動いています。</p>
+
+  <p class="gra">pixiv</p>
+  <p>pixivは、イラストコミュニケーションサービスのプラットフォームです。<br>
+   ここでは、ユーザーが自分のイラストを投稿し、他のユーザーと共有したり、コメントをもらったりすることができます。<br>pixivというプラットフォームがあることで、イラストレーターたちは作品を発表し、コミュニケーションを取ることができます。
+  </p>
+
+  <p class="gra">個人サイト</p>
+  <p>個人サイトも同様に、ウェブサーバーというプラットフォーム上で動いています。<br>
+   ウェブサーバーは、ウェブページを表示するための基盤であり、個人サイトのデザインや内容をインターネット上で見られるようにしています。</p>
+
+  <p>要するにプラットフォームは、アプリケーションやサービスが動くための「舞台装置」と考えると分かりやすいかもしれませんね。<br>
+   それがあるからこそ、私たちは様々なデジタル体験を楽しむことができます。</p>
+
+  <h5>個人サイト制作はプラットフォーム制作</h5>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(108).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>X(旧：Twitter)は経営方針が嫌い、Pixivもなんかアレ、xfolioはちょっと敷居が…<br>
+    こういう感情面はけっこう大切だと思いますよ？<br>
+    私の場合、X(旧：Twitter)が不具合を連発し、システムとして信用できないプラットフォームだと思ったんですよ。<br>
+    だから個人サイトを稼働させているのです。<br>
+    絵師さんなら絵師さんなりの事情があるでしょう。</p>
+
+   <p>でも個人サイトだから最強というのも、ちょっと一考の余地ありですよ？<br>
+    個人サイトを入れる箱であるWebサーバーが不安定なら、もちろん個人サイトだって不安定になります。<br>
+    個人サイトを入れる箱であるWebサーバーの規約がAI学習するぞと言うなら、もちろん個人サイトだってAI学習されます。</p>
+  </div>
+
+  <p>とは言え個人サイトであれば、ただ単にプラットフォームを間借りするだけの状態よりも、ユーザーの自由が利く場面が非常に多いのです。<br>
+   だって自分で創るプラットフォームだから。<br>
+   そういう意味では確かに最強ですよね。<br>
+   クラウドへのホスティングまで視野に入れれば、想像できる範囲でいろんなことが、その人のスキル次第でやれちゃいます。</p>
+
+  <h4>自分でコーディング＆プログラミングできれば最高です</h4>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(115).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>これは…そりゃあそうでしょうと言うしかありません。<br>
+    さすがにサーバーくらいはレンタルサーバーを借りるとしても、html・css・JavaScript及びサーバーサイドスクリプトまで自分で書けるなら、選択肢が一気に広がります。<br>
+    サーバーサイドスクリプトは巷で話題になるcgiのことだなーと思って頂ければけっこうです。<br>
+    例えばこのサイトなら「Python」というプログラミング言語を使って稼働させています。<br>
+    他にはyamlやxmlといった言語を使って、全体をコントロールしています。<br>
+    もちろんrobots.txtだって設置していますしね。</p>
+  </div>
+
+  <h4>可能ならレンタルサーバーではなくクラウドを使おう</h4>
+  <p>レンタルサーバーも素晴らしいサービスがいっぱいあります。<br>
+   でもITに自信があるなら、次のようなクラウドサービスを使っていただくと、より安全圏にいられる可能性があります。<br>
+   結論から言えば、AIに対して非常に厳しいEU諸国に個人サイトを置いておきましょうということですよ。</p>
+  <ul>
+   <li>Google Cloud（このサイトの住処です）</li>
+   <li>Microsoft Azure</li>
+   <li>Amazon Web Service</li>
+  </ul>
+  <p>これらのクラウドに個人サイトをアップロードするとき、サーバーの「リージョン」というものを選択できるのです。<br>
+   リージョンはサーバーの場所のことです。<br>
+   それを、EU諸国のどれかに設定すれば良いということだよね。<br>
+   このサイトだってEUのサーバーを選択しています。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(119).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>現在、AI学習に関する最も厳しい法律を課しているのはEU諸国です。<br>
+    2024年に成立した「EU AI規制法」は、世界初の包括的なAI規制法であり、AIシステムのリスクレベルに応じて厳格な規制を設けています。<br>
+    この規制法は、AIシステムをリスクの程度に応じて分類し、それぞれに対して異なる規制を適用します。<br>
+    例えば、基本的人権を侵害する可能性のあるAIシステムは使用が禁止され、高リスクのAIシステムには厳格なリスク評価や透明性の確保が求められます。<br>
+    EUのAI規制法は、AI技術の安全性と倫理的な利用を確保することを目的としており、他の国々にも影響を与える可能性があります。</p>
+  </div>
+
+
+  <h5>でもクラウドはIT知識を要求します…</h5>
+  <p>ちゃんと時間作って勉強すれば大したことありません。<br>
+   でも学習コストというのは侮れないものがあります。<br>
+   現状のクラウドはIT初心者様にお勧めできるような環境ではないと思っています…<br>
+   用語も難しく、CLIというコマンドプロンプトみたいな画面の操作まで要求されてしまったり。<br>
+   ここらへんがもっとやりやすくなってくれると良いですね。</p>
+
+  <p>では、気を取り直して！<br>
+   ここからは個人サイトならではの対策案を紹介していきます
+  </p>
+
+  <h3>イラスト表示にJavaScriptを経由する</h3>
+  <div class="content">
+   <img src="/contents/itimages/feinne/フィーネ子供時代顔グラフィック.png" alt="フィーネ子供時代顔グラフィック.png"
+    class="graphic right-image fade-in-out">
+   <p>ちょっと言い方が難しいですから、簡単に言い換えます。<br>
+    要するに、JavaScriptを読めないクローラーは、JavaScript経由のコンテンツを拾いに行けないのですよ。<br>
+    だからイラストを表示する時に、ちょっとしたJavaScriptによるアニメーションなどを添えることで、AIクローラーがクロールしにくくなります。</p>
+
+   <p>例えば私のサイトであれば、ユーザーが画像のところにまでスクロールしてくると、徐々に画像が表示されるようなアニメーションが付いています。<br>
+    このセクションでフワッと浮かび上がる画像は、私の最推しキャラである<a href="https://another-eden.jp/">アナザーエデン</a>のフィーネです。<br>
+    こんな感じで掲載していくと、クローラーからイラストを守りやすいかと。</p>
+  </div>
+
+  <p>これはJavaScriptで制御しているのですが、ブラウザでJavaScriptの動作を抑止すると、草花の写真を除くほぼ全ての画像が閲覧不能になります。<br>
+   つまり、JavaScriptを読めないクローラーは、私のサイトにある「イラスト」のほとんど全てを認識できません。<br>
+   このようにJavaScriptを使用してイラストの表示を制御することで、一般的なウェブクローラーが画像を直接取得するのを防ぐことができます。</p>
+
+  <div class="content">
+   <img src="/contents/itimages/feinne/フィーネ猫なで.jpg" alt="フィーネ猫なで.jpg" class="graphic right-image fade-in-out">
+   <p>とはいえ人間の目には普通に見えるのですよ。<br>
+    今どきJavaScriptをoffにしたブラウザなんて使っていたら、ほっとんどのサイトで動作に支障が出てしまうからです。<br>
+    意図的にJavaScriptの実行を抑止しているユーザーはほぼいないとみて間違いありません。</p>
+
+   <p>ただし、AIは進化しています。<br>
+    JavaScriptを実行してコンテンツを取得する能力を持つものもあります。<br>
+    分かりやすそうな例を紹介しましょう。</p>
+  </div>
+
+
+  <dl>
+   <dt>Apify</dt>
+   <dd>Webサイトをスクレイピングし、データを収集するためのプラットフォーム。</dd>
+   <dt>Crawlee</dt>
+   <dd>Webサイトを自動的に巡回し、データを収集するためのツール。</dd>
+  </dl>
+
+  <div class="content">
+   <img src="/contents/itimages/feinne/フィーネ全身.jpg" alt="フィーネ全身.jpg" class="graphic right-image fade-in-out">
+   <p>クローラーとは特定の目的でWebサイトを自動的に巡回し、コンテンツを収集するプログラムのことを指します。<br>
+    ApifyとCrawleeはクローラーの一種と考えても良いでしょう。</p>
+
+   <p>さて、これらのクローラー（亜種も含めて）はJavaScriptを実行することで、動的に生成されるコンテンツを取得する能力を持っています。<br>
+    したがって、JavaScriptを使った対策だけでは不十分な場合があるため、他の対策も併用することをお勧めします。<br>
+    次はrobots.txtについてです。</p>
+  </div>
+
+
+  <h2>robots.txtファイルの設定</h2>
+  <p>ウェブクローラーに対して特定のページやディレクトリをクロールしないよう指示できます。<br>
+   ここからはちょっとWeb制作に関するお話になってくるので、真っ先にかみ砕きます。</p>
+
+  <p>まず、いろんなウェブサイトビルダーがありますが、robots.txtファイルを置けるものとそうでないものがあります。<br>
+   あまりに簡易的なウェブサイトビルダーだと、あるいは設定に難渋する可能性もあります。<br>
+   そういう意味でも、全て自分でコーディングしている個人サイトは強いですよね。</p>
+
+  <h4>robots.txtを置けるウェブサイトビルダー</h4>
+  <p>私が以前からお勧めしているGoogle SitesやBloggerではrobots.txtファイルの設定が可能です。<br>
+   しかし、他にもrobots.txtファイルの設定ができるウェブサイトビルダーはいくつかあります。</p>
+
+  <div class="content">
+   <img src="/contents/itimages/feinne/フィーネ猫を抱いている.jpg" alt="フィーネ猫を抱いている.jpg" class="graphic right-image fade-in-out">
+   <dl>
+    <dt>WordPress</dt>
+    <dd>プラグインを使用してrobots.txtファイルを編集できます。</dd>
+    <dt>Wix</dt>
+    <dd>SEO設定からrobots.txtファイルをカスタマイズできます。</dd>
+    <dt>Squarespace</dt>
+    <dd>デフォルトのrobots.txtファイルが提供されますが、カスタム設定も可能です。</dd>
+    <dt>Weebly</dt>
+    <dd>SEOツールを使ってrobots.txtファイルを編集できます。</dd>
+    <dt>Shopify</dt>
+    <dd>テーマのコードを編集することでrobots.txtファイルをカスタマイズできます。</dd>
+   </dl>
+  </div>
+
+
+  <p>これらのプラットフォームを利用することで、検索エンジンのクローラーに対する指示を細かく設定することができます。<br>
+   ただ、実際にこれらのプラットフォームで個人サイトを作り始める前に、念のため確認してください。<br>
+   ここで私が提供している情報が古い可能性だって十分にあります。
+  </p>
+
+  <h4>robots.txtの書き方</h4>
+  <div class="content">
+   <img src="/contents/itimages/feinne/星４フィーネステータス画面.jpg" alt="星４フィーネステータス画面.jpg"
+    class="graphic right-image fade-in-out">
+   <p>robots.txtはウェブサイトの管理者が検索エンジンのクローラーに対して、特定のページやディレクトリへのアクセスを制御するためのテキストファイルです。<br>
+    クローラーがどのページをクロール（収集）するかを指示できます。</p>
+  </div>
+
+
+  <h5>robots.txtの基本構成</h5>
+  <p>robots.txtファイルは、以下のような構成で記述されます。</p>
+
+  <div class="code-container">
+   <pre><code class="language-none">
+User-agent: [クローラー名]
+Disallow: [禁止するパス]
+Allow: [許可するパス]
+Sitemap: [サイトマップのURL]
+  </code></pre>
+  </div>
+
+  <dl>
+   <dt>User-agent</dt>
+   <dd>クローラーの名前を指定します。全てのクローラーに対して指示を出す場合は * を使います。</dd>
+   <dt>Disallow</dt>
+   <dd>クローラーにアクセスさせたくないページやフォルダを指定します。/ を使うと、サイト全体がブロックされます。</dd>
+   <dt>Allow</dt>
+   <dd>Disallowでブロックした中でも、特定のパスを許可したい場合に使います。</dd>
+   <dt>Sitemap</dt>
+   <dd>サイトマップのURLを指定します。<br>
+    クローラーにサイト全体の構造を知らせることができます。</dd>
+  </dl>
+
+  <h5>robots.txtの具体例</h5>
+
+  <p class="gra">全てのクローラーに対して全てのページを許可</p>
+  <div class="code-container">
+   <pre><code class="language-none">
+User-agent: *
+Disallow:
+  </code></pre>
+  </div>
+
+  <p class="gra">全てのクローラーに対して全てのページをブロック</p>
+  <div class="code-container">
+   <pre><code class="language-none">
+User-agent: *
+Disallow: /
+  </code></pre>
+  </div>
+
+  <p class="gra">特定のフォルダ（例：/private/）のみをブロック</p>
+  <div class="code-container">
+   <pre><code class="language-none">
+User-agent: *
+Disallow: /private/
+  </code></pre>
+  </div>
+
+  <p class="gra">特定のファイル形式（例：pdfファイル）をブロック</p>
+  <div class="code-container">
+   <pre><code class="language-none">
+User-agent: *
+Disallow: /*.pdf$
+  </code></pre>
+  </div>
+
+  <h5>robots.txtの設置場所</h5>
+  <p>robots.txtファイルは、ウェブサイトのルートディレクトリに配置します。<br>
+   例えば、https://example.com/robots.txt のように、サイトのルートからアクセス可能である必要があります。</p>
+
+  <h5>robots.txtの確認方法</h5>
+  <p>Google Search Consoleなどのツールを使用して、robots.txtファイルの設定を確認し、誤りがないかをチェックできます。</p>
+
+  <h5>robots.txtの注意点</h5>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(122).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>robots.txtは法的拘束力がないため、悪意のあるクローラーは無視することがあります。<br>
+    厳密な対策が必要な場合は、サーバーレベルでのIPブロックやCAPTCHA認証などを併用するのが効果的です。</p>
+   <p>では、いよいよプログラミングに移ります。<br>
+    誤解しないで頂きたいのは「個人サイトはプログラミングができなくても作れる」ということです。<br>
+    だから「発展編」としてあります。</p>
+  </div>
+
+
+  <h2>発展編：プログラミングでAI学習と無断転載を防ぐ！</h2>
+  <p>これも個人サイトの利点だと思うんですよね。<br>
+   特に自分でhtml・css・JavaScriptを書いて構築された個人サイトであれば、融通が利きやすい。<br>
+   ここではステガノグラフィという技術を使って、画像に情報を埋め込む方法をお話しします。</p>
+
+
+  <h3>ステガノグラフィ技術を使って画像に情報を埋め込む</h3>
+  <p>ステガノグラフィ技術を使って、画像に情報を埋め込む「Stegano」というツールがあります。<br>
+   これけっこう有名だと思うのですが、なぜかTwitterで言及している人を見つけられなかったです。</p>
+
+  <a href="https://pypi.org/project/stegano/">Stegano公式サイト</a>
+
+  <p>Steganoを使って不可視的ウォーターマークを入れる方法を書いていきます。<br>
+   SteganoはPythonで動作するステガノグラフィツールですから、まずはpythonのインストールからです。</p>
+
+  <h5>WindowsにPythonをインストール</h5>
+  <div class="content">
+   <img src="/contents/itimages/ステガノグラフィ.jpg" alt="不可視的ウォーターマークを入れていない写真" class="graphicsaki right-image fade-in-out">
+   <p>ここからはコマンドプロンプトを使っていきます。<br>
+    こんな感じで、画像にこっそりとステガノグラフィを入れていくのです。<br>
+    不可視的ウォーターマークを入れるソフトもありますが、このようにコマンドプロンプトを使えば、低スペックパソコンで複数画像へ一気にステガノグラフィを入れることも可能です。</p>
+  </div>
+
+  <p class="gra">1. Pythonのダウンロード</p>
+  <ol>
+   <li><a href="https://www.python.org/">Pythonの公式サイト</a>にアクセスします。</li>
+   <li>画面上部の「Downloads」メニューから「Windows」を選択します。</li>
+   <li>最新バージョンのPythonをダウンロードします。</li>
+  </ol>
+
+  <p class="gra">2. Pythonのインストール</p>
+  <ol>
+   <li>ダウンロードしたインストーラーを実行します。</li>
+   <li>インストール画面で「Add Python 3.x to PATH」にチェックを入れます。<br>
+    このチェックを入れることでPythonがシステムのPATHに追加され、コマンドプロンプトから直接Pythonを起動できるようになります。</li>
+   <li>「Install Now」をクリックしてインストールを開始します。</li>
+   <li>インストールが完了したら、「Close」をクリックしてインストーラーを閉じます。</li>
+  </ol>
+
+  <p class="gra">3. インストールの確認</p>
+  <ol>
+   <li>Windowsの検索バーに「cmd」と入力してコマンドプロンプトを開きます。</li>
+   <li>コマンドプロンプトに「python --version」と入力してEnterキーを押します。</li>
+   <li>インストールされたPythonのバージョンが表示されれば、インストールは成功です。</li>
+  </ol>
+
+  <p>これでPythonのインストールが完了し、使用する準備が整いました。<br>
+   次に、Steganoをインストールします。<br>
+   次のコマンドをコマンドプロンプトに入力します。</p>
+
+  <div class="code-container">
+   <pre><code class="language-bash">
+pip install stegano
+  </code></pre>
+  </div>
+
+  <p>steganoをインストールできたら…<br>
+   いよいよpythonによるプログラミングですね。<br>
+   コードをコピペしていただいても構いませんが、使う時はご自身でも十分に確認してください。<br>
+   可能なら、少しでいいからお勉強していただいたほうが良いです。</p>
+
+  <h5>ステガノグラフィを使うなら画像はpng形式で</h5>
+  <p>JPEG形式の画像に隠されたデータは、JPEGの圧縮アルゴリズムによって破損する可能性があります。<br>
+   特にLSB（最下位ビット）ステガノグラフィは、JPEGの圧縮によって隠されたメッセージが失われることがあります。<br>
+   そのため、PNG形式などの非圧縮形式の画像を使用することをお勧めします。<br>
+   次に示すのは、jpg画像をまとめてpng形式にするプログラムです。</p>
+
+  <p class="codegra" id="jpgpng_py">jpgをまとめてpngにするjpgpng.py</p>
+  <div class="code-container">
+   <pre><code class="language-python">
+import os
+from PIL import Image
+
+def convert_jpg_to_png(input_directory, output_directory):
+    if not os.path.exists(output_directory):
+        os.makedirs(output_directory)
+
+    for filename in os.listdir(input_directory):
+        if filename.lower().endswith(('.jpg', '.jpeg')):
+            input_path = os.path.join(input_directory, filename)
+            output_path = os.path.join(output_directory, os.path.splitext(filename)[0] + '.png')
+
+            img = Image.open(input_path)
+            img.save(output_path, 'PNG')
+
+            print(f"Converted {input_path} to {output_path}")
+
+# 入力ディレクトリのパス
+input_directory = r"C:\Users\アレコレ\OneDrive\_fein\google cloud\web tools\aiprotect\picture_metadata"
+# 出力ディレクトリのパス
+output_directory = r"C:\Users\アレコレ\OneDrive\_fein\google cloud\web tools\aiprotect\picture_metadata\metainput"
+
+convert_jpg_to_png(input_directory, output_directory)
+  </code></pre>
+  </div>
+
+  <h4>Steganoを使って画像に不可視的ウォーターマークを埋め込むプログラム</h4>
+
+  <div class="content">
+   <img src="/contents/itimages/picture_1hide/1hidepy_before.png" alt="不可視的ウォーターマークを入れていない写真"
+    class="graphicsaki right-image fade-in-out">
+   <p>まずは完成品の画像を陳列します。<br>
+    こちらは不可視的ウォーターマークを入れていない写真です。</p>
+  </div>
+  <hr>
+
+  <div class="content">
+   <img src="/contents/itimages/picture_1hide/output_image.png" alt="不可視的ウォーターマークを入れている写真"
+    class="graphicsaki right-image fade-in-out">
+   <p>こちらは不可視的ウォーターマークを入れている写真です。<br>
+    肉眼でご覧ください。<br>
+    判別できますか？</p>
+  </div>
+
+  <p>まずは１枚の画像を扱うpythonから行きましょう。</p>
+
+  <p class="codegra" id="1hide_py">１つの画像にメッセージを隠す1hide.py</p>
+  <div class="code-container">
+   <pre><code class="language-python">
+from stegano import lsb
+import base64
+
+# 隠すメッセージをUTF-8でエンコードし、Base64でエンコードする
+message = base64.b64encode("これはfeinの花写真です。AI学習及び画像盗用を禁止します。".encode('utf-8')).decode('utf-8')
+
+# メッセージを隠す
+secret = lsb.hide(r"C:\Users\アレコレ\OneDrive\_fein\google cloud\web tools\aiprotect\picture_1hide\flower1.png", message)
+secret.save(r"C:\Users\アレコレ\OneDrive\_fein\google cloud\web tools\aiprotect\picture_1hide\output_image.png")
+
+print("メッセージを画像に埋め込みました")
+  </code></pre>
+  </div>
+
+  <p>これはシンプルに１枚の画像へメッセージを隠すプログラムです。<br>
+   ディレクトリ表記の部分は、各自の画像の場所に置き換えてください。</p>
+
+  <p class="codegra" id="hidemessage_py">隠されたメッセージを確認するhidemessage.py</p>
+  <div class="code-container">
+   <pre><code class="language-python">
+from stegano import lsb
+import base64
+
+image_path = r"C:\Users\アレコレ\OneDrive\_fein\google cloud\web tools\aiprotect\picture_1hide\output_image.png"  # 任意の画像ファイルのパスを指定
+
+# 隠されたメッセージを読み取る
+message = lsb.reveal(image_path)
+
+# メッセージをBase64でデコードし、UTF-8でデコードする
+if message is not None:
+    decoded_message = base64.b64decode(message).decode('utf-8')
+    print(decoded_message)
+else:
+    print("メッセージが見つかりませんでした")
+  </code></pre>
+  </div>
+
+  <p>これは隠されたメッセージを確認するプログラムです。<br>
+   コマンドプロンプトにメッセージ内容が表示されます。<br>
+   このようにSteganoを使うことで、画像に不可視的なウォーターマークを簡単に埋め込むことができます。
+  </p>
+
+  <p class="codegra" id="all_hide_py">フォルダ内の画像全てにまとめてメッセージを隠すall_hide.py</p>
+  <div class="code-container">
+   <pre><code class="language-python">
+import os
+from stegano import lsb
+import base64
+
+def hide_message_in_directory(input_directory, output_directory, message):
+    # メッセージをUTF-8でエンコードし、Base64でエンコードする
+    encoded_message = base64.b64encode(message.encode('utf-8')).decode('utf-8')
+
+    if not os.path.exists(output_directory):
+        os.makedirs(output_directory)
+
+    for filename in os.listdir(input_directory):
+        file_path = os.path.join(input_directory, filename)
+
+        if filename.lower().endswith('.png'):
+            secret = lsb.hide(file_path, encoded_message)
+
+            new_file_path = os.path.join(output_directory, f"hidden_{filename}")
+            secret.save(new_file_path)
+            print(f"Message hidden in {new_file_path}")
+
+input_directory = r"path_to_your_input_directory"  # 画像が保存されている入力ディレクトリのパス
+output_directory = r"path_to_your_output_directory"  # メッセージを隠した画像を保存する出力ディレクトリのパス
+message = "隠したいメッセージ"
+hide_message_in_directory(input_directory, output_directory, message)
+    </code></pre>
+  </div>
+
+  <p>これはフォルダ内の画像全てにメッセージを隠すプログラムです。<br>
+   input_directoryとoutput_directoryの部分は、各自の画像の場所に置き換えてください。</p>
+
+
+  <p class="codegra" id="all_hidemessage_py">フォルダ内にある全て画像に隠されたメッセージを確認するall_hidemessage.py</p>
+  <div class="code-container">
+   <pre><code class="language-python">
+from stegano import lsb
+import base64
+import os
+
+def reveal_message_from_directory(directory):
+    for filename in os.listdir(directory):
+        file_path = os.path.join(directory, filename)
+
+        if filename.lower().startswith('hidden_') and filename.lower().endswith('.png'):
+            message = lsb.reveal(file_path)
+
+            if message is not None:
+                decoded_message = base64.b64decode(message).decode('utf-8')
+                print(f"Message from {filename}: {decoded_message}")
+            else:
+                print(f"No message found in {filename}")
+
+output_directory = r"C:\Users\アレコレ\OneDrive\_fein\google cloud\web tools\aiprotect\picture_allhide\afterhide"  # メッセージを隠した画像を保存する出力ディレクトリのパス
+reveal_message_from_directory(output_directory)
+    </code></pre>
+  </div>
+
+  <p>これはフォルダ内の画像全てに隠されたメッセージを確認するプログラムです。<br>
+   ディレクトリ表記の部分は、各自の画像の場所に置き換えてください。</p>
+
+  <p>こちらも完成品を置きましょう。<br>
+   このように、複数画像にまとめて不可視的ウォーターマークを入れることができます。</p>
+
+  <hr>
+  <div class="content">
+   <img src="/contents/itimages/picture_allhide/flower1.png" alt="不可視的ウォーターマークを入れていない写真１"
+    class="graphicsaki right-image fade-in-out">
+   <p>こちらは不可視的ウォーターマークを入れていない写真１です。</p>
+  </div>
+  <hr>
+  <div class="content">
+   <img src="/contents/itimages/picture_allhide/flower2.png" alt="不可視的ウォーターマークを入れていない写真２"
+    class="graphicsaki right-image fade-in-out">
+   <p>こちらは不可視的ウォーターマークを入れていない写真２です。</p>
+  </div>
+  <hr>
+  <div class="content">
+   <img src="/contents/itimages/picture_allhide/flower3.png" alt="不可視的ウォーターマークを入れていない写真３"
+    class="graphicsaki right-image fade-in-out">
+   <p>こちらは不可視的ウォーターマークを入れていない写真３です。</p>
+  </div>
+  <hr>
+  <div class="content">
+   <img src="/contents/itimages/picture_allhide/afterhide/hidden_flower1.png" alt="不可視的ウォーターマークを入れている写真１"
+    class="graphicsaki right-image fade-in-out">
+   <p>こちらは不可視的ウォーターマークを入れている写真１です。</p>
+  </div>
+  <hr>
+  <div class="content">
+   <img src="/contents/itimages/picture_allhide/afterhide/hidden_flower2.png" alt="不可視的ウォーターマークを入れている写真２"
+    class="graphicsaki right-image fade-in-out">
+   <p>こちらは不可視的ウォーターマークを入れている写真２です。</p>
+  </div>
+  <hr>
+  <div class="content">
+   <img src="/contents/itimages/picture_allhide/afterhide/hidden_flower3.png" alt="不可視的ウォーターマークを入れている写真３"
+    class="graphicsaki right-image fade-in-out">
+   <p>こちらは不可視的ウォーターマークを入れている写真３です。</p>
+  </div>
+  <hr>
+
+  <h5>ステガノグラフィとは何か</h5>
+  <p>ステガノグラフィ（Steganography）とは、情報を他のデータに埋め込んで、その存在自体を隠す技術のことです。<br>
+   今回のような画像に関する文脈では、画像のピクセルデータにメッセージやデータを埋め込むことで、見た目には分からない形で情報を隠すことができます。<br>
+   例えば、画像の各ピクセルの色情報の最下位ビット（LSB）を変更することで、メッセージを埋め込む方法がありますね。<br>
+   古代から使われてきた技術で、現代ではデジタルメディアにおける情報隠蔽やセキュリティの分野で利用されています。</p>
+
+  <p>最も注目すべきなのは、この方法を使うと、画像の見た目にほとんど変化がないことですよ。<br>
+   隠された情報が検知されにくいという特徴があるのです。<br>
+   AI学習の阻止という意味ではノイズを明確に入れたほうが良いでしょうね。<br>
+   しかし、このステガノグラフィは無断転載対策としては非常に優れた手法と思います。</p>
+
+  <p>ちなみに、ITのお勉強という意味であれば、このステガノグラフィは誰でも知ってるレベルの基本です。<br>
+   セキュリティの分野でよく見る言葉ですよね。<br>
+   なんでTwitterのイラスト界隈で目にしないんだろうと、ずっと不思議に思っています。<br>
+   まぁこれでも完璧にはならないからでしょう…<br>
+   ステガノグラフィも無敵ではないです。</p>
+
+
+  <h3>画像をスライスして安易な収集を防ぐ</h3>
+  ここでは、pythonで次のようなことをするプログラムを組みます。
+  <ol>
+   <li>ある１枚の画像を縦もしくは横に分割する</li>
+   <li>その画像は任意のディレクトリに保存できる</li>
+   <li>分割された画像を綺麗に表示できるよう、htmlコードをテキスト出力させる</li>
+  </ol>
+
+  <p>個人サイトに画像を分割して表示することで、簡単に収集できないようにします。<br>
+   しかし極力綺麗に表示させたいですし、同時に手間も削減したいです。<br>
+   このスクリプトは、画像を縦もしくは横に分割し、任意のディレクトリに保存し、分割された画像を綺麗に表示するHTMLコードを生成します。<br>
+   まずは完成形をお見せします。</p>
+
+  <div style="width: 100%; overflow: hidden;">
+   <div style="float: left; width: 60%;">
+    <p>【スライスされた画像が並んでいる】</p>
+   </div>
+   <div style="float: right; width: 40%;">
+    <img src="/contents/itimages/cat_a/split_1.png" alt="Image Slice" style="display: block; width: 100%;">
+    <img src="/contents/itimages/cat_a/split_2.png" alt="Image Slice" style="display: block; width: 100%;">
+    <img src="/contents/itimages/cat_a/split_3.png" alt="Image Slice" style="display: block; width: 100%;">
+    <img src="/contents/itimages/cat_a/split_4.png" alt="Image Slice" style="display: block; width: 100%;">
+    <img src="/contents/itimages/cat_a/split_5.png" alt="Image Slice" style="display: block; width: 100%;">
+    <img src="/contents/itimages/cat_a/split_6.png" alt="Image Slice" style="display: block; width: 100%;">
+    <img src="/contents/itimages/cat_a/split_7.png" alt="Image Slice" style="display: block; width: 100%;">
+    <img src="/contents/itimages/cat_a/split_8.png" alt="Image Slice" style="display: block; width: 100%;">
+    <img src="/contents/itimages/cat_a/split_9.png" alt="Image Slice" style="display: block; width: 100%;">
+    <img src="/contents/itimages/cat_a/split_10.png" alt="Image Slice" style="display: block; width: 100%;">
+
+   </div>
+  </div>
+
+  <p>いかがでしょうか？<br>
+   この上下にある草花と木の実の画像は、本当は10枚分にスライスされているのです。<br>
+   よく見ないとスライスされていることが分かりにくいでしょう。</p>
+
+  <div style="width: 100%; overflow: hidden;">
+   <div style="float: left; width: 60%;">
+    <p>【実際には横にスライスされている】</p>
+   </div>
+   <div style="float: right; width: 40%;">
+    <img src="/contents/itimages/cat_b/split_1.png" alt="Image Slice" style="display: block; width: 100%;">
+    <img src="/contents/itimages/cat_b/split_2.png" alt="Image Slice" style="display: block; width: 100%;">
+    <img src="/contents/itimages/cat_b/split_3.png" alt="Image Slice" style="display: block; width: 100%;">
+    <img src="/contents/itimages/cat_b/split_4.png" alt="Image Slice" style="display: block; width: 100%;">
+    <img src="/contents/itimages/cat_b/split_5.png" alt="Image Slice" style="display: block; width: 100%;">
+    <img src="/contents/itimages/cat_b/split_6.png" alt="Image Slice" style="display: block; width: 100%;">
+    <img src="/contents/itimages/cat_b/split_7.png" alt="Image Slice" style="display: block; width: 100%;">
+    <img src="/contents/itimages/cat_b/split_8.png" alt="Image Slice" style="display: block; width: 100%;">
+    <img src="/contents/itimages/cat_b/split_9.png" alt="Image Slice" style="display: block; width: 100%;">
+    <img src="/contents/itimages/cat_b/split_10.png" alt="Image Slice" style="display: block; width: 100%;">
+
+   </div>
+  </div>
+
+  <p>学生時代のWebサイトでは、ここまでは実装しなかったですね。<br>
+   でも絵師さん界隈でイラストをスライスするという話が出ていて、懐かしく思ったものです。</p>
+
+  <p class="codegra" id="sliceimg_py">画像をスライスしてhtmlも出力するsliceimg.py</p>
+  <div class="code-container">
+   <pre><code class="language-python">
+import os
+from PIL import Image
+
+def split_image(image_path, output_directory, split_direction='horizontal', num_splits=10):
+    if not os.path.exists(output_directory):
+        os.makedirs(output_directory)
+
+    img = Image.open(image_path)
+    img_width, img_height = img.size
+
+    split_images = []
+
+    if split_direction == 'horizontal':
+        split_height = img_height // num_splits
+        for i in range(num_splits):
+            box = (0, i * split_height, img_width, (i + 1) * split_height)
+            split_img = img.crop(box)
+            split_img_path = os.path.join(output_directory, f&quot;split_{i + 1}.png&quot;)
+            split_img.save(split_img_path)
+            split_images.append(split_img_path)
+    elif split_direction == 'vertical':
+        split_width = img_width // num_splits
+        for i in range(num_splits):
+            box = (i * split_width, 0, (i + 1) * split_width, img_height)
+            split_img = img.crop(box)
+            split_img_path = os.path.join(output_directory, f&quot;split_{i + 1}.png&quot;)
+            split_img.save(split_img_path)
+            split_images.append(split_img_path)
+
+    return split_images
+
+def generate_html(image_paths, output_html_path):
+    html_content = &quot;&quot;&quot;
+    &lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Image Slices&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div style=&quot;width: 100%; overflow: hidden;&quot;&gt;
+            &lt;div style=&quot;float: left; width: 60%;&quot;&gt;
+                &lt;p&gt;ここにテキストが入ります。このテキストは画像の左側に回り込みます。&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div style=&quot;float: right; width: 40%;&quot;&gt;
+    &quot;&quot;&quot;
+    for image_path in image_paths:
+        html_content += f&#x27;&lt;img src=&quot;{image_path}&quot; alt=&quot;Image Slice&quot; style=&quot;display: block; width: 100%;&quot;&gt;\n&#x27;
+    html_content += &quot;&quot;&quot;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+    &quot;&quot;&quot;
+
+    with open(output_html_path, &#x27;w&#x27;) as f:
+        f.write(html_content)
+
+# 入力画像のパス
+image_path = r&quot;C:\Users\アレコレ\OneDrive\_fein\google cloud\web tools\aiprotect\picture_slice\slice_a.png&quot;
+# 出力ディレクトリのパス
+output_directory = r&quot;C:\Users\アレコレ\OneDrive\_fein\google cloud\web tools\aiprotect\picture_slice\cat_a&quot;
+# 出力HTMLファイルのパス
+output_html_path = r&quot;C:\Users\アレコレ\OneDrive\_fein\google cloud\web tools\aiprotect\picture_slice\cat_a.html&quot;
+
+# 画像を分割
+split_images = split_image(image_path, output_directory, split_direction=&#x27;horizontal&#x27;, num_splits=10)
+
+# HTMLファイルを生成
+generate_html(split_images, output_html_path)
+
+print(f&quot;Images have been split and saved to {output_directory}. HTML file has been generated at {output_html_path}.&quot;)
+  </code></pre>
+  </div>
+
+  <p>このスクリプトではsplit_image関数が画像を分割し、generate_html関数が分割された画像を表示するHTMLコードを生成します。<br>
+   image_path、output_directory、およびoutput_html_pathを適切なパスに置き換えて使用してください。</p>
+
+  <p>split_image関数が画像を分割する部分を担当しています。<br>
+   画像を指定された方向（縦または横）に分割し、指定された数（num_splits）に基づいて分割します。</p>
+
+  <p>例えば、num_splits=2と指定した場合、画像は2つの部分に分割されます。<br>
+   分割の細かさはnum_splitsの値によって決まります。<br>
+   値が大きいほど、画像はより細かく分割されます。</p>
+
+  <p class="gra">関数の動作の説明</p>
+
+  <dl>
+   <dt>横方向に分割する場合（split_direction='horizontal'）</dt>
+   <dd>画像の高さをnum_splitsで割り、各部分の高さを計算します。</dd>
+   <dd>画像を上から下に向かってnum_splits個の部分に分割します。</dd>
+  </dl>
+
+  <dl>
+   <dt>縦方向に分割する場合（split_direction='vertical'）</dt>
+   <dd>画像の幅をnum_splitsで割り、各部分の幅を計算します。</dd>
+   <dd>画像を左から右に向かってnum_splits個の部分に分割します。</dd>
+  </dl>
+
+  <p>例えば、num_splits=4と指定すると、画像は4つの部分に分割されます。<br>
+   分割の細かさを調整したい場合は、num_splitsの値を変更してください。</p>
+
+  <p>num_splitsを20などの大きな数に設定すると、その分だけ自動的に&lt;img&gt;タグが生成されます。<br>
+   generate_html関数はsplit_image関数で生成されたすべての分割画像のパスをリストとして受け取り、そのリストに基づいてHTMLコードを生成します。</p>
+
+  <p>仮にnum_splits=20と設定した場合、split_image関数は画像を20個に分割し、それぞれの分割画像のパスをimage_pathsリストに追加します。<br>
+   その後、generate_html関数はimage_pathsリストの各パスに対して&lt;img&gt;タグを生成し、HTMLファイルに書き込みます。</p>
+
+  <p class="gra">全体の流れを再確認</p>
+
+  <ol>
+   <li>split_image関数で画像を20個に分割し、分割された画像のパスをimage_pathsリストに格納します。</li>
+   <li>generate_html関数でimage_pathsリストを受け取り、各画像のパスに対して&lt;img&gt;タグを生成し、HTMLファイルを作成します。</li>
+  </ol>
+
+  <h4>htmlをpythonに出力させた後の作業</h4>
+  <p>これなんですよ。<br>
+   稼働させている個人サイトへ直接挿入することもできますが、大切なイラストをスライスしているのですから、さすがに途中で手作業を挟んだ方がよろしいかと。<br>
+   でもその分の手間がかかります。<br>
+   とりあえず箇条書きにしますね？</p>
+
+  <ol>
+   <li>元のイラストのコピーを安全なディレクトリに配置</li>
+   <li>上記の「sliceimg.py」を実行する</li>
+   <li>スライスされた画像を、個人サイトの画像ディレクトリへ配置</li>
+   <li>生成されたhtmlを、個人サイトの任意の箇所へコピー貼り付け</li>
+   <li>貼り付けたhtmlコードを、個人サイトのディレクトリ構造に合うよう変更</li>
+   <li>動作確認</li>
+   <li>アップロード</li>
+  </ol>
+
+  <p>手順の４と５のハードルが高いですよね…<br>
+   慣れてる人がやるにしても、慎重な作業が求められると思います。<br>
+   ただ単に画像をスライスするだけではなく、それを個人サイトへ実装し、かつレスポンシブデザインに気を配りつつ、綺麗に配置しなければなりません。<br>
+   少なくともこの画像スライスに関しては、課題が残ると言って良いでしょう。<br>
+   IT初心者さんでも扱えるようにする必要があると思います。</p>
+
+  <h3>画像のメタデータに著作権情報を追加</h3>
+  <p>画像ファイルのプロパティの詳細タブに表示される情報がメタデータです。<br>
+   ここには、撮影日時、カメラの設定、位置情報などの他に、著作権情報も含めることができます。<br>
+   Windowsのエクスプローラーで画像ファイルを右クリックし、「プロパティ」を選択して「詳細」タブを開きましょう。<br>
+   すると、「タイトル・作成者・著作権・コメント」のような情報が表示されるはずです。</p>
+
+  <p>これらのフィールドに著作権情報を入力することで、画像のメタデータに著作権情報を追加することができます。<br>
+   画像が無断で使用された場合でも、著作権者の情報が確認できるようになるわけですよ。<br>
+   でもAI学習の阻止に直接的な役割を果たすわけではありません。</p>
+
+  <p>このセクションでは、メタデータを追加した草花の写真を添えていきましょうね🌸</p>
+
+  <h4>複数画像のメタデータにまとめて情報を入力する</h4>
+  <p>画像のメタデータに著作権情報を追加するPythonスクリプトの例を紹介します。<br>
+   Pillowライブラリを使用してPNG画像のメタデータに著作権情報を追加します。</p>
+
+  <p>すでに上記でPythonのインストールはご紹介しました。<br>
+   今度はPillowライブラリをインストールします。</p>
+
+  <p class="codegra">Pillowライブラリをインストールするコマンド</p>
+  <div class="code-container">
+   <pre><code class="language-bash">
+pip install pillow
+  </code></pre>
+  </div>
+
+  <p>次に、以下のスクリプトを使用して、画像のメタデータをまとめて追加します。<br>
+   これはある任意のフォルダに入っている画像全てに、共通する著作権情報と作者情報を一気に入力できるプログラムです。</p>
+
+  <p class="codegra" id="pngmetadata_py">メタデータをまとめて入力するプログラムpngmetadata.py</p>
+  <div class="code-container">
+   <pre><code class="language-python">
+import os
+from PIL import Image, PngImagePlugin
+
+def add_metadata_to_png_images(input_directory, output_directory, metadata_dict):
+    if not os.path.exists(output_directory):
+        os.makedirs(output_directory)
+
+    for filename in os.listdir(input_directory):
+        if filename.lower().endswith('.png'):
+            input_path = os.path.join(input_directory, filename)
+            output_path = os.path.join(output_directory, filename)  # 出力先を指定
+
+            img = Image.open(input_path)
+            metadata = PngImagePlugin.PngInfo()
+
+            for key, value in metadata_dict.items():
+                metadata.add_text(key, value)
+
+            img.save(output_path, pnginfo=metadata)
+
+            print(f"Metadata added to {output_path}")
+
+# 入力ディレクトリのパス
+input_directory = r"C:\Users\アレコレ\OneDrive\_fein\google cloud\web tools\aiprotect\picture_metadata\metainput"
+# 出力ディレクトリのパス
+output_directory = r"C:\Users\アレコレ\OneDrive\_fein\google cloud\web tools\aiprotect\picture_metadata\metaafter"
+# メタデータ情報
+metadata_dict = {
+    "Copyright": "© 2023 fein. All rights reserved.",
+    "Author": "fein_den_scoth_mn"
+}
+
+add_metadata_to_png_images(input_directory, output_directory, metadata_dict)
+  </code></pre>
+  </div>
+
+  <p>順を追って説明します。<br>
+   このスクリプトは指定されたフォルダ内のPNG画像に対して、著作権情報と作者情報を追加し、別の指定されたフォルダに保存しているんですよね。</p>
+
+  <div class="content">
+   <img src="/contents/itimages/metainput/metaflower1.png" alt="メタデータを入れた写真１"
+    class="graphicsaki right-image fade-in-out">
+   <dl>
+    <dt>ライブラリのインポート</dt>
+    <dd>osモジュールとPillow（PIL）ライブラリのImageとPngImagePluginをインポートしています。<br>
+     これでファイル操作や画像操作が可能になります。</dd>
+
+    <dt>関数の定義</dt>
+    <dd>add_metadata_to_png_imagesという関数を定義しています。<br>
+     この関数は、3つの引数（入力ディレクトリ、出力ディレクトリ、メタデータ辞書）を取ります。</dd>
+
+    <dt>出力ディレクトリの作成</dt>
+    <dd>関数の最初で、指定された出力ディレクトリが存在しない場合、新たにディレクトリを作成します。</dd>
+
+    <dt>ファイルの処理</dt>
+    <dd>入力ディレクトリ内のファイルを一つずつ処理します。<br>
+     ファイル名がPNG形式で終わるもの（.png）を対象にします。</dd>
+
+    <dt>画像の読み込みとメタデータの追加</dt>
+    <dd>対象ファイルのパスを取得し、その画像を開きます。<br>
+     PngImagePlugin.PngInfoを使用して、新しいメタデータオブジェクトを作成します。<br>
+     メタデータ辞書に含まれるキーと値を順に追加していきます。</dd>
+
+    <dt>画像の保存</dt>
+    <dd>メタデータが追加された画像を、指定された出力ディレクトリ内に同じファイル名で保存します。</dd>
+
+    <dt>処理の完了メッセージ</dt>
+    <dd>各画像ファイルに対して、メタデータが追加されたことを示すメッセージを表示します。</dd>
+   </dl>
+  </div>
+
+  <p>次に、以下のスクリプトを使用して、画像にメタデータが入っているか確認します。</p>
+
+  <p class="codegra" id="pngmetacheck_py">メタデータをまとめてチェックするpngmetacheck.py</p>
+  <div class="code-container">
+   <pre><code class="language-python">
+import os
+from PIL import Image
+
+def print_png_metadata(input_directory):
+    for filename in os.listdir(input_directory):
+        if filename.lower().endswith('.png'):
+            input_path = os.path.join(input_directory, filename)
+
+            img = Image.open(input_path)
+            metadata = img.info
+
+            print(f"Metadata for {input_path}:")
+            for key, value in metadata.items():
+                print(f"  {key}: {value}")
+
+# 入力ディレクトリのパス
+input_directory = r"C:\Users\アレコレ\OneDrive\_fein\google cloud\web tools\aiprotect\picture_metadata\metaafter"
+
+print_png_metadata(input_directory)
+  </code></pre>
+  </div>
+
+  <p>ここも説明しないとね。<br>
+   このスクリプトは指定されたフォルダ内のPNG画像に含まれるメタデータをコンソール上に表示します。</p>
+
+  <div class="content">
+   <img src="/contents/itimages/metainput/metaflower2.png" alt="メタデータを入れた写真１"
+    class="graphicsaki right-image fade-in-out">
+   <dl>
+    <dt>ライブラリのインポート</dt>
+    <dd>osモジュールとPillow（PIL）ライブラリのImageモジュールをインポートしています。<br>
+     これでファイル操作や画像操作が可能になります。</dd>
+
+    <dt>関数の定義</dt>
+    <dd>print_png_metadataという関数を定義しています。<br>
+     この関数は入力ディレクトリを引数として取ります。</dd>
+
+    <dt>ファイルの処理</dt>
+    <dd>入力ディレクトリ内のファイルを一つずつ処理します。<br>
+     ファイル名がPNG形式で終わるもの（.png）を対象にします。</dd>
+
+    <dt>画像の読み込みとメタデータの取得</dt>
+    <dd>
+     対象ファイルのパスを取得し、その画像を開きます。<br>
+     画像のメタデータをimg.infoを使用して取得します。
+    </dd>
+
+    <dt>メタデータの表示</dt>
+    <dd>
+     取得したメタデータをキーと値のペアで表示します。<br>
+     各キーと値が表示されるようにループ処理を行います。
+    </dd>
+   </dl>
+  </div>
+
+  <h2>メタデータの基本をおさらいする</h2>
+  <p>メタデータには画像形式によって扱える内容が異なる場合がありますが、共通して利用できるメタデータも存在します。<br>
+   JPEG、PNG、JPEGの3つの画像形式で共通して扱える主なメタデータには、次のようなものがありますね。</p>
+
+  <p class="gra">共通して扱えるメタデータ</p>
+  <dl>
+   <dt>著作権情報 (Copyright)</dt>
+   <dd>著作者の権利を表す情報です。</dd>
+
+   <dt>作者情報 (Author)</dt>
+   <dd>画像の作成者または著作者の名前です。</dd>
+
+   <dt>タイトル (Title)</dt>
+   <dd>画像のタイトルや名前です。</dd>
+
+   <dt>説明 (Description)</dt>
+   <dd>画像の内容や説明です。</dd>
+
+   <dt>キーワード (Keywords)</dt>
+   <dd>画像に関連するキーワードやタグです。</dd>
+  </dl>
+
+  <div class="content">
+   <img src="/contents/itimages/metainput/metaflower3.png" alt="メタデータを入れた写真１"
+    class="graphicsaki right-image fade-in-out">
+   <p>あまり細かくは書かないけど、JPG形式ではExifメタデータ、PNG形式では独自のチャンクを使用してメタデータを保存します。<br>
+    これがややこしいんですよね。<br>
+    私も学生時代はずいぶん悩みました。<br>
+    でもこうして共通のメタデータフィールドを利用することも可能です。</p>
+
+   <p>このページでは著作権情報と作者情報のみをまとめて追加しています。<br>
+    とりあえずイラストを無断転載から守るという意味では、これで用が足りるだろうと思っているからね。<br>
+    ちなみに著作権情報と作者情報はそれぞれ異なる意味を持ち、異なる役割を果たします。</p>
+  </div>
+
+
+  <p><strong>著作権情報
+    (Copyright)</strong>は、特定の作品に対する法的な権利を示します。これは通常、作品の作成者または著作権を所有する個人や団体によって主張されるものです。<br>
+   「&copy; 2023 fein. All rights reserved.」のように記述します。</p>
+
+  <p><strong>作者情報
+    (Author)</strong>は、実際に作品を作成した個人の名前です。これは作品のクリエイターやアーティスト、著者の名前を示します。著作権情報とは異なり、作者情報は必ずしも法的権利に関係しないことがありますが、作品のクリエイターを特定するために重要です。<br>
+   「fein_den_scoth_mn」のように記述します。
+  </p>
+
+  <p>短くまとめると…<br>
+   著作権情報は法的な権利を示し、誰がその作品の著作権を所有しているかを明示します。<br>
+   作者情報は作品を実際に作成した人物の名前であり、作品のクリエイターを特定します。<br>
+   このように、両者は関連しているものの、異なる役割を持っています。</p>
+
+  <h4>日本語にも対応させる場合</h4>
+  <p>ここではアルファベットのみとしましたが、著作権情報や作者情報を日本語で書きたい場合はどうなるでしょう。<br>
+   ファイルを読み書きするときに明示的にエンコーディングを指定することができます。</p>
+  <div class="code-container">
+   <pre><code class="language-python">
+with open('file.txt', 'r', encoding='utf-8') as file:
+content = file.read()
+  </code></pre>
+  </div>
+  <p>ただ、各々の環境で試してみないことには正確なことは分かりません。<br>
+   Macを使っている人もいるからね。<br>
+   まだ各種OSをカバーする仮想環境は準備できていないので、いずれ検討しましょう。</p>
+
+  <h2>とりあえず、以上です</h2>
+  <p>しかし、前述したようにこのページも拡張していこうと思います。<br>
+   私自身もいろいろ調べていきますし、こういう「AI学習からイラストを守る」みたいな難題は、非常に勉強になるからです。<br>
+   最先端の技術について考えることにも繋がりますしね。</p>
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/protect.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

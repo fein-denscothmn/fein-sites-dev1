@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+
+ <!-- Microsoft tag -->
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+
+ <meta charset="UTF-8">
+
+ <!--基本のメタタグ-->
+ <meta name="description" content="個人サイトの「やることリスト」です。このページから、いろんなガイドページへジャンプできます。">
+ <meta name="keywords" content="個人サイト, 初心者, SEO">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="個人サイトの「やることリスト」">
+ <meta property="og:description" content="個人サイトの「やることリスト」です。このページから、いろんなガイドページへジャンプできます。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/sitestep.html">
+
+ <!--検索ヒット時のアイコン-->
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "個人サイトの「やることリスト」",
+  "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/sitestep.html",
+  "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+}
+</script>
+
+ <!--レスポンシブデザイン-->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!--CSS-->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="../css/menu.css">
+ <link rel="stylesheet" type="text/css" href="../css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="../css/feinheadline1.css">
+ <link rel="stylesheet" type="text/css" href="../css/flower.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <!--JavaScript-->
+ <script src="../script/underline.js"></script>
+ <script src="../script/feinfade.js"></script>
+ <script src="../script/feinScroll.js"></script>
+ <!-- gsapの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <!-- prismの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+
+ <!-- google fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+
+ <!--ページタイトル-->
+ <title>個人サイトの「やることリスト」</title>
+
+ <!--ASノーナのファビコン-->
+ <link rel="icon" sizes="32x32" href="../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">個人サイトの「やることリスト」</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く
+    ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="個人サイトの「やることリスト」の目次を開く ▼"
+   data-close-text="個人サイトの「やることリスト」の目次を閉じる ▲">個人サイトの「やることリスト」の目次を開く ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>個人サイトの「やることリスト」</span></h1>
+
+  <p>ここに書いてあるのは、個人サイトを作りたい人のためのtodoリストです。<br>
+   細かい説明は別のページに譲り、一目でやることが分かるようにしてあります。</p>
+  <p>パソコンに慣れていない人と慣れている人に分けて書いているので、目次をタップしてそれぞれの項目へ向かってください。</p>
+
+  <h4>どれくらいの知識が必要か</h4>
+  <p>結論から言えば知識ゼロでも個人サイトは作れます。<br>
+   そういうサービスもたくさんあるのでね。<br>
+   また、このページで言うところの「パソコンに慣れていない人」と「パソコンに慣れている人」については、厳密な区分などありません。<br>
+   しかし便宜上、このぺージでは次のように分けています。</p>
+
+  <p class="gra">パソコンに慣れていない人</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(121).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>いろいろ考えられるでしょうけど、こういう雰囲気をイメージして頂ければよろしいかと。<br>
+    次に挙げる項目に当てはまりそうなら、「PCに慣れていない人向け：個人サイト制作todoリスト」のコーナーをご覧ください。</p>
+   <ul>
+    <li>慣れていないどころかパソコンを持っていない。</li>
+    <li>WordやExcelくらいなら触れるが、マクロなんかできない。</li>
+    <li>htmlくらいなら分かるが、cssやJavaScriptを要求されると苦しい。</li>
+    <li>クライアントとサーバと言われて、ピンとこない。</li>
+    <li>ブログよりWebサイトの方がカッコいいと漠然と感じている。</li>
+    <li>プログラミングなんて絶対に嫌です。</li>
+   </ul>
+  </div>
+
+
+  <p class="gra">パソコンに慣れている人</p>
+  <p>こっちは深く考えていません。ていうか、こういう人はこのページに来ないはず。<br>
+   Officeソフトウェア全般はもちろんのこと、現在のAIやそれの開発基盤であるクラウドのことなどもご存じのはずです。<br>
+   htmlは既に知っており、各種のスクリプトを使い分けできたり、OSをはじめとする開発環境が違っても、ある程度なら対応可能といったレベルです。<br>
+   他にも多数の事柄がありますが、こちらに関しては既に知識及び経験があることが、前提となります。</p>
+
+  <h2>PCに慣れていない人向け：個人サイト制作todoリスト</h2>
+  <p>細かい説明は抜き♪<br>
+   シンプルにtodoリストを書きますね。</p>
+  <h4>目標設定</h4>
+  <ol>
+   <li>Webサイトの目的を明確にする（例：ブログ、ポートフォリオ、ビジネスサイトなど）。</li>
+   <li>どんな人たちに見て欲しいか決める。</li>
+  </ol>
+
+  <h4>プラットフォーム選び</h4>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(82).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <ol>
+    <li>コード不要のWebサイトビルダーを選ぶ（後述します）。</li>
+    <li>無料プランやトライアルを利用してみる。</li>
+   </ol>
+
+   <h4>アカウント作成</h4>
+   <ol>
+    <li>選んだプラットフォームでアカウントを作成する。</li>
+    <li>必要なプランを選択する（ぜひ、無料プランから始めましょう）。</li>
+   </ol>
+
+   <h4>テンプレート選び</h4>
+   <ol>
+    <li>目的に合ったテンプレートを選ぶ。</li>
+    <li>テンプレートをカスタマイズする（色、フォント、レイアウトなど）。詳しくは<a href="sitedesign.html">個人サイトのデザインやレイアウト</a>をご覧ください。</li>
+   </ol>
+
+   <h4>コンテンツ作成</h4>
+   <ol>
+    <li>必要なページを作成する（例：ホーム、アバウト、コンタクト）。</li>
+    <li>テキスト、画像、動画などのコンテンツを準備する。</li>
+    <li>コンテンツを各ページに配置する。</li>
+   </ol>
+  </div>
+  <h4>基本的なSEO設定</h4>
+  <ol>
+   <li>各ページのタイトルと文章をちゃんと書く。</li>
+   <li>画像に代替テキストを追加する。</li>
+  </ol>
+
+  <h4>プレビューとテスト</h4>
+  <ol>
+   <li>Webサイトをプレビューして、デザインやリンクが正しく機能するか確認する。</li>
+   <li>スマートフォンやタブレットでの表示も確認する。</li>
+  </ol>
+
+  <h4>公開</h4>
+  <ol>
+   <li>Webサイトを公開する。</li>
+   <li>公開後も定期的に更新やメンテナンスを行う。</li>
+  </ol>
+
+  <h4>学習と改善</h4>
+  <ol>
+   <li>Webサイトのアクセス解析を確認する（プラットフォームに組み込まれている場合が多いです）。</li>
+   <li>ユーザーフィードバックを収集し、改善点を見つける。</li>
+  </ol>
+
+  <h5>安易な収益化はお勧めできません</h5>
+  <p>仮にアフィリエイトを行い収益化を試みるにしても、それはWebサイトが十分に大きくなってからでも間に合います。<br>
+   続けられるかどうかも分からないのですから、独自ドメインの設定も後回しで良いと思います。<br>
+   詳しくは<a href="monetize.html">個人サイトによる小遣い稼ぎ</a>をご覧ください。</p>
+  <p>著作権に係る問題が発生する可能性だってありますよ？</p>
+
+  <h3>コード不要のWebサイトビルダーの例</h3>
+  <p>私からお勧めできるのは<a href="freesite.html">無料＆格安でWebサイトを作る</a>にあるように、Google SitesとBloggerなんですが、他にもいろいろありますよ。</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(10).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <ul>
+    <li>
+     <strong>Wix</strong>
+     <p>特徴: 簡単に使えるデザインツールが豊富で、ドラッグ＆ドロップで操作できます。動きのあるデザインも簡単に作成可能です。</p>
+     <p>おすすめポイント: 初心者でも短時間でおしゃれなWebサイトが作れます。</p>
+    </li>
+    <li>
+     <strong>Squarespace</strong>
+     <p>特徴: デザイン性が高く、プロフェッショナルな見た目のサイトが作れます。テンプレートが豊富で、カスタマイズも簡単です。</p>
+     <p>おすすめポイント: デザインにこだわりたい人に最適です。</p>
+    </li>
+    <li>
+     <strong>Weebly</strong>
+     <p>特徴: 使いやすいインターフェースで、初心者でも簡単にサイトを作成できます。基本的な機能が揃っており、ビジネスサイトにも対応しています。</p>
+     <p>おすすめポイント: シンプルで使いやすいツールを探している人におすすめです。</p>
+    </li>
+    <li>
+     <strong>Jimdo</strong>
+     <p>特徴: AIが質問に答えるだけでサイトを自動生成してくれます。テンプレートも豊富で、スマホ対応のデザインが簡単に作れます。</p>
+     <p>おすすめポイント: 簡単に始めたい人や、スマホでの操作を重視する人に向いています。</p>
+    </li>
+    <li>
+     <strong>WordPress.com</strong>
+     <p>特徴: 世界中で使われている人気のツールで、豊富なテンプレートとプラグインが利用できます。ブログやビジネスサイトなど、幅広い用途に対応しています。</p>
+     <p>おすすめポイント: 多機能で柔軟性が高く、長期的にサイトを運営したい人におすすめです。</p>
+    </li>
+    <li>
+     <strong>ペライチ</strong>
+     <p>特徴: 日本製のツールで、シンプルな1ページサイトを簡単に作成できます。テンプレートが豊富で、直感的に操作できます。</p>
+     <p>おすすめポイント: 短時間でサイトを作りたい人や、シンプルなサイトを求める人に最適です。</p>
+    </li>
+    <li>
+     <strong>STUDIO</strong>
+     <p>特徴: デザインの自由度が高く、プロフェッショナルなサイトが作れます。共同編集機能もあり、チームでの作業にも対応しています。</p>
+     <p>おすすめポイント: デザインにこだわりたい人や、チームでサイトを運営したい人におすすめです。</p>
+    </li>
+   </ul>
+  </div>
+
+  <h4>Webサイトビルダーさえ決まってしまえばOK</h4>
+  <p>あとはコンテンツを書くだけですからね。<br>
+   スマホだけでもできますが、やはりパソコンはあったほうが良いです。<br>
+   小さい画面でチクチクいじるのはとても大変だと思うんですよ…</p>
+
+  <p>AI学習を完璧に排除することは、難しいと思われます。<br>
+   インターネットに何かをアップしている時点で、クローラーが来るのですから。<br>
+   でも次のようなツールを使ってから個人サイトにアップすれば、AI学習の妨害なら可能かと思われます。</p>
+
+  <h4>AI学習妨害ツールのリスト</h4>
+  <p>ことあるごとに更新していきますが、詳しくは<a href="/contents/protect.html">X（旧：Twitter）のAIからイラストなどを守る試み</a>をご覧ください。
+  </p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(52).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <ul>
+    <li>
+     <p><a href="https://nightshade.cs.uchicago.edu/whatis.html">Nightshade</a><br>
+      特徴: 画像に目に見えない変更を加えることで、AIがその画像を学習できなくします。</p>
+    </li>
+    <li>
+     <p><a href="https://glaze.cs.uchicago.edu/jp/what-is-glaze.html">Glaze</a><br>
+      特徴: 画像に目に見えない摂動を加えることで、AIがその画像のスタイルを学習できなくします。AIがアーティストのスタイルを模倣するのを防ぎます。</p>
+    </li>
+
+    <li>
+     <p><a href="https://emamori.com/">emamori</a><br>
+      特徴: イラストに特殊な電子透かしやノイズを挿入することで、AIがその画像を正確に学習できないようにします。無断でイラストが模倣されるのを防ぎます。</p>
+    </li>
+
+    <li>
+     <p><strong>Mist</strong><br>
+      特徴: 画像に見えない透かしを入れることで、AIがその画像を認識できなくして、学習を防ぎます。上海交通大学の研究チームが開発しました。（現在、公式サイトが404エラーになります。）
+     </p>
+    </li>
+   </ul>
+  </div>
+
+  <h4>リンク集で良いなら専用サービスがあります</h4>
+  <p>こういうのも良いですよね。<br>
+   個人サイトまで行かずとも、ちょっとおしゃれな感じのリンク集で十分ということならアリです。<br>
+   ただ、例えばlit.linkはページフッターに会社名が出るので。<br>
+   そこをご了承いただけるなら手軽でお勧めできます。</p>
+  <ul>
+   <li><strong>lit.link</strong>:
+    複数のSNSやブログ、YouTube、ネットショップなどのリンクを1ページにまとめることができるサービス。スマホだけで簡単におしゃれなページを作成でき、カスタマイズ性も高いです。</li>
+   <li><strong>Linktree</strong>: 世界中で広く使われているリンクまとめサービスで、シンプルな操作性が特徴です。</li>
+   <li><strong>POTOFU</strong>: クリエイター向けのサービスで、広告表示がなく、画像に特化しています。</li>
+   <li><strong>Onelink</strong>: 無料でもリンクページを1つ作成でき、アクセス解析機能も付いています。</li>
+   <li><strong>CLINKme</strong>: カスタマイズ性が高く、豊富なデザインが用意されています。</li>
+   <li><strong>Knoow</strong>: 独自のSNS機能があり、タグで管理できる点が特徴です。</li>
+  </ul>
+
+
+  <h2>PCに慣れている人向け</h2>
+  <p>今からやるならAWS・Google Cloud・Azureのどれかでやるのが良いと思います。<br>
+   サイト稼働直後も強制的に広告が出ませんし、自分が思うようにサーバ側のコードも入れられます。<br>
+   アプリ化しても良いでしょうけど、ユーザーにインストールしてもらわないといけないよね。<br>
+   そこをどう考えるか。</p>
+
+  <p>私は今のところ、Google CloudのApp Engineに静的ウェブサイトをホスティングしてます。<br>
+   インスタンス等を調整すれば、無課金もしくは極めて少額でホスティングし続けることが可能でしょう。<br>
+   でもせっかくだしAWSやAzureも使ってみたいよね。<br>
+   Google Cloudの他サービスと組み合わせてもおもしろいと思っているところです。</p>
+
+  <h3>クラウドにホスティングするメリット</h3>
+  <p>WebサイトをGoogle Cloud等のクラウドにホスティングするメリットについては、まずメンテナンスがないことが挙げられるかと。<br>
+   業者の都合で閲覧不能になることがありません。<br>
+   とりあえず私が使っているGoogle Cloudについて、サッとまとめてみましょうか…。<br>
+   でもこれらについてはAWSやAzureでも同じようなものだと思いますけどね。</p>
+
+  <h5>スケーラビリティ</h5>
+  <p>クラウドホスティングは、トラフィックの増減に応じてリソースを柔軟に調整できます。<br>
+   急激なアクセス増加にも対応でき、ダウンタイムを最小限に抑えることができます。</p>
+
+  <h5>コスト効率</h5>
+  <p>従来のオンプレミスサーバーと比較して、クラウドホスティングは初期投資が少なく、使用した分だけ支払う従量課金制を採用しています。<br>
+   無駄なコストを削減できます。</p>
+
+  <h5>高可用性と信頼性</h5>
+  <p>データセンターの冗長性と自動バックアップ機能を備えており、高い可用性とデータの安全性を提供します。<br>
+   サービスの停止リスクを大幅に減少させます。</p>
+
+  <h5>セキュリティ</h5>
+  <p>最新のセキュリティプロトコルとツールを使用してデータを保護します。<br>
+   これにはデータ暗号化、アクセス制御、セキュリティ監査などが含まれます。</p>
+
+  <h5>グローバルなリーチ</h5>
+  <p>世界中にデータセンターを持っており、ユーザーに対して高速で安定したアクセスを提供できます。<br>
+   グローバルなユーザーベースに対しても優れたパフォーマンスを発揮します。</p>
+
+  <h5>開発者向けツールとサービス</h5>
+  <p>開発者向けの豊富なツールやサービス（例：Google Kubernetes Engine、BigQuery）を提供しており、効率的な開発と運用が可能です。</p>
+
+  <h5>環境への配慮</h5>
+  <p>再生可能エネルギーを使用してデータセンターを運営しており、環境に優しい選択肢となっています。</p>
+
+
+  <h2>個人サイト制作todoリスト：今後の更新について</h2>
+  <p>まずはこのような形にしましたが、X(旧Twitter)の混乱っぷりを見ている限り、個人サイトの需要は高まる一方かと思われます。<br>
+   今後も他のページと併せて、リンク等も調整しつつ更新を重ねていきます。</p>
+
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/sitestep.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+.feinalbum-container {
+ margin: 20px;
+ text-align: center;
+}
+
+.feinalbum {
+ width: 100%;
+ max-width: 600px;
+ height: 0;
+ padding-bottom: 75%;
+ perspective: 1000px;
+ position: relative;
+ overflow: hidden;
+ margin: auto;
+ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+ border: 1px solid #dcdcdc;
+ border-radius: 5px;
+ background-color: #f8f8f8;
+}
+
+.feinalbum-page {
+ width: 100%;
+ height: 100%;
+ position: absolute;
+ backface-visibility: hidden;
+ transition: transform 0.8s ease-in-out, box-shadow 0.8s ease-in-out;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ transform-style: preserve-3d;
+ background-color: #ffffff;
+ border: 1px solid #e0e0e0;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ border-radius: 5px;
+ transform-origin: center;
+}
+
+.feinalbum-page-hidden {
+ transform: rotateY(-150deg) scale(0.98);
+ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.feinalbum-page img {
+ width: 95%;
+ height: auto;
+ object-fit: contain;
+}
+
+button {
+ margin: 10px;
+ padding: 8px 12px;
+ border: none;
+ background-color: #7FDBB6;
+ color: #4B3E3E;
+ font-size: 14px;
+ cursor: pointer;
+ border-radius: 5px;
+ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+ background-color: #65C9A9;
+ transform: translateY(-2px);
+}
+
+button:active {
+ background-color: #4CB38B;
+ transform: translateY(0);
+}
+
+.feinalbum-hidden {
+ display: none;
+}

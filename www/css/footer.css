@@ -1,0 +1,165 @@
+@charset "UTF-8";
+
+/* Button settings ●start● */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    z-index: 1000;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    #scrollToTopBtn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Button settings ●end● */
+
+/* w3c image settings ●start● */
+div.w3ccheck {
+    display: flex;
+    align-items: center;
+}
+
+.w3ccheck img {
+    margin-right: 10px;
+}
+
+/* w3c image settings ●end● */
+
+/* Horizontal line ending content */
+#feinhr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, black, transparent);
+}
+
+/* Programming code settings ●start● */
+.code-container {
+    background-color: #2d2d2d;
+    border-radius: 8px;
+    padding: 1px;
+    overflow: hidden;
+    color: #f8f8f2;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+pre {
+    margin: 0 !important;
+    padding: 1px 20px !important;
+    white-space: pre-wrap;
+}
+
+.codecolor {
+    color: #0033ff;
+}
+
+/* Programming code settings ●end● */
+
+/* fein's portal introduction */
+.portal {
+    text-align: left;
+    width: 55%;
+    margin-left: 0;
+    max-width: 100%;
+}
+
+/* footer settings ●start● */
+.commongdl {
+    padding: 10px 20px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sitemap {
+    margin: 0 0 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+
+.fa-sitemap {
+    margin-right: 5px;
+}
+
+/* Google Cloud Certificate */
+.biggraphic {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* SNS links */
+.social-links,
+.footer-links {
+    display: block;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.social-links a,
+.footer-links a {
+    color: #007bff;
+    text-decoration: none;
+    padding: 0 10px;
+    display: inline-block;
+    /* ここをinlineからinline-blockに変更 */
+    white-space: nowrap;
+    margin-top: 3px;
+    /* 余白を追加して行間を広げる */
+    margin-bottom: 3px;
+    /* 余白を追加して行間を広げる */
+}
+
+.social-links a:hover,
+.footer-links a:hover {
+    color: #0056b3;
+    margin-top: 3px;
+    /* 余白を追加して行間を広げる */
+    margin-bottom: 3px;
+    /* 余白を追加して行間を広げる */
+}
+
+/* Setting SVG color and size */
+svg {
+    width: 14px;
+    height: 14px;
+    fill: #007bff;
+    vertical-align: -2px;
+}
+
+@media (max-width: 600px) {
+
+    .social-links,
+    .footer-links {
+        flex-direction: column;
+    }
+}
+
+.copyright {
+    color: #555;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* footer settings ●end● */

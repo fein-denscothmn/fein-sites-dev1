@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <!-- Meta tags -->
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="CSSの書き方に関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta name="keywords" content="個人サイト, CSS, 書き方">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="個人サイトの見出しをCSSで整える">
+ <meta property="og:description" content="CSSの書き方に関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/heading_css.html">
+ <!-- Structured Data -->
+ <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "個人サイトの見出しをCSSで整える",
+      "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/heading_css.html",
+      "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+  }
+  </script>
+
+ <!-- CSS -->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <!-- JavaScript -->
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+
+ <!-- Google Fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+
+ <!-- Page Title -->
+ <title>個人サイトの見出しをCSSで整える</title>
+
+ <!-- Favicon -->
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">個人サイトの見出しをCSSで整える</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="/script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="/image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="個人サイトの見出しをCSSで整えるの目次を開く ▼"
+   data-close-text="個人サイトの見出しをCSSで整えるの目次を閉じる ▲">個人サイトの見出しをCSSで整えるの目次を開く
+   ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>個人サイトの見出しをCSSで整える</span></h1>
+
+  <p>個人サイトの見出しをデザインする際に気を付けるべきポイント…何があるでしょう…。<br>
+   まず見出しは読みやすさを第一に考え、フォントサイズは大きめに設定します。<br>
+   例えば、h1タグはページのメインタイトルに使用し、h2タグはセクションのタイトル、h3タグはサブセクションのタイトルに使うことで、視覚的な階層構造を作り出すのが基本です。<br>
+   でも、私は特に拘ってない。<br>
+   h1だけは位置を決めてるくらいです。<br>
+   シンプルで読みやすいフォントを選ぶことも大切ですよね。<br>
+   色のコントラストも重要<br>
+   背景色とテキストの色のコントラストを強くし、見出しが背景に埋もれないようにすると良いかも。<br>
+   例えば、白い背景に黒い文字などが分かりやすいです。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(45).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>
+    サイト全体で見出しのスタイルを統一するのは気を付けてます。<br>
+    これは大切だと思う。<br>
+    すべてのh1タグは同じフォントサイズ、同じ色で統一するなど、一貫性を持たせると良いでしょう。<br>
+    見出しの周りに十分な余白を設けて、他のコンテンツと見出しを区別することも重要です。<br>
+    ただ、当Webサイトでは、敢えて見出しの下側の余白は狭くしています。<br>
+    ページが見やすければいいんだよね。<br>
+    加えて、必要に応じて見出しの横に小さなアイコンや画像を追加すると、視覚的に引き立つ効果があります。<br>
+    とりあえずシンプルに始めて、徐々に自分のスタイルを見つけていくとラクですよ？
+   </p>
+  </div>
+
+  <h3>このページに関する注意事項</h3>
+  <p>当Webサイト作成者は、例示を目的としてマークアップ及びプログラミング例を提供しており、明示または黙示にかかわらず、いかなる責任も負わないものとします。<br>
+   このページは、説明されているマークアップ及びプログラミング言語、手順を作成およびデバッグするために使用される各種ツールに読者が精通していることを前提にしています。<br>
+   このページは、特定の機能を説明するのに役立つ可能性がありますが、当Webサイト作成者がこれらの例を変更した上で、特定の要件を満たすために追加の機能を提供したり、システムを構築したりすることはできません。<br>
+   加えて、この例の手順に従う場合は、読者の各種ファイルを事前にバックアップすることを推奨いたします。</p>
+
+  <h2>見出しやテキストの設定</h2>
+  <p>h1だけではなくh2なども設定していますが、中身のコードは全て同じなので省略しています。<br>
+   &lt;span&gt;も便利に使えるタグですよ。</p>
+
+  <p class="gra">基本的な見出しのCSS</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+h1 {
+  display: block;
+  width: fit-content;
+  background: linear-gradient(to right, #ADD8E6, #FFFFFF);
+  padding: 10px;
+  border-radius: 15px;
+}
+
+span.small-orange-text {
+  font-size: 0.9em;
+  color: #cc3300;
+}
+        </code></pre>
+  </div>
+
+  <p><span class="codecolor">display: block;</span><br>
+   ブロック要素として表示させます。<br>
+   ブロック要素は幅全体を占め、次の要素は新しい行から始まります。<br>
+   こうすることで見出しのカラーなども設定しやすいんですよね。</p>
+
+  <p><span class="codecolor">width: fitcontent;</span><br>
+   見出しの幅を自動的に調整します。<br>
+   内容の幅に合わせて最適なサイズにしておかないと、画像が横に伸びてしまいます。<br>
+   でもデザインによっては横へ流れたほうが良いこともあるんですよね。</p>
+
+  <p><span class="codecolor">background: lineargradient(to right, #99CCFF, #FFFFFF);</span><br>
+   見出しの背景カラーです。<br>
+   Googleサイトでは透過画像を背景として表示させていますが、ここではCSSでカラーを描いてます。<br>
+   背景に左から右に向かって色が変わるグラデーションとなっており、左側が薄い青色で、右側へ行くにつれて白色になります。</p>
+
+  <p><span class="codecolor">padding: 10px;</span><br>
+   見出しタグの内側に10ピクセルの余白を追加しています。<br>
+   テキストの内容が周囲の境界から少し離しておくことで、見栄えがするんですよね。<br>
+   余白の取り方は奥が深いと思います。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(49).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p><span class="codecolor">borderradius: 15px;</span><br>
+    見出しタグの角を15ピクセルの半径で丸くしています。<br>
+    角が尖っていると、ベター…としていてあんまりかっこよくない。<br>
+    滑らかにしておいたほうが見やすい表示になります。</p>
+
+   <p><span class="codecolor">fontsize: 0.9em;</span><br>
+    テキストのサイズを通常の90%に設定しています。<br>
+    emは相対単位であり、親要素のフォントサイズに対する割合を示しています。<br>
+    私はよく相対単位を使うんですよね。<br>
+    ピクセルで数字を決めないようにしてる。<br>
+    スマホの画面サイズもいろいろありますから。</p>
+  </div>
+
+  <p><span class="codecolor">color: #cc3300;<br></span>
+   テキストの色をオレンジ色（#cc3300）に設定しています。<br>
+   この「#cc3300」はWebセーフカラーの一つです。</p>
+
+  <h2>h1やh3など見出しの装飾方法</h2>
+
+  <p>見出しのデザインを統一することは、Webサイトのデザインにおいて大切な部分かと思います。</p>
+
+  <dl>
+   <dt>一貫性の確保</dt>
+   <dd>統一された見出しデザインは、サイト全体の一貫性を保ち、ユーザーにプロフェッショナルな印象を与えます。</dd>
+
+   <dt>ユーザーエクスペリエンスの向上</dt>
+   <dd>統一された見出しは、ユーザーが情報を素早く見つけやすくし、サイトのナビゲーションをスムーズにします。</dd>
+
+   <dt>ブランド認知の強化</dt>
+   <dd>一貫したデザインは、ブランドのアイデンティティを強化し、ユーザーにブランドを覚えてもらいやすくします。</dd>
+
+   <dt>視覚的な階層構造の明確化</dt>
+   <dd>見出しのデザインを統一することで、コンテンツの階層構造が明確になり、情報の重要度や関連性が一目でわかるようになります。</dd>
+
+   <dt>アクセシビリティの向上</dt>
+   <dd>統一された見出しデザインは、スクリーンリーダーを使用するユーザーや視覚障害のあるユーザーにとっても、サイトの構造を理解しやすくします。</dd>
+  </dl>
+
+  <p>見出しのタグは &lt;h1&gt; &lt;h2&gt; &lt;h3&gt; &lt;h4&gt; &lt;h5&gt; &lt;h6&gt; です。<br>
+   これは単にフォントを大きくしたり、太くしているだけではないんですよね。<br>
+   スクリーンリーダーのお話もしましたが、機能として、それは見出しタグである必要があります。<br>
+   例えば &lt;section&gt; タグなんかは、見出しタグとセットで使いますよね。<br>
+   このサイトにもいずれ、順次導入していくことになるでしょう。</p>
+
+  <p class="codegra" id="heading_style">統一感を持たせた見出しを作るstyle.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+h1.background-waveimage-heading {
+    background-image: url('../image/hone.png'); /* 背景画像を設定 */
+    background-size: contain; /* 画像サイズをコンテナに合わせる */
+    background-repeat: no-repeat; /* 画像の繰り返しを無効にする */
+    background-position: left; /* 画像を左側に配置 */
+    padding: 20px; /* 内側の余白を設定 */
+    font-size: 1.7em; /* フォントサイズを設定 */
+}
+
+h1.background-waveimage-heading span {
+    opacity: 0.7; /* 透明度を設定 */
+}
+
+h2 {
+    display: block; /* ブロック要素として表示 */
+    width: fit-content; /* コンテンツに合わせた幅を設定 */
+    background: linear-gradient(to right, rgba(173, 216, 230, 0.2), rgba(173, 216, 230, 0)); /* 背景にグラデーションを設定 */
+    padding: 10px; /* 内側の余白を設定 */
+    border-radius: 15px; /* 角を丸くする */
+    margin-top: 30px; /* 上部の余白を設定 */
+    margin-bottom: 5px; /* 下部の余白を設定 */
+}
+
+h2.sitemap_heading {
+    display: block; /* ブロック要素として表示 */
+    width: fit-content; /* コンテンツに合わせた幅を設定 */
+    background: linear-gradient(to right, rgba(173, 216, 230, 0.2), rgba(173, 216, 230, 0)); /* 背景にグラデーションを設定 */
+    padding: 10px; /* 内側の余白を設定 */
+    border-radius: 15px; /* 角を丸くする */
+    margin-top: 10px; /* 上部の余白を設定 */
+    margin-bottom: 5px; /* 下部の余白を設定 */
+}
+
+h3 {
+  display: block; /* ブロック要素として表示 */
+  width: fit-content; /* コンテンツに合わせた幅を設定 */
+  background: linear-gradient(to right, rgba(173, 216, 230, 0.2), rgba(173, 216, 230, 0)); /* 背景にグラデーションを設定 */
+  padding: 10px; /* 内側の余白を設定 */
+  border-radius: 15px; /* 角を丸くする */
+  margin-top: 30px; /* 上部の余白を設定 */
+  margin-bottom: 5px; /* 下部の余白を設定 */
+  position: relative; /* 相対位置を設定 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ボックスシャドウを設定 */
+}
+
+h3::after {
+  content: ''; /* 擬似要素の内容を空に設定 */
+  position: absolute; /* 絶対位置を設定 */
+  bottom: -5px; /* 下部からの位置を設定 */
+  left: 0; /* 左からの位置を設定 */
+  width: 100%; /* 幅を100%に設定 */
+  height: 3px; /* 高さを3pxに設定 */
+  background: linear-gradient(to right, rgba(255, 0, 51, 0.5), rgba(255, 255, 255, 0.5)); /* 背景にグラデーションを設定 */
+  transform: scaleX(0); /* X軸方向のスケールを0に設定 */
+  transform-origin: bottom right; /* 変形の基点を右下に設定 */
+  transition: transform 0.5s ease-out; /* 変形のトランジションを設定 */
+}
+
+h3.visible::after {
+  transform: scaleX(1); /* X軸方向のスケールを1に設定 */
+  transform-origin: bottom left; /* 変形の基点を左下に設定 */
+}
+
+.STAh3 {
+  margin-top: 0; /* 上部の余白を0に設定 */
+}
+
+h4 {
+  display: block; /* ブロック要素として表示 */
+  width: fit-content; /* コンテンツに合わせた幅を設定 */
+  background: linear-gradient(to right, rgba(173, 216, 230, 0.2), rgba(173, 216, 230, 0)); /* 背景にグラデーションを設定 */
+  padding: 10px; /* 内側の余白を設定 */
+  border-radius: 15px; /* 角を丸くする */
+  margin-top: 30px; /* 上部の余白を設定 */
+  margin-bottom: 0; /* 下部の余白を0に設定 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ボックスシャドウを設定 */
+}
+
+h5 {
+  font-size: 110%; /* フォントサイズを110%に設定 */
+  margin-top: 25px; /* 上部の余白を設定 */
+  margin-bottom: 0; /* 下部の余白を0に設定 */
+  padding-bottom: 0; /* 下部のパディングを0に設定 */
+  line-height: 1.2; /* 行の高さを設定 */
+  color: rgba(0, 0, 0, 0.7); /* 文字色を設定 */
+}
+
+      </code></pre>
+  </div>
+
+
+  <h3>HTMLを変えずデザインをカスタマイズするafter疑似要素</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(50).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p><a href="/contents/codeinfo.html">個人サイトでよく使うCSS</a>にある、before疑似要素と似たような感じですよ。<br>
+    CSSの ::after疑似要素は、指定した要素の直後にコンテンツを挿入するために使用されます。<br>
+    beforeと同じく、HTMLを変更せずにスタイルを追加したい場合に便利です。</p>
+   <p>ただ、ここではアニメーションの一助をしているんですよね。<br>
+    そのアニメーションをトリガーするためには、JavaScriptが必要です。<br>
+    とりあえずここでは::after疑似要素の説明のみに留め、別途JavaScriptと併せてアニメーションの説明を書きましょう。</p>
+  </div>
+  <p class="gra">after疑似要素のCSS例</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+.element::after {
+  content: "追加するテキスト";
+  display: block; /* または inline, inline-block など */
+  /* その他のスタイル */
+}
+      </code></pre>
+  </div>
+
+  <p class="gra">主なプロパティ</p>
+
+  <dl>
+   <dt>content</dt>
+   <dd>挿入するコンテンツを指定します。テキスト、画像、カウンターなどを挿入できます。</dd>
+
+   <dt>display</dt>
+   <dd>挿入するコンテンツの表示方法を指定します。block、inline、inline-block などが使えます。</dd>
+
+   <dt>position</dt>
+   <dd>absolute や relative を使って、挿入するコンテンツの位置を調整できます。</dd>
+
+   <dt>その他のスタイル</dt>
+   <dd>色、フォント、マージン、パディングなど、通常のCSSプロパティを適用できます。</dd>
+  </dl>
+
+  <p>うーん、抽象的な文章ばかりでは…<br>
+   ちょっと、例を書いてみましょう！<br>
+   次のコードは、特定の要素の後にアイコンを追加する例です。</p>
+
+  <p class="gra">アイコンを追加するhtmlとCSSの例</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;After Pseudo-element Example&lt;/title&gt;
+    &lt;style&gt;
+        .icon::after {
+            content: &quot;🔍&quot;;
+            display: inline;
+            margin-left: 5px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p class=&quot;icon&quot;&gt;検索&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+      </code></pre>
+  </div>
+
+  <p>環境に合わせてお試しいただけると感覚として掴めるかも？<br>
+   この例では、&lt;p class=&quot;icon&quot;&gt; 要素の後に虫眼鏡アイコンが追加されています。</p>
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/heading_css.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

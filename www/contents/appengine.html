@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+
+ <!-- Microsoft tag -->
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+
+ <meta charset="UTF-8">
+
+
+ <!--基本のメタタグ-->
+ <meta name="description" content="個人サイトを作ろうとすると障害になるのが、業者が強制的に挿入してくる広告です。そんなものを使わずとも、Google App Engineなら広告なしで作れます。">
+ <meta name="keywords" content="個人サイト, Google App Engine, 広告なし">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="Google App Engineで広告なしサイト作成">
+ <meta property="og:description"
+  content="個人サイトを作ろうとすると障害になるのが、業者が強制的に挿入してくる広告です。そんなものを使わずとも、Google App Engineなら広告なしで作れます。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/appengine.html">
+
+ <!--検索ヒット時のアイコン-->
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Google App Engineで広告なしサイト作成",
+  "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/appengine.html",
+  "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+}
+</script>
+
+ <!--レスポンシブデザイン-->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!--CSS-->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="../css/menu.css">
+ <link rel="stylesheet" type="text/css" href="../css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="../css/feinheadline1.css">
+ <link rel="stylesheet" type="text/css" href="../css/flower.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <!--JavaScript-->
+ <script src="../script/underline.js"></script>
+ <script src="../script/feinfade.js"></script>
+ <script src="../script/feinScroll.js"></script>
+ <!-- gsapの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <!-- prismの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-yaml.min.js"></script>
+
+ <!-- google fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+
+ <!--ページタイトル-->
+ <title>Google App Engineで広告なしサイト作成</title>
+
+ <!--ASノーナのファビコン-->
+ <link rel="icon" sizes="32x32" href="../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Google App Engineで広告なしサイト作成</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="Google App Engineで広告なしサイト作成の目次を開く ▼"
+   data-close-text="Google App Engineで広告なしサイト作成の目次を閉じる ▲">Google App Engineで広告なしサイト作成の目次を開く
+   ▼</button><!--目次の自動生成-->
+
+  <div class="spacer"></div>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>Google App Engineで広告なしサイト作成</span></h1>
+  <p>Google App Engineは、あなたのWebサイトやアプリをインターネット上に簡単に公開できるサービス。<br>
+   プログラムを書いたら、Googleのサーバーで動かせるようにしてくれます。<br>
+   面倒な設定は不要で、すぐに始められます。</p>
+
+  <p>ただ…正直にお話をすると、まったくもってITの知識がゼロの状態だと、敷居が高いかもしれません。<br>
+   もし勉強するお時間があるなら、クラウドサービスのメリットを享受できますよ？<br>
+   下品な広告が付かない自由な個人サイトを、無料で作ることができてしまいます。</p>
+
+
+
+  <h2>個人サイトをクラウドサービスで公開する</h2>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(34).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>Azureならほとんど専用サービスとも言える「<a href="https://azure.microsoft.com/ja-jp/products/app-service/static">Azure Static
+     Web Apps</a>」というプロダクトがあるんですよね。<br>
+    HTML、CSS、JavaScriptなどの静的コンテンツを簡単にデプロイし、グローバルに配信するためのサービスとなります。</p>
+   <p>GCPだと「<a href="https://firebase.google.com/docs/hosting?hl=ja">Firebase Hosting</a>」もあって、これでも良いと思います。<br>
+    私がひとまずGoogle App Engineを選んだのは、App Engineのほうが歴史が長く、専門書の出版数も多いからです。<br>
+    FirebaseはGoogleに買収され、その後でFirebase Hostingが導入されたんだよね。</p>
+   <p>AWSにも「<a href="https://aws.amazon.com/jp/amplify/">AWS Amplify</a>」というのがありますよ。<br>
+    静的ウェブサイトやシングルページアプリケーション（SPA）のホスティングを提供し、グローバルCDN、カスタムドメイン、継続的デプロイなどの機能を備えています。</p>
+  </div>
+
+
+  <p>情報商材屋ではないのでね。今は骨組みだけですが、徐々に内容を具体化していきます。<br>
+   個人サイトについてX（旧Twitter）でよく話題になるhtml・css・JavaScriptというのは、要するにフロントエンドに関するコードなんですよね。<br>
+   バックエンドは、例えば私がローカルサーバーを立てるのにインストールしたPythonなんかがそうです。<br>
+   それで、ここでお話ししているクラウドというのは…一言で書くのは極めて難しいですが、インフラと言えば良いでしょうか。<br>
+   個人サイト作るだけなのにサーバー実機なんか買わないでしょ？</p>
+
+
+  <h2>ホスティング先のクラウド選び</h2>
+  まずは料金が安いGoogle Cloudから探してみるのがいいんじゃないかな。<br>
+  私は次のようにして、ひとまずApp Engineを試しています。
+  <ol>
+   <li><a href="https://cloud.google.com/?hl=ja">Google Cloud</a>からプロダクトを選択。より詳しくやりたいことが具体的になっている場合は<a
+     href="https://cloud.google.com/products?hl=ja#featured-products/">Google Cloud プロダクト</a></li>
+   <li>大項目を選択する。─ ここではサーバーレスを選択します。なぜサーバーレスなのかですが、<a
+     href="https://cloud.google.com/docs/application-hosting?hl=ja">アプリケーション
+     ホスティングの概要</a>に詳しく書いてあります。いきなりIaaSを検討しなくて良いでしょう。 ─</li>
+   <li>Cloud Run・Cloud Functions・App Engine・Workflows・API Gatewayをさっと見てから…</li>
+   <li><a href="https://cloud.google.com/docs/get-started/aws-azure-gcp-service-comparison?hl=ja">AWS サービスや Azure
+     サービスと Google Cloud を比較する</a>で似たようなサービスをそれぞれ調べる。</li>
+   <li>それらのプロダクトの中から、自分のニーズにあったものを選ぶ。</li>
+  </ol>
+
+
+  <h2>レンタルサーバー VS クラウドサービス</h2>
+  <p>やってることは似たようなもんだと思うんですけどね。<br>
+   AWS、GCP、Azureなどのクラウドサービスの台頭は、レンタルサーバー業界に大きな影響を与えています。<br>
+   これらのクラウドサービスは、スケーラビリティ、柔軟性、コスト効率の面で優れており、多くの企業や個人が従来のレンタルサーバーから移行する要因となっているんですよね。</p>
+
+  <h5>コストで比べる</h5>
+  <p>クラウドサービスは従量課金制や無料の初期利用枠を提供しており、初期コストを抑えたいユーザーにとって魅力的です。<br>
+   私なんか思いっきりこのタイプですよ。<br>
+   クラウドにホスティングすれば、無料で広告無しの自由自在なWebサイトにできるのです。</p>
+
+  <h5>技術で比べる</h5>
+  <p>クラウドサービスは最新の技術を迅速に取り入れることができ、セキュリティやパフォーマンスの面でも優れています。<br>
+   さすがにAWS、GCP、Azureのクラウドですからね。</p>
+
+  <h5>運用の簡便さで比較する</h5>
+  <p>クラウドサービスは、インフラの管理を自動化するツールやサービスを提供しており、ユーザーはより簡単に運用できます。<br>
+   開発環境を整えるために個人でハイスペックPCを用意する必要がないのですよ。<br>
+   私はずっとロースペックパソコンでWeb書いてます。</p>
+
+  <h5>市場の変化</h5>
+  <p>個人サイトを作る人が減少し、SNSやブログサービスの利用が増えていることも影響していますね。<br>
+   私が「<a href="freesite.html">無料＆格安でWebサイトを作る</a>」にてお勧めしている Google Sites はホームページ作成サービス、Blogger はブログサービスです。<br>
+   それで、イーロンマスクによってXの将来が不透明になってきたから、昔のように個人サイトが注目されるようになってきたという流れです。</p>
+
+  <p>おそらく、これからも昔ながらの「レンタルサーバー」は、１つまた１つとサービス終了していくのではないかと。<br>
+   その頃にはAWS、GCP、AzureなどのクラウドサービスがもっとIT初心者にも使いやすくなっていることでしょう。</p>
+
+
+  <h3>個人サイトなら Cloud run と App Engine どちらが有利か？</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(128).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>Google Cloudの「Cloud Run」と「App Engine」はどちらもサーバーレスのコンピューティングサービスです。<br>
+    Cloud Runはコンテナベースで任意の言語やライブラリを使用できます。<br>
+    リクエストに応じて自動的にスケールし、アイドル状態ではゼロまでスケーリングダウンします。<br>
+    そのため、使用したリソースに基づいて課金され、アイドル状態のコストは低く抑えられます。</p>
+  </div>
+
+  <p>一方、App EngineはPaaS（Platform as a Service）です。<br>
+   アプリケーションコードをデプロイするだけでインフラの管理をGoogleに任せることができます。<br>
+   スタンダード環境とフレキシブル環境があります。<br>
+   スタンダード環境は自動スケーリング、フレキシブル環境はカスタマイズ可能なインフラを提供します。<br>
+   ソースコードを直接デプロイでき、特定のランタイム環境を選択するだけで動作します。<br>
+   しかし、インスタンスベースの課金モデルでアイドル状態でも一定のコストが発生します。</p>
+
+  <p>静的ウェブサイトのホスティングに関しては、Cloud Runはコンテナを使用します。<br>
+   静的ファイルを含むコンテナイメージを作成し、それをデプロイすることでホスティングが可能です。<br>
+   スケーリングの柔軟性とコスト効率の面で優れているんですよね。<br>
+   一方、App Engineは特にスタンダード環境での静的ファイルのホスティングが簡単で設定も少なく済みます。<br>
+   しかし、アイドル状態のコストが発生する点に注意が必要です。</p>
+
+  <p>とはいえ、標準環境であれば無料枠があるわけです。<br>
+   総合的に見ると、静的ウェブサイトのホスティングにはCloud Runがより適しているように思えますが、どちらのサービスも優れた機能を持っているため、具体的なニーズに応じて選択することが重要です。</p>
+
+
+  <h4>クラウドサービスには無料枠がある</h4>
+  <p>ここで、無料枠の話をしましょう。<br>
+   静的ウェブサイトのホスティングに関して、Google Cloud RunとGoogle App Engineの無料枠を比較すると、以下の点を考慮する必要があります。</p>
+
+  <p><strong>Google Cloud Run</strong></p>
+  <ul>
+   <li>CPU時間: 毎月最初の180,000 vCPU秒</li>
+   <li>メモリ使用量: 毎月最初の360,000 GiB秒</li>
+   <li>リクエスト数: 毎月最初の200万リクエスト</li>
+   <li>ネットワーク: 北米内の下り（外向き）トラフィックは1GBまで無料</li>
+  </ul>
+
+  <p><strong>Google App Engine</strong></p>
+  <ul>
+   <li>インスタンス時間: Standard環境で1日あたり28インスタンス時間</li>
+   <li>ネットワーク: 下り（外向き）トラフィックが1GB/日</li>
+   <li>Cloud Storage: 5GBの無料ストレージ</li>
+  </ul>
+
+  <p><strong>比較ポイント</strong></p>
+  <ul>
+   <li>トラフィック: App Engineは1日あたり1GBの下りトラフィックが無料で、Cloud Runは月あたり1GBです。頻繁にアクセスされるサイトならApp Engineが有利です。</li>
+   <li>インスタンス時間: App Engineは1日あたり28インスタンス時間が無料で、Cloud RunはCPU時間で計算されます。短時間で多くのリクエストがある場合はCloud Runが有利です。</li>
+   <li>ストレージ: App Engineには5GBの無料ストレージが含まれていますが、Cloud Runにはストレージが含まれていません。</li>
+  </ul>
+
+  <p>静的ウェブサイトのホスティングに関しては、アクセス頻度や必要なリソースに応じて選ぶと良いでしょう。</p>
+  <p>頻繁にアクセスされるサイトならApp Engine<br>
+   短時間で多くのリクエストがある場合はCloud Run<br>
+   これは目安に過ぎませんが、私の場合、旬な話題や時事ネタなど、浮き沈みが激しいものは避けています。
+   よって、App Engineが有利であろうと判断してるんだよね。</p>
+
+
+  <h3>Google Kubernetes Engine と Cloud Run の違い</h3>
+  <p>「Cloud Run」と「Google Kubernetes Engine (GKE)」は、どちらもGoogle Cloudが提供するコンテナ運用サービスですが、用途や特徴が異なります。<br>
+   Cloud Runはサーバーレスプラットフォームで、ステートレスなコンテナアプリケーションをサーバーレス環境で実行するためのもので、インフラ管理の手間を大幅に削減できます。<br>
+   自動スケーリング機能によりリクエスト数に応じてスケールし、リクエストがない場合はゼロにスケールします。<br>
+   デプロイも簡単で、単一のコマンドで可能です。</p>
+
+  <p>一方、GKEはKubernetesをベースにしたコンテナオーケストレーションプラットフォームで、ステートフルおよびステートレスなアプリケーションの両方をサポートします。<br>
+   クラスタの構成や管理を細かくカスタマイズでき、ネットワーキング、ストレージ、オブザーバビリティなどの設定が可能です。<br>
+   GKEはCPU使用率やカスタムメトリクスに基づいて水平Pod自動スケーリングを行い、データベースやセッション管理が必要なステートフルなアプリケーションにも対応しています。</p>
+
+  <p>Cloud Runはステートレスなアプリケーションを迅速にデプロイしたい場合やインフラ管理の手間を最小限に抑えたい場合、トラフィックの予測が難しい場合に向いてるかな。個人サイトに向いてるのはこっちだと思う。<br>
+   GKEはステートフルなアプリケーションをデプロイしたい場合やKubernetesの高度な機能をフル活用したい場合、細かいカスタマイズが必要な場合に適しています。</p>
+
+
+
+  <h2>個人サイト向けのapp.yaml設定</h2>
+
+  <p>App Engineの「app.yaml」ファイルは、Google App Engineアプリケーションのデプロイや動作に関する重要な情報をまとめて管理するためのものです。<br>
+   このファイルには、アプリケーションの動作に関するさまざまな設定が含まれています。</p>
+
+  <p class="gra">参考サイト</p>
+  <p><a href="https://yaml.org/">yaml.org</a></p>
+
+  <h3>ランタイムの指定</h3>
+  <p>使用するプログラミング言語やランタイム環境を指定します。<br>
+   app.yamlファイルでは、アプリケーションがどのプログラミング言語やランタイム環境を使うかを指定することができます。<br>
+   これをもって、Google App Engineがアプリケーションを正しく実行するための環境を準備することになります。</p>
+
+  <p class="gra">プログラミング言語</p>
+  <p>アプリケーションが書かれている言語です。<br>
+   例えば、Python、Java、Node.jsなどです。</p>
+
+  <p class="gra">ランタイム環境</p>
+  <p>アプリケーションを実行するためのソフトウェア環境です。プログラミング言語に対応したランタイムが用意されています。<br>
+   例えば、Pythonを使ってアプリケーションを作成している場合、runtime:として記述されることになるでしょう。<br>
+   Python 3.9のランタイム環境を使用することを指定すると、Google App EngineはPython 3.9を使ってアプリケーションを実行します。<br>
+   同じようにnodejs14などを使うこともできます。<br>
+   このように、app.yamlファイルで使用するプログラミング言語やランタイム環境を指定することで、アプリケーションが正しく動作するように設定します。</p>
+
+  <h3>ハンドラの設定</h3>
+  <p>URLパスとそれに対応するリクエストハンドラを定義します。<br>
+   前述のようにapp.yamlは、Google App Engineでアプリケーションの設定を行うためのファイルです。<br>
+   このファイルの中で、「URLパス」と「リクエストハンドラ」を定義します。</p>
+
+  <p class="gra">URLパス</p>
+  <p>ユーザーがウェブブラウザに入力するアドレスの一部です。<br>
+   例えば、/homeや/aboutなどです。</p>
+
+  <p class="gra">リクエストハンドラ</p>
+  <p>特定のURLパスにアクセスがあったときに、そのリクエストを処理するプログラムや関数のことです。<br>
+   簡単に言うと、app.yamlファイルで「このURLにアクセスがあったら、このプログラムを実行してね」と指示を出している感じです。<br>
+   例えば、次のような設定があったとします</p>
+
+  <div class="code-container">
+   <pre><code class="language-yaml">
+# yamlの記述内容
+handlers:
+- url: /home
+ script: home.app
+- url: /about
+ script: about.app
+  </code></pre>
+  </div>
+
+  <p>この場合、ユーザーが/homeにアクセスすると、home.appというプログラムが実行され、/aboutにアクセスすると、about.appというプログラムが実行されます。</p>
+
+  <h4>インスタンスの設定</h4>
+  <p>インスタンスのスケーリングやクラスを設定します。<br>
+   app.yamlファイルでインスタンスのスケーリングやクラスを設定することで、アプリケーションのパフォーマンスを最適化し、コストを管理することができます。</p>
+
+  <p class="gra">インスタンスのスケーリング</p>
+  <p>アプリケーションの負荷に応じてインスタンスの数を増減させる仕組みです。<br>
+   例えば、アクセスが多いときにはインスタンスを増やし、少ないときには減らすことで、効率的にリソースを使うことができます。</p>
+
+  <p class="gra">インスタンスのクラス</p>
+  <p>インスタンスの性能やコストに関する設定です。<br>
+   例えば、高性能なインスタンスを使うか、低コストなインスタンスを使うかを選ぶことができます。</p>
+
+  <p>例えば、次のようなことを指定していきます。</p>
+  <ul>
+   <li>[instance_class: F2]とすれば、F2クラスのインスタンスを使用することを指定しています。F2クラスは、比較的高性能なインスタンスですね。</li>
+   <li>[automatic_scaling]とすれば、自動スケーリングの設定です。</li>
+   <li>[min_instances: 1]とすれば、最低でも1つのインスタンスを常に稼働させることを指定しています。</li>
+   <li>[max_instances: 5]とすれば、最大で5つのインスタンスまで増やすことができることを指定しています。</li>
+  </ul>
+
+  <h4>環境変数の設定</h4>
+  <p>アプリケーションで使用する環境変数を定義します。<br>
+   環境変数を使うことで、アプリケーションのコードを変更せずに設定情報を変更することができます。<br>
+   セキュリティが向上し、設定の管理が簡単になります。</p>
+
+  <p class="gra">環境変数</p>
+  <p>アプリケーションが動作する際に必要な設定情報を外部から渡すためのものです。<br>
+   例えば、データベースの接続情報やAPIキーなど、アプリケーションのコードに直接書きたくない情報を環境変数として設定します。</p>
+
+  <p class="gra">app.yaml</p>
+  <p>ファイルで環境変数を定義することで、これらの情報を簡単に管理できます。</p>
+
+  <p>例えば、DATABASE_URL:
+   "mysql://user:password@localhost/dbname"としてデータベースの接続情報を指定します。この情報を使って、アプリケーションはデータベースに接続します。<br>
+   APIについてはAPI_KEY: "your-api-key-here"と書くことで、外部のサービスを利用するためのAPIキーを指定します。このキーを使って、アプリケーションは外部サービスにアクセスします。</p>
+
+  <h4>静的ファイルとディレクトリを設定する方法</h4>
+  <p class="gra">静的ファイルの設定</p>
+  静的ファイルを提供するためには、app.yamlファイルにstatic_filesまたはstatic_dirを使用してハンドラを定義します。
+
+  <h5>static_filesの使用例</h5>
+  static_filesを使用すると、特定のファイルパターンに一致するファイルを提供できます。
+
+  <div class="code-container">
+   <pre><code class="language-yaml">
+# yamlの記述内容
+- url: /static(.*)
+ static_files: static/\1
+ upload: static/(.*)
+  </code></pre>
+  </div>
+
+  <p><strong>(.*)</strong><br>
+   これは正規表現のパターンで、任意の文字列（0文字以上）にマッチします。<br>
+   括弧で囲まれているため、キャプチャグループとして機能します。<br>
+   つまり、マッチした部分を後で参照できるように保存します。</p>
+
+  <p><strong>\1</strong><br>
+   これはキャプチャグループの参照です。<br>
+   正規表現のパターンで最初にキャプチャされたグループ（この場合は(.*)）を指します。<br>
+   \1は最初のキャプチャグループ、\2は2番目のキャプチャグループ、というように続きます。</p>
+
+
+  <p class="gra">url: /static/(.*):</p>
+  <p>/static/に続く任意の文字列にマッチします。<br>
+   例えば、/static/image.pngや/static/css/style.cssなどです。</p>
+
+  <p class="gra">static_files: static/\1:</p>
+  <p>マッチしたURLのパスの部分（(.*)）をstatic/ディレクトリ内の対応するファイルにマッピングします。<br>
+   例えば、/static/image.pngがリクエストされた場合、static/image.pngファイルが提供されます。</p>
+
+  <p class="gra">upload: static/(.*):</p>
+  <p>App Engineにアップロードされるファイルのパスを指定します。<br>
+   static/ディレクトリ内の任意のファイルがアップロード対象となります。<br>
+   この設定があることで、/static/に続く任意のパスがstaticディレクトリ内の対応するファイルにマッピングされ、App Engineにアップロードされるファイルも同様に指定されます。</p>
+
+
+  <h5>static_dirの使用例</h5>
+  <p>static_dirを使用すると、ディレクトリ全体を静的ファイルとして提供できます。</p>
+
+  <div class="code-container">
+   <pre><code class="language-yaml">
+# yamlの記述内容
+- url: /static
+ static_dir: static
+  </code></pre>
+  </div>
+
+  <p>この例では、/static URLに一致するリクエストがstaticディレクトリ内のファイルにマッピングされます。</p>
+
+  <h2>app.yamlの構文例</h2>
+  <p class="gra">下記コードのコピペはお勧めできません</p>
+  <p>費用がかかる可能性がありますよ。<br>
+   あくまでも私の環境に沿った上でのコードですから、ちゃんと意味を理解してから書いた方が良いです。
+  </p>
+  <div class="code-container">
+   <pre><code class="language-yaml">
+runtime: python38  # Python 3.8のランタイムを使用
+instance_class: F1  # 使用するインスタンスタイプ
+env: standard  # 標準環境でデプロイ
+
+runtime_config:
+  document_root: www  # ドキュメントルートのディレクトリを指定
+
+automatic_scaling:
+  min_idle_instances: 0  # 最小アイドルインスタンス数
+  max_idle_instances: 2  # 最大アイドルインスタンス数
+  max_concurrent_requests: 100  # インスタンスごとの最大同時リクエスト数
+
+handlers:
+- url: /  # ルートURLにアクセスがあったとき
+  static_files: www/index.html  # www/index.htmlを返す
+  upload: www/index.html  # アップロードするファイルパスの指定
+
+- url: /favicon.ico  # /favicon.icoにアクセスがあったとき
+  static_files: www/favicon.ico  # www/favicon.icoを返す
+  upload: www/favicon.ico  # アップロードするファイルパスの指定
+
+- url: /(.*)  # 任意のURLにアクセスがあったとき（正規表現を使用）
+  static_files: www/\1  # wwwディレクトリ内の対応するファイルを返す
+  upload: www/(.*)  # アップロードするファイルパスの指定
+
+</code></pre>
+  </div>
+
+  <h4>app.yaml構文例の説明</h4>
+  <ul>
+   <li><strong>runtime:</strong> Python 3.8ランタイムを使用することを指定しています。</li>
+   <li><strong>instance_class:</strong> 使用するインスタンスのタイプを指定しています。この場合はF1タイプ。</li>
+   <li><strong>env:</strong> デプロイする環境を指定しています。この場合は標準環境。</li>
+   <li><strong>runtime_config:</strong> ドキュメントルートのディレクトリを指定しています。</li>
+   <li><strong>automatic_scaling:</strong>
+    自動スケーリングの設定を行います。ここでは、最小アイドルインスタンス数、最大アイドルインスタンス数、インスタンスごとの最大同時リクエスト数を設定しています。</li>
+   <li><strong>handlers:</strong> 各URLパターンに対応するハンドラを設定しています。特定のURLにアクセスがあったときに、対応する静的ファイルを返す設定です。
+    <ul>
+     <li><strong>url: /</strong>: ルートURLにアクセスがあったとき、<code>www/index.html</code>を返す。</li>
+     <li><strong>url: /favicon.ico</strong>:
+      <code>/favicon.ico</code>にアクセスがあったとき、<code>www/favicon.ico</code>を返す。
+     </li>
+     <li><strong>url: /(.*)</strong>: 任意のURLにアクセスがあったとき、<code>www</code>ディレクトリ内の対応するファイルを返す。正規表現を使用しています。</li>
+    </ul>
+   </li>
+  </ul>
+
+  <h3>GCP・AWS・Azureで独自ドメインを使う</h3>
+  <p>GCP、AWS、Azureのいずれかを使用して独自ドメインを購入し適用する方法をサーっと書きますか。<br>
+   そんなに難しくありませんが、大したものではないとはいえ費用がかかるからね。<br>
+   ナシで済ませられるなら、それで良いと思いますけど。<br>
+   独自ドメインなしでもGoogle検索に乗せることは可能ですよ？</p>
+
+  <p class="gra">Google Cloud Platform (GCP)のケース</p>
+  <ul>
+   <li><strong>ドメインの購入</strong>
+    <ul>
+     <li>Google DomainsまたはCloud Domainsを使用してドメインを購入します。</li>
+     <li>GCPコンソールで「Cloud Domains」を検索し、APIを有効にします。</li>
+     <li>取得したいドメインを検索し、カートに追加して購入手続きを行います。</li>
+    </ul>
+   </li>
+   <li><strong>DNS設定</strong>
+    <ul>
+     <li>Cloud DNSを使用してDNSゾーンを作成し、ドメインを設定します。</li>
+     <li>GCPコンソールの「ネットワークサービス」から「Cloud DNS」を選択し、新しいゾーンを作成します。</li>
+     <li>Aレコードを追加し、ウェブサイトのIPアドレスを設定します。</li>
+    </ul>
+   </li>
+  </ul>
+
+  <p class="gra">Amazon Web Services (AWS)のケース</p>
+  <ul>
+   <li><strong>ドメインの購入</strong>
+    <ul>
+     <li>Route 53を使用してドメインを購入します。</li>
+     <li>AWSマネジメントコンソールにログインし、Route 53のダッシュボードに移動します。</li>
+     <li>「ドメインの登録」をクリックし、取得したいドメインを検索してカートに追加します。</li>
+     <li>必要な個人情報を入力し、購入手続きを完了します。</li>
+    </ul>
+   </li>
+   <li><strong>DNS設定</strong>
+    <ul>
+     <li>Route 53でホストゾーンを作成し、DNSレコードを設定します。</li>
+     <li>ホストゾーン内でAレコードを作成し、ウェブサイトのIPアドレスを設定します。</li>
+    </ul>
+   </li>
+  </ul>
+
+  <p class="gra">Microsoft Azureのケース</p>
+  <ul>
+   <li><strong>ドメインの購入</strong>
+    <ul>
+     <li>App Service ドメインを使用してドメインを購入します。</li>
+     <li>Azureポータルでアプリの管理ページに移動し、左側のメニューから「カスタム ドメイン」を選択します。</li>
+     <li>「App Service ドメインの購入」を選択し、取得したいドメインを入力して購入手続きを行います。</li>
+    </ul>
+   </li>
+   <li><strong>DNS設定</strong>
+    <ul>
+     <li>Azure DNSを使用してDNSゾーンを作成し、ドメインを設定します。</li>
+     <li>Azureポータルの「DNSゾーン」から新しいゾーンを作成し、Aレコードを追加してウェブサイトのIPアドレスを設定します。</li>
+    </ul>
+   </li>
+  </ul>
+
+
+
+  <h4>Webサイト制作に関係するミドルウェア</h4>
+
+  <p>ミドルウェアというのは、オペレーティングシステム アプリケーションソフトウェアの間に位置するソフトウェアのことです。<br>
+   OSが提供する基本機能とアプリケーションが必要とする特定の機能の橋渡しをする役割を持っています。<br>
+   Webサイト制作に関連するミドルウェアには、以下のようなものがありますね。</p>
+
+  <p>Webサーバ</p>
+  <ul>
+   <li><strong>Apache HTTP Server</strong>: 最も広く使用されているWebサーバの一つで、オープンソース</li>
+   <li><strong>Nginx</strong>: 高速で軽量なWebサーバで、リバースプロキシやロードバランサとしても利用される</li>
+   <li><strong>Microsoft IIS (Internet Information Services)</strong>: Windows Server上で動作するWebサーバ</li>
+  </ul>
+
+  <p>データベースサーバ</p>
+  <ul>
+   <li><strong>MySQL</strong>: オープンソースのリレーショナルデータベース管理システムで、多くのWebアプリケーションで使用される</li>
+   <li><strong>PostgreSQL</strong>: 高度な機能を持つオープンソースのリレーショナルデータベース管理システム</li>
+   <li><strong>MariaDB</strong>: MySQLのフォークで、オープンソースのリレーショナルデータベース管理システム</li>
+  </ul>
+
+  <p>アプリケーションサーバ</p>
+  <ul>
+   <li><strong>Apache Tomcat</strong>: JavaサーブレットやJSPを実行するためのオープンソースのアプリケーションサーバ</li>
+   <li><strong>GlassFish</strong>: Java EEアプリケーションを実行するためのオープンソースのアプリケーションサーバ</li>
+   <li><strong>Unicorn</strong>: Ruby on Railsアプリケーションを実行するためのアプリケーションサーバ</li>
+  </ul>
+
+  <p>クラウドサービスの中でミドルウェアの管理を気にせずに利用できるものとして、GCP、AWS、Azureには以下のようなサービスがあります。</p>
+
+  <p class="gra">Google Cloud Platform (GCP)</p>
+  <ul>
+   <li><strong>App Engine</strong>: フルマネージドのプラットフォームで、アプリケーションのデプロイとスケーリングを簡単にできる</li>
+   <li><strong>Cloud Functions</strong>: イベント駆動型のサーバーレスコンピューティングサービスで、コードを実行するためのインフラ管理が不要</li>
+   <li><strong>Cloud Run</strong>: コンテナ化されたアプリケーションをサーバーレスで実行</li>
+  </ul>
+
+  <p class="gra">Amazon Web Services (AWS)</p>
+  <ul>
+   <li><strong>AWS Lambda</strong>: サーバーレスコンピューティングサービスで、コードを実行するためのサーバー管理が不要</li>
+   <li><strong>AWS Fargate</strong>: コンテナをサーバーレスで実行できるサービスで、インフラ管理が不要</li>
+   <li><strong>AWS Elastic Beanstalk</strong>: アプリケーションのデプロイとスケーリングを簡単に行えるフルマネージドサービス</li>
+   <li><strong>Amazon S3</strong>: オブジェクトストレージサービスで、データの保存と取得が簡単にできる</li>
+   <li><strong>Amazon EC2</strong>: 仮想サーバーを提供するサービスで、スケーラブルなコンピューティング能力を提供</li>
+   <li><strong>Amazon RDS</strong>: フルマネージドのリレーショナルデータベースサービス</li>
+  </ul>
+
+  <p class="gra">Microsoft Azure</p>
+  <ul>
+   <li><strong>Azure Functions</strong>: イベント駆動型のサーバーレスコンピューティングサービスで、コードを実行するためのインフラ管理が不要</li>
+   <li><strong>Azure App Service</strong>: ウェブアプリケーションのデプロイとスケーリングを簡単に行えるフルマネージドサービス</li>
+   <li><strong>Azure Kubernetes Service (AKS)</strong>: コンテナ化されたアプリケーションを簡単にデプロイ、管理、スケーリングができる</li>
+   <li><strong>Azure Virtual Machines</strong>: 仮想マシンを提供するサービスで、スケーラブルなコンピューティング能力を提供</li>
+   <li><strong>Azure Blob Storage</strong>: オブジェクトストレージサービスで、データの保存と取得が簡単にできる</li>
+   <li><strong>Azure SQL Database</strong>: フルマネージドのリレーショナルデータベースサービス</li>
+  </ul>
+
+  <p>これらのサービスは、ミドルウェアの管理を気にせずに利用できるため、開発者の負担を軽減します。</p>
+
+
+  <h3>Webサイト制作とスケーリング・負荷分散</h3>
+
+  <p>Webサイト制作では、スケーリングと負荷分散が重要です。<br>
+   小規模な静的ウェブサイトレベルであれば、ここまで把握しなくて良いと思いますけどね。<br>
+   「ふーん…」くらいの気持ちで眺めてもらえれば。<br>
+   GCPはGoogle Cloud Load BalancingとAutoscaling。<br>
+   AWSはElastic Load Balancing (ELB)とAuto Scaling。<br>
+   AzureはAzure Load BalancerとAzure Virtual Machine Scale Sets。<br>
+   このようなプロダクトを使うことで、トラフィックの負荷分散と自動スケーリングを実現します。</p>
+
+  <p class="gra">GCPのケース</p>
+
+  <p><strong>Google Cloud Load Balancing</strong><br>
+   GCPのロードバランシングは、複数の仮想マシン（VM）インスタンスに対してトラフィックを分散します。</p>
+  <ul>
+   <li>スケーリング：アプリのトラフィック増加に対応。</li>
+   <li>ヘルスチェック：不健康なVMを自動検出・削除、健康回復時に再追加。</li>
+   <li>地理的トラフィックルーティング：最も近いVMにトラフィックをルーティング。</li>
+  </ul>
+
+  <p><strong>Autoscaling</strong><br>
+   GCPのAutoscalingは、管理されたインスタンスグループ（MIG）内のVMインスタンスを自動的に追加または削除します。次の条件に基づいてスケーリングが行われます。</p>
+  <ul>
+   <li>CPU使用率：CPUの使用率に基づいてスケーリング。</li>
+   <li>Cloud Monitoringメトリクス：特定のメトリクスに基づいてスケーリング。</li>
+   <li>スケジュール：事前に設定されたスケジュールに基づいてスケーリング。</li>
+   <li>ロードバランシングのサービングキャパシティ：インスタンスグループのサービングキャパシティに基づいてスケーリング。</li>
+  </ul>
+
+  <p>これらの機能を組み合わせることで、GCP上でのアプリケーションはトラフィックの増減に柔軟に対応し、コスト効率を高めることができます。</p>
+
+  <p class="gra">AWSのケース</p>
+
+  <p><strong>Elastic Load Balancing (ELB)</strong><br>
+   ELBは、複数のEC2インスタンスに対してトラフィックを自動的に分散する機能を持っています。<br>
+   これにより、特定のインスタンスに負荷が集中することを防ぎ、アプリケーションのパフォーマンスを維持します。<br>
+   また、ELBは各インスタンスに対して定期的にヘルスチェックを行い、異常が検知されたインスタンスにはトラフィックを送信しないようにします。</p>
+
+  <p><strong>Auto Scaling</strong><br>
+   Auto Scalingは、トラフィックの変動に応じてEC2インスタンスの数を自動的に増減させる機能です。<br>
+   あらかじめ設定したルールに基づいて、必要なリソースを確保し、運用の手間を大幅に削減します。</p>
+
+  <p><strong>連携の仕組み</strong></p>
+  <ul>
+   <li>ELBのアタッチ: Auto ScalingグループにELBをアタッチすると、グループ内のインスタンスが自動的にELBに登録される。</li>
+   <li>スケーリングポリシーの設定: ELBのメトリクス（例: ターゲットあたりのリクエスト数）を使って、Auto
+    Scalingのスケーリングポリシーを設定できる。これで、トラフィックの増減に応じてインスタンス数を自動調整できる。</li>
+   <li>ヘルスチェックの追加: Auto ScalingグループにELBのヘルスチェックを追加すると、異常なインスタンスを自動で置き換えられる。</li>
+  </ul>
+
+  <p><strong>ELBの種類</strong></p>
+  <ul>
+   <li>Application Load Balancer (ALB): HTTPやHTTPSのトラフィックをアプリケーション層でルーティングする。</li>
+   <li>Network Load Balancer (NLB): TCPやUDPのトラフィックをトランスポート層でルーティングする。</li>
+   <li>Gateway Load Balancer (GWLB): セキュリティアプライアンスにトラフィックを分散する。</li>
+   <li>Classic Load Balancer (CLB): 従来型のロードバランサーで、現在はALBやNLBの利用が推奨される。</li>
+  </ul>
+
+  <p>ELBとAuto Scalingを連携させることで、トラフィックの変動に合わせて適切なリソースを自動的に確保し、トラフィックを最適に分散させることができます。<br>
+   Webアプリケーションのパフォーマンスと可用性を高く維持できますね。</p>
+
+  <p class="gra">Azureのケース</p>
+
+  <p><strong>Azure Load Balancer</strong><br>
+   Azure Load Balancerは、複数の仮想マシン（VM）に対してトラフィックを分散するサービスです。<br>
+   特定のVMに負荷が集中することを防ぎ、アプリケーションのパフォーマンスを維持します。</p>
+  <ul>
+   <li>高可用性：トラフィックを複数のリージョンやアベイラビリティゾーンに分散できる。</li>
+   <li>ヘルスプローブ：各VMの状態を定期的にチェックし、異常が検知されたVMにはトラフィックを送信しない。</li>
+  </ul>
+
+  <p><strong>Azure Virtual Machine Scale Sets</strong><br>
+   Azure Virtual Machine Scale Setsは、トラフィックの増減に応じてVMの数を自動的に調整するサービスです。<br>
+   必要なリソースを自動的に確保し、コスト効率を高めることができます。</p>
+  <ul>
+   <li>自動スケーリング：CPU使用率やメモリ使用率に基づいて、VMの数を自動で増減する。</li>
+   <li>スケジュールベースのスケーリング：特定の時間帯に合わせてスケーリングを設定できる。</li>
+  </ul>
+
+  <p><strong>連携方法</strong></p>
+  <ul>
+   <li>Application Load Balancer (ALB): HTTPやHTTPSのトラフィックをアプリケーション層でルーティング。</li>
+   <li>Network Load Balancer (NLB): TCPやUDPのトラフィックをトランスポート層でルーティング。</li>
+   <li>Gateway Load Balancer (GWLB): セキュリティアプライアンスにトラフィックを分散。</li>
+   <li>Classic Load Balancer (CLB): 従来型のロードバランサーで、現在はALBやNLBの利用が推奨。</li>
+  </ul>
+
+  <p>このように、AzureでもAWSと同様に、負荷分散と自動スケーリングを組み合わせて効率的なリソース管理が可能です。</p>
+
+  <h4>Webサイト制作とネットワーク</h4>
+  <p>ネットワークなんて本格的にやるとめちゃくちゃ難しいですけどね。<br>
+   でもこのくらいなら…といいますか、個人でWebサイト作って遊ぶときに知っておくと便利な知識くらいは、書いていこうかと思います。</p>
+
+  <p>※この項はクラウドのネットワークページへ移植すること</p>
+
+  <p>ネットワークアドレスは、特定のネットワークを識別するためのアドレスです。<br>
+   例えば、IPアドレス <code>192.168.1.0</code> は、<code>192.168.1.0/24</code> ネットワークのネットワークアドレスです。<br>
+   このアドレスは、ネットワーク内のすべてのデバイスが属する共通の識別子となります。</p>
+
+  <p>ホストアドレスは、ネットワーク内の個々のデバイス（ホスト）を識別するためのアドレスです。<br>
+   例えば、<code>192.168.1.10</code> は、<code>192.168.1.0/24</code> ネットワーク内の特定のデバイスのホストアドレスです。<br>
+   ホストアドレスは、ネットワークアドレスとサブネットマスクを組み合わせて決定されます。</p>
+
+  <p>CIDR（Classless Inter-Domain Routing）表記は、IPアドレスとサブネットマスクを簡潔に表現する方法です。<br>
+   例えば、<code>192.168.1.0/24</code> は、IPアドレス <code>192.168.1.0</code> とサブネットマスク <code>255.255.255.0</code>
+   を表します。<br>
+   <code>/24</code> は、ネットワーク部分が24ビットであることを示しています。
+  </p>
+
+  <p>サブネットは、大きなネットワークを小さなネットワークに分割するための方法です。<br>
+   その結果、ネットワークの管理が容易になり、効率的なIPアドレスの利用が可能になります。<br>
+   例えば、<code>192.168.1.0/24</code> ネットワークを <code>192.168.1.0/26</code> と <code>192.168.1.64/26</code>
+   の2つのサブネットに分割することができます。</p>
+
+  <p>DMZ（Demilitarized Zone）は、内部ネットワークと外部ネットワーク（インターネット）の間に配置される中間ネットワークです。<br>
+   DMZに配置されたサーバーは、外部からアクセス可能でありながら、内部ネットワークへの直接アクセスを防ぐ役割を果たします。<br>
+   このため、セキュリティが強化されます。</p>
+
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/appengine.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

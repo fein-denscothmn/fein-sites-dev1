@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <meta charset="UTF-8">
+ <title>Webサイトに動画を掲載する</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="Webサイトに動画を掲載するにはどうすれば良いでしょうか。せっかくやるなら、独自のレイアウトなどを設定できた方が良いですよね。">
+ <meta name="keywords" content="個人サイト, 動画, YouTube">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="Webサイトに動画を掲載する">
+ <meta property="og:description" content="Webサイトに動画を掲載するにはどうすれば良いでしょうか。せっかくやるなら、独自のレイアウトなどを設定できた方が良いですよね。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/videopage.html">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <link rel="stylesheet" type="text/css" href="/css/video.css">
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <script src="/script/video.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-bash.min.js"></script>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+ <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "Webサイトに動画を掲載する",
+                "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/videopage.html",
+                "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+            }
+            </script>
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="/contents/site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Webサイトに動画を掲載する</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!--ハンバーガーメニュー-->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰
+    メニューを開く</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!--ハンバーガーメニューここまで-->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="Webサイトに動画を掲載するの目次を開く ▼"
+   data-close-text="Webサイトに動画を掲載するの目次を閉じる ▲">Webサイトに動画を掲載するの目次を開く ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>Webサイトに動画を掲載する</span></h1>
+  <p>まずは完成形をお見せしましょう。<br>
+   ウツボの珍しい動画を題材とします。<br>
+   ２つの掲載の仕方を紹介します。<br>
+   １つは、Webサイトのディレクトリに動画ファイルを置いて、それを読み込ませるタイプ。<br>
+   もう１つは、Google Driveにある動画を引っ張ってきて、それを読み込ませるタイプです。
+  </p>
+
+
+  <div class="video-card">
+   <h4 class="special-title">海面で跳ねるウツボの動画</h4>
+   <p>岩穴に潜んでいるウツボがこんな動きをするのは極めて珍しいのでは？！<br>
+    釣りしてたらバチャバチャうるさいから海を見ると、なんとウツボが暴れていました。<br>
+    小魚でも群れていたのか…それにしても、珍しいです。</p>
+   <video class="myVideo" poster="../video/ウツボ顔アップ.JPG" controls>
+    <source src="../video/海面で跳ねるウツボ.mp4" type="video/mp4">
+    お使いのブラウザは動画タグに対応していません。
+   </video>
+   <p>サムネイル画像はかっこいいウツボですよ。<br>
+    元の高画質動画は「<a href="https://drive.google.com/file/d/1sjtKl--leD-0Cv828__dpnNeoTfat6IS/view?usp=sharing">ウツボダンス</a>」です。
+   </p>
+   <hr class="stylish">
+   <div class="controls">
+    <button class="control-btn play-pause" onclick="playPause()">再生/一時停止</button>
+    <button class="control-btn stop" onclick="stopVideo()">停止</button>
+    <button class="control-btn mute-unmute" onclick="muteUnmute()">ミュート/ミュート解除</button>
+    <button class="control-btn pip" onclick="togglePip()">ピクチャインピクチャ</button>
+   </div>
+  </div>
+  <p>上にある動画がWebサイトのディレクトリに動画ファイルを置いて、それを読み込ませるタイプです。<br>
+   比較的短い動画、言い換えるとサイズの小さい動画に向いているでしょうね。<br>
+   このページで紹介するPythonで動画圧縮のプロセスを挟むのも、このやり方です。</p>
+
+  <div class="spacer"></div>
+
+  <div class="custom-google-drive-container">
+   <h4>海面で跳ねるウツボの動画（Google Drive）</h4>
+   <p>岩穴に潜んでいるウツボがこんな動きをするのは極めて珍しいのでは？！<br>
+    釣りしてたらバチャバチャうるさいから海を見ると、なんとウツボが暴れていました。<br>
+    小魚でも群れていたのか…それにしても、珍しいです。</p>
+   <iframe src="https://drive.google.com/file/d/1sjtKl--leD-0Cv828__dpnNeoTfat6IS/preview"
+    class="custom-google-drive-iframe" allow="autoplay"></iframe>
+   <p class="google-drive-text"><i class="fab fa-google-drive"></i>This is a video on Google Drive.</p>
+  </div>
+  <p>上にある動画がGoogle Driveにある動画を引っ張ってきて、それを読み込ませるタイプです。<br>
+   サムネイルを付けることもできるけど、動画をストレートに掲載するのも悪くないと思いますよ？<br>
+   この方法なら大きな動画もそのまま、遠慮なく載せられます。<br>
+   どちらが良いかはその時次第ですね。
+  </p>
+
+  <p>視聴者の閲覧を妨げる広告が出ないのはどちらも同じです。<br>
+   では、コードや実装のやり方を見ていきましょう。</p>
+
+  <h4>サムネイル画像のアスペクト比</h4>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(4).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>とりあえずサムネイル画像ですかね？<br>
+    アスペクト比を守りつつ、サムネイル画像の大きさも調整しましょう。<br>
+    一般的なHD（ハイビジョン）のアスペクト比は16:9。<br>
+    解像度は1280×720となります。<br>
+    上のウツボ動画は、動画本体とサムネイル画像のアスペクト比を合わせています。<br>
+    これがあんまり大きく食い違ったりすると、クリックしたときに視聴者が戸惑うかもしれません。</p>
+  </div>
+
+
+  <h2>普通の動画を掲載するエリアを作る</h2>
+  <p>まずは、Webサイトのディレクトリに動画ファイルを置いて、それを読み込ませるタイプのhtmlです。</p>
+
+  <p>動画はちょっと他のメディア要素と違うのでね。<br>
+   特別枠と言いますか、周囲とは違う枠組みを使って掲載するようにしています。<br>
+   もともと重量級のデータですから、ちゃんとサイズ調整のエンコードを事前に施してからアップする。<br>
+   YouTubeも良いのですが、あれは広告が出るでしょう？<br>
+   私がどーしても広告を貼りたいと考えた場合、ユーザーの視聴を妨げないように何かしら工夫するかな？<br>
+   少なくとも動画はそのまま掲載しちゃいます。</p>
+
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;head&gt;
+&lt;!--CSS--&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;../css/video.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css&quot;&gt;
+
+&lt;!--JavaScript--&gt;
+&lt;script src=&quot;../script/video.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;div class=&quot;video-card&quot;&gt;
+    &lt;!-- 動画のタイトル --&gt;
+    &lt;h4 class=&quot;special-title&quot;&gt;フィーネによる周回の動画１&lt;/h4&gt;
+    &lt;!-- 動画のルート説明 --&gt;
+    &lt;p&gt;アナダンエントラーナ・塔〜迷路ルート&lt;/p&gt;
+    &lt;!-- 動画プレイヤー --&gt;
+    &lt;video id=&quot;myVideo&quot; poster=&quot;../video/★５フィーネ・キャラ紹介.jpg&quot; controls&gt;
+        &lt;!-- 動画ソースファイル --&gt;
+        &lt;source src=&quot;../video/アナダンエントラーナ・塔〜迷路フィーネ.mp4&quot; type=&quot;video/mp4&quot;&gt;
+        &lt;!-- 動画タグに対応していないブラウザ向けのメッセージ --&gt;
+        お使いのブラウザは動画タグに対応していません。
+    &lt;/video&gt;
+    &lt;!-- 高画質動画へのリンク --&gt;
+    &lt;p&gt;元の高画質動画は「&lt;a href=&quot;https://drive.google.com/file/d/1MG4sRfZ2UkeZjJM0LB14Iz75q1pZbasA/view?usp=drive_link&quot;&gt;アナダンエントラーナ・塔〜迷路ルート&lt;/a&gt;」です。&lt;/p&gt;
+    &lt;!-- スタイリッシュな区切り線 --&gt;
+    &lt;hr class=&quot;stylish&quot;&gt;
+    &lt;!-- 動画コントロールボタン --&gt;
+    &lt;div class=&quot;controls&quot;&gt;
+        &lt;button class=&quot;control-btn play-pause&quot; onclick=&quot;playPause()&quot;&gt;再生/一時停止&lt;/button&gt;
+        &lt;button class=&quot;control-btn stop&quot; onclick=&quot;stopVideo()&quot;&gt;停止&lt;/button&gt;
+        &lt;button class=&quot;control-btn mute-unmute&quot; onclick=&quot;muteUnmute()&quot;&gt;ミュート/ミュート解除&lt;/button&gt;
+        &lt;button class=&quot;control-btn pip&quot; onclick=&quot;togglePip()&quot;&gt;ピクチャインピクチャ&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+    </code></pre>
+  </div>
+
+  <h4>アイコンライブラリ：Font Awesome</h4>
+  <p>このhtml内にある https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css というリンクは、Font
+   Awesomeというアイコンライブラリを示します。<br>
+   このアイコンライブラリのCSSファイルを参照しているんですよね。<br>
+   Font Awesomeは、さまざまなアイコンやイラストをウェブサイトやアプリケーションに簡単に追加できるようにするためのツールです。<br>
+   具体的には、このCSSファイルはFont Awesomeの最新バージョン（6.0.0-beta3）のアイコンセットを含んでおり、ウェブページに組み込むことで、アイコンをスタイル化して表示しています。</p>
+
+  <p><a href="https://fontawesome.com/">font-awesome公式サイト</a></p>
+
+
+  <h4>動画を掲載するエリア（CSS）</h4>
+  <p>こういう感じでWebサイトのUIを実装していきます。<br>
+   YouTubeで動画掲載するスタイルが流行ってるから、ちょっとそれとは違った手法を紹介してみてます。<br>
+   どーしても動画で稼ぎたいと私が考えたとすれば、こうやってやるよね。<br>
+   広告は動画本体ではなく、別途サイトの隅っこに表示させるかな。
+  </p>
+
+  <p class="codegra" id="normal_video_css">普通の動画を掲載するvideo.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+@charset "UTF-8";
+
+/* ビデオカード全体のスタイル */
+.video-card {
+    max-width: 80%; /* カードの最大幅を80%に設定 */
+    margin: 20px auto; /* 上下に20pxの余白を設定し、中央に配置 */
+    padding: 20px; /* 内側に20pxの余白を設定 */
+    border: 1px solid #ccc; /* 薄いグレーの枠線を設定 */
+    border-radius: 10px; /* 角を10px丸める */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 軽い影を設定 */
+    background-color: #fff; /* 背景色を白に設定 */
+    position: relative; /* 相対位置を設定 */
+}
+
+/* タイトルのスタイル */
+.video-card .special-title {
+    margin-bottom: 10px; /* 下側に10pxの余白を設定 */
+    margin-top: 5px; /* 上側の余白を5pxに調整 */
+}
+
+/* 段落のスタイル */
+.video-card p {
+    color: #666; /* 文字色を薄いグレーに設定 */
+    margin-bottom: 20px; /* 下側に20pxの余白を設定 */
+}
+
+/* 動画のスタイル */
+.video-card video {
+    width: 100%; /* 幅を100%に設定 */
+    height: auto; /* 高さを自動調整 */
+    border-radius: 10px; /* 角を10px丸める */
+}
+
+/* スタイリッシュな区切り線のスタイル */
+hr.stylish {
+    border: 0; /* 枠線をなしに設定 */
+    height: 5px; /* 高さを5pxに設定 */
+    background: linear-gradient(to right, rgba(0, 255, 0, 0), rgba(0, 255, 0, 0.3), rgba(255, 0, 0, 0.3), rgba(255, 255, 0, 0.3), rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0)); /* グラデーション背景を設定 */
+}
+
+/* コントロールボタンのスタイル */
+.controls {
+    display: flex; /* フレックスボックスを使用 */
+    justify-content: center; /* 中央に配置 */
+    flex-wrap: wrap; /* 複数行に折り返し可能に設定 */
+}
+
+.control-btn {
+    background-color: rgba(0, 123, 255, 0.7); /* 青色の背景色を設定 */
+    color: white; /* 文字色を白に設定 */
+    border: 2px solid rgba(0, 123, 255, 0.7); /* 枠線の色を設定 */
+    padding: 5px 5px; /* 内側に5pxの余白を設定 */
+    margin: 5px; /* 外側に5pxの余白を設定 */
+    border-radius: 5px; /* 角を5px丸める */
+    cursor: pointer; /* カーソルをポインターに設定 */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* 背景色と変形の遷移を設定 */
+}
+
+/* 再生/一時停止ボタンのスタイル */
+.play-pause {
+    background-color: rgba(40, 167, 69, 0.7); /* 緑色の背景色を設定 */
+    border: 2px solid rgba(40, 167, 69, 0.7); /* 緑色の枠線を設定 */
+}
+.play-pause:hover {
+    background-color: rgba(40, 167, 69, 0.9); /* ホバー時の背景色を濃く設定 */
+}
+.play-pause::before {
+    content: "\f04b"; /* Font Awesomeのアイコンを設定 */
+    font-family: "Font Awesome 5 Free"; /* Font Awesomeを使用 */
+    font-weight: 900; /* アイコンの太さを設定 */
+    margin-right: 5px; /* 右側に5pxの余白を設定 */
+}
+
+/* 停止ボタンのスタイル */
+.stop {
+    background-color: rgba(220, 53, 69, 0.7); /* 赤色の背景色を設定 */
+    border: 2px solid rgba(220, 53, 69, 0.7); /* 赤色の枠線を設定 */
+}
+.stop:hover {
+    background-color: rgba(220, 53, 69, 0.9); /* ホバー時の背景色を濃く設定 */
+}
+.stop::before {
+    content: "\f04d"; /* Font Awesomeのアイコンを設定 */
+    font-family: "Font Awesome 5 Free"; /* Font Awesomeを使用 */
+    font-weight: 900; /* アイコンの太さを設定 */
+    margin-right: 5px; /* 右側に5pxの余白を設定 */
+}
+
+/* ミュート/ミュート解除ボタンのスタイル */
+.mute-unmute {
+    background-color: rgba(255, 193, 7, 0.7); /* 黄色の背景色を設定 */
+    border: 2px solid rgba(255, 193, 7, 0.7); /* 黄色の枠線を設定 */
+}
+.mute-unmute:hover {
+    background-color: rgba(255, 193, 7, 0.9); /* ホバー時の背景色を濃く設定 */
+}
+.mute-unmute::before {
+    content: "\f6a9"; /* Font Awesomeのアイコンを設定 */
+    font-family: "Font Awesome 5 Free"; /* Font Awesomeを使用 */
+    font-weight: 900; /* アイコンの太さを設定 */
+    margin-right: 5px; /* 右側に5pxの余白を設定 */
+}
+
+/* ピクチャインピクチャボタンのスタイル */
+.pip {
+    background-color: rgba(108, 117, 125, 0.7); /* グレーの背景色を設定 */
+    border: 2px solid rgba(108, 117, 125, 0.7); /* グレーの枠線を設定 */
+}
+.pip:hover {
+    background-color: rgba(108, 117, 125, 0.9); /* ホバー時の背景色を濃く設定 */
+}
+.pip::before {
+    content: "\f2d8"; /* Font Awesomeのアイコンを設定 */
+    font-family: "Font Awesome 5 Free"; /* Font Awesomeを使用 */
+    font-weight: 900; /* アイコンの太さを設定 */
+    margin-right: 5px; /* 右側に5pxの余白を設定 */
+}
+
+/* モバイル表示での調整 */
+@media (max-width: 600px) {
+    .control-btn {
+        margin: 5px; /* モバイルでもマージンを保持 */
+    }
+}
+   </code></pre>
+  </div>
+
+  <p>このCSSでは、いくつかのスタイルが組み合わさって要素を周囲から浮かび上がらせる効果を生み出しています。</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(7).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <ul>
+    <li>
+     <span class="codecolor">max-width: 80%</span>: 要素の幅を親コンテナの80%に制限し、適度な幅を保つことで中央に配置されます。
+    </li>
+    <li>
+     <span class="codecolor">margin: 20px auto</span>: 要素の上下に20pxの余白を持たせ、水平方向に中央揃えにします。
+    </li>
+    <li>
+     <span class="codecolor">padding: 20px</span>:
+     要素内のコンテンツ周りに20pxの内側余白を設定し、コンテンツが要素内で適切に配置されるようにします。
+    </li>
+    <li>
+     <span class="codecolor">border: 1px solid #ccc</span>: 要素の周囲に薄いグレーの境界線を追加し、区切りを明確にします。
+    </li>
+    <li>
+     <span class="codecolor">border-radius: 10px</span>: 要素の角を10pxの半径で丸くすることで、柔らかい印象を与えます。
+    </li>
+    <li>
+     <span class="codecolor">box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)</span>:
+     要素の周囲に薄い影を追加し、立体感を持たせることで周囲から浮かび上がるように見せます。具体的には、影のオフセットが0px（水平方向）と4px（垂直方向）で、ぼかしの半径が8px、影の色が10%透明の黒です。
+    </li>
+    <li>
+     <span class="codecolor">background-color: #fff</span>: 背景色を白に設定し、清潔感と視認性を高めます。
+    </li>
+    <li>
+     <span class="codecolor">position: relative</span>: この要素の子要素の位置を絶対位置で設定できるようにします。
+    </li>
+   </ul>
+  </div>
+
+
+  <p>これらのスタイルが組み合わさることで、ビデオカードが周囲の他の要素から浮かび上がるように見えるという仕組みです。<br>
+   視覚的に引き立つデザインにするための工夫ですね。</p>
+
+  <h4>動画を掲載するエリア（JavaScript）</h4>
+  <p>これはそーんなに、重要ではないかもね。<br>
+   動画ファイルを直接そのまんま貼っても良いのですよ。<br>
+   ちゃんとコントロールできる仕組みが表示されるから。<br>
+   でもボタンが小さくてモバイルだと操作しにくい可能性もあるので、こうして別に実装していると言うだけですね。
+  </p>
+
+  <p class="codegra" id="normal_video_js">普通の動画を掲載するvideo.js</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+document.addEventListener("DOMContentLoaded", function() {
+    // 全ての動画カード要素を取得
+    const videoCards = document.querySelectorAll(".video-card");
+
+    // 各動画カードごとにループ処理を実行
+    videoCards.forEach(videoCard => {
+        // 各動画カード内のvideo要素を取得
+        const video = videoCard.querySelector("video");
+
+        // 再生/一時停止ボタンのクリックイベントを設定
+        videoCard.querySelector(".play-pause").addEventListener("click", function() {
+            if (video.paused) {
+                // 動画が一時停止中なら再生
+                video.play();
+            } else {
+                // 動画が再生中なら一時停止
+                video.pause();
+            }
+        });
+
+        // 停止ボタンのクリックイベントを設定
+        videoCard.querySelector(".stop").addEventListener("click", function() {
+            // 動画を一時停止して、再生位置を0にリセット
+            video.pause();
+            video.currentTime = 0;
+        });
+
+        // ミュート/ミュート解除ボタンのクリックイベントを設定
+        videoCard.querySelector(".mute-unmute").addEventListener("click", function() {
+            // 動画のミュート状態をトグル
+            video.muted = !video.muted;
+        });
+
+        // ピクチャインピクチャボタンのクリックイベントを設定
+        videoCard.querySelector(".pip").addEventListener("click", async function() {
+            try {
+                if (video !== document.pictureInPictureElement) {
+                    // 動画がピクチャインピクチャモードでない場合、ピクチャインピクチャモードを開始
+                    await video.requestPictureInPicture();
+                } else {
+                    // 動画がピクチャインピクチャモードの場合、ピクチャインピクチャモードを終了
+                    await document.exitPictureInPicture();
+                }
+            } catch (error) {
+                console.error("ピクチャインピクチャモードの切り替えエラー:", error);
+            }
+        });
+    });
+});
+    </code></pre>
+  </div>
+
+  <p>このコードの説明：</p>
+  <ul>
+   <li>
+    <span class="codecolor">DOMContentLoadedイベントリスナー</span>: ページの読み込みが完了したときに、以下の処理を実行する。
+   </li>
+   <li>
+    <span class="codecolor">動画カード要素の取得</span>:
+    クラス<code>video-card</code>を持つすべての要素を取得し、<code>videoCards</code>という変数に格納する。
+   </li>
+   <li>
+    <span class="codecolor">ループ処理</span>: 各動画カードに対してループを実行し、各動画カード内の動画要素とコントロールボタンを設定する。
+   </li>
+   <li>
+    <span class="codecolor">再生/一時停止ボタン</span>:
+    各動画カードの再生/一時停止ボタンにクリックイベントリスナーを追加する。ボタンがクリックされると、動画の再生/一時停止を切り替える。
+   </li>
+   <li>
+    <span class="codecolor">停止ボタン</span>:
+    各動画カードの停止ボタンにクリックイベントリスナーを追加する。ボタンがクリックされると、動画を停止し、再生位置をリセットする。
+   </li>
+   <li>
+    <span class="codecolor">ミュート/ミュート解除ボタン</span>:
+    各動画カードのミュート/ミュート解除ボタンにクリックイベントリスナーを追加する。ボタンがクリックされると、動画のミュート状態を切り替える。
+   </li>
+   <li>
+    <span class="codecolor">ピクチャインピクチャボタン</span>:
+    各動画カードのピクチャインピクチャボタンにクリックイベントリスナーを追加する。ボタンがクリックされると、動画をピクチャインピクチャモードに切り替える。または、すでにピクチャインピクチャモードの場合はモードを終了する。
+   </li>
+  </ul>
+
+  <h5>ループ処理が必要な理由</h5>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(38).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>ループ処理が必要なのは、複数の動画カードがページに存在する可能性があるからです。<br>
+    各動画カードに同じ操作を適用するために、ループを使って個別に設定しています。<br>
+    一つだけならループを使わずに直接要素を指定すれば良いのですが、多数の要素に対して同じ処理を行うなら、ループが効率的ってわけですね。<br>
+    このようにして、複数の動画がページ内にあっても、全部同じように扱えるようになります。</p>
+  </div>
+
+
+
+  <h2>動画をPythonでエンコードして圧縮する</h2>
+  <p>これは役に立つと思いますね。<br>
+   動画を扱うのは手間がかかり、専用のソフトウェアまで準備しなければならないことがあります。<br>
+   動画本体をつないだり加工するのはまだ容認するとしても、複数の動画をエンコードするのにいちいち専用ソフトを使っていたら、めちゃくちゃ時間がかかりますよ。<br>
+   ここでは末尾に動画加工のクラウドサービスも紹介しようと思います。
+  </p>
+
+
+  <h4>ffmpegライブラリをインストールしてsubprocessを用いる</h4>
+
+  <p>このPythonコードを実行するために必要なライブラリはsubprocessとffmpegです。</p>
+
+  <h5>subprocess</h5>
+  <p>これはPythonの標準ライブラリなんです。<br>
+   外部プログラムを実行するために使用しますが、追加のインストールは不要です。</p>
+
+  <h5>ffmpeg</h5>
+  <p>動画や音声を処理するためのツール。<br>
+   コマンドラインツールであり、Pythonから呼び出して使用します。<br>
+   これをインストールする必要があります。</p>
+
+  <p class="gra">FFmpegのインストール方法</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(40).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>まず、<a href="https://ffmpeg.org/download.html">FFmpegの公式サイト</a>からWindows向けのビルドをダウンロードします。<br>
+    Get packages & executable filesをクリックします。</p>
+
+   <p>Windows EXE Filesのところに<br>
+    ・Windows builds from gyan.dev<br>
+    ・Windows builds by BtbN<br>
+    とあります。</p>
+  </div>
+
+
+  <p>どちらを選んでもFFmpegをインストールすることはできますが、一般的には「Windows builds from gyan.dev」を使うのがいいかも。<br>
+   公式ドキュメントでもよく推薦されているし、利用者の評判も安定しています。</p>
+
+  <ul>
+   <li>Windows builds from gyan.dev: シンプルで使いやすいパッケージが多い。</li>
+   <li>Windows builds by BtbN: より最新の機能やエッジケースに対応していることが多い。</li>
+  </ul>
+
+  <p>まずは「gyan.dev」を試してみて、特別な理由がなければこちらで十分でしょう。</p>
+
+  <p>では、「Windows builds from gyan.dev:」をクリックしていただけると、<a href="https://www.gyan.dev/ffmpeg/builds/">CODEX
+    FFMPEG</a> に出ます。<br>
+   CODEX FFMPEGというのは、FFmpegのバイナリ（実行ファイル）を提供しているサイトです。<br>
+   このサイトは、FFmpegの開発者であるGyan Doshiが運営しており、特にWindows向けのFFmpegバイナリを提供してくれています。<br>
+   FFmpegに関する教育リソースも提供しており、初心者から上級者まで幅広く利用できるサイトとなっていますね。</p>
+
+  <p>次に、「git master builds」のところをご覧ください。<br>
+   latest git master branch build version: 2024-10-17-git-e1d1ba4cbc　とあり、<br>
+   ・ffmpeg-git-essentials.7z　.ver .sha256<br>
+   ・ffmpeg-git-full.7z　.ver .sha256<br>
+   こうやって書かれてると思います。<br>
+   ダウンロードするのはエッセンシャルで良いでしょう。</p>
+
+  <p>「ffmpeg-git-essentials.7z」のバージョンはFFmpegの基本的な機能を含んでおり、ほとんどのユーザーにとって十分な内容です。<br>
+   「ffmpeg-git-full.7z」は追加機能やエクストラコーデックが含まれているので、特別な理由がなければ「essentials」で問題ないと思います。</p>
+
+  <p>ダウンロードができたらファイルを解凍し、ffmpegフォルダを適切な場所に配置して解凍する。─ Cドライブ直下など、分かりやすい場所へ。─</p>
+
+  <p>それからフォルダパスを環境変数PATHに追加して、どこからでもffmpegコマンドを実行できるようにします。</p>
+
+  <p>Windowsキー + Rで「ファイル名を指定して実行」ダイアログを開けますよ。<br>
+   そこに「systempropertiesadvanced」と入力してEnterキーを押すと、「システムのプロパティ」の詳細設定タブが一発で表示されるんです。</p>
+
+  <ul>
+   <li>Windowsキー + Rを押す</li>
+   <li>「systempropertiesadvanced」と入力してEnterキーを押す</li>
+  </ul>
+
+  <p>「Windowsキー +」の操作はとても便利で、今回のケースでは直接「環境変数」ボタンにアクセスしています。</p>
+
+  <h2>フォルダパスを環境変数PATHに追加する手順</h2>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(44).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>これ、重要なんですよ。<br>
+    今回は動画のエンコードに必要なFFmpegのパスを追加する手順を例にしますが、他でも同じです。
+   </p>
+   <p>環境変数にパスを追加する手順は、プログラミングやシステム管理の基本的な知識に含まれます。<br>
+    特に開発者やシステム管理者にとっては、ツールやライブラリを使いやすくするための重要なステップですね。<br>
+    初めて学ぶには少し複雑に感じるかもしれませんが、慣れてくると非常に有用なスキルになるはずです。<br>
+    この基本的な操作をしっかりマスターすると、後々の作業がスムーズに進むようになります。</p>
+  </div>
+
+  <ol>
+   <li>
+    <p><strong>システムのプロパティを開く</strong></p>
+    <ol>
+     <li><strong>Windowsキー + R</strong>を押して「ファイル名を指定して実行」ダイアログを開く。</li>
+     <li>「systempropertiesadvanced」と入力して、Enterキーを押す。</li>
+    </ol>
+   </li>
+   <li>
+    <p><strong>環境変数の設定</strong></p>
+    <ol>
+     <li>「システムのプロパティ」ウィンドウが開くので、「詳細設定」タブが表示されていることを確認する。</li>
+     <li>「環境変数」ボタンをクリック。</li>
+    </ol>
+   </li>
+   <li>
+    <p><strong>環境変数の編集</strong></p>
+    <ol>
+     <li>「環境変数」ウィンドウで、「システム環境変数」の中から「Path」を探して選択し、「編集」ボタンをクリック。</li>
+    </ol>
+   </li>
+   <li>
+    <p><strong>新しいパスを追加</strong></p>
+    <ol>
+     <li>「環境変数の編集」ウィンドウが開くので、「新規」ボタンをクリック。</li>
+     <li>ここにFFmpegのフォルダパス（例えば、<code>C:\ffmpeg-2024-10-17-git-e1d1ba4cb\bin</code>）を入力して、Enterキーを押す。
+     </li>
+    </ol>
+   </li>
+   <li>
+    <p><strong>設定を保存</strong></p>
+    <ol>
+     <li>「OK」ボタンをクリックして、すべてのウィンドウを閉じる。</li>
+    </ol>
+   </li>
+  </ol>
+  <p>これで環境変数にFFmpegのパスが追加されました。<br>
+   次に、コマンドプロンプトを開いて<span class="codecolor">ffmpeg -version</span>と入力して、正しくインストールされたか確認してみてください。</p>
+
+  <h4>動画エンコードのPythonコードの説明</h4>
+  <p>このコードは、指定された動画ファイルをH.264形式にエンコードして、新しいファイルとして保存するものです。<br>
+   シンプルだけどとても便利で、Webサイトに動画を掲載するなら、こういったスクリプトを準備しておくと効率が上がります。</p>
+
+  <p class="codegra" id="mp4mini_py">動画をエンコードするmp4mini.py</p>
+  <div class="code-container">
+   <pre><code class="language-python">
+import subprocess  # Pythonの標準ライブラリで、外部プログラムの実行に使用するモジュール
+def convert_to_h264(input_file, output_file):
+    try:
+        # ffmpegコマンドを実行して、動画をH.264形式に変換する
+        result = subprocess.run(
+            ['ffmpeg', '-i', input_file, '-vcodec', 'libx264', '-crf', '30', '-b:v', '1.5M', '-preset', 'slow', output_file],
+            check=True,  # エラー発生時に例外をスローする
+            stdout=subprocess.PIPE,  # 標準出力を取得する
+            stderr=subprocess.PIPE   # 標準エラー出力を取得する
+        )
+        # 変換成功のメッセージを出力
+        print(f"変換が成功しました: {output_file}")
+    except subprocess.CalledProcessError as e:
+        # エラーが発生した場合のエラーメッセージを出力
+        print(f"変換中にエラーが発生しました: {e.stderr}")
+
+# 変換したい動画ファイルのパス
+input_file = r"C:\Users\アレコレ\Downloads\虹動画.mp4"
+# 変換後の動画ファイルの保存先
+output_file = r"C:\Users\アレコレ\Downloads\output_h264_compressed.mp4"
+# 関数を呼び出して、動画を変換する
+convert_to_h264(input_file, output_file)
+
+</code></pre>
+  </div>
+
+  <p>このコードが何をしているか順を追って説明しますね。</p>
+  <h5>1. 必要なモジュールをインポート</h5>
+  <p>まず最初に、<span
+    class="codecolor">subprocess</span>というPythonの標準ライブラリをインポートしています。このライブラリを使うことで、Pythonスクリプトから外部のプログラムを実行することができるんだ。
+  </p>
+
+  <h5>2. 関数の定義</h5>
+  <p>次に、<span class="codecolor">convert_to_h264</span>という関数を定義しています。この関数は、動画ファイルをH.264形式に変換するために使います。関数には2つの引数があります：
+  </p>
+  <ul>
+   <li><span class="codecolor">input_file</span>: 変換したい元の動画ファイルのパス</li>
+   <li><span class="codecolor">output_file</span>: 変換後の動画ファイルの保存先</li>
+  </ul>
+
+  <h5>3. <span class="codecolor">try</span>ブロックの開始</h5>
+  <p>関数の内部で、まず<span class="codecolor">try</span>ブロックを使ってエラーが発生する可能性がある処理を実行します。</p>
+
+  <h5>4. <span class="codecolor">subprocess.run</span>の実行</h5>
+  <p><span class="codecolor">subprocess.run</span>関数を使って、<span class="codecolor">ffmpeg</span>コマンドを実行します。<br>
+   このコマンドは、動画をH.264形式に変換するためのものです。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(47).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <ul>
+    <li><span class="codecolor">'-i', input_file</span>は、入力ファイルを指定します。</li>
+    <li><span class="codecolor">'-vcodec', 'libx264'</span>は、出力ファイルのビデオコーデックをH.264に指定します。</li>
+    <li><span class="codecolor">'-crf', '30'</span>は、画質の設定を意味します。数値が大きいほどファイルサイズが小さくなり、画質が下がります。</li>
+    <li><span class="codecolor">'-b:v', '1.5M'</span>は、ビットレートを1.5Mbpsに設定します。</li>
+    <li><span class="codecolor">'-preset', 'slow'</span>は、エンコードの速度を指定します。遅いほど圧縮率が高くなり、ファイルサイズが小さくなります。
+    </li>
+    <li><span class="codecolor">output_file</span>は、出力ファイルのパスを指定します。</li>
+   </ul>
+  </div>
+
+
+  <h5>5. 成功メッセージの表示</h5>
+  <p>変換が成功した場合、変換後のファイルパスを表示します。</p>
+
+  <h5>6. <span class="codecolor">except</span>ブロックの開始</h5>
+  <p>もしエラーが発生した場合、<span class="codecolor">except</span>ブロックでエラーメッセージをキャッチして表示します。</p>
+
+  <h5>7. 関数の呼び出し</h5>
+  <p>関数の外部では、変換したい元の動画ファイルのパスと変換後の保存先を指定して、<span class="codecolor">convert_to_h264</span>関数を呼び出します。</p>
+
+  <p>これで、指定された動画がH.264形式に変換され、指定した場所に保存されます。</p>
+
+
+  <h3>動画の圧縮方式：AVC（Advanced Video Coding）</h3>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(78).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>H.264形式、またはAVC（Advanced Video Coding）は、動画の圧縮方式の一つです。<br>
+    高い圧縮率を持ちながらも、画質を比較的保つことができます。<br>
+    ストリーミングサービスやYouTubeなど、多くのメディアで使われています。</p>
+
+   <ul>
+    <li><strong>高圧縮率</strong>: ファイルサイズを小さく抑えつつ、高品質の動画を維持できます。</li>
+    <li><strong>広い互換性</strong>: 多くのデバイスやプレーヤーが対応しているため、再生の互換性が高いです。</li>
+    <li><strong>ストリーミングに最適</strong>: ネットワーク帯域幅を効率的に使うことができるため、オンライン動画配信にもよく使われます。</li>
+   </ul>
+  </div>
+
+
+
+  <p>H.264にしておけば、Webサイトに設置された動画は高品質なままでスムーズに楽しめます。</p>
+
+  <p>他にもいろんなビデオコーデックがあって、いくつか代表的なものを紹介しましょうか。<br>
+   これらはそれぞれ異なる用途や特性を持っていて、使用する環境や目的に応じて使い分けられています。</p>
+
+  <h5>H.265（HEVC）</h5>
+  <ul>
+   <li><strong>特徴</strong>: H.264よりも高い圧縮率を実現し、4Kや8Kの高解像度動画に適している。</li>
+   <li><strong>使用例</strong>: ストリーミングサービス、4Kブルーレイ、最新のスマートフォン。</li>
+  </ul>
+
+  <h5>VP9</h5>
+  <ul>
+   <li><strong>特徴</strong>: Googleが開発したオープンソースのコーデックで、高圧縮率と高品質を両立。</li>
+   <li><strong>使用例</strong>: YouTubeやGoogle Chromeなどで広く使われている。</li>
+  </ul>
+
+  <h5>AV1</h5>
+  <ul>
+   <li><strong>特徴</strong>: 次世代のオープンソースコーデックで、H.265やVP9よりもさらに高い圧縮率を目指す。</li>
+   <li><strong>使用例</strong>: まだ普及段階だけど、NetflixやYouTubeが採用を始めている。</li>
+  </ul>
+
+  <h5>MPEG-2</h5>
+  <ul>
+   <li><strong>特徴</strong>: 昔から使われているコーデックで、DVDやデジタルテレビ放送で広く使用されている。</li>
+   <li><strong>使用例</strong>: DVDビデオ、デジタルテレビ放送。</li>
+  </ul>
+
+  <h5>Theora</h5>
+  <ul>
+   <li><strong>特徴</strong>: オープンソースのコーデックで、特にウェブブラウザでの使用を念頭に置いて開発された。</li>
+   <li><strong>使用例</strong>: ウェブビデオの初期段階で使われたが、今はあまり使われない。</li>
+  </ul>
+
+  <h5>DivX/Xvid</h5>
+  <ul>
+   <li><strong>特徴</strong>: 昔ながらのコーデックで、ファイルサイズと画質のバランスが良い。</li>
+   <li><strong>使用例</strong>: ダウンロードビデオや一部のストリーミングサービス。</li>
+  </ul>
+
+
+  <h4>ビデオコーデックと動画の拡張子</h4>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(55).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>たとえば、MP4はコンテナで、その中にH.264というコーデックを使って圧縮された動画データが入っていることが多いです。<br>
+    だから同じMP4ファイルでも、違うコーデックを使っている場合があるんですよね。</p>
+   <h5>ビデオコーデック</h5>
+   <ul>
+    <li><strong>役割</strong>: 動画データを圧縮して、ファイルサイズを小さくする技術。</li>
+    <li><strong>例</strong>: H.264、H.265、VP9、AV1。</li>
+    <li><strong>仕組み</strong>: 動画をエンコード（圧縮）したり、デコード（再生）したりする。</li>
+   </ul>
+  </div>
+
+
+
+  <h5>動画の拡張子</h5>
+  <ul>
+   <li><strong>役割</strong>: ファイル形式を示すための文字列で、どのソフトウェアで再生できるかを判断する。</li>
+   <li><strong>例</strong>: .mp4、.avi、.mkv、.webm。</li>
+   <li><strong>仕組み</strong>: 拡張子は、動画ファイルの「容器（コンテナ）」を示す。コンテナはビデオコーデックとオーディオコーデックを内包できる。</li>
+  </ul>
+
+  <h4>無料で利用できるクラウド上の動画編集サービス</h4>
+  <p>私はWindows11を買ってから、デフォルトソフトの Microsoft Clipchamp を使っちゃってるけどね。</p>
+
+  <img src="../video/microsoftClipchamp.jpg" alt="Microsoft Clipchamp" class="biggraphic fade-in-out">
+
+  <p>悪くないですよ。<br>
+   基礎的な機能が備わっていて、軽快に動作します。<br>
+   パソコンにソフトウェアをインストールしたくないなら、次のようなクラウドサービスもあります。
+  </p>
+  <ul>
+   <li><strong>YouTube Studio</strong>: YouTubeの公式編集ツールで、簡単なカットやトランジションを追加できます。</li>
+   <li><strong>Clipchamp</strong>: 無料プランがあり、基本的な編集機能を提供しています。</li>
+   <li><strong>WeVideo</strong>: 無料プランでオンライン編集が可能で、多くの効果やフィルターが利用できます。</li>
+   <li><strong>KineMaster</strong>: クラウドストレージを使って動画を編集できる無料アプリです。</li>
+   <li><strong>Vimeo</strong>: 無料プランで基本的な編集機能を提供しています。</li>
+  </ul>
+
+  <h2>Google Drive経由のほうがコードは簡単（広告もナシ！）</h2>
+  <p>後回しにしたけど、こっちのほうが一般的ではあります。<br>
+   要するに動画のサムネイル画像も含めて、動画編集ソフトウェアで作り込んでからGoogle Driveにアップロードするのですよ。<br>
+   それから個人サイトのほうに共有します。<br>
+   JavaScriptによるコントロールも避けられるし。
+  </p>
+  <p>まずはhtmlから書いていきますね。</p>
+
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;head&gt;
+&lt;!--CSS--&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;../css/video.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css&quot;&gt;
+
+&lt;!--JavaScript--&gt;
+&lt;script src=&quot;../script/video.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;!-- Google Drive のカスタムコンテナを定義 --&gt;
+&lt;div class=&quot;custom-google-drive-container&quot;&gt;
+    &lt;!-- 動画のタイトル --&gt;
+    &lt;h4&gt;海面で跳ねるウツボの動画（Google Drive）&lt;/h4&gt;
+    &lt;!-- 動画の説明 --&gt;
+    &lt;p&gt;説明文&lt;/p&gt;
+    &lt;!-- Google Drive からの動画 iframe --&gt;
+    &lt;iframe src="Google Driveから取得したURL" class=&quot;custom-google-drive-iframe&quot; allow=&quot;autoplay&quot;&gt;&lt;/iframe&gt;
+    &lt;!-- Google Drive のテキスト --&gt;
+    &lt;p class=&quot;google-drive-text&quot;&gt;&lt;i class=&quot;fab fa-google-drive&quot;&gt;&lt;/i&gt;This is a video on Google Drive.&lt;/p&gt;
+&lt;/div&gt;
+
+</code></pre>
+  </div>
+
+  <p>そんなに難しいコードではないです。<br>
+   CSSも同じ要領で作っていきます。<br>
+   プレーンな動画ファイルをWebサイトのディレクトリに置く形とは少し違ったデザインにしてみました。
+  </p>
+
+  <p class="codegra" id="google_video_css">Google Drive動画を掲載するvideo.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+@charset "UTF-8";
+
+/* google-drive */
+/* 全体のコンテナスタイルを設定します */
+.custom-google-drive-container {
+    display: block; /* ブロック要素として表示 */
+    text-align: center; /* 中央揃え */
+    padding: 20px; /* 内側の余白 */
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef); /* 背景のグラデーション */
+    border-radius: 15px; /* 角を丸く */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* コンテナの影 */
+}
+
+/* 見出し (h4) スタイル */
+.custom-google-drive-container h4 {
+    margin-top: 10px; /* 上部の余白 */
+}
+
+/* 段落 (p) のスタイル */
+.custom-google-drive-container p {
+    text-align: left; /* 左揃え */
+    margin: 10px 0; /* 上下の余白 */
+}
+
+/* Google Drive テキストのスタイル */
+.custom-google-drive-container .google-drive-text {
+    text-align: center; /* 中央揃え */
+    margin: 10px 0; /* 上下の余白 */
+    display: flex; /* フレックスボックス */
+    justify-content: center; /* 中央揃え (水平) */
+    align-items: center; /* 中央揃え (垂直) */
+    font-size: 1.2em; /* フォントサイズ */
+    color: #333; /* 文字色 */
+    background: #fff; /* 背景色 */
+    padding: 10px 15px; /* 内側の余白 */
+    border-radius: 5px; /* 角を丸く */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* テキストボックスの影 */
+}
+
+/* iframe のスタイル */
+.custom-google-drive-iframe {
+    width: 80%; /* 幅を全体の80%に設定 */
+    height: auto; /* 高さを自動調整 */
+    aspect-ratio: 16 / 9; /* アスペクト比を16:9に設定 */
+    margin: 10px auto; /* 上下の余白と中央揃え */
+    border: 5px solid #343a40; /* 枠線の色と幅 */
+    border-radius: 10px; /* 角を丸く */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* iframeの影 */
+}
+
+/* Google Drive アイコンのスタイル */
+.custom-google-drive-container .fa-google-drive {
+    color: #4285f4; /* アイコンの色 */
+    margin-right: 10px; /* 右側の余白 */
+}
+   </code></pre>
+  </div>
+
+  <p>こうやって掲載していけば、視聴者の閲覧を妨げる広告を避けつつ、動画を掲載できます。<br>
+   上述しましたが広告を掲載したいのであれば、Webページの隅にでもリンクを置いておけば良いだけでね。<br>
+   あるいは、こうやってプレーンな動画ファイルの掲載パターンとGoogle Driveを経由するパターンでCSSによるデザインを分けつつ、いろんなところに掲載していけば、楽しい個人サイトにできるでしょう。
+  </p>
+
+  <h3>編集した小さな動画をサムネイル画像付きで提供したい</h3>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(60).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>小さな動画のサムネイル画像であれば、上記で紹介してきた通りhtml・CSS・JavaScriptで十分に制御できますよね。<br>
+    わざわざ動画編集ソフトウェアでチクチクやらなくても良いと思うけど…<br>
+    でもこういうメディア要素はこだわりも必要ですから。</p>
+  </div>
+
+
+  <div class="video-card">
+   <h4 class="special-title">撒き餌に群がる小魚の動画</h4>
+   <p>htmlで表示させるサムネイル画像が表示されています。<br>
+    ユーザーがタップすると、私が動画編集ソフトで作成したサムネイル画像が表示されつつ、動画が始まります。</p>
+   <video class="myVideo" poster="../video/オトメベラ.jpg" controls>
+    <source src="../video/撒き餌に群がる小魚.mp4" type="video/mp4">
+    お使いのブラウザは動画タグに対応していません。
+   </video>
+   <p>サムネイル画像はオトメベラですよ。<br>
+    元の高画質動画は「<a
+     href="https://drive.google.com/file/d/1D-upDSXtIK05r27-ipfrSfVjVYMyB2xz/view?usp=drive_link">撒き餌に群がる小魚</a>」です。
+   </p>
+   <hr class="stylish">
+   <div class="controls">
+    <button class="control-btn play-pause" onclick="playPause()">再生/一時停止</button>
+    <button class="control-btn stop" onclick="stopVideo()">停止</button>
+    <button class="control-btn mute-unmute" onclick="muteUnmute()">ミュート/ミュート解除</button>
+    <button class="control-btn pip" onclick="togglePip()">ピクチャインピクチャ</button>
+   </div>
+  </div>
+  <p>これはこれで悪くないよね。<br>
+   html・CSS・JavaScriptによる動画制御に合わせて、動画編集ソフトウェアの力も借りる。<br>
+   短い動画であっても、工夫すれば大きなインパクトを与えられるかもしれません。</p>
+
+  <h3>大きな動画をサムネイル画像付きで提供したい</h3>
+  <p>まずは動画をお見せしましょう。<br>
+   実際にはそんな大きな動画ではありません。<br>
+   小さな魚たちが泳いでいるだけの動画です。</p>
+  <div class="custom-google-drive-container">
+   <h4>撒き餌に群がる小魚の動画（Google Drive）</h4>
+   <p>Google Driveから引っ張ってくる場合、html側でサムネイル画像を設定するのは非常にやりにくいです。<br>
+    JavaScriptでコントロールする必要があり、それでもタップを２回要求するのですよ。<br>
+    JavaScriptだけでは、Google Driveから引っ張ってきた動画の再生ボタンを叩けないからです。</p>
+   <iframe src="https://drive.google.com/file/d/1D-upDSXtIK05r27-ipfrSfVjVYMyB2xz/preview"
+    class="custom-google-drive-iframe" allow="autoplay"></iframe>
+   <p class="google-drive-text"><i class="fab fa-google-drive"></i>This is a video on Google Drive.</p>
+  </div>
+
+  <p>つまり、大きな動画をサムネイル画像付きで提供したいなら、次の手順を踏むことになるよね。</p>
+  <div class="content">
+   <img src="../video/キュウセン.jpg" alt="キュウセンベラの写真" class="graphic right-image fade-in-out">
+   <ol>
+    <li>動画編集ソフトウェアによる加工</li>
+    <li>Google Driveにアップロード</li>
+    <li>共有設定の上で、iframeのURLを取得</li>
+    <li>html側に貼り付け、CSSで装飾する</li>
+   </ol>
+   <p>少し手間がかかりますが、正直これが一番素直な方法でしょう。<br>
+    html・CSS・JavaScriptだけでは制御しにくいこともあるってことだね。<br>
+    YouTubeに上げてしまえばサムネイル画像の設定もできるけどさ。<br>
+    それでもやはり、動画中の広告は避けたいです。<br>
+    もしくはまだ試していないけど、Microsoftのクラウドを使えばまた別のルートがあるかもしれない。</p>
+  </div>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(66).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>ちなみにこちらのGoogle Drive動画の場合、JavaScriptは使っていないです。<br>
+    これが何を意味するかと言うと、動画をコントロールするスクリプトのループ処理まで考えなくて良いということですよね。
+   </p>
+  </div>
+
+  <h4>動画編集のためのオンラインツール</h4>
+  <p>一応少しだけ紹介しておこうかな？<br>
+   私は動画編集をやる習慣はないけど、やるならクラウドで仮想マシンを借りちゃう。<br>
+   それも他の用事もあるからどーせなら仮想マシンというだけで、マジで動画編集目的なら次のようなツールもあるんです。</p>
+  <ul>
+   <li>FlexClip：無料で使えるオンライン動画編集サービス。ビジネスやブライダル、ホームビデオ用のテンプレートが豊富です。</li>
+   <li>Clipchamp：本格的な動画編集が可能で、コンプレッサーやコンバーター、ウェブカメラレコーダーも利用できます。</li>
+   <li>123appsオンラインビデオエディタ：簡単なカットやトリミングができるシンプルな編集機能が特徴です。</li>
+   <li>WeVideo：Googleドライブに直接保存でき、チームでの協力編集が可能です。</li>
+  </ul>
+  <p>こうしたクラウドベースの動画編集ツールを使えば、自宅のパソコンのスペックに関係なく動画編集が可能です。</p>
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/videopage.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's
+     personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's
+     portal</a> を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

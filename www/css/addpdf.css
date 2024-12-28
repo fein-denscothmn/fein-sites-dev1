@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+.addpdfhidden {
+ display: none;
+}
+
+.pdf-link-add {
+ padding: 8px 15px;
+ margin: 10px 0;
+ background-color: #28a745;
+ color: white;
+ border: none;
+ border-radius: 50px;
+ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ font-size: 14px;
+ font-weight: bold;
+ cursor: pointer;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+ display: inline-block;
+ letter-spacing: 1px;
+}
+
+.pdf-link-add:hover {
+ background-color: #218838;
+ box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pdf-link-add:active {
+ background-color: #1e7e34;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.feinpdf-container-add {
+ width: 80%;
+ margin: auto;
+ border: 1px solid #ddd;
+ padding: 10px;
+ border-radius: 10px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ background-color: #fff;
+}
+
+.feinpdf-viewer-add {
+ width: 100%;
+ height: auto;
+ overflow: auto;
+ position: relative;
+}
+
+.feincanvas {
+ width: 100% !important;
+ height: auto !important;
+ position: relative;
+}
+
+.feinpdfcontrols-add {
+ text-align: center;
+ margin-top: 10px;
+}
+
+.feinpdfcontrols-add button {
+ padding: 8px 15px;
+ margin: 0 5px;
+ background-color: #007bff;
+ color: white;
+ border: none;
+ border-radius: 50px;
+ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ font-size: 14px;
+ font-weight: bold;
+ cursor: pointer;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feinpdfcontrols-add button:hover {
+ background-color: #0056b3;
+ box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.feinpdfcontrols-add button:active {
+ background-color: #004494;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.feinpdfcontrols-add span {
+ font-weight: bold;
+}
+
+/* responsive design */
+@media (max-width: 600px) {
+ .feinpdf-container-add {
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+ }
+
+ .feinpdf-viewer-add {
+  width: 100%;
+  height: auto;
+  overflow: auto;
+  position: relative;
+ }
+
+ .feincanvas {
+  width: 100% !important;
+  height: auto !important;
+ }
+
+ .feinpdfcontrols-add button {
+  padding: 5px 10px;
+  font-size: 12px;
+ }
+}

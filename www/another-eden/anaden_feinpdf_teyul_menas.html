@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+ <meta charset="UTF-8">
+ <title>グラスタ表を生んだテユールメナス</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="アナザーエデンについて、feinという人物が書いてきた攻略レポートを集めています。">
+ <meta name="keywords" content="アナザーエデン, 強敵, 攻略">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="グラスタ表を生んだテユールメナス">
+ <meta property="og:description" content="アナザーエデンについて、feinという人物が書いてきた攻略レポートを集めています。">
+ <meta property="og:image" content="/image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url"
+  content="https://fein-sites-dev1.ew.r.appspot.com/another-eden/anaden_feinpdf_teyul_menas.html">
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/video.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" type="text/css" href="/css/colors.css">
+ <link rel="stylesheet" type="text/css" href="/css/addpdf.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+ <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "グラスタ表を生んだテユールメナス",
+      "url": "https://fein-sites-dev1.ew.r.appspot.com/another-eden/anaden_feinpdf_teyul_menas.html",
+      "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+    }
+    </script>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <script src="/script/video.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
+ <script src="/script/addpdf.js" defer></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="anaden_sitemap.html">アナザーエデン関連ページ・サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">グラスタ表を生んだテユールメナス</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く
+    ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="/image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="グラスタ表を生んだテユールメナスの目次を開く ▼"
+   data-close-text="グラスタ表を生んだテユールメナスの目次を閉じる ▲">グラスタ表を生んだテユールメナスの目次を開く ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="anaden_sitemap.html">アナザーエデン関連ページ・サイトマップへ戻る</a></p>
+
+  <!-- ●ヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>グラスタ表を生んだテユールメナス</span></h1>
+
+  <p>fein's
+   portalにあった「テユールメナスとその影」から移行はされたけど、あのページの補足内容は他の箇所にも分散しています。<br>
+   まだまだこのページには移行させるものがあるので、完成したと言っても骨子だけです。<br>
+   ただ、最低でも「グラスタ一覧表ができるまでのフィールドワーク」だけは読めるようになっています。
+  </p>
+
+  <h2>グラスタ表の生みの親・テユールメナス</h2>
+  <div class="content">
+   <img src="anaimage/冥255クラルテ.jpg" alt="冥255クラルテ" class="graphic right-image fade-in-out">
+   <p>この「テユールメナス」は強く印象に残っていますね。<br>
+    西方外典の最終ボスなのですが、思いのほか強く設定されていたためか、実装当時にTwitterで非常に大きな騒動を巻き起こしました。<br>
+    でもこの騒動が重要なヒントを私に与えてくれて、グラスタの場所一覧表（入手範囲別） を中心とする弊時層の資料集が完成したのです。<br>
+    テユールメナスは、私がアナザーエデンの戦闘を説明する手法を大きく変えた敵ともなっています。<br>
+    個人的に「推し敵」でもあり、BGMもすごく綺麗なんですよね🎵<br>
+    アナデン戦闘の攻略を語る上で極めて重要な敵キャラと考えているので、これだけは他の強敵群から独立したWebページとしましょう。</p>
+  </div>
+
+
+
+  <h4>テユールメナスの倒し方（こっちは西方外典ストーリーのボス）</h4>
+  <ol>
+   <li>メインストーリーを２部まで進めます</li>
+   <li>グラスタを集めます</li>
+   <li>挑戦して負けたら</li>
+   <li>より強いグラスタを集めます</li>
+   <li>また挑戦して負けたら</li>
+   <li>さらにグラスタを集めて、装備も整えます</li>
+  </ol>
+
+  <p>グラスタをしっかりすればするほど、敵に何もさせずワンパンできる火力へ近付きます。<br>
+   グラスタをしっかりすればするほど、配布キャラだけで倒せる領域へ近付きます。<br>
+   以上です💯💮</p>
+  <p>時間があればバフデバフのお勉強しても良いですが…お勉強が億劫なら、強い武器やバッジとかいろいろ集めましょう。<br>
+   キーが必要なアナザーダンジョン以外の場所で作れる武器だって十分に役立ちます。</p>
+
+  <div class="pdf-list-add">
+   <button class="pdf-link-add" data-url="fein_report/テユールメナス.pdf">テユールメナス.pdfを開く</button>
+  </div>
+  <div class="feinpdf-container-add addpdfhidden">
+   <div class="feinpdf-viewer-add"></div>
+   <div class="feinpdfcontrols-add">
+    <button class="prev-page-add">前のページへ</button>
+    <span>Page: <span class="page-num-add"></span> / <span class="page-count-add"></span></span>
+    <button class="next-page-add">次のページへ</button>
+   </div>
+  </div>
+  <p><a href="fein_report/テユールメナス.pdf">テユールメナス.pdf</a></p>
+
+  <p>上のレポートそのものは大して重要じゃないんですよね。<br>
+   もし苦戦しているユーザーさんがおられましたら、上述のグラスタの場所一覧表でも良いし、とりあえず「<a
+    href="/another-eden/anaden_beginner.html">アナザーエデンの初心者向けガイド</a>」というページをご覧ください。<br>
+   少々強めに設定されているなぁとは私も感じましたが、普通にグラスタや装備を整えていれば問題になるようなことはありません。</p>
+
+  <h4>テユールメナスの影（こっちはクロノス石だけの裏ボス）</h4>
+  <p>たしか…この影よりもストーリー版のテユールメナスのほうが強いとか噂になってた記憶があります。<br>
+   記憶違いならごめんなさい。<br>
+   なんだっけ？<br>
+   なんか翼だか本体だかのHPが高い低いとか、なんとかかんとか😆ww<br>
+   どっちもどっちだと思いますよ？<br>
+   そう、グラスタがあればね。以上って感じ。<br>
+   だってそれがなきゃ話が始まらないもの。</p>
+  <div class="pdf-list-add">
+   <button class="pdf-link-add" data-url="fein_report/テユールメナスの影.pdf">テユールメナスの影.pdfを開く</button>
+  </div>
+  <div class="feinpdf-container-add addpdfhidden">
+   <div class="feinpdf-viewer-add"></div>
+   <div class="feinpdfcontrols-add">
+    <button class="prev-page-add">前のページへ</button>
+    <span>Page: <span class="page-num-add"></span> / <span class="page-count-add"></span></span>
+    <button class="next-page-add">次のページへ</button>
+   </div>
+  </div>
+  <p><a href="fein_report/テユールメナスの影.pdf">テユールメナスの影.pdf</a></p>
+
+  <h5>知性デバフ＋全属性耐性バフだけで倒せます</h5>
+  <p>本編のテユールメナスもそうですが、これの攻略に説明はいらないでしょ。<br>
+   敢えてグラスタのことを語らないのであれば、知性デバフ＋全属性耐性バフをやってくださいね。以上って感じ。<br>
+   2024年11月現在のリセマラ推奨キャラだったら、あるいは火炎の力とか、中級グラスタだけで一撃必殺できちゃったりするんじゃないの？<br>
+   いやちょっと盛ってるかな😙</p>
+
+  <p>どうしても難しければ、フィーネを冥255にしていただいて、グラスタを揃えてからアナフォすれば簡単に倒せますよ。<br>
+   もちろん知性デバフ＋全属性耐性バフはどっかに用意しておきましょう。なぁんてね🎵</p>
+
+  <h4>長期戦でも威力を発揮するEX必殺技</h4>
+  <p>EXメリナの必殺技は戦闘中の食事みたいな感じですよね。<br>
+   マジで食事なんです。<br>
+   全快しちゃう🍙<br>
+   レポートを読み返すといろんな敵を相手に長期戦を試していたのですね…<br>
+   今後も活躍する機会が必ず来るでしょうから、メリナのことは大切に育てていきたいと思います。</p>
+  <p><a href="fein_report/ヘカトンケイルEX必殺技.pdf">ヘカトンケイルEX必殺技.pdf</a></p>
+  <div class="pdf-list-add">
+   <button class="pdf-link-add" data-url="fein_report/ヘカトンケイルEX必殺技.pdf">ヘカトンケイルEX必殺技.pdfを開く</button>
+  </div>
+  <div class="feinpdf-container-add addpdfhidden">
+   <div class="feinpdf-viewer-add"></div>
+   <div class="feinpdfcontrols-add">
+    <button class="prev-page-add">前のページへ</button>
+    <span>Page: <span class="page-num-add"></span> / <span class="page-count-add"></span></span>
+    <button class="next-page-add">次のページへ</button>
+   </div>
+  </div>
+  <p>思うようにインフレキャラを引けず、火力でワンパンできないと長期戦を迫られることもあります。<br>
+   そんな時にESメリナのような必殺技があれば耐えられる！<br>
+   いろんなポイントでfein時層を助けてくれた必殺技なんです。<br>
+   雷パーティーでも強いし。<br>
+   ESメリナもお勧めですよ。</p>
+
+  <h2>テユールメナスの縛り攻略動画</h2>
+  <p>ただ動画だけが並んでいても退屈ですから、ここにグラスタ一覧ができた経緯とかをまとめていきましょう。<br>
+   このテユールメナスの大騒ぎからヒントを得て、攻略に困っている皆様へヒアリングさせていただき、そもそも「グラスタの重要性」について認識をお持ちでなかったということに私が気付けたのです。<br>
+   でもそれは困っている人たちのせいではないよね。<br>
+   だって、Twitterではバフデバフのテクニカルな扱い方を中心にTweetされていたのだから。<br>
+   私自身も、そういうもんだと思ってたよ。<br>
+   ヒアリングにご協力いただいた皆様に、改めて感謝いたします。</p>
+
+  <div class="video-card">
+   <h4 class="special-title">テユールメナスの縛り攻略動画_vol.1</h4>
+   <p>これから掲載していく動画は、低級から中級のグラスタだけを用いて、獲得しやすいキャラのみを使った攻略です。</p>
+   <video class="myVideo" controls>
+    <source src="/video/剣の唄と失楽の翼クリア応援動画1_テユールメナス.mp4" type="video/mp4">
+    お使いのブラウザは動画タグに対応していません。
+   </video>
+   <p>グラスタがなければ火力は出ない。<br>
+    それを徹底的なまでに再現した動画ですよね。</p>
+   <hr class="stylish">
+   <div class="controls">
+    <button class="control-btn play-pause" onclick="playPause()">再生/一時停止</button>
+    <button class="control-btn stop" onclick="stopVideo()">停止</button>
+    <button class="control-btn mute-unmute" onclick="muteUnmute()">ミュート/ミュート解除</button>
+    <button class="control-btn pip" onclick="togglePip()">ピクチャインピクチャ</button>
+   </div>
+  </div>
+
+  <h3>グラスタ一覧表ができるまでのフィールドワーク：第１話</h3>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(54).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>2021年3〜4月くらいだったかな…<br>
+    「ネタバレ・ヒヤリハット防止期間」が明けてTwitterのタイムラインに浮いた後、私はテユールメナスの大騒動を目の当たりにして大変驚きました。<br>
+    テユールメナスに勝てず癇癪を起こしたアナデン初心者さんがいて、それをきっかけにして場が炎上していたのです。<br>
+    これ以来、私はフィールドワークを続けていました。</p>
+  </div>
+
+
+  <p>大勢の人がその炎上には参加しており、やれバフデバフの扱い方などの講義が四方八方で繰り広げられていました。<br>
+   私も配布縛り動画などを投稿したものの…テユールメナスがそんな大騒ぎになるほど強敵なのかという感覚は拭い去れないままでした。<br>
+   このような「敵に勝てないというTweetがきっかけで炎上する」という事態は遥か昔から繰り返されてきたのですが、ことテユールメナスの事例は大規模なものでしたね。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(55).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>そこで、私は炎上から身を離しつつフィールドワークを始めました。<br>
+    具体的には、攻略に困っている方々とこっそりコミュニケーションを取っていたのです。<br>
+    数か月にわたって何人もの人たちと。<br>
+    公開タイムラインで攻略談義を繰り広げるのは賢明ではないと判断したんですよね。<br>
+    それが周囲の目に入ると「バフデバフの扱い方はこう！」というTweetが四方八方で勃発し、何度も何度も似たような騒ぎとなることが懸念されました。<br>
+    私なりに、話をしていただけるお相手の立場とかお気持ちとか、そういうものに対して最大限の配慮をしたかったのです。<br>
+    何が分からないのか。何に困っているのか。いろんな方と丁寧にお話をさせていただきました。</p>
+  </div>
+
+
+  <p>ここで「強敵に勝てない人の特徴が分かった！」などと書き立てるのはデリカシーに欠けると私は思います。<br>
+   それがTwitterであろうとWebサイトであろうと。<br>
+   そうではなく、相手側の状況をきめ細やかに確認した上で、もっとも解決率が高いであろうご提案をさせていただく。<br>
+   このスタンスでヒアリングを試みたのです。<br>
+   当時の私は、配信当初の強敵を即撃破し続けるタイプのプレイスタイルから既に引退していました。<br>
+   ライブサービスゲームとSNSの諸関係を考えれば、どこかで辞めなければならないと思っていたからね。<br>
+   しかし困っているユーザーさんの状況を聞き取るくらいなら可能だろうと踏んでいたのですよ。<br>
+   すると…次のような状況が見えてきました。</p>
+
+  <ul>
+   <li>攻略動画を見て、バフをかけて一撃必殺できることは知っている</li>
+   <li>同じキャラで真似しても同じにならない</li>
+   <li>敵のターンになると瞬殺される</li>
+   <li>天冥値が原因らしいとは考えているが…（その先へ話が続かない）</li>
+  </ul>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(56).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>おおよそこんな雰囲気です。ここまでは私の想定通りでした。<br>
+    それより私にとって想定外だったのは、困っている人ほどグラスタへの認識が希薄であることが多いということなんです。<br>
+    「狙い撃つ！」「毒ペ！」、及び強キャラのすげぇバフはご存じのようです。<br>
+    しかし、HP最大時強化と爆炎の力のお話をさせていただいても、響いていかない。<br>
+    「え？！それを早く言えよ！」という雰囲気にさえならないのです。</p>
+  </div>
+
+
+  <p>※あの当時、私にいろいろお話をしてくださった皆様へ、改めて御礼申し上げます。<br>
+   私が誰と話をしていたか特定できないよう、随所に作り話を入れています。</p>
+
+
+  <div class="video-card">
+   <h4 class="special-title">テユールメナスの縛り攻略動画_vol.2</h4>
+   <p>html・css・JavaScriptの習得と似たような側面があると思うのです。<br>
+    アナデンの戦闘というのは。</p>
+   <video class="myVideo" controls>
+    <source src="/video/剣の唄と失楽の翼クリア応援動画2_テユールメナス.mp4" type="video/mp4">
+    お使いのブラウザは動画タグに対応していません。
+   </video>
+   <p>説明されても分からないんだよね。<br>
+    昔からやってきたユーザーはともかくとして、新しく始めた人にとっては、学習コストがとても高いと感じさせてしまう。</p>
+   <hr class="stylish">
+   <div class="controls">
+    <button class="control-btn play-pause" onclick="playPause()">再生/一時停止</button>
+    <button class="control-btn stop" onclick="stopVideo()">停止</button>
+    <button class="control-btn mute-unmute" onclick="muteUnmute()">ミュート/ミュート解除</button>
+    <button class="control-btn pip" onclick="togglePip()">ピクチャインピクチャ</button>
+   </div>
+  </div>
+
+  <h3>グラスタ一覧表ができるまでのフィールドワーク：第２話</h3>
+
+  <p>第１話にて、テユールメナスの大騒動からヒアリング開始。そして中途半端に話が終わってしまいました。<br>
+   あまりにも超巨大長文になるので、分けたほうが良いと思ったのです。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(69).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>さて…狙い撃つと毒ペ。<br>
+    強キャラのすげぇバフを知っていても、HP最大時強化と爆炎の力はピンと来ない。<br>
+    全能の力なんか存在も知らない。<br>
+    パーソナリティとPグラスタのお話をさせていただいても、その時お勧めとされている強いキャラの話へ移って行ってしまう…<br>
+    HP最大時強化と爆炎の力をPにして後ろのキャラに持たせれば火力も出るのに、そして画像や動画をお見せしているのに、グラスタにはイマイチ興味を示してくださらないのです…<br>
+    キャラには興味を持っていただけるんですけどね。<br>
+    そこで、どんな風にグラスタを付けているのか見せてもらうと、案の定すっごいことになっている。<br>
+    激流の力＜弓＞を持っているかお尋ねすると、やはり…ピンと来ていないご様子…。</p>
+  </div>
+
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(70).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>なるほどこれでは、どうにもできないでしょう。<br>
+    私より強いキャラを豊富にお持ちの方も何人もおられましたが、Pグラスタを付けるところまで話題を持っていくことさえ容易ではない。<br>
+    現代ガルレアアナダンの話が必要になってくるのです。</p>
+  </div>
+
+  <p>でもSNSでは皆で最新のアナダンへ通っているわけでしょう？（そう見える）<br>
+   でもSNSでは皆が最新の強敵をバンバン倒しているわけでしょう？（そう映る）</p>
+
+  <p>ここでは、精神面の話は控えます。<br>
+   会話を重ねていく中でいろいろなお話を伺い、お相手のお気持ちを察することができた場面もありました。<br>
+   しかしSNSが持つ魔力の話は、攻略とは関係ありません。影響が出ている可能性を…否定できないとしてもね…</p>
+
+  <p>このような状況に直面する中で私は考え、試みました。次のうちどれが良いかと。</p>
+
+  <ol>
+   <li>私がグラスタ & キャラ縛りで可能な限りシンプルに撃破してみせて、真似していただく。</li>
+   <li>バフデバフのお話を基礎からみっちりさせていただく。</li>
+   <li>まずはグラスタを持ってみましょうとお話をさせて頂くに留める。</li>
+  </ol>
+
+  <p>※あの当時、私にいろいろお話をしてくださった皆様へ、改めて御礼申し上げます。<br>
+   私が誰と話をしていたか特定できないよう、随所に作り話を入れています。</p>
+
+
+  <div class="video-card">
+   <h4 class="special-title">テユールメナスの縛り攻略動画_vol.3</h4>
+   <p>ここの文章は追って考える。</p>
+   <video class="myVideo" controls>
+    <source src="/video/剣の唄と失楽の翼クリア応援動画3_テユールメナス.mp4" type="video/mp4">
+    お使いのブラウザは動画タグに対応していません。
+   </video>
+   <p>そのままの画質で閲覧できるので、見たい人は好きなポイントを再生してください。<br>
+    倒すまで、延々と続く動画です。</p>
+   <hr class="stylish">
+   <div class="controls">
+    <button class="control-btn play-pause" onclick="playPause()">再生/一時停止</button>
+    <button class="control-btn stop" onclick="stopVideo()">停止</button>
+    <button class="control-btn mute-unmute" onclick="muteUnmute()">ミュート/ミュート解除</button>
+    <button class="control-btn pip" onclick="togglePip()">ピクチャインピクチャ</button>
+   </div>
+  </div>
+
+  <h3>グラスタ一覧表ができるまでのフィールドワーク：第３話</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(50).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>第２話にて、ヒアリング開始から解決案のご提案まで。<br>
+    そして中途半端に話が終わってしまいました。<br>
+    あまりにも超巨大長文になるので、分けたほうが良いと思ったのです。</p>
+
+   <p>第２話にある、「攻略を真似してもらう」と「バフデバフの説明」をするのは、伝える側も覚える側も手数が掛かり過ぎると私は判断しました。<br>
+    グラスタだけでなく、強化武器や防具、バッジ類、天冥値、動きの意味を理解し実践して云々云々…<br>
+    もうね、相手によってはモチベーションまで下がってきちゃうんだよ。<br>
+    転じて、「攻略を真似もしくはアレンジできる」と「バフデバフの説明を受けられる」というのは、モチベーションがとっても高いか、すでにいろいろ整ってる人なんだよね。<br>
+    そうゆうユーザー様は本当の意味で困っている人、言い換えるとテユールメナスが倒せない人ではないのです。</p>
+  </div>
+
+  <p>よって、見事に長寿ゲームとなったアナザーエデンにおける攻略語りとは、「グラスタを集めるのだー！場所だけは教えるからあとは勝手にしろー！」と大号令をかけることである。<br>
+   このようなアイデアしか出てこなかったです。<br>
+   長話をせず早めに相手を解放できて、冒険を続ける楽しみも奪わないで済みます。</p>
+
+  <p>第１話にあった、グラスタの話をされてもピンと来ないというのは当たり前なんですよ。<br>
+   それはアナデン初心者さんのせいではない。<br>
+   この話、アナデンバトルを多少でもやり込んだユーザー様であれば伝わると思う。</p>
+
+  <p class="gra">Afterword</p>
+
+  <p>私の中で「助太刀成功率」という言葉があります。<br>
+   攻略法Aの助太刀成功率は50%と言ったとき、攻略法Aを100人に話したら50人が宿敵を倒せるようになる。そういう意味です。<br>
+   今のアナデンユーザーが100人いるとしましょう。<br>
+   下記３つの中で、もっとも助太刀成功率が高いのは３だと思うんだよね。</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(51).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <ol>
+    <li>お相手に合わせて撃破してみせて、真似していただく。</li>
+    <li>お相手が分かるようバフデバフのお話をさせていただく。</li>
+    <li>「まずはグラスタを持ってみましょう？」このようにお話をさせて頂くに留める。</li>
+   </ol>
+   <p>いろんなユーザー様と一緒に攻略を考えさせていただき、今のところはこのように結論を出しているのです。<br>
+    そして恐らく…この結論は変わらないと私は考えています。</p>
+  </div>
+
+  <div class="video-card">
+   <h4 class="special-title">テユールメナスの縛り攻略動画_vol.4</h4>
+   <p>ここの文章は追って考える。</p>
+   <video class="myVideo" controls>
+    <source src="/video/剣の唄と失楽の翼クリア応援動画4_テユールメナス.mp4" type="video/mp4">
+    お使いのブラウザは動画タグに対応していません。
+   </video>
+   <p>そのままの画質で閲覧できるので、見たい人は好きなポイントを再生してください。<br>
+    倒すまで、延々と続く動画です。</p>
+   <hr class="stylish">
+   <div class="controls">
+    <button class="control-btn play-pause" onclick="playPause()">再生/一時停止</button>
+    <button class="control-btn stop" onclick="stopVideo()">停止</button>
+    <button class="control-btn mute-unmute" onclick="muteUnmute()">ミュート/ミュート解除</button>
+    <button class="control-btn pip" onclick="togglePip()">ピクチャインピクチャ</button>
+   </div>
+  </div>
+
+  <h2>SNSでゲームの話をするときのコツ！？</h2>
+  <p>私が思うに…SNSでゲームの話をするときには、ある種のコツのようなものがあるかもしれないね。<br>
+   そのコツとは、次のようなものです。</p>
+  <ul>
+   <li>強い敵で行き詰まっても、あまりおおっぴらに「勝てない！勝てない！」という投稿をしない。</li>
+   <li>愚痴を言いたい時は仲の良いフォロワーさんにDMなどをして、こっそり聞いてもらう。</li>
+   <li>コンテンツの実装当初は特に気をつけて、ある程度の日数を経て自分がちゃんと勝てるようになってから、改めて感想などを投稿する。</li>
+   <li>これはうっかりネタバレをしてしまい、周囲の人たちをがっかりさせてしまうリスクを防止することができる。</li>
+  </ul>
+  <p>これらは今でも私が心がけている事柄ですね。<br>
+   アナデンの初心者さんだけでなく、アナデンの戦闘に苦手意識があったりする方にもお勧めできますよ。</p>
+
+  <div class="video-card">
+   <h4 class="special-title">テユールメナスの縛り攻略動画_vol.5</h4>
+   <p>ここの文章は追って考える。</p>
+   <video class="myVideo" controls>
+    <source src="/video/剣の唄と失楽の翼クリア応援動画5_テユールメナス.mp4" type="video/mp4">
+    お使いのブラウザは動画タグに対応していません。
+   </video>
+   <p>そのままの画質で閲覧できるので、見たい人は好きなポイントを再生してください。<br>
+    倒すまで、延々と続く動画です。</p>
+   <hr class="stylish">
+   <div class="controls">
+    <button class="control-btn play-pause" onclick="playPause()">再生/一時停止</button>
+    <button class="control-btn stop" onclick="stopVideo()">停止</button>
+    <button class="control-btn mute-unmute" onclick="muteUnmute()">ミュート/ミュート解除</button>
+    <button class="control-btn pip" onclick="togglePip()">ピクチャインピクチャ</button>
+   </div>
+  </div>
+
+  <div class="video-card">
+   <h4 class="special-title">テユールメナスの縛り攻略動画_vol.6</h4>
+   <p>ここの文章は追って考える。</p>
+   <video class="myVideo" controls>
+    <source src="/video/剣の唄と失楽の翼クリア応援動画6_テユールメナス.mp4" type="video/mp4">
+    お使いのブラウザは動画タグに対応していません。
+   </video>
+   <p>そのままの画質で閲覧できるので、見たい人は好きなポイントを再生してください。<br>
+    倒すまで、延々と続く動画です。</p>
+   <hr class="stylish">
+   <div class="controls">
+    <button class="control-btn play-pause" onclick="playPause()">再生/一時停止</button>
+    <button class="control-btn stop" onclick="stopVideo()">停止</button>
+    <button class="control-btn mute-unmute" onclick="muteUnmute()">ミュート/ミュート解除</button>
+    <button class="control-btn pip" onclick="togglePip()">ピクチャインピクチャ</button>
+   </div>
+  </div>
+
+  <div class="video-card">
+   <h4 class="special-title">テユールメナスの縛り攻略動画_vol.7</h4>
+   <p>ここの文章は追って考える。</p>
+   <video class="myVideo" controls>
+    <source src="/video/剣の唄と失楽の翼クリア応援動画7_テユールメナス.mp4" type="video/mp4">
+    お使いのブラウザは動画タグに対応していません。
+   </video>
+   <p>そのままの画質で閲覧できるので、見たい人は好きなポイントを再生してください。<br>
+    倒すまで、延々と続く動画です。</p>
+   <hr class="stylish">
+   <div class="controls">
+    <button class="control-btn play-pause" onclick="playPause()">再生/一時停止</button>
+    <button class="control-btn stop" onclick="stopVideo()">停止</button>
+    <button class="control-btn mute-unmute" onclick="muteUnmute()">ミュート/ミュート解除</button>
+    <button class="control-btn pip" onclick="togglePip()">ピクチャインピクチャ</button>
+   </div>
+  </div>
+
+
+  <div class="video-card">
+   <h4 class="special-title">テユールメナスの縛り攻略動画_vol.8</h4>
+   <p>ここの文章は追って考える。</p>
+   <video class="myVideo" controls>
+    <source src="/video/剣の唄と失楽の翼クリア応援動画8_テユールメナス.mp4" type="video/mp4">
+    お使いのブラウザは動画タグに対応していません。
+   </video>
+   <p>そのままの画質で閲覧できるので、見たい人は好きなポイントを再生してください。<br>
+    倒すまで、延々と続く動画です。</p>
+   <hr class="stylish">
+   <div class="controls">
+    <button class="control-btn play-pause" onclick="playPause()">再生/一時停止</button>
+    <button class="control-btn stop" onclick="stopVideo()">停止</button>
+    <button class="control-btn mute-unmute" onclick="muteUnmute()">ミュート/ミュート解除</button>
+    <button class="control-btn pip" onclick="togglePip()">ピクチャインピクチャ</button>
+   </div>
+  </div>
+
+
+  <div class="video-card">
+   <h4 class="special-title">テユールメナスの縛り攻略動画_vol.9</h4>
+   <p>ここの文章は追って考える。</p>
+   <video class="myVideo" controls>
+    <source src="/video/剣の唄と失楽の翼クリア応援動画9_テユールメナス.mp4" type="video/mp4">
+    お使いのブラウザは動画タグに対応していません。
+   </video>
+   <p>そのままの画質で閲覧できるので、見たい人は好きなポイントを再生してください。<br>
+    倒すまで、延々と続く動画です。</p>
+   <hr class="stylish">
+   <div class="controls">
+    <button class="control-btn play-pause" onclick="playPause()">再生/一時停止</button>
+    <button class="control-btn stop" onclick="stopVideo()">停止</button>
+    <button class="control-btn mute-unmute" onclick="muteUnmute()">ミュート/ミュート解除</button>
+    <button class="control-btn pip" onclick="togglePip()">ピクチャインピクチャ</button>
+   </div>
+  </div>
+
+
+  <div class="video-card">
+   <h4 class="special-title">テユールメナスの縛り攻略動画_vol.10</h4>
+   <p>ここの文章は追って考える。</p>
+   <video class="myVideo" controls>
+    <source src="/video/剣の唄と失楽の翼クリア応援動画10_テユールメナス.mp4" type="video/mp4">
+    お使いのブラウザは動画タグに対応していません。
+   </video>
+   <p>そのままの画質で閲覧できるので、見たい人は好きなポイントを再生してください。<br>
+    倒すまで、延々と続く動画です。</p>
+   <hr class="stylish">
+   <div class="controls">
+    <button class="control-btn play-pause" onclick="playPause()">再生/一時停止</button>
+    <button class="control-btn stop" onclick="stopVideo()">停止</button>
+    <button class="control-btn mute-unmute" onclick="muteUnmute()">ミュート/ミュート解除</button>
+    <button class="control-btn pip" onclick="togglePip()">ピクチャインピクチャ</button>
+   </div>
+  </div>
+
+  <h3>Web制作者から見たTwitterの欠点</h3>
+  <p>もとはといえば、私は個人サイトからSNSへはみ出してきた人間です。<br>
+   Web制作をする人もいろんな方がおられるでしょう。<br>
+   ここでは、私のようなタイプから見たTwitterの欠点について書いてみようと思います。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(80).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>バイラル・アルゴリズムという言葉があります。<br>
+    バイラルマーケティングなんて良く聞きますね。<br>
+    クチコミを活用して商売を広げていくという。<br>
+    バイラル・アルゴリズムというのは、ウイルスが感染を広げていくみたいに拡散する仕組みと考えていただければ。<br>
+    Twitterがどういう意図で作られ、かつ内部でどんな仕組みになっているかはともかく…瞬間的に拡散（感染）しますよね。<br>
+    今はEロンのせいで弱体化しているからだいぶマシですが、ロクに事実確認もされないまま何でも拡散されるのですよ。<br>
+    アナデンTwitterワールドに参加したとき、このバイラル・アルゴリズムとも形容できる状態は良くないと感じたものです。<br>
+    Twitterを本格的に始めた当初、ちょうどリヴァイアサンを倒した頃の話ね。<br>
+    しかもニュースの類が拡散されるのかと思いきや、一般人が怒りに任せて口走った放言やそれへの反論。<br>
+    単なる何かの感想文などなど、およそありとあらゆるものが拡散される。</p>
+  </div>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(81).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>─ Web制作と言うと指し示す範囲が広いかもしれない。ここでは単純に「個人Webサイト作成者」としましょうか。─</p>
+
+   <p>もともと個人Webサイト作成者であった私から見ると、Twitterが持つバイラル・アルゴリズムと言うべき仕組みは極めてリスクが高いと感じたんです。<br>
+    IT資格の取得過程で教科書にもあったからTwitterを触った経験がないわけではなかったのですが、これほどとは思いませんでした。</p>
+  </div>
+
+  <p>Webサイトは長い目で見て育てる必要があります。<br>
+   でもTwitterは即座にフィードバックがある。<br>
+   これが父の言うところの、個人サイトからSNSへ流行が移った理由なんでしょうね？<br>
+   欧米諸国でInstagramのイイネに振り回されてしまう青少年が問題になったのと同じように、Twitterの迅速なフィードバックにも問題があると私は思います。<br>
+   Webサイトであればその技術的障壁も幸いして自分の文章を読み返し、何度も推敲して修正することができます。<br>
+   そしてフィードバックを得るためにアクセス解析のデータを読み解く必要があります。<br>
+   しかしTwitterはそうではありません。<br>
+   テキストを入力してボタンを押せば瞬時に公開され、その内容が誰かしらに共感されるものであれば直ちに拡散される。<br>
+   そのフィードバックは誰にでも分かる形で「リツイート数・イイネ数」として表示される。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(82).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>これが良くないんだろうね？<br>
+    簡単に反応をもらえて、安直に孤独感や承認欲求が満たされてしまう。<br>
+    しかも、その満たされた状態は長続きしないようです。<br>
+    次のイイネを、次のリツイートを、ひたすら渇望してウケそうなネタを投稿するようになるんだと思います。<br>
+    リツイート数・イイネ数と自分の心との間に、距離を保てないのかもしれません。<br>
+    そしてトラブルを起こす。<br>
+    この様子は食べ物屋でイタズラをする動画を投稿して逮捕された、最近話題になった少年そのままだよね😆ww<br>
+    もちろん多くの人はそうではないでしょうけど、一部の人はTwitterというシステムに支配されてしまうのだと、私は感じているところです。<br>
+    これらの諸問題を解決する力など私は持ち合わせてはいませんが、せめて自分だけは…「SNSというハンドルを持つと人が変わる」などと言われないようにしたいものです。</p>
+  </div>
+
+  <div class="video-card">
+   <h4 class="special-title">テユールメナスの縛り攻略動画_vol.11</h4>
+   <p>ここの文章は追って考える。</p>
+   <video class="myVideo" controls>
+    <source src="/video/剣の唄と失楽の翼クリア応援動画11_テユールメナス.mp4" type="video/mp4">
+    お使いのブラウザは動画タグに対応していません。
+   </video>
+   <p>そのままの画質で閲覧できるので、見たい人は好きなポイントを再生してください。<br>
+    倒すまで、延々と続く動画です。</p>
+   <hr class="stylish">
+   <div class="controls">
+    <button class="control-btn play-pause" onclick="playPause()">再生/一時停止</button>
+    <button class="control-btn stop" onclick="stopVideo()">停止</button>
+    <button class="control-btn mute-unmute" onclick="muteUnmute()">ミュート/ミュート解除</button>
+    <button class="control-btn pip" onclick="togglePip()">ピクチャインピクチャ</button>
+   </div>
+  </div>
+
+  <p>なんでこんな2分ずつにしてるんだろうと思ったら…<br>
+   Twitterに投稿するためにわざわざ分けたんだよ！<br>
+   思い出した…<br>
+   これはやっぱり特設ページ作らないとダメかもね（笑）</p>
+
+  <h3>アナデン攻略のソフトランディング</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(95).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>グラスタ一覧表ができるまでのフィールドワーク、多くの人がご覧になっているようですね。<br>
+    あの草稿は、本来であればアナデンがエンディングを迎えた後で魚サイトへ挿入される予定でした。<br>
+    アナデンメモリーなどと題して入れるつもりだったんだけど、Eロン禍への対応でアナデンディスクも整理する必要があったのです。<br>
+    ずいぶん早い公開となったものですわ…</p>
+  </div>
+
+
+  <p>フィールドワークの現場でいろんな人と会話をさせていただきました。<br>
+   ここで攻略できない人の特徴なんて書くべきではないと私は考えているし、事例集なども書く予定はありません。<br>
+   会話の具体的な内容は非公開であり、かつ十分に加工されたものが、ここにあるようなテキスト群だからです。<br>
+   いわゆる「需要」というものは、需要を持っているであろう本人でさえ言葉にすることが困難であることも多いんだよね。<br>
+   需要を明確に言葉にできる時点で、それは自分に不足している情報の性質が分かっているということでもあり、それは解決への糸口を見い出しているに等しいのですよ。</p>
+
+  <p>難しい顔をしている医師と看護師の目の前で「私の胃壁はアニサキスという寄生虫に噛み付かれているはずです。おそらく上部消化管内視鏡による検査が必要です。」などという人はいません。<br>
+   いるとすれば、それは何度も痛い目にあっている釣り人くらいでしょう。<br>
+   彼は胃痛の原因を推測できており、医療行為ができる人へ相談すれば治療してもらえることを知っているわけです。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(64).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>私の意図をお話しすると、言わばアナデン攻略のソフトランディングなのです。<br>
+    ガチャで手に入れたSキャラでも、グラスタがなければ火力は出ない。<br>
+    それでもなお、ガチャの持つ魔力は極めて強力であり、グラスタによる火力サポートも霞んで見えてしまう…<br>
+    でも実際に、グラスタがなければ次世代SSキャラでも火力は出ないのですよ。<br>
+    加えて、生命や支援グラスタを上手く使えば、普通なら耐えられないような攻撃も凌げるのです。</p>
+  </div>
+
+
+  <p>「何やらグラスタというものがあればめちゃ強くなるらしいが、自分は持ってないからダメなんだぁ…」<br>
+   これで良いのです。<br>
+   テクニックの問題でも、ガチャの問題でもない。装備を集めてないからです。<br>
+   これなら大きな壁に激突してモチベーションが大きく下がることも防げます。<br>
+   100人の新規ユーザー全員がこのような認識になることはないけど、ワケも分からずテユールメナスに殴られまくるような事態を少しでも防げればOKですよね。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(96).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>グラスタ（Grasta）という独特な用語が良くないのかもしれないよ？<br>
+    ちょっとダサいけど、攻撃アクセサリー・防御アクセサリーという名称ならまだ伝わりやすかったかもしれません。<br>
+    私はもともと釣り人ですから、RPG100戦錬磨のゲーマーではありません。<br>
+    それでも、ロールプレイングゲームというものの大まかな進め方は知っております。<br>
+    ダンジョンの奥にいる「真・ダークドラゴン」を倒したいなら、エクスカリバーとイージスの盾、神竜のネックレスが必要なんでしょう？<br>
+    その強力な武器とアクセサリーを手に入れるためにダンジョン攻略を要求され、真・ダークドラゴンに操られているレッド・イエロー・ブルーというドラゴンを助けなければならないわけだ。</p>
+  </div>
+
+  <p>加えて、村娘にもらった木刀だけで真・ダークドラゴンを倒すのは、やりこみプレイと言うんでしょ？<br>
+   それは多くの人に当てはまる攻略ではないと思うのだけど？<br>
+   だって緻密な戦略とスキルへの精通が必要とされるじゃん。<br>
+   強敵と戦う前に装備を整えるのが普通であり、一般的だと私は思っているんだけどね。</p>
+
+  <p>だからこのセクションのタイトルは間違っているとも言えます。<br>
+   ソフトランディングなんてカッコ良さげな言葉を使っているけど、私はRPGというゲームが持っている普通のことを、グラスタ表に書いてTweetしただけですよ。<br>
+   Eロン禍があったからWebサイトにも掲載しているけどね。</p>
+
+  <h2>アナデンPDFレポート全集について</h2>
+  <p>このようなhtml手書きページであれば、スクリプトを使って一気にコーディングしたうえでGoogleとMicrosoftに報告できます。<br>
+   私のPDFはほぼ全てテキストベースですし、コピペもできるのでコンピュータが認識しやすいのですよ。<br>
+   でもPDF一つ一つが何ページにもなるから、膨大なテキスト量になっております。</p>
+
+  <p>合計で200冊以上のPDFがあり、これらのほぼ全てがfein's portalにもあるのです。<br>
+   しかし各ページに散逸しており、私個人としても整理しにくいという課題がありました。<br>
+   それを一気に集めたんだよね。<br>
+   やり方は簡単で、htmlコードを作ってくれるスクリプトを書いて実行するだけです。5分とかからない。<br>
+   ここらへんが手書きhtmlの強みでしょう。</p>
+
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a
+     href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/another-eden/anaden_feinpdf_teyul_menas.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's
+     personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's
+     portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

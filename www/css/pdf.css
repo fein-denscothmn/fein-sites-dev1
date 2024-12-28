@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+.feinpdf-container {
+    width: 80%;
+    margin: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+#feinpdf-viewer {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    position: relative;
+}
+
+.feincanvas {
+    width: 100% !important;
+    height: auto !important;
+    position: relative;
+}
+
+.feinpdfcontrols {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.feinpdfcontrols button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.feinpdfcontrols button:hover {
+    background-color: #0056b3;
+}
+
+.feinpdfcontrols span {
+    font-weight: bold;
+}
+
+/* レスポンシブデザイン対応 */
+@media (max-width: 600px) {
+    .feinpdf-container {
+        width: 100%;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+    #feinpdf-viewer {
+        width: 100%;
+        height: auto;
+        overflow: auto;
+        position: relative;
+    }
+
+    .feincanvas {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .feinpdfcontrols button {
+        padding: 3px 6px;
+        font-size: 12px;
+    }
+}

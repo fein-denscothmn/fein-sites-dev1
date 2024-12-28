@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+
+ <!-- Microsoft tag -->
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+
+ <meta charset="UTF-8">
+
+ <!--基本のメタタグ-->
+ <meta name="description" content="JavaScriptとcssでイラストのアルバムを作ります。ウォーターマークも付けておけばAI学習除けにも効果を発揮します。">
+ <meta name="keywords" content="個人サイト, JavaScript, イラストアルバム">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="JavaScriptでイラストアルバムを作成する">
+ <meta property="og:description" content="JavaScriptとcssでイラストのアルバムを作ります。ウォーターマークも付けておけばAI学習除けにも効果を発揮します。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/album_script.html">
+
+ <!--検索ヒット時のアイコン-->
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "JavaScriptでイラストアルバムを作成する",
+  "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/album_script.html",
+  "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+}
+</script>
+
+ <!--レスポンシブデザイン-->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!--CSS-->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" type="text/css" href="/css/album.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <!--JavaScript-->
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <script src="/script/album.js"></script>
+ <!-- gsapの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <!-- prismの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+
+ <!-- google fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+
+ <!--ページタイトル-->
+ <title>JavaScriptでイラストアルバムを作成する</title>
+
+ <!--ASノーナのファビコン-->
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">JavaScriptでイラストアルバムを作成する</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く
+    ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="JavaScriptでイラストアルバムを作成するの目次を開く ▼"
+   data-close-text="JavaScriptでイラストアルバムを作成するの目次を閉じる ▲">JavaScriptでイラストアルバムを作成するの目次を開く
+   ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p>イラストアルバムだけをご覧になりたい方は目次に★マークが付いている部分をタップしてください。<br>
+   すぐにジャンプできますよ！</p>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>JavaScriptでイラストアルバムを作成する</span></h1>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(14).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>昨今のAI学習に伴う騒動は、多くの人に個人でWebサイトを持つ可能性について議論を呼び起こしました。<br>
+    ただ、AI学習から逃げるためだけではなく、せっかくなら楽しいデザインを盛り込めると良いと思います。</p>
+
+   <p>このJavaScriptによる画像アルバムはイラストや画像化された小説などを綺麗に陳列できることに加えて、クローラーも避けやすいです。<br>
+    JavaScriptを理解するのが難しいクローラーもいるので、多少なら検索除けの効果も期待できるということです。<br>
+    でも見る人にとっては楽しいものですから、一石二鳥かもしれない。</p>
+  </div>
+
+
+  <h2>説明は実際のイラストアルバムを見ながら</h2>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(15).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>ここでは、実際のイラストアルバムをお見せしつつ、html・css・JavaScriptの順番でコードをお見せします。<br>
+    同時にコードの解説も加えていきます。<br>
+    イラストを並べると言ってもいろんな形があると思うんですよね。<br>
+    １枚１枚掲示してギャラリー風にしても良いでしょう。<br>
+    その一方で、こうやってアルバムを陳列すれば、多数の画像を省スペースに並べることができます。</p>
+   <p>では、そろそろ本題に移りますね。</p>
+  </div>
+
+
+  <h3>★Kyabia様のイラストアルバム：vol.1</h3>
+  <p>まずは完成品の提示です。<br>
+   これはイラストレーターのKyabia様による画像をアルバム化したものです。</p>
+
+  <div class="feinalbum-container" id="feinalbum1">
+   <div class="feinalbum">
+    <div class="feinalbum-page">
+     <img src="/paint/kyabiaフィーネa1.jpg" alt="illustration of kyabia">
+    </div>
+    <div class="feinalbum-page">
+     <img src="/paint/kyabiaフィーネb1.jpg" alt="illustration of kyabia">
+    </div>
+    <div class="feinalbum-page">
+     <img src="/paint/kyabiaフィーネc1.jpg" alt="illustration of kyabia">
+    </div>
+    <div class="feinalbum-page">
+     <img src="/paint/kyabiaフィーネd1.jpg" alt="illustration of kyabia">
+    </div>
+    <div class="feinalbum-page">
+     <img src="/paint/2024kyabiaフィーネ全体.jpg" alt="illustration of kyabia">
+    </div>
+    <div class="feinalbum-page">
+     <img src="/paint/kyabiaマリエルa3.jpg" alt="illustration of kyabia">
+    </div>
+    <div class="feinalbum-page">
+     <img src="/paint/kyabiaマリエルa2.jpg" alt="illustration of kyabia">
+    </div>
+    <div class="feinalbum-page">
+     <img src="/paint/kyabiaマリエルa1.jpg" alt="illustration of kyabia">
+    </div>
+    <div class="feinalbum-page">
+     <img src="/paint/kyabiaイスカ.jpg" alt="illustration of kyabia">
+    </div>
+   </div>
+   <button class="feinalbum-prev">前のページ</button>
+   <button class="feinalbum-next">次のページ</button>
+  </div>
+
+  <p>「前のページ」と「次のページ」を押すと、アニメーションとともに画像が切り替わるようになっています。<br>
+   アニメーションの見せ方はいろいろありますが、あまり凝ったものにしても煩わしさを感じさせてしまいます。<br>
+   気付くか気付かないか程度に、さらりと動かす方が私は好きかな。</p>
+
+  <h4>イラストアルバムを作るhtml</h4>
+  <p>このHTML構造は画像をページ単位で切り替えるアルバムを作成するための土台です。<br>
+   ボタンをタップすると、JavaScriptによって表示される画像が切り替わります。<br>
+   そんなに難しいものではないので、ちょっとhtmlコードをご覧ください。</p>
+
+  <p class="codegra">イラストアルバムを作るhtml</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;div class=&quot;feinalbum-container&quot; id=&quot;feinalbum3&quot;&gt;
+   &lt;div class=&quot;feinalbum&quot;&gt;
+    &lt;div class=&quot;feinalbum-page&quot;&gt;
+     &lt;img src=&quot;/paint/フィーネa.jpg&quot; alt=&quot;Image 3&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;feinalbum-page&quot;&gt;
+     &lt;img src=&quot;/paint/フィーネb.jpg&quot; alt=&quot;Image 4&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;feinalbum-page&quot;&gt;
+     &lt;img src=&quot;/paint/フィーネc.jpg&quot; alt=&quot;Image 4&quot;&gt;
+    &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;button class=&quot;feinalbum-prev&quot;&gt;前のページ&lt;/button&gt;
+   &lt;button class=&quot;feinalbum-next&quot;&gt;次のページ&lt;/button&gt;
+&lt;/div&gt;
+    </code></pre>
+  </div>
+
+  <p>このコードが何を意味しているのか、簡単にHTMLの説明をしてみます。</p>
+  <dl>
+   <dt>全体の構造</dt>
+   <dd>feinalbum-containerというクラス名がついた外枠の&lt;div&gt;がアルバム全体を包んでいます。<br>
+    この外枠は、一つのアルバム全体をまとめる役割を持っています。</dd>
+
+   <dt>アルバムの内容</dt>
+   <dd>feinalbumというクラス名がついた&lt;div&gt;があり、その中に複数のfeinalbum-pageというクラス名がついた&lt;div&gt;があります。<br>
+    feinalbum-pageには&lt;img&gt;タグが入っていて画像を表示します。<br>
+    今回は3つの画像がそれぞれ異なるfeinalbum-pageに入っています。</dd>
+
+
+   <dt>ページ移動のボタン</dt>
+   <dd>feinalbum-prevとfeinalbum-nextというクラス名がついた&lt;button&gt;タグがあります。<br>
+    それぞれ「前のページ」「次のページ」に移動するためのボタンです。</dd>
+  </dl>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(16).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>一つのアルバムに格納するイラスト数はどれくらいでしょうね？<br>
+    感覚的なものも大きいですが、私としては多くても10枚くらいが適切かと思います。<br>
+    それでも10冊のアルバムを並べれば、100枚のイラストを１つのWebページに展示できるのですよ。<br>
+    そして個人サイトのページ数を10とするなら、合計で1000枚のイラストを、いとも簡単にAI除けしつつ展示できることになります。</p>
+
+   <p>手間を惜しまないのであれば、全ての画像にウォーターマークを付けてあげればさらに良いですね。</p>
+  </div>
+
+
+  <h5>個人サイトは閲覧数が少ない問題</h5>
+  <p>これはSEOとも深く関わってくるので、すぐに回答が出るようなものではないでしょう。<br>
+   でも、次のような工夫をすることで、イラストを守りつつ検索エンジンに対処することも、可能かと思いますよ？</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(24).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <ul>
+    <li>イラストにはもちろん<a href="/contents/protect.html">X（旧：Twitter）のAIからイラストなどを守る試み</a>にあるようなAI除けを施す。</li>
+    <li>このページにあるように、JavaScriptによるアルバム化なんて小ネタでもAIクローラー除けの効果は期待できます。</li>
+    <li>文章を書くと良いんですよね…AIに読まれても構わないような、イラストのコツやお勧め用品のご紹介みたいな。<br>
+     画像だけのサイトだと、SEOとしては強くないと思われます。</li>
+   </ul>
+  </div>
+
+
+  <p>これらに加えて、相互リンクなどもやっていただければ。<br>
+   ただ検索エンジンに引っかかっては困る二次創作もあるでしょうから、一概には言えませんよね。</p>
+
+  <h3>★Kyabia様のイラストアルバム：vol.2</h3>
+  <p>こちらもイラストレーターのKyabia様による画像をアルバム化したものです。</p>
+
+  <div class="feinalbum-container" id="feinalbum2">
+   <div class="feinalbum">
+    <div class="feinalbum-page">
+     <img src="/paint/kyabiaフィーネa2.jpg" alt="illustration of kyabia">
+    </div>
+    <div class="feinalbum-page">
+     <img src="/paint/kyabiaフィーネb2.jpg" alt="illustration of kyabia">
+    </div>
+    <div class="feinalbum-page">
+     <img src="/paint/kyabiaフィーネc2.jpg" alt="illustration of kyabia">
+    </div>
+    <div class="feinalbum-page">
+     <img src="/paint/kyabiaフィーネd2.jpg" alt="illustration of kyabia">
+    </div>
+    <div class="feinalbum-page">
+     <img src="/paint/2024kyabiaフィーネ.png" alt="illustration of kyabia">
+    </div>
+   </div>
+   <button class="feinalbum-prev">前のページ</button>
+   <button class="feinalbum-next">次のページ</button>
+  </div>
+
+  <p>他に画像の展示はどんなアイデアがありますかね？<br>
+   マジでリアルの個展会場のような室内を演出するという手もあり、それはCSSで実現可能です。<br>
+   ただ、レスポンシブデザインにする必要があるので、横への広がりに工夫が必要かと。<br>
+   同じイラストギャラリーでも、見せ方がひと味違うと、それだけでも注目を集めることができるでしょう。</p>
+
+  <h4>イラストアルバムを作るcss</h4>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(25).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>このCSSが既に長い…いきなりチャレンジするというより、個人のポートフォリオサイトや簡単なブログを作ることから始めてみると良いですよね。<br>
+    「ハンズオンプロジェクト」などと呼ばれるのですが、実際にコーディングしてみることが最も効果的です。<br>
+    簡単な文字装飾から始め、徐々に難易度を上げていくと挫折を防げます。<br>
+    デザインの模写も素晴らしい練習方法です。<br>
+    好きなサイトやインスピレーションを得たデザインを自分で再現してみるのです。<br>
+    この過程で、実際のWeb制作で使われているテクニックを学ぶことができます。</p>
+  </div>
+
+  <p>って…あれ？<br>
+   これはイラスト上達への道と似たような側面があるかも…</p>
+
+  <p>とりあえず、このアルバムのCSSを見てみましょうか。</p>
+
+  <p class="codegra" id="album_css">イラストアルバムを作るalbum.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+.feinalbum-container {
+ margin: 20px;
+ text-align: center;
+}
+
+.feinalbum {
+ width: 100%;
+ max-width: 600px;
+ height: 0;
+ padding-bottom: 75%;
+ perspective: 1000px;
+ position: relative;
+ overflow: hidden;
+ margin: auto;
+ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+ border: 1px solid #dcdcdc;
+ border-radius: 5px;
+ background-color: #f8f8f8;
+}
+
+.feinalbum-page {
+ width: 100%;
+ height: 100%;
+ position: absolute;
+ backface-visibility: hidden;
+ transition: transform 0.8s ease-in-out, box-shadow 0.8s ease-in-out;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ transform-style: preserve-3d;
+ background-color: #ffffff;
+ border: 1px solid #e0e0e0;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ border-radius: 5px;
+ transform-origin: center;
+}
+
+.feinalbum-page-hidden {
+ transform: rotateY(-150deg) scale(0.98);
+ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.feinalbum-page img {
+ width: 95%;
+ height: auto;
+ object-fit: contain;
+}
+
+button {
+ margin: 10px;
+ padding: 8px 12px;
+ border: none;
+ background-color: #7FDBB6;
+ color: #4B3E3E;
+ font-size: 14px;
+ cursor: pointer;
+ border-radius: 5px;
+ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+ background-color: #65C9A9;
+ transform: translateY(-2px);
+}
+
+button:active {
+ background-color: #4CB38B;
+ transform: translateY(0);
+}
+
+.feinalbum-hidden {
+ display: none;
+}
+    </code></pre>
+  </div>
+
+  <p><span class="codecolor">.feinalbumcontainer</span><br>
+   このクラスはアルバム全体を包む外枠に適用されています。</p>
+  <dl>
+   <dt>margin: 20px</dt>
+   <dd>外側の余白を20ピクセルに設定し、要素にスペースを与えています。</dd>
+
+   <dt>textalign: center</dt>
+   <dd>内側の要素を中央に揃えています。</dd>
+  </dl>
+
+
+  <p><span class="codecolor">.feinalbum</span><br>
+   アルバムの本体部分に適用されます。</p>
+  <ul>
+   <li><code>width 100%</code>で幅をコンテナ全体に広げますが、<code>maxwidth 600px</code>で幅の最大値を600ピクセルに制限しています。</li>
+   <li><code>height 0</code>と<code>paddingbottom 75%</code>で高さを0にしてアスペクト比を設定し、画面幅に応じた高さを確保しています。</li>
+  </ul>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(27).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <dl>
+    <dt>perspective: 1000px</dt>
+    <dd>3D効果を付けるための視点の深さを設定します。</dd>
+
+    <dt>position: relative</dt>
+    <dd>要素の位置を相対的に配置します。</dd>
+
+    <dt>overflow: hidden</dt>
+    <dd>コンテナ外の内容を隠します。</dd>
+
+    <dt>margin: auto</dt>
+    <dd>中央揃えのために自動で余白を設定します。</dd>
+
+    <dt>boxshadow: 0 10px 20px rgba(0, 0, 0, 0.2)</dt>
+    <dd>軽い影を追加し、立体感を出します。</dd>
+
+    <dt>border: 1px solid #dcdcdc</dt>
+    <dd>境界線を追加し、アルバムの枠を作ります。</dd>
+
+    <dt>borderradius: 5px</dt>
+    <dd>角を少し丸めます。</dd>
+
+    <dt>backgroundcolor: #f8f8f8</dt>
+    <dd>アルバムの背景色をオフホワイトに設定します。</dd>
+   </dl>
+  </div>
+
+  <p><span class="codecolor">.feinalbumpage</span><br>
+   各ページに適用されるクラスです。<br>
+   まずは<code>width 100%</code>と<code>height 100%</code>でページの幅と高さを設定します。</p>
+
+  <dl>
+   <dt>position: absolute</dt>
+   <dd>絶対配置し、親要素に対する位置を設定します。</dd>
+
+   <dt>backfacevisibility: hidden</dt>
+   <dd>3D回転時の背面表示を隠します。</dd>
+
+   <dt>transition: transform 0.8s easeinout, boxshadow 0.8s easeinout</dt>
+   <dd>ページの回転と影の変化にアニメーションを設定します。</dd>
+
+   <dt>display: flex、alignitems: center、justifycontent: center</dt>
+   <dd>画像を中央に配置します。</dd>
+
+   <dt>transformstyle: preserve3d</dt>
+   <dd>3D変換を保ちます。</dd>
+
+   <dt>backgroundcolor: #ffffff</dt>
+   <dd>ページの背景色を白に設定します。</dd>
+
+   <dt>border: 1px solid #e0e0e0</dt>
+   <dd>ページの境界線を追加します。</dd>
+
+   <dt>boxshadow: 0 4px 8px rgba(0, 0, 0, 0.1)</dt>
+   <dd>軽い影を追加し、立体感を出します。</dd>
+
+   <dt>borderradius: 5px</dt>
+   <dd>角を少し丸めます。</dd>
+
+   <dt>transformorigin: center</dt>
+   <dd>変換の中心を設定します。</dd>
+  </dl>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(38).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p><span class="codecolor">.feinalbumpagehidden</span><br>
+    このクラスはページが見えなくなるときに適用されます。</p>
+   <dl>
+    <dt>transform: rotateY(150deg) scale(0.98)</dt>
+    <dd>ページが150度回転し、わずかに縮小します。</dd>
+
+    <dt>boxshadow: 0 8px 16px rgba(0, 0, 0, 0.2)</dt>
+    <dd>深い影を追加します。</dd>
+   </dl>
+  </div>
+
+
+  <p><span class="codecolor">.feinalbumpage img</span><br>
+   ページ内の画像に適用されるクラスです。</p>
+  <dl>
+   <dt>width: 95%</dt>
+   <dd>画像の幅をページの95%に設定します。</dd>
+
+   <dt>height: auto</dt>
+   <dd>画像の高さを自動調整します。</dd>
+
+   <dt>objectfit: contain</dt>
+   <dd>画像の比率を保ちつつページ内に収めます。</dd>
+  </dl>
+
+  <p><span class="codecolor"> button</span><br>
+   ページ移動ボタンに適用されるクラスです。</p>
+  <dl>
+   <dt>margin: 10px</dt>
+   <dd>ボタン外側の余白を設定します。</dd>
+
+   <dt>padding: 8px 12px</dt>
+   <dd>ボタン内側の余白を設定します。</dd>
+
+   <dt>border: none</dt>
+   <dd>ボタンの境界線をなくします。</dd>
+
+   <dt>backgroundcolor: #7FDBB6</dt>
+   <dd>ボタンの背景色を淡いグリーンに設定します。</dd>
+
+   <dt>color: #4B3E3E</dt>
+   <dd>ボタンのテキスト色をダークブラウンに設定します。</dd>
+
+   <dt>fontsize: 14px</dt>
+   <dd>フォントサイズを14ピクセルに設定します。</dd>
+
+   <dt>cursor: pointer</dt>
+   <dd>ポインタがホバー時に指アイコンに変わります。</dd>
+
+   <dt>borderradius: 5px</dt>
+   <dd>角を少し丸めます。</dd>
+
+   <dt>boxshadow: 0 4px 6px rgba(0, 0, 0, 0.1)</dt>
+   <dd>軽い影を追加します。</dd>
+
+   <dt>transition: backgroundcolor 0.3s, transform 0.3s</dt>
+   <dd>背景色と変形のアニメーションを設定します。</dd>
+  </dl>
+
+  <p><span class="codecolor"> buttonhover</span><br>
+   ボタンにマウスが乗ったときのスタイルを設定します。</p>
+  <dl>
+   <dt>backgroundcolor: #65C9A9</dt>
+   <dd>背景色を濃いグリーンに変更します。</dd>
+
+   <dt>transform: translateY(2px)</dt>
+   <dd>ボタンが少し浮き上がるように見せます。</dd>
+  </dl>
+
+  <p><span class="codecolor"> buttonactive</span><br>
+   ボタンがクリックされたときのスタイルを設定します。</p>
+  <dl>
+   <dt>backgroundcolor: #4CB38B</dt>
+   <dd>背景色をさらに濃いグリーンに変更します。</dd>
+
+   <dt>transform: translateY(0)</dt>
+   <dd>ボタンが元の位置に戻ります。</dd>
+  </dl>
+
+
+  <p><span class="codecolor">.feinalbumhidden</span><br>
+   このクラスは表示されないページに適用されます。<br>
+   <code>display none</code>でページを非表示にします。
+  </p>
+
+  <h4>「perspective」プロパティ</h4>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(61).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>3D効果を付けるために使われるCSSプロパティです。<br>
+    このプロパティは、3D空間内の要素の視点の深さ、つまり「視覚的な距離」を設定します。<br>
+    簡単に仕様を説明しましょうか。</p>
+
+   <dl>
+    <dt>用途</dt>
+    <dd>3D空間内での要素の深さや距離を設定します。<br>
+     このプロパティを使うことで、3D変換（回転やスケーリングなど）がより現実的に見えるようになります。</dd>
+
+    <dt>単位</dt>
+    <dd>px（ピクセル）や、他の長さの単位が使えます。<br>
+     例えば、1000pxや500pxなど。</dd>
+
+    <dt>適用対象</dt>
+    <dd>一般に親要素に適用され、子要素の3D変換に影響を与えます。</dd>
+   </dl>
+  </div>
+
+
+  <p class="gra">perspectiveの書き方</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+.container {
+perspective: 1000px;
+  }
+    </code></pre>
+  </div>
+
+  <p>この例では、containerクラスが持つ要素に3D効果を付けるための視点の深さを1000ピクセルに設定しています。<br>
+   この視点の深さにより、要素が回転したときに奥行き感が強調されます。</p>
+
+  <p class="gra">イラストアルバムのperspective</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(95).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>前述のように「perspective: 1000px」というCSSプロパティは、3D効果を付けるために使われています。<br>
+    この値は「視点の深さ」を設定していることも書きました。</p>
+
+   <p>1000pxという大きな数字にする理由は、視点の深さを広く取ることで、3D効果がより自然に見えるようにするためです。<br>
+    視点の深さが大きいと、3D効果がやや控えめで、奥行き感が自然になります。<br>
+    逆に、視点の深さを小さくすると、3D効果が強調され、オブジェクトが急激に遠近感を感じさせるようになります。</p>
+
+   <p>例えば、視点の深さを500pxに設定した場合、回転や移動がより極端に感じられ、ページの回転が強く見えるかも？<br>
+    感じ方の違いかな…<br>
+    とりあえず私は視点の深さを1000pxにすることが多いけど、これだと少し緩やかで自然な3D効果に見えるのです。</p>
+  </div>
+
+  <h5>長いだけで難しくはないCSS</h5>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(9).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>やたらと親子関係を作ったりすると難解になってきますが、１行１行でフォントやカラー、奥行きなどを順番に設定しているだけです。<br>
+    英数字ばかりのプログラミングみたいな画面を見るとうんざりしちゃうかもしれないけど、一つ一つは単純なんですよ？</p>
+  </div>
+
+  <h3>★御堂りく様のイラストアルバム：vol.1</h3>
+  <p>こちらはイラストレーターの御堂りく様による画像をアルバム化したものです。</p>
+
+  <div class="feinalbum-container" id="feinalbum3">
+   <div class="feinalbum">
+    <div class="feinalbum-page">
+     <img src="/paint/御堂りくフィーネa.jpg" alt="illustration of 御堂りく">
+    </div>
+    <div class="feinalbum-page">
+     <img src="/paint/御堂りくフィーネb.jpg" alt="illustration of 御堂りく">
+    </div>
+    <div class="feinalbum-page">
+     <img src="/paint/御堂りくasフィーネ.jpg" alt="illustration of 御堂りく">
+    </div>
+    <div class="feinalbum-page">
+     <img src="/paint/御堂りくミストレア.jpg" alt="illustration of 御堂りく">
+    </div>
+   </div>
+   <button class="feinalbum-prev">前のページ</button>
+   <button class="feinalbum-next">次のページ</button>
+  </div>
+
+  <p>ここだな…どうしようかな…<br>
+   JavaScriptですよ。<br>
+   私も学生時代はさんざん悩んだからね。<br>
+   今でも悩むことはありますが、多くは学生時代に自分が残したコードを使っているから、大幅な時間短縮ができているだけです。<br>
+   このサイトのコードを持って行っても良いですよ？<br>
+   御自身のサイトのディレクトリに合わせてコードを変更して頂ければ、よほど独特な環境でない限りは動作すると思います。</p>
+
+  <h4>イラストアルバムを作るJavaScript</h4>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(32).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>このコードはイラストアルバムのページを切り替える仕組みを作っています。<br>
+    とてもシンプルに説明すると、こんな感じですよ。<br>
+    まずはコードを書かず、日本語での説明チャレンジです。</p>
+  </div>
+
+
+  <dl>
+   <dt>アルバムの準備</dt>
+   <dd>
+    <ul>
+     <li>最初に表示するページは0番目、つまり一番最初のページです。</li>
+     <li>アルバムを見つけて、その中のページや「前へ」「次へ」ボタンも見つけます。</li>
+    </ul>
+   </dd>
+
+   <dt>ボタンがクリックされたときの動作</dt>
+   <dd>
+    <ul>
+     <li>「前へ」ボタンをクリックしたら、1つ前のページを表示します。</li>
+     <li>「次へ」ボタンをクリックしたら、1つ次のページを表示します。</li>
+    </ul>
+   </dd>
+
+   <dt>ページの表示・非表示</dt>
+   <dd>
+    <ul>
+     <li>もし選んだページの番号が範囲外だったら、何もしません。</li>
+     <li>現在のページを「隠す」動作を始めて、ちょっと待ってから次のページを「見せる」動作をします。</li>
+     <li>ページ内の画像をちょうどいいサイズに調整して、中央に配置します。</li>
+    </ul>
+   </dd>
+
+   <dt>初期設定</dt>
+   <dd>最初のページだけを見せて、他のページを隠しておきます。</dd>
+
+   <dt>ページ全体を設定</dt>
+   <dd>ページが読み込まれたときに、この仕組みを動かします。全てのアルバムに対して、この準備を行います。</dd>
+  </dl>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(35).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>つまり、このコードはユーザーが「前へ」や「次へ」ボタンをクリックしたときに、アルバムのページをスムーズに切り替えるための仕組みを作っているということになります。<br>
+    では、実際のJavaScriptをご覧ください。</p>
+  </div>
+
+  <p class="codegra" id="album_js">イラストアルバムを作るalbum.js</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+function setupFeinalbum(albumId) {
+ let currentPage = 0;
+ const album = document.getElementById(albumId);
+ const pages = album.querySelectorAll('.feinalbum-page');
+ const prevButton = album.querySelector('.feinalbum-prev');
+ const nextButton = album.querySelector('.feinalbum-next');
+
+ prevButton.addEventListener('click', () => {
+  showPage(currentPage - 1);
+ });
+
+ nextButton.addEventListener('click', () => {
+  showPage(currentPage + 1);
+ });
+
+ function showPage(index) {
+  if (index &lt; 0 || index >= pages.length) return;
+
+  pages[currentPage].classList.add('feinalbum-page-hidden');
+
+  setTimeout(() => {
+   pages[currentPage].classList.add('feinalbum-hidden');
+   currentPage = index;
+   pages[currentPage].classList.remove('feinalbum-hidden');
+
+   setTimeout(() => {
+    pages[currentPage].classList.remove('feinalbum-page-hidden');
+    adjustImageSize(pages[currentPage]);
+   }, 50);
+  }, 600);
+ }
+
+ function adjustImageSize(page) {
+  const img = page.querySelector('img');
+  img.style.width = '100%';
+  img.style.height = '100%';
+  img.style.objectFit = 'contain';
+  img.style.objectPosition = 'center';
+ }
+
+ pages.forEach((page, index) => {
+  if (index !== currentPage) {
+   page.classList.add('feinalbum-page-hidden');
+   page.classList.add('feinalbum-hidden');
+  } else {
+   page.classList.remove('feinalbum-hidden');
+   adjustImageSize(page);
+  }
+ });
+
+ showPage(0);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+ const albumContainers = document.querySelectorAll('.feinalbum-container');
+ albumContainers.forEach((container, index) => {
+  setupFeinalbum(`feinalbum${index + 1}`);
+ });
+});
+    </code></pre>
+  </div>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(38).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>ざざーっと、コードを説明しましょうか。<br>
+    １行ずつ説明文を付けたつもりですが、ループ処理の部分はかえって分かりにくいかも？</p>
+  </div>
+
+  <dl>
+   <dt>function setupFeinalbum(albumId) {</dt>
+   <dd>
+    <dl>
+     <dt>let currentPage = 0;</dt>
+     <dd>現在表示されているページを初期化します。最初は0ページ目（最初のページ）です。</dd>
+
+     <dt>const album = document.getElementById(albumId);</dt>
+     <dd>指定されたIDのアルバム要素を取得します。</dd>
+
+     <dt>const pages = album.querySelectorAll('.feinalbum-page');</dt>
+     <dd>アルバム内の全てのページ要素を取得します。</dd>
+
+     <dt>const prevButton = album.querySelector('.feinalbum-prev');</dt>
+     <dd>「前のページへ」ボタンを取得します。</dd>
+
+     <dt>const nextButton = album.querySelector('.feinalbum-next');</dt>
+     <dd>「次のページへ」ボタンを取得します。</dd>
+
+     <dt>prevButton.addEventListener('click', () => { showPage(currentPage - 1); });</dt>
+     <dd>で「前のページへ」ボタンがクリックされたときに、現在のページを1つ前にする関数を呼び出します。</dd>
+
+     <dt>nextButton.addEventListener('click', () => { showPage(currentPage + 1); });</dt>
+     <dd>で「次のページへ」ボタンがクリックされたときに、現在のページを1つ次にする関数を呼び出します。</dd>
+
+     <dt>function showPage(index) {</dt>
+     <dd>
+      <dl>
+       <dt>if (index &lt; 0 || index &gt;= pages.length) return;</dt>
+       <dd>ページのインデックスが範囲外の場合、何もしないで関数を終了します。</dd>
+
+       <dt>pages[currentPage].classList.add('feinalbum-page-hidden');</dt>
+       <dd>現在のページに隠すためのクラスを追加します。</dd>
+
+       <dt>setTimeout(() => {</dt>
+       <dd>アニメーションを遅らせて実行します。まず、600ミリ秒後に現在のページを完全に非表示にし、次のページを表示します。</dd>
+
+       <dt>pages[currentPage].classList.add('feinalbum-hidden');</dt>
+       <dd>現在のページを完全に隠します。</dd>
+
+       <dt>currentPage = index;</dt>
+       <dd>現在のページのインデックスを更新します。</dd>
+
+       <dt>pages[currentPage].classList.remove('feinalbum-hidden');</dt>
+       <dd>新しいページを表示します。</dd>
+
+       <dt>setTimeout(() => {</dt>
+       <dd>新しいページのアニメーションを開始します。50ミリ秒後に新しいページの隠すクラスを削除します。</dd>
+
+       <dt>adjustImageSize(pages[currentPage]);</dt>
+       <dd>画像のサイズを調整します。</dd>
+      </dl>
+     </dd>
+
+     <dt>function adjustImageSize(page) {</dt>
+     <dd>
+      <dl>
+       <dt>const img = page.querySelector('img');</dt>
+       <dd>ページ内の画像要素を取得します。</dd>
+
+       <dt>img.style.width = '100%';</dt>
+       <dd>画像のスタイルを設定し、widthを100%、heightを100%、objectFitをcontainに設定して画像がページ内に収まるようにします。</dd>
+
+       <dt>img.style.height = '100%';</dt>
+       <dd>heightを100%に設定します。</dd>
+
+       <dt>img.style.objectFit = 'contain';</dt>
+       <dd>objectFitをcontainに設定して画像がページ内に収まるようにします。</dd>
+
+       <dt>img.style.objectPosition = 'center';</dt>
+       <dd>objectPositionをcenterに設定して画像を中央に配置します。</dd>
+      </dl>
+     </dd>
+
+     <dt>pages.forEach((page, index) => {</dt>
+     <dd>
+      <dl>
+       <dt>if (index !== currentPage) {</dt>
+       <dd>もしそのページが現在のページでない場合（index !== currentPage）、そのページを隠すクラスを追加します。</dd>
+
+       <dt>page.classList.add('feinalbum-page-hidden');</dt>
+       <dd>そのページを隠すクラスを追加します。</dd>
+
+       <dt>page.classList.add('feinalbum-hidden');</dt>
+       <dd>そのページを完全に隠します。</dd>
+
+       <dt>} else {</dt>
+       <dd>現在のページの場合、そのページの隠すクラスを削除し、画像のサイズを調整します。</dd>
+
+       <dt>page.classList.remove('feinalbum-hidden');</dt>
+       <dd>そのページの隠すクラスを削除します。</dd>
+
+       <dt>adjustImageSize(page);</dt>
+       <dd>画像のサイズを調整します。</dd>
+      </dl>
+     </dd>
+
+     <dt>showPage(0);</dt>
+     <dd>最初のページを表示します。</dd>
+    </dl>
+   </dd>
+
+   <dt>document.addEventListener('DOMContentLoaded', () => {</dt>
+   <dd>ページが読み込まれたときに実行するコードを設定します。</dd>
+
+   <dt>const albumContainers = document.querySelectorAll('.feinalbum-container');</dt>
+   <dd>全てのアルバムコンテナを取得します。</dd>
+
+   <dt>albumContainers.forEach((container, index) => {</dt>
+   <dd>全てのアルバムコンテナに対してループを実行し、各アルバムのセットアップを行います。</dd>
+
+   <dt>setupFeinalbum(`feinalbum${index + 1}`);</dt>
+   <dd>各アルバムに対してセットアップを実行します。</dd>
+  </dl>
+
+  <h5>html・css・JavaScriptは関係しあっている</h5>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(42).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>ここまで紹介してきたhtml・css・JavaScriptは、クラスやIDという目印みたいなものを使って、相互に連携して動いています。<br>
+    htmlのクラスやIDを見て、cssはデザインを行い、JavaScriptは動きをコントロールしている。<br>
+    それらがエラーなく動作してこそ、イラストアルバムが綺麗に動作します。</p>
+
+   <p>特にCSSの部分を調整して頂ければ、見た目の印象を大きく変えることもできますよ。<br>
+    ボタンの大きさを変えるとかね？</p>
+
+   <p>最後に、これらのイラストを譲ってくださったKyabia様、御堂りく様、本当にありがとうございました。<br>
+    この場を借りて、御礼申し上げます。</p>
+  </div>
+
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/album_script.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+
+ <!-- Microsoft tag -->
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+
+ <meta charset="UTF-8">
+
+
+ <!--基本のメタタグ-->
+ <meta name="description" content="Webサイト制作に関する小話を掲載していこうかと。肩の力を抜いていきましょう。">
+ <meta name="keywords" content="個人サイト, リラックス, 雑談">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="個人サイトのデザインやレイアウト">
+ <meta property="og:description" content="Webサイト制作に関する小話を掲載していこうかと。肩の力を抜いていきましょう。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/sitedesign.html">
+
+ <!--検索ヒット時のアイコン-->
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "個人サイトのデザインやレイアウト",
+  "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/sitedesign.html",
+  "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+}
+</script>
+
+ <!--レスポンシブデザイン-->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!--CSS-->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="../css/menu.css">
+ <link rel="stylesheet" type="text/css" href="../css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="../css/feinheadline1.css">
+ <link rel="stylesheet" type="text/css" href="../css/flower.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <!--JavaScript-->
+ <script src="../script/underline.js"></script>
+ <script src="../script/feinfade.js"></script>
+ <script src="../script/feinScroll.js"></script>
+ <!-- gsapの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+
+ <!-- google fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+
+ <!--ページタイトル-->
+ <title>個人サイトのデザインやレイアウト</title>
+
+ <!--ASノーナのファビコン-->
+ <link rel="icon" sizes="32x32" href="../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">個人サイトのデザインやレイアウト</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!--ハンバーガーメニュー-->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!--ハンバーガーメニューここまで-->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="個人サイトのデザインやレイアウトの目次を開く ▼"
+   data-close-text="個人サイトのデザインやレイアウトの目次を閉じる ▲">個人サイトのデザインやレイアウトの目次を開く ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>個人サイトのデザインやレイアウト</span></h1>
+  <p>基礎に忠実かつシンプルデザインなら、失敗はしないです。<br>
+   見出しは見出し。本文は本文。リンクはブルーで下線を引く。表を使って画像を無理やり押し込むのではなくCSSで指定する…などなど。<br>
+   これらのセオリーと言いますか、基礎的なことにはちゃんと理由があります。<br>
+   Webブラウザが見出しや表であることを認識し、それの通りに表示しようとするからなんですよね。<br>
+   とは言ったものの、ウェブサイトビルダーがやってくれるから心配しなくていいです。
+  </p>
+  <p>そうそう当たり前の話ではあるけど、もうウェブデザインと言えばレスポンシブデザインが常識です。</p>
+
+  <h3>『F』や『Z』の型が基本です</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(25).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>Webデザインで『F』や『Z』の型が基本というのは、一般的に受け入れられている考え方です。<br>
+    よって、メニューの位置は左上が基本です。<br>
+    多くのサイトがそうなっているのですから、それに合わせるといいですよ？<br>
+    あまりにオリジナリティーが過ぎると、離脱率の上昇を招いてしまいます。</p>
+
+   <p class="gra">Fパターン</p>
+   <ul>
+    <li>ユーザーはページの上部や左側に注目することが多いです。</li>
+    <li>見出しや重要な情報を左上に配置し、段落の冒頭部分を左揃えで配置するのが効果的です。</li>
+   </ul>
+
+   <p class="gra">Zパターン</p>
+   <ul>
+    <li>ユーザーはページの左上から右上、次に左下へと視線を動かし、最後に右下に注目する傾向があります。</li>
+    <li>このパターンはシンプルなデザインやランディングページにも適しています。視線の流れに沿って、重要な情報を配置することで効果的なデザインが可能です。</li>
+   </ul>
+   <p>これらの型を活用することで、ユーザーの視線を効果的に誘導し、重要な情報を見逃さないようにすることができます。</p>
+   <p>少し表現を変えれば…<br>
+    自分の祖父や祖母が、迷わず快適に閲覧・操作できるWebサイトを作る。<br>
+    これがベストプラクティスです。</p>
+  </div>
+
+  <h4>画像を入れるポイント</h4>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(102).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>画像のサイズやフォーマット、Alt属性の設定。ここらへんはいいですよね。<br>
+    レスポンシブデザインにも対応させるのもそうですし。</p>
+   <p>著作権は気を付けてください。<br>
+    例えば生成AIによって吐き出された画像は、著作権としてはグレーです。</p>
+  </div>
+
+  <h4>Webサイトで使うカラーは最低限に</h4>
+  <p>ここはけっこう気を使ってますね。<br>
+   できる限り、カラーを統一するようにしています。<br>
+   例えば下記の文章、どう思いますか？</p>
+
+  <hr>
+
+  <p
+   style="font-family: 'Comic Sans MS', cursive, sans-serif; color: #FF00FF; background-color: #FFFF00; font-size: 20px; font-weight: bold; text-decoration: underline; line-height: 1.5;">
+   <span style="color: red; font-size: 24px;">私はパソコンが得意です。</span>
+   <span style="font-size: 18px; color: blue; text-decoration: line-through;">でも才能やセンスがあったわけではなく、</span>
+   <span style="color: green; font-weight: bold;">家のパソコンをおもちゃにしていたのがきっかけだったのです。</span>
+   <span style="font-size: 22px; color: purple; text-decoration: overline;">呆れた父親がパソコンの教科書を買ってきて、</span>
+   <span style="color: orange; font-weight: bolder; text-decoration: underline overline;">お古のパソコンを私にくれました。</span>
+   <span style="font-size: 20px; color: teal;">勉強すればするほど思い通りに遊べて楽しかったです。</span>
+  </p>
+
+  <hr>
+
+  <p>自分が強調したいのは分かるけど、あっちこっちに目線が飛びますよね。<br>
+   そしてマーカーや下線を乱用しており、本人が何を強調したいのかが分かりにくい。<br>
+   赤字強調するかどうか迷ったら、いったん強調しないで公開するくらいがちょうど良いと思います。</p>
+
+  <p>でもこういう考え方も度が過ぎると、すごく硬い雰囲気になってしまうんですよね…<br>
+   このサイトは少し変化に乏しいと自分で思います。<br>
+   どこかで草花の写真とか、添えていきましょう🌸🍂</p>
+
+
+  <h2>フォントデザイン</h2>
+  <p>ここは少し詳しく書くように心がけていきます。<br>
+   SNSで創英角ポップ体を始めとするフォントの話題が沸騰していたんですよね。</p>
+
+  <p>まず、このサイトでは次のようになっています。</p>
+  <ul>
+   <li>ひらがな・カタカナ・漢字は「Nato Sans JP」</li>
+   <li>半角の英数字や記号を「Lato」</li>
+  </ul>
+  <p>どちらも <a href="https://fonts.google.com/">Google Fonts</a> であり、Webフォントの一種です。</p>
+
+
+  <p class="gra">Noto Sans JP</p>
+  <p>Noto Sans JPが注目され、多くのプロジェクトで採用されている理由はいくつかあります。<br>
+   まず、GoogleとAdobeが共同で開発したフォントであり、多言語対応が可能な点が大きな魅力ですよね。<br>
+   特に日本語に特化したデザインがされており、読みやすさと美しさを両立させています。<br>
+   無料で利用できることも人気の理由の一つ。<br>
+   WebデザインやUI/UXデザインで広く使われており、特にウェブサイトやアプリの日本語表示に適しています。<br>
+   他にも、シンプルでモダンなデザインが特徴で、多くのデザイナーに支持されています。</p>
+
+  <p class="gra">Lato</p>
+  <p>こちらも幅広く使用されており、多くの言語に対応していて汎用性が高いと言えます。<br>
+   ポーランドのデザイナー Łukasz Dziedzic によって作られたフォント。2010年に初めてリリースされ、その後Google Fontsライブラリーに追加されました。<br>
+   最も一般的な英数字用Webフォントというと、ArialやHelveticaも良いと思います。<br>
+   これらはシンプルで読みやすく、長い間多くのサイトで使われてきたフォントです。</p>
+
+
+  <h3>Noto Sans JPとLatoの文字セット</h3>
+  <p>Noto Sans JPとLatoには、それぞれ異なる文字のセットが含まれています。</p>
+
+  <p class="gra">Noto Sans JP</p>
+  <p>Noto Sans JPは、日本語とラテン文字の両方をサポートするため、日本語テキストを含むウェブサイトに適しています。</p>
+  <ul>
+   <li>ひらがな、カタカナ</li>
+   <li>漢字</li>
+   <li>ラテン文字（A-Z、a-z）</li>
+   <li>数字（0-9）</li>
+   <li>記号</li>
+   <li>その他の日本語に関連する特殊文字</li>
+  </ul>
+
+  <p class="gra">Lato</p>
+  <p>Latoは主にラテンアルファベットをサポートしているので、欧文のテキストに適しています。</p>
+  <ul>
+   <li>ラテン文字（A-Z、a-z）</li>
+   <li>数字（0-9）</li>
+   <li>記号（例：!、@、#、$、%）</li>
+   <li>特殊文字（例：é、ä、ß）</li>
+   <li>基本的な通貨記号（例：€、$、¥）</li>
+  </ul>
+
+
+  <h4>ブラウザのフォールバック機能</h4>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(45).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>コードの紹介は別のページに譲りますが、ブラウザはフォント指定に従って、次のように動作します。</p>
+   <ol>
+    <li>Latoが最初に指定されているフォントなので、ブラウザはまずLatoで文字を表示しようとする。</li>
+    <li>グリフが見つからない場合：Latoには日本語のグリフが含まれていないため、ブラウザはこのフォントでは表示できないと判断する。</li>
+    <li>次のフォントにフォールバック：ブラウザは次に指定されているNoto Sans JPをチェックし、ここに日本語のグリフがあると判断する。</li>
+    <li>適用: 最終的にNoto Sans JPで日本語を表示する。</li>
+   </ol>
+
+   <p>つまり、フォントが対応するグリフを持っていなければ、次のフォントに自動的にフォールバックして表示するという仕組みです。<br>
+    Latoは元々、ラテン文字（英数字など）を表示するためのフォントとしてデザインされているので、日本語のグリフは含まれていません。<br>
+    Latoフォントにはひらがな、カタカナ、漢字など日本語を構成する文字が含まれていないという意味です。<br>
+    じゃあなぜLatoでも日本語が表示できるかというと、ブラウザはフォントスタック（複数のフォント指定）を使って、指定した順にフォントを確認していくからです。<br>
+    Latoには日本語が含まれていないので、次に指定されたNoto Sans JPを使って日本語を表示する。<br>
+    これがフォールバック機能という仕組みです。</p>
+  </div>
+
+  <h4>ブラウザのデフォルト表示について</h4>
+  <p>htmlやcssでなーんにもフォントの指定をしなかった場合、ブラウザはデフォルトで何のフォントを選ぶかと言うと、各OSやブラウザによって異なるフォントを選びます。<br>
+   一般的には次のようなフォントが使用されますね。</p>
+  <ul>
+   <li>Windows: Times New Roman（セリフ体）、Arial（サンセリフ体）</li>
+   <li>macOS: Times（セリフ体）、Helvetica（サンセリフ体）</li>
+   <li>Linux: ディストリビューションや設定によるが、DejaVu SerifやDejaVu Sansが多い</li>
+   <li>Android: Roboto</li>
+   <li>iPhone/iPad (iOS): San Francisco（iOS 9以降）、Helvetica Neue（iOS 9以前）</li>
+  </ul>
+  <p>これらは特定のフォントが指定されていない場合に使われる標準フォントです。<br>
+   標準フォントは各OSが選ぶものなので、閲覧環境によって表示が変わることがあります。</p>
+
+  <h3>互換性とWebフォント</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(115).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>Webフォントを使うことで閲覧者のパソコンやスマホの種類を問わず、私の意図通りに表示されるようにしています。<br>
+    互換性というのは、簡単に言うとWindowsでもMacでも、はたまたAndroidでもiPhoneでも表示や活用ができるという意味です。<br>
+    例えばMicrosoft Wordの拡張子は.docxですが、これはたいていのOSで表示が可能です。<br>
+    しかしその互換性は完璧ではなく、細かいレイアウトなどが崩れてしまうこともあります。</p>
+
+   <p>Webサイトを閲覧する時、フォントの表示はどのような仕組みになっているのかを考えるとWebフォントのメリットが分かりやすいでしょう。<br>
+    普通にやるなら、Web制作者側が見出しや本文、注釈などのフォントを決めます。<br>
+    それをWebブラウザがその端末に入っているフォントを使って表示する流れになります。<br>
+    この方法の欠点は閲覧者のデバイスによってはWeb制作者が思うようなフォント表示にならないことです。<br>
+    閲覧者のデバイスにWeb制作者が設定したフォントがインストールされていない場合、別のフォントに変えられてしまうんですよね。</p>
+
+   <p>しかしWebフォントはそうではありません。<br>
+    閲覧者がWebサイトを表示しようとしたとき、インターネット上にあるフォントのデータをダウンロードしてきて表示してくれるのです。<br>
+    多少データの容量が増えてしまいますが、現在のネットワーク環境ならよっぽどおかしなことをしない限り問題は出ません。<br>
+    Webフォントは閲覧者のデバイスによって見え方が違うなんてことは起こらないため、Web制作者の決めたデザインがそのまま反映されます。<br>
+    加えて完全無料であることも長所として挙げられるでしょう。</p>
+
+   <p>私がGoogleサイトを選び、かつBloggerをお勧めしている理由がこんなところにもありますよね。<br>
+    Google FontsというWebフォントがデフォルトになっているので、細かいレベルでのデザイントラブルが発生しにくいのですよ。<br>
+    ITに詳しくなくても、Googleが世話をしてくれます。<br>
+    もちろん後からシステムにフォントをインストールすることもできます。<br>
+    例えば「Nato Sans JP」は、私が後から自分のGoogleドキュメントにインストールしたものです。</p>
+  </div>
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/sitedesign.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

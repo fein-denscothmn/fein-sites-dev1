@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fein-sites-dev1.ew.r.appspot.com/sitemap.xml
+Sitemap: https://fein-sites-dev1.ew.r.appspot.com/image_sitemap.xml
+Sitemap: https://fein-sites-dev1.ew.r.appspot.com/pdf_sitemap.xml

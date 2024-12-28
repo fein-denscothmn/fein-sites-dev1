@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <!-- Meta tags -->
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="CSSの書き方に関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta name="keywords" content="個人サイト, CSS, 書き方">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="個人サイトでよく使うCSS">
+ <meta property="og:description" content="CSSの書き方に関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/codeinfo.html">
+ <!-- Structured Data -->
+ <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "個人サイトでよく使うCSS",
+      "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/codeinfo.html",
+      "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+  }
+  </script>
+
+ <!-- CSS -->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <!-- JavaScript -->
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+
+ <!-- Google Fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+
+ <!-- Page Title -->
+ <title>個人サイトでよく使うCSS</title>
+
+ <!-- Favicon -->
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">個人サイトでよく使うCSS</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="個人サイトでよく使うCSSの目次を開く ▼"
+   data-close-text="個人サイトでよく使うCSSの目次を閉じる ▲">個人サイトでよく使うCSSの目次を開く
+   ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>個人サイトでよく使うCSS</span></h1>
+
+  <p>CSSのコメントアウトだけだと自分でもソースコードの把握がやりにくいんですよね。<br>
+   今までは手元にノートを作っていたのですが、どうせなら解説ページも兼用で作っちゃおうと思って。</p>
+
+  <h3>このページに関する注意事項</h3>
+  <p>当Webサイト作成者は、例示を目的としてマークアップ及びプログラミング例を提供しており、明示または黙示にかかわらず、いかなる責任も負わないものとします。<br>
+   このページは、説明されているマークアップ及びプログラミング言語、手順を作成およびデバッグするために使用される各種ツールに読者が精通していることを前提にしています。<br>
+   このページは、特定の機能を説明するのに役立つ可能性がありますが、当Webサイト作成者がこれらの例を変更した上で、特定の要件を満たすために追加の機能を提供したり、システムを構築したりすることはできません。<br>
+   加えて、この例の手順に従う場合は、読者の各種ファイルを事前にバックアップすることを推奨いたします。</p>
+
+  <h3>デザインを決めているCSS</h3>
+  <p>CSSというのはHTMLに添えて使うもので、Cascading Style Sheetsの略称です。<br>
+   単にスタイルシートと呼ぶことが多いかもしれない。私はそう呼んでます。<br>
+   例えば p{ color: blue; } と記述します。<br>
+   これは&lt;p&gt;という基礎的なタグについて、青色で表示するという意味です。</p>
+
+  <h2>CSSは外部化するのがお勧めです</h2>
+  <p>JavaScriptも同じなんですけど、そっちはそっちで別のページを作る予定だから。<br>
+   最後の最後は好みという言い方もできるんだけど、基本原則として、CSSは外部化するのを強くお勧めします。
+  </p>
+
+  <p class="gra">CSSを外部化するためのhtml</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;!--CSS--&gt;
+&lt;link rel="stylesheet" type="text/css" href="css/style.css"&gt;
+&lt;link rel="stylesheet" type="text/css" href="css/collapsible.css"&gt;
+&lt;link rel="stylesheet" type="text/css" href="css/menu.css"&gt;
+&lt;link rel="stylesheet" type="text/css" href="css/feinheadline1.css"&gt;
+    </code></pre>
+  </div>
+  <p>モノと諸事情によってはhtml内部にそのままcssを書くこともあるんですが、外部化できるものは外部化しちゃったほうが良いです。<br>
+   そうしないと、後々になって管理するのがものすごく大変になります！<br>
+   大量のCSSをコピーしなきゃいけなくなって、ページが10も20も増えてきた時に恐ろしいことになるんですよ。<br>
+   そして外部化するときも、ある程度は役割に分けて外部化した方が良いですね。<br>
+   ここでは「基礎スタイル・折り畳みスタイル・メニュースタイル・目次スタイル」の４つを分けて、それぞれ外部化して読み込んでます。</p>
+  <p>手書きWebサイトはこういうところがあるんだよねー…<br>
+   作る前の基礎設計を雑にし過ぎると、後になって収集付かなくなってしまうんです。<br>
+   自分で自分のコードが分からなくなる。<br>
+   私がこのサイトで真っ先に構造が複雑なグラスタ表に取り掛かったのは、この基礎設計を最初の段階で可能な限り丁寧にやりたかったからなんだよね。<br>
+   個人サイトの挫折ポイントだからさ。</p>
+
+  <h2>文字コードを宣言する</h2>
+  <p>@charset "UTF-8"; は、CSSファイルの文字エンコーディングを指定するための宣言です。<br>
+   この宣言を使うことで、CSSファイルがUTF-8エンコーディングで書かれていることをブラウザに伝えます。</p>
+
+  <p class="codegra" id="utf8_style">文字コードをutf-8とするstyle.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+@charset "UTF-8";  /* utf-8の宣言 */
+
+</code></pre>
+  </div>
+
+  <h3>文字コード「UTF-8」を指定</h3>
+
+
+  <dl>
+   <dt>文字エンコーディングの指定</dt>
+   <dd>UTF-8は、ほとんどの言語の文字をサポートするエンコーディング方式です。これを指定することで、CSSファイル内の特殊文字やマルチバイト文字（例えば、日本語や絵文字など）が正しく解釈されます。</dd>
+   <dt>互換性の確保</dt>
+   <dd>異なるブラウザやシステム環境でCSSファイルが一貫して表示されるようにするために重要です。</dd>
+  </dl>
+
+  <p>これがないと、特殊文字やマルチバイト文字が正しく表示されず、文字化けが発生する可能性があります。<br>
+   ブラウザがデフォルトで使用するエンコーディングに依存することになるのですよ。<br>
+   意図しない表示結果になることがあるので、宣言を置いておくのがお勧めです。<br>
+   つまり、CSSファイル内に日本語のコメントやコンテンツが含まれている場合、@charset "UTF-8"; を削除すると、これらの文字が正しく表示されないリスクがあるってことです。
+  <p>
+
+  <h2>bodyの設定</h2>
+  <p>&lt;body&gt;タグ内のテキストの見た目やレイアウトを調整するために使用されているCSSです。</p>
+
+  <p class="gra">bodyを設定するためのcss</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* ●全体の設定● */
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+}
+        </code></pre>
+  </div>
+
+  <p><span class="codecolor">body {</span><br>
+   CSSのセレクタで、HTMLの&lt;body&gt;タグにスタイルを適用することを示しています。</p>
+  <p><span class="codecolor">font-family: 'Noto Sans JP', sans-serif;</span><br>
+   フォントファミリーを指定しています。'Noto Sans JP'というフォントが最初に使用され、もしこのフォントが利用できない場合は、sans-serifフォントが代わりに使用されます。<br>
+   このWebサイトの場合、Google fontsの適用を示しています。</p>
+  <p><span class="codecolor">font-size: 15px;</span><br>
+   テキストのフォントサイズを15ピクセルに設定します。</p>
+  <p><span class="codecolor">font-weight: 400;</span><br>
+   フォントの太さを指定します。400はノーマルウェイトと言い、通常の太さを意味しています。
+  <p><span class="codecolor">font-style: normal;</span><br>
+   フォントのスタイルを指定します。normalは斜体ではない通常のスタイルを意味しています。</p>
+
+  <p>では、次のセクションでこのbodyの設定をもう少し凝ったものにしてみます。</p>
+
+  <h2>サイト全体の外観を整える</h2>
+
+  <p class="codegra" id="body_style">bodyを綺麗に整えるstyle.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* body setting */
+body {
+font-family: 'Lato', 'Noto Sans JP', sans-serif;  /* フォントファミリーの設定 */
+font-size: 15px;  /* フォントサイズの設定 */
+font-weight: 400;  /* フォントの太さの設定 */
+font-style: normal;  /* フォントスタイルの設定 */
+overflow: auto;  /* オーバーフローの設定 */
+margin: 10px;  /* マージンの設定 */
+padding: 0;  /* パディングの設定 */
+border-radius: 20px;  /* ボーダーの角を丸くする設定 */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);  /* ボックスシャドウの設定 */
+background-color: white;  /* 背景色の設定 */
+}
+
+</code></pre>
+  </div>
+
+  <h3>マージン・ボーダー・パディング</h3>
+
+  <p>マージンとパディングは、どちらも要素の周りにスペースを作るためのCSSプロパティですが、役割が異なります。</p>
+
+  <dl>
+   <dt>マージン (margin)</dt>
+   <dd>要素の外側にスペースを作ります。隣接する要素との間隔を調整するために使われます。</dd>
+   <dd>例えば、隣のボックスとの距離を広げたいときに使います。</dd>
+   <dt>パディング (padding)</dt>
+   <dd>要素の内側にスペースを作ります。要素の内容とその境界線（ボーダー）との間隔を調整するために使われます。</dd>
+   <dd>例えば、テキストとボックスの端との距離を広げたいときに使います。</dd>
+  </dl>
+
+  <p>簡単に言うと、マージンは要素の外側のスペース、パディングは要素の内側のスペースを管理します。<br>
+   以下の図で視覚的に理解しやすいと思います</p>
+
+  <img src="/contents/itimages/cssimage.png" alt="cssのマージンとパディング" class="biggraphic fade-in-out">
+
+  <h2>印刷設定に使われるメディアクエリ</h2>
+  <p>Webページは印刷しにくいことが多いですが、次のようなCSSを設定しておけば綺麗に印刷できます。<br>
+   ただ、これはどちらかというと私がPDF印刷する時に便利だから設定しているだけかな？<br>
+   より余白を詰めるために一時的にbodyのpaddingをコメントアウトする必要があります。</p>
+
+  <p class="gra">cssによる印刷設定</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+@media print {
+  body {
+    print-color-adjust: exact; /* Firefox, Edge, Chrome, Safari */
+  }
+  .page-break-after {
+    page-break-after: always;
+  }
+}
+        </code></pre>
+  </div>
+
+  <p><span class="codecolor">@media print {</span><br>
+   印刷時に適用されるCSSルールを定義しているメディアクエリです。</p>
+
+  <p><span class="codecolor">body {</span><br>
+   普段は適用されない、印刷する時にだけ適用されるページ全体のスタイルを設定しています。</p>
+
+  <p><span class="codecolor">print-color-adjust: exact;</span><br>
+   印刷時に背景色や画像をそのまま印刷するように指定しておきます。<br>
+   加えて、ブラウザの印刷設定でも背景グラフィックを印刷するようチェックする必要があります。<br>
+   ちなみにFirefox、Edge、Chrome、Safariどれでも対応してます。<br>
+   私がFirefoxを使うことが多いからね。</p>
+
+  <p><span class="codecolor">.page-break-after {</span><br>
+   特定の要素の後に改ページを挿入します。<br>
+   ExcelやWordで良く使われる「改ページ」ですよ。</p>
+
+  <p><span class="codecolor">page-break-after: always;</span><br>
+   このスタイルが適用された要素の後に必ず改ページを挿入します。<br>
+   二重に設定しているわけじゃなくて、page-break-afterという部分の後に、このコードによって改ページするよってことです。</p>
+
+  <h2>グローバルナビゲーションの外観を整える</h2>
+
+  <p class="codegra" id="headerglobal_css">グローバルナビゲーションを構成するheader.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+@keyframes underline-animation {
+ from {
+  width: 0;
+  background: #00CC00;
+ }
+
+ to {
+  width: 100%;
+  background: #4285F4;
+ }
+}
+
+.animated-link {
+ position: relative;
+ color: #4285F4;
+ text-decoration: none;
+}
+
+.animated-link::after {
+ content: "";
+ position: absolute;
+ left: 0;
+ bottom: -2px;
+ width: 0;
+ height: 2px;
+ background: #00CC00;
+ transition: width 0.5s;
+}
+
+.animated-link.loaded::after {
+ width: 100%;
+ background: #4285F4;
+ animation: underline-animation 2s forwards;
+}
+
+.den_nav {
+ background: linear-gradient(to bottom, rgba(173, 216, 230, 0.5), rgba(173, 216, 230, 0));
+ color: #4285F4;
+ padding: 10px;
+ border-radius: 20px;
+}
+
+.feinhome {
+ width: 50px;
+ margin-left: 3px;
+ margin-top: 3px;
+ display: block;
+ position: relative;
+ top: 3px;
+ left: 3px;
+}
+
+.den_nav ul {
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+ display: flex;
+ flex-wrap: wrap;
+}
+
+.den_nav ul li {
+ margin-right: 20px;
+ margin-bottom: 10px;
+}
+
+.den_nav ul li a {
+ color: #4285F4;
+}
+
+.den_nav ul li a:hover {
+ color: #0078D4;
+}
+
+</code></pre>
+  </div>
+
+  <h3>CSSのフレックスボックスレイアウト</h3>
+  <p>display: flex; は、CSSのフレックスボックスレイアウトを有効にするプロパティです。<br>
+   これを使うと、要素の配置やサイズ変更が柔軟に行えるようになります。<br>
+   けっこう大切なプロパティなので、詳しく説明していきますね。</p>
+
+  <h4>フレックスボックスの基本</h4>
+  <p>フレックスボックスは、親要素（コンテナ）とその子要素（アイテム）で構成されます。<br>
+   display: flex; を親要素に適用すると、その子要素がフレックスコンテナ内で配置されます。</p>
+
+  <dl>
+   <dt>方向の設定</dt>
+   <dd>デフォルトでは、子要素は横方向（row）に配置されます。</dd>
+   <dd>flex-direction プロパティを使って、縦方向（column）に変更することもできます。</dd>
+   <dt>配置の制御</dt>
+   <dd>justify-content プロパティで、子要素の主軸（横方向）の配置を制御できます（例：中央揃え、スペースの均等配分など）。
+   </dd>
+   <dd>align-items プロパティで、子要素の交差軸（縦方向）の配置を制御できます（例：中央揃え、上下揃えなど）。</dd>
+   <dt>サイズの調整</dt>
+   <dd>子要素に flex-grow, flex-shrink, flex-basis プロパティを使って、成長や縮小の割合、基準サイズを設定できます。</dd>
+  </dl>
+
+  <p>具体例となるコードを書いてみますね。</p>
+
+  <p class="gra">CSSのフレックスボックスレイアウト例</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;item&quot;&gt;Item 1&lt;/div&gt;
+  &lt;div class=&quot;item&quot;&gt;Item 2&lt;/div&gt;
+  &lt;div class=&quot;item&quot;&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+  </div>
+
+  <p>フレックスボックスを使うと、レイアウトの調整が非常に簡単になります。</p>
+
+  <p class="gra">CSSのフレックスボックスレイアウト例</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+.container {
+  display: flex; /* フレックスコンテナを設定 */
+  justify-content: center; /* 子要素を中央揃え */
+  align-items: center; /* 子要素を上下中央揃え */
+}
+
+.item {
+  flex: 1; /* 子要素が均等にスペースを取る */
+}
+
+</code></pre>
+  </div>
+
+  <h2>箇条書きの余白を調整する</h2>
+  <p>リストタグはデフォルトだと右に寄り過ぎていると思うんですよね。<br>
+   私は左側のマージンを削除しちゃってます。<br>
+   難しいコードではないです。</p>
+
+  <p class="codegra" id="list_style">箇条書きの余分な余白を削除するstyle.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* list */
+ul, /* 箇条書きリストのスタイル */
+ol { /* 番号付きリストのスタイル */
+  margin-left: 0; /* デフォルトの左マージンを削除 */
+  padding-left: 25px; /* 左側にパディングを追加 */
+}
+
+</code></pre>
+  </div>
+
+  <h3>タグセレクタでデザインを統一する</h3>
+  <p>CSSで特定のタグ全体に影響を与える設定のことを<strong>タグセレクタ</strong>と呼びます。<br>
+   例えば上記のように ul や ol のようにタグ名を直接指定することで、該当するすべてのタグに対して一括でスタイルを適用できます。<br>
+   特に難しいことはないのですが、Webサイト全体のデザインを統一するのに非常に重要な考え方です。<br>
+   全てのページで一貫して同じようなデザインを心がけることでWebサイト全体に統一感が生まれ、野暮ったいイメージがなくなっていきます。</p>
+
+
+  <h4>ちょい置きのスペーサー</h4>
+  <p>&lt;p&gt;や&lt;br&gt;を置きまくるのは、本来の意味での使い方ではありません。<br>
+   こういうのは文章のためにあるので、私は次のようなスペーサーを作ってCSSで調整してますね。</p>
+  <p class="codegra" id="spacer_style">手軽に余白を設定するstyle.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+div.spacer {
+   height: 20px;
+}
+        </code></pre>
+  </div>
+
+  <p><span class="codecolor">height: 20px;</span><br>
+   これは極めて単純ですよ。<br>
+   htmlでスペース作りたい場所に&lt;div&gt;を置いて、css側では高さを調整しているだけです。<br>
+   10pxでもいいしね。<br>
+   その時による。</p>
+
+  <h2>ヘッダーのデザインを統一する</h2>
+  <p>通常、Webサイトにおいて各ページのデザインは統一されます。<br>
+   ヘッダーはページ変移後にすぐ目に付く部分であるため、あまり華美にせずシンプルなデザインとなるようにしていますね。<br>
+   ただ、ちょっとしたアニメーションを付けて画像に目が行くようにはしています。</p>
+
+  <p class="codegra" id="headeranimation_css">ヘッダー画像にアニメーションを付けるheader.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+.header-image {
+ width: 100%;
+ height: auto;
+ display: block;
+ margin: 0 auto;
+ background: linear-gradient(to bottom, #ffffff, #e0f7fa);
+ padding: 20px;
+ border-radius: 15px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ opacity: 0;
+ transform: translateX(100%);
+ transition: opacity 1s ease, transform 1s ease;
+}
+
+.header-frame {
+ border: 5px solid transparent;
+ padding: 10px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ border-radius: 15px;
+ margin: 10px;
+ max-width: 100%;
+ box-sizing: border-box;
+ animation: border-draw 3s linear forwards;
+}
+
+.header-container {
+ position: relative;
+ text-align: center;
+}
+
+.header-text {
+ position: absolute;
+ bottom: 10px;
+ left: 10px;
+ transform: translate(0, 0);
+ font-size: 24px;
+ color: white;
+ background-color: rgba(0, 0, 0, 0.5);
+ padding: 10px 20px;
+ border-radius: 10px;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-text a {
+ color: white;
+ text-decoration: none;
+ transition: color 0.3s;
+}
+
+.header-text a:hover {
+ color: #dcdcdc;
+}
+
+@media (max-width: 600px) {
+ .header-frame {
+  margin: 10px;
+  padding: 5px;
+ }
+
+ .header-image {
+  padding: 10px;
+ }
+
+ .header-text {
+  font-size: 20px;
+  padding: 5px 10px;
+  bottom: 5px;
+  left: 5px;
+ }
+}
+
+.header-image.visible {
+ opacity: 1;
+ transform: translateX(0);
+}
+
+/* Animation of moray eel and gray heron frame */
+@keyframes border-draw {
+ 0% {
+  border-color: transparent;
+  border-width: 5px 0 0 0;
+ }
+
+ 12.5% {
+  border-color: #99CCFF;
+  border-width: 5px 5px 0 0;
+ }
+
+ 25% {
+  border-color: #99CCFF;
+  border-width: 5px 5px 5px 0;
+ }
+
+ 37.5% {
+  border-color: #99CCFF;
+  border-width: 5px 5px 5px 5px;
+ }
+
+ 50% {
+  border-color: #99CCFF;
+ }
+
+ 62.5% {
+  border-color: #99CCFF;
+ }
+
+ 75% {
+  border-color: #99CCFF;
+ }
+
+ 87.5% {
+  border-color: #99CCFF;
+ }
+
+ 100% {
+  border-color: #99CCFF;
+ }
+}
+      </code></pre>
+  </div>
+
+  <p>記載が長くなってしまうので、JavaScriptと関連付いているアニメーションについては、別ページに譲ります。</p>
+
+  <h3>CSSのブロック要素</h3>
+  <p>display: block; は、要素をブロック要素として表示するためのCSSプロパティです。<br>
+   ブロック要素には次のような特徴があり、慣れてくるとレイアウト調整時に便利に使えますよ。</p>
+
+  <dl>
+   <dt>全幅を占有</dt>
+   <dd>ブロック要素は親要素の幅全体を占有します。</dd>
+   <dd>例えば、&lt;div&gt;や&lt;p&gt;タグはデフォルトでブロック要素です。/dd>
+   <dt>改行を伴う</dt>
+   <dd>ブロック要素の前後には自動的に改行が挿入されます。</dd>
+   <dd>つまり、次の要素は新しい行から始まります。</dd>
+   <dt>高さと幅を指定可能</dt>
+   <dd>ブロック要素は、width や height プロパティを使って明示的に高さや幅を設定できます。</dd>
+  </dl>
+
+  <p>例えば、次のようにシンプルな例を書けるでしょう。</p>
+
+  <p class="gra">CSSのブロック要素コード例</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;div style=&quot;display: block;&quot;&gt;
+  これはブロック要素です。
+&lt;/div&gt;
+      </code></pre>
+  </div>
+
+  <p>この場合、&lt;div&gt;要素は親要素の幅全体を占有し、次の要素は新しい行から始まります。</p>
+
+  <h3>要素のサイズ計算方法を指定する</h3>
+  <p>box-sizing: border-box; は、要素のサイズ計算方法を指定するCSSプロパティです。<br>
+   要素の幅と高さにパディングとボーダーのサイズを含めます。<br>
+   つまり、指定した幅と高さがそのまま要素の最終的なサイズになります。<br>
+   こうすることで要素のサイズ計算が簡単になり、レイアウトが崩れにくくなるんですよね。<br>
+   例えば、以下のような要素があるとします。</p>
+
+  <p class="gra">CSSで要素のサイズを指定する</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+.box {
+  width: 200px;
+  padding: 20px;
+  border: 10px solid black;
+  box-sizing: border-box;
+}
+      </code></pre>
+  </div>
+
+  <p>この場合、要素の最終的な幅は200pxのままです。<br>
+   パディングとボーダーが含まれているため、内容領域の幅は160px（200px - 20px - 20px）になります。</p>
+
+  <h2>単純な書式設定も外部化されたCSSで</h2>
+  <p>次のコードは単純にフォントを太字にしているだけです。<br>
+   私もcssをstyleとしてhtml内部に書くことはありますが、目に付いたらこまめに外へ出すようにしています。<br>
+   htmlファイルがぐちゃぐちゃしてくるんですよね。<br>
+   バグったときに手が付けられなくなるから、わりと大切。</p>
+
+  <p class="codegra" id="bold_style">太字にして定義リストを読みやすくする_style.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* words explained */
+dt {
+  font-weight: bold;
+}
+      </code></pre>
+  </div>
+  <p>このような太字に変える字体さえ必要ないという意見もあります。<br>
+   むやみにボールドを入れるべきではないという意見ですね。<br>
+   字体の種類が多ければ多いほど、そしてフォントサイズにバラつきがあるほど、読みにくいページになっていきます。</p>
+
+
+  <h2>付箋が貼りついているような立体感を出す</h2>
+  <p>これは飾り付けですね。<br>
+   今のところ特定の場所にしか使っていないけど、そのうちカラーバリエーションを増やしていってもおもしろいでしょう。<br>
+   こういった飾りは乱用しなければ、良いアクセントになるんですよね。<br>
+   これまた乱用すると、どこが重要なのか読者に伝わらなくなります。</p>
+
+  <p class="codegra" id="stickynote_style">立体的な付箋を描く_style.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* Sticky note settings ●start● */
+p.abcdtag { /* pタグにabcdtagクラスを適用 */
+    display: inline-block; /* インラインブロック要素として表示 */
+    position: relative; /* 相対位置を指定 */
+    padding: .5em 1.4em .5em 1em; /* 内側の余白を設定（上、右、下、左） */
+    background-color: rgba(255, 204, 204, 0.8); /* 背景色を設定（半透明のピンク） */
+    color: #333333; /* 文字色を設定 */
+    font-weight: bold; /* 文字を太字に設定 */
+    text-align: left; /* テキストを左揃えに設定 */
+}
+
+.right-align-container { /* right-align-containerクラスを適用 */
+    text-align: right; /* テキストを右揃えに設定 */
+}
+
+.abcdtag::before { /* abcdtagクラスの疑似要素beforeを適用 */
+    position: absolute; /* 絶対位置を指定 */
+    bottom: -1px; /* 下からの位置を指定 */
+    right: 9px; /* 右からの位置を指定 */
+    z-index: -1; /* z-indexを設定（背面に配置） */
+    transform: rotate(5deg); /* 5度回転させる */
+    width: 70%; /* 幅を70%に設定 */
+    height: 50%; /* 高さを50%に設定 */
+    background-color: rgba(208, 208, 208, 0.6); /* 背景色を設定（半透明のグレー） */
+    content: ""; /* コンテンツを空に設定 */
+    filter: blur(4px); /* ぼかしフィルターを適用 */
+}
+/* Sticky note settings ●end● */
+      </code></pre>
+  </div>
+
+  <p>このCSSは特定の要素に対して付箋のような見た目を作り出すためのスタイルを設定しています。<br>
+   特にポイントとなるのは、::before疑似要素を使って影やぼかし効果を追加し、立体感を出している部分です。</p>
+
+
+  <h3>HTMLを変えずデザインをカスタマイズするbefore疑似要素</h3>
+  <p>「before疑似要素」は、CSSで要素の前にコンテンツを追加するための手法です。<br>
+   指定した要素の内容の前に仮想的な要素を挿入することで、柔軟なデザインが実現可能となっています。<br>
+   この疑似要素は実際のHTMLには存在しませんが、スタイルシートで定義することで表示されます。</p>
+
+
+  <p class="gra">１．before疑似要素の基本構文</p>
+  <p>content プロパティを使って、疑似要素に表示する内容を指定します。<br>
+   テキストや画像、その他のコンテンツを挿入できます。</p>
+
+  <p class="gra">CSSのbefore疑似要素例</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+.example::before {
+  content: "追加する内容";
+}
+      </code></pre>
+  </div>
+
+  <p class="gra">２．before疑似要素の使用例</p>
+  <p>この例では、note クラスが適用された要素の前に「Note: 」というテキストが追加され、太字で赤色にスタイルされています。</p>
+
+  <p class="gra">CSSのbefore疑似要素使用例</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+.note::before {
+  content: "Note: ";
+  font-weight: bold;
+  color: red;
+}
+      </code></pre>
+  </div>
+
+
+  <p class="gra">３．before疑似要素でスタイルを適用</p>
+  <ul>
+   <li>疑似要素には通常の要素と同様に、色、フォント、背景、ボーダー、マージン、パディングなどのスタイルを適用できます。</li>
+   <li>例えば、背景色やボーダーを設定して、視覚的に区別することができます。</li>
+  </ul>
+
+
+  <p class="gra">４．before疑似要素の応用例</p>
+  <p>この例では、highlight クラスが適用された要素の前に黄色のラインが追加されます。<br>
+   content プロパティを空にすることで、装飾的な要素を作成できます。</p>
+
+  <p class="gra">CSSのbefore疑似要素応用例</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+.highlight::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: yellow;
+}
+      </code></pre>
+  </div>
+
+
+  <p class="gra">before疑似要素の利用シーン</p>
+  <p>「before疑似要素」を使うことで、HTMLを変更せずにデザインを柔軟にカスタマイズできます。<br>
+   主に次のような用途で使われることが多いですね。</p>
+  <dl>
+   <dt>装飾</dt>
+   <dd>テキストの前にアイコンや装飾を追加</dd>
+   <dt>通知</dt>
+   <dd>特定の要素に注意を引くためのラベルを追加する</dd>
+   <dt>レイアウト</dt>
+   <dd>視覚的な区切りや背景を追加して、デザインを強化する</dd>
+  </dl>
+
+  <h2>絶対参照と相対参照</h2>
+  <p>絶対リンクと相対リンクという言い方も聞いたことあります。<br>
+   単純に絶対と相対という感じで分かっていれば良いかと。</p>
+
+  <p>絶対参照は、ファイルやリソースの完全なパスを指定します。<br>
+   これはどこからアクセスしても同じ場所を指すため、リンクが効かなくなることがありません。<br>
+   例えば、画像ファイルの絶対参照は次のように書きます。<br>
+   ちょっと長いURLですよね。</p>
+
+  <p class="gra">絶対参照のhtmlコード例</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;img src="https://www.example.com/images/photo.jpg" alt="Photo"&gt;
+        </code></pre>
+  </div>
+
+  <p>相対参照は、現在のファイルの位置を基準にしてパスを指定します。<br>
+   これはファイルの構造が変わらない限り、リンクが効きます。<br>
+   例えば、同じディレクトリ内の画像ファイルの相対参照は次のように書きます。<br>
+   こちらのほうがコンパクトです。</p>
+
+  <p class="gra">相対参照のhtmlコード例</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;img src="images/photo.jpg" alt="Photo"&gt;
+        </code></pre>
+  </div>
+
+  <p>どちらを使うかは、難しいところですが…<br>
+   普通、自分のWebサイト内のリソースを示すには相対参照。<br>
+   外部リソースなら絶対参照が適しています。</p>
+
+  <h2>displayプロパティ</h2>
+  <p>display はCSSプロパティの一つです。<br>
+   要素の表示方法を指定します。<br>
+   プロパティの主な値とその意味を書いてみるけど、実際に書いてみるほうが早いかもしれません。<br>
+   感覚を掴んだ方が良いと思う。</p>
+
+  <p class="gra">主なdisplayの値</p>
+
+  <dl>
+   <dt>block</dt>
+   <dd>要素をブロック要素として表示</dd>
+   <dd>ブロック要素は、親要素の幅いっぱいに広がり、前後に改行が入ります。</dd>
+   <dd>例: &lt;div&gt;・&lt;p&gt;・&lt;h1&gt; など。</dd>
+
+   <dt>inline</dt>
+   <dd>要素をインライン要素として表示</dd>
+   <dd>インライン要素は、隣接する要素と同じ行に表示され、幅は内容に応じて決まります。</dd>
+   <dd>例: &lt;span&gt;・&lt;a&gt;・&lt;strong&gt; など。</dd>
+
+   <dt>inline-block</dt>
+   <dd>要素をインラインブロック要素として表示</dd>
+   <dd>インライン要素のように同じ行に表示されますが、ブロック要素のように幅や高さを指定できます。</dd>
+
+   <dt>none</dt>
+   <dd>要素を表示しない（非表示にするということです）</dd>
+   <dd>要素はレイアウトから完全に除外されます。</dd>
+
+   <dt>flex</dt>
+   <dd>定義2の内容</dd>
+   <dd>要素をフレックスコンテナとして表示</dd>
+   <dd>子要素を柔軟に配置できるようになります（フレックスボックスレイアウト）。</dd>
+
+   <dt>grid</dt>
+   <dd>定義2の内容</dd>
+   <dd>要素をグリッドコンテナとして表示</dd>
+   <dd>子要素をグリッドレイアウトで配置できるようになります。</dd>
+  </dl>
+
+  <p>コードの例としては、次のようなものが挙げられるでしょう。<br>
+   htmlで適当な文章等を作り、下記のcssを適用してみると、違いがなんとなくでも分かってくると思います。
+  </p>
+
+  <p class="gra">cssのdisplayコード例</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+.example-block {
+  display: block; /* ブロック要素として表示 */
+}
+
+.example-inline {
+  display: inline; /* インライン要素として表示 */
+}
+
+.example-inline-block {
+  display: inline-block; /* インラインブロック要素として表示 */
+}
+
+.example-none {
+  display: none; /* 非表示にする */
+}
+
+.example-flex {
+  display: flex; /* フレックスコンテナとして表示 */
+}
+
+.example-grid {
+  display: grid; /* グリッドコンテナとして表示 */
+}
+          </code></pre>
+  </div>
+
+  <p>こうやって display プロパティを使うことで、要素の表示方法を柔軟に制御できます。<br>
+   次はフレックスとグリッドについてです。<br>
+   特にフレックスはよく見かけますね。</p>
+
+  <h3>フレックスコンテナ・グリッドコンテナ</h3>
+  <p>フレックスコンテナとグリッドコンテナは、どちらもCSSのレイアウトシステムですが、それぞれ異なる特徴と用途があります。<br>
+   どっちが良いかはその要素によります。<br>
+   とりあえず事例は挙げてみたけど、両方試してみると使い慣れてくるのも早いかもしれません。</p>
+
+  <p class="gra">フレックスコンテナ（Flex Container）</p>
+
+  <dl>
+   <dt>定義</dt>
+   <dd>display: flex; を使用して要素をフレックスコンテナにします。</dd>
+   <dt>特徴</dt>
+   <dd>1次元レイアウト：主に1次元（横方向または縦方向）のレイアウトに適しています。</dd>
+   <dd>柔軟な配置：子要素（フレックスアイテム）のサイズや順序を柔軟に変更できます。</dd>
+   <dd>自動調整：子要素のサイズが自動的に調整され、余白が均等に分配されます。</dd>
+   <dt>用途</dt>
+   <dd>ナビゲーションバー、ツールバー、カードレイアウトなど</dd>
+   <dd>要素が一列に並ぶレイアウトに適しています。</dd>
+  </dl>
+
+  <p class="gra">cssのフレックスコンテナの例</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* フレックスコンテナ */
+.container {
+  display: flex;
+  justify-content: space-between; /* 子要素を均等に配置 */
+}
+
+.item {
+  flex: 1; /* 子要素の幅を均等にする */
+}
+        </code></pre>
+  </div>
+
+  <p class="gra">グリッドコンテナ（Grid Container）</p>
+
+  <dl>
+   <dt>定義</dt>
+   <dd>display: grid; を使用して要素をグリッドコンテナにします。</dd>
+
+   <dt>特徴</dt>
+   <dd>2次元レイアウト：横方向と縦方向の両方に要素を配置できる2次元レイアウトに適しています。</dd>
+   <dd>明確な行と列：行と列を明確に定義し、要素をその中に配置します。</dd>
+   <dd>複雑なレイアウト：複雑なレイアウトを簡単に作成でき、要素の位置を自由に指定できます。</dd>
+
+   <dt>用途</dt>
+   <dd>ダッシュボード、フォトギャラリー、複雑なウェブページレイアウトなど</dd>
+   <dd>複数の行と列に要素を配置するレイアウトに適しています。</dd>
+  </dl>
+
+  <p class="gra">cssのグリッドコンテナ例</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* グリッドコンテナ */
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3列のグリッドを作成 */
+  grid-gap: 10px; /* グリッド間の余白 */
+}
+
+.item {
+  grid-column: span 2; /* 子要素を2列分に広げる */
+}
+        </code></pre>
+  </div>
+
+  <p>フレックスコンテナはシンプルな1次元レイアウトに、グリッドコンテナは複雑な2次元レイアウトに適しています。<br>
+   それぞれの特徴を活かして、適切なレイアウトを選択したいところですが…<br>
+   ちょっとややこしいのでね。<br>
+   無理に対応せずとも、少し妥協するのも手です。</p>
+
+  <h3>少しカラーの付いたテキストの設定</h3>
+
+  <p>ここでは、見出しにするほどではないものの、少し強調して表示したい場合のテキスト設定です。<br>
+   薄い赤や緑のグラデーションを効かせて、コードとしてはただのPタグであっても、まるで見出しのように見えます。<br>
+   他にはシンプルに小さめなテキストを使いたいときもあるので、それも併せて設定しています。
+  </p>
+
+  <p class="codegra" id="mimics_style">見出しのように使う文字装飾を描く_style.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+p.gra {
+  display: block; /* ブロック要素として表示 */
+  width: fit-content; /* コンテンツに合わせた幅 */
+  background: linear-gradient(to bottom, rgba(255, 153, 153, 0.3), rgba(255, 255, 255, 0.3)); /* 背景のグラデーション */
+  font-weight: bold; /* 太字 */
+  padding: 10px; /* 内側の余白 */
+  border-radius: 15px; /* 角を丸くする */
+  margin-top: 30px; /* 上部の余白 */
+}
+
+p.codegra {
+ display: block;
+ width: fit-content;
+ background: linear-gradient(to bottom, rgba(153, 255, 153, 0.3), rgba(255, 255, 255, 0.3));
+ font-weight: bold;
+ padding: 10px;
+ border-radius: 15px;
+ margin-top: 30px;
+}
+      </code></pre>
+  </div>
+
+  <h4>display: block;</h4>
+  <p>上でも触れたものですが、この display: block; はよく使うんじゃないかな？<br>
+   このプロパティは、要素をブロック要素として表示するという意味です。<br>
+   ブロック要素の特徴として、次の３点が挙げられるでしょう。</p>
+
+  <dl>
+   <dt>幅</dt>
+   <dd>デフォルトでは親要素の幅いっぱいに広がります。</dd>
+   <dt>改行</dt>
+   <dd>ブロック要素の前後には自動的に改行が挿入されます。</dd>
+   <dt>例</dt>
+   <dd>&lt;div&gt;・&lt;p&gt;・&lt;h1&gt; などのHTMLタグはデフォルトでブロック要素です。</dd>
+  </dl>
+
+  <p>この「ブロック要素として扱う」というのが、けっこう重宝するんですよね。<br>
+   特にレスポンシブデザインでは横にコンテンツを並べるのがあまり望ましくないので、brやpなどで無理に改行設定するよりこちらを使った方が自然です。
+  </p>
+
+  <h4>width: fit-content;</h4>
+  <p>このプロパティは、要素の幅をその内容に合わせることを意味します。<br>
+   見出しの装飾なんかでよく見ますね。<br>
+   文字列の長さに従って装飾を入れられるのですよ。<br>
+   これを使って文字列に合わせてグラデーションを添えたりしてます。<br>
+   基礎的な説明をするなら、次のようになりますね。</p>
+
+  <dl>
+   <dt>内容に合わせた幅</dt>
+   <dd>要素の幅がその中に含まれるコンテンツの幅に合わせて自動的に調整されます。</dd>
+   <dt>使い方</dt>
+   <dd>コンテンツの幅に応じて要素のサイズを調整したい場合に便利です。</dd>
+   <dt>ユースケース</dt>
+   <dd>テキストや画像のサイズに合わせてボックスの幅を調整する場合など。</dd>
+  </dl>
+
+  <p>こういう感じでプロパティを組み合わせることで、要素がブロック要素として表示されつつ、その幅が内容に合わせて調整されるようになります。<br>
+   レイアウトが柔軟になり、デザインの自由度も上がる。<br>
+   ただでさえ手間のかかることをやっているのですから、手書きコードによる個人サイトのレイアウト調整は、可能な限りCSSでやれると便利ですよね。</p>
+
+  <h2>サイトマップのハイパーリンクを少しだけ目立たせる</h2>
+
+  <p>ハイパーリンクのデフォルトカラーが青である理由は他のページにも書いています。<br>
+   ここでは、青である理由をおさらいしつつ、赤や緑といった別の色に変更することが推奨されない理由について説明します。</p>
+
+  <p class="gra">デフォルトカラーが青の理由</p>
+  <dl>
+   <dt>視認性</dt>
+   <dd>青は背景色（特に白や淡色）とのコントラストが高く、リンクが他のテキストから明確に区別されやすいです。</dd>
+
+   <dt>慣習</dt>
+   <dd>インターネットの初期から、青色のリンクは標準として使用されてきました。<br>
+    ユーザーは青色のテキストをリンクとして認識することに慣れています。</dd>
+  </dl>
+
+  <p class="gra">赤や緑に変更することの問題点</p>
+
+  <dl>
+   <dt>視認性の低下</dt>
+   <dd>赤や緑は特定の背景色とのコントラストが低くなる場合があり、リンクが他のテキストと区別しにくくなることがあります。</dd>
+
+   <dt>色覚異常への配慮</dt>
+   <dd>赤や緑は色覚異常のあるユーザーにとって区別が難しい色です。<br>
+    リンクが見えにくくなる可能性があります。</dd>
+
+   <dt>ユーザーの混乱</dt>
+   <dd>ユーザーは青色のリンクに慣れているため、赤や緑のリンクはリンクとして認識されにくく、ユーザー体験が損なわれる可能性があります。</dd>
+  </dl>
+
+  <p>リンクの色を変更する際は、視認性やユーザーの慣れ、色覚異常への配慮を考慮することが重要なんですよね。<br>
+   デフォルトの青色は、これらの点で最適化されているため、特別な理由がない限り変更しない方が良いでしょう。</p>
+
+  <p>同じ理由で、ハイパーリンクの役割をボタンなどに代替させることも、私はできるだけ避けています。<br>
+   実際には多くのサイトで行われているのですが。<br>
+   デザインを著しく損なわない限り、普通のハイパーリンク・テキストを使った方が、サイト全体に統一感と落ち着きが出てくると考えていますね。
+  </p>
+
+  <p class="codegra" id="sitemaplink_style">サイトマップ用の目立つリンク_style.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* 各コーナーのサイトマップ用。リンク設定。●開始● */
+.custom-link {
+    color: #1A73E8; /* リンクの文字色を設定します。 */
+    font-weight: bold; /* リンクの文字を太字にします。 */
+    transition: color 0.3s ease; /* リンクの色が変わる際のアニメーションを設定します。 */
+}
+
+.custom-link:hover {
+    color: #00A2ED; /* リンクにマウスを乗せたときの文字色を設定します。 */
+    text-decoration: underline; /* リンクにマウスを乗せたときに下線を表示します。 */
+}
+
+/* 各コーナーのサイトマップ用。リンク設定。●終了● */
+
+</code></pre>
+  </div>
+
+  <h5>Google Blue</h5>
+  <p>「Google Blue」はGoogleのブランドカラーの一つで、鮮やかで信頼感を与える青色であると評価されています。<br>
+   私はハイパーリンクのデフォルトカラーにしています。</p>
+
+  <dl>
+   <dt>HEXコード</dt>
+   <dd>#4285F4</dd>
+
+   <dt>RGB値</dt>
+   <dd>R:66, G:133, B:244</dd>
+  </dl>
+
+  <h5>Microsoft Blue</h5>
+  <p>「Microsoft Blue」はマイクロソフトのブランドカラーの一つで、鮮やかで目を引くシアン系の色合いです。<br>
+   Google Blueと比べて少し明るい青なので、私はハイパーリンクをホバーしたときにこの色へ変わるようにしています。</p>
+
+  <dl>
+   <dt>HEXコード</dt>
+   <dd>#00A2ED</dd>
+
+   <dt>RGB値</dt>
+   <dd>R:0, G:162, B:237</dd>
+  </dl>
+
+
+  <h2>ハイパーリンクのデフォルトカラーを少しだけ変える</h2>
+
+  <p>ハイパーリンクはインターネットの基盤を支える重要な要素です。<br>
+   私もかなり気を使っていろいろ設定してますよ。
+  </p>
+
+  <dl>
+   <dt>ウェブナビゲーションの基盤</dt>
+   <dd>ウェブページ間をシームレスに移動するための基本的な手段です。<br>
+    ハイパーリンクがあってこそ、ユーザーは関連情報や追加リソースに簡単にアクセスできます。</dd>
+
+   <dt>情報の相互接続</dt>
+   <dd>異なるウェブページやリソースを相互に結びつけることで、インターネット全体を一つの巨大な情報ネットワークとして機能させます。</dd>
+
+   <dt>ユーザー体験の向上</dt>
+   <dd>ユーザーが必要な情報に迅速にアクセスできるようにするため、ポジティブなユーザー体験を提供します。<br>
+    ハイパーリンクの編み方が上手いと、ウェブサイトの使いやすさが向上します。</dd>
+
+   <dt>コンテンツのアクセシビリティ</dt>
+   <dd>特定のコンテンツやセクションに直接アクセスできるようにすることで、情報のアクセシビリティを高めます。<br>
+    ユーザーが必要な情報を効率的に見つけることができるように編めればベストですよね。</dd>
+
+   <dt>検索エンジン最適化（SEO）</dt>
+   <dd>検索エンジンがウェブサイトをクロールし、インデックスを作成する際に重要な役割を果たします。<br>
+    適切なリンク構造は、検索エンジンのランキング向上にも寄与します。</dd>
+  </dl>
+
+  <p class="codegra" id="link_style">デフォルトの青に少し手を入れたリンク_style.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* リンクの統一設定。Googleブルー。ホバー時にMicrosoftブルー。●開始● */
+a {
+    color: #1A73E8; /* リンクの文字色をGoogleブルーに設定します。 */
+}
+
+a:hover {
+    color: #00A2ED; /* リンクにマウスを乗せたときの文字色をMicrosoftブルーに設定します。 */
+}
+
+/* リンクの統一設定。Googleブルー。ホバー時にMicrosoftブルー。●終了● */
+
+    </code></pre>
+  </div>
+
+  <p>ちなみに「Google Blue」や「Microsoft Blue」を個人サイトで使用することは、一般的には問題ありません。<br>
+   これらの色自体は著作権で保護されているわけではなく、特定のブランドや商標に関連付けられているため、色そのものの使用に制限はありません。</p>
+
+  <dl>
+   <dt>著作権</dt>
+   <dd>色そのものは著作権の対象ではありません。<br>著作権は具体的な創作物（例えば、ロゴ、デザイン、文章など）に対して適用されます。</dd>
+
+   <dt>商標権</dt>
+   <dd>商標権は特定のブランドやロゴに対して適用されますが、色そのものが商標として登録されている場合は、その色を特定の文脈で使用することに制限がかかることがあります。<br>
+    ただし、個人サイトで単に色を使用するだけであれば、商標権の侵害にはなりません。</dd>
+
+   <dt>ブランドイメージ</dt>
+   <dd>GoogleやMicrosoftのブランドカラーを使用することで、誤解を招くような形でこれらの企業と関連があると誤認される可能性がある場合は、注意が必要です。<br>
+    ただし、個人サイトで単に色を使用するだけであれば問題ありません。</dd>
+  </dl>
+
+  <p>このように、個人サイトで「Google Blue」や「Microsoft Blue」を使用することは、法的には問題ありません。</p>
+
+  <h4>バナーをCSSで作成する</h4>
+
+  <p>バナーは普通、イラストソフトとかで作るものですけどね。<br>
+   私の場合は後から色を変えたくなったりするから。<br>
+   CSSで作るというだけです。
+  </p>
+
+  <p class="codegra" id="symbol_css">バナーをCSSで作成するためのsymbol.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+@charset "UTF-8";
+
+.TESTsymbol {
+    background: linear-gradient(to bottom, rgba(255, 182, 193, 0.3), rgba(255, 182, 193, 0)); /* 背景を上から下に向かって薄いピンクから透明に変わるグラデーションに設定します。 */
+    height: auto; /* 要素の高さを自動調整します。 */
+    padding-top: 20px; /* 上部に20ピクセルの余白を追加します。 */
+    text-align: center; /* テキストを中央揃えにします。 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 要素に影を追加します。影の位置は下に4ピクセル、広がりは8ピクセル、色は黒の20%透明です。 */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* 要素の周りに1ピクセルの薄い黒の境界線を追加します。 */
+    max-width: 100%; /* 要素の最大幅を100%に設定します。 */
+    overflow-x: hidden; /* 横方向のオーバーフローを隠します。 */
+}
+
+.TESTbanner {
+    width: 80px; /* 要素の幅を80ピクセルに設定します。 */
+    height: auto; /* 要素の高さを自動調整します。 */
+    display: inline-block; /* 要素をインラインブロックに設定します。 */
+    margin-right: 0; /* 右側の余白を0に設定します。 */
+}
+
+.TESTname {
+    display: inline-block; /* 要素をインラインブロックに設定します。 */
+    margin-bottom: 20px; /* 下部に20ピクセルの余白を追加します。 */
+    font-size: 32px; /* フォントサイズを32ピクセルに設定します。 */
+    margin-left: 10px; /* 左側に10ピクセルの余白を追加します。 */
+}
+
+.TESTtitle {
+    text-align: left; /* テキストを左揃えにします。 */
+    display: block; /* 要素をブロックに設定します。 */
+    font-size: 16px; /* フォントサイズを16ピクセルに設定します。 */
+    font-weight: bold; /* フォントを太字に設定します。 */
+    margin-top: 10px; /* 上部に10ピクセルの余白を追加します。 */
+    margin-right: 30px; /* 右側に30ピクセルの余白を追加します。 */
+    margin-left: 30px; /* 左側に30ピクセルの余白を追加します。 */
+    margin-bottom: 5px; /* 下部に5ピクセルの余白を追加します。 */
+}
+
+.TESTsiteintro {
+    text-align: left; /* テキストを左揃えにします。 */
+    display: block; /* 要素をブロックに設定します。 */
+    font-size: 14px; /* フォントサイズを14ピクセルに設定します。 */
+    margin-top: 5px; /* 上部に5ピクセルの余白を追加します。 */
+    margin-right: 30px; /* 右側に30ピクセルの余白を追加します。 */
+    margin-left: 30px; /* 左側に30ピクセルの余白を追加します。 */
+    margin-bottom: 10px; /* 下部に10ピクセルの余白を追加します。 */
+}
+
+.TESTurl {
+    text-align: left; /* テキストを左揃えにします。 */
+    display: block; /* 要素をブロックに設定します。 */
+    font-size: 14px; /* フォントサイズを14ピクセルに設定します。 */
+    margin-top: 10px; /* 上部に10ピクセルの余白を追加します。 */
+    margin-right: 30px; /* 右側に30ピクセルの余白を追加します。 */
+    margin-left: 30px; /* 左側に30ピクセルの余白を追加します。 */
+    margin-bottom: 10px; /* 下部に10ピクセルの余白を追加します。 */
+}
+</code></pre>
+  </div>
+
+  <p>上のコードのようにCSSで作っておけば、色や余白も後からいくらでも変更できます。<br>
+   画面サイズによってレイアウトが変わるのですが、一番しっくりきたものをスクリーンショットしてから画像化すれば良いですよね。<br>
+   <a href="/menu/symbol.html">このサイトのシンボルマークとバナー</a>というページにあります。
+  </p>
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/codeinfo.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

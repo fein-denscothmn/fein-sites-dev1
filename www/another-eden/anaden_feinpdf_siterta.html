@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+ <meta charset="UTF-8">
+ <title>アナザーエデン：ファンサイト制作RTA</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="Twitterの仕様変更に伴い、アナザーエデンのファンサイトを開設した経緯などがあります。">
+ <meta name="keywords" content="アナザーエデン, 強敵, 攻略">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="アナザーエデン：ファンサイト制作RTA">
+ <meta property="og:description" content="Twitterの仕様変更に伴い、アナザーエデンのファンサイトを開設した経緯などがあります。">
+ <meta property="og:image" content="/image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/another-eden/anaden_feinpdf_siterta.html">
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" type="text/css" href="/css/colors.css">
+ <link rel="stylesheet" type="text/css" href="/css/addpdf.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+ <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "アナザーエデン：ファンサイト制作RTA",
+      "url": "https://fein-sites-dev1.ew.r.appspot.com/another-eden/anaden_feinpdf_siterta.html",
+      "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+    }
+    </script>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+ <link rel="icon" sizes="32x32" href="../favicon.ico" type="image/x-icon">
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
+ <script src="/script/addpdf.js" defer></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="anaden_sitemap.html">アナザーエデン関連ページ・サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">アナザーエデン：ファンサイト制作RTA</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く
+    ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="アナザーエデン：ファンサイト制作RTAの目次を開く ▼"
+   data-close-text="アナザーエデン：ファンサイト制作RTAの目次を閉じる ▲">アナザーエデン：ファンサイト制作RTAの目次を開く ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="anaden_sitemap.html">アナザーエデン関連ページ・サイトマップへ戻る</a></p>
+
+  <!-- ●ヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>アナザーエデン：ファンサイト制作RTA</span></h1>
+
+  <p>Twitterの仕様変更に伴い、アナザーエデンのファンサイトを開設した経緯などがあります。<br>
+   イーロン・マスクがいつTwitterを損壊するか分からない状況であったため、超特急＋本気でWebサイトを稼働させました。<br>
+   こういうときに「RTA」という言葉を使うべきでしょう。</p>
+
+  <h2>Webサイト制作に向いたパソコン選び</h2>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(96).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>アナデンのパーティー編成や釣り具選びと同じように、パソコンも目的に合わせて選ぶ必要があるでしょう。<br>
+    しかし、あるいはアナデンでキャラを集める人のように、ファンサイトを作るにしても「形から入る」という人もおられるかもしれません。</p>
+
+   <p>
+    結論から言ってしまうと、私はパソコン本体に強いこだわりはないです。<br>
+    LinuxはCUIで操作したほうが早いことも多いから、そんな高いスペックを要求しないんですよね。<br>
+    また、私のWebサイトがテキストベースなのはちゃんと理由がありますし、そういう用途から見ても高いスペックを要求しません。<br>─
+    LinuxやCUI、テキストベース云々という部分は別のコラムへ譲ります。ここはパソコン選びについて書いてるからね。─</p>
+  </div>
+
+  <p>
+   私が重要視しているのは、価格ですよ。<br>
+   パソコンの寿命はおおよそ５年と言われています。<br>
+   よくある日割り計算みたいな感じで考えてみると、例えば150,000円の5年間使えるパソコンであれば、1か月につき2,500円の支払いが発生していることになります。<br>
+   ハードウェア、ソフトウェアの対応状況や進歩を考えても、５年というのは一つの節目でしょう。<br>
+   私はこのWebサイトを10年以上前のLinuxパソコンで作りましたが、そんなのは例外中の例外です。</p>
+
+  <p>
+   パソコンでスペックを要求するのは画像や動画、音声データなんですよね。<br>
+   同じWebサイト制作でも、このようなデータを扱う場合はある程度のスペックは欲しいです。<br>
+   でも、ここも…やっぱ「目的」かなぁ…<br>
+   明確な基準みたいなものを書こうと思って筆を取りましたが、書類作成と言ってもいろんなパターンがあります。<br>
+   私も場合によってはAccess使ったり、写真や動画の編集をやったりしますからね。<br>
+   Webサイトの中に動画を入れたい場合もあるでしょう。そうなるとスペックが欲しいこともある。<br>
+   でも動画や音声、DBデータを扱うにしても、軽微なものであればクラウドで作業可能なんですよ。<br>
+   それならブラウザがまともなものなら何でも良いことになる。</p>
+
+  <p>メモリは最低でも8GBにしましょう。<br>
+   CPUはCore i5にしましょう。<br>
+   なんて書いたところで、パソコンにはグラフィック機能やディスク容量、もしくは軽量化が求められることもあるわけで。</p>
+
+  <p>
+   アナザーエデンのパーティー編成は攻略するときに重要じゃないですか。<br>
+   あれはどの敵を倒したいかで異なってきます。<br>
+   それと同じですよね。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(97).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>
+    クラウドツールを使えるようになると、パソコン本体にかかるコストを軽減できますよ。<br>
+    特にディスク容量はそんな大容量じゃなくていい。<br>
+    例えば私の無料Microsoftアカウントは1TBあるし、Androidに紐付けてる無料Googleアカウントも10GBだったか、たっぷり容量があります。<br>
+    加えていろんなWebサービスがありますよね。<br>
+    一般的に使われるソフトウェアに関してはほとんど網羅されてるんじゃないかな？<br>
+    メール・文書作成・表計算・プレゼン資料・データベース、画像や動画の編集などなど…<br>
+    私がやってるWeb制作だっていろんなエディターがクラウドツールとして出ていて、しかも無料のものが多いのです。<br>
+    身近なものであれば、次のようなものがありますよ。</p>
+  </div>
+
+  <p>
+   🍎みんな大好きiPhoneのiCloud<br>
+   これはもう…一般的なものですよね。<br>
+   日常生活に溶け込んでしまったITと言うべきか。</p>
+
+  <p>
+   📱AndroidのGoogleアカウント<br>
+   これだってとうの昔に一般化しています。<br>
+   iPhoneユーザーでもGoogleアカウントを持っている人は多いんじゃないかな。</p>
+
+  <p>
+   こういったクラウドツールを使っていけば、マジでヤバい個人情報以外は全部クラウドで管理できるようになります。<br>
+   そうすると、パソコン本体にゴチャゴチャとデータを入れる必要はなくなるんですよね。<br>
+   クライアント側のデバイスはインターネットに繋がっていれば良いという。<br>
+   だから少なくとも一般的なWebサイト制作であれば、パソコン選びはそんな大きなウェイトを占める話題ではないでしょう。</p>
+
+  <p>おまけに、例えば大量の画像を処理するのだって、pythonみたいなスクリプトを使えばメモリ4GBしかない今の私のパソコンでも、簡単に処理ができちゃうのです。<br>
+   画像ソフトウェアをいちいち起動していると、固まったりするかもしれないけどね？</p>
+
+  <h2>Webサイトへ回帰するための準備がスタート</h2>
+
+  <div class="pdf-list-add">
+   <button class="pdf-link-add" data-url="fein_report/アナデンスクリプト.pdf">アナデンスクリプト.pdfを開く</button>
+  </div>
+  <div class="feinpdf-container-add addpdfhidden">
+   <div class="feinpdf-viewer-add"></div>
+   <div class="feinpdfcontrols-add">
+    <button class="prev-page-add">前のページへ</button>
+    <span>Page: <span class="page-num-add"></span> / <span class="page-count-add"></span></span>
+    <button class="next-page-add">次のページへ</button>
+   </div>
+  </div>
+
+  <p><a href="fein_report/アナデンスクリプト.pdf">アナデンスクリプト.pdf</a></p>
+
+  <p>このレポートにはフィーネの勇姿がありますね✨</p>
+  <p>必ずしもアナデンの話でもないかな。ここは。<br>
+   おそらくこの時期あたりだったと思います。Webサイト開設を再検討し始めたのは。<br>
+   当初から魚サイトにするつもりだったんだよね。</p>
+  <p>ちょうどこの時期にコードをいろいろ書き始めていて、というか正確には学生時代のコードを発掘し始めていてね。<br>
+   併せてアナデンのループ攻略に沿って遊んでみた。<br>
+   それだけのレポートですよ。<br>
+   アナデンオンリーのWebサイトにしてしまうと、ちょっとねー…</p>
+  <p>アナデンはガチャ＋アプデがあるライブサービスゲームでしょ？<br>
+   これと併せて鑑みると、私の諸環境では労力の元を取れないのです。<br>
+   体系的にしっかり勉強をした上で本格的にWebサイト作ったことがある人なら伝わると思う。<br>
+   アナデンの話題を盛り込むにしても、並行して別の話題も掲載していったほうがWebサイトの成長可能性を遥かに模索しやすいってことだよね💻✨</p>
+
+
+  <h4>The context of fein＠Den_scoth_Mn</h4>
+
+  <div class="spacer"></div>
+
+  <div class="pdf-list-add">
+   <button class="pdf-link-add" data-url="fein_report/fein＠Den_scoth_Mn.pdf">fein＠Den_scoth_Mn.pdfを開く</button>
+  </div>
+  <div class="feinpdf-container-add addpdfhidden">
+   <div class="feinpdf-viewer-add"></div>
+   <div class="feinpdfcontrols-add">
+    <button class="prev-page-add">前のページへ</button>
+    <span>Page: <span class="page-num-add"></span> / <span class="page-count-add"></span></span>
+    <button class="next-page-add">次のページへ</button>
+   </div>
+  </div>
+
+  <p><a href="fein_report/fein＠Den_scoth_Mn.pdf">fein＠Den_scoth_Mn.pdf</a></p>
+
+  <p>子供の頃に抱えていた魚のぬいぐるみだったり、大人になってから作った何かの工作であったり、そういったものは単なるモノではなく、その人の気持ちがこもったものとなります。<br>
+   Twitterの青い鳥だって単なるデジタルデータでしょうけど、私なりの想いがこもっているシンボルなんですよね。<br>
+   このレポートは青い鳥の住処です。目立つ必要はありません。<br>
+   いわゆるシンボルというのは、簡単に捨てたりすべきではないという考え方を私は持っています。<br>
+   ちなみにこの青い鳥は、ラリー（Larry）という名称です。</p>
+
+  <p>このWebサイトの制作目的や、2023年7月にTwitterが大規模障害を起こした際への対応など。<br>
+   細々としたことを書き残しておきます。</p>
+
+  <p>●古いパソコン<br>
+   我が家には仕事用のWindowsパソコンと、プライベート用の古いパソコンがあります。<br>
+   このWebサイトの原型は、プライベート用の古いパソコンで作っていました。<br>
+   かなり古いノートパソコンなんですけどね。<br>
+   機種名とかは身バレ問題もあるから書けないけど、もうすっかり型落ちもいいとこ。<br>
+   でもプログラミングの練習用にと父がくれたものなんです。<br>
+   大切に扱ってるから未だに現役。ちょっと動作は遅いけど、十分に使える。─ <a href="https://sites.google.com/view/feins-portal/">fein's
+    portal</a>がちょうど完成する頃、遂に内部の部品が物理的に故障して動作しなくなりました…本当にありがとう。 ─</p>
+
+  <img src="anaimage/PC画面.png" alt="Linux・ubuntuのデスクトップ" class="graphic fade-in-out">
+
+  <p>●OSはUbuntu LTS<br>
+   OSはWindowsじゃなくてUbuntu（Linuxの一種）なんです。以前はWindowsだったけどね。<br>
+   学生時代にIT資格をじゃんじゃん取得してる時の学習環境がLinux＋Googleだったから、それを再現してる。<br>
+   Ubuntuは無料のOSでいくらでもインストールできるんです。<br>
+   ハード故障さえしなければ型落ちパソコンを何度でも新品同様に復活させることができるのもポイント。<br>
+   例えばモバイルなら、iOSとAndroidがありますよね。同じようにパソコンならWindowsとMacとなるだろうけど、もう一つのパソコンとしてLinuxというものがあるんです。<br>
+   そういった背景があって、私はずっとAndroid派だったりする。</p>
+
+  <p>●アナデンレポート等も全部Linuxでやってました<br>
+   分かりにくい話なんですが、LinuxでもWindowsの機能を部分的になら使えるんですよ。WordやExcelとかね。<br>
+   Microsoftのクラウドサービスを使ってブラウザで作業するんだけど、これがまた快適なんです。なにも専用のMicrosoft Officeじゃなくていいんだからさ。<br>
+   興味がある方はITの勉強もおもしろいですよ？<br>
+   いろいろ使えるようになると楽しいし、手早く思うように作業を進められることは事実なんだよね。</p>
+
+  <p>●パソコンを触るのも趣味の一つ<br>
+   Twitterを中心に活動をしている時もたまーにお話ししましたね。<br>
+   Linuxのファンなんですよ～。ていうかIT系統の話が好きなんだよ。<br>
+   そんなハイレベルに詳しいわけじゃないけど、仮想化したWindowsを動かしてみたり、そういうのがすごい好きですね。<br>
+   やりだすとハマるし、想定通りにソフトウェアが動くと嬉しい。<br>
+   そういうあれこれが仕事で役に立つ場面もあるから。</p>
+
+  <h4>アナザーエデン・ファンサイト制作RTA</h4>
+  <p>そんなのRTAやってどーすんのと思うけどさ😆ww<br>
+   あーでも、Eロン禍の対応には必要だったよ？<br>
+   2023年7月4日から2023年8月6日までの約1か月間で６年分のデータを救出。<br>
+   いつEロンがTwitterを潰すか分からなかったから、本気出しました。<br>
+   名付けて、<strong>アナザーエデン・ファンサイト制作RTA</strong>です。<br>
+   膨大なレポートファイルをまとめてリネームして順番にWebサイトへ格納し、それに見合った文章を次々と入れていってね。<br>
+   ある程度までWebサイトが膨らんだら階層構造を意識しつつサイトマップ作って。<br>
+   学生時代から作ってたから、作業工程の基礎的な部分はもう頭に入ってます。</p>
+
+  <p>これからもこのサイトは際限なく拡張させていきますよ？<br>
+   やっぱおもしろいよね。</p>
+
+  <p>●私設の博物館をイメージして制作しました</p>
+  <div class="content">
+   <img src="anaimage/アオサギ.png" alt="防波堤にいつもいるアオサギ" class="graphicsaki right-image fade-in-out">
+
+   <p>博物館というものは、時代やカテゴリーに分けて様々な展示物がある場所です。<br>
+    恐竜の博物館もあれば古代人類の博物館もあるでしょう。<br>
+    それをイメージしていただけると、Webサイトの機能や意味といった話題が掴みやすいと思います。<br>
+    ここでは、わたくしfeinが持っているWebサイトへの考え方を記述していきます。<br>
+    ちなみにこの写真は私が通う防波堤にいるアオサギです。<br>
+    可愛いですよね！</p>
+  </div>
+
+  <p>●情報の種類<br>
+   「情報」というのは、その性質や役割によって区分できます。<br>
+   天気予報と気象学、それと…富士山の四季を撮影した写真集を想像してみましょう。<br>
+   どれも天気や気候を扱っているという意味では同じですが、それぞれ性質が異なります。<br>
+   天気予報は早く正確に伝わるべき情報です。<br>
+   気象学は正確である必要もありますが、体系的に理解しやすいよう整理された情報です。<br>
+   富士山の四季を撮影した写真集は趣味であって、情報ではないと思われるかもしれません。<br>
+   しかし、その美しい写真集を貴重な情報と解釈する人もいるはずです。<br>
+   このように「情報」というものは提供する側の視点で考えることもできるし、受け手の身になって考えることもできます。<br>
+   Webサイトも同じです。</p>
+
+  <p>●Webサイトの種類<br>
+   「Webサイト」も上記の情報の話と同じように、様々な種類があります。<br>
+   作り手の考え方が反映され、受け手はそれを閲覧し、そして解釈します。<br>
+   このWebサイトの場合、おそらく「私設の博物館」という表現が一番適切と思われます。<br>
+   ゲームの展示やレポートがあり、魚の展示や料理レシピがあり、それらの展示物はこれからも増えていきます。<br>
+   ここにあるものを興味本位で覗く人もあれば、資料を漁りに来る人もあるでしょう。<br>
+   はたまた、雰囲気を見るためだけに訪れる人もいるはずです。<br>
+   博物館は展示物を時代やカテゴリー、サイズに合わせて適切な場所に配置します。<br>
+   また、その展示物が何なのかが分かるよう解説プレートが付けられており、ときには書籍が置かれていることもあるでしょう。<br>
+   展示の仕方もガラスケースに入っていることもあれば、天井から吊り下げられていることもあります。<br>
+   このように、扱う情報の種類によって、適切とされるWebサイトの形態は異なります。<br>
+   加えて、扱う情報が増えるにしたがって、Webサイトというのは増改築の必要が出てくるものです。</p>
+
+  <p>●Webサイトの機能<br>
+   Webサイトという言葉から直ちに連想される言葉として「プログラミング」があります。<br>
+   しかしこの言葉については別の場所に譲りましょう。<br>
+   ここでは、意味という側面からその機能について考えていきます。<br>
+   Webサイトが持つ機能の一つとして、情報の整理整頓があります。<br>
+   ここで言う情報というのは、上記「情報の種類」で書いたとおり多くの種類があります。</p>
+
+  <p>まず、Webサイト・プログラミング・数学・理系…こういった言葉から連想される情報というのは往々にして、客観的に正しい数値とテキストを組み合わせた情報という印象を人に与えます。<br>
+   その類の情報を整理整頓するのは、およそ個人の片手間レベルでは不可能と思えるほど膨大な作業を要求するケースがあり、また扱うジャンルが水物である場合、時間的な制約まで加わることがあります。<br>
+   そういったタイプの情報を扱うWebサイトの話については、ここまで私がお話してきたような「ファンサイト」という話題であったり、また個人レベルで制作されるWebサイトの持続可能性という意味でも、この項目でお話しする内容とは言い難いでしょう。
+  </p>
+
+  <p>この項でお話しようとしている情報というのは、例えば青い鳥が富士山のどこで撮影できそうかという、一般的に人々を楽しませる情報のことです。<br>
+   このタイプの情報を求める人々は、情報の正しさを求めて訪れるわけではありません。<br>
+   そうではなく、青い鳥と出会った人の驚きや辿った登山道であったり、その日の天気であったりします。<br>
+   また、その青い鳥と出会うまでの体験談や苦労話を求めています。<br>
+   すなわち、整理整頓された青い鳥の情報を読むことで、まだ見ぬ鳥へ想いを膨らませ、少しでも現地で青い鳥を見つけやすくするために、閲覧者はそのWebサイトを訪れるのです。<br>
+   私のWebサイトが持つ機能、もしくは強化していきたい機能はこの部分です。</p>
+
+
+  <h2>外部SNSサービス依存からのエクソダス</h2>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(5).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>よくTwitterで乗っ取りがどうのみたいな騒ぎありますよね？<br>
+    100%とは言わないけど、私からそういった変なDMが送信されたことはないと思います。</p>
+
+   <p>まず、次のリンクをタップしてみてください。<br>
+    シンプルなPDFが出てくるだけですが、私の自己紹介シートとなっています。<br>
+    <a href="/another-eden/fein_report/fein.den_scoth_mnのプロフィール.pdf">fein.den scoth mnのプロフィール.pdf</a>
+   </p>
+
+   <p>単純にGoogleドキュメントだけ公開設定しておいても良いんだけどね。<br>
+    <a href="https://docs.google.com/document/d/1TXkWZsJCovv7Y2RBzj1IJtM94zTJt5LstpdtEGafopk/edit?usp=sharing">fein.den
+     scoth mnのプロフィール/ドキュメント版</a>
+   </p>
+  </div>
+
+
+
+  <p>ポートフォリオと言っちゃうと大げさかも。<br>
+   プロファイルと言ったほうがいいかもしれない。<br>
+   これらのリンクをTwitterのプロフィールへリンクすれば、それだけでオリジナルの自己紹介として成立します。<br>
+   自分専用のGoogleアカウントにあるので、安全なファイルです。<br>
+   Google正規のドキュメントファイルをPDFにしてから、共有設定を行いリンクをどこかに貼るだけ。<br>
+   時間できたときに改めて細かく作り、トップページにでも添えてみましょう。</p>
+
+  <p>早い話、聞いたこともないような外部サービスを使う必要はないのですよ。<br>
+   いろんなTwitter連携Webサービスがあり、それぞれは素晴らしいものです。<br>
+   技術的にも凄いものがいっぱいあり、デザインだって秀逸です。<br>
+   でも、どのサービスが安全なのか、どのサービスが変な場所に情報送信していないかとか、はたまた乗っ取りシステムに化けないかなどなど、そんなことは分かりません。<br>
+   インターネットの世界では、何が起きるか分からないのです。<br>
+   もちろんGoogleやMicrosoft、またファイル形式としてのPDFなら100%安全とは言い切れませんが、リスクは大幅に減ります。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(7).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>国産サービスだから安全だなんて御伽噺ですよ…<br>
+    先日もN○T西から個人情報900万件が流出なんて事件があったでしょう？<br>
+    例えばお店で売ってる日本製パソコンだって、部品を作っているのは海外工場だったりします。<br>
+    少なくとも私は「日本製」というだけでWebサービスやハード、ソフトウェアを選ぶことはありません。</p>
+  </div>
+
+
+
+  <p>ここから先はわたくしfein個人の事情というか、そういうお話です。<br>
+   Webサイト制作をするとき、Webサーバから全て自前で設備しない限り、どこかしらの外部サービスを使う必要があります。<br>
+   この時、下記の点を満たして欲しかったのです。</p>
+
+  <ul>
+   <li>無料で使えること</li>
+   <li>過度な制約を課せられないこと</li>
+   <li>システムそのものが堅牢で安定していること</li>
+   <li>経営母体にできるだけ危うい要素がないこと</li>
+   <li>万が一のサービス終了となったとき、移行ツールの提供を期待できること</li>
+  </ul>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(6).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>他にもありますが、おおよそこんな感じです。<br>
+    私が<a href="https://sites.google.com/view/feins-portal/">fein's
+     portal</a>使っているGoogleサイトは、現状上記の要件を全て満たしています。<br>
+    ただ欠点もあって、自由にスクリプトを入れられないですね。<br>
+    何でも自由にできるのが、このサイトが乗っかっているGoogle Cloudなどのクラウドサービスです。</p>
+  </div>
+
+
+  <p>昔はTwitterも少々制約があるとは言え、上記要件を辛うじて満たしていました。<br>
+   でも今は違います。<br>
+   もうこうなったら自分の城を建設するしかないんだよね。<br>
+   言い換えると、インターネットという世界でTwitterのような場所はすでに存在していないと言っても良いかもしれません。<br>
+   崩壊前の地球で残り少ない食糧を探し回るより、スーパーアースを目指す！<br>
+   私がやっているのはそういうことですよね。<br>
+   Twitterが復活したら？<br>
+   そうしたらスーパーアースを本拠地にして崩壊を免れた地球へしばしば遊びに来ますよ♪</p>
+
+  <div class="pdf-list-add">
+   <button class="pdf-link-add"
+    data-url="fein_report/fein.den_scoth_mnのプロフィール.pdf">fein.den_scoth_mnのプロフィール.pdfを開く</button>
+  </div>
+  <div class="feinpdf-container-add addpdfhidden">
+   <div class="feinpdf-viewer-add"></div>
+   <div class="feinpdfcontrols-add">
+    <button class="prev-page-add">前のページへ</button>
+    <span>Page: <span class="page-num-add"></span> / <span class="page-count-add"></span></span>
+    <button class="next-page-add">次のページへ</button>
+   </div>
+  </div>
+
+
+
+  <h3>創英角ポップ体ねぇ…フォントかぁ</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(2).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>Webデザインと書類のデザイン、プレゼン資料のデザイン、八百屋や本屋のポップ。スーパーのチラシなどなど。<br>
+    このデザインというものについて、私の見解を書いてみますか。特にフォントについて。</p>
+
+   <p>WebデザインならIT資格の教科書にも書いてありましたが、「創英角ポップ体を使うな」とは書いてなかったよ。<br>
+    私は創英角ポップ体を使わないんだけど、それは私が単にLinuxが好きだからだよね。<br>
+    IT資格の勉強もLinux環境でやってたから馴染みがありません。<br>
+    記憶違いじゃなければ、創英角ポップ体はMicrosoft officeにプリインストールされてなかったっけ？<br>
+    それでスーパーのチラシみたいなまるまるっとした雰囲気だから、映えないという評価なのかもよ？</p>
+  </div>
+  <p>創英角ポップ体も使いどころを見極めれば良いと思いますけど？<br>
+   例えば私のアナデン攻略レポートなら、グラスタを集めましょうと書いてあるセクションの中で、敢えて枠外に「現代ガルレアアナダン！！」と創英角ポップ体で書いてみたり。<br>
+   ダサいとされ悪目立ちしているイメージに引っかける形で使うんです。</p>
+
+  <p>この場合の資料の目的は新規ユーザーさんをグラスタ集めへ導くことであって、資料のデザインセンスを魅せることではないからさ。</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(4).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>ていうか私が普段から気にしているのは、フォントカラーやサイズです。<br>
+    それは細かい規則ではなく、うるさくなっていないかどうか考えてます。<br>
+    赤字がバンバン挿入されていて（しかも原色の赤）、どの単語が重要なのか分からなくなっているWebサイトや文書、よく見ませんか？<br>
+    そういうのに限ってフォントサイズまでちぐはぐになっていて、おまけにボールド体がそこかしこに入ってる。<br>
+    これとて創英角ポップ体と同じように100%否定まではできないけど、せめて同一セクションのテキストエリアくらいは統一感を持たせるよう心がけてます。<br>
+    あとはフォントの互換性かな。<br>
+    Webサイト寄りの事情ではあるけど。<br>
+    著しくデザインを損なわない限り無難なフォントを使うようにしてます。<br>
+    MSゴシックやメイリオ、英数字ならTimes New Romanとかね。<br>
+    伝統的に使われてきたフォントなら互換性に大きな問題は出ません。</p>
+  </div>
+
+  <p>将来的にはフォントも含め、Google BloggerにCSS等を絡めて本格的にデザインしていくつもりですよ？<br>
+   まだそんなことできる段階に至ってないけどさ。─ そんなことできる段階に入りましたね😆ww このサイトがそうです。 ─<br>
+   「映え」なんかもっとも優先順位が低い要素だと思う。</p>
+
+
+  <h4>Microsoft Word→PDF→画像化によるレポート</h4>
+
+  <div class="pdf-list-add">
+   <button class="pdf-link-add" data-url="fein_report/Microsoftレポート.pdf">Microsoftレポート.pdfを開く</button>
+  </div>
+  <div class="feinpdf-container-add addpdfhidden">
+   <div class="feinpdf-viewer-add"></div>
+   <div class="feinpdfcontrols-add">
+    <button class="prev-page-add">前のページへ</button>
+    <span>Page: <span class="page-num-add"></span> / <span class="page-count-add"></span></span>
+    <button class="next-page-add">次のページへ</button>
+   </div>
+  </div>
+
+  <p><a href="fein_report/Microsoftレポート.pdf">Microsoftレポート.pdf</a></p>
+  <p>こんなものまで書いてたよ😯<br>
+   これはねー…Twitterを中心に活動していた頃の、レポートの書き方です。<br>
+   ただ、最後の手順だけはもう違うんだよね。このレポートもかなり古い。<br>
+   ネットサービスを使わず、Linuxのコマンドラインを使って画像化するのです。<br>
+   まぁでも、一応書いておこうか。これも残しておいて良い情報ですからね。</p>
+
+  <ol>
+   <li>OneDriveのWordで記載する</li>
+   <li>OneDriveのWordの機能を使ってPDF化した上でダウンロード</li>
+   <li>「pdftoppm -png /home/pdfbox/強敵戦レポート.pdf 強敵戦レポート」というLinuxのコマンドラインをつかって画像化</li>
+  </ol>
+
+  <p>これでPDFと画像のレポートが入手できます。<br>
+   それらを使ってTweetしていたんだよね。このWebサイトにある膨大なレポートは、こういう手順を踏んで作成されてきたものです。<br>
+   だからクラウドや自宅のハードディスクにデータも残っていて、すぐにWebサイトを形にできたってわけ。<br>
+   それ以降は学生時代に作っていたpythonスクリプトが出てきたこともあり、さらに工程が短縮されました💻</p>
+
+  <h2>アナデンPDFレポート全集について</h2>
+  <p>このようなhtml手書きページであれば、スクリプトを使って一気にコーディングしたうえでGoogleとMicrosoftに報告できます。<br>
+   私のPDFはほぼ全てテキストベースですし、コピペもできるのでコンピュータが認識しやすいのですよ。<br>
+   でもPDF一つ一つが何ページにもなるから、膨大なテキスト量になっております。</p>
+
+  <p>合計で200冊以上のPDFがあり、これらのほぼ全てがfein's portalにもあるのです。<br>
+   しかし各ページに散逸しており、私個人としても整理しにくいという課題がありました。<br>
+   それを一気に集めたんだよね。<br>
+   やり方は簡単で、htmlコードを作ってくれるスクリプトを書いて実行するだけです。5分とかからない。<br>
+   ここらへんが手書きhtmlの強みでしょう。</p>
+
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a
+     href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/another-eden/anaden_feinpdf_siterta.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

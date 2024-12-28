@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+
+ <!-- Microsoft tag -->
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+
+ <meta charset="UTF-8">
+
+ <!--基本のメタタグ-->
+ <meta name="description" content="JavaScriptの書き方に関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta name="keywords" content="個人サイト, JavaScript, 書き方">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="JavaScriptでフッターの内容を統一する">
+ <meta property="og:description" content="JavaScriptの書き方に関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/javascript_footer.html">
+
+ <!--検索ヒット時のアイコン-->
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "JavaScriptでフッターの内容を統一する",
+  "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/javascript_footer.html",
+  "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+}
+</script>
+
+ <!--レスポンシブデザイン-->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!--CSS-->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <!--JavaScript-->
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <!-- gsapの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <!-- prismの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+
+ <!-- google fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+
+ <!--ページタイトル-->
+ <title>JavaScriptでフッターの内容を統一する</title>
+
+ <!--ASノーナのファビコン-->
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">JavaScriptでフッターの内容を統一する</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く
+    ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="JavaScriptでフッターの内容を統一するの目次を開く ▼"
+   data-close-text="JavaScriptでフッターの内容を統一するの目次を閉じる ▲">JavaScriptでフッターの内容を統一するの目次を開く
+   ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>JavaScriptでフッターの内容を統一する</span></h1>
+  <p>多くの場合、個人サイトのヘッダーとフッターというのは共通して書かれる内容があります。<br>
+   グローバルナビゲーションであったり、著作権の表示であったり。<br>
+   そういったものを何かあるたびに全ページ回って修正していくのは大変な労力となります。<br>
+   これをJavaScriptで解決することができます。</p>
+
+  <p>具体的には、別途htmlファイルを用意しておき、その内容をJavaScriptを使って各種のhtmlページに差し込んでいくのです。<br>
+   こうすればヘッダーやフッターに何か変更があっても、その別にあるhtmlファイルさえ更新すれば、全てのページに反映されます。</p>
+
+  <p>Webサイトビルダーを使っていればこのような心配はほぼないのですが、手書きのコードで個人サイトを作っている場合、このような仕組みを予めどこに実装するか検討しておかないと、後からブラック労働化してしまうのです。</p>
+
+  <p>こういうところが、個人によるWebサイト制作が続かない原因の一つと言えるのではないでしょうか。</p>
+
+  <h2>共通する記載を１つのhtmlで管理する</h2>
+  <p>これは重要ですよ。<br>
+   個人サイトの更新を手軽に続けているかどうかに、深く関わってくると思います。</p>
+
+  <p>JavaScriptを使って任意のHTMLコードを挿入するコードについて、説明します。<br>
+   基本的な方法としては、JavaScriptの innerHTML プロパティを使用する方法があります。<br>
+   とりあえず簡単な書き方を見ていきます。</p>
+
+  <ol>
+   <li>HTMLファイルに、挿入先の要素を用意します。</li>
+   <li>JavaScriptファイルで、挿入するHTMLコードを指定します。</li>
+  </ol>
+
+
+  <p class="gra">HTMLファイル例 (index.html)</p>
+
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;共通部分の挿入&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;common-section&quot;&gt;&lt;/div&gt;
+    &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+  </div>
+
+
+  <p class="gra">JavaScriptファイル例 (script.js)</p>
+
+  <div class="code-container">
+   <pre><code class="language-javascript">
+document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
+    var commonSection = document.getElementById(&quot;common-section&quot;);
+    commonSection.innerHTML = `
+        &lt;h1&gt;共通部分のタイトル&lt;/h1&gt;
+        &lt;p&gt;これは全てのページに共通する内容です。&lt;/p&gt;
+    `;
+});
+    </code></pre>
+  </div>
+
+  <p>この例では、index.html の &lt;div id=&quot;common-section&quot;&gt;&lt;/div&gt; に対して、script.js で指定したHTMLコードを挿入しています。<br>
+   DOMContentLoaded イベントを使うことで、ページの読み込みが完了した後にスクリプトが実行されるようにしています。</p>
+
+  <h4>外部HTMLファイルを読み込む方法</h4>
+  <p>全てのページに共通する記載を一つのHTMLファイルにまとめたい場合、JavaScriptを使って外部HTMLファイルを読み込むこともできます。</p>
+
+  <p class="gra">HTMLファイル例 (index.html)</p>
+
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;共通部分の挿入&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;common-section&quot;&gt;&lt;/div&gt;
+    &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+  </div>
+
+
+  <p class="gra">JavaScriptファイル例 (script.js)</p>
+
+  <div class="code-container">
+   <pre><code class="language-javascript">
+document.addEventListener("DOMContentLoaded", function() {
+    var commonSection = document.getElementById("common-section");
+
+    fetch('common.html')
+        .then(response => response.text())
+        .then(data => {
+            commonSection.innerHTML = data;
+        })
+        .catch(error => console.error('Error loading common section:', error));
+});
+    </code></pre>
+  </div>
+
+  <p class="gra">外部HTMLファイル例 (common.html)</p>
+
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;h1&gt;共通部分のタイトル&lt;/h1&gt;
+&lt;p&gt;これは全てのページに共通する内容です。&lt;/p&gt;
+    </code></pre>
+  </div>
+
+  <p>この方法では、fetch APIを使って外部HTMLファイル（common.html）を読み込み、その内容を指定した要素に挿入しています。<br>
+   これで、全てのページに共通する記載を一つのHTMLファイルにまとめることができます。</p>
+
+  <h5>Pythonのフレームワークを用いる</h5>
+  <p>一方、Pythonでも同様のことが可能です。<br>
+   特にWebアプリケーションフレームワークであるFlaskやDjangoを使用すると、HTMLテンプレートを動的に生成して挿入することができます。</p>
+
+  <p>PythonではJavaScriptのように単にディレクトリにスクリプトを置いておくだけで動的にHTMLを挿入するのは少し難しいです。<br>
+   Pythonはサーバーサイドの言語であり、Webページの生成や動的なコンテンツの挿入にはサーバーサイドのフレームワーク（FlaskやDjangoなど）を使用する必要があります。</p>
+
+  <p>JavaScriptはクライアントサイドで動作するため、ブラウザ上で直接HTMLを操作できますが、Pythonは通常サーバー上で動作し、クライアントにHTMLを送信する役割を果たします。<br>
+   そのため、Pythonで同様のことを行うには、以下のような手順が必要です。</p>
+
+  <p class="gra">Pythonで動的にHTMLを挿入する手順</p>
+  <dl>
+   <dt>サーバーサイドフレームワークのセットアップ</dt>
+   <dd>FlaskやDjangoなどのフレームワークを使用してサーバーを構築します。</dd>
+   <dt>テンプレートエンジンの使用</dt>
+   <dd>Jinja2（Flask）やDjangoテンプレートエンジンを使用して、HTMLテンプレートを動的に生成します。</dd>
+   <dt>ルーティングの設定</dt>
+   <dd>特定のURLにアクセスしたときに、適切なHTMLを返すようにルーティングを設定します。</dd>
+  </dl>
+
+  <p>昔はやってたけど、現在のところ、このサイトには導入してないですね。<br>
+   費用が掛かる可能性を含めてApp Engineの仕様も改めて確認する必要がありますし、現在はJavaScriptによってこの種の機能を実装しています。</p>
+
+  <p>では、まずは挿入されるhtmlコードを書いてみます。</p>
+
+  <p class="codegra">各ページに共通する記載：htmlファイル</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;ヘッダー補足内容&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;commongdl&quot;&gt;
+        &lt;div class=&quot;footer-links&quot;&gt;
+            &lt;a href=&quot;/page/rss.html&quot;&gt;&lt;i class=&quot;fas fa-file-alt&quot;&gt;&lt;/i&gt; 更新のお知らせ&lt;/a&gt;
+            &lt;a href=&quot;/page/policy.html&quot;&gt;&lt;i class=&quot;fas fa-file-alt&quot;&gt;&lt;/i&gt; サイトポリシー&lt;/a&gt;
+            &lt;a href=&quot;/page/form.html&quot;&gt;&lt;i class=&quot;fas fa-envelope&quot;&gt;&lt;/i&gt; お問い合わせ&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;img src=&quot;/image/Google_badge.jpg&quot; alt=&quot;Google_badge&quot;
+            class=&quot;biggraphic&quot;&gt;
+        &lt;div class=&quot;social-links&quot;&gt;
+            &lt;a
+                href=&quot;https://url.com/&quot;&gt;&lt;i
+                    class=&quot;fas fa-blog&quot;&gt;&lt;/i&gt; Blog&lt;/a&gt;
+            &lt;a href=&quot;https://instagram.com/name&quot;&gt;&lt;i class=&quot;fab fa-instagram&quot;&gt;&lt;/i&gt; Instagram&lt;/a&gt;
+            &lt;a href=&quot;https://www.threads.net/@name&quot;&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot;
+                    viewBox=&quot;0 0 448 512&quot;&gt;
+                    &lt;path
+                        d=&quot;M331.12345&quot; /&gt;
+                &lt;/svg&gt; Threads&lt;/a&gt;
+            &lt;a href=&quot;https://twitter.com/name&quot;&gt;&lt;i class=&quot;fab fa-twitter&quot;&gt;&lt;/i&gt; Twitter&lt;/a&gt;
+            &lt;a href=&quot;https://bsky.app/profile/name.bsky.social&quot;&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot;
+                    viewBox=&quot;0 0 576 512&quot;&gt;
+                    &lt;path
+                        d=&quot;M407.12345&quot; /&gt;
+                &lt;/svg&gt; Bluesky&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;p class=&quot;copyright&quot;&gt;
+            &amp;copy; &quot;name&quot; All rights reserved.&lt;br&gt;
+            本ホームページに掲載されている記事、写真、図表などの無断転載を禁じます。
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+  </div>
+
+  <h2>Web標準について</h2>
+  <p>HTMLコードそのものについては説明不要と思われます。<br>
+   ここではWeb標準について、書いていきましょう。<br>
+   ウェブサイトビルダーで作成されたサイトはともかく、コードを書いていくことで作っていく個人サイトであれば、極力このWeb標準を意識すると良いです。<br>
+   構築段階で失敗しないからです。<br>
+   デザインやカッコいい動作は後から考えれば良いのですよ。</p>
+
+  <p>Web標準とは、主にW3C（World Wide Web Consortium）によって策定された、Web技術に関する標準的な規格やガイドラインのことです。<br>
+   これらの標準は、Webブラウザやその他の閲覧環境に依存せず、どのような環境でも同じように表示・動作することを目的としています。</p>
+
+  <p class="gra">Web標準の主な目的</p>
+  <dl>
+   <dt>1. 互換性の確保</dt>
+   <dd>異なるブラウザやデバイス間で一貫した表示と動作を保証します。</dd>
+   <dt>2. アクセシビリティの向上</dt>
+   <dd>障害のある人々を含むすべてのユーザーがWebコンテンツにアクセスできるようにします。</dd>
+   <dt>3. 品質の向上</dt>
+   <dd>Webコンテンツの品質を高め、ユーザー体験を向上させます。</dd>
+  </dl>
+
+  <p class="gra">代表的なWeb標準</p>
+
+  <dl>
+   <dt>HTML</dt>
+   <dd>Webページの構造を定義するマークアップ言語。</dd>
+   <dt>CSS</dt>
+   <dd>Webページのスタイルやレイアウトを定義するスタイルシート言語。</dd>
+   <dt>JavaScript</dt>
+   <dd>Webページに動的な機能を追加するプログラミング言語。</dd>
+  </dl>
+
+  <p class="gra">W3Cの役割</p>
+  <p>W3CはWeb技術の標準化を推進するために設立された非営利団体であり、HTMLやCSS、XMLなど多くの仕様を公開しています。<br>
+   Webの勉強をすれば、必ずと言って良いほど教わる組織ですね。<br>
+   このような組織が策定する標準仕様があることで、Web開発者は一貫したルールに基づいてWebサイトを構築でき、Webサイトの互換性や品質が保たれます。<br>
+   Web標準に準拠することで、開発者はより広範なユーザーに対してリッチなインタラクティブ体験を提供することができます。</p>
+
+
+
+  <h2>スクロールを追いかけるボタンの実装</h2>
+  <p>これに関しては、HTML・CSS・JavaScriptでページを分けられないです…余計に分かりにくくなる。<br>
+   実際に適用する時はCSSとJavaScriptは外部化しています。<br>
+   CSSとJavaScriptの外部化に関しては…どこで扱おう…？？<br>
+   CSSとJavaScriptの外部化はレスポンシブデザインみたいに強制事項ではないけど、特別な理由がない限りはやったほうがいいです。<br>
+   HTMLコードが伸びに伸びて、メンテナンスできなくなりますよ。</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;!-- ページ上部へ戻るボタン --&gt;
+&lt;button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る&lt;/button&gt;
+&lt;script src="../script/feinScroll.js"&gt;&lt;/script&gt;
+        </code></pre>
+  </div>
+  <p><span class="codecolor">&lt;button id="scrollToTopBtn"
+    onclick="scrollToTop()">ページ上部へ戻る&lt;/button&gt;</span><br>
+   まずhtmlでページ上部へ戻るボタンを作成しています。<br>
+   このコードは、クリックすると scrollToTop 関数が実行されるという意味です。</p>
+
+  <p><span class="codecolor">&lt;script src="../script/feinScroll.js"&gt;&lt;/script&gt;</span><br>
+   外部のJavaScriptファイル feinScroll.js を読み込んでいます。<br>
+   この「../script/feinScroll.js」という書き方も覚えておいた方が良いですね。<br>
+   特に相対参照については明確に理解しておかないと…<br>
+   「AIの言いなりホームページ」しか作れませんよ？</p>
+
+  <h4>スクロールを追いかけるボタンの実装（CSS）</h4>
+  <p>こちらはCSSですが、もうちょっと短くしようかと思っているところです。<br>
+   ちょっとここは口調を変えてササっと行きますよ？</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* ●ボタンの設定● */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+        </code></pre>
+  </div>
+
+  <p><span class="codecolor">position: fixed;</span><br>
+   ボタンを画面の固定位置に配置。</p>
+
+  <p><span class="codecolor">bottom: 20px;</span><br>
+   画面下から20ピクセルの位置に配置。</p>
+
+  <p><span class="codecolor">right: 20px;</span><br>
+   画面右から20ピクセルの位置に配置。</p>
+
+  <p><span class="codecolor">display: none;</span><br>
+   初期状態ではボタンを非表示。</p>
+
+  <p><span class="codecolor">padding: 10px 20px;</span><br>
+   ボタン内のテキストに対して上下10ピクセル、左右20ピクセルの余白を設定。</p>
+
+  <p><span class="codecolor">background-color: #007bff;</span><br>
+   ボタンの背景色を青に設定。</p>
+
+  <p><span class="codecolor">color: white;</span><br>
+   ボタンのテキスト色を白に設定。</p>
+
+  <p><span class="codecolor">border: none;</span><br>
+   ボタンの枠線をなくす。</p>
+
+  <p><span class="codecolor">border-radius: 5px;</span><br>
+   ボタンの角を5ピクセル丸く。</p>
+
+  <p><span class="codecolor">cursor: pointer;</span><br>
+   ボタンにマウスカーソルを合わせるとポインターに変わる。</p>
+
+  <p><span class="codecolor">box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);</span><br>
+   ボタンに影を付ける。</p>
+
+  <p><span class="codecolor">transition: background-color 0.3s, transform 0.3s;</span><br>
+   背景色と拡大縮小の変化を0.3秒でアニメーション。</p>
+
+  <p><span class="codecolor">#scrollToTopBtn:hover { ... }</span><br>
+   ボタンにマウスカーソルを合わせた時のスタイルを設定。</p>
+
+  <p><span class="codecolor">background-color: #0056b3;</span><br>
+   背景色を濃い青に変更。</p>
+
+  <p><span class="codecolor">transform: scale(1.1);</span><br>
+   ボタンを1.1倍に拡大。</p>
+
+  <h4>スクロールを追いかけるボタンの実装（JavaScript）</h4>
+  <p>JavaScriptは奥が深く、慣れないと難しいです。<br>
+   私も実装に手間がかかりそうな機能は<a href="https://jquery.com/">jQuery</a>みたいなライブラリをよく使ってます。<br>
+   このページで使っているシンタックスハイライトもライブラリを使ったJavaScriptですよ？<br>
+   外部にあるコードを読み込んで反映させる仕組みというか。<br>
+   でも、この程度なら手書きでやっちゃうこともあります。</p>
+
+  <p class="codegra" id="feinScroll_js">スクロールを追いかけるボタンを実装するfeinScroll.js</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+// feinScroll.js
+window.onscroll = function() {
+    var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopBtn.style.display = "block";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
+};
+
+function scrollToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+        </code></pre>
+  </div>
+
+  <p>ここは少し細かく書いていきます。<br>
+   ライブラリを使うにしても、スタートボタンで実装できるわけじゃないからね。</p>
+
+  <p><span class="codecolor">window.onscroll = function() { ... }</span><br>
+   ページがスクロールされるたびに実行される関数を設定しています。</p>
+
+  <p><span class="codecolor">var scrollToTopBtn = document.getElementById("scrollToTopBtn");</span><br>
+   ボタンの要素を取得して変数 `scrollToTopBtn` に格納しています。</p>
+
+  <p><span class="codecolor">if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    ... }</span><br>
+   ページのスクロール位置が20ピクセルを超えた場合の条件を設定しています。<br>
+   ここは様子を見ているけど、とりあえず20で良さそう。</p>
+
+  <p><span class="codecolor">scrollToTopBtn.style.display = "block";</span><br>
+   ボタンを表示します。</p>
+
+  <p><span class="codecolor">else { ... }</span><br>
+   ここでページのスクロール位置が20ピクセル以下の場合の条件を設定しています。</p>
+
+  <p><span class="codecolor">scrollToTopBtn.style.display = "none";</span><br>
+   ボタンを非表示にします。</p>
+
+  <p><span class="codecolor">function scrollToTop() { ... }</span><br>
+   ページ上部へ戻る関数を定義しています。</p>
+
+  <p><span class="codecolor">document.body.scrollTop = 0;</span><br>
+   ページのスクロール位置を上部に設定しています。<br>
+   ここちょっと迷ってるんだけど、「document.body.scrollTop」は、古いブラウザでスクロール位置を設定するために使われます。<br>
+   あるいはいらないかも。</p>
+
+  <p><span class="codecolor">document.documentElement.scrollTop = 0;</span><br>
+   ページのスクロール位置を上部に設定します。<br>
+   上で古いブラウザについて書いたけど、「document.documentElement.scrollTop」はモダンブラウザでスクロール位置を設定するために使われます。<br>
+   この似たような意味の両方の行を含めることで、互換性を確保しているのです。<br>
+   そこまでしなくて良いかもしれませんが、特にデメリットがないなら、教科書通りにやっておきたいですね。</p>
+
+
+  <h2>スクロールトップボタン（Back to Top Button）を作る</h2>
+  <p>すでに似たようなコードを上述していますが、もう少し手を加えたものを書いてみましょう。<br>
+   こうやって上に戻るようなボタンは普通、スクロールトップボタンもしくは Back to Top Button と呼ばれます。<br>
+   ユーザーの利便性を高め、サイト全体の使いやすさを向上させるための重要な機能ですよね。</p>
+
+  <dl>
+   <dt>ユーザーエクスペリエンスの向上</dt>
+   <dd>長いページを閲覧しているユーザーが、簡単にページの上部に戻ることができるため、操作がスムーズになります</dd>
+   <dd>特にモバイルデバイスでは、スクロールが煩雑になることが多いため、このボタンがあると便利です</dd>
+
+   <dt>ナビゲーションの利便性</dt>
+   <dd>ページの上部には通常、メニューや重要なリンクが配置されていることが多いため、ユーザーがすぐにアクセスできるようになります</dd>
+   <dd>ユーザーが迷わずに目的の情報にたどり着けるようサポートします</dd>
+
+   <dt>アクセシビリティの向上</dt>
+   <dd>高齢者や障害を持つユーザーにとって、スクロール操作が難しい場合があります。<br>
+    このボタンがあることで、より簡単にページを操作できるようになります</dd>
+
+   <dt>サイトのプロフェッショナルな印象</dt>
+   <dd>小さな機能ですが、ユーザーの利便性を考慮したデザインは、サイト全体のプロフェッショナルな印象を高めます</dd>
+
+   <dt>ユーザーの滞在時間の延長</dt>
+   <dd>ユーザーがページの上部に戻りやすくなることで、他のコンテンツも閲覧しやすくなり、結果的にサイト内での滞在時間が延びる可能性があります</dd>
+  </dl>
+
+  <p>ただ、こういうのって必須というわけでもないのです。<br>
+   実際、私のポータルサイトでは付けていません。<br>
+   これはナビゲーションメニューがスクロールに従って追尾するようになっているからです。<br>
+   要するに、ユーザーが行き止まりに当たらなければ良いのだと思っていますね。<br>
+   ブラウザの戻るボタンを押さずに済むよう、レイアウトします。
+  </p>
+
+  <p class="codegra">スクロールトップボタンのCSS</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* ボタンの設定 ●開始● */
+#scrollToTopBtn {
+    position: fixed; /* ボタンの位置を固定 */
+    bottom: 20px; /* 画面下から20pxの位置に配置 */
+    right: 20px; /* 画面右から20pxの位置に配置 */
+    display: none; /* 初期状態ではボタンを非表示に設定 */
+    padding: 10px 20px; /* ボタンの内側の余白を設定（上下10px、左右20px） */
+    background-color: #007bff; /* ボタンの背景色を青色に設定 */
+    color: white; /* ボタンの文字色を白色に設定 */
+    border: none; /* ボタンの枠線をなしに設定 */
+    border-radius: 5px; /* ボタンの角を丸くする */
+    cursor: pointer; /* ボタンにカーソルを合わせたときにポインターに変更 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ボタンに影を追加 */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* 背景色、変形、影の変化にアニメーションを追加 */
+    z-index: 1000; /* ボタンの重なり順を設定 */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #0056b3; /* ホバー時の背景色を濃い青色に変更 */
+    transform: scale(1.1); /* ホバー時にボタンを1.1倍に拡大 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* ホバー時の影を強調 */
+}
+
+@media (max-width: 768px) {
+    #scrollToTopBtn {
+        padding: 8px 16px; /* 画面幅が768px以下の場合のボタンの内側の余白を設定（上下8px、左右16px） */
+        font-size: 14px; /* 画面幅が768px以下の場合のボタンの文字サイズを14pxに設定 */
+    }
+}
+
+/* ボタンの設定 ●終了● */
+
+</code></pre>
+  </div>
+
+  <h4>アニメーションを付けるtransitionプロパティ</h4>
+
+  <p><span class="codecolor">transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;</span><br>
+   このCSSコードは、要素の特定のプロパティが変化する際に、その変化をアニメーションでスムーズに見せるための設定です。<br>
+   transition プロパティを使って、次のようなアニメーションを作り出しています。</p>
+
+  <dl>
+   <dt>background-color</dt>
+   <dd>要素の背景色が変わるときに、その変化を0.3秒かけてスムーズに行います。</dd>
+
+   <dt>transform</dt>
+   <dd>要素の変形（例えば、拡大・縮小、回転、移動など）が起こるときに、その変化を0.3秒かけてスムーズに行います。</dd>
+
+   <dt>box-shadow</dt>
+   <dd>要素の影の変化が起こるときに、その変化を0.3秒かけてスムーズに行います。</dd>
+  </dl>
+
+  <p>この設定により、例えばボタンにホバーしたときに背景色が変わったり、ボタンが拡大したり、影が強調されたりする場合、その変化が一瞬でなく、0.3秒かけて滑らかに行われるようになります。<br>
+   ユーザーに不自然な印象を与えず、視覚的に自然に見える効果があるわけです。<br>
+   個人サイトを作る過程で余裕ができたら、こういったちょっとしたアクションを加えていくと楽しいですね。</p>
+
+
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/javascript_footer.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

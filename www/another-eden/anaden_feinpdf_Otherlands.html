@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+
+ <!-- Microsoft tag -->
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+
+ <meta charset="UTF-8">
+
+ <!--基本のメタタグ-->
+ <meta name="description" content="アナザーエデンについて、feinという人物が書いてきた異境攻略レポートを集めています。">
+ <meta name="keywords" content="アナザーエデン, 強敵, 攻略">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="アナザーエデン：異境攻略レポート集">
+ <meta property="og:description" content="アナザーエデンについて、feinという人物が書いてきた異境攻略レポートを集めています。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/another-eden/anaden_feinpdf_Otherlands.html">
+
+ <!--検索ヒット時のアイコン-->
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "アナザーエデン：異境攻略レポート集",
+  "url": "https://fein-sites-dev1.ew.r.appspot.com/another-eden/anaden_feinpdf_Otherlands.html",
+  "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+}
+</script>
+
+ <!--レスポンシブデザイン-->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!--CSS-->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" type="text/css" href="/css/colors.css">
+ <link rel="stylesheet" type="text/css" href="/css/addpdf.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <!--JavaScript-->
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
+ <script src="/script/addpdf.js" defer></script>
+ <!-- gsapの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+
+ <!-- google fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+
+ <!--ページタイトル-->
+ <title>アナザーエデン：異境攻略レポート集</title>
+
+ <!--ASノーナのファビコン-->
+ <link rel="icon" sizes="32x32" href="../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="anaden_sitemap.html">アナザーエデン関連ページ・サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">アナザーエデン：異境攻略レポート集</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く
+    ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="アナザーエデン：異境攻略レポート集の目次を開く ▼"
+   data-close-text="アナザーエデン：異境攻略レポート集の目次を閉じる ▲">アナザーエデン：異境攻略レポート集の目次を開く ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="anaden_sitemap.html">アナザーエデン関連ページ・サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>アナザーエデン：異境攻略レポート集</span></h1>
+
+  <p>ここにあるのは、今までアナザーエデンをプレイしてきた中でわたくし「fein.den scoth mn」が書いてきたPDFレポートです。<br>
+   ここには主に「異境」に関するものが集められています。</p>
+
+
+  <h4>VH異境バルオキー４層・魔獣ヴァレス</h4>
+
+  <div class="pdf-list-add">
+   <button class="pdf-link-add" data-url="fein_report/VH異境バルオキー４層・魔獣ヴァレス.pdf">VH異境バルオキー４層・魔獣ヴァレス.pdfを開く</button>
+  </div>
+  <div class="feinpdf-container-add addpdfhidden">
+   <div class="feinpdf-viewer-add"></div>
+   <div class="feinpdfcontrols-add">
+    <button class="prev-page-add">前のページへ</button>
+    <span>Page: <span class="page-num-add"></span> / <span class="page-count-add"></span></span>
+    <button class="next-page-add">次のページへ</button>
+   </div>
+  </div>
+
+  <p><a href="fein_report/VH異境バルオキー４層・魔獣ヴァレス.pdf">VH異境バルオキー４層・魔獣ヴァレス.pdf</a></p>
+  <p>ずいぶん異境ヴァレスにハマってたんだね…次々とレポートが出てくる。<br>
+   まだ多少なら立ち回りも覚えてますよ。<br>
+   アナザーエデンがエンディングを迎える頃、フィーネはどうなっていますかね？</p>
+
+  <h4>なぜ事あるごとに異境武器が話題になったのか？</h4>
+
+  <div class="pdf-list-add">
+   <button class="pdf-link-add" data-url="fein_report/なぜ事あるごとに異境武器が話題になったのか？.pdf">なぜ事あるごとに異境武器が話題になったのか？.pdfを開く</button>
+  </div>
+  <div class="feinpdf-container-add addpdfhidden">
+   <div class="feinpdf-viewer-add"></div>
+   <div class="feinpdfcontrols-add">
+    <button class="prev-page-add">前のページへ</button>
+    <span>Page: <span class="page-num-add"></span> / <span class="page-count-add"></span></span>
+    <button class="next-page-add">次のページへ</button>
+   </div>
+  </div>
+
+  <p><a href="fein_report/なぜ事あるごとに異境武器が話題になったのか？.pdf">なぜ事あるごとに異境武器が話題になったのか？.pdf</a></p>
+  <p>これに関しては今をもってしても不明です…<br>
+   ことあるごとに異境武器は声高に叫ばれていたし、絶対必要だと叫ばれ続けました。</p>
+
+  <p>ただひとつ確実に言えることは、これら話題の中心になっていた「月流影光・ウルカンアクトゥス・バルクファウスト・アセトヴィータ」がなくても、私はまったく困らなかったということです。<br>
+   ただ、異境武器を侮っているわけではありません。<br>
+   私とて「グラティアイギス・オルコスフィリ・ヘカートシャッテン・デリアクシフォス」は最大強化しました。<br>
+   これは防御を重要視したループ攻略に役立つからであり、実際に大活躍してくれましたね。</p>
+
+
+  <h4>天冥上げと異境武器</h4>
+
+  <div class="pdf-list-add">
+   <button class="pdf-link-add" data-url="fein_report/天冥上げと異境武器.pdf">天冥上げと異境武器.pdfを開く</button>
+  </div>
+  <div class="feinpdf-container-add addpdfhidden">
+   <div class="feinpdf-viewer-add"></div>
+   <div class="feinpdfcontrols-add">
+    <button class="prev-page-add">前のページへ</button>
+    <span>Page: <span class="page-num-add"></span> / <span class="page-count-add"></span></span>
+    <button class="next-page-add">次のページへ</button>
+   </div>
+  </div>
+
+  <p><a href="fein_report/天冥上げと異境武器.pdf">天冥上げと異境武器.pdf</a></p>
+  <p>これなんだっけ？<br>
+   たぶんねー…Twitterで異境武器は強化すべきかどうかという議論に乗っかって私がアンケートを取った集計結果ですよ。<br>
+   まだTwitterが正常に機能していた時代のものですね。<br>
+   結論、異境武器は強化しなくても良いです。少なくとも2024年10月現在はそういう状況ですよ。他の武器強化なり、グラスタを集めるほうが優先順位がはるかに高い。<br>
+   そもそも、異境は異節・改典・典録がドロップしません。<br>
+   異境に通っている暇があるなら、ガルレアアナダンで少しでもグラスタと異節・改典・典録を集め、全体的に強化していった方が良いです。<br>
+   だって、新しいアナザースタイル・エクストラスタイル・異時層キャラも欲しいでしょ？</p>
+
+  <h4>異境はボスを全て倒さないと効率悪いですよ？</h4>
+  <img src="anaimage/ラルム儲けウルカンアクトゥス.jpg" alt="ラルム素材は書架でも出る" class="graphic fade-in-out">
+  <p>これに関しては徹底的に計算したんですよね。<br>
+   昔から私はこのような計算をしてきました。<br>
+   もはやハイエンドコンテンツではありませんので、異境に入ったら全てのボスやfearを倒してから出てくるようにしましょう。<br>
+   そうしないとキーがもったいないです。<br>
+   ラルムがなかなか出てこないので、クロノス石を浪費してしまうんですよね。<br>
+   課金してキーを買えば良いのですが、そんなことを前提にしても無意味だと考えています。<br>
+   この異境素材考察は、私が事あるごとに計算レポートを作っていくきっかけとなった出来事でした。<br>
+   巷の噂より、計算の結果が優先されるプレイスタイルです。</p>
+  <p>とは言え、上記Tweetのように星詠みの書架でラルム素材が入手できるようになりました。<br>
+   最終的にどのくらい入手できるようになるのかは2024年10月現在不明ですが、いずれにしても異境は全てのボスを倒してから出てくるほうが効率が良いという事実は変わりません。</p>
+
+
+  <h3>Preferred List for Enhancing Weapons & Armor</h3>
+
+  <div class="pdf-list-add">
+   <button class="pdf-link-add" data-url="fein_report/武器強化計画書.pdf">武器強化計画書.pdfを開く</button>
+  </div>
+  <div class="feinpdf-container-add addpdfhidden">
+   <div class="feinpdf-viewer-add"></div>
+   <div class="feinpdfcontrols-add">
+    <button class="prev-page-add">前のページへ</button>
+    <span>Page: <span class="page-num-add"></span> / <span class="page-count-add"></span></span>
+    <button class="next-page-add">次のページへ</button>
+   </div>
+  </div>
+
+  <p><a href="fein_report/武器強化計画書.pdf">武器強化計画書.pdf</a></p>
+  <p>なんで私はここstrengtheningにしてるんだろう…そんな英語できるほうじゃないけど、ちょっと違う気がする。<br>
+   何かレイアウト都合があったのかしら？<br>
+   Wordで作ってたからねー<br>
+   いやはや…Twitterからデータを拾い出してると、実に様々な古文書が次々と出てきますね！<br>
+   これは各種の武器強化について計画したものでしょう。ずいぶんと綺麗に作っていたんだ…<br>
+   Webサイト制作も落ち着いたので、また何か綺麗なレポートを書きたいもんです。</p>
+
+
+  <p><a href="fein_report/異境バルオキー周回レポート.pdf">異境バルオキー周回レポート.pdf</a></p>
+  <p>まだ当時は周回も一苦労あった頃ですからね。こんなレポートも書いていました。<br>
+   なんか配布キャラだけでやってるね？　なんでだろ…<br>
+   スコアタの登場でもはや見る影もありませんが、あるいは、この頃はまだ配布のみという攻略手法に活気があった時代だったのかもしれません。</p>
+
+
+  <h4>異境ヴァレスvs★４フィーネ 〜ループ攻略の源流〜</h4>
+
+  <div class="pdf-list-add">
+   <button class="pdf-link-add" data-url="fein_report/異境ヴァレスのループ.pdf">異境ヴァレスのループ.pdfを開く</button>
+  </div>
+  <div class="feinpdf-container-add addpdfhidden">
+   <div class="feinpdf-viewer-add"></div>
+   <div class="feinpdfcontrols-add">
+    <button class="prev-page-add">前のページへ</button>
+    <span>Page: <span class="page-num-add"></span> / <span class="page-count-add"></span></span>
+    <button class="next-page-add">次のページへ</button>
+   </div>
+  </div>
+
+  <p><a href="fein_report/異境ヴァレスのループ.pdf">異境ヴァレスのループ.pdf</a></p>
+  <p>この頃はまだレポート書式もぜんぜん未発達ですね。文字しかない。<br>
+   でもここで生み出したループ攻略が２部期間中の耐久戦によるクロノス石蓄積体制へ、そして現在へ至るわけで。<br>
+   アナデンのプレイ歴って重要なものだと思ってます。</p>
+  <p>昔の異境はねー…なぁんて、今さら語っても意味がありません。もう異境武器が云々の話は不要でしょう。<br>
+   ただ、３部で強化ができるから多少はマシになりましたよ？<br>
+   ちなみにフィーネが初めて強敵戦で打ち勝ったエピソードでもあります。
+  </p>
+
+
+  <h4>異境全ボス倒し最難関「VHエルジオン３層」</h4>
+
+  <div class="pdf-list-add">
+   <button class="pdf-link-add" data-url="fein_report/異境全ボス倒し最難関「VHエルジオン３層」.pdf">異境全ボス倒し最難関「VHエルジオン３層」.pdfを開く</button>
+  </div>
+  <div class="feinpdf-container-add addpdfhidden">
+   <div class="feinpdf-viewer-add"></div>
+   <div class="feinpdfcontrols-add">
+    <button class="prev-page-add">前のページへ</button>
+    <span>Page: <span class="page-num-add"></span> / <span class="page-count-add"></span></span>
+    <button class="next-page-add">次のページへ</button>
+   </div>
+  </div>
+
+  <p><a href="fein_report/異境全ボス倒し最難関「VHエルジオン３層」.pdf">異境全ボス倒し最難関「VHエルジオン３層」.pdf</a></p>
+  <p>グラスタを集めましょう。<br>
+   異境武器が今になっても役に立つかはともかく、グラスタがあれば異境武器を強化する気になっても配布キャラだけで余裕です。<br>
+   それが、火力のインフレというものです。</p>
+
+
+  <h4>異境武器強化最短ルート</h4>
+
+  <div class="pdf-list-add">
+   <button class="pdf-link-add" data-url="fein_report/異境武器強化最短ルート.pdf">異境武器強化最短ルート.pdfを開く</button>
+  </div>
+  <div class="feinpdf-container-add addpdfhidden">
+   <div class="feinpdf-viewer-add"></div>
+   <div class="feinpdfcontrols-add">
+    <button class="prev-page-add">前のページへ</button>
+    <span>Page: <span class="page-num-add"></span> / <span class="page-count-add"></span></span>
+    <button class="next-page-add">次のページへ</button>
+   </div>
+  </div>
+
+  <div class="pdf-list-add">
+   <button class="pdf-link-add" data-url="fein_report/異境武器強化最短ルート別紙.pdf">異境武器強化最短ルート別紙.pdfを開く</button>
+  </div>
+  <div class="feinpdf-container-add addpdfhidden">
+   <div class="feinpdf-viewer-add"></div>
+   <div class="feinpdfcontrols-add">
+    <button class="prev-page-add">前のページへ</button>
+    <span>Page: <span class="page-num-add"></span> / <span class="page-count-add"></span></span>
+    <button class="next-page-add">次のページへ</button>
+   </div>
+  </div>
+
+  <div class="pdf-list-add">
+   <button class="pdf-link-add" data-url="fein_report/異境武器強化最短ルート詳細と注意点.pdf">異境武器強化最短ルート詳細と注意点.pdfを開く</button>
+  </div>
+  <div class="feinpdf-container-add addpdfhidden">
+   <div class="feinpdf-viewer-add"></div>
+   <div class="feinpdfcontrols-add">
+    <button class="prev-page-add">前のページへ</button>
+    <span>Page: <span class="page-num-add"></span> / <span class="page-count-add"></span></span>
+    <button class="next-page-add">次のページへ</button>
+   </div>
+  </div>
+
+  <p><a href="fein_report/異境武器強化最短ルート.pdf">異境武器強化最短ルート.pdf</a></p>
+  <p><a href="fein_report/異境武器強化最短ルート別紙.pdf">異境武器強化最短ルート別紙.pdf</a></p>
+  <p><a href="fein_report/異境武器強化最短ルート詳細と注意点.pdf">異境武器強化最短ルート詳細と注意点.pdf</a></p>
+  <p>おー…時を遡り、ついに異境武器最短強化ルートの表が出てくるようになったか！<br>
+   2023年7月初旬から作り始めたこのWebサイトですが、バックアップデータからこの表が出てきた時にはテンションが上がりました。<br>
+   昔はこの表をずっと固定Tweetに設置していたのですよ？<br>
+   なんか今の<a href="/">アナザーエデン グラスタの入手場所一覧</a>とか、<a
+    href="https://tinyurl.com/yqqadkz4">アナザーエデンのファンサイト＆ブログ等を作ってみたい方へ</a>を固定Tweet等に設置している状況と、すんごい酷似していますね😆ww
+  </p>
+
+  <h4>周回火力はソシャゲの恒例行事みたいだね</h4>
+
+  <div class="pdf-list-add">
+   <button class="pdf-link-add" data-url="fein_report/AFなしワンパン未来ガルレア.pdf">AFなしワンパン未来ガルレア.pdfを開く</button>
+  </div>
+  <div class="feinpdf-container-add addpdfhidden">
+   <div class="feinpdf-viewer-add"></div>
+   <div class="feinpdfcontrols-add">
+    <button class="prev-page-add">前のページへ</button>
+    <span>Page: <span class="page-num-add"></span> / <span class="page-count-add"></span></span>
+    <button class="next-page-add">次のページへ</button>
+   </div>
+  </div>
+
+  <p><a href="fein_report/AFなしワンパン未来ガルレア.pdf">AFなしワンパン未来ガルレア.pdf</a></p>
+  <p>これなんだっけ？<br>
+   私が周回の火力や効率なんか重要視するとは思えない…<br>
+   特に当時は全ての強敵でループ攻略、じゃなかった手持ちだけでどうにか勝つことを至上命題としていたから、周回なんか優先順位が最も低い事柄だったはずなんですよ。<br>
+   たぶんねー…未来ガルレアの強化型合成ドローン２号と強化型合成ニンジャ、これがどうこうといった話題がTwitterで見られた時に、お付き合いで書いたレポートだと思います。<br>
+   私も実際にガチャを回さないまでも、こうした形で火力談義のお付き合いくらいはしていたのですよ。<br>
+   でも、あのエリアへ行く必要がなくない？<br>
+   少しでもグラスタ錬成鉱石をかき集めた方が良かったと思うけど😅<br>
+   まぁいいや。このWebサイトはアナデンの思い出ノートでもあります。</p>
+
+  <h4>現代ガルレア大陸はきつかった</h4>
+
+  <div class="pdf-list-add">
+   <button class="pdf-link-add" data-url="fein_report/現代ガルレア大陸計画.pdf">現代ガルレア大陸計画.pdfを開く</button>
+  </div>
+  <div class="feinpdf-container-add addpdfhidden">
+   <div class="feinpdf-viewer-add"></div>
+   <div class="feinpdfcontrols-add">
+    <button class="prev-page-add">前のページへ</button>
+    <span>Page: <span class="page-num-add"></span> / <span class="page-count-add"></span></span>
+    <button class="next-page-add">次のページへ</button>
+   </div>
+  </div>
+
+  <div class="pdf-list-add">
+   <button class="pdf-link-add" data-url="fein_report/現代ガルレア大陸周回レポート.pdf">現代ガルレア大陸周回レポート.pdfを開く</button>
+  </div>
+  <div class="feinpdf-container-add addpdfhidden">
+   <div class="feinpdf-viewer-add"></div>
+   <div class="feinpdfcontrols-add">
+    <button class="prev-page-add">前のページへ</button>
+    <span>Page: <span class="page-num-add"></span> / <span class="page-count-add"></span></span>
+    <button class="next-page-add">次のページへ</button>
+   </div>
+  </div>
+
+  <p><a href="fein_report/現代ガルレア大陸計画.pdf">現代ガルレア大陸計画.pdf</a></p>
+  <p><a href="fein_report/現代ガルレア大陸周回レポート.pdf">現代ガルレア大陸周回レポート.pdf</a></p>
+  <p>ハードディスク漁ってると古い時代のものがわんさか出てきますね。アナデンの原初インフレは、現代ガルレア大陸なんです。すなわちグラスタの登場です。<br>
+   当時の現代ガルレア大陸はけっこう厳しかったんですよ。登場当初は報酬枠さえ危うかったのですが、ASサキの天が高かったことでからくり侍と朱雀のルートが私は安定していたのを覚えています。</p>
+
+  <p>現代ガルレアの周回について書いたレポートも出てきました。しかも配布のみでやってる…<br>
+   この頃はまだ、配布キャラ攻略にも私が参加していたのです。<br>
+   でもそれとてインフレとグラスタ集めがあるから、今では大して意味がなくなりましたね。グラスタ集めしてる間に多少くらいなら夢見キャラも確保できるわけです。<br>
+   どっちみちグラスタがなければ最新ボス相手に戦えないからさ。火力が出ません。</p>
+
+
+  <h4>顕現武器もアナダンで</h4>
+
+  <div class="pdf-list-add">
+   <button class="pdf-link-add" data-url="fein_report/顕現武器もアナダンで.pdf">顕現武器もアナダンで.pdfを開く</button>
+  </div>
+  <div class="feinpdf-container-add addpdfhidden">
+   <div class="feinpdf-viewer-add"></div>
+   <div class="feinpdfcontrols-add">
+    <button class="prev-page-add">前のページへ</button>
+    <span>Page: <span class="page-num-add"></span> / <span class="page-count-add"></span></span>
+    <button class="next-page-add">次のページへ</button>
+   </div>
+  </div>
+
+  <p><a href="fein_report/顕現武器もアナダンで.pdf">顕現武器もアナダンで.pdf</a></p>
+  <p>一時期、カエル道場なんてのが見られたけどね。<br>
+   廻生でサイラスがいっぱい出てくるところでレベリングをするという。<br>
+   一回も付き合ったことないです😆ww<br>
+   どうせアナダンには散々通うのですから。<br>
+   ついでに顕現武器を次々とレベル上げしていくほうが、新規ユーザー様にとって効率が良いでしょう。<br>
+   しかも、今となってはフェイズシフトまであるのですから！</p>
+
+
+  <h2>アナデンPDFレポート全集について</h2>
+  <p>このようなhtml手書きページであれば、スクリプトを使って一気にコーディングしたうえでGoogleとMicrosoftに報告できます。<br>
+   私のPDFはほぼ全てテキストベースですし、コピペもできるのでコンピュータが認識しやすいのですよ。<br>
+   でもPDF一つ一つが何ページにもなるから、膨大なテキスト量になっております。</p>
+
+  <p>合計で200冊以上のPDFがあり、これらのほぼ全てがfein's portalにもあるのです。<br>
+   しかし各ページに散逸しており、私個人としても整理しにくいという課題がありました。<br>
+   それを一気に集めたんだよね。<br>
+   やり方は簡単で、htmlコードを作ってくれるスクリプトを書いて実行するだけです。5分とかからない。<br>
+   ここらへんが手書きhtmlの強みでしょう。</p>
+
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/anaden_feinpdf_Otherlands.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <!-- Meta tags -->
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="CSSの書き方に関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta name="keywords" content="個人サイト, CSS, 書き方">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="個人サイトのイラストや写真をCSSで整える">
+ <meta property="og:description" content="CSSの書き方に関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/graphic_css.html">
+ <!-- Structured Data -->
+ <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "個人サイトのイラストや写真をCSSで整える",
+      "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/graphic_css.html",
+      "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+  }
+  </script>
+
+ <!-- CSS -->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <!-- JavaScript -->
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+
+ <!-- Google Fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+
+ <!-- Page Title -->
+ <title>個人サイトのイラストや写真をCSSで整える</title>
+
+ <!-- Favicon -->
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">個人サイトのイラストや写真をCSSで整える</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="/image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="個人サイトのイラストや写真をCSSで整えるの目次を開く ▼"
+   data-close-text="個人サイトのイラストや写真をCSSで整えるの目次を閉じる ▲">個人サイトのイラストや写真をCSSで整えるの目次を開く
+   ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>個人サイトのイラストや写真をCSSで整える</span></h1>
+
+  <p>ウェブサイトにイラストや写真を掲載してより魅力的に見せるためには、いくつかの小さな工夫が必要になることもあります。</p>
+
+  <dl>
+   <dt>高解像度の画像を使用する</dt>
+   <dd>鮮明で高解像度の画像を使用することが基本です。<br>
+    でも画像サイズが大きくなるとページの読み込み速度が遅くなることもありますよね。<br>
+    いきなり難題ではありますが、このAI学習が問題になっている中で、どの程度までやれるか…<br>
+    このサイトの場合、適切に圧縮した上でJavaScriptを経由しないとイラストが表示されない仕組みにしてあります。─ このJavaScriptを経由するという話題については、また別のところでご紹介しようかと。 ─
+   </dd>
+
+   <dt>レスポンシブデザイン</dt>
+   <dd>レスポンシブデザインを取り入れて、さまざまなデバイスで画像が美しく表示されるようにすることが重要です。<br>
+    CSSの max-width: 100%; や height:
+    auto; を使うことで、画像がデバイスの幅に合わせて自動的に縮小されます。</dd>
+  </dl>
+
+  <p class="gra">レスポンシブデザイン：CSSの事例</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+img {
+  max-width: 100%;
+  height: auto;
+  }
+        </code></pre>
+  </div>
+
+  <dl>
+   <dt>一貫性のあるスタイル</dt>
+   <dd>ウェブサイト全体で一貫性のあるスタイルを保てるといいですね。<br>
+    画像のサイズ、配置、枠線などを統一することで、サイト全体がまとまりのある印象を与えます。<br>
+    とはいってもなかなか難しい状況もあるかと。<br>
+    全てを統一する必要もありませんが、ある程度はまとまっていた方がいいですよという程度です。</dd>
+
+   <dt>適切なキャプション</dt>
+   <dd>画像にキャプションを付けることで、内容をより理解しやすくすることができます。<br>
+    でも全ての画像にキャプションを付けるわけにもいかないでしょうから、これも可能な限りという話です。<br>
+    キャプションを付ける時は、短く簡潔に書きましょう。</dd>
+  </dl>
+
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;figure&gt;
+  &lt;img src=&quot;example.jpg&quot; alt=&quot;Example Image&quot;&gt;
+  &lt;figcaption&gt;この画像の説明&lt;/figcaption&gt;
+ &lt;/figure&gt;
+        </code></pre>
+  </div>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(37).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <dl>
+    <dt>アクセシビリティの確保</dt>
+    <dd>画像に適切なalt属性を設定することで、視覚障害のあるユーザーや検索エンジンに対して画像の内容を伝えることができます。</dd>
+
+    <dt>画像の適切な配置</dt>
+    <dd>画像の位置や配置に関しては、そのサイトの形態によって違ってきますよね。<br>
+     テキストと画像のバランスを考えて配置できれば、視覚的に見やすいデザインが実現します。</dd>
+
+    <dt>画像の効果的な使用</dt>
+    <dd>必要以上に画像を使いすぎないことも大切です。<br>
+     必要な場所に適切に配置することで、視覚的なインパクトが高まり、ユーザーの注意を引きつけることができます。</dd>
+   </dl>
+
+  </div>
+
+  <p>これらのポイントを活用しつつ、ウェブサイトのイラストや写真をより良く見せるためのコードをご紹介します。</p>
+
+  <h3>このページに関する注意事項</h3>
+  <p>当Webサイト作成者は、例示を目的としてマークアップ及びプログラミング例を提供しており、明示または黙示にかかわらず、いかなる責任も負わないものとします。<br>
+   このページは、説明されているマークアップ及びプログラミング言語、手順を作成およびデバッグするために使用される各種ツールに読者が精通していることを前提にしています。<br>
+   このページは、特定の機能を説明するのに役立つ可能性がありますが、当Webサイト作成者がこれらの例を変更した上で、特定の要件を満たすために追加の機能を提供したり、システムを構築したりすることはできません。<br>
+   加えて、この例の手順に従う場合は、読者の各種ファイルを事前にバックアップすることを推奨いたします。</p>
+
+  <h2>Webサイトのロゴ画像</h2>
+  <p>画像に関する設定はちょっと長期戦になります。<br>
+   上述の見出しにしてもそうなんですが、その気になればコードを短縮することもできるのです。<br>
+   でもやらない理由があって、それは今後も変更される可能性があるからなんだよね。<br>
+   まとめてスタイル設定している箇所があると、今後の変更がやりにくくなる可能性があります。</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/*サイトタイトル*/
+img.moray {
+    display: block;
+    margin: auto;
+    width: 80%;
+    height: auto;
+}
+        </code></pre>
+  </div>
+
+  <p><span class="codecolor">display: block;</span><br>
+   画像をブロック要素として表示しています。<br>
+   画像が独自の行に表示されるようになるのですが、これは単発で大きく表示したりするときに向いてますね。<br>
+   このページではページ上部のウツボの切り絵を大きく掲載しています。<br>
+   これにはaltにWebsite Logoとしっかり記入してあります。</p>
+
+  <p><span class="codecolor">margin: auto;</span><br>
+   画像を中央に配置しています。<br>
+   本来なら余白も追加しますが、画像自体に白いスペースを用意しているので、ここでは不要です。</p>
+
+  <p><span class="codecolor">width: 80%;</span><br>
+   画像の幅を親要素の80%に設定しています。<br>
+   ギリギリまでカラーを広げるの…どうなんだろう…<br>
+   とりあえず、Webページの上下左右に余白が欲しいです。</p>
+
+  <p><span class="codecolor">height: auto;</span><br>
+   画像の高さを自動的に調整しています。<br>
+   幅に合わせて高さが変わるようにしてあります。</p>
+
+  <h4>画像によって大きさを使い分ける</h4>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(8).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>display: block;は「Webサイトのロゴ画像」と同じ。<br>
+    height: auto;も「Webサイトのロゴ画像」と同じですが、こういうのを「アスペクト比の維持」なんて言ったりしますね。<br>
+    ちなみにこれはCSSに共通ですが、IDやクラスを持つタグに対してスタイルを適用します。<br>
+    ここなら、img.biggraphicやimg.graphicに対してスタイルを適用していることになります。</p>
+  </div>
+
+  <div class="code-container">
+   <pre><code class="language-css">
+/* とても大きいイラスト */
+img.biggraphic {
+    margin: 20px;
+    display: block;
+    width: 80%;
+    height: auto;
+}
+
+/* 大きいイラスト */
+img.graphic {
+    margin: 20px;
+    display: block;
+    width: 50%;
+    height: auto;
+}
+        </code></pre>
+  </div>
+
+  <p><span class="codecolor">margin: 20px;</span><br>
+   画像の周りに20ピクセルの余白を設定しています。<br>
+   普段はこうやってCSSで余白を取ってますね。</p>
+
+  <p><span class="codecolor">width: 80%; と width: 50%;</span><br>
+   画像の幅を親要素に従って設定しています。<br>
+   画像の大きさや性質によって、80%や50%と使い分けていくのです。</p>
+
+  <h2>イラストとテキストの配置：回り込み</h2>
+  <p>これはけっこう基本じゃないかな？<br>
+   私が持ってた教科書だけじゃなく、Webサイト作成に関する本ならたいてい掲載されている話だと思います。</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* イラストを右にしてテキストを回り込ませる */
+img.right-image {
+    float: right;
+}
+div.content {
+    overflow: hidden;
+}
+        </code></pre>
+  </div>
+
+  <p><span class="codecolor">img.right-image {</span><br>
+   スタイル適用を行うための宣言です。<br>
+   ここでは、クラス名が「right-image」となっているimg要素に対して行います。<br>
+   書式設定とは少し違いますが、いわゆるCSSの作法として覚えておく必要があります。</p>
+
+  <p><span class="codecolor">float: right;</span><br>
+   このプロパティが大切です。<br>
+   画像を右側に配置し、テキストがその左側を回り込むようにします。</p>
+
+  <p><span class="codecolor">div.content {</span><br>
+   スタイル適用を行うための宣言です。<br>
+   ここでは、クラス名が「content」のdiv要素に対して行います。<br>
+   htmlタグの内容まで書かなくても良いんだけどね。<br>
+   .contentだけでも効くのですが、私は気付いたときに書くようにしてます。</p>
+
+  <p><span class="codecolor">overflow: hidden;</span><br>
+   このプロパティは、div要素の内容がその境界を超えた場合に、超えた部分を隠すという設定です。<br>
+   これを付けておかないと高さが正しく計算されず、レイアウトが崩れることがあるのですよ。</p>
+
+  <h2>画像の配置にtableタグは止めよう</h2>
+  <p>画像を２つ横に並べたいとき、tableタグを使って配置するのは止めましょう。<br>
+   私はその世代じゃないのですが、昔はそうやって画像を配置するのが流行ったとか？<br>
+   htmlタグは本来あるべき形で使わないと、ブラウザが正しくコンテンツを認識できません。</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* グラスタ表の火力20倍の話に添えるイラスト */
+.grastaimage {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.grastaimage img {
+    max-width: 45%;
+    height: auto;
+}
+        </code></pre>
+  </div>
+
+  <p><span class="codecolor">display: flex;</span><br>
+   子要素が柔軟に配置されます。<br>
+   フレックスボックスレイアウトとか、呼んだりしますね。</p>
+
+  <p><span class="codecolor">justify-content: space-between;</span><br>
+   子要素を左右に均等に配置し、間にスペースを作っています。</p>
+
+  <p><span class="codecolor">gap: 5px;</span><br>
+   子要素間の間隔を5ピクセルに設定しています。</p>
+
+  <p><span class="codecolor">max-width: 45%;</span><br>
+   画像の最大幅を親要素の45%に制限しています。<br>
+   全体が100%ですから、半分は50%。<br>
+   そこから少し余裕を持って画像を小さくします。</p>
+
+  <h4>敢えて表の中に画像を入れるケース</h4>
+  <p>ここはクラス名まで含めて説明してみましょうか。<br>
+   ちょっと長くなるけどね。<br>
+   本来であれば、表の中に画像を入れるのは望ましくないと思っています。<br>
+   表を使ってレイアウトを整えているのと変わらないからね。<br>
+   ただ、この場合は広すぎるセル内に彩りを添えたいからやってます。</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* グラスタ表内部の画像 */
+div.gtable {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.toptext {
+    margin-bottom: 10px;
+}
+
+.bottomimage {
+  display: block;
+  max-width: 80%;
+  height: auto;
+  margin: auto;
+}
+        </code></pre>
+  </div>
+
+  <p><span class="codecolor">div.gtable { display: flex; }</span><br>
+   gtableクラスを持つdiv要素をフレックスボックスにします。<br>
+   フレックスボックスというのは、要素を並べるためのレイアウト方法となります。</p>
+
+  <p><span class="codecolor">flex-direction: column;</span><br>
+   フレックスボックスの方向を縦方向（列）に設定しています。<br>
+   要素が上から下に並びます。</p>
+
+  <p><span class="codecolor">justify-content: flex-start;</span><br>
+   ここで、フレックスボックス内の要素を上端に揃えます。</p>
+
+  <p><span class="codecolor">.toptext { margin-bottom: 10px; }</span><br>
+   toptextクラスを持つ要素の下に10ピクセルの余白を追加しています。<br>
+   余白は大切です。</p>
+
+  <p><span class="codecolor">.bottomimage { display: block; }</span><br>
+   bottomimageクラスを持つ要素をブロック要素にします。<br>
+   ブロック要素は普通、全ての幅を占めていきます。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(9).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p><span class="codecolor">max-width: 80%;</span><br>
+    bottomimageクラスを持つ要素の最大幅を親要素の80%に制限しています。<br>
+    こうしないとキツキツになってしまう。</p>
+
+   <p><span class="codecolor">height: auto;</span><br>
+    bottomimageクラスを持つ要素の高さを自動調整します。<br>
+    幅に応じて高さが変わるようにしています。</p>
+
+   <p><span class="codecolor">margin: auto;</span><br>
+    bottomimageクラスを持つ要素を中央に配置します。<br>
+    こうすることで、上下左右の余白が自動的に設定されていきます。<br>
+    左詰めでも良いと思うけどね。<br>
+    ここは彩り目的の画像だから。</p>
+
+   <h4>Webページを彩る画像の配置</h4>
+   <p>このサイトでは自然の草花を使っています。<br>
+    私自身が撮影しているものなので、著作権リスクとも無縁でいられますしね。<br>
+    そういうWebページを彩る画像を配置するために使っているhtmlとcssを掲載します。
+   </p>
+  </div>
+
+  <p class="gra">写真を飾るためのhtml</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;div class=&quot;flowerclearfix&quot;&gt;
+  &lt;div class=&quot;flowerfade-out&quot;&gt;
+    &lt;img src=&quot;../flower1/flower1(&#9679;&#9679;&#9679;).JPG&quot; alt=&quot;FLOWER&quot;&gt;
+  &lt;/div&gt;
+&#9679;&#9679;&#9679;
+&lt;/div&gt;
+      </code></pre>
+  </div>
+
+  <p>htmlはそんな難しくないですよね。<br>
+   ていうかhtmlコードをあんまり難しくしてしまうと、後からいろいろ更新する時に大変です。<br>
+   ここではdivタグについて説明しましょう。
+  </p>
+
+  <h2>汎用性の高いコンテナ：div</h2>
+  <p>HTMLコーディングでよく使われる&lt;div&gt;タグは、「division」の略で、ページ内のコンテンツをグループ化するための汎用的なコンテナ要素です。<br>
+   いくつか例となるコードを書いてみます。</p>
+
+  <h5>1.コンテンツのグループ化</h5>
+  <p>複数の要素（テキスト、画像、リンクなど）を一つの&lt;div&gt;タグで囲むことで、それらを一つのまとまりとして扱います。<br>
+   このページで使っているコードの紹介にしても「&lt;div class=&quot;code-container&quot;&gt;」という形でグループ化していますよ。<br>
+   そうやってグループ化しておけばコピペコードにしやすいし、cssの適用もラクなんです。</p>
+
+  <p class="gra">コンテンツのグループ化を行っているコードの例</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;div&gt;
+    &lt;h1&gt;タイトル&lt;/h1&gt;
+    &lt;p&gt;段落テキスト&lt;/p&gt;
+    &lt;img src=&quot;image.jpg&quot; alt=&quot;画像&quot;&gt;
+&lt;/div&gt;
+          </code></pre>
+  </div>
+
+  <h5>2.スタイルの適用</h5>
+  <p>CSSを使って、&lt;div&gt;タグ内のコンテンツに対して一括でスタイルを適用できます。<br>
+   一番使うのはこれだと思いますね。<br>
+   一定範囲をdivで括り、その範囲内をまとめてcssで調整する。<br>
+   これは個人サイトを作る上で覚えておいたほうが良いです。</p>
+
+  <p class="gra">スタイルの適用を行っているコードの例</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;style&gt;
+    .container {
+        border: 1px solid #000;
+        padding: 10px;
+    }
+&lt;/style&gt;
+&lt;div class=&quot;container&quot;&gt;
+    &lt;h1&gt;タイトル&lt;/h1&gt;
+    &lt;p&gt;段落テキスト&lt;/p&gt;
+    &lt;img src=&quot;image.jpg&quot; alt=&quot;画像&quot;&gt;
+&lt;/div&gt;
+          </code></pre>
+  </div>
+
+  <h5>3.レイアウトの構築</h5>
+  <p>ページのレイアウトを作成する際に、&lt;div&gt;タグを使ってセクションを分けることができます。<br>
+   これにしても、レイアウト構築をした上でcssを適用するわけですよ。<br>
+   あるいはこの例にあるようにヘッダーフッター程度であれば、&lt;section&gt;タグを使っても大丈夫です。
+  </p>
+
+  <p class="gra">レイアウト構築を行っているコードの例</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;div class=&quot;header&quot;&gt;ヘッダー&lt;/div&gt;
+&lt;div class=&quot;main-content&quot;&gt;メインコンテンツ&lt;/div&gt;
+&lt;div class=&quot;footer&quot;&gt;フッター&lt;/div&gt;
+          </code></pre>
+  </div>
+
+  <p>&lt;div&gt;タグは非常に柔軟で特定の意味を持ちません。<br>
+   たいていのコンテンツを包むことができます。<br>
+   class付けも併用することでページの構造を整理しやすくなり、スタイルやスクリプトを適用する際にも便利です。</p>
+
+  <p class="codegra" id="flower_css">写真を飾るためのflower.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+@charset "UTF-8";
+
+/* flowerfade-out クラスのスタイル */
+.flowerfade-out {
+    position: relative; /* 要素を相対位置に配置 */
+    width: 40%; /* 幅を40%に設定 */
+    float: right; /* 右側に配置 */
+    margin-left: 5px; /* 左側の余白を5pxに設定 */
+    margin-top: 10px; /* 上側の余白を10pxに設定 */
+}
+
+/* flowerfade-out クラス内の img 要素のスタイル */
+.flowerfade-out img {
+    width: 100%; /* 幅を100%に設定 */
+    height: auto; /* 高さを自動調整 */
+    display: block; /* ブロック要素として表示 */
+}
+
+/* flowerfade-out クラスの擬似要素 before のスタイル */
+.flowerfade-out::before {
+    content: ""; /* 空のコンテンツを追加 */
+    position: absolute; /* 絶対位置に配置 */
+    top: 0; /* 上端を0に設定 */
+    left: 0; /* 左端を0に設定 */
+    width: 100%; /* 幅を100%に設定 */
+    height: 100%; /* 高さを100%に設定 */
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 1) 100%),
+        linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 1) 100%); /* グラデーション背景を設定 */
+}
+
+/* flowerclearfix クラスのスタイル */
+.flowerclearfix {
+    overflow: auto; /* オーバーフローを自動調整 */
+}
+        </code></pre>
+  </div>
+
+  <h2>レイアウトを制御するpositionとfloat</h2>
+  <p>positionとfloatは、要素の配置やレイアウトを制御するとても大切なCSSプロパティです。</p>
+
+  <h4>positionプロパティの説明</h4>
+  <p>positionプロパティは、要素の位置を指定する方法を決定します。</p>
+
+  <dl>
+   <dt>1.static（デフォルト値）</dt>
+   <dd>要素は通常の文書の流れに従って配置されます。</dd>
+   <dd>特別な位置指定は行われません。</dd>
+   <dt>2.relative</dt>
+   <dd>要素は通常の文書の流れに従って配置されますが、top、right、bottom、leftプロパティを使用して、通常の位置から相対的に移動できます。</dd>
+   <dd>他の要素の配置には影響を与えません。</dd>
+  </dl>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(10).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>このrelativeについては、もう少し丁寧に説明しようかな…<br>
+    position: relative; プロパティは、要素を通常の文書の流れに従って配置しますが、top、right、bottom、left
+    プロパティを使って、その通常の位置から相対的に移動させることができるのです。<br>
+    次のようなコードを書くことができます。</p>
+  </div>
+
+
+  <p class="gra">position: relative;でleftプロパティを使う例</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+.element {
+  position: relative;
+  left: 20px;
+}
+        </code></pre>
+  </div>
+
+  <p>この場合、.element は通常の位置から右に20ピクセル移動します。<br>
+   しかし、他の要素の配置には影響を与えません。<br>
+   つまり、.element が移動しても、他の要素はそのままの位置に留まります。</p>
+
+  <p>position: relative; を使う場合、top、right、bottom、left プロパティを指定しなければ、要素はそのまま通常の位置に配置されます。<br>
+   つまり、相対的な移動は行われません。<br>
+   次のようなコードを書くことができます。</p>
+
+  <p class="gra">position: relative;でプロパティを使わない例</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+.element {
+  position: relative;
+}
+          </code></pre>
+  </div>
+
+  <p>この場合、.elementは通常の文書の流れに従って配置され、特に移動はしません。<br>
+   top、right、bottom、leftプロパティを指定しない限り、要素はそのままの位置に留まります。</p>
+
+  <p>また、position: relative; が必要かどうかは、具体的なレイアウトやデザインの要件によります。<br>
+   次のコードは上記にある「写真を飾るためのcss」で使われているコードの抜粋です。
+  </p>
+
+  <p class="gra">写真を飾るためのcss（抜粋）</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+.flowerfade-out {
+  position: relative; /* 要素を相対位置に配置 */
+  width: 40%; /* 幅を40%に設定 */
+  float: right; /* 右側に配置 */
+  margin-left: 5px; /* 左側の余白を5pxに設定 */
+  margin-top: 10px; /* 上側の余白を10pxに設定 */
+}
+        </code></pre>
+  </div>
+
+  <p>このCSSコードでは、position: relative; を使っていますが、現時点ではtop、right、bottom、leftプロパティを使用していません。<br>
+   よって、position: relative; を削除して、下にあるようなコードとしてもレイアウトには影響はありません。<br>
+   ここから先は私のクセみたいなものなんですが、もし後で top、right、bottom、left プロパティを追加して要素を相対的に移動させたくなった場合に便利なんですよ。<br>
+   CSSコードは作りっ放しでしばらく触らないことも多いので。<br>
+   他の理由として、レスポンシブデザインということもあります。<br>
+   思わぬところで横に広がったりもするので、相対位置に配置するコードを入れておく運用としています。</p>
+
+  <p class="gra">写真を飾るためのcss（positionを抜いたケース）</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+.flowerfade-out {
+  width: 40%; /* 幅を40%に設定 */
+  float: right; /* 右側に配置 */
+  margin-left: 5px; /* 左側の余白を5pxに設定 */
+  margin-top: 10px; /* 上側の余白を10pxに設定 */
+}
+        </code></pre>
+  </div>
+
+  <p>将来的に相対的な位置調整が必要になる可能性が高いんですよね…<br>
+   こういった画像を飾るような要素の場合。<br>
+   普段の細々した運用から、自然と入れるようになったという方が表現としては正しいかも。</p>
+
+  <p>そろそろ次の項目へ移りますが、私のケースだと、ほとんど position: relative; で済んじゃいますね。</p>
+
+  <dl>
+   <dt>3.absolute</dt>
+   <dd>要素は最も近い位置指定された祖先要素（relative、absolute、fixedのいずれかが設定された要素）に対して絶対的に配置されます。</dd>
+   <dd>通常の文書の流れからは外れます。</dd>
+   <dt>4.fixed</dt>
+   <dd>要素はビューポート（ブラウザの表示領域）に対して固定されます。</dd>
+   <dd>スクロールしても位置は変わりません。</dd>
+   <dt>5.sticky</dt>
+   <dd>要素は通常の文書の流れに従って配置されますが、スクロール位置に応じて固定される位置に移動します。</dd>
+  </dl>
+
+
+  <h4>floatプロパティの説明</h4>
+  <p>floatプロパティは、要素を左または右に浮動させ、周囲のテキストやインライン要素がその周りに回り込むようにします。<br>
+   主な値だけ先に書いちゃいましょうか。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(11).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <dl>
+    <dt>1.left</dt>
+    <dd>要素を左側に浮動させます。</dd>
+    <dd>後続の要素は右側に回り込みます。</dd>
+    <dt>2.right</dt>
+    <dd>要素を右側に浮動させます。</dd>
+    <dd>後続の要素は左側に回り込みます。</dd>
+    <dt>3.none（デフォルト値）</dt>
+    <dd>要素は浮動しません。</dd>
+   </dl>
+  </div>
+
+  <p>「浮動」という言葉がちょっと分かりにくいと思うので、詳しく書きますね。<br>
+   これは float プロパティが要素を通常の文書の流れから取り出し、左または右に配置することを指しています。<br>
+   この配置により、他のテキストやインライン要素がその周りに回り込むようになります。</p>
+
+  <p>表現を変えれば、float プロパティを使うと、要素が「浮いている」ように見え、周囲のコンテンツがその要素の周りを流れる（回り込む）ようになります。<br>
+   例えば、画像を左に浮動させると、その右側にテキストが回り込む形になります。</p>
+
+  <p class="gra">画像を左に浮動させ、右側にテキストを回り込ませるコード</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+img {
+  float: left;
+  margin-right: 10px;
+}
+        </code></pre>
+  </div>
+
+  <p>この場合、画像は左に配置され、その右側にテキストが回り込みます。<br>
+   「浮動」という言葉を使う理由は、要素が通常の文書の流れから「浮き上がって」別の位置に配置されることを視覚的に表現していると考えましょう。<br>
+   要素が他のコンテンツとどのように相互作用するかを理解しやすいです。</p>
+
+  <p>ではおさらいとして、position: relative;とfloat: right;を使用したコード例を書きます。</p>
+
+  <p class="gra">position: relative;とfloat: right;を使用したコード例</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;box&quot; style=&quot;position: relative; float: right;&quot;&gt;
+      浮動するボックス
+  &lt;/div&gt;
+  &lt;p&gt;この段落は、ボックスの左側に回り込みます。&lt;/p&gt;
+&lt;/div&gt;
+          </code></pre>
+  </div>
+
+  <p>この例では、boxクラスの要素が右側に浮動し、段落がその左側に回り込みます。また、position: relative;により、必要に応じて相対的に位置を調整できます。<br>
+   positionとfloatの基本的な使い方として、こういうものがありますよというご紹介でした。</p>
+
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/graphic_css.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

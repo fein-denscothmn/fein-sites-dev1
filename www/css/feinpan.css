@@ -1,0 +1,55 @@
+/* パンくずリストのデザイン */
+.breadcrumb {
+    display: flex;
+    list-style: none;
+    padding: 10px 15px; /* 内側の余白を調整 */
+    margin: 0;
+    background-color: #f8f9fa; /* 背景色を追加 */
+    border-radius: 5px; /* 角を丸くする */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影を追加 */
+    font-size: 0.7em; /* フォントサイズを調整 */
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    padding: 0 10px;
+    color: #6c757d;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+    color: #1A73E8; /* Google blue */
+    transition: color 0.3s ease; /* ホバー時のアニメーションを追加 */
+}
+
+.breadcrumb-item a:hover {
+    color: #00A2ED; /* Microsoft blue */
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    font-weight: bold; /* 現在のページを強調 */
+    color: #6c757d;
+}
+
+/* 検索ボックスの調整 */
+.search-container {
+    width: 50%; /* 横幅を調整 */
+    margin-top: 20px; /* パンくずリストの下に配置 */
+    margin-left: auto; /* 右側に配置 */
+    background-color: white; /* 背景色を追加 */
+    border-radius: 10px; /* 四隅を丸める */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影を追加 */
+    padding: 5px; /* 上下の内側の余白を縮小 */
+}
+
+.gcse-search {
+    width: 100%; /* 横幅を親要素に合わせる */
+}
+
+input.gsc-input, input.gsc-search-button {
+    width: 100%; /* 入力フィールドとボタンの横幅を調整 */
+    border-radius: 10px; /* 四隅を丸める */
+    padding: 5px; /* 上下の内側の余白を縮小 */
+}
+

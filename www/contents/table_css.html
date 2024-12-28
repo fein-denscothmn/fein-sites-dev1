@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <!-- Meta tags -->
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="CSSの書き方に関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta name="keywords" content="個人サイト, CSS, 書き方">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="個人サイトの表をCSSで整える">
+ <meta property="og:description" content="CSSの書き方に関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/table_css.html">
+ <!-- Structured Data -->
+ <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "個人サイトの表をCSSで整える",
+      "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/table_css.html",
+      "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+  }
+  </script>
+
+ <!-- CSS -->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <!-- JavaScript -->
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+
+ <!-- Google Fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+
+ <!-- Page Title -->
+ <title>個人サイトの表をCSSで整える</title>
+
+ <!-- Favicon -->
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">個人サイトの表をCSSで整える</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="個人サイトの表をCSSで整えるの目次を開く ▼"
+   data-close-text="個人サイトの表をCSSで整えるの目次を閉じる ▲">個人サイトの表をCSSで整えるの目次を開く
+   ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>個人サイトの表をCSSで整える</span></h1>
+
+  <p class="gra">テーブルタグを使ったレイアウトの問題点</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(16).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>これは書いておかなければいけないでしょうね…</p>
+   <p>
+    &lt;table&gt;タグを使って画像の位置などのレイアウトを整えるのが良くない理由が、ちゃんとあるんです。
+   </p>
+   <p>
+    まず第一に、テーブルは本来データを表形式で表示するためのものであり、レイアウト目的で使用するのは適切ではありません。<br>
+    テーブルレイアウトは、特に画面リーダーなどのアクセシビリティツールにとって誤解を招く可能性があります。<br>
+    これらのツールは、テーブル内のデータを表として読み上げることを前提にしているため、レイアウト目的で使用されたテーブルを誤って解釈し、
+    ユーザーがページ内容を理解しにくくする可能性があります。<br>
+    ちなみにSEOにも悪影響がありますよ。<br>
+    可能な限りアクセシビリティにも対応した方が良いです。
+   </p>
+  </div>
+
+  <p>
+   次に、テーブルを使ったレイアウトは、柔軟性に欠けることが多いんですよね。<br>
+   例えばレスポンシブデザインを実現するためには、画面サイズやデバイスに応じてレイアウトを調整する必要があります。
+   でもテーブルはこれがやりにくいのなんのって…<br>
+   CSSを用いたレイアウトであれば、flexboxやgridといったレイアウト技術を使って柔軟かつ管理しやすいデザインを実現できます。
+  </p>
+  <p>
+   そもそもテーブルベースのレイアウトはコードが複雑になりやすいという問題がありますよ。<br>
+   HTMLとCSSを分離することで、コードの再利用性や可読性が向上し、メンテナンスも容易になります。<br>
+   でもテーブルを使ったレイアウトは、HTML内に多くのネストされたタグが含まれることになります。<br>
+   一度こうなってしまうと、後々の修正が難しくなります。
+  </p>
+  <p>
+   現代のウェブデザインにおいては、セマンティクスとアクセシビリティを重視することが求められています。<br>
+   適切なタグとCSSを使用して、意味のある構造と見やすいレイアウトを作成することが推奨されてるってことですね。
+  </p>
+
+  <h3>このページに関する注意事項</h3>
+  <p>当Webサイト作成者は、例示を目的としてマークアップ及びプログラミング例を提供しており、明示または黙示にかかわらず、いかなる責任も負わないものとします。<br>
+   このページは、説明されているマークアップ及びプログラミング言語、手順を作成およびデバッグするために使用される各種ツールに読者が精通していることを前提にしています。<br>
+   このページは、特定の機能を説明するのに役立つ可能性がありますが、当Webサイト作成者がこれらの例を変更した上で、特定の要件を満たすために追加の機能を提供したり、システムを構築したりすることはできません。<br>
+   加えて、この例の手順に従う場合は、読者の各種ファイルを事前にバックアップすることを推奨いたします。</p>
+
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(24).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>レスポンシブデザインにおけるテーブルタグを適切に扱うためには、いくつかのポイントに気をつける必要があります。<br>
+    まず、テーブルのデザインが多様な画面サイズに適応できるように、CSSを活用することが重要です。<br>
+    テーブルそのものが画面の横幅に合わせて収縮や拡張するように設定しないとね。<br>
+    このためには、CSSでwidth: 100%;やmax-width: 100%;を指定すると効果的です。</p>
+  </div>
+
+
+  <p>次に、テーブルの各セルが画面幅に応じて折り返されるように設定するといいかも。<br>
+   これを実現するためには、word-wrap: break-word;やoverflow-wrap: break-word;といったCSSプロパティを使用します。<br>
+   また、テーブルのレイアウトを調整するために、メディアクエリを活用することも有効です。<br>
+   一定の画面幅以下になった場合に、特定の列を非表示にするなどの対応が考えられます。<br>
+   でもテーブル全体をスクロール可能にするのはやめたほうがいいかな…<br>
+   スマホブラウザにもスクロールがあるのに、さらに内部にスクロールがあるのはちょっと指先で操作するのしんどいです。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(25).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>加えて、ユーザーエクスペリエンスを向上させるために、テーブルのデザインにおける視覚的なヒントも重要です。<br>
+    テーブルの列や行に背景色を適用し、テーブルの境界線を強調することで、情報の見やすさを確保することができます。<br>
+    また、theadタグを用いてヘッダーを明確に区別し、ユーザーが情報を容易に追跡できるといいです。</p>
+  </div>
+
+
+  <p>レスポンシブデザインにおけるテーブルの扱いには細かな工夫が必要ですが…<br>
+   まぁぶっちゃけめんどうですよ🥱<br>
+   可能であれば、表以外の書き方を検討するほうがラクだと思います。
+  </p>
+
+
+  <h2>表の罫線などを設定する</h2>
+  <p>お待ちかねの「表」ですよ。<br>
+   日本人のExcel好きがそうさせるのか、とにかく「表」というのは注目されます。<br>
+   ここは少し、丁寧に説明していきますか！</p>
+
+  <p class="gra">基本的な表のCSS</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* ●表の設定● */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+  width: 50%;
+  box-sizing: border-box;
+  border-left: none;
+  border-right: none;
+}
+
+/* グラスタの見出しを水色にする */
+tr.grasta_blue {
+  background-color: #e0f7fa;
+}
+/* グラスタ錬成材料の見出しを緑色にする */
+tr.grasta_green {
+  background-color: #E0FFE0;
+}
+
+/* 強敵表のため、独自のクラスを追加 */
+.boss-table th:nth-child(1), .boss-table td:nth-child(1) {
+  width: 30%;
+}
+
+.boss-table th:nth-child(2), .boss-table td:nth-child(2) {
+  width: 20%;
+}
+
+.boss-table th:nth-child(3), .boss-table td:nth-child(3) {
+  width: 50%;
+}
+
+/* ボス名称、実装時期、報酬の性質の見出しを水色にする */
+tr.header-blue {
+  background-color: #e0f7fa;
+}
+        </code></pre>
+  </div>
+
+  <p><span class="codecolor">table {</span><br>
+   これはすべての table 要素に対してスタイルを適用するための宣言です。</p>
+
+  <p><span class="codecolor">width: 100%;</span><br>
+   テーブルの幅を100%に設定します。<br>
+   つまり、親要素の幅に合わせてテーブルが広がります。<br>
+   ここではレスポンシブデザインを利かせているbodyに合わせて広がっていきます。<br>
+   余白をキープするのはレスポンシブデザインのCSSです。</p>
+
+  <p><span class="codecolor">border-collapse: collapse;</span><br>
+   テーブルのセルの境界線を一つにまとめて表示します。<br>
+   セルの間に隙間がなくなります。</p>
+
+  <p><span class="codecolor">}</span><br>
+   ここで、テーブルのスタイル設定が終了です。</p>
+
+  <p><span class="codecolor">th, td {</span><br>
+   これはすべての th(テーブルヘッダー)と td(テーブルデータ)要素に対してスタイルを適用するための宣言です。</p>
+
+  <p><span class="codecolor">border: 1px solid black;</span><br>
+   各セルに1ピクセルの黒い実線の境界線を設定します。</p>
+
+  <p><span class="codecolor">width: 50%;</span><br>
+   各セルの幅を50%に設定します。<br>
+   セルが親要素の幅の半分を占めることを意味します。<br>
+   表を半分にするってことですね。</p>
+
+  <p><span class="codecolor">box-sizing: border-box;</span><br>
+   パディングやボーダーを含めて幅を計算します。<br>
+   セルの内容がボーダーやパディングによってはみ出さないようになります。</p>
+
+  <p><span class="codecolor">border-left: none;</span><br>
+   セルの左側の境界線を消します。<br>
+   セルの左側が見やすくなります。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(27).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p><span class="codecolor">border-right: none;</span><br>
+    セルの右側の境界線を消します。<br>
+    セルの右側が見やすくなります。</p>
+
+   <p><span class="codecolor">}</span><br>
+    ここで、セルのスタイル設定が終了です。</p>
+
+   <p><span class="codecolor">tr.grasta_blue {</span><br>
+    クラス名が grasta_blue の行に対してスタイルを適用するための宣言です。</p>
+
+   <p><span class="codecolor">background-color: #e0f7fa;</span><br>
+    行の背景色を薄い水色に設定します。</p>
+  </div>
+
+
+  <p><span class="codecolor">}</span><br>
+   ここで、grasta_blue クラスのスタイル設定が終了です。</p>
+
+  <p><span class="codecolor">tr.grasta_green {</span><br>
+   クラス名が grasta_green の行に対してスタイルを適用するための宣言です。</p>
+
+  <p><span class="codecolor">background-color: #E0FFE0;</span><br>
+   行の背景色を薄い緑色に設定します。</p>
+
+  <p><span class="codecolor">}</span><br>
+   ここで、grasta_greenクラスのスタイル設定が終了です。</p>
+
+  <p><span class="codecolor">.boss-table th:nth-child(1), .boss-table td:nth-child(1) {</span><br>
+   クラス名が boss-table のテーブル内の最初の列のセルに対してスタイルを適用するための宣言です。</p>
+
+  <p><span class="codecolor">width: 30%;</span><br>
+   最初の列のセルの幅を30%に設定します。</p>
+
+  <p><span class="codecolor">}</span><br>
+   ここで、最初の列のセルのスタイル設定が終了です。</p>
+
+  <p><span class="codecolor">.boss-table th:nth-child(2), .boss-table td:nth-child(2) {</span><br>
+   クラス名が boss-table のテーブル内の2番目の列のセルに対してスタイルを適用するための宣言です。</p>
+
+  <p><span class="codecolor">width: 20%;</span><br>
+   2番目の列のセルの幅を20%に設定します。</p>
+
+  <p><span class="codecolor">}</span><br>
+   ここで、2番目の列のセルのスタイル設定が終了です。</p>
+
+  <p><span class="codecolor">.boss-table th:nth-child(3), .boss-table td:nth-child(3) {</span><br>
+   クラス名が boss-table のテーブル内の3番目の列のセルに対してスタイルを適用するための宣言です。</p>
+
+  <p><span class="codecolor">width: 50%;</span><br>
+   3番目の列のセルの幅を50%に設定します。</p>
+
+  <p><span class="codecolor">}</span><br>
+   ここで、3番目の列のセルのスタイル設定が終了です。</p>
+
+  <p><span class="codecolor">tr.header-blue {</span><br>
+   クラス名が header-blue の行に対してスタイルを適用するための宣言です。</p>
+
+  <p><span class="codecolor">background-color: #e0f7fa;</span><br>
+   行の背景色を薄い水色に設定します。</p>
+
+  <p><span class="codecolor">}</span><br>
+   ここで、header-blue クラスのスタイル設定が終了です。</p>
+
+  <h3>CSSの疑似クラス（pseudo-class）</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(26).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>特定の状態や位置にある要素に対してスタイルを適用するためのものです。<br>
+    通常のクラスやIDでは指定できないような、動的な状態や特定の条件に基づいてスタイルを変更することができます。<br>
+    次のような擬似クラスがあります。</p>
+
+   <ul>
+    <li>:hover：ユーザーが要素にマウスカーソルを乗せたときに適用されるスタイル。
+    <li>:first-child：親要素の最初の子要素に適用されるスタイル。
+    <li>:last-child：親要素の最後の子要素に適用されるスタイル。
+    <li>:focus：ユーザーが要素にフォーカスしたときに適用されるスタイル。
+   </ul>
+  </div>
+
+  <p>擬似クラスを使うことで、より柔軟でインタラクティブなデザインを実現することができます。</p>
+
+  <p>ここで使っているnth-childはCSSの擬似クラスの一つで、特定の順序にある要素を選択するために使われます。<br>
+   boss-tableクラスのテーブル内の最初の列のセル（&lt;th&gt;と&lt;td&gt;）を選択している状態です。<br>
+   上にある表では、nth-child(1)はその親要素の中で最初の子要素を指します。<br>
+   つまり、boss-tableクラスのテーブル内で、各行の最初のセルを選択してスタイルを適用しているんですよね。</p>
+
+  <p>次は、もう少し凝ったデザインにした表についてお話してみます。</p>
+
+  <h4>少し凝った表のデザイン</h4>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(1).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>レスポンシブデザインという視点から見ると、あまり大きな表は望ましくないと思ってます。<br>
+    その分いろいろ縮めて書いていくことになるから、単純に細々したデザインになってしまうことが多い。<br>
+    可能な限りスマホの画面に収めていくようにしてますね。<br>
+    あまり縦に長すぎず、横に広がらず。
+   </p>
+
+   <p>すでに表のCSSについては触れていますが、改めてコードを表示しておきます。<br>
+    このセクションではボックスシャドウについて説明します。</p>
+  </div>
+
+  <p class="gra">浮かび上がる表を作るCSS</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* Table settings ●start● */
+table {
+  width: 100%; /* テーブルの幅を100%にする */
+  border-collapse: collapse; /* 枠線を重ねて表示 */
+}
+
+th,
+td {
+  border: 1px solid black; /* 枠線を黒にする */
+  width: 50%; /* 幅を50%にする */
+  box-sizing: border-box; /* ボックスのサイズを枠線込みにする */
+  border-left: none; /* 左側の枠線を消す */
+  border-right: none; /* 右側の枠線を消す */
+}
+
+tr.GTA_blue {
+  background-color: #e0f7fa; /* 背景色を青にする */
+}
+
+tr.GTA_green {
+  background-color: #E0FFE0; /* 背景色を緑にする */
+}
+
+.boss-table th:nth-child(1),
+.boss-table td:nth-child(1) {
+  width: 30%; /* 1列目の幅を30%にする */
+}
+
+.boss-table th:nth-child(2),
+.boss-table td:nth-child(2) {
+  width: 20%; /* 2列目の幅を20%にする */
+}
+
+.boss-table th:nth-child(3),
+.boss-table td:nth-child(3) {
+  width: 50%; /* 3列目の幅を50%にする */
+}
+
+tr.header-blue {
+  background-color: #e0f7fa; /* ヘッダーの背景色を青にする */
+}
+
+.weapon-table th:nth-child(1),
+.weapon-table td:nth-child(1) {
+  width: 20%; /* 1列目の幅を20%にする */
+}
+
+.weapon-table th:nth-child(2),
+.weapon-table td:nth-child(2) {
+  width: 40%; /* 2列目の幅を40%にする */
+}
+
+.weapon-table th:nth-child(3),
+.weapon-table td:nth-child(3) {
+  width: 40%; /* 3列目の幅を40%にする */
+}
+
+caption {
+  visibility: hidden; /* キャプションを非表示にする */
+  height: 0; /* 高さを0にする */
+  overflow: hidden; /* オーバーフローを隠す */
+}
+
+.custom-table-container {
+  display: block; /* ブロック要素として表示 */
+  padding: 10px; /* 内側の余白 */
+  border-radius: 15px; /* 角を丸くする */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* ボックスシャドウを追加 */
+  margin: 10px 0; /* 上下の余白 */
+}
+/* Table settings ●end● */
+      </code></pre>
+  </div>
+
+  <h2>CSSのプロパティ：box-shadow</h2>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(2).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>このプロパティを使うと、要素に影を追加することができます。<br>
+    影を追加することで、要素が浮き上がって見える効果を得ることができます。</p>
+
+   <dl>
+    <dt>役割</dt>
+    <dd>要素に影を付けるためのプロパティです。</dd>
+    <dt>使用方法</dt>
+    <dd>影の位置、ぼかしの範囲、広がりの範囲、色を指定します。</dd>
+   </dl>
+  </div>
+
+
+  <p>box-shadowを使うことで、デザインに立体感を加えることができます。</p>
+
+  <p class="gra">box-shadowのCSS例</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* box-shadow: 水平方向 垂直方向 ぼかしの範囲 広がりの範囲 色; */
+
+.example {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+      </code></pre>
+  </div>
+
+  <p>この例では、要素に対して次のような影を追加しています。</p>
+
+  <dl>
+   <dt>水平方向</dt>
+   <dd>0ピクセル（影を左右にずらさない）</dd>
+   <dt>垂直方向</dt>
+   <dd>10ピクセル（影を下に10ピクセルずらす）</dd>
+   <dt>ぼかしの範囲</dt>
+   <dd>20ピクセル（影を20ピクセルぼかす）</dd>
+   <dt>カラー</dt>
+   <dd>黒（透明度15%）</dd>
+  </dl>
+
+  <p>次に、各値の意味を細かく見ていきます。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(3).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <dl>
+    <dt>水平方向 (0)</dt>
+    <dd>影を水平方向にどれだけずらすかを指定します。</dd>
+    <dd>正の値は右方向、負の値は左方向に影を移動させます。</dd>
+    <dd>この例では 0 なので、水平方向には影をずらしません。</dd>
+    <dt>垂直方向 (10px)</dt>
+    <dd>影を垂直方向にどれだけずらすかを指定します。</dd>
+    <dd>正の値は下方向、負の値は上方向に影を移動させます。</dd>
+    <dd>この例では 10px 下に影をずらします。</dd>
+    <dt>ぼかしの範囲 (20px)</dt>
+    <dd>影のぼかしの範囲を指定します。</dd>
+    <dd>値が大きいほど影がぼやけます。値が 0 の場合、影はシャープになります。</dd>
+    <dd>この例では 20px のぼかしを適用しています。</dd>
+    <dt>広がりの範囲 (ここでは省略されています)</dt>
+    <dd>影の広がりの範囲を指定します。</dd>
+    <dd>正の値は影を広げ、負の値は影を縮めます。</dd>
+    <dd>この例では省略されているため、デフォルトの 0 になります。</dd>
+    <dt>色 (rgba(0, 0, 0, 0.15))</dt>
+    <dd>影の色を指定します。</dd>
+    <dd>rgba は赤 (Red)、緑 (Green)、青 (Blue)、透明度 (Alpha) を指定します。</dd>
+    <dd>この例では、黒 (0, 0, 0) で透明度が 0.15 の影を適用しています。</dd>
+   </dl>
+  </div>
+
+
+  <p>全体の効果として、このコードは要素に対して下方向に10ピクセルずらし、20ピクセルのぼかしを持つ、透明度15%の黒い影を追加していることになります。<br>
+   要素が浮き上がって見える効果を出していて、それを表全体に適用しているということですね。</p>
+
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/table_css.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

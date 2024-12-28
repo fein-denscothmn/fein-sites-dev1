@@ -1,0 +1,48 @@
+/* lua.css */
+.scoth-dropdown {
+ position: relative;
+ display: inline-block;
+}
+
+.scoth-dropdown-content {
+ display: none;
+ position: absolute;
+ background-color: #f9f9f9;
+ box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+ z-index: 1;
+ white-space: nowrap;
+ opacity: 0;
+ transition: opacity 0.5s;
+}
+
+.scoth-dropdown-content a {
+ color: #0078D4;
+ padding: 12px 16px;
+ text-decoration: none;
+ display: block;
+}
+
+.scoth-dropdown-content a:hover {
+ background-color: #f1f1f1;
+}
+
+.scoth-dropdown button {
+ background-color: rgba(85, 139, 47, 0.5);
+ color: #000000;
+ padding: 8px 15px;
+ border: 2px solid #558b2f;
+ border-radius: 5px;
+ cursor: pointer;
+ font-size: 14px;
+ transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.scoth-dropdown button:hover {
+ background-color: rgba(107, 142, 35, 0.7);
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.scoth-dropdown button:focus {
+ outline: none;
+ box-shadow: 0 0 0 3px rgba(85, 139, 47, 0.5);
+}

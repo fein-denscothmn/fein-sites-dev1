@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+
+ <!-- Microsoft tag -->
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+
+ <meta charset="UTF-8">
+
+ <!--基本のメタタグ-->
+ <meta name="description" content="PDFをWebサイトに掲載する際の工夫に関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta name="keywords" content="個人サイト, JavaScript, pdf">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="PDFをWebサイトに掲載する際の工夫">
+ <meta property="og:description" content="PDFをWebサイトに掲載する際の工夫に関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/pdf_preview.html">
+
+ <!--検索ヒット時のアイコン-->
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "PDFをWebサイトに掲載する際の工夫",
+  "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/pdf_preview.html",
+  "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+}
+</script>
+
+ <!--レスポンシブデザイン-->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!--CSS-->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <!--JavaScript-->
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <!-- gsapの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <!-- prismの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+
+ <!-- google fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+
+ <!--ページタイトル-->
+ <title>PDFをWebサイトに掲載する際の工夫</title>
+
+ <!--ASノーナのファビコン-->
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">PDFをWebサイトに掲載する際の工夫</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く
+    ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="PDFをWebサイトに掲載する際の工夫を開く ▼"
+   data-close-text="PDFをWebサイトに掲載する際の工夫を閉じる ▲">PDFをWebサイトに掲載する際の工夫の目次を開く
+   ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>PDFをWebサイトに掲載する際の工夫</span></h1>
+  <p>ウェブサイトでPDFを掲載する際、ユーザーエクスペリエンスを向上させ、PDFの利用がスムーズになるようにしたいものです。<br>
+   サイトの目的やユーザーのニーズに合わせて微調整できるとさらにいいですね。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(92).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <dt>明確なリンクテキスト</dt>
+   <dd>PDFへのリンクをわかりやすくするために、リンクテキストを明確にしましょう。<br>
+    例えば、「PDFダウンロード」ではなく、「製品マニュアル（PDF）」や「会議議事録（PDF）」など、リンク先の内容を具体的に示すと良いです。</dd>
+
+   <dt>プレビュー機能</dt>
+   <dd>これは当サイトで力を入れている部分です。<br>
+    いちいちPDFビューワーに飛ばされてたらたまらないからね。<br>
+    PDFのプレビュー機能を提供することで、ユーザーが内容を確認してからダウンロードするかどうかを判断できます。<br>
+    プレビュー機能は、GoogleドライブやPDF.jsなどのライブラリを使用して実装することができます。</dd>
+
+   <dt>ファイルサイズの表示</dt>
+   <dd>PDFのファイルサイズを表示することで、ユーザーがダウンロードに必要な時間を把握できるようにします。<br>
+    これは特に大きなファイルで重要なんですが、当サイトの場合はプレビュー機能を充実させることで、細かい記載を避けています。</dd>
+
+   <dt>モバイル対応</dt>
+   <dd>PDFのリンクや表示がモバイルデバイスでも快適に利用できるようにします。<br>
+    レスポンシブデザインを採用し、モバイルユーザーにとって使いやすい配置やサイズに調整します。</dd>
+   </dl>
+  </div>
+  <dl>
+
+   <h3>このページに関する注意事項</h3>
+   <p>当Webサイト作成者は、例示を目的としてマークアップ及びプログラミング例を提供しており、明示または黙示にかかわらず、いかなる責任も負わないものとします。<br>
+    このページは、説明されているマークアップ及びプログラミング言語、手順を作成およびデバッグするために使用される各種ツールに読者が精通していることを前提にしています。<br>
+    このページは、特定の機能を説明するのに役立つ可能性がありますが、当Webサイト作成者がこれらの例を変更した上で、特定の要件を満たすために追加の機能を提供したり、システムを構築したりすることはできません。<br>
+    加えて、この例の手順に従う場合は、読者の各種ファイルを事前にバックアップすることを推奨いたします。</p>
+
+   <h2>PDFのプレビュー表示</h2>
+   <p>ここは手強いですよ。<br>
+    まずはhtmlから行きます。<br>
+    全体を通して、このHTMLはPDFを表示し、ページを操作するための基本的な構造を持っています。</p>
+
+   <p class="gra">デフォルトでPDFをプレビュー表示するhtml</p>
+   <div class="code-container">
+    <pre><code class="language-html">
+&lt;!--head内部のCSS--&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/pdf.css&quot;&gt;
+&lt;!--head内部のJavaScript--&gt;
+    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;script/pdf.js&quot; defer&gt;&lt;/script&gt;
+
+&lt;!--body内部のhtml--&gt;
+ &lt;div class=&quot;feinpdf-container&quot;&gt;
+  &lt;div id=&quot;feinpdf-viewer&quot;&gt;&lt;/div&gt;
+   &lt;div class=&quot;feinpdfcontrols&quot;&gt;
+    &lt;button id=&quot;prev-page&quot;&gt;前のページへ&lt;/button&gt;
+    &lt;span&gt;Page: &lt;span id=&quot;page-num&quot;&gt;&lt;/span&gt; / &lt;span id=&quot;page-count&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;button id=&quot;next-page&quot;&gt;次のページへ&lt;/button&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+
+</code></pre>
+   </div>
+
+   <p><span class="codecolor">&lt;div class="feinpdf-container"&gt;</span><br>
+    全体を囲むコンテナで、PDFビューアの外枠にあたる部分です。<br>
+    デザインやレイアウトのために使用されます。</p>
+
+   <p><span class="codecolor">&lt;div id="feinpdf-viewer"&gt;&lt;/div&gt;</span><br>
+    ここにPDFが表示されます。<br>
+    この部分は空ですが、JavaScriptを使ってPDFを表示します。</p>
+
+   <p><span class="codecolor">&lt;div class="feinpdfcontrols"&gt;</span><br>
+    PDFを操作するためのボタンとページ情報を囲むコンテナです。<br>
+    ボタンの配置やデザインを整えます。</p>
+
+   <p><span class="codecolor">&lt;button id="prev-page"&gt;前のページへ&lt;/button&gt;</span><br>
+    前のページに戻るためのボタンです。<br>
+    クリックすると、JavaScriptが前のページを表示するように指示します。</p>
+
+   <p><span class="codecolor">&lt;span&gt;Page: &lt;span id="page-num"&gt;&lt;/span&gt; / &lt;span
+     id="page-count"&gt;&lt;/span&gt;&lt;/span&gt;</span><br>
+    現在のページ番号と総ページ数を表示します。<br>
+    JavaScriptがページ番号と総ページ数を更新します。</p>
+
+   <p><span class="codecolor">&lt;button id="next-page"&gt;次のページへ&lt;/button&gt;</span><br>
+    次のページに進むためのボタンです。<br>
+    クリックすると、JavaScriptが次のページを表示するように指示します。</p>
+
+   <h4>mozillaのPDF.js</h4>
+   <div class="flowerclearfix">
+    <div class="flowerfade-out">
+     <img src="/flower1/flower1(93).JPG" alt="フェードアウト効果の草花写真">
+    </div>
+    <P>link relのところにあるURLは、<a
+      href="https://mozilla.github.io/pdf.js/">PDF.js</a>というJavaScriptライブラリの最小化されたバージョンを指しています。<br>
+     PDF.jsはブラウザ上でPDFファイルを表示・解析するためのライブラリで、Mozillaが開発したプロジェクトです。<br>
+     これを使うと、PDFファイルをウェブページ上で直接表示できるようになるのです。<br>
+     Google Sitesでも似たようなことはできるけど、より高度なコントロールができます。<br>
+     これも導入しようと思ってたんですよねー。<br>
+     Mozillaは、主にFirefoxブラウザを開発していますが、PDF.jsもその一環として公開されているものです。</P>
+   </div>
+
+   <h4>mozillaとはどういう団体か</h4>
+   <p>Mozillaは、オープンウェブの推進とインターネットの利益を最大化することを目指す非営利団体です。<br>
+    ていうか、Webを体系的に学んだ人なら誰でも知ってる団体ですよ。</p>
+
+   <h5>Mozilla Foundation</h5>
+   <p>Mozilla Foundationは、カリフォルニア州に本拠を置く非営利団体で、Mozillaのコミュニティを支援し、インターネットの利益を最大化することを目指しています。<br>
+    Mozilla Foundationは、Mozillaの原則を支えるためのさまざまな組織の一部です。</p>
+
+   <h5>Mozilla Corporation</h5>
+   <p>Mozilla Corporationは、2005年に設立されたMozilla Foundationの完全子会社で、インターネット関連のアプリケーションの開発を統合・調整します。<br>
+    代表的な製品には、Firefoxブラウザがあります。</p>
+
+   <h5>Mozillaのミッション</h5>
+   <p>Mozillaのミッションは、インターネットをオープンでアクセスしやすいものに保つことです。<br>
+    Mozillaは、利益を最優先するのではなく、人々を優先することを目指しています。</p>
+
+
+   <h5>Mozillaのビジョン</h5>
+   <p>Mozillaのビジョンは、インターネットを健康で興味深く、すべての人に歓迎する場所にすることです。Mozillaは、オープンウェブの先駆者であり、インターネットの健康を守るために活動しています。<br>
+    Mozillaは、オープンソースの開発者コミュニティと協力して、Firefoxをはじめとするさまざまな製品を開発しています。<br>
+    Mozillaの活動は、インターネットが共有された公共資源であり続けることを目指しています。</p>
+
+   <p class="gra">参考サイト</p>
+   <ul>
+    <li><a href="https://www.mozilla.org/en-US/about/governance/organizations/">Mozilla Organizations</a>
+    </li>
+    <li><a href="https://www.mozilla.org/ja/about/">Mozilla では、ユーザーを利益よりも優先するブラウザーやアプリ、コード、ツールを作成しています</a>
+    </li>
+   </ul>
+
+   <h4>PDFのプレビュー表示（CSS）</h4>
+   <p>このCSSはPDFビューアのデザインとレイアウトを設定しています。<br>
+    .feinpdf-containerはコンテナの幅を80%に設定し、中央に配置、ボーダーやシャドウを追加。<br>
+    #feinpdf-viewerは幅を100%に設定し、高さを自動調整してスクロールバーを表示。<br>
+    .feincanvasはキャンバスの幅を100%にし、高さを自動調整。<br>
+    .feinpdfcontrolsはテキストを中央に配置し、余白を追加しています。<br>
+    ボタンにはパディングやマージン、背景色、ボーダー、カーソル、ホバー時の色変更が設定。<br>
+    @mediaクエリは画面幅が600ピクセル以下の場合のスタイルを調整しているという流れです。<br></p>
+   <p>これがhtml・JavaScriptと関連付いて動作しているんですよね。<br>
+    やたらと「fein」という名称にしているのは、「pdf-container」といった一般名称を乱用すると、Webサイトが大規模になってきたときにCSS同士が干渉してしまう可能性があるからです。<br>
+    自分で分からなくなってくるまえに、固有名詞というか、スペルを追加しています。</p>
+
+   <p class="codegra" id="pdf_css">デフォルトでPDFをプレビュー表示するpdf.css</p>
+   <div class="code-container">
+    <pre><code class="language-css">
+@charset "UTF-8";
+
+.feinpdf-container {
+    width: 80%;
+    margin: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+#feinpdf-viewer {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    position: relative;
+}
+
+.feincanvas {
+    width: 100% !important;
+    height: auto !important;
+    position: relative;
+}
+
+.feinpdfcontrols {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.feinpdfcontrols button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.feinpdfcontrols button:hover {
+    background-color: #0056b3;
+}
+
+.feinpdfcontrols span {
+    font-weight: bold;
+}
+
+/* レスポンシブデザイン対応 */
+@media (max-width: 600px) {
+    .feinpdf-container {
+        width: 100%;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+    #feinpdf-viewer {
+        width: 100%;
+        height: auto;
+        overflow: auto;
+        position: relative;
+    }
+
+    .feincanvas {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .feinpdfcontrols button {
+        padding: 3px 6px;
+        font-size: 12px;
+    }
+}
+   </code></pre>
+   </div>
+
+   <p><strong><span class="codecolor">.feinpdf-container:</span></strong></p>
+
+   <p><span class="codecolor">width: 80%;</span><br>親要素の幅に対して80%の幅を持つように設定。</p>
+   <p><span class="codecolor">margin: auto;</span><br>要素を中央に配置。</p>
+   <p><span class="codecolor">border: 1px solid #ddd;</span><br>要素の周りに薄い灰色の1ピクセルの枠線を追加。</p>
+   <p><span class="codecolor">padding: 10px;</span><br>要素の内部に10ピクセルの余白を追加。</p>
+   <p><span class="codecolor">border-radius: 10px;</span><br>要素の角を10ピクセルの半径で丸める。</p>
+   <p><span class="codecolor">box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);</span><br>要素に影を追加。</p>
+   <p><span class="codecolor">background-color: #fff;</span><br>要素の背景色を白に設定。</p>
+
+   <div class="flowerclearfix">
+    <div class="flowerfade-out">
+     <img src="/flower1/flower1(95).JPG" alt="フェードアウト効果の草花写真">
+    </div>
+    <p><strong><span class="codecolor">#feinpdf-viewer:</span></strong></p>
+
+    <p><span class="codecolor">width: 100%;</span><br>親要素の幅に対して100%の幅を持つように設定。</p>
+    <p><span class="codecolor">height: auto;</span><br>要素の高さを内容に応じて自動調整。</p>
+    <p><span class="codecolor">overflow: auto;</span><br>要素の内容が多い場合にスクロールバーを表示。</p>
+    <p><span class="codecolor">position: relative;</span><br>要素の位置を相対的に設定。</p>
+
+    <p><strong><span class="codecolor">.feincanvas:</span></strong></p>
+
+    <p><span class="codecolor">width: 100% !important;</span><br>幅を100%に設定し、他のスタイルを上書き。</p>
+   </div>
+
+
+   <p><span class="codecolor">height: auto !important;</span><br>高さを内容に応じて自動調整し、他のスタイルを上書き。</p>
+   <p><span class="codecolor">position: relative;</span><br>要素の位置を相対的に設定。</p>
+
+
+   <p><strong><span class="codecolor">.feinpdfcontrols:</span></strong></p>
+
+   <p><span class="codecolor">text-align: center;</span><br>要素内のテキストを中央に配置。</p>
+   <p><span class="codecolor">margin-top: 10px;</span><br>上部に10ピクセルの余白を追加。</p>
+
+   <p><strong><span class="codecolor">.feinpdfcontrols button:</span></strong></p>
+
+   <p><span class="codecolor">padding: 5px 10px;</span><br>ボタン内のテキストに対して5ピクセルの上下余白と10ピクセルの左右余白を追加。</p>
+   <p><span class="codecolor">margin: 0 5px;</span><br>左右に5ピクセルの余白を追加。</p>
+   <p><span class="codecolor">background-color: #007bff;</span><br>背景色を青に設定。</p>
+   <p><span class="codecolor">color: white;</span><br>テキストの色を白に設定。</p>
+   <p><span class="codecolor">border: none;</span><br>ボーダーを削除。</p>
+   <p><span class="codecolor">border-radius: 5px;</span><br>ボタンの角を5ピクセルの半径で丸める。</p>
+   <p><span class="codecolor">cursor: pointer;</span><br>ボタン上にカーソルが来たときにポインターを表示。</p>
+   <p><span class="codecolor">transition: background-color 0.3s ease;</span><br>背景色の変化を0.3秒かけて滑らかにする。</p>
+
+   <p><strong><span class="codecolor">.feinpdfcontrols button:hover:</span></strong></p>
+
+   <p><span class="codecolor">background-color: #0056b3;</span><br>ボタンにマウスオーバーしたときに背景色を濃い青に変更。</p>
+
+   <p><strong><span class="codecolor">.feinpdfcontrols span:</span></strong></p>
+
+   <p><span class="codecolor">font-weight: bold;</span><br>テキストを太字に設定。</p>
+   <p><span class="codecolor">@media (max-width: 600px);</span><br>画面の幅が600ピクセル以下の場合に適用するスタイル。</p>
+
+   <p><strong><span class="codecolor">.feinpdf-container:</span></strong></p>
+
+   <p><span class="codecolor">width: 100%;</span><br>親要素の幅に対して100%の幅を持つように設定。</p>
+   <p><span class="codecolor">padding: 5px;</span><br>要素の内部に5ピクセルの余白を追加。</p>
+   <p><span class="codecolor">box-sizing: border-box;</span><br>ボーダーとパディングを含めて要素のサイズを計算。</p>
+
+   <p><strong><span class="codecolor">#feinpdf-viewer:</span></strong></p>
+
+   <p><span class="codecolor">width: 100%;</span><br>親要素の幅に対して100%の幅を持つように設定。</p>
+   <p><span class="codecolor">height: auto;</span><br>要素の高さを内容に応じて自動調整。</p>
+   <p><span class="codecolor">overflow: auto;</span><br>要素の内容が多い場合にスクロールバーを表示。</p>
+   <p><span class="codecolor">position: relative;</span><br>要素の位置を相対的に設定。</p>
+
+   <p><strong><span class="codecolor">.feincanvas:</span></strong></p>
+
+   <p><span class="codecolor">width: 100% !important;</span><br>幅を100%に設定し、他のスタイルを上書き。</p>
+   <p><span class="codecolor">height: auto !important;</span><br>高さを内容に応じて自動調整し、他のスタイルを上書き。</p>
+
+   <p><strong><span class="codecolor">.feinpdfcontrols button:</span></strong></p>
+
+   <p><span class="codecolor">padding: 3px 6px;</span><br>ボタン内のテキストに対して3ピクセルの上下余白と6ピクセルの左右余白を追加。</p>
+   <p><span class="codecolor">font-size: 12px;</span><br>フォントサイズを12ピクセルに設定。</p>
+
+   <h4>PDFのプレビュー表示（JavaScript）</h4>
+   <p>これどうしようかな…<br>
+    思い切ってコメントアウトのみにしてみましょうか！</p>
+   <p class="codegra" id="pdf_js">デフォルトでPDFをプレビュー表示するpdf.js</p>
+   <div class="code-container">
+    <pre><code class="language-javascript">
+// PDF.jsの設定
+const url = '../another-eden/fein_report/grasta.pdf'; // PDFファイルのURLを設定
+const pdfjsLib = window['pdfjs-dist/build/pdf']; // PDF.jsライブラリを読み込む
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.min.js'; // ワーカーのURLを設定
+
+let pdfDoc = null,    // PDFドキュメントのオブジェクト
+    pageNum = 1,     // 現在のページ番号
+    pageRendering = false, // ページがレンダリング中かどうかのフラグ
+    pageNumPending = null, // 保留中のページ番号
+    feincanvas = document.createElement('canvas'), // キャンバス要素を作成
+    ctx = feincanvas.getContext('2d'); // キャンバスの2Dコンテキストを取得
+
+// キャンバスをPDFビューアのコンテナに追加
+document.getElementById('feinpdf-viewer').appendChild(feincanvas);
+
+// PDFをレンダリングする関数
+function renderPage(num) {
+    pageRendering = true;
+    pdfDoc.getPage(num).then(page => {
+        const containerWidth = document.getElementById('feinpdf-viewer').clientWidth; // ビューアの幅を取得
+        const viewport = page.getViewport({ scale: 1 }); // ページのビューポートを取得
+        const scale = containerWidth / viewport.width; // スケールを計算
+        const scaledViewport = page.getViewport({ scale: scale }); // スケールを適用したビューポートを取得
+
+        feincanvas.height = scaledViewport.height; // キャンバスの高さを設定
+        feincanvas.width = scaledViewport.width; // キャンバスの幅を設定
+
+        const renderContext = {
+            canvasContext: ctx,
+            viewport: scaledViewport
+        }; // レンダリングコンテキストを設定
+
+        const renderTask = page.render(renderContext); // ページをレンダリング
+
+        renderTask.promise.then(() => {
+            pageRendering = false; // レンダリングが終了
+            if (pageNumPending !== null) {
+                renderPage(pageNumPending); // 保留中のページをレンダリング
+                pageNumPending = null;
+            }
+        });
+    });
+
+    document.getElementById('page-num').textContent = num; // 現在のページ番号を表示
+}
+
+// 次のページをレンダリングする関数
+function queueRenderPage(num) {
+    if (pageRendering) {
+        pageNumPending = num; // ページレンダリングが保留中の場合、次のページ番号を設定
+    } else {
+        renderPage(num); // 直ちにページをレンダリング
+    }
+}
+
+// PDFのドキュメントを取得してレンダリングを開始
+pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
+    pdfDoc = pdfDoc_;
+    document.getElementById('page-count').textContent = pdfDoc.numPages; // 総ページ数を表示
+    renderPage(pageNum); // 最初のページをレンダリング
+});
+
+// 前のページボタンのイベントリスナー
+document.getElementById('prev-page').addEventListener('click', () => {
+    if (pageNum <= 1) {
+        return; // 最初のページの場合、動作なし
+    }
+    pageNum--;
+    queueRenderPage(pageNum); // 前のページをレンダリング
+});
+
+// 次のページボタンのイベントリスナー
+document.getElementById('next-page').addEventListener('click', () => {
+    if (pageNum >= pdfDoc.numPages) {
+        return; // 最後のページの場合、動作なし
+    }
+    pageNum++;
+    queueRenderPage(pageNum); // 次のページをレンダリング
+});
+    </code></pre>
+   </div>
+
+   <p>このJavaScriptは、PDF.jsを使ってPDFをブラウザで表示し、ページを切り替えるためのものです。</p>
+   <div class="flowerclearfix">
+    <div class="flowerfade-out">
+     <img src="/flower1/flower1(96).JPG" alt="フェードアウト効果の草花写真">
+    </div>
+    <ul>
+     <li>最初にPDFファイルのURLを設定し、PDF.jsライブラリを読み込みます。</li>
+     <li>
+      <code>pdfDoc</code>、<code>pageNum</code>、<code>pageRendering</code>、<code>pageNumPending</code>などの変数を定義し、PDFドキュメントやレンダリング状態を管理します。
+     </li>
+     <li>新しいキャンバス要素を作成し、それをPDFビューアのコンテナに追加します。</li>
+     <li><code>renderPage</code>関数は、指定されたページ番号のPDFページをレンダリングし、キャンバスに描画します。ページの幅に合わせてスケールを調整し、適切な大きさにレンダリングします。
+     </li>
+     <li><code>queueRenderPage</code>関数は、レンダリング中に次のページを指定された場合に、保留中のページ番号を設定します。レンダリングが完了したら保留中のページをレンダリングします。
+     </li>
+     <li>PDFドキュメントの読み込みが完了すると、最初のページをレンダリングし、総ページ数を表示します。</li>
+     <li>前のページと次のページへの移動は、それぞれボタンのイベントリスナーで処理されます。ボタンをクリックすると、現在のページ番号を変更し、対応するページをレンダリングします。</li>
+    </ul>
+   </div>
+
+   <h3>同じページに複数のPDFがある場合（CSS）</h3>
+
+   <p>CSSのほうはさほど大きな違いはないですね。<br>
+    デフォルトではPDFを閉じてあるというだけです。</p>
+
+   <p class="codegra" id="addpdf_css">複数のPDFがある場合のaddpdf.css</p>
+   <div class="code-container">
+    <pre><code class="language-css">
+@charset "UTF-8";
+
+.addpdfhidden {
+    display: none; /* 要素を非表示にします。 */
+}
+
+.pdf-link-add {
+    padding: 8px 15px; /* 内側の余白を上下8ピクセル、左右15ピクセルに設定します。 */
+    margin: 10px 0; /* 上下に10ピクセルの余白を追加します。 */
+    background-color: #28a745; /* 背景色を緑色に設定します。 */
+    color: white; /* 文字色を白に設定します。 */
+    border: none; /* 境界線をなしに設定します。 */
+    border-radius: 50px; /* 角を丸くします。 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 要素に影を追加します。影の位置は下に4ピクセル、広がりは6ピクセル、色は黒の10%透明です。 */
+    font-size: 14px; /* フォントサイズを14ピクセルに設定します。 */
+    font-weight: bold; /* フォントを太字に設定します。 */
+    cursor: pointer; /* カーソルをポインターに変更します。 */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* 背景色と影の変化にアニメーションを追加します。 */
+    display: inline-block; /* 要素をインラインブロックに設定します。 */
+    letter-spacing: 1px; /* 文字間隔を1ピクセルに設定します。 */
+}
+
+.pdf-link-add:hover {
+    background-color: #218838; /* ホバー時の背景色を濃い緑色に設定します。 */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* ホバー時の影を追加します。影の位置は下に6ピクセル、広がりは8ピクセル、色は黒の20%透明です。 */
+}
+
+.pdf-link-add:active {
+    background-color: #1e7e34; /* クリック時の背景色をさらに濃い緑色に設定します。 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* クリック時の影を追加します。影の位置は下に2ピクセル、広がりは4ピクセル、色は黒の20%透明です。 */
+}
+
+.TESTpdf-container-add {
+    width: 80%; /* 要素の幅を80%に設定します。 */
+    margin: auto; /* 要素を中央揃えにします。 */
+    border: 1px solid #ddd; /* 要素の周りに薄い灰色の境界線を追加します。 */
+    padding: 10px; /* 内側の余白を10ピクセルに設定します。 */
+    border-radius: 10px; /* 角を丸くします。 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 要素に影を追加します。影の位置は下に4ピクセル、広がりは8ピクセル、色は黒の10%透明です。 */
+    background-color: #fff; /* 背景色を白に設定します。 */
+}
+
+.TESTpdf-viewer-add {
+    width: 100%; /* 要素の幅を100%に設定します。 */
+    height: auto; /* 要素の高さを自動調整します。 */
+    overflow: auto; /* 要素の内容が溢れた場合にスクロールバーを表示します。 */
+    position: relative; /* 要素の位置を相対的に設定します。 */
+}
+
+.TESTcanvas {
+    width: 100% !important; /* 要素の幅を100%に設定します。 */
+    height: auto !important; /* 要素の高さを自動調整します。 */
+    position: relative; /* 要素の位置を相対的に設定します。 */
+}
+
+.TESTpdfcontrols-add {
+    text-align: center; /* テキストを中央揃えにします。 */
+    margin-top: 10px; /* 上部に10ピクセルの余白を追加します。 */
+}
+
+.TESTpdfcontrols-add button {
+    padding: 8px 15px; /* 内側の余白を上下8ピクセル、左右15ピクセルに設定します。 */
+    margin: 0 5px; /* 左右に5ピクセルの余白を追加します。 */
+    background-color: #007bff; /* 背景色を青色に設定します。 */
+    color: white; /* 文字色を白に設定します。 */
+    border: none; /* 境界線をなしに設定します。 */
+    border-radius: 50px; /* 角を丸くします。 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 要素に影を追加します。影の位置は下に4ピクセル、広がりは6ピクセル、色は黒の10%透明です。 */
+    font-size: 14px; /* フォントサイズを14ピクセルに設定します。 */
+    font-weight: bold; /* フォントを太字に設定します。 */
+    cursor: pointer; /* カーソルをポインターに変更します。 */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* 背景色と影の変化にアニメーションを追加します。 */
+}
+
+.TESTpdfcontrols-add button:hover {
+    background-color: #0056b3; /* ホバー時の背景色を濃い青色に設定します。 */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* ホバー時の影を追加します。影の位置は下に6ピクセル、広がりは8ピクセル、色は黒の20%透明です。 */
+}
+
+.TESTpdfcontrols-add button:active {
+    background-color: #004494; /* クリック時の背景色をさらに濃い青色に設定します。 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* クリック時の影を追加します。影の位置は下に2ピクセル、広がりは4ピクセル、色は黒の20%透明です。 */
+}
+
+.TESTpdfcontrols-add span {
+    font-weight: bold; /* フォントを太字に設定します。 */
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 600px) {
+    .TESTpdf-container-add {
+        width: 100%; /* 要素の幅を100%に設定します。 */
+        padding: 5px; /* 内側の余白を5ピクセルに設定します。 */
+        box-sizing: border-box; /* ボックスのサイズを境界線と内側の余白を含むように設定します。 */
+    }
+
+    .TESTpdf-viewer-add {
+        width: 100%; /* 要素の幅を100%に設定します。 */
+        height: auto; /* 要素の高さを自動調整します。 */
+        overflow: auto; /* 要素の内容が溢れた場合にスクロールバーを表示します。 */
+        position: relative; /* 要素の位置を相対的に設定します。 */
+    }
+
+    .TESTcanvas {
+        width: 100% !important; /* 要素の幅を100%に設定します。 */
+        height: auto !important; /* 要素の高さを自動調整します。 */
+    }
+
+    .TESTpdfcontrols-add button {
+        padding: 5px 10px; /* 内側の余白を上下5ピクセル、左右10ピクセルに設定します。 */
+        font-size: 12px; /* フォントサイズを12ピクセルに設定します。 */
+    }
+}
+
+    </code></pre>
+   </div>
+
+   <h3>同じページに複数のPDFがある場合（JavaScript）</h3>
+
+   <p>同じページに複数のPDFがある場合、その全てのPDFのプレビューを開いていたらWebページは重くなってしまいます。<br>
+    ユーザーがボタンを押したときのみプレビューを表示するようにできれば、大量のPDF文書を並べてもレスポンスに大きな影響は与えません。<br>
+    まず、コメントアウトを入れたコードを提示します。
+   </p>
+
+   <p class="codegra" id="addpdf_js">複数のPDFがある場合のaddpdf.js</p>
+   <div class="code-container">
+    <pre><code class="language-javascript">
+const pdfjsLib = window['pdfjs-dist/build/pdf'];
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.min.js'; /* PDF.jsのワーカーのURLを設定します。 */
+
+document.querySelectorAll('.pdf-link-add').forEach((link, index) => {
+    let isOpen = false; /* PDFビューアが開いているかどうかを追跡するフラグです。 */
+    link.addEventListener('click', function () {
+        const url = this.getAttribute('data-url'); /* クリックされたリンクのデータURL属性を取得します。 */
+        const fileName = url.substring(url.lastIndexOf('/') + 1); /* URLからファイル名を抽出します。 */
+        const container = document.querySelectorAll('.TESTpdf-container-add')[index]; /* 対応するPDFコンテナを取得します。 */
+        const viewer = container.querySelector('.TESTpdf-viewer-add'); /* PDFビューア要素を取得します。 */
+        const prevButton = container.querySelector('.prev-page-add'); /* 前のページボタンを取得します。 */
+        const nextButton = container.querySelector('.next-page-add'); /* 次のページボタンを取得します。 */
+        const pageNumElement = container.querySelector('.page-num-add'); /* 現在のページ番号を表示する要素を取得します。 */
+        const pageCountElement = container.querySelector('.page-count-add'); /* 総ページ数を表示する要素を取得します。 */
+
+        if (isOpen) {
+            container.classList.add('addpdfhidden'); /* PDFコンテナを非表示にします。 */
+            this.textContent = `${fileName} を開く`; /* リンクのテキストを「開く」に変更します。 */
+            isOpen = false; /* フラグを更新してPDFビューアが閉じていることを示します。 */
+        } else {
+            container.classList.remove('addpdfhidden'); /* PDFコンテナを表示します。 */
+            this.textContent = `${fileName} を閉じる`; /* リンクのテキストを「閉じる」に変更します。 */
+            loadPDF(url, container, viewer, prevButton, nextButton, pageNumElement, pageCountElement); /* PDFを読み込みます。 */
+            isOpen = true; /* フラグを更新してPDFビューアが開いていることを示します。 */
+        }
+    });
+});
+
+function loadPDF(url, container, viewer, prevButton, nextButton, pageNumElement, pageCountElement) {
+    const canvas = document.createElement('canvas'); /* 新しいキャンバス要素を作成します。 */
+    viewer.innerHTML = ''; /* ビューアの内容をクリアします。 */
+    viewer.appendChild(canvas); /* キャンバスをビューアに追加します。 */
+
+    let pdfDoc = null,
+        pageNum = 1, /* 現在のページ番号を初期化します。 */
+        pageRendering = false, /* ページがレンダリング中かどうかを追跡するフラグです。 */
+        pageNumPending = null, /* レンダリング待ちのページ番号です。 */
+        ctx = canvas.getContext('2d'); /* キャンバスの2Dコンテキストを取得します。 */
+
+    function renderPage(num) {
+        pageRendering = true; /* ページがレンダリング中であることを示します。 */
+        pdfDoc.getPage(num).then(page => {
+            const containerWidth = viewer.clientWidth; /* ビューアの幅を取得します。 */
+            const scale = 3; /* ページのスケールを設定します。 */
+            const viewport = page.getViewport({ scale: scale }); /* ページのビューポートを取得します。 */
+
+            canvas.height = viewport.height; /* キャンバスの高さを設定します。 */
+            canvas.width = viewport.width; /* キャンバスの幅を設定します。 */
+
+            const renderContext = {
+                canvasContext: ctx,
+                viewport: viewport
+            };
+            const renderTask = page.render(renderContext); /* ページをレンダリングします。 */
+
+            renderTask.promise.then(() => {
+                canvas.style.width = `${containerWidth}px`; /* キャンバスの幅をビューアの幅に合わせます。 */
+                canvas.style.height = "auto"; /* キャンバスの高さを自動調整します。 */
+
+                pageRendering = false; /* ページのレンダリングが完了したことを示します。 */
+                if (pageNumPending !== null) {
+                    renderPage(pageNumPending); /* レンダリング待ちのページがあればレンダリングします。 */
+                    pageNumPending = null; /* レンダリング待ちのページ番号をクリアします。 */
+                }
+            });
+        });
+
+        pageNumElement.textContent = num; /* 現在のページ番号を表示します。 */
+    }
+
+    function queueRenderPage(num) {
+        if (pageRendering) {
+            pageNumPending = num; /* ページがレンダリング中の場合、待ち行列に追加します。 */
+        } else {
+            renderPage(num); /* ページがレンダリング中でない場合、すぐにレンダリングします。 */
+        }
+    }
+
+    pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
+        pdfDoc = pdfDoc_; /* PDFドキュメントを取得します。 */
+        pageCountElement.textContent = pdfDoc.numPages; /* 総ページ数を表示します。 */
+        renderPage(pageNum); /* 最初のページをレンダリングします。 */
+    });
+
+    prevButton.addEventListener('click', () => {
+        if (pageNum &lt;= 1) {
+            return; /* 現在のページが最初のページの場合、何もしません。 */
+        }
+        pageNum--; /* ページ番号を減少させます。 */
+        queueRenderPage(pageNum); /* 前のページをレンダリングします。 */
+    });
+
+    nextButton.addEventListener('click', () => {
+        if (pageNum >= pdfDoc.numPages) {
+            return; /* 現在のページが最後のページの場合、何もしません。 */
+        }
+        pageNum++; /* ページ番号を増加させます。 */
+        queueRenderPage(pageNum); /* 次のページをレンダリングします。 */
+    });
+}
+</code></pre>
+   </div>
+
+   <p>このコードはPDF.jsライブラリを使用してウェブページ上でPDFファイルを表示し、ページ間を移動する機能を提供します。<br>
+    今度はコメントアウトではなく、コードはそのまま掲載します。<br>
+    そのうえで、このコードが何をしているのか、おおまかな流れを説明します。</p>
+
+   <h5>PDF.jsの設定</h5>
+   <p class="gra">ライブラリを読み込むJavaScript</p>
+   <div class="code-container">
+    <pre><code class="language-javascript">
+const pdfjsLib = window['pdfjs-dist/build/pdf'];
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.min.js';
+    </code></pre>
+   </div>
+   <p>PDF.jsライブラリを読み込み、ワーカーのURLを設定します。</p>
+
+   <h5>リンクのクリックイベント設定</h5>
+   <p class="gra">クリックイベントを設定するJavaScript</p>
+   <div class="code-container">
+    <pre><code class="language-javascript">
+document.querySelectorAll('.pdf-link-add').forEach((link, index) => {
+    let isOpen = false;
+    link.addEventListener('click', function () {
+        const url = this.getAttribute('data-url');
+        const fileName = url.substring(url.lastIndexOf('/') + 1);
+        const container = document.querySelectorAll('.TESTpdf-container-add')[index];
+        const viewer = container.querySelector('.TESTpdf-viewer-add');
+        const prevButton = container.querySelector('.prev-page-add');
+        const nextButton = container.querySelector('.next-page-add');
+        const pageNumElement = container.querySelector('.page-num-add');
+        const pageCountElement = container.querySelector('.page-count-add');
+
+        if (isOpen) {
+            container.classList.add('addpdfhidden');
+            this.textContent = `${fileName} を開く`;
+            isOpen = false;
+        } else {
+            container.classList.remove('addpdfhidden');
+            this.textContent = `${fileName} を閉じる`;
+            loadPDF(url, container, viewer, prevButton, nextButton, pageNumElement, pageCountElement);
+            isOpen = true;
+        }
+    });
+});
+    </code></pre>
+   </div>
+
+   <ul>
+    <li>.pdf-link-addクラスのリンクにクリックイベントを設定します。</li>
+    <li>クリックされたリンクのデータURLを取得し、対応するPDFコンテナとビューアを取得します。</li>
+    <li>PDFコンテナの表示・非表示を切り替え、PDFを読み込む関数を呼び出します。</li>
+   </ul>
+
+   <h5>PDFの読み込みと表示</h5>
+
+   <p class="gra">PDFを表示するJavaScript</p>
+   <div class="code-container">
+    <pre><code class="language-javascript">
+function loadPDF(url, container, viewer, prevButton, nextButton, pageNumElement, pageCountElement) {
+    const canvas = document.createElement('canvas');
+    viewer.innerHTML = '';
+    viewer.appendChild(canvas);
+
+    let pdfDoc = null,
+        pageNum = 1,
+        pageRendering = false,
+        pageNumPending = null,
+        ctx = canvas.getContext('2d');
+
+    function renderPage(num) {
+        pageRendering = true;
+        pdfDoc.getPage(num).then(page => {
+            const containerWidth = viewer.clientWidth;
+            const scale = 3;
+            const viewport = page.getViewport({ scale: scale });
+
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+
+            const renderContext = {
+                canvasContext: ctx,
+                viewport: viewport
+            };
+            const renderTask = page.render(renderContext);
+
+            renderTask.promise.then(() => {
+                canvas.style.width = `${containerWidth}px`;
+                canvas.style.height = "auto";
+
+                pageRendering = false;
+                if (pageNumPending !== null) {
+                    renderPage(pageNumPending);
+                    pageNumPending = null;
+                }
+            });
+        });
+
+        pageNumElement.textContent = num;
+    }
+
+    function queueRenderPage(num) {
+        if (pageRendering) {
+            pageNumPending = num;
+        } else {
+            renderPage(num);
+        }
+    }
+
+    pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
+        pdfDoc = pdfDoc_;
+        pageCountElement.textContent = pdfDoc.numPages;
+        renderPage(pageNum);
+    });
+
+    prevButton.addEventListener('click', () => {
+        if (pageNum &lt;= 1) {
+            return;
+        }
+        pageNum--;
+        queueRenderPage(pageNum);
+    });
+
+    nextButton.addEventListener('click', () => {
+        if (pageNum >= pdfDoc.numPages) {
+            return;
+        }
+        pageNum++;
+        queueRenderPage(pageNum);
+    });
+}
+    </code></pre>
+   </div>
+
+   <ul>
+    <li>loadPDF関数は、指定されたURLのPDFを読み込み、キャンバスに表示します。</li>
+    <li>renderPage関数は、指定されたページ番号のPDFページをレンダリングします。</li>
+    <li>queueRenderPage関数は、ページがレンダリング中の場合に次のページを待ち行列に追加します。</li>
+    <li>前のページボタンと次のページボタンにクリックイベントを設定し、ページ間を移動できるようにします。</li>
+   </ul>
+
+   <p>このようにして、PDFファイルをウェブページ上で表示し、ページ間を移動する機能を実現しています。</p>
+
+   <!-- ●ここから人間用のフッター● -->
+   <hr id="feinhr">
+   <div class="spacer"></div>
+
+   <section class="sitemap">
+    <h2 class="sitemap_heading">サイトマップ</h2>
+    <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+      アナザーエデン関連ページ・サイトマップ</a></p>
+    <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+     期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+     もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+    <div class="spacer"></div>
+    <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+      個人サイトのホスティングとコンテンツ作成</a></p>
+    <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+     HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+     Webデザインやレイアウトについても書いてあります。</p>
+    <div class="spacer"></div>
+    <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+    <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+     このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+     アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+   </section>
+
+   <!-- ページ上部へ戻るボタン -->
+   <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+   <script src="/script/feinScroll.js"></script>
+
+   <div class="spacer"></div>
+
+   <footer>
+    <!--common google digital leader-->
+
+    <div id="commongdl"></div>
+    <script src="/externalization/common.js"></script>
+
+    <div class="spacer"></div>
+
+    <!--w3cバリデーターに合格していることを示す-->
+    <div class="w3ccheck">
+     <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/pdf_preview.html">
+      <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+     </a>
+     <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+      <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+     </a>
+    </div>
+    <!--w3cバリデーターに合格していることを示す-->
+
+    <div class="spacer"></div>
+    <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+      site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+     を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+    <script>
+     document.addEventListener('DOMContentLoaded', function () {
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, '0');
+      const day = String(today.getDate()).padStart(2, '0');
+      const dateElement = document.getElementById('updated-date');
+      dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+     });
+    </script>
+
+   </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

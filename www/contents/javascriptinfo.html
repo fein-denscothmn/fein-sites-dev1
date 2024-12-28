@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+
+ <!-- Microsoft tag -->
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+
+ <meta charset="UTF-8">
+
+ <!--基本のメタタグ-->
+ <meta name="description" content="JavaScriptの書き方に関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta name="keywords" content="個人サイト, JavaScript, 書き方">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="個人サイトでよく使うJavaScript">
+ <meta property="og:description" content="JavaScriptの書き方に関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/javascriptinfo.html">
+
+ <!--検索ヒット時のアイコン-->
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "個人サイトでよく使うJavaScript",
+  "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/javascriptinfo.html",
+  "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+}
+</script>
+
+ <!--レスポンシブデザイン-->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!--CSS-->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <!--JavaScript-->
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <!-- gsapの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <!-- prismの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+
+ <!-- google fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+
+ <!--ページタイトル-->
+ <title>個人サイトでよく使うJavaScript</title>
+
+ <!--ASノーナのファビコン-->
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">個人サイトでよく使うJavaScript</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く
+    ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="個人サイトでよく使うJavaScriptの目次を開く ▼"
+   data-close-text="個人サイトでよく使うJavaScriptの目次を閉じる ▲">個人サイトでよく使うJavaScriptの目次を開く
+   ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>個人サイトでよく使うJavaScript</span></h1>
+
+  <p>このあたりから敷居が上がってくるんですよね。
+   私も学生時代は大苦戦しました。
+   HTML＋CSSだけなら、さほどでもないんですよ。─ CSSも凝ってくるとややこしいけど。 ─
+   JavaScriptが絡んでくると実装に手間がかかってきます。</p>
+  <p>私の場合は学生時代に組んだものがコード資産として大量に残っているから良いけど、個人サイトをイチから作ろうと
+   した場合、JavaScriptのあたりがキツいという人はいっぱいいると思うんですよね。<br>
+   そういう意味でも、個人サイトを作るなら手書きではなくて手軽なウェブサイトビルダーを使うのが良いと思います。<br>
+   Google SitesかBloggerが私からのお勧めです。
+  </p>
+
+  <h3>このページに関する注意事項</h3>
+  <p>当Webサイト作成者は、例示を目的としてマークアップ及びプログラミング例を提供しており、明示または黙示にかかわらず、いかなる責任も負わないものとします。<br>
+   このページは、説明されているマークアップ及びプログラミング言語、手順を作成およびデバッグするために使用される各種ツールに読者が精通していることを前提にしています。<br>
+   このページは、特定の機能を説明するのに役立つ可能性がありますが、当Webサイト作成者がこれらの例を変更した上で、特定の要件を満たすために追加の機能を提供したり、システムを構築したりすることはできません。<br>
+   加えて、この例の手順に従う場合は、読者の各種ファイルを事前にバックアップすることを推奨いたします。</p>
+
+  <h3>動作を決めているJavaScript</h3>
+  <p>乱用は禁物だと私は思っているんだけど、必要と思われるところに目立たぬよう小さな機能が実装されていたりすると、閲覧者にとって便利なツールになるんですよ。<br>
+   一方、無理にフロントエンドで実装するよりサーバーサイドスクリプトでやってしまったほうがラクと思われる機能もあります。</p>
+
+  <h5>動的なコンテンツの追加</h5>
+  <p>JavaScriptを使うと、Webページに動的なコンテンツを追加できます。<br>
+   例えば、ボタンをクリックすると新しい情報が表示されたり、画像が切り替わったりするのは、JavaScriptのおかげです。</p>
+
+  <h5>ユーザーインタラクションの向上</h5>
+  <p>JavaScriptを使って、ユーザーの操作に応じてリアルタイムに反応することができます。<br>
+   フォームに入力した内容の確認や、リアルタイムの検索結果表示など。</p>
+
+  <h5>データの操作</h5>
+  <p>JavaScriptは、Webページ上でデータを操作するためにも使われます。<br>
+   ユーザーから入力されたデータを収集して、サーバーに送信したり、サーバーから取得したデータを表示することができます。</p>
+
+  <h5>アニメーションの実装</h5>
+  <p>JavaScriptを使えば、Webページ上でアニメーションを実装することもできます。<br>
+   スクロールに応じてエフェクトが発生したり、要素がフェードイン・アウトするなど。</p>
+  <p>これはお勧めですよ。<br>
+   さりげなく実装しておけば、一気に映えるサイトにできます。</p>
+
+  <h2>JavaScriptも外部化するのがお勧めです</h2>
+  <p>JavaScriptもCSSと同じで、こうやって外部化するのを強くお勧めします。<br>
+   CSSも凝ってくるとものすごいコードになってきますし、それに加えてJavaScriptまでhtml内部に入れていると、後から地獄ですよ？<br>
+   コードの関連付けまでグチャグチャになってしまうと、もう更新の継続は現実的ではありません。<br>
+   柔軟な仕様変更にも対応できるよう、初めから仕込んでおくのがお勧めです。
+  </p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;!--JavaScript--&gt;
+    &lt;script src=&quot;script/feinfade.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;script/collapsible.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;script/underline.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;script/pdf.js&quot; defer&gt;&lt;/script&gt;
+    </code></pre>
+  </div>
+  <p>これまたモノと諸事情によってはhtml内部にそのままJavaScriptを書くこともあるんです。<br>
+   もうそこにしか使わないことが分かっているような、特殊な動きを作ったりとか。<br>
+   でもそうでないものは基本原則として外部化するようにしています。<br>
+   しっかり説明しましょうかね…そこそこコードを書ける人でも個人サイトが続かなくなる、最たる原因だと私は思ってる。</p>
+
+  <h3>JavaScriptやCSSを外部化するメリット</h3>
+
+  <h5>コードの再利用性</h5>
+  <p>JavaScriptやCSSを外部ファイルに保存すると、同じファイルを複数のページで使い回すことができます。<br>
+   これにより、一度書いたコードを何度も書き直す必要がなくなり、効率が向上します。<br>
+   <strong>「再利用性の向上」は、外部化の大きなメリット</strong>。<br>
+   これほんと強いですよ？<br>
+   一か所書いてしまえば、そのコードをいくらでも使い回せる。
+  </p>
+
+  <h5>コードの保守性</h5>
+  <p>外部ファイルにコードを分離すると、HTMLファイルがすっきりして見やすくなります。<br>
+   こうすることで<strong>「保守が容易になり、バグの発見や修正が簡単に」</strong>なります。<br>
+   特に大規模なプロジェクトでは、このメリットが非常に大きいです。<br>
+   さらに言うと、個人サイトみたいな小規模プロジェクトでも同じですよ？<br>
+   保守性をきちんとしておけば、楽しい作業だけに没頭できるのですから。</p>
+
+  <h5>ページの読み込み速度</h5>
+  <p>ブラウザは外部ファイルをキャッシュ（保存）することで、次回以降の読み込みを高速化します。<br>
+   かなり長大なコードじゃないと変化は実感しにくいものの、<strong>「ユーザー体験が向上し、ページの表示速度が速くなる」</strong>。<br>
+   ページの読み込みが速いと、ユーザーが快適にサイトを利用できます。<br>
+   まぁ…ここはね。キャッシュがどうの以前に、広告が表示される個人サイトが多いので😥<br>
+   やるならさりげなく置いたほうが利益にも繋がると、私は過去の経験から学んでいるんですけどね？<br>
+   なぜユーザーの邪魔になるような広告の置き方をするのか。</p>
+
+  <h5>作業の分担と協力</h5>
+  <p>個人サイトには関係ないけど…─ いやむしろ個人サイトレベルで複数人作業なんか下手にやると、トラブルの遠因になりますよ！
+   ─<br>複数の開発者がプロジェクトに関わる場合、外部ファイルにすることで<strong>「作業の分担がしやすくなり」、各自の役割が明確に</strong>なります。<br>
+   フロントエンド開発者がHTMLとCSSを、バックエンド開発者がJavaScriptを担当するなど、<strong>効率的に協力して開発</strong>が進められます。</p>
+
+  <h5>セキュリティの向上</h5>
+  <p>JavaScriptやCSSを外部ファイルに分けることで、<strong>「コードの管理が容易に」</strong>なり、不正な変更を防ぐための対策がしやすくなります。<br>
+   重要なコードや機密情報を適切に保護することが可能になります。<br>
+   自分でもワケが分からなくようなコードは、初めから置かない。<br>
+   これでしょ。</p>
+
+  <h5>むしろ、コードの外部化は必須かもね？</h5>
+  <p>
+   JavaScriptやCSSを外部化することで、<strong>「再利用性の向上」「保守性の向上」「ページの読み込み速度の向上」「作業の分担と協力のしやすさ」「セキュリティの向上」</strong>といった多くのメリットがあります。<br>
+   これにより、効率的で安全かつ、長期継続可能な個人サイト制作が可能になります。</p>
+
+  <p class="gra">参考サイト</p>
+  <p><a
+    href="https://www.freecodecamp.org/news/the-relationship-between-html-css-and-javascript-explained-by-building-a-city-a73a69c6343/">The
+    relationship between HTML, CSS and JavaScript explained by building a city</a><br>
+  </p>
+  <p><a href="https://www.freecodecamp.org/">freeCodeCamp</a>（フリーコードキャンプ）は、2014年にクインシー・ラロン（Quincy
+   Larson）によって設立された非営利団体です。<br>
+   この組織は、無料のオンラインリソースを使って、人々を技術のキャリアに導くことを目的としており、学習プラットフォーム、チャットルーム、メディア出版物などを提供し、誰でもアクセスしやすい学習環境を提供しています。<br>
+   特に、HTML、CSS、JavaScriptなどの基本的なプログラミングスキルを学ぶためのチュートリアルやプロジェクトが充実しており、無料で提供されています。<br>
+   また、学習者がプロジェクトを通じてスキルを磨き、無料の認定資格を取得できるようにサポートしてるんですよね。<br>
+   <a href="https://www.mozilla.org/ja/">Mozilla</a>以外にもすごい組織はいっぱいありますよ。<br>
+   freeCodeCampは、多くのボランティアと寄付者の支援を受けて運営されており、世界中で利用されています。
+  </p>
+
+  <h2>画像のフェードインとフェードアウト</h2>
+  <p>グラスタの場所一覧表ページでは、ユーザーのスクロールに従って画像がフェードイン＆フェードアウトするよう、効果を付けています。<br>
+   これについて説明しましょう。<br>
+   CSSとJavaScript、双方が関係しあって、HTMLの画像に作用するようになっています。</p>
+
+  <p>この効果、既にCSSとJavaScriptは外部化されているので、他のいろんなページに使うことができますよ。<br>
+   例えば魚コーナーに使うこともできるし、カエル写真集に使ったっていいし。<br>
+   ここにこうやって解説ページを作っておくことで、私もコードを整理しやすいのです。<br>
+   自分のサイトを見ればコードが解説付きで保管されていることになるからね。</p>
+
+  <h4>画像のフェードインとフェードアウト（CSS）</h4>
+  <p>「fade-in-out」クラスを持つ画像があります。<br>
+   これが「visible」クラスが追加されたときにフェードインし、「visible」クラスが削除されたときにフェードアウトするようになっています。</p>
+
+  <div class="code-container">
+   <pre><code class="language-css">
+/* フェードイン・フェードアウトのアニメーション */
+img.fade-in-out {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+img.fade-in-out.visible {
+    opacity: 1;
+}
+        </code></pre>
+  </div>
+
+  <p><span class="codecolor">opacity: 0;</span><br>
+   画像の透明度を0に設定します。<br>
+   画像は完全に見えなくなります。</p>
+
+  <p><span class="codecolor">transition: opacity 1s ease-in-out;</span><br>
+   透明度が変化する際のアニメーションの設定です。<br>
+   １秒かけて透明度が変わり、変化の速度が滑らかに始まり、滑らかに終わるようにします。<br>
+   ここは迷ってますね。１秒でも良いんだけど、0.5秒とかでも良いかもしれない。</p>
+
+  <p><span class="codecolor">img.fade-in-out.visible {</span><br>
+   これは、「fade-in-out」クラスに加えて「visible」クラスが付いた「img」タグに対して、スタイルを適用することを示しています。</p>
+
+  <p><span class="codecolor">opacity: 1;</span><br>
+   画像の透明度を1に設定します。<br>
+   画像が完全に見えるようになります。</p>
+
+  <h4>画像のフェードインとフェードアウト（JavaScript）</h4>
+  <p>このコードは次のような動きを実現するためのものです。</p>
+  <ol>
+   <li>ページが読み込まれた後とスクロールされたときに、特定の画像が表示領域内にあるかどうかをチェック。</li>
+   <li>表示領域内にある場合は「visible」クラスを追加。</li>
+   <li>そうでない場合は削除する。</li>
+  </ol>
+  <p>このようにスクリプトを組めば、画像がフェードイン・フェードアウトする効果が作れるんですよね。<br>
+   どこまで丁寧に解説すべきか分からないけど、とりあえずササっと１行ずつやっていきましょうか。</p>
+
+  <p class="codegra" id="feinfade_js">画像のフェードイン＋アウトのアニメーションを作るfeinfade.js</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('img.fade-in-out');
+    const checkVisibility = () => {
+        images.forEach(image => {
+            const rect = image.getBoundingClientRect();
+            const imageCenter = rect.top + rect.height / 2;
+            const windowHeight = window.innerHeight;
+
+            if (imageCenter &lt; windowHeight * 0.85 && imageCenter &gt; windowHeight * 0.15) {
+                image.classList.add('visible');
+            } else {
+                image.classList.remove('visible');
+            }
+        });
+    };
+
+    checkVisibility();
+    document.addEventListener('scroll', () => {
+        requestAnimationFrame(checkVisibility);
+    });
+});
+        </code></pre>
+  </div>
+
+  <p><span class="codecolor">document.addEventListener('DOMContentLoaded', function() {</span><br>
+   HTMLドキュメントが完全に読み込まれたときに実行される関数を設定します。<br>
+   もうちょっと詳しく言うと、このコードはDOMContentLoadedというイベントリスナーを設定しています。<br>
+   つまり、DOMContentLoadedイベントが発生したときに実行される関数を指定しているということです。</p>
+
+  <div class="code-container">
+   <pre><code class="language-javascript">
+document.addEventListener('DOMContentLoaded', function() { ... });
+        </code></pre>
+  </div>
+
+  <p>この部分は、HTMLドキュメントが完全に読み込まれ、解析されてDOMツリーが構築されたときに実行される関数を設定しています。<br>
+   つまり、ページの基本的な構造が整った時点で、指定した関数が実行されるようになります。</p>
+
+  <p><span class="codecolor">const images = document.querySelectorAll('img.fade-in-out');</span><br>
+   クラス名が「fade-in-out」の&lt;img&gt;タグをすべて選択し、それらを「images」という定数に格納します。</p>
+
+  <p><span class="codecolor">const checkVisibility = () => {</span><br>
+   画像の表示状態をチェックする関数「checkVisibility」を定義します。</p>
+
+  <p><span class="codecolor">images.forEach(image => {</span><br>
+   「images」に含まれるすべての画像に対して、順番に処理を行うためのループを開始します。<br>
+   アナザーエデンで「ループ攻略」なんてものがあったでしょう？<br>
+   あれですよアレ（笑）</p>
+
+  <p><span class="codecolor">const rect = image.getBoundingClientRect();</span><br>
+   画像の位置とサイズを取得し、それを「rect」という定数に格納します。</p>
+
+  <p><span class="codecolor">const imageCenter = rect.top + rect.height / 2;</span><br>
+   画像の中心位置を計算し、それを「imageCenter」という定数に格納します。<br>
+   ここで、「2」が使われている理由は、画像の中心位置を計算するためです。<br>
+   具体的には、「rect.top」は画像の上端の位置を示し、「rect.height」は画像の高さを示します。<br>
+   画像の中心位置を求めるためには、画像の上端から画像の高さの半分の位置を足す必要があります。<br>
+   こうすることで、画像の中央の位置が得られます。<br>
+   例えば、画像の上端が100ピクセルの位置にあり、画像の高さが200ピクセルの場合、画像の中心位置は次のように計算されます。</p>
+
+  <div class="code-container">
+   <pre><code class="language-javascript">
+const imageCenter = 100 + 200 / 2; // 100 + 100 = 200
+        </code></pre>
+  </div>
+
+  <p>このようにして、画像の中心位置を正確に求めることができます。</p>
+
+  <p><span class="codecolor">const windowHeight = window.innerHeight;</span><br>
+   ブラウザウィンドウの高さを取得し、それを「windowHeight」という定数に格納します。</p>
+
+  <p><span class="codecolor">if (imageCenter &lt; windowHeight * 0.85 && imageCenter &gt; windowHeight * 0.15)
+    {</span><br>
+   画像の中心がウィンドウの上から15%と85%の間にあるかどうかをチェックしています。<br>
+   ここも迷ってますね。<br>
+   10%と90%でも良いかもしれないけど、あまり数が大きいと効果が分かりにくいかもしれない。</p>
+
+  <p><span class="codecolor">image.classList.add('visible');</span><br>
+   条件が満たされた場合、画像に「visible」というクラスを追加します。</p>
+
+  <p><span class="codecolor">} else {</span><br>
+   条件が満たされなかった場合の処理を開始します。</p>
+
+  <p><span class="codecolor">image.classList.remove('visible');</span><br>
+   条件が満たされなかった場合、画像から「visible」というクラスを削除します。</p>
+
+  <p><span class="codecolor">}</span><br>
+   「if」文の終了を示します。<br>
+   こういうところなんですよ…学生時代は、こういうところをテキトーにやってて、いろんなところでエラーが出たり動かなかったりするサイトを量産してました。<br>
+   １行ずつ書いてるノートを作っておけば良かったんだよね。<br>
+   スクリプトを書いたら書きっぱなしで、至るところに放り出していました。<br>
+   それが後々になって管理し切れなくなり、個人サイトの挫折への繋がっていたのです。<br>
+   隅っこのカッコの一つまで意識してね。<br>
+   完璧じゃなくても、こうして自分含めた多方面にメリットが出るよう、やっていきたいものです。</p>
+
+  <p><span class="codecolor">});</span><br>
+   「forEach」ループの終了を示します。</p>
+
+  <p><span class="codecolor">};</span><br>
+   「checkVisibility」関数の終了を示します。</p>
+
+  <p><span class="codecolor">checkVisibility();</span><br>
+   ページが読み込まれたときに「checkVisibility」関数を実行します。</p>
+
+  <p><span class="codecolor">document.addEventListener('scroll', () =&gt; {</span><br>
+   ページがスクロールされたときに実行される関数を設定します。</p>
+
+  <p><span class="codecolor">requestAnimationFrame(checkVisibility);</span><br>
+   ブラウザが次に画面を再描画するタイミングで「checkVisibility」関数を実行するようにリクエストします。</p>
+
+  <p><span class="codecolor">});</span><br>
+   スクロールイベントのリスナーの終了を示します。<br>
+   「リスナー」という言葉は、JavaScriptにおいて特定のイベントが発生したときに実行される関数のことを指します。例えば、ボタンがクリックされたときやページがスクロールされたときに特定の処理を実行するために使われます。<br>
+   上の方で、addEventListenerメソッドを使ってイベントリスナーを設定していますよね。</p>
+
+  <p><span class="codecolor">});</span><br>
+   「DOMContentLoaded」イベントのリスナーの終了を示します。</p>
+
+  <h3>DOMContentLoaded</h3>
+  <p>DOMContentLoadedは、HTML文書が完全に読み込まれ、解析されてDOMツリーが構築されたときに発生するイベントのことです。<br>
+   このイベントは、画像やスタイルシートなどの外部リソースの読み込みが完了する前に発生します。<br>
+   つまりですねー…<br>
+   「DOMContentLoaded」イベントというのは、ページの基本的な構造が整った時点で発生し、スクリプトがDOM要素にアクセスできるようになっているのです。<br>
+   これを使えば、ページの初期化処理を迅速に行うことができます。<br>
+   例えば、ページが完全に読み込まれるのを待たずに、ボタンのクリックイベントを設定したり、特定の要素を操作したりする場合に便利です。<br>
+   ここでは画像を操作しているんですよね。</p>
+
+  <h2>折り畳みエリア</h2>
+  <p>折り畳みを始めとする動的なものは、SEOとしてはあーんまり望ましくないんだよね。<br>
+   でもグラスタ表はすぐに出てきているわけで。<br>
+   では、ここからは「リアル世界のプログラムにおける、ループ攻略」について書きましょうか！
+  </p>
+
+  <h4>折り畳みエリア（CSS）</h4>
+  <p>基本的なものだから特徴らしきものはないんだけど、可能な限り丁寧に解説していきますかね。<br>
+   テーブルタグに使っているもののほうが難しいと思う</p>
+
+  <p class="codegra" id="collapsible_css">折り畳みエリアを作るcollapsible.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+.collapsible {
+  background-color: #f1f1f1;
+  color: #444;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  font-family: 'Noto Sans JP', sans-serif;
+  transition: background-color 0.3s ease;
+   }
+
+.collapsiblecontent {
+  padding: 0 10px;
+  max-height: 0;
+  overflow: hidden;
+  background-color: #f9f9f9;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+   }
+
+.collapsiblecontent.show {
+  max-height: 2000px;
+  opacity: 1;
+   }
+            </code></pre>
+  </div>
+
+  <p><span class="codecolor">.collapsible {</span><br>
+   クラス名「collapsible」を持つ要素に適用されるスタイルの開始を示しています。</p>
+
+  <p><span class="codecolor">background-color: #f1f1f1;</span><br>
+   背景色を淡い灰色（#f1f1f1）に設定しています。</p>
+
+  <p><span class="codecolor">color: #444;</span><br>
+   文字の色を濃い灰色（#444）に設定しています。</p>
+
+  <p><span class="codecolor">cursor: pointer;</span><br>
+   マウスカーソルが指の形になり、クリックできることを示しています。<br>
+   こういうのけっこう大切にしてます。<br>
+   クリックできるかどうか分からなかったりするとちょっとね。</p>
+
+  <p><span class="codecolor">padding: 10px;</span><br>
+   要素の内側に10ピクセルの余白を追加しています。</p>
+
+  <p><span class="codecolor">width: 100%;</span><br>
+   要素の幅を100%に設定しています。親要素の幅に対して100%です。</p>
+
+  <p><span class="codecolor">border: none;</span><br>
+   要素の枠線をなくしています。</p>
+
+  <p><span class="codecolor">text-align: left;</span><br>
+   テキストを左揃えにしています。</p>
+
+  <p><span class="codecolor">outline: none;</span><br>
+   要素の外枠（フォーカス時に表示される枠）をなくしています。</p>
+
+  <p><span class="codecolor">font-size: 15px;</span><br>
+   フォントサイズを15ピクセルに設定しています。</p>
+
+  <p><span class="codecolor">font-family: 'Noto Sans JP', sans-serif;</span><br>
+   フォントを「Noto Sans JP」に設定しています。このフォントがない場合は、代わりに「sans-serif」が使用されます。</p>
+
+  <p><span class="codecolor">transition: background-color 0.3s ease;</span><br>
+   背景色が変更されるときに0.3秒かけて滑らかに変化するようにしています。</p>
+
+  <p><span class="codecolor">.collapsiblecontent {</span><br>
+   これは、クラス名「collapsiblecontent」を持つ要素に適用されるスタイルの開始を示しています。</p>
+
+  <p><span class="codecolor">padding: 0 10px;</span><br>
+   要素の内側に左右10ピクセルの余白を追加していますが、上下の余白はありません。</p>
+
+  <p><span class="codecolor">max-height: 0;</span><br>
+   要素の最大高さを0に設定しています。これにより、デフォルトで要素が表示されません。</p>
+
+  <p><span class="codecolor">overflow: hidden;</span><br>
+   要素の内容がはみ出した場合に隠す設定をしています。</p>
+
+  <p><span class="codecolor">background-color: #f9f9f9;</span><br>
+   背景色を薄い灰色（#f9f9f9）に設定しています。</p>
+
+  <p><span class="codecolor">transition: max-height 0.3s ease, opacity 0.3s ease;</span><br>
+   最大高さと透明度が変更されるときに0.3秒かけて滑らかに変化するようにしています。</p>
+
+  <p><span class="codecolor">opacity: 0;</span><br>
+   要素を完全に透明に設定しています。</p>
+
+  <p><span class="codecolor">.collapsiblecontent.show {</span><br>
+   クラス名「collapsiblecontent」を持ち、さらにクラス「show」を持つ要素に適用されるスタイルの開始を示しています。</p>
+
+  <p><span class="codecolor">max-height: 2000px;</span><br>
+   要素の最大高さを2000ピクセルに設定しています。<br>
+   これちょっと迷ってるんだよね。<br>
+   2000も必要かどうかは今後による。</p>
+
+  <p><span class="codecolor">opacity: 1;</span><br>
+   要素を完全に表示する設定です。</p>
+
+
+  <h4>折り畳みエリア（JavaScript）</h4>
+  <p>では、ここでループについて書いていきます。<br>
+   ループ攻略ですね！</p>
+  <p class="codegra" id="collapsible_js">折り畳みエリアを作るcollapsible.js</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+document.addEventListener("DOMContentLoaded", function() {
+    var coll = document.getElementsByClassName("collapsible");
+    for (var i = 0; i &lt; coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.classList.contains("show")) {
+                content.classList.remove("show");
+                content.style.maxHeight = null;
+                this.innerHTML = 'タップして開く ▼';
+            } else {
+                content.classList.add("show");
+                content.style.maxHeight = content.scrollHeight + "px";
+                this.innerHTML = 'タップして閉じる ▲';
+            }
+        });
+    }
+  });
+  </code></pre>
+  </div>
+
+  <p><span class="codecolor">document.addEventListener("DOMContentLoaded", function() {</span><br>
+   HTMLドキュメントがすべて読み込まれた後に指定された関数が実行されるように設定しています。<br>
+   これがあることでページの要素にアクセスできるようになります。</p>
+
+  <p><span class="codecolor">var coll = document.getElementsByClassName("collapsible");</span><br>
+   クラス名「collapsible」を持つすべての要素を取得し、変数 coll に格納しています。</p>
+
+  <p><span class="codecolor">for (var i = 0; i &lt; coll.length; i++) {</span><br>
+   取得したすべての「collapsible」要素に対してループを開始する行です。<br>
+   変数 i が0から coll の長さまで繰り返されます。</p>
+
+  <p><span class="codecolor">coll[i].addEventListener("click", function() {</span><br>
+   それぞれの「collapsible」要素に対して、クリックイベントリスナーを追加しています。<br>
+   要素がクリックされたときに指定された関数が実行されます。</p>
+
+  <p><span class="codecolor">this.classList.toggle("active");</span><br>
+   クリックされた要素のクラスリストに「active」クラスを追加または削除します。<br>
+   すでに「active」クラスがあれば削除し、なければ追加します。</p>
+
+  <p><span class="codecolor">var content = this.nextElementSibling;</span><br>
+   クリックされた要素の次の兄弟要素（次のタグ）を取得し、変数 content に格納します。<br>
+   分かりにくいけど、こういうのは普通、折りたたみ部分の内容を指すことが多いです。<br>
+   私はいつもそういう感じで書いてますね。</p>
+
+  <p><span class="codecolor">if (content.classList.contains("show")) {</span><br>
+   取得した要素が「show」クラスを持っているかどうかをチェックします。<br>
+   持っていれば折りたたみが開いている状態です。</p>
+
+  <p><span class="codecolor">content.classList.remove("show");</span><br>
+   要素から「show」クラスを削除し、折りたたみを閉じる状態にします。</p>
+
+  <p><span class="codecolor">content.style.maxHeight = null;</span><br>
+   要素の最大高さをリセットし、折りたたみを閉じる状態にします。</p>
+
+  <p><span class="codecolor">this.innerHTML = 'タップして開く ▼';</span><br>
+   クリックされたボタンのテキストを「タップして開く ▼」に変更します。<br>
+   こういう細かい変化はページ全体ができてからやっていけばいいけど、割と大切にしてます。</p>
+
+  <p><span class="codecolor">} else {</span><br>
+   上記の条件が満たされない場合、すなわち要素が「show」クラスを持っていない場合（折りたたみが閉じている状態）に実行されます。</p>
+
+  <p><span class="codecolor">content.classList.add("show");</span><br>
+   要素に「show」クラスを追加し、折りたたみを開く状態にします。</p>
+
+  <p><span class="codecolor">content.style.maxHeight = content.scrollHeight + "px";</span><br>
+   要素の高さをその内容の高さに設定し、折りたたみを開きます。</p>
+
+  <p><span class="codecolor">this.innerHTML = 'タップして閉じる ▲';</span><br>
+   クリックされたボタンのテキストを「タップして閉じる ▲」に変更します。</p>
+
+  <p><span class="codecolor">}</span><br>
+   条件文（if-else文）の終了を示します。</p>
+
+  <p><span class="codecolor">});</span><br>
+   クリックイベントリスナーの終了を示します。</p>
+
+  <p><span class="codecolor">}</span><br>
+   ループの終了を示します。<br>
+   ループ攻略が終わった状態です😆ww</p>
+
+  <p><span class="codecolor">});</span><br>
+   ドキュメント全体が読み込まれたときに実行される関数の終了を示します。</p>
+
+  <h2>ヘッダーのロゴ画像スクロール</h2>
+  <p class="codegra">コードに合う解説文の出庫待ち</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+document.addEventListener("DOMContentLoaded", function() {
+    const headerImage = document.querySelector('.header-image'); // ヘッダー画像の要素を取得
+
+    headerImage.style.opacity = 0; // 初期状態で透明に設定
+    headerImage.style.transform = 'translateX(100%)'; // 初期状態で右にオフセット
+
+    setTimeout(() => {
+        headerImage.style.opacity = 1; // 透明度を1に設定して表示
+        headerImage.style.transform = 'translateX(0)'; // オフセットを0にして元の位置に戻す
+        console.log("Header image is visible"); // コンソールにメッセージを表示
+    }, 100); // 100ミリ秒後に実行
+});
+</code></pre>
+  </div>
+  <h4>ヘッダーのロゴ画像スクロール</h4>
+  <p class="codegra">コードに合う解説文の出庫待ち</p>
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/javascriptinfo.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

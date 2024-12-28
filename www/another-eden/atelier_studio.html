@@ -1,0 +1,2176 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+ <meta charset="UTF-8">
+ <title>ファンサイト制作のためのアトリエ</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="アナザーエデンというスマートフォンゲームで使われているプログラミング言語をhtmlページで動作させてみました。">
+ <meta name="keywords" content="プログラミング, アナザーエデン, Lua">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="ファンサイト制作のためのアトリエ">
+ <meta property="og:description" content="アナザーエデンというスマートフォンゲームで使われているプログラミング言語をhtmlページで動作させてみました。">
+ <meta property="og:image" content="/image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/atelier_studio.html">
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/collapsible.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" type="text/css" href="/css/lua.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+ <script type="application/ld+json">
+ {
+   "@context": "https://schema.org",
+   "@type": "Organization",
+   "name": "ファンサイト制作のためのアトリエ",
+   "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/atelier_studio.html",
+   "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+ }
+ </script>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <script src="/script/tab.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-json.min.js"></script>
+ <script src="/script/collapsible.js"></script>
+ <script src="/script/fengari-web.js"></script>
+ <script src="/script/brython.js"></script>
+ <script src="/script/brython_stdlib.js"></script>
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="anaden_sitemap.html">アナザーエデン関連ページ・サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">ファンサイト制作のためのアトリエ</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く
+    ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="/script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="/another-eden/anaimage/ライザ星導覚醒.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <p class="feintag">ソースコードに関する特設ページ</p><br>
+
+  <button id="generate-headings" data-open-text="ファンサイト制作のためのアトリエの目次を開く ▼"
+   data-close-text="ファンサイト制作のためのアトリエの目次を閉じる ▲">ファンサイト制作のためのアトリエの目次を開く ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+
+  <p><a href="anaden_sitemap.html">アナザーエデン関連ページ・サイトマップへ戻る</a></p>
+
+  <!-- ●ヘッダーここまで。直下でコンテンツ開始● -->
+  <h1 class="background-waveimage-heading"><span>ファンサイト制作のためのアトリエ</span></h1>
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザ戦闘bgm.jpg" alt="ライザ戦闘bgm" class="graphicsaki right-image fade-in-out">
+
+   <p>ライザとアナデンのコラボは素晴らしかったと思います！<br>
+    fear戦のBGMなんか、ぶっ飛んでたよ。<br>
+    もう何度も何度も聞いてます。<br>
+    これはテンションが上がってしまったので、単なる感想文であったり、はたまた攻略一辺倒な記事とは一線を画すようなWebページを作りたいと強く感じました。<br>
+    そこで何をやろうか考えていたのですが…ネタバレの懸念もありますし…<br>
+
+  </div>
+
+  <p>まず、ライザのアトリエに関する公式サイトには次のようなものがありますね。</p>
+  <div class="scoth-dropdown">
+   <button onclick="toggleDropdown('menu1', event)">ライザのアトリエ関連：公式サイトリスト</button>
+   <div class="scoth-dropdown-content" id="menu1"></div>
+  </div>
+
+  <script>
+   const luaCode1 = `
+        local items = {
+            {name = "コーエーテクモゲームス公式サイト", link = "https://www.gamecity.ne.jp/index.html"},
+            {name = "ライザのアトリエ 〜常闇の女王と秘密の隠れ家〜", link = "https://www.gamecity.ne.jp/atelier/ryza/"},
+            {name = "ライザのアトリエ2 〜失われた伝承と秘密の妖精〜", link = "https://www.gamecity.ne.jp/atelier/ryza2/"},
+            {name = "ライザのアトリエ3 〜終わりの錬金術士と秘密の鍵〜", link = "https://www.gamecity.ne.jp/atelier/ryza3/"},
+            {name = "『ライザのアトリエ』 コラボ特設サイト", link = "https://another-eden.jp/atelier/"}
+        }
+
+        local dropdownHtml = ""
+        for _, item in ipairs(items) do
+            dropdownHtml = dropdownHtml .. '<a href="' .. item.link .. '">' .. item.name .. '</a>'
+        end
+
+        return dropdownHtml
+    `;
+
+   const L1 = fengari.load(luaCode1);
+   const result1 = L1();
+
+   document.getElementById('menu1').innerHTML = result1;
+
+   function toggleDropdown(menuId, event) {
+    var menu = document.getElementById(menuId);
+    if (menu.style.display === "block") {
+     menu.style.opacity = "0";
+     setTimeout(function () {
+      menu.style.display = "none";
+     }, 500);
+    } else {
+     menu.style.display = "block";
+     setTimeout(function () {
+      menu.style.opacity = "1";
+     }, 10);
+    }
+    event.stopPropagation();
+   }
+
+   document.addEventListener("click", function () {
+    var menus = document.getElementsByClassName("scoth-dropdown-content");
+    for (var i = 0; i < menus.length; i++) {
+     if (menus[i].style.display === "block") {
+      menus[i].style.opacity = "0";
+      setTimeout(function (menu) {
+       menu.style.display = "none";
+      }, 500, menus[i]);
+     }
+    }
+   });
+
+   var dropdowns = document.getElementsByClassName('scoth-dropdown');
+   for (var i = 0; i < dropdowns.length; i++) {
+    dropdowns[i].addEventListener("click", function (event) {
+     event.stopPropagation();
+    });
+   }
+  </script>
+
+  <p>ライザ、めっちゃ可愛いよね✨</p>
+  <p>さてさて、せっかくこのように自由にUIを実装できるファンサイトを作っているのですから、それを最大限活かしていきましょう！<br>
+   アナザーエデンのゲーム内 ─ 具体的にはステータス画面 ─
+   にも登場するようなタブUIを実装しつつネタバレを回避し、私個人としても柔軟にゲームのことを書けるような…</p>
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザ完成拡大版.jpg" alt="ライザ完成拡大版" class="graphicsaki right-image fade-in-out">
+
+   <p>そういう、ファンサイトの制作プロセスを作れる「アトリエ」を、ここに実装します。</p>
+   <p>「何を入れるのがいいかなぁー」<br>
+    「これでいいかな！」<br>
+    「やったぁー！ できた！」<br>
+    みたいな感じで、ライザみたいにWebサイトを調合しようかと！</p>
+   <p><strong>
+     関連ページ</strong>：<a href="/another-eden/lua.html">アナザーエデンのプログラミングを個人サイトで試す</a></p>
+  </div>
+
+  <h3 id="target_atelier">🌟ソースコードのアトリエ</h3>
+
+  <div class="content">
+   <img src="/another-eden/anaimage/atelier_anaden.jpg" alt="アナデンライザコラボ" class="wallpaper right-image fade-in-out">
+   <p>このサイトを構成するのに必要なコード・リストと、それらの解説ページへジャンプできるリンクです。<br>
+    どっちみち全てのコードについて学生時代のノートから移してくるつもりなので、基盤システムを書いてあるページと行き来できるようにしてあります。<br>
+    学生時代はこういうことができなかったのですよ。<br>
+    自分がやりやすいようなUIを整えた上で、システムとソースコードの管理を行う。<br>
+    これができなかった…
+   </p>
+   <p>でもこれからは違います。<br>
+    アナデンライザコラボは、私にとって大切な思い出となりましたね！<br>
+    錬金術やってるライザを見なければ、こういう方向の着想に至らなかった。</p>
+   <p>
+    「ないなら 作ればいい！」<br>
+    この姿勢、めっちゃかっこいいです！</p>
+  </div>
+
+  <h4>このサイトを作っているコード</h4>
+  <div class="spacer"></div>
+
+  <div class="atelier-container">
+   <div class="atelier-tabs">
+    <div class="atelier-tab" data-tab="1">CSS</div>
+    <div class="atelier-tab" data-tab="2">JavaScript</div>
+    <div class="atelier-tab" data-tab="3">Python</div>
+   </div>
+   <div class="atelier-tab-content" data-content="1">
+    <p>リンクをタップすると、コードの解説ページへジャンプします。</p>
+
+    <p class="gra">カテゴリー分けしたcss</p>
+    <ul>
+     <li><a href="/contents/pdf_preview.html#pdf_css">pdf.css</a> デフォルトでPDFをプレビュー表示する</li>
+     <li><a href="/contents/pdf_preview.html#addpdf_css">addpdf.css</a> 複数のPDFがある場合</li>
+     <li><a href="/contents/graphic_css.html#flower_css">flower.css</a> 写真を飾る</li>
+     <li><a href="/contents/album_script.html#album_css">album.css</a> イラストアルバムを作る</li>
+     <li><a href="/contents\javascriptinfo.html#collapsible_css">collapsible.css</a> 折り畳みエリアを作る</li>
+     <li><a href="/contents\codeinfo.html#symbol_css">symbol.css</a> バナーをCSSで作成する</li>
+    </ul>
+
+    <dl>
+     <dt>video.css</dt>
+     <dd><a href="/contents/videopage.html#normal_video_css">通常版の動画を掲載する</a></dd>
+     <dd><a href="/contents/videopage.html#google_video_css">Google Drive版の動画を掲載する</a></dd>
+
+     <dt>header.css</dt>
+     <dd><a href="/contents\codeinfo.html#headeranimation_css">ヘッダー画像にアニメーションを付ける</a></dd>
+     <dd><a href="/contents\codeinfo.html#headerglobal_css">グローバルナビゲーションを構成する</a></dd>
+
+    </dl>
+
+
+    <p class="gra">編集中のcss</p>
+
+    <p>colors.css<br>
+     feinheadline1.css<br>
+     feinpan.css<br>
+     footer.css<br>
+     imgcut.css<br>
+     lua.css<br>
+     menu.css</p>
+
+    <p>システムの解説ページ👉：<a href="/contents/color.html#target_system">基礎的なシステムとルール</a></p>
+   </div>
+
+   <div class="atelier-tab-content" data-content="2">
+    <p>リンクをタップすると、コードの解説ページへジャンプします。</p>
+
+    <ul>
+     <li><a href="/contents/pdf_preview.html#pdf_js">pdf.js</a> デフォルトでPDFをプレビュー表示する</li>
+     <li><a href="/contents/pdf_preview.html#addpdf_js">addpdf.js</a> 複数のPDFがある場合</li>
+     <li>video.js（<a href="/contents/videopage.html#normal_video_js">通常版</a>・Google Drive版はJS不要）動画を掲載する</li>
+     <li><a href="/contents/album_script.html#album_js">album.js</a> イラストアルバムを作る</li>
+     <li><a href="/contents\javascriptinfo.html#collapsible_js">collapsible.js</a> 折り畳みエリアを作る</li>
+     <li><a href="/contents\javascriptinfo.html#feinfade_js">feinfade.js</a> 画像のフェードイン＋アウトのアニメーションを作る</li>
+     <li><a href="/contents\javascript_footer.html#feinScroll_js">feinScroll.js</a> スクロールを追いかけるボタンを実装する<br><span
+       class="small-orange-text">※及びトップ画像のスクロールアニメーション</span>
+     </li>
+    </ul>
+
+    <p>
+     color.js<br>
+     common.js<br>
+     feinheadline1.js<br>
+     imgcut.js<br>
+     menu.js<br>
+     tab.js<br>
+     underline.js</p>
+
+    <ul>
+     <li>brython.js（このページにもあるJSツール）</li>
+     <li>brython_stdlib.js（このページにもあるJSツール）</li>
+     <li>fengari-web.js（このページにもあるJSツール）</li>
+    </ul>
+
+    <p>システムの解説ページ👉：<a href="/contents/color.html#target_system">基礎的なシステムとルール</a></p>
+   </div>
+
+   <div class="atelier-tab-content" data-content="3">
+    <p>リンクをタップすると、コードの解説ページへジャンプします。</p>
+    <ul>
+     <li><a href="/contents/pynote.html#pdfimg_py">pdfimg.py</a> PDFを高解像度の画像に変換する<br><span
+       class="small-orange-text">※昔から作ってきたアナデンのPDFレポート。<br>
+       あれで大活躍していたスクリプトです。</span></li>
+     <li><a href="/contents/color.html#105trimming_py">105trimming.py</a> 左側のみ105ピクセル分トリミングする</li>
+     <li><a href="/contents/color.html#file_list_py">file_list.py</a> 画像のファイル名をまとめて確保する</li>
+     <li><a href="/contents/color.html#image_aspect_compression_middle50_py">image_aspect_compression_middle50.py</a>
+      画像のサイズをまとめて縮小する<br>
+      <a href="/contents/pyimg.html#image_aspect_compression_middle50_py2">別コードパターンの解説</a>
+     </li>
+     <li><a href="/contents/videopage.html#mp4mini_py">mp4mini.py</a> 動画をエンコードする</li>
+     <li><a href="/contents/protect.html#jpgpng_py">jpgpng.py</a> jpgをまとめてpngにする</li>
+     <li><a href="/contents/protect.html#1hide_py">1hide.py</a> １つの画像にメッセージを隠す</li>
+     <li><a href="/contents/protect.html#hidemessage_py">hidemessage.py</a> 隠されたメッセージを確認する</li>
+     <li><a href="/contents/protect.html#all_hide_py">all_hide.py</a> フォルダ内の画像全てにまとめてメッセージを隠す</li>
+     <li><a href="/contents/protect.html#all_hidemessage_py">all_hidemessage.py</a> フォルダ内にある全て画像に隠されたメッセージを確認する</li>
+     <li><a href="/contents/protect.html#sliceimg_py">sliceimg.py</a> 画像をスライスしてhtmlも出力する</li>
+     <li><a href="/contents/protect.html#pngmetadata_py">pngmetadata.py</a> メタデータをまとめて入力するプログラム</li>
+     <li><a href="/contents/protect.html#pngmetacheck_py">pngmetacheck.py</a> メタデータをまとめてチェックする</li>
+     <li><a href="/contents/protect.html#textnoise_py">textnoise.py</a> ノイズを加えるプログラム</li>
+     <li><a href="/contents/pynote.html#table_py">table.py</a> Excelの表をhtmlにする</li>
+     <li><a href="/contents/pynote.html#pdf_py">pdf.py</a> PDFをまとめて圧縮する</li>
+     <li><a href="/contents/pynote.html#pdfocr_py">pdfocr.py</a> PDFがテキストベースになっているかチェックする</li>
+     <li><a href="/contents/pynote.html#pdfhtml_py">pdfhtml.py</a> 大量のハイパーリンクをまとめて記述する</li>
+     <li><a href="/contents/pynote.html#pdfpreview_py">pdfpreview.py</a> PDFプレビューボタンhtmlを書く</li>
+     <li><a href="/contents/pyimg.html#image_size_py">image_size.py</a> 複数画像の大きさをまとめて調査する</li>
+     <li><a href="/contents/pyimg.html#flower_resize_py">flower_resize.py</a> 複数画像のファイルサイズをまとめて変更する</li>
+     <li><a href="/contents/pyimg.html#image_aspect_compression_big80_py">image_aspect_compression_big80.py</a>
+      複数画像をまとめて80%小さくする<br>
+      image_aspect_compression_small20.pyは数字を変えるだけです</li>
+     <li><a href="/contents/pyimg.html#image_add_py">image_add.py</a> 複数の画像が並ぶWebページを作成する</li>
+    </ul>
+
+    <p>file_space.py<br>
+     file_sum.py<br>
+     htmlall.py<br>
+    </p>
+
+    <p>システムの解説ページ👉：<a href="/contents/color.html#target_system">基礎的なシステムとルール</a></p>
+   </div>
+  </div>
+
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザ星導覚醒前.jpg" alt="ライザ星導覚醒前" class="graphicsaki right-image fade-in-out">
+   <p>このタブUIですが、既にこのページのいろんな所に使われています。<br>
+    当然のことながら、既に<a
+     href="/contents/no_copying.html">AI学習や無断転載を防ぐプログラムの小ネタ集</a>にて実装している青色のタブUIとともに、今後もいろんなページで使えるものとなりました。<br>
+    ただ単にPython使うなら、FlaskやDjangoのほうが一般的なんだけどね。<br>
+    でもそれだとWebサイトの引っ越ししたくなった時に支障が出る可能性もあるのです。</p>
+  </div>
+  <hr class="atelierflower">
+
+  <script type="text/python">
+from browser import document, timer
+
+def show_tab(event):
+    container = event.target.closest('.atelier-container')
+    tabs = container.select('.atelier-tab')
+    contents = container.select('.atelier-tab-content')
+
+    for tab in tabs:
+        tab.classList.remove('atelier-active-tab')
+    for content in contents:
+        content.classList.remove('atelier-active-content')
+        content.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out'
+        content.style.transform = 'translateX(-100%)'
+        content.style.opacity = '0'
+        content.style.visibility = 'hidden'
+
+    event.target.classList.add('atelier-active-tab')
+    tab_id = event.target.getAttribute('data-tab')
+    active_content = container.select(f'[data-content="{tab_id}"]')[0]
+    active_content.classList.add('atelier-active-content')
+
+    def show_content():
+        active_content.style.visibility = 'visible'
+        active_content.style.opacity = '1'
+        active_content.style.transform = 'translateX(0)'
+
+    timer.set_timeout(show_content, 50)
+
+for container in document.select('.atelier-container'):
+    tabs = container.select('.atelier-tab')
+    if tabs:
+        tabs[0].classList.add('atelier-active-tab')
+        container.select('.atelier-tab-content')[0].classList.add('atelier-active-content')
+        for tab in tabs:
+            tab.bind('click', show_tab)
+    </script>
+
+  <script>
+   window.addEventListener('load', () => {
+    brython({ debug: 1, selector: ".atelier-container" });
+   });
+  </script>
+
+  <h3>ビジュアル アトリエ コード</h3>
+  <p>私の開発環境は「ビジュアル アトリエ コード」です🎨✨<br>
+   なーんて、半分冗談なんだけどね。<br>
+   でもAtelierとStudioは同じような意味だから、言語が混ざっているだけで通りますよ。<br>
+   実際はVisual Studio Codeをカスタマイズしただけです。<br>
+   リアルの私は錬金術を使えないので、せめてWeb制作でライザごっこをしてみようかと！</p>
+
+  <div class="atelier-container">
+   <div class="atelier-tabs">
+    <div class="atelier-tab" data-tab="1">settings.json</div>
+    <div class="atelier-tab" data-tab="2">GitHub</div>
+    <div class="atelier-tab" data-tab="3">source code</div>
+   </div>
+   <div class="atelier-tab-content" data-content="1">
+
+    <p>Visual Studio CodeはMicrosoftのコードエディターですが、拡張機能のインストールと設定ファイルの記述で背景画像を付けられます。<br>
+     settings.jsonはVS Codeの設定ファイルです。<br>
+     Windowsなら多くの場合、C:\Users\ユーザー名\AppData\Roaming\Code\User\settings.json という位置にあると思います。<br>
+     ここの編集が必要なんだよね。<br>
+
+    <div class="content">
+     <img src="/another-eden/anaimage/Visual_Atelier_Code.png" alt="Visual_Atelier_Code" class="biggraphic fade-in-out">
+     <p>今回、自分の開発環境でライザごっこをするにあたり、次のようにコードを編集しました。</p>
+    </div>
+
+    <p class="gra">Visual Studio(Atelier) Codeのsettings.json</p>
+
+    <div class="code-container">
+     <pre><code class="language-json">
+{
+ "extensions.ignoreRecommendations": true,
+ "editor.fontFamily": "'Yu Gothic UI', 'Courier New', monospace",
+ "workbench.settings.applyToAllProfiles": [
+  "editor.fontFamily"
+ ],
+ "editor.fontLigatures": false,
+ "editor.wordWrap": "on",
+ "files.insertFinalNewline": true,
+ "editor.formatOnSave": true,
+ "files.trimFinalNewlines": true,
+ "files.trimTrailingWhitespace": true,
+ "breadcrumbs.enabled": true,
+ "workbench.tree.renderIndentGuides": "always",
+ "editor.tabSize": 1,
+ "editor.insertSpaces": true,
+ "editor.autoIndent": "none",
+ "editor.detectIndentation": false,
+ "background.fullscreen": {
+  "images": [
+   "file:///C:/Users/ユーザー名/OneDrive/_fein/英数字.jpg"
+  ],
+  "opacity": 0.1,
+  "size": "900 900",
+  "position": "center",
+  "interval": 0
+ }
+}
+
+</code></pre>
+    </div>
+
+    <p>普段使いするツールの設定ファイルだから、コメントアウトは付けていないです。<br>
+     ここも詳説しようかと思ってたけど、VS Codeを扱うレベルの人なら大丈夫でしょう。<br>
+     CSSとの共通点も多いです。</p>
+
+    <p class="gra">参考サイト一覧</p>
+    <button class="collapsible">タップして開く ▼</button>
+    <div class="collapsiblecontent">
+     <p>勉強になりました。ありがとうございます。</p>
+     <ul>
+      <li><a href="https://marketplace.visualstudio.com/VSCode">Extensions for Visual Studio Code</a></li>
+      <li><a href="https://marketplace.visualstudio.com/items?itemName=shalldie.background">background</a>
+      </li>
+      <li><a
+        href="https://www.neputa-note.net/2022/02/vscode-extensions-background/">VSCodeの背景画像（background）を設定してテンションを上げる</a>
+      </li>
+      <li><a href="https://qiita.com/niimi_ToB/items/5c6c8ca1d738060a02ff">推しをみながらコードを書きたい！！【VSCodeに背景画像を設定】</a></li>
+     </ul>
+    </div>
+
+   </div><!--1タブの分岐点-->
+   <div class="atelier-tab-content" data-content="2">
+
+    <p>何も設定していない状態でVScodeのソース管理を開くと、「Windows用Gitのダウンロード」とあります。<br>
+     Gitはツールであり、GitHubはそのツールを使ってオンラインでコードを管理するサービスです。</p>
+
+    <p class="gra">Windows用Gitのダウンロード</p>
+    <a href="https://git-scm.com/downloads/win">Windows用Gitのダウンロード</a>を開いてダウンロードし、まずはgitをインストールします。<br>
+    gitインストール時に戸惑いがちな設定は次のような項目があるかと。</p>
+
+    <div class="content">
+     <img src="/another-eden/anaimage/gitインストール直後.png" alt="gitインストール直後" class="biggraphic fade-in-out">
+     <p>私が使っている選択肢の側に★マークを付けておきますね。</p>
+    </div>
+
+    <dl>
+     <dt>Choosing thr default editor used by Git</dt>
+     <dd>★Use Visual Studio Code as Git's default editor<br>
+      ・Use Visual Studio Code Insiders as Git's default editor</dd>
+     <dd>通常版のVisual Studio CodeをGitのデフォルトエディタとして使用する設定です。<br>
+      一般的に使われている安定版のVisual Studio Codeとなります。<br>
+      一方、Visual Studio Code Insidersは新機能や改善が早めに提供されるため、安定性においては通常版よりも若干リスクがあります。</dd>
+
+     <dt>Adjusting the name of the initial branch in new repositories</dt>
+     <dd>★Let's Git decide<br>
+      ・Override the default branch name for new repositories
+     </dd>
+     <dd>ブランチ名はアカウント名とは異なり、特定の変更履歴を指す名前です。<br>
+      開発中の異なるバージョンや機能を分けて管理するためのものであり、例えば「main」というブランチは通常、プロジェクトの主要な開発ラインを表します。</dd>
+
+     <dt>Adjusting your PATH enviroment</dt>
+     <dd>・Use Git from Git Bash only<br>
+      ★Git from the command line and also from 3re-party software<br>
+      ・Use Git and optional Unix tools from the Command Prompt</dd>
+     <dd>コマンドプロンプトや他のターミナル（例：PowerShell）からもGitコマンドを利用できます。<br>
+      また、他のサードパーティのソフトウェア（例：VSCode、Sourcetreeなど）でもGitを利用できるようになります。<br>
+      このオプションが最も汎用的で、多くのユーザーにとって便利だと思いますね。</dd>
+
+     <dt>Choosing the SSH executable</dt>
+     <dd>★Use bundled OpenSSH<br>
+      ・Use external OpenSSH</dd>
+     <dd>Use external OpenSSHは外部にインストールされているOpenSSHを使用しますが、後から変更することもできます。</dd>
+
+     <dt>Choosing HTTPS transport bakend</dt>
+     <dd>★Use the OpenSSL library<br>
+      ・Use the native Windows Secure Channel library</dd>
+     <dd>私の場合は特にクロスプラットフォーム環境や、OpenSSLの特性を活用したいシーンが増えてくると思うから。</dd>
+
+     <dt>Configuring the line ending conversionsの</dt>
+     <dd>★Checkout Windows-style, commit Unix-style line endings<br>
+      ・Check as-is, commit Unix-style line endings<br>
+      ・Check as-is, commit as-is</dd>
+     <dd>ファイルの改行コードに関する設定なのですが、Windows環境で作業しつつ、他の環境（例：Linux、macOS）と互換性を保つ必要があります。</dd>
+    </dl>
+
+    <p>次にConfiguring the terminal emulator to use with Git Bashの画面で次の選択肢があります。<br>
+     ここでの選択肢は、Git Bashを使用する際の端末エミュレータを選択するものです。</p>
+
+    <dl>
+     <dt>★Use MinTTY (the default terminal of MSYS2)</dt>
+     <dd>
+      MinTTYは、MSYS2プロジェクトに含まれるデフォルトのターミナルエミュレータで、外観やカスタマイズ性が高くUnix系のターミナルに似た操作感を提供します。<br>
+      標準のWindowsコンソールよりも高機能で、カラー表示やフォントの設定もできます。</dd>
+
+     <dt>Use Windows' default console window</dt>
+     <dd>
+      Windowsの標準コンソールウィンドウ（コマンドプロンプト）を使用します。<br>
+      特に追加の設定を行わずに利用でき、慣れ親しんだ環境で作業ができるというメリットがあります。
+     </dd>
+    </dl>
+
+    <p>どちらを選んでもGitの機能に影響はありませんが、ここはUse MinTTY (the default terminal of MSYS2)のほうがお勧めかな？<br>
+     Windowsに特化しなくてもいいし、コマンドプロンプトよりUnix系のターミナルに慣れたほうが良いと思うから。</p>
+
+    <dl>
+     <dt>Choose the default behavior of 'git pull'</dt>
+     <dd>★Fast-forward or merge<br>
+      ・Rebase<br>
+      ・Only ever fast-forward</dd>
+     <dd> 通常の開発フローを優先するならFast-forward or merge、<br>
+      クリーンな履歴を保ちたいならRebase、<br>
+      直線的な履歴を強制したいならOnly ever fast-forwardです。</dd>
+
+     <dt>Choose a credential helper</dt>
+     <dd>★Git Credential Manager<br>
+      ・None</dd>
+     <dd>Git Credential Manager（GCM）は、認証情報を簡単に管理するためのツールです。<br>
+      マイクロソフトアカウント、GitHubなど複数のプロバイダに対応しているので、普通はこっちかな。</dd>
+
+     <dt>Configuring extra options</dt>
+     <dd>★Enable file system caching<br>
+      ・Enable symbolic links</dd>
+     <dd>シンボリックリンクはどうかなー<br>
+      けっこう便利だけど、ここではファイル操作のパフォーマンス向上を重視する方向でやってます。</dd>
+    </dl>
+
+    <p>キリがないからこのへんで。<br>
+     ちなみに<a href="https://git-scm.com/downloads/guis?os=windows">GUI Clients</a>もあります。</p>
+
+   </div><!--2タブの分岐点-->
+   <div class="atelier-tab-content" data-content="3">
+
+    <p>GitHubアカウントを作成して、Visual Studio(Atelier) Codeからリポジトリを管理する手順です。<br>
+     ここからがソースコード管理らしくなってくるかな。</p>
+
+    <p class="gra">Visual Studio(Atelier) CodeのGitHub連携</p>
+    <ol>
+     <li><a href="https://github.com/fein-denscothmn">GitHubアカウント</a>の作成</li>
+     <li>コマンドパレットを開いて検索バーに「GitHub: Sign in」と入力し、表示された「GitHub: Sign in」を選択<br>
+      ブラウザが開き、GitHubアカウントにサインインするためのページが表示される</li>
+    </ol>
+    <p>これでVSCodeからGitHubにリポジトリを公開できるようになります。</p>
+
+    <p class="gra">GitHubのリポジトリをプライベートにする</p>
+    <div class="content">
+     <img src="/another-eden/anaimage/feingithub.png" alt="feingithub" class="biggraphic fade-in-out">
+     <p>プライベートリポジトリであれば、リポジトリの所有者と指定されたコラボレーターのみがアクセスできます。<br>
+      他の人はWeb上で貴方のコードを見ることはできません。</p>
+    </div>
+
+    <ul>
+     <li>GitHubにログインしてプライベートにしたいリポジトリのページに移動</li>
+     <li>リポジトリページの上部にある「Settings」タブをクリック</li>
+     <li>「General」セクションの「Danger Zone」までスクロール</li>
+     <li>「This repository is currently private.」と表示されていれば、リポジトリがプライベートになっている</li>
+    </ul>
+
+    <p>もしくは、GitHubリポジトリ一覧ページで、リポジトリ名の横に鍵のアイコンが表示されていれば、リポジトリはプライベートです。</p>
+
+    <p class="gra">Gitのステータス表示と操作</p>
+    <p>GitHubとの連携直後、VSCodeでファイル名が緑色になると思います。<br>
+     加えて右側に「A」と表示されているはずで、それはGitのステータス表示です。<br>
+     それぞれの意味と、続く操作を説明しますね。</p>
+
+    <dl>
+     <dt><span style="color: darkgreen;">緑色のファイル名</span></dt>
+     <dd>ファイルがGitに新規追加されたことを意味します。<br>
+      ステージングエリアに追加されており、次のコミットでリポジトリに追加される予定のファイルです。
+     </dd>
+
+     <dt><span style="color: darkgreen;">A</span>の表示</dt>
+     <dd>「A」は「Added」（追加）を意味します。<br>
+      そのファイルが新しく追加されたことを示しています。
+     </dd>
+    </dl>
+
+    <dl>
+     <dt>変更を確認</dt>
+     <dd>ステージングエリアにあるファイルを確認し、必要な変更が正しく含まれていることを確認します。</dd>
+
+     <dt>コミット</dt>
+     <dd>ファイルがステージされていることを確認したら、コミットメッセージを入力して「コミット」ボタンをクリックします。<br>
+      変更がリポジトリに保存されるでしょう。
+     </dd>
+
+     <dt>プッシュ</dt>
+     <dd>コミットが完了したら、リモートリポジトリに変更を反映させるために「プッシュ」ボタンをクリックします。</dd>
+    </dl>
+
+
+    <dl>
+     <dt><span style="color: darkorange;">橙色のファイル名</span></dt>
+     <dd>ファイルが変更されたことを示しています。<br>
+      既存のファイルに対して何らかの編集が加えられた状態です。
+     </dd>
+
+     <dt><span style="color: darkorange;">M</span>の表示</dt>
+     <dd>「M」は「Modified」（変更）の略で、そのファイルが修正されたことを意味します。
+     </dd>
+    </dl>
+
+    <p>次に取るべきステップは、変更をステージングエリアに追加し、コミットすることです。</p>
+
+    <dl>
+     <dt>変更をステージング</dt>
+     <dd>ソース管理ビュー（Gitアイコン）で、変更されたファイル名の横にあるプラスアイコン（+）をクリックして、変更をステージングエリアに追加します。</dd>
+
+     <dt>コミット</dt>
+     <dd>コミットメッセージを入力して、「コミット」ボタンをクリックします。<br>
+      これでステージされた変更がリポジトリに保存されます。
+     </dd>
+
+     <dt>リモートリポジトリにプッシュ</dt>
+     <dd>リモートリポジトリ（例えばGitHub）に変更を反映させるために「プッシュ」ボタンをクリックします。</dd>
+    </dl>
+
+    <p>この手順を踏むことで、変更をしっかりとリポジトリに保存し、必要に応じてリモートリポジトリにも反映させることができます。<br>
+     一応、VSCodeのソース管理に表示されるであろうボタン名と意味を説明しておきます。</p>
+
+    <dl>
+     <dt>コミット</dt>
+     <dd>作業中の変更をローカルに保存したい</dd>
+
+     <dt>コミット（修正）</dt>
+     <dd>既存のコミットを修正したい</dd>
+
+     <dt>コミットしてプッシュ</dt>
+     <dd>リモートリポジトリにも変更を反映させたい</dd>
+
+     <dt>コミットして同期</dt>
+     <dd>他のメンバーの変更も含めて最新の状態にしたい</dd>
+    </dl>
+
+   </div><!--3タブの分岐点-->
+  </div>
+
+
+  <h2>🌟頻用する素材と錬金釜</h2>
+
+  <p>このアトリエページは、表面上は子供っぽいキャラクターごっこです。<br>
+   でも実際は、「私自身のコード管理」と「訪問者向けのコード解説」を両立させたUIとして、機能しています。</p>
+
+  <div class="content">
+   <img src="/another-eden/anaimage/Visual_mariel_Code.jpg" alt="Visual_mariel_Code" class="biggraphic fade-in-out">
+   <p>せっかくライザごっこをしているのですから、頻用する合成材料を置く場所を作りましょう。<br>
+    ライザのアトリエにもそういったスペースはあるはず？！<br>
+    一通りの「素材」が揃った今なら…そういったUIを作り込むことも可能です！</p>
+  </div>
+
+  <div class="tabs-fein">
+   <button class="tab-fein" data-tab="pane1-fein">Creation Procedure</button>
+   <button class="tab-fein" data-tab="pane2-fein">HTML elements</button>
+  </div>
+  <!--●１タブの開始地点●-->
+  <div id="pane1-fein" class="tab-pane-fein active">
+
+   <p>□をタップすると✅に変化します。<br>
+    手書きコードによるWebサイトは煩雑になりがちです。<br>
+    でも手作業を回避しつつパターン化すれば、漏れなく作っていけますね。</p>
+
+   <p class="gra">新しいページを作成する</p>
+
+   <div class="content">
+    <img src="/another-eden/anaimage/ライザドヤ顔.jpg" alt="ライザドヤ顔.jpg" class="graphicmini right-image fade-in-out">
+    <dl>
+     <dt><button class="inline-button">□</button>画像などコード以外のファイル</dt>
+     <dd><a href="/contents/color.html#target_system">基礎的なシステムとルール</a>の手順で行う</dd>
+     <dt><button class="inline-button">□</button>元ページからコピー</dt>
+     <dd>属性が近い同一ディレクトリにあるhtmlファイルをコピー</dd>
+     <dt><button class="inline-button">□</button>ページタイトルとURLを置換</dt>
+     <dd>まとめて変更して抜け漏れを防ぐ</dd>
+     <dt><button class="inline-button">□</button>文章をコピー</dt>
+     <dd>画像やUIを作る前に文章のみ、過去のノートや<a href="https://sites.google.com/view/feins-portal/">fein's portal</a>からコピー＋リライト</dd>
+    </dl>
+   </div>
+
+   <div class="content">
+    <img src="/another-eden/anaimage/ライザ驚顔.jpg" alt="ライザ驚顔.jpg" class="graphicmini right-image fade-in-out">
+    <dl>
+     <dt><button class="inline-button">□</button>デザインやUIを合成！</dt>
+     <dd>必要に応じて外部化されたCSSとJavaScriptを挿入する</dd>
+     <dt><button class="inline-button">□</button>画像を配置</dt>
+     <dd>ここにあるコードをコピーしてファイル名を変更する</dd>
+     <dt><button class="inline-button">□</button>サイトマップを通す</dt>
+     <dd><a href="/another-eden/anaden_sitemap.html">アナザーエデン</a>・<a href="/contents/site_create.html">個人サイト制作</a>・<a
+       href="/fish/fish_sitemap.html">アウトドアのエリア</a>
+     </dd>
+     <dt><button class="inline-button">□</button>公開前のチェック</dt>
+     <dd>ローカルサーバーで稼働するモバイルアプリ化したWebサイトを操作</dd>
+    </dl>
+   </div>
+
+   <div class="content">
+    <img src="/another-eden/anaimage/ヘブンズクエーサー.jpg" alt="ヘブンズクエーサー.jpg" class="biggraphic fade-in-out">
+    <p>🌟フェイタルドライブの「ヘブンズクエーサー」をキメる！！🌟<br>
+     じゃなくて…<br>
+     Google Cloud SDK Shell で gcloud app deploy を実行して公開！</p>
+    <p class="gra">暫定対処</p>
+    <ul>
+     <li>クリアしたWebページから順に長文を削除する。</li>
+     <li>👉：<a href="/contents/site_create.html">個人サイト制作</a></li>
+    </ul>
+   </div>
+
+
+
+   <p class="gra">基礎デザインを作っているstyle.css</p>
+   <p>下部の「CSS elements」をタップすると、コード全体をチェックできます。</p>
+   <ul>
+    <li><a href="/contents\codeinfo.html#link_style">デフォルトの青に少し手を入れたリンク</a></li>
+    <li><a href="/contents\codeinfo.html#sitemaplink_style">サイトマップ用の目立つリンク</a></li>
+    <li><a href="/contents\codeinfo.html#mimics_style">見出しのように使う文字装飾を描く</a></li>
+    <li><a href="/contents\codeinfo.html#stickynote_style">立体的な付箋を描く</a></li>
+    <li><a href="/contents\codeinfo.html#bold_style">太字にして定義リストを読みやすくする</a></li>
+    <li><a href="/contents\codeinfo.html#spacer_style">手軽に余白を設定する</a></li>
+    <li><a href="/contents\codeinfo.html#list_style">箇条書きの余分な余白を削除する</a></li>
+    <li><a href="/contents\codeinfo.html#body_style">bodyを綺麗に整える</a></li>
+    <li><a href="/contents\codeinfo.html#utf8_style">文字コードをutf-8とする</a></li>
+    <li><a href="/contents\heading_css.html#heading_style">統一感を持たせた見出しを作る</a></li>
+   </ul>
+
+  </div>
+  <!--●２タブの開始地点●-->
+  <div id="pane2-fein" class="tab-pane-fein">
+
+   <p>HTMLコードの解説はここではしませんが、どこのページでも使う部品のようなコードはあります。<br>
+    そういうのは１カ所にまとめておくと、ページ作成の手間を大幅に削減できます。</p>
+
+   <p class="gra">頻用するHTMLコード</p>
+
+   <div class="code-container">
+    <pre><code class="language-html">
+&lt;!--コードを記載する時の枠--&gt;
+&lt;div class=&quot;code-container&quot;&gt;
+    &lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</code></pre>
+   </div>
+
+   <div class="spacer"></div>
+
+   <div class="code-container">
+    <pre><code class="language-html">
+&lt;!--通常サイズの画像とテキスト回り込み--&gt;
+&lt;div class=&quot;content&quot;&gt;
+    &lt;img src=&quot;Atelier.jpg&quot; alt=&quot;Illustration of the atelier&quot; class=&quot;graphic right-image fade-in-out&quot;&gt;
+
+&lt;/div&gt;
+
+</code></pre>
+   </div>
+
+   <div class="spacer"></div>
+
+   <div class="code-container">
+    <pre><code class="language-html">
+&lt;!--ミニサイズの画像とテキスト回り込み--&gt;
+&lt;div class=&quot;content&quot;&gt;
+    &lt;img src=&quot;Atelier.jpg&quot; alt=&quot;Illustration of the atelier&quot; class=&quot;graphicmini right-image fade-in-out&quot;&gt;
+
+&lt;/div&gt;
+
+</code></pre>
+   </div>
+
+   <div class="spacer"></div>
+
+   <div class="code-container">
+    <pre><code class="language-html">
+&lt;!--縦長の画像とテキスト回り込み--&gt;
+&lt;div class=&quot;content&quot;&gt;
+    &lt;img src=&quot;wallpaper.jpg&quot; alt=&quot;wallpaper&quot; class=&quot;wallpaper right-image fade-in-out&quot;&gt;
+
+&lt;/div&gt;
+
+</code></pre>
+   </div>
+
+   <div class="spacer"></div>
+
+   <div class="code-container">
+    <pre><code class="language-html">
+&lt;!--ストレートに画像を掲載し、テキストの回り込みを行わない--&gt;
+&lt;img src=&quot;Atelier.jpg&quot; alt=&quot;Illustration of the atelier&quot; class=&quot;graphic fade-in-out&quot;&gt;
+
+</code></pre>
+   </div>
+
+   <div class="spacer"></div>
+
+   <div class="code-container">
+    <pre><code class="language-html">
+&lt;!--大きな画像を掲載し、テキストの回り込みを行わない--&gt;
+&lt;div class=&quot;content&quot;&gt;
+    &lt;img src=&quot;Atelier.png&quot; alt=&quot;Illustration of the atelier&quot; class=&quot;biggraphic fade-in-out&quot;&gt;
+
+&lt;/div&gt;
+
+</code></pre>
+   </div>
+
+   <div class="spacer"></div>
+
+   <div class="code-container">
+    <pre><code class="language-html">
+&lt;!--草花の写真を飾る--&gt;
+&lt;div class=&quot;flowerclearfix&quot;&gt;
+    &lt;div class=&quot;flowerfade-out&quot;&gt;
+        &lt;img src=&quot;/flower0/flower0(number).JPG&quot; alt=&quot;フェードアウト効果の草花写真&quot;&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+</code></pre>
+   </div>
+
+   <div class="spacer"></div>
+
+   <div class="code-container">
+    <pre><code class="language-html">
+&lt;!--定義リストを作成する--&gt;
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;HyperText Markup Languageの略。Webページを作成するための言語。&lt;/dd&gt;
+
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Cascading Style Sheetsの略。HTML要素の見た目を整えるためのスタイルシート言語。&lt;/dd&gt;
+
+  &lt;dt&gt;JavaScript&lt;/dt&gt;
+  &lt;dd&gt;Webページに動的な動作を追加するためのプログラミング言語。&lt;/dd&gt;
+&lt;/dl&gt;
+
+</code></pre>
+   </div>
+
+  </div>
+
+
+  <p class="gra">CSS elements</p>
+  <button class="collapsible">タップして開く ▼</button>
+  <div class="collapsiblecontent">
+
+   <p>中心となるスタイルシートはちゃんと管理しないとグチャグチャになりがちです。<br>
+    特に私は何でも放り込む悪い癖があるし、長くなりがちなコードは順次逃がすようにしていますね。<br>
+    まずは本体のcssではない写しでコードを管理し、問題が発生しなければ本番環境へ貼り付けています。</p>
+
+   <p class="codegra" id="atelier_design">基礎デザインを作っているstyle.css</p>
+   <div class="code-container">
+    <pre><code class="language-css">
+/* ★文字コードをutf-8とする */
+@charset "UTF-8";
+
+/* ★bodyを綺麗に整える */
+body {
+ font-family: 'Lato', 'Noto Sans JP', sans-serif;
+ font-size: 15px;
+ font-weight: 400;
+ font-style: normal;
+ overflow: auto;
+ margin: 10px;
+ padding: 0;
+ border-radius: 20px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+ background-color: white;
+}
+
+/* responsive design ●start●*/
+/* Checked */
+.feincontainer {
+ width: 90%;
+ margin: 0 auto;
+ box-sizing: border-box;
+}
+
+/* Mobile adjustments */
+/* Checked */
+@media (max-width: 600px) {
+ .feincontainer {
+  font-size: 0.875em;
+  padding: 10px 0;
+ }
+
+ .responsive-iframe {
+  width: 100%;
+  height: calc(100vh - 20px);
+ }
+}
+
+/* Computer adjustments */
+/* Checked */
+@media (min-width: 601px) {
+ .feincontainer {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px 150px;
+ }
+
+ .responsive-iframe {
+  width: 80%;
+  height: 80vh;
+ }
+}
+
+/* Checked */
+/* responsive design ●end●*/
+
+/* ★箇条書きの余分な余白を削除する */
+ul,
+ol {
+ margin-left: 0;
+ padding-left: 25px;
+}
+
+/* ★手軽に余白を設定する */
+div.spacer {
+ height: 20px;
+}
+
+/* ★太字にして定義リストを読みやすくする */
+dt {
+ font-weight: bold;
+}
+
+dd {
+ margin-left: 10px;
+}
+
+/* ★立体的な付箋を描く */
+p.feintag {
+ display: inline-block;
+ position: relative;
+ padding: .5em 1.4em .5em 1em;
+ background-color: rgba(255, 204, 204, 0.8);
+ color: #333333;
+ font-weight: bold;
+ text-align: left;
+}
+
+.right-align-container {
+ text-align: right;
+}
+
+.feintag::before {
+ position: absolute;
+ bottom: -1px;
+ right: 9px;
+ z-index: -1;
+ transform: rotate(5deg);
+ width: 70%;
+ height: 50%;
+ background-color: rgba(208, 208, 208, 0.6);
+ content: "";
+ filter: blur(4px);
+}
+
+/* ★統一感を持たせた見出しを作る */
+h1.background-waveimage-heading {
+ background-image: url('../image/hone.png');
+ background-size: contain;
+ background-repeat: no-repeat;
+ background-position: left;
+ padding: 20px;
+ font-size: 1.7em;
+}
+
+h1.background-waveimage-heading span {
+ opacity: 0.7;
+}
+
+h2 {
+ display: block;
+ width: fit-content;
+ background: linear-gradient(to right, rgba(173, 216, 230, 0.2), rgba(173, 216, 230, 0));
+ padding: 10px;
+ border-radius: 15px;
+ margin-top: 30px;
+ margin-bottom: 5px;
+}
+
+h2.sitemap_heading {
+ display: block;
+ width: fit-content;
+ background: linear-gradient(to right, rgba(173, 216, 230, 0.2), rgba(173, 216, 230, 0));
+ padding: 10px;
+ border-radius: 15px;
+ margin-top: 10px;
+ margin-bottom: 5px;
+}
+
+h3 {
+ display: block;
+ width: fit-content;
+ background: linear-gradient(to right, rgba(173, 216, 230, 0.2), rgba(173, 216, 230, 0));
+ padding: 10px;
+ border-radius: 15px;
+ margin-top: 30px;
+ margin-bottom: 5px;
+ position: relative;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3::after {
+ content: '';
+ position: absolute;
+ bottom: -5px;
+ left: 0;
+ width: 100%;
+ height: 3px;
+ background: linear-gradient(to right, rgba(255, 0, 51, 0.5), rgba(255, 255, 255, 0.5));
+ transform: scaleX(0);
+ transform-origin: bottom right;
+ transition: transform 0.5s ease-out;
+}
+
+h3.visible::after {
+ transform: scaleX(1);
+ transform-origin: bottom left;
+}
+
+.grastah3 {
+ margin-top: 0;
+}
+
+h4 {
+ display: block;
+ width: fit-content;
+ background: linear-gradient(to right, rgba(173, 216, 230, 0.2), rgba(173, 216, 230, 0));
+ padding: 10px;
+ border-radius: 15px;
+ margin-top: 30px;
+ margin-bottom: 0;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h5 {
+ font-size: 110%;
+ margin-top: 25px;
+ margin-bottom: 0;
+ padding-bottom: 0;
+ line-height: 1.2;
+ color: rgba(0, 0, 0, 0.7);
+}
+
+/* ★見出しのように使う文字装飾を描く */
+p.gra {
+ display: block;
+ width: fit-content;
+ background: linear-gradient(to bottom, rgba(255, 153, 153, 0.3), rgba(255, 255, 255, 0.3));
+ font-weight: bold;
+ padding: 10px;
+ border-radius: 15px;
+ margin-top: 30px;
+}
+
+p.codegra {
+ display: block;
+ width: fit-content;
+ background: linear-gradient(to bottom, rgba(153, 255, 153, 0.3), rgba(255, 255, 255, 0.3));
+ font-weight: bold;
+ padding: 10px;
+ border-radius: 15px;
+ margin-top: 30px;
+}
+
+/* Text settings ●start● */
+
+span.small-orange-text {
+ font-size: 0.9em;
+ color: #cc3300;
+}
+
+span.small-text {
+ font-size: 0.8em;
+}
+
+/* Text settings ●end● */
+
+/* Table settings ●start● */
+table {
+ width: 100%;
+ border-collapse: collapse;
+}
+
+th,
+td {
+ border: 1px solid black;
+ width: 50%;
+ box-sizing: border-box;
+ border-left: none;
+ border-right: none;
+}
+
+tr.grasta_blue {
+ background-color: #e0f7fa;
+}
+
+tr.grasta_green {
+ background-color: #E0FFE0;
+}
+
+.boss-table th:nth-child(1),
+.boss-table td:nth-child(1) {
+ width: 30%;
+}
+
+.boss-table th:nth-child(2),
+.boss-table td:nth-child(2) {
+ width: 20%;
+}
+
+.boss-table th:nth-child(3),
+.boss-table td:nth-child(3) {
+ width: 50%;
+}
+
+tr.header-blue {
+ background-color: #e0f7fa;
+}
+
+.weapon-table th:nth-child(1),
+.weapon-table td:nth-child(1) {
+ width: 20%;
+}
+
+.weapon-table th:nth-child(2),
+.weapon-table td:nth-child(2) {
+ width: 40%;
+}
+
+.weapon-table th:nth-child(3),
+.weapon-table td:nth-child(3) {
+ width: 40%;
+}
+
+caption {
+ visibility: hidden;
+ height: 0;
+ overflow: hidden;
+}
+
+.custom-table-container {
+ display: block;
+ padding: 10px;
+ border-radius: 15px;
+ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+ margin: 10px 0;
+}
+
+/* Table settings ●end● */
+
+/* Image settings ●start● */
+/* large image */
+img.biggraphic {
+ margin: 10px;
+ display: block;
+ width: 80%;
+ height: auto;
+ border-radius: 10px;
+}
+
+/* normal size image */
+img.graphic {
+ margin: 10px;
+ display: block;
+ width: 50%;
+ height: auto;
+ border-radius: 10px;
+}
+
+/* small image */
+img.graphicmini {
+ margin: 10px;
+ display: block;
+ width: 30%;
+ height: auto;
+ border-radius: 10px;
+}
+
+/* Images to accompany the short story on the table */
+img.graphicsaki {
+ margin: 10px;
+ display: block;
+ width: 50%;
+ height: auto;
+ border-radius: 10px;
+}
+
+/* Wrap the text around the image to the right */
+img.right-image {
+ float: right;
+}
+
+div.content {
+ overflow: hidden;
+}
+
+/* Fade in and fade out animation */
+img.fade-in-out {
+ opacity: 0;
+ transition: opacity 1s ease-in-out;
+}
+
+img.fade-in-out.visible {
+ opacity: 1;
+}
+
+/* Wallpaper to accompany the short story on the table */
+img.wallpaper {
+ margin: 10px;
+ display: block;
+ width: 40%;
+ height: auto;
+ border-radius: 10px;
+}
+
+/* Two side-by-side images to accompany the short story on the front */
+.grastaimage {
+ display: flex;
+ justify-content: space-between;
+ gap: 5px;
+ border-radius: 10px;
+}
+
+.grastaimage img {
+ max-width: 45%;
+ height: auto;
+ border-radius: 10px;
+}
+
+/* image in table */
+div.gtable {
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-start;
+ border-radius: 10px;
+}
+
+.toptext {
+ margin-bottom: 10px;
+}
+
+.bottomimage {
+ display: block;
+ max-width: 80%;
+ height: auto;
+ margin: auto;
+}
+
+/* Unique class name. Horizontal alignment of images. */
+.horizontally-container {
+ display: flex;
+ border-radius: 10px;
+}
+
+img.horizontally {
+ margin: 10px;
+ width: 30%;
+ height: auto;
+}
+
+/* Image settings ●end● */
+
+/* ★サイトマップ用の目立つリンク */
+.custom-link {
+ color: #1A73E8;
+ font-weight: bold;
+ transition: color 0.3s ease;
+}
+
+.custom-link:hover {
+ color: #00A2ED;
+ text-decoration: underline;
+}
+
+/* ★デフォルトの青に少し手を入れたリンク */
+a {
+ color: #1A73E8;
+}
+
+a:hover {
+ color: #00A2ED;
+}
+
+/* タブ式表示 */
+.tabs-fein {
+ display: flex;
+ border-bottom: 1px solid #ccc;
+}
+
+.tab-fein {
+ border: 1px solid #ccc;
+ padding: 10px 20px;
+ border-radius: 10px 10px 0 0;
+ background-color: rgba(173, 216, 230, 0.3);
+ cursor: pointer;
+}
+
+.tab-fein:not(:last-child) {
+ margin-right: 5px;
+}
+
+.tab-fein:hover {
+ background-color: rgba(173, 216, 230, 0.5);
+}
+
+.tab-fein.active {
+ background-color: rgba(173, 216, 230, 0.7);
+ font-weight: bold;
+ border-bottom: 3px solid #007BFF;
+}
+
+.tab-pane-fein {
+ position: absolute;
+ width: 95%;
+ opacity: 0;
+ border: 1px solid #ccc;
+ padding: 10px;
+ border-radius: 5px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ transform: translateX(-100%);
+ transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.tab-pane-fein.active {
+ position: static;
+ opacity: 1;
+ transform: translateX(0);
+}
+
+/* pythonによるタブ式表示 */
+.atelier-tab {
+ display: inline-block;
+ margin: 0 5px;
+ padding: 10px 20px;
+ border: 1px solid #ccc;
+ cursor: pointer;
+ border-top-left-radius: 10px;
+ border-top-right-radius: 10px;
+ background-color: rgba(144, 238, 144, 0.5);
+}
+
+.atelier-tab-content {
+ display: none;
+ padding: 20px;
+ border-top: none;
+ border: 1px solid #ccc;
+ border-radius: 10px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ background-color: #fff;
+}
+
+.atelier-active-tab {
+ background-color: rgba(144, 238, 144, 1);
+}
+
+.atelier-active-content {
+ display: block;
+}
+
+/* アトリエフラワー */
+hr.atelierflower {
+ border: none;
+ height: 10px;
+ background: linear-gradient(to right,
+   rgba(107, 142, 35, 0) 0%,
+   rgba(107, 142, 35, 1) 20%,
+   rgba(34, 139, 34, 0.5) 50%,
+   rgba(107, 142, 35, 1) 80%,
+   rgba(107, 142, 35, 0) 100%);
+ position: relative;
+ background-size: 100% 100%;
+ border-radius: 50%;
+ margin: 20px 0;
+}
+
+hr.atelierflower::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 50%;
+ transform: translateX(-50%);
+ width: 40px;
+ height: 40px;
+ background: radial-gradient(circle,
+   rgba(34, 139, 34, 0.5) 20%,
+   rgba(255, 255, 255, 0) 70%);
+ border-radius: 50%;
+}
+
+ /* アトリエページのチェックボタン */
+.inline-button {
+  display: inline; /* ボタンをインライン表示にする */
+  font-size: 1rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+</code></pre>
+   </div>
+
+  </div>
+
+  <h2>道具を組み合わせるWeb制作と錬金術</h2>
+
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザ天上げ.jpg" alt="ライザ天上げ" class="graphicsaki right-image fade-in-out">
+   <p>ライザの様子を見ていて思ったのは、Web制作と錬金術って似ている側面が多いなということなんです。<br>
+    どちらも材料を組み合わせて調合し、何かしらの形を作っていきます。<br>
+    何を選ぶかは自由が利くこともあるし、そうでないこともある。<br>
+    レベルが上がれば上がるほどいろんなことができるようになって…<br>
+    そんなことを感じながらアナデンのライザコラボを夢中でプレイしていました。</p>
+
+   <p>せっかくなら、思いっきりライザにあやかったWebページの在り方にしてみたいと思ったんだよね。</p>
+  </div>
+
+  <h5><span style="color: #993300;">何を入れるのがいいかなぁー</span></h5>
+
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザ錬成中1.jpg" alt="ライザ錬成中1" class="graphicsaki right-image fade-in-out">
+   <p>ここは2段構えでいきたいんですよね。</p>
+   <ol>
+    <li>錬金術はできないけど、その代わりにWeb制作のジャンルでライザごっこ</li>
+    <li>ライザのアトリエコラボのゲームコンテンツ</li>
+   </ol>
+   <p>HTML・CSS・JavaScript・Python・Lua、Google Cloud App Engine・Azure Static Web Appsなどなど。<br>
+    Web制作に使える材料はたくさんあります。<br>
+    その中から必要なものを選んで錬成していく過程は、ライザごっこにぴったりじゃない？！</p>
+  </div>
+
+  <h5><span style="color: #993300;">これでいいかな！</span></h5>
+
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザ錬成中2.jpg" alt="ライザ錬成中2" class="graphicsaki right-image fade-in-out">
+   <p>ちゃんと裏ボスなりストーリーなり、直接ゲームのことも書くからね？<br>
+    フォロワーさんの中には「忙しくてまだプレイできていない…」という人もいたから、まずはWeb制作について書いていきます。</p>
+   <p>何より私がライザごっこやりたくて仕方ないからね😆ww<br>
+    錬金術はファンタジーですが、Web制作と重なる部分がとても多いと感じるんだよ。<br>
+    大きな鍋がWebサーバーだもん。</p>
+  </div>
+
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザ錬成中3.jpg" alt="ライザ錬成中3" class="graphicsaki right-image fade-in-out">
+   <p>ゲーム部分の攻略等は、時間を経るとどうしても色褪せてしまいます。<br>
+    ライブサービスゲームだからそれは仕方ないんだけど、旬なうちに楽しむということは、旬が過ぎればそれまでということでもある。<br>
+    ネタバレの懸念も薄まるように、そして自分にとって良い思い出となるように、時間の経過を見つつ順次ゲームネタを書いていきましょう。</p>
+  </div>
+
+  <h5><span style="color: #993300;">やったぁー！ できた！</span></h5>
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザ錬成中4.jpg" alt="ライザ錬成中4" class="graphicsaki right-image fade-in-out">
+   <p>Pythonのコードネタは学生時代の勉強ノートから引っ張ってきたものです。<br>
+    当時はコードを書けても、私がフロントエンド・バックエンドの関連性を十分に理解できておらず、実装することができなかったのですよ。<br>
+    自分のパソコンで動作させるのが精一杯。<br>
+    こうしてWeb公開にまで至らなかった。</p>
+
+   <p>せっかくですから、このWebページの紹介文をタブUIに書いてみましょう。</p>
+  </div>
+
+  <p class="gra">このページのご案内</p>
+  <div class="atelier-container">
+   <div class="atelier-tabs">
+    <div class="atelier-tab" data-tab="1">構成</div>
+    <div class="atelier-tab" data-tab="2">内容</div>
+    <div class="atelier-tab" data-tab="3">将来</div>
+   </div>
+   <div class="atelier-tab-content" data-content="1">
+    <p>このページの構成としては、次の通りです。</p>
+    <ol>
+     <li>ライザごっこをしながら、Webサイトのパーツを次々と作ります</li>
+     <li>まるで錬金術をしているみたいに、いろんな技術の組み合わせを試みます</li>
+     <li>アナデンのライザコラボについて、ストーリーの感想や裏ボス撃破の様子なども添えていきます</li>
+    </ol>
+    <p>ゲームネタだけだと、どうしてもWebページの寿命が短くなってしまいます。<br>
+     でもWebサイトのパーツを作るための「アトリエ」としての機能を持たせるなら、推しのライザと自分の好きな活動を結び付けつつ、寿命も長いWebページにできるじゃない。</p>
+   </div>
+   <div class="atelier-tab-content" data-content="2">
+    <p>このページの具体的な内容としては、まずはPythonを使ってタブUIの実装を試みます。<br>
+     今ご覧になっているようなUIのことです。<br>
+     このようなタブUIは、既存のホームページ作成サービスやブログ作成サービスではなかなか見られません。<br>
+     機能そのものが実装されていないんだよね。<br>
+     プルダウンメニューとかはよく見るけど、タブを作った上でコンテンツを詰め込めるような動きが機能として添えられているものが少ないです。</p>
+    <p>こういうちょっと凝ったUIの実装は、手書きコードによる静的ウェブサイトならではだと思います。</p>
+   </div>
+   <div class="atelier-tab-content" data-content="3">
+    <p>将来と言っても…何でもできると思いますね。<br>
+     Web制作のアトリエとして機能させるページとするのは変わりませんが、細かい中身に関しては次々と他ページへ移動させたって良いのだから。<br>
+     それこそ、アナザーエデンがエンディングを迎えた後であっても、活きたWebページとして運用し続けることができますよ。<br>
+     あれもやってみよう。これもやってみよう。みたいな、技術的な「冒険」を試みていくページにすればいい。<br>
+     そんなアトリエの片隅にライザと冒険したときの思い出が書いてあるわけです。</p>
+    <p>ゲームの攻略情報としては色褪せていくけど、こういうページを作れたきっかけとして、その場に置いておけるってことですね。</p>
+   </div>
+  </div>
+
+  <h2>PythonでタブUIを実装する</h2>
+
+  <div class="content">
+   <img src="/another-eden/anaimage/ルドヴィカ.jpg" alt="ルドヴィカ" class="graphicsaki right-image fade-in-out">
+   <p>ライザのアトリエと言うからには、試行錯誤の上での調合とその成功をテーマにしていきたいですね。<br>
+    ルドヴィカの物語は多くのユーザーの気持ちを掴んだのでは？<br>
+    まずはストーリーに直接触れなくて済む、タブUIの「調合」を、このアトリエで試みます。</p>
+
+   <p>ここで重要な「調合アイテム」は、Brython（ブリトン）です。<br>
+    Pythonのシンプルな文法を使ってフロントエンドの機能を実装でき、JavaScriptを深いレベルで学ぶ必要がなくなります。<br>
+    Pythonの知識だけでフロントエンド開発ができるツールなんですよね。<br>
+    JavaScriptに比べると若干パフォーマンスが劣るようですが、軽微なUIなら支障はありません。<br>
+    Pythonライブラリや機能にしても、全てを扱う必要はないのですから。</p>
+  </div>
+
+  <h5>Brython（Browser Pythonの略）について</h5>
+  <div class="content">
+   <img src="/another-eden/anaimage/ASフィーネとライザ.jpg" alt="ASフィーネとライザ" class="graphicsaki right-image fade-in-out">
+   <p>Pythonのコードを直接ブラウザ上で実行するためのライブラリです。<br>
+    JavaScriptの代わりにPythonを使用してフロントエンド開発を行うことができます。<br>
+    BrythonはPython 3の多くの機能をサポートしており、Pythonの標準ライブラリの一部も使用できます。<br>
+    方法は単純で、アナデンで使われているLuaを動かした時と同じように、HTMLファイルにスクリプトタグを追加するだけです。</p>
+  </div>
+
+  <p>さっそくコードを見てみましょう。</p>
+
+  <h3>BrythonのJSファイルを取得して関連付ける</h3>
+  <p>アナデンで使われているLuaを実装した時と似ています。<br>
+   ひとまず実行環境を用意してあげないと、Pythonがブラウザ上で動作しません。</p>
+  <p class="codegra">Brythonをhtmlファイルと関連付けるコード</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;head&gt;
+ &lt;script src=&quot;/script/brython.js&quot;&gt;&lt;/script&gt;
+ &lt;script src=&quot;/script/brython_stdlib.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+</code></pre>
+  </div>
+
+  <p>もうHTML・CSS・JavaScriptによるサイト構築の基礎についてはご存じのものとして話を進めます。<br>
+   ここはコード紹介というより、ライザにあやかってファンサイトのUIを作っていくアトリエだからさ。</p>
+  <p>上記のように設定することで、Brythonの主要な機能と標準ライブラリを含めることができます。<br>
+   両方のファイルを使うとBrythonをフルに活用することができますよ。<br>
+   JavaScriptファイルの設置場所は御自身のサイトに合うようにパスを修正してください。</p>
+
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザ考え中.jpg" alt="ライザ考え中" class="graphicsaki right-image fade-in-out">
+
+   <p>まず、<a href="https://brython.info/">Brython公式サイト</a>から、<a
+     href="https://github.com/brython-dev/brython/releases">githubのBrythonリリースページ</a>へ移動します。<br>
+    そのサイトから「Brython-3.13.0.zip」をダウンロードします。<br>
+    zipを解凍すると、次のファイルが出てきます。</p>
+
+   <dl>
+    <dt>brython.js</dt>
+    <dd>Brythonの主要なスクリプトで、PythonコードをJavaScriptに変換して実行します。<br>
+     これがなければ、Brythonは動作しません。</dd>
+    <dt>brython_stdlib.js</dt>
+    <dd>Brythonの標準ライブラリを含むスクリプトです。<br>
+     Pythonの標準ライブラリの機能をブラウザ上で利用するために必要です。</dd>
+   </dl>
+
+   <p>インターネット越しにBrythonを使うこともできますが、自分のサイトのディレクトリに入れちゃった方が後がラクかと思います。</p>
+  </div>
+
+  <h3>HTMLの中にPythonを含める</h3>
+  <div class="content">
+   <img src="/another-eden/anaimage/クラウディア星導覚醒.jpg" alt="クラウディア星導覚醒" class="graphicsaki right-image fade-in-out">
+
+   <p>長くなるから、まだここではPythonまでは書かれていません。<br>
+    いったんhtml部分のみ記載しています。<br>
+    ポイントとなるのは、Brythonを使用してブラウザ内でPythonコードを実行しているところです。<br>
+    DOMの操作やイベントハンドリングを行う構成としてみました。<br>
+    JavaScriptはBrythonの初期化を行っているだけなので、主なロジックはPythonスクリプトに依存しています。</p>
+
+  </div>
+
+  <p class="codegra">タブUIの骨組みとなるhtmlコード</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;div class=&quot;atelier-container&quot;&gt;
+ &lt;div class=&quot;atelier-tabs&quot;&gt;
+  &lt;div class=&quot;atelier-tab&quot; data-tab=&quot;1&quot;&gt;Tab 1&lt;/div&gt;
+  &lt;div class=&quot;atelier-tab&quot; data-tab=&quot;2&quot;&gt;Tab 2&lt;/div&gt;
+  &lt;div class=&quot;atelier-tab&quot; data-tab=&quot;3&quot;&gt;Tab 3&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;atelier-tab-content&quot; data-content=&quot;1&quot;&gt;Content for Tab 1&lt;/div&gt;
+ &lt;div class=&quot;atelier-tab-content&quot; data-content=&quot;2&quot;&gt;Content for Tab 2&lt;/div&gt;
+ &lt;div class=&quot;atelier-tab-content&quot; data-content=&quot;3&quot;&gt;Content for Tab 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;atelier-container&quot;&gt;
+ &lt;div class=&quot;atelier-tabs&quot;&gt;
+  &lt;div class=&quot;atelier-tab&quot; data-tab=&quot;4&quot;&gt;Tab 4&lt;/div&gt;
+  &lt;div class=&quot;atelier-tab&quot; data-tab=&quot;5&quot;&gt;Tab 5&lt;/div&gt;
+  &lt;div class=&quot;atelier-tab&quot; data-tab=&quot;6&quot;&gt;Tab 6&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;atelier-tab-content&quot; data-content=&quot;4&quot;&gt;Content for Tab 4&lt;/div&gt;
+ &lt;div class=&quot;atelier-tab-content&quot; data-content=&quot;5&quot;&gt;Content for Tab 5&lt;/div&gt;
+ &lt;div class=&quot;atelier-tab-content&quot; data-content=&quot;6&quot;&gt;Content for Tab 6&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script type=&quot;text/python&quot;&gt;
+python部分はここではいったん省略
+&lt;/script&gt;
+
+&lt;script&gt;
+ window.addEventListener(&#x27;load&#x27;, () =&gt; {
+  brython({ debug: 1, selector: &quot;.atelier-container&quot; });
+ });
+&lt;/script&gt;
+
+</code></pre>
+  </div>
+
+  <p>このコードの概要をざっと説明します。</p>
+  <p class="gra">HTMLの構造</p>
+  <dl>
+   <dt>タブコンテナ（.atelier-container）</dt>
+   <dd>2つのタブコンテナがあり、それぞれに複数のタブ（.atelier-tab）とタブコンテンツ（.atelier-tab-content）が含まれています。</dd>
+
+   <dt>タブ（.atelier-tab）</dt>
+   <dd>各タブは data-tab 属性で識別され、クリックすると対応するコンテンツが表示されます。</dd>
+
+   <dt>タブコンテンツ（.atelier-tab-content）</dt>
+   <dd>各タブに対応するコンテンツで、data-content 属性によってどのタブに対応するかが示されています。</dd>
+  </dl>
+
+  <p class="gra">Pythonスクリプト（省略されている部分）</p>
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザ考え中表情.jpg" alt="ライザ考え中表情" class="graphicsaki right-image fade-in-out">
+
+   <p>タブのクリックイベントを処理し、対応するタブコンテンツの表示・非表示を制御するロジックなどが含まれています。（後述します）</p>
+
+   <p class="gra">JavaScriptの部分</p>
+   <p>ページの読み込み時にBrythonが初期化され、.atelier-container 内でPythonコードが実行されます。<br>
+    動作の流れとしては、次のような感じです。</p>
+   <ol>
+    <li>ページが読み込まれると、Brythonライブラリが初期化されます。</li>
+    <li>各タブをクリックすると、Pythonスクリプトによって対応するタブコンテンツが表示されます。</li>
+    <li>非アクティブなタブコンテンツは非表示になります。</li>
+   </ol>
+  </div>
+
+  <h3>Pythonコードの紹介</h3>
+  <p>いよいよここからPythonコードです。<br>
+   個人的にはJavaScriptでタブUIを作るよりラクだと感じるけど、まぁ好みかな？<br>
+   まずは簡単にさらーっと説明しますね。</p>
+
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザ考え中拡大版.jpg" alt="ライザ考え中拡大版" class="graphicsaki right-image fade-in-out">
+   <p class="gra">タブ切り替えの説明</p>
+   <p>このコードは、タブをクリックすると、それに対応するコンテンツ（中身）を表示するものです。</p>
+
+   <dl>
+    <dt>タブを準備</dt>
+    <dd>タブ（ボタンみたいなもの）とその中身（コンテンツ）をまとめておきます。</dd>
+
+    <dt>タブをクリックすると</dt>
+    <dd>クリックされたタブを「アクティブ（選ばれた）」状態にして、そのタブの中身を表示するために準備します。</dd>
+
+    <dt>アニメーションをつける</dt>
+    <dd>タブの中身がスライドして出てくる動きをつけます。</dd>
+   </dl>
+
+   <p class="gra">全体の流れ</p>
+
+   <ul>
+    <li>ページを読み込むときに、最初のタブとその中身を表示します。</li>
+    <li>それぞれのタブにクリックしたときの動きを設定します。</li>
+    <li>タブをクリックすると、そのタブの中身がスライドして出てきます。</li>
+   </ul>
+
+  </div>
+
+  <p>これで、タブを切り替えるたびに対応する中身がアニメーションと一緒に表示されるようになります。</p>
+
+  <p class="codegra">タブUIを作るPythonコード</p>
+  <div class="code-container">
+   <pre><code class="language-python">
+from browser import document, timer
+
+def show_tab(event):
+ container = event.target.closest('.atelier-container')
+ tabs = container.select('.atelier-tab')
+ contents = container.select('.atelier-tab-content')
+
+ for tab in tabs:
+  tab.classList.remove('atelier-active-tab')
+ for content in contents:
+  content.classList.remove('atelier-active-content')
+  content.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out'
+  content.style.transform = 'translateX(-100%)'
+  content.style.opacity = '0'
+  content.style.visibility = 'hidden'
+
+ event.target.classList.add('atelier-active-tab')
+ tab_id = event.target.getAttribute('data-tab')
+ active_content = container.select(f'[data-content="{tab_id}"]')[0]
+ active_content.classList.add('atelier-active-content')
+
+ def show_content():
+  active_content.style.visibility = 'visible'
+  active_content.style.opacity = '1'
+  active_content.style.transform = 'translateX(0)'
+
+ timer.set_timeout(show_content, 50)
+
+for container in document.select('.atelier-container'):
+ tabs = container.select('.atelier-tab')
+ if tabs:
+  tabs[0].classList.add('atelier-active-tab')
+  container.select('.atelier-tab-content')[0].classList.add('atelier-active-content')
+  for tab in tabs:
+      tab.bind('click', show_tab)
+
+</code></pre>
+  </div>
+
+  <p>アニメーションについてはCSSでやっても良いと思うのですが、Luaと違ってPythonなら多少は慣れているので。<br>
+   せっかくだからやってみましたよ。<br>
+   ちなみにこのタブUIで用いられるJavaScriptとPythonコードは、１つのWebページにつき１カ所に書かれていれば良いです。<br>
+   複数のタブを１つのWebページに実装しても、正常動作するようにしてあります。<br>
+   では、ここからは少し詳しくいきます。</p>
+
+  <p class="gra">必要なモジュールをインポート</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+from browser import document, timer
+
+</code></pre>
+  </div>
+
+  <dl>
+   <dt>document</dt>
+   <dd>ウェブページのDOM（Document Object Model）にアクセスするためのモジュールです。</dd>
+
+   <dt>timer</dt>
+   <dd>時間を指定して関数を実行するためのモジュールです。</dd>
+  </dl>
+
+  <p class="gra">タブを表示する関数を定義</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+def show_tab(event):
+    container = event.target.closest('.atelier-container')
+    tabs = container.select('.atelier-tab')
+    contents = container.select('.atelier-tab-content')
+
+</code></pre>
+  </div>
+
+  <dl>
+   <dt>show_tab関数</dt>
+   <dd>タブがクリックされたときに呼び出されます。</dd>
+
+   <dt>event.target</dt>
+   <dd>クリックされたタブ要素を指します。</dd>
+
+   <dt>closest('.atelier-container')</dt>
+   <dd>クリックされたタブの親要素であるコンテナを取得します。</dd>
+
+   <dt>tabs</dt>
+   <dd>コンテナ内のすべてのタブを取得します。</dd>
+
+   <dt>contents</dt>
+   <dd>コンテナ内のすべてのタブコンテンツを取得します。</dd>
+  </dl>
+
+  <p class="gra">現在のアクティブなタブとコンテンツを非アクティブにする</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+for tab in tabs:
+    tab.classList.remove('atelier-active-tab')
+for content in contents:
+    content.classList.remove('atelier-active-content')
+    content.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out'
+    content.style.transform = 'translateX(-100%)'
+    content.style.opacity = '0'
+    content.style.visibility = 'hidden'
+
+</code></pre>
+  </div>
+
+  <dl>
+   <dt>for tab in tabs</dt>
+   <dd>すべてのタブからatelier-active-tabクラスを削除します。</dd>
+
+   <dt>for content in contents</dt>
+   <dd>すべてのタブコンテンツからatelier-active-contentクラスを削除します。</dd>
+  </dl>
+
+  <p>ここで、タブコンテンツに対してアニメーション（スライドアウトとフェードアウト）を設定します。</p>
+
+  <p class="gra">クリックされたタブをアクティブにし、対応するコンテンツを表示</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+event.target.classList.add('atelier-active-tab')
+tab_id = event.target.getAttribute('data-tab')
+active_content = container.select(f'[data-content="{tab_id}"]')[0]
+active_content.classList.add('atelier-active-content')
+
+</code></pre>
+  </div>
+
+  <dl>
+   <dt>event.target.classList.add('atelier-active-tab')</dt>
+   <dd>クリックされたタブをアクティブにします。</dd>
+
+   <dt>tab_id</dt>
+   <dd>クリックされたタブのdata-tab属性の値を取得します。</dd>
+
+   <dt>active_content</dt>
+   <dd>対応するタブコンテンツを取得します。</dd>
+
+   <dt>active_content.classList.add('atelier-active-content')</dt>
+   <dd>対応するコンテンツをアクティブにします。</dd>
+  </dl>
+
+  <p class="gra">遅延してコンテンツを表示</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+def show_content():
+    active_content.style.visibility = 'visible'
+    active_content.style.opacity = '1'
+    active_content.style.transform = 'translateX(0)'
+
+timer.set_timeout(show_content, 50)
+
+</code></pre>
+  </div>
+
+  <dl>
+   <dt>show_content関数</dt>
+   <dd>アクティブなタブコンテンツを表示するためのものです。</dd>
+
+   <dt>timer.set_timeout(show_content, 50)</dt>
+   <dd>50ミリ秒後にshow_content関数を実行します。</dd>
+  </dl>
+
+  <p class="gra">最後のforから始まっている部分</p>
+  <div class="code-container">
+   <pre><code class="language-python">
+for container in document.select('.atelier-container'):
+ tabs = container.select('.atelier-tab')
+ if tabs:
+  tabs[0].classList.add('atelier-active-tab')
+  container.select('.atelier-tab-content')[0].classList.add('atelier-active-content')
+  for tab in tabs:
+   tab.bind('click', show_tab)
+
+</code></pre>
+  </div>
+  <p>ここなんだよねー<br>
+   これはですねー…ウェブページ内のすべての「atelier-container」をループしているのです。<br>
+   アナザーエデンで言うところの、<strong>ループ攻略</strong>ですよ！</p>
+
+  <p>ちょっと詳しめにいきましょう。</p>
+
+  <p><strong>ウェブページ内のすべてのatelier-containerをループ</strong></p>
+  <div class="code-container">
+   <pre><code class="language-python">
+for container in document.select('.atelier-container'):
+
+</code></pre>
+  </div>
+  <p>このコードはウェブページ内にあるすべての .atelier-container クラスを持つ要素を見つけて、それぞれに対して同じ処理を行うためのループです。<br>
+   簡単に言うと、ページにあるすべての「タブコンテナ」を順番に処理します。</p>
+
+
+  <p><strong>初期設定として、最初のタブとタブコンテンツをアクティブに</strong></p>
+  <div class="code-container">
+   <pre><code class="language-python">
+if tabs:
+    tabs[0].classList.add('atelier-active-tab')
+    container.select('.atelier-tab-content')[0].classList.add('atelier-active-content')
+
+</code></pre>
+  </div>
+  <p>このコードはタブコンテナ内にタブ (.atelier-tab) が存在するかを確認しています (if tabs:)。<br>
+   もしタブが存在する場合、最初のタブ (tabs[0]) に atelier-active-tab クラスを追加して、それをアクティブ（選択された状態）にします。<br>
+   同様に、最初のタブコンテンツにも atelier-active-content クラスを追加して表示されるようにします。<br>
+   このコードがないと、ページがロードされたときに最初のタブとその内容が表示されなくなってしまうのです。</p>
+
+
+  <p><strong>各タブにクリックイベントをバインドし、タブがクリックされたときに show_tab 関数を実行します</strong></p>
+  <div class="code-container">
+   <pre><code class="language-python">
+for tab in tabs:
+    tab.bind('click', show_tab)
+
+</code></pre>
+  </div>
+  <p>このコードはコンテナ内のすべてのタブ（.atelier-tab）に対して、クリックイベント（クリックされたときに起こる処理）を設定しています。<br>
+   tab.bind('click', show_tab) は、各タブをクリックしたときに show_tab 関数を実行するように設定しています。<br>
+   つまり、タブがクリックされると、そのタブに対応するコンテンツを表示する処理が実行されるってこと。</p>
+
+
+  <h3>装飾要素のCSSコード</h3>
+  <p>CSSはプログラミング風に考えると余計にこんがらがるので、単純にコメントアウトを付けてコードを紹介します。</p>
+
+  <p class="codegra">タブUIを装飾するcss</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* タブのスタイル */
+.atelier-tab {
+ display: inline-block; /* タブをインラインブロックに設定 */
+ margin: 0 5px; /* タブ間の左右マージンを5pxに設定 */
+ padding: 10px 20px; /* タブ内のパディングを上下10px、左右20pxに設定 */
+ border: 1px solid #ccc; /* タブの境界線を1pxの実線で#cccの色に設定 */
+ cursor: pointer; /* マウスカーソルをポインターに変更 */
+ border-top-left-radius: 10px; /* 左上の角を10pxの円弧に設定 */
+ border-top-right-radius: 10px; /* 右上の角を10pxの円弧に設定 */
+ background-color: rgba(144, 238, 144, 0.5); /* 背景色を半透明のライトグリーンに設定 */
+}
+
+/* タブコンテンツのスタイル */
+.atelier-tab-content {
+ display: none; /* デフォルトでは表示しない */
+ padding: 20px; /* コンテンツ内のパディングを20pxに設定 */
+ border-top: none; /* 上部の境界線をなしに設定 */
+ border: 1px solid #ccc; /* コンテンツの境界線を1pxの実線で#cccの色に設定 */
+ border-radius: 10px; /* 角を10pxの円弧に設定 */
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* コンテンツに影を付ける */
+ background-color: #fff; /* 背景色を白に設定 */
+}
+
+/* アクティブなタブのスタイル */
+.atelier-active-tab {
+ background-color: rgba(144, 238, 144, 1); /* 背景色を不透明のライトグリーンに設定 */
+}
+
+/* アクティブなタブコンテンツのスタイル */
+.atelier-active-content {
+ display: block; /* アクティブなコンテンツを表示 */
+}
+</code></pre>
+  </div>
+
+  <p>要するに、このCSSは「タブ」と「タブの中身」について、それぞれデザインしているのです。<br>
+   <a href="/contents/no_copying.html">AI学習や無断転載を防ぐプログラムの小ネタ集</a>ではJavaScriptを用いて青色のタブUIを実装しました。<br>
+   ここではPythonだから、緑色のタブUIにしてみたんだよね。
+  </p>
+
+  <h2>PythonでタブUIができたー！！</h2>
+  <p>念願の「ライザごっこ」ができて、大変満足しております😆ww</p>
+
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザ完成.jpg" alt="ライザ完成" class="graphicsaki right-image fade-in-out">
+   <p>html・css・JavaScriptでタブUIを作るのは一般的過ぎて退屈だから、このサイトの環境であるPythonを使って、フロントエンドで錬成してみました。<br>
+    ライザはアトリエで錬金術を使っていますが、リアルの私はそんなことできません。<br>
+    でも、こうしていくつかのWeb言語を「調合」し、Webサイトに自由なUIを「錬成」することならできます。</p>
+  </div>
+
+
+  <div class="content">
+   <img src="/another-eden/anaimage/クラウディア天上げ.jpg" alt="クラウディア天上げ" class="graphicsaki right-image fade-in-out">
+
+   <p>他にもいろいろスクショ集めましょうね！</p>
+
+  </div>
+
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザコラボfear終盤.jpg" alt="ライザコラボfear終盤" class="graphicsaki right-image fade-in-out">
+
+   <p>他にもいろいろスクショ集めましょうね！</p>
+
+  </div>
+
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザ星導覚醒.jpg" alt="ライザ星導覚醒" class="graphicsaki right-image fade-in-out">
+
+   <p>他にもいろいろスクショ集めましょうね！</p>
+
+  </div>
+
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザ戦闘中顔グラフィック.jpg" alt="ライザ星導覚醒" class="graphicsaki right-image fade-in-out">
+
+   <p>他にもいろいろスクショ集めましょうね！</p>
+
+  </div>
+
+
+  <!--
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザエンディング.jpg" alt="ライザエンディング" class="graphicsaki right-image fade-in-out">
+
+   <p>他にもいろいろスクショ集めましょうね！</p>
+
+  </div>-->
+
+  <!--
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザコラボシュゼット.jpg" alt="ライザコラボシュゼット" class="graphicsaki right-image fade-in-out">
+
+   <p>他にもいろいろスクショ集めましょうね！</p>
+
+  </div>-->
+
+  <!--
+  <div class="content">
+   <img src="/another-eden/anaimage/ルドヴィカ全体.jpg" alt="ルドヴィカ全体" class="graphicsaki right-image fade-in-out">
+
+   <p>他にもいろいろスクショ集めましょうね！</p>
+
+  </div>-->
+
+
+  <!-- アンペル競争.jpg
+フィーネライザバー.jpg
+ライザ天上げ拡大.jpg
+ライザアルマ.jpg
+ライザ指輪.jpg
+ライザ杖.jpg
+ライザ頑張る.jpg
+錬金術極める.jpg
+ライザ喜顔.jpg
+ライザ渋顔.jpg
+ライザ笑顔.jpg -->
+
+
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/atelier_studio.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

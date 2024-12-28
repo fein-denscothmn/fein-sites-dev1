@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+
+ <!-- Microsoft tag -->
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+
+ <meta charset="UTF-8">
+
+
+ <!--基本のメタタグ-->
+ <meta name="description" content="Webサイト制作に関する小話を掲載していこうかと。肩の力を抜いていきましょう。">
+ <meta name="keywords" content="個人サイト, リラックス, 雑談">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="Webサイトについての小話">
+ <meta property="og:description" content="Webサイト制作に関する小話を掲載していこうかと。肩の力を抜いていきましょう。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/sitesmalltalk.html">
+
+ <!--検索ヒット時のアイコン-->
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Webサイトについての小話",
+  "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/sitesmalltalk.html",
+  "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+}
+</script>
+
+ <!--レスポンシブデザイン-->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!--CSS-->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="../css/menu.css">
+ <link rel="stylesheet" type="text/css" href="../css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="../css/feinheadline1.css">
+ <link rel="stylesheet" type="text/css" href="../css/flower.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <!--JavaScript-->
+ <script src="../script/underline.js"></script>
+ <script src="../script/feinfade.js"></script>
+ <script src="../script/feinScroll.js"></script>
+ <!-- gsapの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <!-- prismの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+
+ <!-- google fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+
+ <!--ページタイトル-->
+ <title>Webサイトについての小話</title>
+
+ <!--ASノーナのファビコン-->
+ <link rel="icon" sizes="32x32" href="../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Webサイトについての小話</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!--ハンバーガーメニュー-->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!--ハンバーガーメニューここまで-->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="Webサイトについての小話の目次を開く ▼"
+   data-close-text="Webサイトについての小話の目次を閉じる ▲">Webサイトについての小話の目次を開く ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>Webサイトについての小話</span></h1>
+
+  <p>ネットは初めてか？<br>
+   肩の力抜けよ（笑）</p>
+  <p>私が一生懸命勉強していると、父がこう言いながら私を冷やかしに来たもんです。<br>
+   これ、後になって知ったんですが、けっこう有名なネットスラングというか、言い回しのようですね？<br>
+   私も同じ意見です。<br>
+   Webサイト制作なんてやることは星の数ほどあるし、全てを網羅するなんて無理なんですよ。<br>
+   ここでは支離滅裂に、雑多にいろんな小話を詰め込んでいきます。<br>
+   でも、とりあえず目次くらいは付けますよ？</p>
+
+
+  <h2>HTML・CSS・JavaScriptは学ぶべきか？</h2>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(22).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>私がよく見に行ってる個人サイト領域ではそういう意識は感じないんだけど、SNSではプログラミングができることがかっこいいという印象があるようですね？<br>
+    &lt;h3&gt; &lt;/h3&gt;、font-size: x-large;、function anaden() {} …いろいろあります。<br>
+    もし本格的に勉強されるなら、とりあえず <a href="https://developer.mozilla.org/ja/docs/Web">開発者向けのWeb技術</a>
+    というページをご覧いただけると良いかもしれません。<br>
+    あのFirefoxの開発元である <a href="https://www.mozilla.org/ja/">Mozilla org</a> のガイドです。</p>
+
+   <p>一方、お勧めできない教材は「ブログで副収入100万円！」とかいう感じの本ですよ。<br>
+    基礎レベルの勉強もしないままマネタイズなんか目論んでもね…<br>
+    ロクなことにならないというのが、私の見解です。<br>
+    流行りの生成AIを使って著作権リスクを自ら体験してみたい！<br>
+    …というなら、話は別ですが。</p>
+  </div>
+
+
+  <h4>HTMLは触るといいかも</h4>
+  <p>そんな難しくないありませんし、広い意味でのWebというものに関して理解できます。<br>
+   なにより楽しいですよ？<br>
+   私もめちゃくちゃハマりました。<br>
+   よくプログラミングと言われますが、HTMLはプログラムと言うよりマークアップ言語です。</p>
+
+  <p>とりあえずこのHTMLが書けるようになれば、「Xが最近不穏だろ？ でもブログはなぁ…サイトを作りたいなぁ…」というモヤモヤが解決します。<br>
+   構造の違いについて理解し、かつ自分の手で構築できるようになるからです。<br>
+   でも個人サイトを作るくらいなら、HTML+CSS+JavaScriptは必須じゃありません。</p>
+
+  <img src="itimages/mdn_web_docs.png" alt="ブラウザの開発者モード" class="biggraphic fade-in-out">
+
+  <p>何もHTMLを全文暗唱して書ける必要はないです。<br>
+   私も資格を持ってると言いつつ、忘れてる部分がいろいろあります。<br>
+   書けるというのも確かに良いことなんですが、それよりもWebというものがどんな感じで作られているものなのか、ぼやぁっとでも良いから意味が分かるというのが、とっても大切だと思うんですよ。</p>
+
+  <p>CSSとJavaScriptは、HTMLがちゃんとできてからですね。<br>
+   まずはHTMLを正しく書けないと、その先に進んでも意味がないです。</p>
+
+
+  <h2>WebブラウザとHTML</h2>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(23).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>Webサイトを作るのに難しい勉強や資格は必要ありません。<br>
+    しかし、「Webブラウザ」という用語くらいは覚えておいたほうが良いでしょうね。<br>
+    Webブラウザーというのは、インターネット越しにいろんなWebサイトを見るためのソフトウェアです。</p>
+
+   <ul>
+    <li>WindowsならMicrosoft Edge</li>
+    <li>MacとiPhoneならSafari</li>
+    <li>AndroidならGoogle Chrome</li>
+   </ul>
+
+   <p>いま世界で多く使われているパソコンはWindowsです。<br>
+    そしてモバイルだとiPhoneかAndroidです。<br>
+    それらに使われているWebブラウザがMicrosoft Edge・Safari・Google Chromeです。<br>
+    よって、Webサイトを作る時には最低でもこれら３つのWebブラウザで正常に表示されるようにしなければなりません。<br>
+    最近のウェブサイトビルダーなら問題ないけどね。</p>
+  </div>
+
+  <p>そうそう、余談ですが…Webサイトやブログを構築するのに使うシステムは「ウェブサイトビルダー」と言います。<br>
+   私が使っているGoogleサイトもウェブサイトビルダーの一種ですよ。</p>
+
+  <p>話を戻すと、Microsoft Edge・Safari・Google Chromeという３つのWebブラウザで正常に表示されるよう作るのが一つ。<br>
+   もう一つは、このWebブラウザでWebサイトを見る仕組みについて、ざっくりでいいから把握しておくとWebサイト制作がより楽しいと思います。</p>
+
+  <p>Webブラウザというのは、いろんな場所にあるサーバに入っているHTML・CSS・JavaScriptを読んで解釈し、その結果を表示しているのです。<br>
+   実際には多種多様なプログラムが動いていてHTML・CSS・JavaScriptだけではないけど、ひとまずこのくらいまで把握して頂けると、Webサイト制作に関する情報収集がスムーズになります。</p>
+
+
+  <h3>Webの勉強はおもしろいと思う！</h3>
+  <p>
+   ほんと偶然だったんですよね。両親ともにIT詳しくて、いつの間にか私もパソコンをおもちゃにするようになって…<br>
+   やがてLinuxにのめり込んでWebサイトを作り始めた。</p>
+
+  <p>
+   プログラマーという感じでもないんですよね。私の場合。<br>
+   プログラミングにも凝ってたけど、Webサイト制作ということなら上級者ほどシンプルに仕上げる傾向があることに気付いてさ。<br>
+   必要最低限に済ませるのがカッコいいと思うようになった。<br>
+   でもあんまりテキストテキストしてても自分が見てて退屈ですしね。<br>
+   それで今の領域に行き着いた感じです。<br>
+   とにかくシンプルにというのは、私のパソコン遍歴にも如実に表れています。<br>
+   まず最初にLinuxのConkyにハマったんだよ。<br>
+   スクリプト組んでデスクトップにメーラーや天気予報を表示させてみたりした。</p>
+
+  <p>参考サイト：<a href="https://wiki.archlinux.jp/index.php/Conky">Conky</a></p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(25).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>当初はUbuntu使ってたけど、Xfceとかデスクトップ環境にもこだわるようになって。<br>
+    でもだんだんシンプル志向が出てきたんですよね。<br>
+    操作するのが人間だから、そんないっぺんに多数の機能なんか使えないわけですよ。<br>
+    だったら古いパソコンを末永く有効活用できるテクニックを習得していったほうが生産的だと思うようになった。<br>
+    IT資格にハマってた頃はVisual Studio Codeを使ってました。これはLinuxでも動作するからね。<br>
+    でもちょっと重いし、何より勉強中の身では複雑な機能は手に余ってました。<br>
+    今の私ならそれなりに機能を生かせて使えるけど、でもやっぱりWebサイトに必要なのはそういうことじゃないだろうと思ってる。</p>
+  </div>
+
+  <p>参考サイト：<a href="https://azure.microsoft.com/ja-jp/products/visual-studio-code">Visual Studio Code</a></p>
+
+  <p>
+   ただ、Visual Studio CodeならWindows11のSモードでも動作するみたいね。<br>
+   今度入れてみようかな。─ 結局、入れちゃいました ─<br>
+   Linuxの勉強というか、Linuxをおもちゃにしてるときに出会ったのがエディタ戦争です。
+  </p>
+
+  <p>参考サイト：<a href="https://tinyurl.com/yrmmpk3u">エディタ戦争</a></p>
+
+  <p>これがおもしろくてさ…<br>
+   Emacsとvi、どっちがより優れたテキストエディタかという。<br>
+   それぞれのテキストエディタ陣営が教会まで作っちゃって！</p>
+
+
+  <p>参考サイト：<a href="https://stallman.org/saint.html">Church of Emacs</a></p>
+
+  <p>Emacsのほうが好みではあるけど、viのほうも「The Cult of vi」なんて作っててすごくおもしろかった。<br>
+   私自身がWeb制作やってたから、快適なテキストエディタが大切であることは身に染みて知ってたんですよね。<br>
+   当時はプログラミングに凝ってたから、いろいろ使ってました。<br>
+   viは肌に合わなかったというか、私の理解力不足で使いこなせなかったです。<br>
+   モードの切り替えと特殊なショートカットキーが馴染めなくてね。<br>
+   でもEmacsはゴリゴリにカスタマイズしてました。</p>
+
+
+  <p>参考サイト：<a href="https://www.gnu.org/software/emacs/">GNU Emacs</a></p>
+
+  <p>Emacsすごいんだよ。<br>
+   テキストエディタなのに、SNSでもメールでも何でもできちゃう。<br>
+   大学時代はこれでレポート書いてみたり、もちろんWeb制作でもお世話になった。<br>
+   そしてだんだん…人間は一度にたくさんのタスクを同時並行作業することはできないという思考に入り始めました。<br>
+   あんまり多機能でも、そしてそれを使いこなせたとしても、肝心の文章を書くときはそれに集中しないといけないよね。<br>
+   昔の私のWebサイトはそこらへんが疎かになっていたと思う。<br>
+   それなりに稼げたりもしたんだけど、なんかカッコつけてるんだよね。軽薄なイメージが漂ってた。<br>
+   東日本大震災の頃は学生とも言えないような年齢だったけど、あの当時にインチキ臭いアフィサイトが大量生産されたじゃん？<br>いろいろIT分かるようになってから両親と話題になったんだけどさ。<br>
+   ぐちゃぐちゃ地図やらTwitterウィンドウやらブログパーツやらが貼り付きまくってて、デカデカと広告がでかいやつ😆ww<br>
+   ああいうイメージです。<br>
+   うるさいWebサイトのITバージョンみたいな。<br>
+   でも当時はそこから抜け出せなかったんだよね。<br>
+   要するに資格だけ持ってる素人ということよ。<br>
+   そんなこんなで、辿り着いたのがUbuntuのデフォルトテキストエディタであるgedit。<br>
+   これもEmacsほどではないけどカスタマイズできて、ウィンドウを分けたりすることもできる。<br>
+   それでいて、文章を書くのに集中できたんだよね。</p>
+
+
+  <p>参考サイト：<a href="https://gedit-technology.github.io/apps/gedit/">gedit</a></p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(7).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>Windowsのメモ帳は好きじゃなかったな。<br>
+    軽くていいエディタなんだけど、改行したテキストをコピペするとさらに改行が入る仕様が嫌でさ。<br>
+    お下がりパソコン使ってたからWindows7だったかな？<br>
+    それのデフォルトエディタです。<br>
+    あんまりハードウェアとしてのパソコンには凝らなかったんだよ。<br>
+    Web活動に費用をかけたら意味ないという考え方の持ち主ですから、古いパソコンでも軽快に動作させるテクニックのように興味があったんです。<br>
+    自作パソコンすればそれなりに安く収まるけど、あれは場所を取るじゃない？<br>
+    コンパクトにすれば費用がかかるし。<br>
+    豪華なパソコンを使ったところで、ちゃんとしたWebサイトを作れない。<br>
+    ていうかWebサイトに限らず、道具じゃなくて自分自身なんだなということくらいは学べたのですよ。<br>
+    先日新しく買ったノートパソコンだって新品ではあるけど型落ちの低スペックPCですからね。<br>
+    この文章を書いているときにはもう、Microsoft Edgeを自分好みの仕様にカスタマイズできていました。<br>
+    Sモードも伊達じゃないですね？<br>
+    軽快に動くよ。<br>
+    素人向けかと思って舐めてた…<br>
+    正直気に入ってしまった。<br>
+    今度は型落ちsurfaceを買ってみようかしら❓<br>
+    それでねー…<br>
+    Emacsを作ったのはリチャード・ストールマンというプログラマーなんですが、その方のWebサイトがカッコいいのですよ。</p>
+  </div>
+
+
+  <p>参考サイト：<a href="https://stallman.org/">Richard Stallman's Personal Site</a></p>
+
+  <p>
+   URLもいいよね。<br>
+   <a href="https://stallman.org/">https://stallman.org/</a><br>
+   とてもシンプルです。<br>
+   ご本人様がどのような考えでこのWebサイトを作ったのか私のような人間からは想像も難しいけど、これほど偉大なプログラマーでありながら、とてもシンプルなんです。<br>
+   テキスト中心のシンプルなWebサイト。<br>
+   私はまだこういう領域に至っていませんが、このWebサイトも公開当初に比べてどんどんシンプル化していってるからね。<br>
+   真似してるつもりでもないけど、やっぱ慣れれば慣れるほど、そして作り込めば作り込むほどシンプルになっていく傾向は感じてます。<br>
+   結局のところグチャグチャしてるWebサイトはうるさいよね。<br>
+   訪問者が迷うだけなんです。<br>
+   私のようにITに慣れた人間でも、どこにメニューがあるのか分からないようなWebサイトはごろごろしてますよ？<br>
+   トップページにいるのは分かるけど、そこから何をすればお目当てのページに行き着けるのか分からないの！<br>
+   精進を重ねていきたいものですわね。
+  </p>
+
+
+  <h2>個人サイトからブログ、そしてTwitterへ</h2>
+  <p>インターネットを用いた個人からの情報発信と言ってもいろんな形がありますよね。<br>
+   SNSを使う方法もあれば、動画や配信をすることもあり、私のように個人サイトをひたすら拡大する人もいて。<br>
+   私はインターネット黎明期を肌で感じることができた年代ではないのですが、簡単な流れをお話しすることくらいならできるかも？</p>
+
+
+  <h4>個人サイトからブログへ</h4>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(4).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>キリ番、相互リンク、BBS、バナー…他に何があるだろう。<br>
+    両親がいろいろ話していたことを思い出しつつ…<br>
+    私にとって古い時代の個人サイトというのは、マークアップやプログラミングが必須とされ敷居が高いというイメージがあるんですよね。<br>
+    今ほどウェブサイトビルダーが高性能じゃなかったはずだから、SNSもブログもなかった頃の個人サイト作りというのは大変なものだったと思います。</p>
+
+   <p>上述のように私はインターネット黎明期を体験できた世代ではありませんが、Web制作というのはマークアップやプログラミングを基礎とするイメージは確かにあるんですよ。<br>
+    少なくともITの教科書には高い頻度でそういったWeb言語を扱う単元が出てくるし、実際にWeb言語を書いて動作させるよう要求する演習問題もあります。<br>
+    だから私の頭の中では、個人サイト作りというのはHTML・CSS・JavaScriptなんです。<br>
+    場合によってはいろんなサーバーサイドスクリプトを使う必要もある。</p>
+  </div>
+
+
+  <p>でもそんなのはおよそ一般向けではありませんよね。<br>
+   個人からの情報発信によほどの意義や必要性を感じる立場の人だったら良いけど、そうでない人にとっては学習コストが高過ぎます。</p>
+
+  <p>一方、ブログはWebサイト制作をより身近にしました。<br>
+   Web言語を扱えなくても、テキストを書いて画像を挿入、そして送信ボタンを押せばインターネットに自分の記事を公開できます。<br>
+   そういうブログの老舗として世界的に有名なものの一つが、Bloggerです。</p>
+
+  <p>Bloggerは当初 Pyra Labs が開発し、2003年にGoogleによって買収されました。<br>
+   それ以来、ずーっとGoogleが無償で提供しています。<br>
+   こうして、ユーザーにWeb言語の習得を要求しない情報発信ができるツールとして、いろんなブログサービスが生まれたんだよね。</p>
+
+
+  <h4>日本のインターネットの歴史</h4>
+  <p>次のサイトが参考になると思います。</p>
+
+  <p>参考サイト：
+   <a
+    href="https://www.soumu.go.jp/johotsusintokei/whitepaper/ja/r01/html/nd111120.html">インターネットの登場・普及とコミュニケーションの変化</a><br>
+   総務省トップ > 政策 > 白書 > 令和元年版 > インターネットの登場・普及とコミュニケーションの変化<br>
+   第1部_特集_進化するデジタル経済とその先にあるSociety 5.0<br>
+   第1節_デジタル経済史としての平成時代を振り返る
+  </p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(119).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>おそらく懐かしい気分になる人もいるのでは？<br>
+    今はパソコンからモバイル端末へ移行していますよね。<br>
+    上記資料によれば、モバイル端末利用率がパソコン利用率を超えたのは2010年です。<br>
+    このページを書いているのは2024年10月。<br>
+    もうすでに10年以上が経過しているのですよ。<br>
+    よって、個人から情報発信を行うなら、当然のようにモバイル端末に対応している必要があります。</p>
+  </div>
+
+  <h4>世界のインターネットの歴史</h4>
+  <p>このサイトはすごいよ？<br>
+   一見の価値あり。<br>
+   世界中のWebデザインを時代順に閲覧できる、巨大なデジタルアーカイブになっています。</p>
+
+  <p>参考サイト：
+   <a href="https://www.webdesignmuseum.org/">Web Design Museum</a>
+  </p>
+
+  <p>ウェブサイト・アプリ・ソフトウェア、そしてウェブデザインの歴史について、1990年代から今に至るまで揃っています。<br>
+   私もここでいろんなWebサイトのパターンを勉強しました。<br>
+   古いサイトであっても、自分の好みに合うデザインがきっと見つかるでしょう。</p>
+
+  <p>私が昔からテキストベースの個人サイトにしているのも、このWeb Design Museumからの影響が強いです。<br>
+   特にTechnology（テクノロジー）系のWebサイトにはかっこいいものがたくさんあるんですよ。<br>
+   例えばMicrosoftのホームページ。<br>
+   個人的には、今のものより1996年あたりの古いタイプのほうが好きですね。<br>
+   ひと目で内容がイメージできるアイコンと、ブログみたいに記事が並んでいるデザイン。<br>
+   落ち着いた技術系のサイトという印象がある。</p>
+
+  <p>学生の頃に読みこんだIT教科書の付録にこのWeb Design Museumが掲載されててさ。<br>
+   もう…マジでのめり込みました。<br>
+   いろんなパターンでWebサイト作りましたよ。</p>
+
+  <h4>ブログからTwitterへ</h4>
+  <p>Web言語を手書きするよりぜんぜんマシだけど、ブログもやはり敷居があったんでしょうね。<br>
+   実際、いろんなブログサービスを見ると多機能かつ複雑であり、設定メニューもパソコンに慣れた人向けという印象です。<br>
+   普段からパソコンに触っていれば何てことないのですが、まったくパソコンに触ったことがないと厳しいかもしれません。</p>
+
+  <p>その点、Twitterというのはいいポイントを突いたんだと思います。<br>
+   テキスト入力してから、投稿するだけ。<br>
+   UIは極めてシンプルで、必要最低限のテキストとメディアのみ。<br>
+   それでいてフォロワー同士であればタイムラインに投稿が自動で表示されるから、反応もすぐにもらえるわけですよ。<br>
+   技術的な敷居を極力下げた、親しみやすい仕組みになっていますね。</p>
+
+  <p>Webサイトは作り込むほど技術的な敷居が上がり、ページビューを獲得するには経験まで必要になってきます。<br>
+   初めのうちは誰も見に来ません。<br>
+   SNSは最も技術的な敷居が低く、ページビューを獲得するのも簡単です。すぐに「イイネ」が付くでしょ？<br>
+   ブログは中間に位置するんだよね。</p>
+
+  <h4>個人サイト出身者が数年間SNSで遊んでみた</h4>
+  <p>ライブサービスゲーム（ソシャゲ）にハマったことでTwitterをやってみたんだけどね。<br>
+   例えば私のように地方移住（Iターン）みたいなことを考える人から見ると、ソシャゲなんて金の無駄みたいに思われるかもしれないけどさ😆ww<br>
+   過剰な出費とならないようにやる分には問題ないと思います。<br>
+   ガチャ課金にハマり過ぎると移住の夢が遠のきますというだけでね。</p>
+
+  <p>ソシャゲSNSでよく見た文脈として「ソシャゲは何も後に残らない」というものがあるんです。<br>
+   でも私の立場からすると何も残らないのはTwitter等SNSのほうであって、ゲームではないよね。<br>
+   ゲームは「楽しかったぁー！」が残るもの。</p>
+
+  <p>Twitterは120字以内に収まるWebページを気楽に投稿できるというものであって、一つ一つのTweetにURLが付いています。<br>
+   いわば投稿が極端に簡単なマイクロブログなんですよね。<br>
+   SNSがもたらす社会的影響はあるにしても、そのシステム上、自分が書いてきたマイクロ記事はどんどん過去のカテゴリーに追いやられ、後からアクセスするには少しの手間が必要です。<br>
+   WordPressのようなブログのように、カテゴリー分けした上で閲覧者に利便性がある経路を用意するようにはできていません。</p>
+
+  <p>結果として、プロフィールと固定Tweetにいろいろと詰め込むことになる。<br>
+   それは、「トップページないしはサイトマップ」として、満足に機能するものではないというのが私の感想です。<br>
+   でもこれについては、Twitterを含めてSNSが悪いわけじゃない。<br>
+   そういうUIなのですから。<br>
+   目的が違うだけよ。</p>
+
+  <p>そんなこんなで、やはりWebサイト制作メインにいつかは戻ろうと。<br>
+   それを前提としてSNSも扱っていて、しばらくはその状態で良いだろうとぼんやり考えていたのです。<br>
+   ソシャゲをしてても大金を注ぎ込まなければ自分の進路に悪影響は出ないし、マネタイズサイトを再び運営したい ─ ないしは既に運営している ─ と考えても、「fein」の名を使う必要はまったくないのですから。</p>
+
+  <p>そんな矢先に、イーロンマスクが現れた。<br>
+   上述したようにゲームの思い出には価値があり、それは形あるものとして残したい。<br>
+   でもSNSに自分のコンテンツを残しておくのはリスクがある。<br>
+   そして…今こうして元居た場所に帰ってきているわけです。</p>
+
+
+  <h3>フォントには商用利用の可否があります</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(28).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>デザインも大切だと思うのですが、それ以前に商用利用して良いかどうかでしょう。<br>
+    使用できる範囲が限定されているなら、それ以外の媒体で使うことはできないのですよ。<br>
+    それがいかにデザインとして秀逸なものであろうと。</p>
+
+   <p>山や海辺で咲いている花は綺麗ですよね。<br>
+    fein's portalを飾る写真が欲しいと思って撮影してきた草花たち。<br>
+    子供時代からアウトドアが趣味でしたが、これらの草花たちに今まで目を向けてこなかったことを、けっこう後悔しています…<br>
+    こんなに複雑な造形と綺麗な色だったのかと。<br>
+    これからはキノコばかり探していないで、いろんな草花にも積極的に目を向けていきましょう。</p>
+  </div>
+
+
+
+  <p>おっといきなり話題が逸れてしまった。<br>
+   画像の著作権もそうなんですが、権利関係の話題と言えばフォントの商用利用がありますよね。<br>
+   私の場合は画像よりフォントのほうからWebサイトに関連する権利関係の話を勉強したような記憶があります。<br>
+   IT資格の教科書ではなかったけど、参考書籍のコラムか何かに書いてありましたよ。<br>
+   例えばしばしばTwitterで話題になる創英角ポップ体なんか良い例かと思われます。<br>
+   創英角ポップ体はリコーのものですが、Microsoftに販売権が渡っているのでMicrosoft Officeにプリインストールされています。<br>
+   あれは、創英角ポップ体は商用利用して良いのですかね？<br>
+   商用利用ライセンスというものがあって、Web公開される何かしらを商用目的で用いるなら当然、それらの情報は事前にチェックされるべきものです。</p>
+
+  <p>参考サイト：<a href="https://industry.ricoh.com/font/license">「株式会社リコー」フォントのライセンスでできることの範囲を見る／広げる（商用利用）</a>(2023/10/21閲覧)
+  </p>
+
+  <p>じゃあ、TwitterやYouTubeの収益化はどうなるんですかね？<br>
+   ある任意のコンテンツがあり、それの一部と認識され得る範囲内で、どんなフォントが商用利用可能なのでしょうか。<br>
+   また、MSゴシックやメイリオ、ヒラギノフォントはどうでしょうか。</p>
+
+  <p>このように、Webサイトに限らずおよそインターネットへ公開される何かしらの媒体について、それに使われる素材の権利やライセンスというのはとても複雑です。<br>
+   フォントだけではなく、画像、動画・音声やそのサムネイルなどなど、多くの素材について関わる話ですよね。<br>
+   JavaScriptとかで書かれたプログラムだってそうですよ？<br>
+   ここで言うプログラムとは、検索すればそこらへんに転がっているブログパーツなども含みます。</p>
+
+  <p>これら各種の素材について権利やライセンス関係を事前調査しつつ情報を追跡し続けるのは、私には難しかったです。<br>
+   完璧に把握して使い分けようとすると、ものすごく時間がかかるのですよ。<br>
+   だからfein's portalではどこかでアウトとなるポイントが発生しないよう、デフォルトの段階から権利関係のリスクが発生しない素材ばかりです。<br>
+   WFSのゲーム関連画像や動画以外はね？</p>
+
+  <p>そんなごちゃごちゃ言って…完璧でなくてもいいじゃないか？<br>
+   確かにおっしゃる通りでしょう。<br>
+   世の中にはグレーな話題だっていっぱいありますよね。<br>
+   私とてすでに社会人ですから、そこらへんの塩梅も多少なら心得ているつもりです。<br>
+   ただ、他者がやっちゃってるから自分もやっていいというのも…<br>
+   特に、ゲームのSNSコミュニティというのは、異様と思えるほどに「著作権！」「著作権！」と大騒ぎになっていました。</p>
+
+  <p>私の場合、フォントに関しては学生時代の中二病Webサイトの段階でクリアできたんです。<br>
+   権利関係でリスクのないフォントをCSSに書けば、それがWebサイトのデフォルトになるからね。<br>
+   このサイトだってそうですよ？<br>
+   でも動画のサムネイル含めて画像に関しては難しかった。<br>
+   ルアーが泳ぐ様子など、いろいろ動画にしたものを掲載していたんです。<br>
+   ここで魚の画像で商用利用可能なものを探すのに苦労しました。<br>
+   なんか当時は魚の写真にしようと思わなかったんですよね。<br>
+   アニメみたいな、可愛らしい魚の画像を使いたかったんですよ。</p>
+
+
+  <h3>SNSの激変と生成AIの問題</h3>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(120).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>これは私個人の見解なんだけどね？<br>
+    特にAI問題で規制だなんだと騒がれている今、長年に渡って育てる個人サイトは純日本産のウェブサイトビルダーないし日本の法人の運営しているWebサービスは避けた方が良いと思っています。<br>
+    どこでどんな話題が持ち上がるか分からないからです。<br>
+    そのたびに対応を検討しなければならないし、国際的にサービス展開しているGAFAのものであれば、とりあえず大丈夫です。<br>
+    EUが大きく動いて何かあっても、移行措置が期待できます。<br>
+    そのうちEロンが「X Web site tool」とか、発表し始めたりしてね🤣ww<br>
+    そんなの、とてもではないけど選択肢に入らないです。<br>
+    モロにAIと連携してきそうじゃない？<br>
+    生成AIに書かせた文章には課題やリスクが多過ぎるのですよ。</p>
+  </div>
+
+
+  <p>さて、Twitterの激変とAIの登場は関連性があります。<br>
+   そもそもOpenAIにお金を出していたのがEロンですし、そのEロン本人が後からOpenAIと違った意見を持つようになった事情もありますよね。─ オープンソースどうのというのは、そこらへんとも関係があります。 ─<br>
+   そんなEロンがTwitterを陣取ったことで、昨今のTwitterからXへの変革があり、そしてエンドユーザーたちの混乱があるのです。<br>
+   もちろんEロン率いるXはAIと密接な関連性があり、Grokなんかはその一つだよね。</p>
+
+  <p>特にTwitterでは大きな話題となっていますが、AIはその学習プロセスに著作権絡みの課題があると世界のいろんな人々から指摘を受けています。<br>
+   その生成AIがもたらす著作権に関する対応でオロオロしているのが、日本の現状です。</p>
+
+  <p>その日本に、例えばAmazonがデータセンターを作ろうとしていたり、OpenAIが日本法人を作ろうとしています。<br>
+   これから、何がどう動くか分からないよマジで。<br>
+   我々エンドユーザーとしては、とりあえず安全圏へ避難するくらいしか選択肢がないんですよね。</p>
+
+  <p>あるいはSNSを含めてインターネットで活動するという行動そのものを停止するという選択肢もあるでしょう。落ち着かないと思う人はね。<br>
+   でもそうではなく、個人サイトを作り、それを長い目で見て育てて、IT業界の情勢が落ち着いてきたときに本格的に行動を開始できるのだとすればいかがですか？</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="../flower1/flower1(115).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>SNSの激変とAIの問題であのGoogleさえ動揺を隠しきれない今、私が考えていることは、もうストレートに言えば次の通りです。<br>
+    個人サイトの卵を暖めて雛を育て、やがて成鳥になったときに www の世界へ再び飛び出す。これなんだよね。<br>
+    もちろん、この激変の中にあってどうしようか考えている人々が、今こうして私の個人サイトを眺めてくれています。<br>
+    だから何も広い意味で言うところの「SNSと共に心中する」必要はないんですよ。<br>
+    もしインターネット上での活動を続けたいと思うのであれば。</p>
+  </div>
+
+
+  <p>XであれYoutubeであれ、Instagramであれ。<br>
+   何でも良いけどそれを続けている傍らで、個人サイトを作っておいて気長に育て続ける。<br>
+   どの選択肢が最強という考え方では対応し切れないと思います。<br>
+   例えばEロンの気分が変わったら、また振り回されるのでしょう？<br>
+   そうではなく、知識に基づいてバランス良く、そして安全にWebの世界を航海する。<br>
+   それが、この個人サイトの目的です。<br>
+   マネタイズする気があるのかどうかみたいな、そういう細かい機能的なあれこれは二の次なんだよね。</p>
+
+  <p>いずれにせよ、日本のウェブについてわたくしfeinが恐れ多くも私見を書くなら…こう言えるでしょう。</p>
+
+  <ul>
+   <li>EロンがX（旧Twitter）に陣取っていること</li>
+   <li>そのEロンが生成AIと深く関わっていること</li>
+   <li>日本が生成AI絡みの著作権問題でオロオロしていること</li>
+  </ul>
+  <p>この３点が、非常にマズいと思っています。</p>
+
+
+  <h3>ウェブサイトビルダーにも限界はある</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(51).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>GoogleのBloggerだったり、いろんなウェブサイトビルダーがあります。<br>
+    スマホさえあれば誰でも簡単にブログを作れる。<br>
+    ただ、それらはあくまでも時間短縮ツールという見方もできるのですよ。<br>
+    次のようなケースに出くわした場合、Web制作の勉強をしておくと作業効率は格段に上がります。</p>
+
+   <h5>少し凝ったデザインにしたいケース</h5>
+   <p>基礎学習さえしていないと、どうやってGoogle検索したら良いか分からない状態になります。<br>
+    運よく適切な情報に辿り着けるまで大変な時間がかかることに加え、辛うじてどうにかやれても理由が分からない。<br>
+    自分の思う通りにコンテンツを作れず、これが重なるとモチベダウンへ繋がります。</p>
+  </div>
+
+  <h5>意図せずレイアウトが崩れてしまったケース</h5>
+  <p>ウェブサイトビルダーは、本来なら自分で書くコードをコンピューターが代行してくれているだけです。<br>
+   この状態が続くと、ちょっとしたトラブルシューティングさえできません。<br>
+   どこをどう直せば良いのか見当も付かない。<br>
+   ウェブサイトビルダーの直接コード編集を使えば簡単に解決できるのに、学習した人と比べて何倍もの時間がかかる。</p>
+
+  <h5>どう操作すれば良いか分からないケース</h5>
+  <p>ウェブサイトビルダーあるあるなんだよ…<br>
+   ものすごい多機能で、どう操作すれば良いか分からないのです。<br>
+   私もしょっちゅうですよ。<br>
+   むしろコード手書きの方が早かったりするんだよね…<br>
+   普通のワープロソフトとは使い方が少し違いますし、機能名も異なることがあります。<br>
+   先方も自社のツールを売りたいので十分な配慮はされていますが、ウェブサイトビルダーがしてくれる配慮にも限度はあります。</p>
+
+  <h5>作業効率が違うことは確かです</h5>
+  <P>まったく勉強しなくてもなるようになっちゃうでしょう。<br>
+   HTMLみたいなWeb制作関連だけでなく、パソコンそのものにある程度詳しければ、作業効率が格段に違います。<br>
+   例えばこのサイトであれば、数年に渡って書き溜めたPDFを一気にimage化してアップロードする作業がまさにそれですよね。<br>
+   こんなの全て手作業でやってたら、何か月もかかったことでしょう。<br>
+   ミスの原因にもなります。<br>
+   CSSやJavaScriptを実装するにしても、コードに埋め込むのか外部ファイルとして読み込ませるのかで効率が違うことがあります。<br>
+   どちらが良いというのではなく、実装方法をその場に応じて使い分けられることが、時間短縮に繋がると思いますね。</P>
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/sitesmalltalk.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+
+ <!-- Microsoft tag -->
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+
+ <meta charset="UTF-8">
+
+ <!--基本のメタタグ-->
+ <meta name="description" content="クラウドに個人サイトを作る方法。GCP・AWS・Azureの３通りを書いていきます。">
+ <meta name="keywords" content="個人サイト, GCP・AWS・Azure, クラウド">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="個人サイトをGCP・AWS・Azureのどれかで作る">
+ <meta property="og:description" content="クラウドに個人サイトを作る方法。GCP・AWS・Azureの３通りを書いていきます。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/cloudinfo.html">
+
+ <!--検索ヒット時のアイコン-->
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "個人サイトをGCP・AWS・Azureのどれかで作る",
+  "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/cloudinfo.html",
+  "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+}
+</script>
+
+ <!--レスポンシブデザイン-->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!--CSS-->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="../css/menu.css">
+ <link rel="stylesheet" type="text/css" href="../css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="../css/feinheadline1.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <!--JavaScript-->
+ <script src="../script/underline.js"></script>
+ <script src="../script/feinfade.js"></script>
+ <script src="../script/feinScroll.js"></script>
+ <!-- gsapの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+
+ <!-- google fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+
+ <!--ページタイトル-->
+ <title>個人サイトをGCP・AWS・Azureのどれかで作る</title>
+
+ <!--ASノーナのファビコン-->
+ <link rel="icon" sizes="32x32" href="../favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">個人サイトをGCP・AWS・Azureのどれかで作るの目次を開く</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="個人サイトをGCP・AWS・Azureのどれかで作るの目次を開く ▼"
+   data-close-text="個人サイトをGCP・AWS・Azureのどれかで作るの目次を閉じる ▲">個人サイトをGCP・AWS・Azureのどれかで作るの目次を開く ▼</button><!--目次の自動生成-->
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+  <p>このページに限ったことではありませんが、また後日、いろいろ画像を入れて綺麗にしていきますね。今の状態だと文章ばっかり…。でも、用は足りると思います。</p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>GCP・AWS・Azureの比較とサービス紹介</span></h1>
+
+  <p>個人サイトとは直接関係ないものも含めて、重要なクラウドサービスのプロダクトを書いていこうと思います。<br>
+   App Engineあたりは「<a
+    href="https://fein-sites-dev1.ew.r.appspot.com/contents/mywebsite.html">個人サイト制作で知っておきたいクラウドサービス</a>」と情報が重複しちゃうかもしれないけどね。<br>
+   やりたいことによってはデータベースと接続したり、いろいろできるのですから。</p>
+
+  <p>また、このページでは次のように略称を用いることがあります。</p>
+  <ul>
+   <li>Google Cloud Platformは「GCP」</li>
+   <li>Amazon Web Servicesは「AWS」</li>
+   <li>Microsoft Azureは「Azure」</li>
+  </ul>
+
+  <p class="gra">3大メガクラウドの比較資料はこちらが分かりやすいでしょう。</p>
+  <ul>
+   <li><a href="https://cloud.google.com/docs/get-started/aws-azure-gcp-service-comparison?hl=ja">AWS サービスや Azure
+     サービスと Google Cloud を比較する</a></li>
+   <li><a href="https://learn.microsoft.com/ja-jp/azure/architecture/aws-professional/services">AWS サービスと Azure
+     サービスの比較</a></li>
+   <li><a href="https://learn.microsoft.com/ja-jp/azure/architecture/gcp-professional/services">Google Cloud と
+     Azure のサービスの比較</a></li>
+  </ul>
+
+
+  <h2>App Engine</h2>
+  <p>このサイトが住んでいる場所です。<br>
+   確か…GCPの中では最も古いプロダクトであったと思います。<br>
+   長い間続いているのも、App Engineを選んだ理由ですね。<br>
+   早い話、ウェブアプリやモバイルアプリを簡単に作って動かせるサービスですよ。<br>
+   ブログを作ったり、アプリも稼働させることができます。<br>
+   だからWordPressのデプロイもやれるわけで。<br>
+   しかし、今後は次のようなプロダクトも併用して使っていくかも。</p>
+
+  <p class="gra">参考サイト</p>
+  <ul>
+   <li><a
+     href="https://cloud.google.com/appengine/docs/standard/tools/using-local-server?hl=ja&tab=python#set-up">ローカル開発用サーバーの設定</a>
+   </li>
+   <li><a href="https://cloud.google.com/appengine/docs/standard/troubleshooting?hl=ja">App Engine
+     のエラーをトラブルシューティングする</a></li>
+  </ul>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+  <p>どれもインフラストラクチャの管理を自動化し、開発者がコードに集中できるようにしてくれます。</p>
+  <h4>AWS Lambda</h4>
+  <p>必要なときだけコードを実行するためのサービス。<br>
+   例えば、「ウェブサイトでユーザーがフォームを送信したときに、そのデータを処理してデータベースに保存する」という処理があったとしましょう。<br>
+   Lambdaは、必要なときだけコードを実行し、使わないときは何もしません。コストを抑えることができます。</p>
+
+  <h4>AWS Fargate</h4>
+  <p>コンテナと呼ばれる小さな仮想マシンを使ってアプリケーションを実行するサービス。<br>
+   アプリケーションが常に動いている必要がある場合に適してます。<br>
+   例えば、オンラインゲームのサーバーや、常にデータを処理するバックグラウンドサービスなどです。</p>
+
+  <h4>AWS App Runner</h4>
+  <p>ウェブアプリケーションやAPIを簡単にデプロイするためのサービス。<br>
+   開発者がコードを書いて、それをすぐにインターネット上で公開できるようにします。<br>
+   もちろん新しいウェブサイトを作成してすぐにインターネット上で公開することもできます。<br>
+   App Runnerは、アプリケーションのスケーリングも自動でやってくれます。<br>
+   アクセスが増えてきても人間が慌てる必要はないということですね。</p>
+
+  <h4>Azure App Service</h4>
+  <p>Azure App Serviceは、ウェブサイトやアプリを簡単に作成してインターネット上に公開できるサービス。<br>
+   WordPressでもいいし、自分で販促サイトを作ってもいいし、Azure App Serviceで運営することができます。<br>
+   アプリのデータを保存する場所として使えるでしょう。<br>
+   アクセスが増えたときに自動でサーバーの容量を増やしてくれるのもいいですね。</p>
+
+
+  <h2>Cloud Storage</h2>
+  <p>Google App Engineで静的ウェブサイトをホスティングする際にCloud Storageを併用することが一般的ですかね。<br>
+   Cloud Storageは静的コンテンツ（HTML、CSS、JavaScript、画像など）を保存するための信頼性の高いストレージソリューションであり、ウェブサイトのコンテンツを効率的に配信できます。<br>
+   大規模なトラフィックにも対応できるように設計されており、App
+   Engineと組み合わせることで、ウェブサイトが急激にアクセスが増えた場合でも安定して動作します。こういうのを「スケーラビリティ（Scalability）が高いシステムである」と表現します。<br>
+   もともと動的コンテンツに比べてコストが低く抑えられるのが静的コンテンツのホスティングです。<br>
+   Cloud Storageを利用することで、必要なリソースを効率的に管理し、コストを最小限に抑えられます。<br>
+   また、データの暗号化やアクセス制御などのセキュリティ機能を提供しており、ウェブサイトのコンテンツを安全に保護してくれます。</p>
+
+  <p>GAE（Google App Engine）はステートレスな設計となっているため、データは外部のストレージに保存する必要があります。<br>
+   GCS（Google Cloud Storage）はそのためのオブジェクトストレージとして最適ということです。<br>
+   App Engineに静的ウェブサイトをデプロイすると、Cloud Storageに下記２つのバケットが作成されることになります。</p>
+  <ul>
+   <li>[プロジェクト名].appspot.com</li>
+   <li>staging.[プロジェクト名].appspot.com</li>
+  </ul>
+
+  <p>参考サイト：</p>
+  <ul>
+   <li><a
+     href="https://cloud.google.com/blog/ja/topics/developers-practitioners/where-should-i-run-my-stuff-choosing-google-cloud-compute-option">どこで実行すべきか。Google
+     Cloud のコンピューティング オプションの選択</a></li>
+   <li><a href="https://cloud.google.com/appengine/docs/standard/using-cloud-storage?hl=ja&tab=python">Cloud
+     Storage を使用</a></li>
+  </ul>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+  <h4>Amazon S3 (Simple Storage Service)</h4>
+  <h4>Azure Blob Storage</h4>
+  <p>どちらもオブジェクトストレージサービスで、クラウド上でデータを保存、管理、アクセスするために使用されます。</p>
+
+
+  <h2>Cloud Run</h2>
+  <p>プログラムを簡単にインターネット上で動かすことができます。<br>
+   アプリケーションの実行環境です。</p>
+  <ul>
+   <li>ブログや小さなビジネスのウェブサイトを作成、Cloud Runを使って公開</li>
+   <li>他のアプリやウェブサイトがデータを利用できるよう、天気予報のデータを提供するAPIを作成</li>
+   <li>数千枚の画像を一括でリサイズするプログラムを実行</li>
+  </ul>
+  <p>Cloud Runはこれらの作業を自動でスケールしてくれるので、手間がかかりません。─ スケールとは、必要に応じて処理能力を増減するという意味です。─</p>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+  <h4>AWS App Runner・AWS Fargate・AWS Lambda</h4>
+  <ul>
+   <li>App Runner：簡単にWebアプリを公開したい</li>
+   <li>Fargate：コンテナを使ってアプリを実行したい</li>
+   <li>Lambda：イベントが発生したときに自動でコードを実行したい</li>
+  </ul>
+  <p></p>
+
+  <h4>Azure Container Apps、Azure Container Instances</h4>
+  <ul>
+   <li>Azure Container Appsは長期間動かすアプリケーション向け</li>
+   <li>Azure Container Instancesは短期間のタスク向け</li>
+  </ul>
+
+  <p>Azure Container Appsは、アプリケーションを簡単にデプロイ（公開）して管理できるサービスです。<br>
+   ブログや小さなウェブサイトを作りたいときに使います。<br>
+   自動でスケールしてくれるので、アクセスが増えても安心です。</p>
+
+  <p>Azure Container Instancesは、コンテナという小さな箱にアプリケーションを入れて、すぐに実行できるサービスです。<br>
+   データ処理や一時的なタスクを実行したいときに使います。<br>
+   すぐに起動して、使い終わったらすぐに終了できるのが特徴です。<br>
+   大量の画像を一時的に処理したいときに、必要なときだけコンテナを起動して処理し、終わったらすぐに終了するといった使い方が想定できます。</p>
+
+
+  <h2>Cloud Functions</h2>
+  <p>インターネット上で動く小さなプログラムと言えば良いでしょうか。<br>
+   特定のイベントが起きたときに自動で何かを実行することができます。</p>
+
+  <ul>
+   <li>画像のクラウドアップロードによる自動サイズ変更やフィルターをかける作業など、写真の自動編集機能を実行</li>
+   <li>新規ユーザー登録時に、welcome mailを自動で送る処理</li>
+   <li>毎日決まった時間にデータを自動でバックアップ</li>
+  </ul>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+  <h4>AWS Lambda・Azure Functions</h4>
+  <p>この２つのサービスもおおよそ似たような機能をクラウドに実装するのに役立ちます。<br>
+   クラウドに「仕組み」を作っておけば、手作業を減らして効率的に作業を進めることができるんですよね。</p>
+
+
+  <h2>API Gateway</h2>
+  <p>複数のAPIを一元管理し、外部からのリクエストを適切なサービスに振り分けるための仕組みです。<br>
+   リクエストのルーティング、セキュリティの確保、モニタリングとロギング、スケーリングなどの役割を果たします。<br>
+   例えば…レストランのウェイターみたいな感じでしょうか？<br>
+   クライアントからのリクエストを受け取り、それをバックエンドサービスに伝え、処理結果をクライアントに返す役割を担っています。</p>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+  <h4>Amazon API Gateway・Azure API Management</h4>
+  <p>Amazon API Gatewayは、Amazon Web Services (AWS)が提供するサービスで、APIの作成、公開、モニタリング、保護を行うことができます。<br>
+   特に他のAWSサービス（例えばLambdaやDynamoDB）とシームレスに連携できる点が特徴でしょうか。<br>
+   料金体系は使用量に応じた従量課金制で、開発者ポータルはサードパーティツールが必要です。</p>
+
+  <p>一方、Azure API ManagementはMicrosoft Azureが提供するサービスで、同様にAPIの作成、公開、モニタリング、保護を行うことができます。<br>
+   Azureの他のサービス（例えばAzure FunctionsやLogic Apps）と強く統合されているところがポイントです。<br>
+   料金体系は月額料金制が主流で、ビルトインの開発者ポータルがあり、自動生成されるため設定が簡単な印象がありますね。<br>
+   どちらを選ぶかは、既に使っているクラウドサービスや具体的なニーズによります。</p>
+
+
+
+  <h2>Compute Engine</h2>
+  <p>Googleが提供する仮想マシンサービスで、物理的なサーバーを購入したり設置したりする必要なく、インターネット上で仮想的なサーバーを作成して利用できます。<br>
+   仮想マシンを作成することで、ウェブサイトを運営するためのサーバーや大量のデータを処理するためのコンピュータを簡単に作成でき、必要に応じて仮想マシンの数を増やしたり減らしたりすることで、アクセスが増えたときには仮想マシンを増やして対応し、アクセスが減ったときには減らしてコストを節約できます。<br>
+   実際に使用した分だけ料金が発生するため、無駄なコストを抑えることができ、事前に大きな投資をする必要もありません。<br>
+   Googleのインフラストラクチャは非常に信頼性が高く、99.9%の稼働率を保証しており、LinuxやWindowsなどさまざまなオペレーティングシステムを選んで仮想マシンを作成でき、必要に応じてCPUやメモリの量をカスタマイズすることも可能です。<br>
+   Compute Engineは、ウェブサイトのホスティングやデータ処理、新しいソフトウェアの開発やテスト環境の構築など、初心者でも簡単に使い始めることができる便利なサービスです。<br>
+   と、こう書くと良いことだらけでしょ？<br>
+   Compute Engineが極めて高い汎用性を持っていることは事実ですが、その反面、サーバーの設定も全て自分でやることになるのですよ。<br>
+   自由自在なWebサイトを構築できますが、そのぶん手間が凄いです。</p>
+
+  <p>でもおもしろいですよ？<br>
+   わざわざ高額なパソコンを買わなくていいし、自分でパソコンを組み立てる必要もありません。<br>
+   ハードウェアの物理的な経験を積みたい人以外は、今後はこの方向に流れるでしょう。<br>
+   まだ一般化していないけどね。</p>
+
+  <p>どっちも似たような機能なんですよね。<br>
+   GCP・AWS・Azureのどれを選ぶかは、その時に応じて柔軟に決めたほうが良いと思う。</p>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+  <h4>Amazon Elastic Compute Cloud（EC2）</h4>
+  <p>Amazon Web Services（AWS）が提供するクラウドコンピューティングサービスです。<br>
+   EC2にはバースト対応、一般用途向け、メモリ最適化、コンピューティング最適化、GPU付きなどのさまざまなインスタンスタイプがあります。<br>
+   課金モデルは秒単位での課金で、最小課金時間は60秒です。<br>
+   料金節約オプションとして、リザーブドインスタンス、Savings Plans、スポットインスタンスがあります。<br>
+   物理配置に関しては、プレイスメントグループ（クラスター、スプレッド、パーティション）を使用します。<br>
+   バックアップについては、AWS Backupを利用してBackup Vaultに保存します。<br>
+   セキュアなアクセスでは、AWS Systems ManagerのSession Managerを利用します。</p>
+
+  <h4>Azure Virtual Machines（VM）</h4>
+  <p>Microsoft Azureが提供するクラウドコンピューティングサービスです。<br>
+   Azure VMもバースト対応、汎用、メモリ最適化、コンピューティング最適化、GPU付きなどのシリーズがあります。<br>
+   課金モデルは分単位での課金で、1分未満の利用分は切り捨てられます。<br>
+   料金節約オプションとして、Azure Reserved Virtual Machine InstancesやSpot Virtual Machinesがあります。<br>
+   物理配置に関しては、可用性セットや近接配置グループを使用します。<br>
+   バックアップについては、Azure Backupを利用してRecovery Servicesコンテナーに転送します。<br>
+   セキュアなアクセスでは、Bastionを利用します。</p>
+
+
+  <h2>Recommender</h2>
+  <p>このサイトも本格的になってきたら、こういうプロダクトが必要になってくる可能性がありますね。<br>
+   Google Cloudの「Recommender」は、クラウド環境を最適化するためのツールで、Google
+   Cloudがクラウドリソースを分析し、コスト削減やパフォーマンス向上のためのアドバイスを提供してくれるサービスです。<br>
+   主な機能としては、使っていないリソースや過剰に割り当てられたリソースを見つけて削除やダウングレードの提案をするコスト削減、リソースの利用状況を分析しより効率的な設定や構成を提案するパフォーマンス向上、セキュリティリスクを検出し改善策を提案するセキュリティ強化があります。<br>
+   具体例としては、仮想マシン（VM）の使用状況を分析し不要なVMを削除する提案をするVM Recommender、アクセス権限を見直し不要な権限を削除する提案をするIAM
+   Recommender、ファイアウォールの設定を最適化しセキュリティを強化する提案をするFirewall
+   Insightsがあり、これらのツールを使うことでクラウド環境を効率的に管理しコストを抑えながらパフォーマンスを最大化することができます。</p>
+
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+  <h4>AWS Cost Explorer・AWS Budgets・AWS Trusted Advisor・AWS Cost and Usage Report</h4>
+  <p>AWS Cost Explorerはコストと使用量を視覚化し、コストの傾向を分析するためのツールで、コストの最適化のポイントを見つけることができます。<br>
+   AWS Budgetsは予算を設定し、実際の使用量が予算に近づいたり超過したりした場合にアラートを受け取ることができる機能です。<br>
+   AWS Trusted Advisorはコスト最適化、セキュリティ、パフォーマンス、フォールトトレランスに関する推奨事項を提供するサービス。<br>
+   AWS Cost and Usage ReportはAWSの使用量とコストに関する詳細なレポートを提供し、コスト管理を支援します。<br>
+   Amazonのほうがコスト管理は多機能であるイメージです。</p>
+
+  <h4>Azure Cost Management</h4>
+  <p>Azure Cost Managementは、Azureのクラウドコストを管理、監視、最適化するためのツールです。<br>
+   リソースグループ、サービス、場所、タグ別にコストを分類し、カスタムフィルターを作成して重要なデータに焦点を絞ることができます。<br>
+   予算に基づいて通知を設定し、支出の急増や減少に対するアラートを受け取ることができます。<br>
+   さまざまな事業単位、プロジェクト、または顧客にクラウドコストを分散し、リソース間でコストを分割または移動することができます。<br>
+   カスタムレポートを作成し、詳細な分析を実行し、コストデータを他のビジネスシステムと統合することができます。<br>
+   そのため、クラウドへの投資を効率的に管理し、コストの透明性と正確さを保つことができます。<br>
+   このようにGCP・AWS・Azureとコスト管理を見てきましたが、私がやりたいのは静的ウェブサイトのホスティングですから、実際のところずっと無料である可能性も高いのです。</p>
+
+
+
+  <h2>VMware Engine</h2>
+  <p>Google Cloud VMware Engineは、Google
+   Cloud上でVMwareのプラットフォームを利用できるサービスで、企業が既存のVMware環境を大きな変更なしにクラウドに移行し、運用することを可能にします。<br>
+   これにより、システムのダウンタイムを最小限に抑えつつ、クラウドの利便性を享受でき、Googleがインフラストラクチャ、ネットワーキング、管理サービスを提供するため、ユーザーはVMwareの運用に集中できます。<br>
+   主要なVMwareコンポーネントであるvSphere、vCenter、vSAN、NSXが含まれており、オンプレミスと同様の環境をクラウド上で利用できるほか、Google
+   Cloudのセキュリティ機能と信頼性を活用しながらVMware環境を運用できます。<br>
+   具体的な利用シーンとしては、既存のデータセンターの容量が不足している場合にクラウド上に拡張したり、災害時に迅速に復旧できるバックアップ環境を構築したり、新しいアプリケーションの開発やテスト環境をクラウド上に迅速に構築することが挙げられます。<br>
+   さすがに個人サイトレベルでVMware環境をクラウドに移行する機会はないと思うけどね。<br>
+   クラウドコンピューティングを知るなら、こういうプロダクトも把握しておいたほうがいいと思う。</p>
+
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+  <h4>VMware Cloud on AWS・Azure VMware Solution</h4>
+  <p>「VMware Cloud on AWS」と「Azure VMware Solution」はどちらもVMwareの仮想化技術をクラウド上で利用できるサービスですが、いくつかの違いがあります。<br>
+   VMware Cloud on AWSはVMwareとAmazon Web Services (AWS)の共同サービスで、AWSのインフラ上で動作し、AWSのリソースを活用します。<br>
+   AWSのエコシステムと緊密に統合され、AWSのサービスとシームレスに連携できるようになっています。<br>
+   一方、Azure VMware SolutionはMicrosoft
+   Azure上で提供されるVMwareのサービスで、Azureのインフラ上で動作し、Azureのリソースを活用します。Azureの既存リソースやオンプレミス環境との接続が容易で、Azureポータルから管理でき、vSphereやNSXの管理もオンプレミス同様に行えます。<br>
+   どちらを選ぶかは、既存のクラウド環境や利用したいクラウドサービスに依存し、例えば既にAWSを利用している場合はVMware Cloud on AWSが、Azureを利用している場合はAzure VMware
+   Solutionが適しているかもしれません。<br>
+   どちらのサービスも、オンプレミスのVMware環境をクラウドに移行する際のコストや手間を最小限に抑えることができます。具体的なニーズや既存のインフラに基づいて選択すると良いでしょう。<br>
+   ぶっちゃけ、どこの料金が安いかだよね。個人レベルであれば。<br>
+   安いは正義でしょ。</p>
+
+
+  <h2>Google Kubernetes Engine</h2>
+  <p>Google Kubernetes Engine（GKE）は、Google Cloudが提供するサービスで、コンテナ化されたアプリケーションを管理・運用するためのプラットフォームです。<br>
+   THE KING OF FIGHTERS （KOF）の完全新作「KOFクロニクル」でも使われている技術ですね！<br>
+   コンテナとは、アプリケーションとその依存関係を一つにまとめたパッケージのことを指します。<br>
+   GKEを使うと、アプリケーションのデプロイ（配置）、スケーリング（拡張）、および管理が自動化され、手動での作業が減り効率が上がります。<br>
+   また、アプリケーションの需要に応じて自動的にリソースを増減させることができ、アクセスが増えたときに自動でサーバーを追加し、アクセスが減ったときに減らすことができます。<br>
+   さらに、GKEはアプリケーションが常に稼働し続けるように設計されており、障害が発生した場合でも迅速に復旧する仕組みが整っています。<br>
+   Googleのセキュリティ機能を活用して、アプリケーションを安全に保つこともできます。<br>
+   具体的な使い方としては、まずクラスタと呼ばれるコンテナのグループを作成し、このクラスタがアプリケーションを実行する基盤となります。<br>
+   次に、作成したクラスタにコンテナ化されたアプリケーションをデプロイし、そのためアプリケーションがクラスタ内で実行されます。<br>
+   最後に、GKEのダッシュボードやコマンドラインツールを使ってクラスタやアプリケーションの状態を監視し、必要に応じて調整を行います。<br>
+   GKEは、アプリケーションの管理を簡単にし、スケーラビリティや高可用性を提供するツールです。</p>
+
+  <p>参考サイト：<a href="https://cloud.google.com/blog/ja/topics/google-cloud-for-games/snk-king-fighters-kof-gke">株式会社
+    SNK：全世界にファンを持つ THE KING OF FIGHTERS （KOF）の完全新作「KOFクロニクル」を GKE で構築</a></p>
+
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+  <h4>Amazon Elastic Kubernetes Service（EKS）、 Amazon Elastic Container Service（ECS）</h4>
+  <p>Amazon Elastic Kubernetes
+   Service（EKS）はKubernetesをベースにしたフルマネージドサービスで、既にKubernetesを使用している場合やそのエコシステムを活用したい場合に適していますが、Kubernetesの知識が必要で学習コストが高めです。<br>
+   一方、Amazon Elastic Container
+   Service（ECS）はAWS独自のコンテナオーケストレーションサービスで、Kubernetesを使用せず、AWS環境内での利用が前提となり、学習コストが低く簡単に始められます。<br>
+   どちらもAWSが管理するフルマネージドサービスで、インフラの管理負担を軽減し、EC2インスタンスやAWS
+   Fargateを使用してコンテナをデプロイできますが、EKSはKubernetesのアップデートに追従する必要があり運用コストがかかるのに対し、ECSはバージョン管理が不要で運用コストが低めです。<br>
+   選択は既存の技術スタックや運用の複雑さ、学習コストなどに依存します。</p>
+
+  <h4>Azure Kubernetes Service（AKS）</h4>
+  <p>Azure Kubernetes Service（AKS）は、Microsoft
+   Azureが提供するマネージドKubernetesサービスで、コンテナ化されたアプリケーションのデプロイ、管理、スケーリングを簡単に行うことができます。<br>
+   AKSはKubernetesクラスターのセットアップと管理を簡素化し、Azureポータル、CLI、またはAzure Resource
+   Managerテンプレートを使用してクラスターを迅速に作成できるほか、自動スケーリング機能を提供し、需要に応じてクラスターのノード数を自動的に増減させることができます。<br>
+   また、Azure Active Directory（AAD）統合、ネットワークポリシー、監査ログなどのセキュリティ機能を備えており、セキュアな環境でアプリケーションを実行できるだけでなく、Visual Studio
+   CodeやAzure DevOpsなどのツールと統合されており、開発からデプロイまでのワークフローを効率化します。<br>
+   さらに、AKSは使用したリソースに対してのみ課金されるためコスト効率が高く、未使用のノードは自動的に停止されコストを削減します。<br>
+   そのため、Kubernetesの複雑さを軽減し、クラウドネイティブアプリケーションの開発と運用をスムーズに行うことができます。</p>
+
+
+  <h2>Cloud CDN・Media CDN</h2>
+
+  <p>Google CloudのCloud CDNとMedia CDNは、どちらもコンテンツ配信ネットワーク（CDN）ですが、用途や機能に違いがあります。<br>
+   どちらを選ぶかは、配信するコンテンツの種類や必要な機能によって異なります。</p>
+  <p>このサイトの場合、主に日本の閲覧者を想定していますがリージョンを欧米諸国に置いています。<br>
+   本来であれば望ましい使い方ではないのですが、静的ウェブサイトを公開しているだけですから、そんな気になるほどのレイテンシは発生しないでしょう。<br>
+   どうしても重量級の何かを動かすときには、また別のプロジェクトを立ててデプロイしようかと思っています。<br>
+   それより、解決していないAI学習の著作権問題のほうが気になるんですよね。</p>
+
+  <p><strong>Cloud CDN</strong></p>
+  <ul>
+   <li><strong>主な用途</strong>: ウェブサイトやAPIの高速化。</li>
+   <li><strong>特徴</strong>:
+    <ul>
+     <li>Googleのグローバルエッジネットワークを利用して、ユーザーに近い場所からコンテンツを配信。</li>
+     <li>静的コンテンツ（画像、JavaScript、CSSなど）のキャッシュに最適。</li>
+     <li>HTTP/2やQUICプロトコルをサポートし、レイテンシを低減。</li>
+    </ul>
+   </li>
+  </ul>
+
+  <p><strong>Media CDN</strong></p>
+  <ul>
+   <li><strong>主な用途</strong>: 動画ストリーミングや大容量ファイルのダウンロード。</li>
+   <li><strong>特徴</strong>:
+    <ul>
+     <li>高スループットの配信に最適化されており、特に動画やメディアコンテンツの配信に強み。</li>
+     <li>広告挿入やAI/ML分析など、メディア特有の機能をサポート。</li>
+     <li>Googleのインフラを活用し、グローバル規模での高品質なストリーミング体験を提供。</li>
+    </ul>
+   </li>
+  </ul>
+
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+
+  <h4>Amazon CloudFront・Azure Front Door</h4>
+  <p>Amazon CloudFrontとAzure Front Doorはどちらもコンテンツ配信ネットワーク（CDN）サービスですが、それぞれに特徴があります。<br>
+   CloudFrontは動的ロードバランシング、キャッシュ、セキュリティ機能（AWS WAFとの統合）などを提供し、料金体系は従量課金制で、使用したデータ量に応じて料金が発生します。<br>
+   また、Amazon S3バケットと簡単に統合でき、オリジンアクセスコントロール（OAC）を使用してセキュアにアクセスを制御できます。<br>
+   一方、Azure Front Doorはグローバルな負荷分散、ルーティング、トラフィック管理、セキュリティ機能（Azure
+   WAFとの統合）などを提供し、料金体系はStandardとPremiumのプランがあり、固定費が発生します。<br>
+   PremiumプランにはWAFの料金も含まれます。さらに、Azure Blob Storageと統合可能で、PremiumプランではPrivate Linkを使用してセキュアにアクセスできます。<br>
+   主な違いとして、CloudFrontは動的ロードバランシングを提供し、オリジンのヘルスに基づいてトラフィックを分散しますが、Front Doorはルーティングとトラフィック管理に重点を置いています。<br>
+   また、CloudFrontは従量課金制であるのに対し、Front Doorは固定費が発生するプランがあります。<br>
+   セキュリティ面では、CloudFrontはAWS WAFと統合され、Front DoorはAzure WAFと統合されています。<br>
+   どちらのサービスも優れた機能を持っていますが、具体的なニーズに応じて選択することが重要です。</p>
+
+
+  <h2>Cloud DNS・Cloud Domains</h2>
+
+  <p><strong>Cloud DNS</strong></p>
+  <p>目的: 高性能なDNSサービスを提供し、ドメイン名の解決を行います。</p>
+  <p>特徴:</p>
+  <ul>
+   <li>低レイテンシと高可用性</li>
+   <li>大規模なゾーンやレコードの効率的な処理</li>
+   <li>DNSSECによるセキュリティ強化</li>
+   <li>オートスケール対応</li>
+  </ul>
+  <p><strong>Cloud Domains</strong></p>
+  <p>目的: ドメインの購入、移管、管理を行うサービスです。</p>
+  <p>特徴:</p>
+  <ul>
+   <li>Google Cloud内でのドメイン管理</li>
+   <li>APIを介したドメイン登録システムの操作</li>
+   <li>Cloud Billingと連携し、月単位での支払いが可能</li>
+   <li>Cloud DNSと緊密に統合され、簡単にDNSゾーンを設定可能</li>
+  </ul>
+  <p><strong>独自ドメインの購入</strong></p>
+  <ul>
+   <li>Cloud DNS: 独自ドメインの購入はできませんが、既存のドメインのDNS設定を管理できます。</li>
+   <li>Cloud Domains: 独自ドメインの購入が可能です。Cloud Consoleから簡単にドメインを検索し、購入手続きを行えます。</li>
+  </ul>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+
+  <h4>Amazon Route 53・Azure DNS</h4>
+  <p><strong>Amazon Route 53</strong></p>
+  <ul>
+   <li>機能: DNS名の管理、DNSレベルのトラフィックルーティング、フェールオーバーサービスを提供</li>
+   <li>ドメイン購入: 独自ドメインの購入が可能</li>
+   <li>SLA: 100%のサービスレベルアグリーメント（SLA）</li>
+   <li>DNSSECサポート: DNSSECをサポート</li>
+  </ul>
+  <br>
+  <p><strong>Azure DNS</strong></p>
+  <ul>
+   <li>機能: ドメインとDNSの管理、Azure Traffic Managerと組み合わせてDNSレベルのトラフィックルーティングや負荷分散、フェールオーバー機能を提供</li>
+   <li>ドメイン購入: Azure DNS自体ではドメインの購入はできないが、Azure App Serviceを利用して独自ドメインを購入し、Azure DNSで管理可能</li>
+   <li>SLA: 99.99%のSLA</li>
+   <li>DNSSECサポート: 現時点ではDNSSECをサポートしていない</li>
+  </ul>
+
+
+  <h2>BigQuery</h2>
+  <p>BigQuery（ビッグクエリ）は、Google Cloudが提供するデータ解析サービスです。<br>
+   アナザーエデンでも使われていたシステムですよ。</p>
+
+  <p>参考サイト：<a href="https://techcon.gree.jp/2023/session/TrackB-7">「アナザーエデン
+    時空を超える猫」の5年前のログを引っ越してデータドリブンで事業運用プロセスを改善した話</a></p>
+
+  <ol>
+   <li><strong>完全管理型</strong>: BigQueryは、サーバーの管理やメンテナンスが不要です。<br>
+    Googleがすべてを管理してくれるので、ユーザーはデータの解析に集中できます。</li>
+   <li><strong>高速なデータ処理</strong>: 大量のデータ（テラバイトやペタバイト単位）を数秒から数分で解析できます。<br>
+    ビジネスの意思決定が迅速に行えます。</li>
+   <li><strong>SQL対応</strong>: BigQueryはSQL（データベース言語）を使ってデータをクエリ（検索）できます。<br>
+    SQLを知っていれば、すぐに使い始めることができます。</li>
+   <li><strong>スケーラブル</strong>: データの量が増えても、自動的にスケールアップして対応します。<br>
+    パフォーマンスが落ちることなくデータを扱えます。</li>
+   <li><strong>コスト効率</strong>: 使用した分だけ料金が発生する従量課金制と、定額制のプランがあります。<br>
+    予算に応じた利用が可能です。</li>
+  </ol>
+  <p>例えば、オンラインショップの運営者がBigQueryを使って、顧客の購買データを解析するとします。<br>
+   どの商品が人気か、どの時間帯に売れるかなどを分析することで、マーケティング戦略を最適化できます。</p>
+  <p>BigQueryは、初心者でも簡単に始められる強力なデータ解析ツールです。<br>
+   データの管理や解析を効率的に行いたい場合に非常に役立ちます。</p>
+
+  <h4>Amazon Athena・Amazon Redshift</h4>
+  <p>Amazon Athenaはサーバーレスのインタラクティブなクエリサービスです。<br>
+   標準的なSQLを使用して、Amazon S3に保存されているデータを直接クエリできます。<br>
+   インフラの管理が不要で、クエリを実行するだけで利用可能です。<br>
+   標準SQLをサポートしており、数秒で結果を取得できます。<br>
+   Amazon S3だけでなく、オンプレミスや他のクラウドデータソースからもデータをクエリできます。<br>
+   実行したクエリに対してのみ課金されるため、コスト管理がしやすいです。</p>
+
+  <p>Amazon Redshiftは高速でスケーラブルなデータウェアハウスサービスです。<br>
+   大規模なデータセットを効率的に分析するために設計されています。<br>
+   超並列処理（MPP）アーキテクチャを採用しており、大量のデータを迅速に処理できます。<br>
+   ペタバイト規模のデータを扱うことができ、必要に応じてスケールアウトが可能です。</p>
+
+  <p>Redshiftは他のクラウドデータウェアハウスと比較して優れたコストパフォーマンスを提供します。<br>
+   また、AWSの他のサービスとシームレスに統合できます。<br>
+   Athenaはアドホックなクエリやデータ探索に適しており、Redshiftは大規模なデータウェアハウスとしての利用に向いています。</p>
+
+  <h4>Azure Synapse Analytics</h4>
+  データウェアハウスとビッグデータ分析を統合したエンタープライズ分析サービスで、データの取り込み、準備、管理、分析を一つのプラットフォームで行うことができます。
+  SQL技術とApache Spark技術を組み合わせており、Azure Data
+  Factoryと同じデータ統合エンジンを使用してETLパイプラインを簡単に作成できるほか、列レベルと行レベルのセキュリティや動的データマスキングなどの高度なセキュリティ機能を提供し、データの安全性を確保します。
+  また、データウェアハウス、データレイク、ビッグデータ分析システム全体でのスケーリングが可能で、Synapse
+  Studioを使用してデータの取り込み、調査、準備、調整、視覚化を一つのユーザーエクスペリエンスで行うことができるため、企業はデータから迅速に洞察を得ることができ、ビジネスの意思決定をサポートします。
+
+
+
+
+
+  <h2>Google Cloud SDK Shell・Google Cloud Shell</h2>
+  <p>Google Cloud SDK ShellとGoogle Cloud Shellは異なるものです。<br>
+   それぞれの特徴を簡単に見ていきます。</p>
+
+  <ul>
+   <li><strong>ブラウザからアクセス可能</strong><br>
+    Google Cloud Shellは、ウェブブラウザから直接アクセスできます。特別なソフトウェアをインストールする必要がなく、どこからでも利用できます。</li>
+
+   <li><strong>事前にインストールされたツール</strong><br>
+    Cloud Shellには、Google Cloud CLI（gcloudコマンド）やその他の便利なツールが事前にインストールされています。すぐにコマンドを実行してプロジェクトを管理できます。</li>
+
+   <li><strong>コードエディタ</strong><br>
+    Cloud Shellには、統合されたコードエディタが含まれており、クラウド上で直接コードを編集、デバッグ、デプロイすることができます。</li>
+
+   <li><strong>仮想マシンのプレビュー</strong><br>
+    Cloud Shell上で仮想マシンを起動し、ウェブアプリケーションをプレビューすることができます。開発中のアプリケーションをすぐに確認できます。</li>
+
+   <li><strong>クラウドリソースの管理</strong><br>
+    プロジェクトの作成、リソースの管理、アクセス権の設定など、さまざまな管理タスクをコマンドラインから簡単に実行できます。</li>
+  </ul>
+
+  <p class="gra">Google Cloud SDK Shell</p>
+  <ul>
+   <li><strong>概要</strong>: Google Cloud SDKは、Google Cloud
+    Platform（GCP）のリソースを管理するためのコマンドラインツールのセットです。これには、<code>gcloud</code>、<code>gsutil</code>、<code>bq</code>などのツールが含まれています。
+   </li>
+   <li><strong>インストール</strong>: ローカルマシンにインストールして使用します。</li>
+   <li><strong>用途</strong>: コマンドラインからGCPのリソースを操作したり、スクリプトを実行して自動化したりするのに使用されます。</li>
+  </ul>
+
+  <p class="gra">Google Cloud Shell</p>
+  <ul>
+   <li><strong>概要</strong>: Google Cloud Shellは、ブラウザからアクセスできるインタラクティブなシェル環境です。Google Cloud
+    SDKがプリインストールされており、すぐに使用できます。</li>
+   <li><strong>アクセス</strong>: ウェブブラウザから直接アクセス可能で、特別なインストールは不要です。</li>
+   <li><strong>用途</strong>: GCPのリソースを管理したり、コードを編集・デバッグしたりするための統合開発環境として使用されます。</li>
+  </ul>
+
+  <p><strong>主な違い</strong></p>
+  <ul>
+   <li><strong>インストールの必要性</strong>: Google Cloud SDKはローカルにインストールする必要がありますが、Google Cloud Shellはブラウザから直接利用できます。</li>
+   <li><strong>使用環境</strong>: Google Cloud SDKはローカル環境で使用し、Google Cloud Shellはクラウドベースの環境で使用します。</li>
+  </ul>
+
+  <p>どちらもGCPの管理に便利なツールですが、用途や使用環境に応じて使い分けていきます。<br>
+   次に、Google Cloud SDK Shellを使う際に、最低限覚えておくと便利なコマンドをいくつか紹介します。</p>
+
+  <p><strong>基本コマンド</strong></p>
+  <ul>
+   <li><strong>初期設定と認証</strong></li>
+   <ul>
+    <li><code>gcloud init</code>: 初期設定を行い、プロジェクトや認証情報を設定</li>
+    <li><code>gcloud auth login</code>: Google Cloudにログイン</li>
+    <li><code>gcloud auth list</code>: 認証済みアカウントの一覧を表示</li>
+   </ul>
+
+   <li><strong>プロジェクト管理</strong></li>
+   <ul>
+    <li><code>gcloud projects list</code>: プロジェクトの一覧を表示</li>
+    <li><code>gcloud config set project [PROJECT_ID]</code>: デフォルトプロジェクトを設定</li>
+   </ul>
+
+   <li><strong>コンポーネント管理</strong></li>
+   <ul>
+    <li><code>gcloud components install [COMPONENT_ID]</code>: 特定のコンポーネントをインストール</li>
+    <li><code>gcloud components update</code>: gcloud CLIを最新バージョンに更新</li>
+   </ul>
+
+   <li><strong>情報取得</strong></li>
+   <ul>
+    <li><code>gcloud info</code>: 現在のgcloud CLI環境の詳細を表示</li>
+    <li><code>gcloud version</code>: インストールされているgcloud CLIのバージョンを表示</li>
+   </ul>
+  </ul>
+
+  <p class="gra">App Engineでよく使うコマンド</p>
+  <p>ここらへんを覚えておけば、スムーズにapp engineによるホームページ作成ができると思います。</p>
+
+  <ul>
+   <li><strong>アプリケーションのデプロイ</strong></li>
+   <ul>
+    <li><code>gcloud app deploy</code>: App Engineにアプリケーションをデプロイ</li>
+    <li><code>gcloud app browse</code>: デプロイされたアプリケーションをブラウザで開く</li>
+   </ul>
+
+   <li><strong>アプリケーションの管理</strong></li>
+   <ul>
+    <li><code>gcloud app describe</code>: App Engineアプリケーションの設定情報を表示</li>
+    <li><code>gcloud app logs tail -s default</code>: リアルタイムでアプリケーションのログを表示</li>
+   </ul>
+
+   <li><strong>バージョン管理</strong></li>
+   <ul>
+    <li><code>gcloud app versions list</code>: デプロイされたアプリケーションのバージョン一覧を表示</li>
+    <li><code>gcloud app versions delete [VERSION_ID]</code>: 特定のバージョンを削除</li>
+   </ul>
+  </ul>
+
+
+  <h4>AWS CLI・Azure CLI</h4>
+
+  <p>AWS CLIはAmazon Web Services (AWS) のサービスをコマンドラインから操作するためのツールで、スクリプトやバッチ処理を使ってAWSリソースを管理することができます。<br>
+   主な機能としてはEC2インスタンスの起動・停止やS3バケットの作成・削除などのリソース管理、スクリプトを使った定期的なタスクの自動化、他のツールやサービスと統合して複雑なワークフローを構築することが挙げられます。<br>
+   S3バケットのリストを取得するためのaws s3 ls。<br>
+   EC2インスタンスを起動するためのaws ec2 start-instances --instance-ids i-1234567890abcdef0など、いろんなコマンドを使って操作します。</p>
+
+  <p>Azure CLIはMicrosoft Azureのサービスをコマンドラインから操作するためのツールです。<br>
+   Azureリソースを効率的に管理し自動化することができます。<br>
+   主な機能としては仮想マシンの作成・管理やストレージアカウントの操作などのリソース管理、スクリプトを使ったAzureリソースのデプロイや管理の自動化、Windows、macOS、Linuxで利用可能なクロスプラットフォーム対応があります。<br>
+   リソースグループを作成するためのaz group create --name MyResourceGroup --location eastus。<br>
+   仮想マシンを作成するためのaz vm create --resource-group MyResourceGroup --name MyVM --image UbuntuLTS --admin-username
+   azureuser --generate-ssh-keysなど、こちらにもいろんなコマンドがありますね。</p>
+
+  <p>どちらのCLIもクラウドリソースの管理を効率化し自動化するための強力なツールで、どちらを使うかは利用しているクラウドサービスに依存します。</p>
+
+  <h2>AWSの「7つのR」</h2>
+  <p>AWSの「7つのR」は、クラウド移行戦略を示す7つの方法を指します。<br>
+   これらの戦略は、オンプレミスのシステムをAWSに移行する際に、どのように対応するかを分類するためのものです。</p>
+
+  <ul>
+   <li><strong>Relocate</strong>: オンプレミスのVMware環境をそのままVMware Cloud on AWSに移行する方法。</li>
+   <li><strong>Rehost</strong>: 既存のアプリケーションやデータベースを変更せずに、そのままクラウドに移行する方法。</li>
+   <li><strong>Replatform</strong>: クラウドの機能を活用するために、部分的に最適化を行う方法。</li>
+   <li><strong>Repurchase</strong>: 既存の製品を別の製品に切り替える方法。例えば、ライセンスモデルの製品からSaaS製品に切り替える。</li>
+   <li><strong>Refactor</strong>: クラウドネイティブな機能を最大限に活用するために、アプリケーションやデータベースを再設計する方法。</li>
+   <li><strong>Retire</strong>: 不要なアプリケーションやデータベースを廃止する方法。</li>
+   <li><strong>Retain</strong>: クラウドに移行せず、元の環境で稼働させ続ける方法。</li>
+  </ul>
+
+  <p>これらの戦略を適用することで、移行計画を効率的に進めることができます。<br>
+   ていうか考え方ですよね。クラウドの哲学なんて言葉まで聞いたことありますよ。</p>
+
+
+
+
+
+
+
+
+
+
+  <p>ここにあるプロダクトは個人サイト制作とはあまり深い関わりはないですね。<br>
+   普通はここまでやらないし。<br>
+   軽くまとめて、もし必要になったら詳しく追記していきます。</p>
+
+  <h2>Firestore・Firebase Realtime Database</h2>
+  <p><strong>Firestore</strong></p>
+  <ul>
+   <li><strong>データモデル</strong>:
+    <ul>
+     <li><strong>ドキュメントとコレクション</strong>:
+      データはドキュメント（JSON形式）として保存され、これらのドキュメントはコレクションに整理されます。複雑なデータ構造を持つアプリケーションに適しています。</li>
+     <li><strong>サブコレクション</strong>: ドキュメント内にサブコレクションを持つことができ、階層的なデータ構造を簡単に管理できます。</li>
+    </ul>
+   </li>
+   <li><strong>クエリ機能</strong>:
+    <ul>
+     <li><strong>複合クエリ</strong>: 複数のフィルタリングやソートを組み合わせたクエリが可能です。クエリはインデックス化されており、結果セットのサイズに比例してパフォーマンスが決まります。</li>
+    </ul>
+   </li>
+   <li><strong>リアルタイム更新</strong>:
+    <ul>
+     <li><strong>リアルタイムサポート</strong>: データの変更がリアルタイムでクライアントに同期されます。</li>
+     <li><strong>オフラインサポート</strong>: オフライン時でもデータの読み書きが可能で、再接続時に同期されます。</li>
+    </ul>
+   </li>
+   <li><strong>スケーラビリティ</strong>:
+    <ul>
+     <li><strong>高いスケーラビリティ</strong>: 大規模なアプリケーションに対応できるよう設計されています。</li>
+    </ul>
+   </li>
+  </ul>
+
+  <p><strong>Firebase Realtime Database</strong></p>
+  <ul>
+   <li><strong>データモデル</strong>:
+    <ul>
+     <li><strong>JSONツリー</strong>: データは1つの大きなJSONツリーとして保存されます。シンプルなデータ構造に適していますが、複雑なデータ構造の管理は難しいです。</li>
+    </ul>
+   </li>
+   <li><strong>クエリ機能</strong>:
+    <ul>
+     <li><strong>シンプルなクエリ</strong>: クエリ機能は限定的で、複雑なフィルタリングやソートは難しいです。</li>
+    </ul>
+   </li>
+   <li><strong>リアルタイム更新</strong>:
+    <ul>
+     <li><strong>リアルタイムサポート</strong>: データの変更がリアルタイムでクライアントに同期されます。</li>
+     <li><strong>オフラインサポート</strong>: オフライン時でもデータの読み書きが可能で、再接続時に同期されます。</li>
+    </ul>
+   </li>
+   <li><strong>スケーラビリティ</strong>:
+    <ul>
+     <li><strong>制限されたスケーラビリティ</strong>: 小規模から中規模のアプリケーションに適しています。</li>
+    </ul>
+   </li>
+  </ul>
+
+  <p><strong>Firestore</strong>は、複雑なデータ構造や高いスケーラビリティが必要なアプリケーションに適しています。<br>
+   一方、<strong>Firebase Realtime Database</strong>は、シンプルなデータ構造とリアルタイム同期が必要なアプリケーションに適しています。</p>
+
+
+  <h2>Bigtable・Datastore</h2>
+  <p><strong>Bigtable</strong></p>
+  <p><strong>Google Cloud Bigtable</strong>は、広範なデータを扱うために設計された<strong>高スループット・低レイテンシーのNoSQLデータベース</strong>です。</p>
+  <ul>
+   <li><strong>スケーラビリティ</strong>: 数十億行、数千列にスケール可能で、ペタバイト単位のデータを扱えます。</li>
+   <li><strong>用途</strong>: 時系列データ、IoTデータ、金融取引履歴、マーケティングデータなど、大量のデータを高速に読み書きする必要があるアプリケーションに最適です。</li>
+   <li><strong>データモデル</strong>: 行と列で構成されるテーブル形式で、各行は一意の行キーでインデックスされます。</li>
+  </ul>
+
+  <p><strong>Datastore</strong></p>
+  <p><strong>Google Cloud Datastore</strong>は、<strong>ドキュメント指向のNoSQLデータベース</strong>で、柔軟なデータモデルを提供します。</p>
+  <ul>
+   <li><strong>一貫性</strong>: 強い一貫性を持ち、トランザクションをサポートします。</li>
+   <li><strong>用途</strong>: ウェブやモバイルアプリケーションでの使用に適しており、柔軟なデータモデルが必要な場合に有効です。</li>
+   <li><strong>データモデル</strong>: ドキュメントベースで、エンティティとプロパティでデータを表現します。</li>
+  </ul>
+
+
+  <h4>Amazon DynamoDB、Amazon DocumentDB</h4>
+  <p>Amazon DynamoDBとAmazon DocumentDBは、どちらもAWSが提供するNoSQLデータベースですが、いくつかの重要な違いがあります。</p>
+
+  <p><strong>Amazon DynamoDB</strong></p>
+  <ul>
+   <li><strong>データモデル</strong>: キー・バリュー型およびドキュメント型データモデルをサポート。</li>
+   <li><strong>パフォーマンス</strong>: 単一桁ミリ秒のレイテンシで高いスループットを提供。DynamoDB Accelerator (DAX) で読み取りパフォーマンスを向上。</li>
+   <li><strong>スケーラビリティ</strong>: 自動でスケールアップ・スケールダウンし、数百万リクエスト/秒を処理。</li>
+   <li><strong>ユースケース</strong>: 高スループットと低レイテンシが求められるアプリケーションに最適。</li>
+  </ul>
+
+  <p><strong>Amazon DocumentDB</strong></p>
+  <ul>
+   <li><strong>データモデル</strong>: JSONドキュメントデータモデルをサポートし、MongoDBと互換性あり。</li>
+   <li><strong>パフォーマンス</strong>: 低レイテンシで、ミッションクリティカルなMongoDBワークロードを管理するために設計。</li>
+   <li><strong>スケーラビリティ</strong>: 自動でデータを3つのアベイラビリティゾーンに6つのコピーを作成し、99.99%の可用性を提供。</li>
+   <li><strong>ユースケース</strong>: MongoDB互換性が必要なアプリケーションや、JSONドキュメントデータを扱うアプリケーションに最適。</li>
+  </ul>
+
+  <p>どちらのデータベースを選ぶかは、アプリケーションの要件に依存します。<br>
+   例えば、キー・バリュー型データモデルが必要であればDynamoDBが適していますし、MongoDB互換性が必要であればDocumentDBが適しています。</p>
+
+
+  <h4>Azure Cosmos DB</h4>
+  <p>Microsoftが提供するグローバルに分散されたマルチモデルNoSQLデータベースサービスです。<br>
+   データを世界中の複数の場所に分散して保存できるため、どこからでも高速にデータにアクセスできます。<br>
+   また、JSON、XML、グラフ、バイナリデータなど、さまざまなデータ形式を一つのデータベースで管理できます。<br>
+   さらに、SQL、MongoDB、Cassandra、Gremlin、Tableなど、複数のデータアクセス用APIをサポートしており、既存のアプリケーションを簡単に移行できます。<br>
+   自動インデックス作成機能により、データが追加されると同時に自動的にインデックスが作成されるため、リアルタイムでのフィルタリングが可能です。<br>
+   Azure Cosmos DBは99.999%の高可用性を保証し、ミリ秒単位の応答時間でデータにアクセスできます。<br>
+   そのため、ユーザー生成コンテンツの管理、IoTデータの処理、ゲームアプリでのリアルタイム更新など、さまざまなユースケースに対応しています。</p>
+
+  <h2>AlloyDB for PostgreSQL</h2>
+  <p>PostgreSQL互換のデータベースサービスです。<br>
+   特にハイブリッドトランザクションおよび分析処理（HTAP）ワークロード向けに設計されています。</p>
+
+  <p><strong>主な特徴</strong></p>
+  <ol>
+   <li><strong>高性能</strong>: AlloyDBは、標準のPostgreSQLよりも最大100倍速い分析クエリ性能を提供し、トランザクションワークロードにおいても非常に高速。</li>
+   <li><strong>高可用性</strong>: クラスタ内のプライマリインスタンスは、アクティブノードとスタンバイノードを持ち、障害時には自動的にフェイルオーバー。</li>
+   <li><strong>スケーラビリティ</strong>: クラスタは複数のノードで構成され、必要に応じてスケールアップやスケールアウトが可能。</li>
+   <li><strong>完全互換</strong>: オープンソースのPostgreSQLと100%互換性があり、既存のPostgreSQLアプリケーションを簡単に移行可能。</li>
+  </ol>
+
+  <p><strong>利用シナリオ</strong></p>
+  <ul>
+   <li><strong>エンタープライズグレードのトランザクション処理</strong>: 高いパフォーマンスと可用性が求められるビジネスクリティカルなアプリケーションに最適。</li>
+   <li><strong>分析処理</strong>: 大規模なデータ分析やリアルタイムのデータ処理に対応。</li>
+  </ul>
+
+  <p>AlloyDBは、Googleのクラウドインフラストラクチャを活用し、YouTubeやGmailなどの大規模サービスと同じ基盤技術を使用しています。</p>
+
+
+  <h4>Amazon Aurora</h4>
+  <p>フルマネージドのリレーショナルデータベースエンジンです。<br>
+   MySQLおよびPostgreSQLと互換性があり、商用データベースの高性能と信頼性をオープンソースデータベースのシンプルさとコスト効率で提供します。</p>
+
+  <p><strong>主な特徴:</strong></p>
+  <ul>
+   <li><strong>高性能:</strong> Auroraは、MySQLの5倍、PostgreSQLの3倍のスループットを提供する。</li>
+   <li><strong>スケーラビリティ:</strong> ストレージは自動的に拡張され、最大128テビバイト (TiB) まで対応する。</li>
+   <li><strong>高可用性:</strong> マルチAZ (アベイラビリティゾーン) 配置により、99.99%の稼働率を実現する。</li>
+   <li><strong>コスト効率:</strong> 商用データベースの1/10のコストで高性能を提供する。</li>
+   <li><strong>セキュリティ:</strong> 広範なコンプライアンス基準と最高水準のセキュリティ機能を備えている。</li>
+  </ul>
+  <p>Auroraは、AWSのAmazon Relational Database Service (RDS) の一部として提供され、データベースのセットアップ、運用、スケーリングを簡素化します。</p>
+
+  <h4>Azure Cosmos DB for PostgreSQL・Azure SQL Database</h4>
+  <p><strong>Azure Cosmos DB for PostgreSQL</strong></p>
+  <ul>
+   <li><strong>分散データベース:</strong> Citus拡張機能でデータを複数ノードに分散させ、高いスケーラビリティを実現。</li>
+   <li><strong>クラウドネイティブ:</strong> 新しいクラウドネイティブアプリケーションの構築に最適。リアルタイム分析や高スループットのトランザクションアプリケーションに向いている。</li>
+   <li><strong>最新のPostgreSQL機能:</strong> 最新のPostgreSQLバージョンや拡張機能（例：JSONB、PostGIS）をサポート。</li>
+  </ul>
+  <p><strong>Azure SQL Database</strong></p>
+  <ul>
+   <li><strong>フルマネージドSQLデータベース:</strong> Microsoft SQL Serverのクラウド版で、データベース管理の手間を省く。</li>
+   <li><strong>高い互換性:</strong> 既存のSQL Serverアプリケーションの移行やモダナイゼーションに適しており、エンタープライズグレードのセキュリティと高可用性を提供。</li>
+   <li><strong>一貫したパフォーマンス:</strong> 一貫した読み取りとデータの整合性を提供し、トランザクション処理に優れている。</li>
+  </ul>
+  <p>どちらのサービスも、特定のニーズに応じて選択することが重要です。例えば、新しいアプリケーションを構築する場合はAzure Cosmos DB for PostgreSQLが適しており、既存のSQL
+   Serverアプリケーションをクラウドに移行する場合はAzure SQL Databaseが適しています。</p>
+
+
+  <h2>Filestore</h2>
+  <p>Google CloudのFilestoreは、完全に管理されたファイルストレージサービスで、Google Cloud Platform (GCP)上で動作するアプリケーション向けにネットワークアタッチドストレージ
+   (NAS) を提供します。</p>
+
+  <p><strong>主な特徴</strong></p>
+  <ol>
+   <li><strong>高性能とスケーラビリティ</strong>:
+    <ul>
+     <li>Filestoreは高パフォーマンスとスケーラビリティを提供し、必要に応じて容量を拡張可能。</li>
+    </ul>
+   </li>
+   <li><strong>完全管理</strong>:
+    <ul>
+     <li>ファイルサーバーの運用管理は不要で、Googleがインフラを管理。</li>
+    </ul>
+   </li>
+   <li><strong>多様な接続オプション</strong>:
+    <ul>
+     <li>Compute EngineのVM、GKEクラスター、オンプレミスのマシンなど、さまざまなクライアントに接続可能。</li>
+    </ul>
+   </li>
+   <li><strong>サービスティア</strong>:
+    <ul>
+     <li>基本ティア、リージョナルティア、エンタープライズティアなど、用途に応じた複数のサービスティアを提供。</li>
+    </ul>
+   </li>
+   <li><strong>プロトコルサポート</strong>:
+    <ul>
+     <li>NFSv3およびNFSv4.1（プレビュー）をサポートし、双方向通信やデータ暗号化を提供。</li>
+    </ul>
+   </li>
+  </ol>
+
+  <p><strong>利用シナリオ</strong></p>
+  <ul>
+   <li><strong>ファイル共有</strong>: 複数のアプリケーションインスタンスが同じファイルシステムに同時にアクセスする必要がある場合に適しています。</li>
+   <li><strong>ソフトウェア開発</strong>: 開発環境でのファイル共有やデータの一元管理に役立ちます。</li>
+   <li><strong>高可用性が求められるミッションクリティカルなワークロード</strong>: リージョナルティアやエンタープライズティアが適しています。</li>
+  </ul>
+
+  <p>Filestoreは、Google Cloud上でのアプリケーション運用を簡素化し、効率的なファイルストレージソリューションを提供します。<br>
+   これはちょっと興味あるんですよね。<br>
+   あるいは何か使えるかもしれない。<br>
+   開発環境はそれこそローカルでも十分ではあるけど、複数アプリのファイル共有機能は覚えておきたいところです。</p>
+
+
+  <h4>Amazon Elastic File System（EFS）・Azure Files</h4>
+  <p>どちらもクラウドベースのファイルストレージサービスですが、いくつかの違いがあります。</p>
+
+  <p><strong>Amazon Elastic File System (EFS)</strong></p>
+  <ul>
+   <li><strong>スケーラビリティ</strong>: 自動的にスケールアップおよびスケールダウンし、必要に応じて容量を調整。</li>
+   <li><strong>プロトコル</strong>: NFSプロトコルを使用。</li>
+   <li><strong>パフォーマンス</strong>: 高いスループットと低レイテンシを提供し、数千のEC2インスタンスから同時にアクセス可能。</li>
+   <li><strong>料金モデル</strong>: 使用したストレージ容量に基づいて課金。</li>
+  </ul>
+
+  <p><strong>Azure Files</strong></p>
+  <ul>
+   <li><strong>スケーラビリティ</strong>: サーバーレスでスケーラブルなファイル共有を提供し、Azure File Syncでオンプレミスのキャッシュをサポート。</li>
+   <li><strong>プロトコル</strong>: SMBおよびNFSプロトコルをサポート。</li>
+   <li><strong>パフォーマンス</strong>: 高い可用性とスループットを提供し、Azureの他のサービスとシームレスに統合可能。</li>
+   <li><strong>料金モデル</strong>: ストレージ容量とトランザクション数に基づいて課金。</li>
+  </ul>
+
+
+
+
+
+
+  <h2>Security Command Center</h2>
+  <p>Google Cloudの「Security Command Center（SCC）」はクラウド環境のセキュリティを総合的に管理し、脅威や脆弱性を早期に発見・対処するためのツールです。<br>
+   クラウド上のリソースのセキュリティ状態を一目で確認できるようにし、どのリソースが安全でどのリソースに問題があるかを簡単に把握できます。<br>
+   また、クラウド環境内で発生する可能性のあるセキュリティ脅威を自動的に検出し、不正アクセスの試みやマルウェアの活動などを見つけ出して警告を発します。<br>
+   さらに、クラウドリソースの設定ミスやセキュリティホールを検出し、それらを修正するためのアドバイスを提供することで、セキュリティリスクを未然に防ぐことができます。<br>
+   SCCはGoogle Cloudの他のセキュリティサービスと連携して動作し、複数のセキュリティツールを一元管理できるため、効率的にセキュリティ対策を講じることができます。</p>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+
+  <h4>Amazon Guard Duty、 AWS Security Hub、 AWS Audit Manager、 AWS Config</h4>
+  <p>これらのサービスはそれぞれ異なる目的と機能を持っており、組み合わせて使用することで、AWS環境のセキュリティとコンプライアンスを強化できます。</p>
+
+  <p><strong>Amazon GuardDuty</strong>
+   AWS環境内の脅威を検出するためのサービス。</p>
+  <ul>
+   <li>脅威検出: 機械学習や脅威インテリジェンスで悪意のある活動や異常行動を検出。</li>
+   <li>データソース: AWS CloudTrail、VPCフローログ、DNSログなどを継続監視。</li>
+   <li>ユースケース: 不正ログイン、データ流出、マルウェア検出など。</li>
+  </ul>
+
+  <p><strong>AWS Security Hub</strong>
+   AWS環境全体のセキュリティ状況を一元的に可視化するためのサービス。</p>
+  <ul>
+   <li>統合ビュー: GuardDuty、Inspector、Macieなどのセキュリティ情報を集約し、統一ダッシュボードで表示。</li>
+   <li>コンプライアンスチェック: セキュリティ業界のベストプラクティスや標準に対するコンプライアンスを評価。</li>
+   <li>自動化: AWS Configルールで設定とコンプライアンスチェックを自動化。</li>
+  </ul>
+
+  <p><strong>AWS Audit Manager</strong></p>
+  <ul>
+   <li>監査の自動化: 監査証跡を自動収集し、コンプライアンス標準に基づくレポートを生成。</li>
+   <li>テンプレート: ISO、SOC、PCI DSSなどのコンプライアンス標準に対応したテンプレートを提供。</li>
+   <li>証跡管理: 監査証跡を一元管理し、監査プロセスを効率化。</li>
+  </ul>
+
+  <p><strong>AWS Config</strong></p>
+  <ul>
+   <li>設定管理: AWSリソースの設定変更を記録し、履歴を保持。</li>
+   <li>コンプライアンス評価: カスタムルールやAWS提供のルールでリソースのコンプライアンスを評価。</li>
+   <li>リソースの可視化: リソースの設定状態を可視化し、変更履歴を確認。</li>
+  </ul>
+
+  <h4>Microsoft Defender for Cloud</h4>
+  <p>クラウドベースのアプリケーションやデータをサイバー脅威から守るためのセキュリティツールです。</p>
+  <ul>
+   <li><strong>クラウドセキュリティの強化</strong>:
+    <ul>
+     <li>クラウド上のアプリやデータを保護。</li>
+     <li>サイバー攻撃やデータ漏洩を防ぐ機能。</li>
+    </ul>
+   </li>
+   <li><strong>セキュリティの一元管理</strong>:
+    <ul>
+     <li>複数のクラウド環境やオンプレミス環境を一元管理。</li>
+     <li>セキュリティ状態を確認し、改善点を提案。</li>
+    </ul>
+   </li>
+   <li><strong>開発から運用までの保護</strong>:
+    <ul>
+     <li>開発段階から運用段階までセキュリティ管理。</li>
+     <li>コードのセキュリティチェックや脆弱性スキャン。</li>
+    </ul>
+   </li>
+   <li><strong>自動化された脅威検出と対応</strong>:
+    <ul>
+     <li>サイバー脅威を自動検出し、迅速に対応。</li>
+     <li>異常な活動を検知し、アラートと対策。</li>
+    </ul>
+   </li>
+  </ul>
+
+
+  <h2>Cloud Identity</h2>
+  <p>ユーザーやグループの管理を簡単にするためのツールです。<br>
+   IDaaS（Identity as a Service）と呼ばれるサービスの一種で、インターネットを通じてユーザーのID（アカウント）を管理します。<br>
+   Cloud Identityを使うと、会社や組織内のユーザーやグループを一元管理でき、新しい社員が入社したときにその人のアカウントを簡単に作成して必要なアクセス権を設定できます。<br>
+   また、シングルサインオン（SSO）機能を使うと、ユーザーは一度のログインで複数のアプリケーションやサービスにアクセスでき、毎回異なるパスワードを入力する手間が省けます。<br>
+   さらに、多要素認証（MFA）を設定することでセキュリティを強化でき、パスワードに加えてスマートフォンのアプリやSMSで送られるコードなど複数の認証方法を組み合わせることができます。<br>
+   Cloud Identityは、ユーザーが使用するデバイス（パソコンやスマートフォンなど）も管理でき、紛失したデバイスのデータをリモートで消去することが可能です。<br>
+   このような機能を用いて、Googleの他のサービス（例えばGoogle Workspace）やMicrosoftのActive
+   Directoryなど他のID管理システムとも連携でき、組織全体のセキュリティと管理が一層強化されます。</p>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+
+  <h4>AWS IAM Identity Center（旧称：AWS Single Sign-On）</h4>
+  <p>AWS（Amazon Web Services）上でユーザーのアクセス管理を簡単にするためのサービスです。</p>
+  <ol>
+   <li><strong>シングルサインオン（SSO）</strong>:
+    <ul>
+     <li>一度のログインで複数のAWSアカウントやアプリにアクセス可能。</li>
+    </ul>
+   </li>
+   <li><strong>既存のIDプロバイダーと連携</strong>:
+    <ul>
+     <li>Google WorkspaceやMicrosoft Active Directoryと連携し、既存のユーザー情報を利用。</li>
+    </ul>
+   </li>
+   <li><strong>一元管理</strong>:
+    <ul>
+     <li>複数のAWSアカウントやアプリのアクセス権限を一元管理。</li>
+    </ul>
+   </li>
+   <li><strong>セキュリティの向上</strong>:
+    <ul>
+     <li>アクセス履歴の追跡や不正アクセスの防止、条件に基づくアクセス権限の設定。</li>
+    </ul>
+   </li>
+  </ol>
+
+  <h4>Microsoft Entra ID（旧称：Azure Active Directory、Azure AD）</h4>
+  <p>企業や組織がユーザーのアイデンティティとアクセスを効率的に管理し、セキュリティを強化するためのツールです。</p>
+  <ul>
+   <li><strong>アイデンティティ管理</strong><br>ユーザーのアカウント情報を一元管理。</li>
+   <li><strong>シングルサインオン（SSO）</strong><br>一度のログインで複数のアプリにアクセス可能。</li>
+   <li><strong>セキュリティ</strong><br>多要素認証や条件付きアクセスで不正アクセスを防止。</li>
+   <li><strong>アクセス管理</strong><br>特定のユーザーやグループに対するアクセス権を細かく設定。</li>
+   <li><strong>クラウドベース</strong><br>クラウド上で動作し、どこからでもアクセス可能。</li>
+  </ul>
+
+
+  <h2>Compute Engine オートスケーラー</h2>
+  <p>Google Cloudのサービスの一部で、仮想マシン（VM）の数を自動的に調整する機能です。<br>
+   ウェブサイトやアプリケーションのトラフィックが増えたときに自動でサーバーを追加し、逆にトラフィックが減ったときにはサーバーを減らすことができます。</p>
+
+  <p><strong>具体的な仕組み</strong></p>
+  <ol>
+   <li><strong>マネージド インスタンス グループ（MIG）</strong>: オートスケーラーが管理するVMのグループ。</li>
+   <li><strong>スケールアウトとスケールイン</strong>:
+    <ul>
+     <li><strong>スケールアウト</strong>: トラフィック増加時にVMを追加。</li>
+     <li><strong>スケールイン</strong>: トラフィック減少時にVMを削除。</li>
+    </ul>
+   </li>
+   <li><strong>オートスケーリング ポリシー</strong>: 設定されたポリシーに基づき動作。例: CPU使用率が一定値を超えたらVMを追加。</li>
+  </ol>
+
+  <p><strong>メリット</strong></p>
+  <ul>
+   <li><strong>コスト削減</strong>: 必要なときだけリソースを増減。</li>
+   <li><strong>パフォーマンス向上</strong>: トラフィック急増にも対応。</li>
+  </ul>
+
+  <p><strong>例</strong></p>
+  <p>例えば、オンラインショップを運営している場合、セール期間中にアクセスが急増することがあります。<br>
+   このとき、オートスケーラーが自動でサーバーを増やして対応し、セールが終わるとサーバーを減らしてコストを抑えることができます。</p>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+
+  <h4>AWS EC2 Auto Scaling</h4>
+  <p>アプリケーションの負荷に応じて自動的にEC2インスタンス（仮想サーバー）の数を増減させる機能です。<br>
+   これにより、必要なリソースを常に確保し、コストを最適化しながらアプリケーションの可用性を維持できます。</p>
+
+  <p><strong>動作</strong></p>
+  <ol>
+   <li><strong>Auto Scalingグループ作成</strong>:<br>
+    EC2インスタンスをまとめて管理するグループを作成。<br>
+    最小数、最大数、希望インスタンス数を設定。
+   </li>
+   <li><strong>スケーリングポリシー設定</strong>:<br>
+    負荷増加時にインスタンス追加、負荷減少時にインスタンス削除のルールを設定。
+   </li>
+   <li><strong>ヘルスチェック</strong>:<br>
+    インスタンスの健康状態を自動監視し、問題のあるインスタンスを置き換え。
+   </li>
+  </ol>
+
+  <p><strong>具体例</strong></p>
+  <p>例えば、EC2 Auto Scalingグループを次のように設定したとします：</p>
+  <ul>
+   <li>最小インスタンス数: 2</li>
+   <li>最大インスタンス数: 10</li>
+   <li>希望するインスタンス数: 4</li>
+  </ul>
+  <p>この場合、通常は4つのインスタンスが稼働していますが、アクセスが増えて負荷が高まると、最大10個までインスタンスが自動的に追加されます。<br>
+   逆に、負荷が減るとインスタンス数が減少し、コストを抑えることができます。</p>
+
+  <p><strong>メリット</strong></p>
+  <ul>
+   <li>可用性向上: 必要なリソースを常に確保し、ダウンタイムを減少。</li>
+   <li>コスト最適化: 必要時にリソースを追加し、無駄なコスト削減。</li>
+   <li>柔軟性: トラフィック変動に応じて自動スケール。</li>
+  </ul>
+
+  <h4>Azure Autoscale、Azure Virtual Machine Scale Sets (VMSS)</h4>
+  <p>どちらもAzureのスケーリング機能ですが、それぞれ異なる目的と機能を持っています。</p>
+
+  <p><strong>Azure Autoscale</strong>は、Azure Monitorの一部として提供される機能で、リソースのインスタンス数を自動的に増減させることができます。<br>
+   アプリケーションの負荷に応じてリソースを動的に調整し、コスト効率を高めることができます。</p>
+  <ul>
+   <li><strong>水平スケーリング</strong>：リソースのインスタンス数を増減させて負荷に対応。</li>
+   <li><strong>メトリクスに基づくスケーリング</strong>：CPU使用率やメモリ使用量などのメトリクスに基づいてスケーリングルールを設定。</li>
+   <li><strong>スケジュールベースのスケーリング</strong>：特定の時間帯や曜日に基づいてスケーリングを設定。</li>
+  </ul>
+
+  <p><strong>Azure Virtual Machine Scale Sets</strong>は、複数の仮想マシン（VM）をグループとして管理し、自動的にスケーリングするためのサービスです。<br>
+   高可用性とアプリケーションの回復力を提供します。</p>
+  <ul>
+   <li><strong>自動スケーリング</strong>：需要に応じてVMのインスタンス数を増減。</li>
+   <li><strong>高可用性</strong>：VMを複数のフォールトドメインやアベイラビリティゾーンに分散。</li>
+   <li><strong>一貫した構成</strong>：すべてのVMインスタンスは同じベースOSイメージと構成から作成。</li>
+   <li><strong>ロードバランシング</strong>：Azure Load BalancerやAzure Application Gatewayでトラフィックを分散。</li>
+  </ul>
+
+  <p><strong>Azure AutoscaleとAzure Virtual Machine Scale Sets (VMSS)の違い</strong></p>
+  <ul>
+   <li><strong>スケーリングの対象</strong>：
+    <ul>
+     <li><strong>Azure Autoscale</strong>：様々なAzureリソース（VM、App Services、Azure Functionsなど）に適用可能。</li>
+     <li><strong>VMSS</strong>：主に仮想マシンのスケーリングに特化。</li>
+    </ul>
+   </li>
+   <li><strong>管理の範囲</strong>：
+    <ul>
+     <li><strong>Azure Autoscale</strong>：リソースのインスタンス数の増減に焦点。</li>
+     <li><strong>VMSS</strong>：VMの作成、管理、スケーリング、ロードバランシングを包括的に管理。</li>
+    </ul>
+   </li>
+  </ul>
+
+
+  <h2>Persistent Disk（永続ディスク）</h2>
+  Google Cloudが提供する仮想マシン（VM）用のストレージで、物理的なハードディスクのように使えるネットワークベースのストレージとなります。</p>
+
+  <p><strong>特徴</strong></p>
+  <ol>
+   <li><strong>耐久性</strong>: データは複数の物理ディスクに分散して保存されるため、データ損失のリスクが非常に低い。</li>
+   <li><strong>スケーラビリティ</strong>: 必要に応じてディスクのサイズを簡単に変更可能。ストレージ容量が足りなくなった場合、ディスクを拡張できる。</li>
+   <li><strong>柔軟性</strong>: VMを削除してもPersistent Diskに保存されたデータはそのまま残り、別のVMに再接続可能。</li>
+  </ol>
+
+  <p><strong>使い方</strong></p>
+  <ol>
+   <li><strong>作成</strong>: Google Cloud Consoleやコマンドラインツールで新しいPersistent Diskを作成。</li>
+   <li><strong>接続</strong>: 作成したディスクをVMに接続し、データを保存。</li>
+   <li><strong>管理</strong>: ディスクのサイズ変更やバックアップも簡単に管理。</li>
+  </ol>
+
+  <p><strong>例</strong></p>
+  <p>例えば、ウェブサイトを運営していて、データベースの容量が足りなくなった場合、Persistent Diskを追加して容量を増やすことができます。<br>
+   サービスを停止することなく、スムーズに運営を続けることができます。</p>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+
+  <h4>Amazon Elastic Block Store（EBS）</h4>
+  <p>Amazon Web Services（AWS）が提供するクラウドストレージサービスの一つ。<br>
+   簡単に言うと、EBSはクラウド上で使える便利なハードディスクのようなもので、データの保存や管理を簡単にしてくれます。</p>
+
+  <ul>
+   <li><strong>ストレージの役割</strong>：
+    <ul>
+     <li>EBSは、クラウド上で使えるハードディスクのようなものです。<br>
+      コンピュータのデータを保存するための場所です。</li>
+    </ul>
+   </li>
+   <li><strong>使い方</strong>：
+    <ul>
+     <li>EBSは、EC2（Amazonの仮想サーバー）に接続して使います。<br>
+      EC2インスタンスにデータを保存したり、読み込んだりするために使われます。</li>
+    </ul>
+   </li>
+   <li><strong>特徴</strong>：
+    <ul>
+     <li><strong>弾力性</strong>：ストレージ容量を自由に調整可能。</li>
+     <li><strong>高性能</strong>：高速な読み書きでパフォーマンス向上。</li>
+     <li><strong>バックアップ</strong>：スナップショットで簡単にバックアップ。</li>
+    </ul>
+   </li>
+   <li><strong>利用シーン</strong>：
+    <ul>
+     <li>ウェブサイトのデータベース</li>
+     <li>大量のデータを扱うアプリケーション</li>
+     <li>データのバックアップやリカバリ</li>
+    </ul>
+   </li>
+  </ul>
+
+
+  <h4>Azure Managed Disks・Azure Disk Storage</h4>
+  <p>「Azure Managed Disks」と「Azure Disk Storage」は、どちらもAzureの仮想マシン（VM）で使用されるディスクストレージですが、いくつかの重要な違いがあります。</p>
+
+  <p><strong>Azure Managed Disks</strong><br>
+   Azure Managed Disksは、Azureによって管理されるブロックレベルのストレージボリュームです。</p>
+
+  <ul>
+   <li><strong>管理の簡素化</strong>：ディスクのサイズと種類を指定するだけで、Azureが管理。</li>
+   <li><strong>高可用性と耐久性</strong>：データの3つのレプリカで99.999%の可用性。</li>
+   <li><strong>スケーラビリティ</strong>：リージョンごとに最大50,000個のディスク作成可能。</li>
+   <li><strong>セキュリティ</strong>：RBACでディスクへのアクセス権を細かく設定。</li>
+   <li><strong>バックアップと復元</strong>：Azure Backupでスナップショットを定期作成、復元が容易。</li>
+  </ul>
+
+  <p><strong>Azure Disk Storage</strong><br>
+   Azure Disk Storageは、Azureの仮想マシンで使用されるディスクストレージ全般を指します。</p>
+
+  <ul>
+   <li><strong>Ultra Disk</strong>：高IOPSと低レイテンシで、データベースや大規模トランザクション向け。</li>
+   <li><strong>Premium SSD</strong>：高性能SSDで、ミッションクリティカルなアプリ向け。</li>
+   <li><strong>Standard SSD</strong>：コスト効率が高く、一般用途向け。</li>
+   <li><strong>Standard HDD</strong>：低コストで大容量ストレージが必要な場合に適している。</li>
+  </ul>
+
+  <p><strong>主な違い</strong></p>
+  <ul>
+   <li><strong>管理の手間</strong>：Managed DisksはAzureが管理するため、ユーザーの管理負担が少ない。Disk Storageはユーザーが管理する必要がある。</li>
+   <li><strong>スケーラビリティ</strong>：Managed Disksは大規模デプロイメントに適し、リージョンごとに最大50,000個のディスクを作成可能。</li>
+   <li><strong>可用性と耐久性</strong>：Managed Disksは高い可用性と耐久性を提供し、データのレプリカで保護を強化。</li>
+  </ul>
+
+
+  <h2>Artifact Registry</h2>
+  <p>Google CloudのArtifact Registryは、ソフトウェアのビルドやデプロイに必要なファイル（アーティファクト）を一元管理するためのサービスです。<br>
+   アーティファクトとは、ソフトウェア開発の過程で生成されるファイルやデータのことで、例えばコンテナイメージやライブラリ、パッケージなどが含まれます。<br>
+   Artifact Registryはこれらのアーティファクトを安全に保存し、管理するための場所を提供し、開発チームが必要なファイルを簡単に共有し再利用できるようにします。<br>
+   主な機能としては、コンテナイメージやプログラムのパッケージを一元管理する統合管理、アーティファクトの脆弱性をスキャンしてセキュリティを強化する機能、誰がどのアーティファクトにアクセスできるかを細かく設定できるアクセス制御、そして継続的インテグレーション/継続的デリバリー（CI/CD）ツールと連携し自動化されたパイプラインを構築できる機能があります。<br>
+   例えば、開発チームが新しいアプリケーションを作成する際に必要なライブラリやコンテナイメージをArtifact
+   Registryに保存することで、チーム全体が同じバージョンのファイルを使用でき、開発がスムーズに進むという利点があります。</p>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+
+  <h4>Amazon Elastic Container Registry（ECR）・AWS CodeArtifact</h4>
+  <p>どちらもAWSのサービスですが、用途が異なります。</p>
+
+  <p><strong>Amazon Elastic Container Registry（ECR）</strong></p>
+  <ul>
+   <li><strong>目的</strong>: ECRは、コンテナイメージを保存、管理、デプロイするためのサービスです。</li>
+   <li><strong>機能</strong>:
+    <ul>
+     <li><strong>イメージの保存と共有</strong>: DockerイメージやOCIイメージを保存し、チームで共有可能。</li>
+     <li><strong>セキュリティ</strong>: イメージのスキャン機能でセキュリティ脆弱性を検出。</li>
+     <li><strong>ライフサイクル管理</strong>: イメージのライフサイクルポリシーを設定し、不要なイメージを自動クリーンアップ。</li>
+     <li><strong>レプリケーション</strong>: クロスリージョンやクロスアカウントでのレプリケーションが可能。</li>
+    </ul>
+   </li>
+  </ul>
+
+  <p><strong>AWS CodeArtifact</strong></p>
+  <ul>
+   <li><strong>目的</strong>: CodeArtifactは、ソフトウェアパッケージのリポジトリサービスです。開発者が依存関係を管理しやすくするためのものです。</li>
+   <li><strong>機能</strong>:
+    <ul>
+     <li><strong>パッケージの保存と共有</strong>: npm、Maven、PyPI、NuGetなどのパッケージを保存し、チームで共有可能。</li>
+     <li><strong>依存関係の管理</strong>: パッケージの依存関係を簡単に管理し、ビルドプロセスを効率化。</li>
+     <li><strong>アクセス制御</strong>: IAMポリシーでパッケージへのアクセスを制御。</li>
+     <li><strong>バージョン管理</strong>: パッケージのバージョン管理が可能で、特定のバージョンを指定して使用可能。</li>
+    </ul>
+   </li>
+  </ul>
+
+  <p><strong>主な違い</strong></p>
+  <ul>
+   <li><strong>用途</strong>: ECRはコンテナイメージの管理に特化しており、CodeArtifactはソフトウェアパッケージの管理に特化しています。</li>
+   <li><strong>対象</strong>: ECRは主にコンテナ化されたアプリケーションのデプロイに使用され、CodeArtifactはソフトウェア開発の依存関係管理に使用されます。</li>
+  </ul>
+
+
+  <h4>Azure Container Registry・Azure Artifacts</h4>
+  <p>どちらもAzureのサービスですが、用途と機能に違いがあります。</p>
+
+  <p><strong>Azure Container Registry (ACR)</strong></p>
+  <ul>
+   <li><strong>目的</strong>: 主にDockerコンテナイメージを保存、管理、配布するためのサービスです。</li>
+   <li><strong>機能</strong>:
+    <ul>
+     <li><strong>統合認証</strong>: Azure Active Directoryと統合、セキュアなアクセス管理が可能。</li>
+     <li><strong>Geoレプリケーション</strong>: グローバルな分散配置をサポート、ネットワークの近い場所へのデプロイが可能。</li>
+     <li><strong>Private Link</strong>: 仮想ネットワークを使用したセキュアな接続が可能。</li>
+     <li><strong>サポートするアーティファクト</strong>: Dockerイメージ、Helmチャート、Open Container Initiative (OCI) イメージ形式など。</li>
+    </ul>
+   </li>
+  </ul>
+
+  <p><strong>Azure Artifacts</strong></p>
+  <ul>
+   <li><strong>目的</strong>:
+    パッケージ管理のためのサービスで、さまざまなパッケージタイプ（NuGet、npm、Maven、Python、そしてDockerイメージ）を保存、管理、共有するために使用されます。</li>
+   <li><strong>機能</strong>:
+    <ul>
+     <li><strong>フィード管理</strong>: 複数のフィードを作成し、異なるプロジェクトやチームでパッケージを管理。</li>
+     <li><strong>統合</strong>: Azure DevOpsと統合され、CI/CDパイプラインでの使用が容易。</li>
+     <li><strong>アクセス制御</strong>: パッケージごとに詳細なアクセス制御が可能。</li>
+     <li><strong>サポートするアーティファクト</strong>: NuGet、npm、Maven、Python、Dockerイメージ。</li>
+    </ul>
+   </li>
+  </ul>
+
+  <p><strong>主な違い</strong></p>
+  <ul>
+   <li><strong>用途の違い</strong>: ACRは主にコンテナイメージの管理に特化しているのに対し、Azure Artifactsは幅広いパッケージタイプを管理します。</li>
+   <li><strong>統合とアクセス制御</strong>: ACRはAzure Active Directoryと統合され、コンテナイメージのセキュアな管理を提供しますが、Azure ArtifactsはAzure
+    DevOpsと統合され、CI/CDパイプラインでのパッケージ管理を強化します。</li>
+   <li><strong>サポートするアーティファクトの種類</strong>: ACRは主にコンテナイメージを扱いますが、Azure Artifactsは複数のパッケージタイプをサポートします。</li>
+  </ul>
+
+
+  <h2>Translation AI</h2>
+
+  <p><strong>Google Cloud Translation AI</strong></p>
+  <ul>
+   <li><strong>言語数</strong>: 約200</li>
+   <li><strong>特徴</strong>: 高精度なニューラル機械翻訳。Googleサービスとの統合がスムーズ。</li>
+  </ul>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+  <h4>Amazon Translate・Azure Translator</h4>
+
+  <p><strong>Amazon Translate</strong></p>
+  <ul>
+   <li><strong>言語数</strong>: 約100</li>
+   <li><strong>特徴</strong>: 高速でスケーラブル。AWSサービスとの統合が容易。</li>
+  </ul>
+
+  <p><strong>Azure Translator</strong></p>
+  <ul>
+   <li><strong>言語数</strong>: 約100</li>
+   <li><strong>特徴</strong>: カスタマイズ可能な翻訳モデル。Microsoft製品との統合が強力。</li>
+  </ul>
+
+
+  <h2>Text-to-Speech</h2>
+
+  <p><strong>Google Cloud Text-to-Speech</strong></p>
+  <ul>
+   <li><strong>特徴</strong>: WaveNet技術で自然な音声。多言語対応、感情表現も可能。</li>
+   <li><strong>価格</strong>: 従量課金制、無料枠あり。</li>
+   <li><strong>利点</strong>: 高品質な音声と多様なカスタマイズ。</li>
+  </ul>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+  <h4>Amazon Polly・Azure Text to Speech</h4>
+
+  <p><strong>Amazon Polly</strong></p>
+  <ul>
+   <li><strong>特徴</strong>: リアルタイム音声合成。SSMLで音声調整可能。多言語対応。</li>
+   <li><strong>価格</strong>: 従量課金制、無料枠あり。</li>
+   <li><strong>利点</strong>: 柔軟な調整と優れたサポート。</li>
+  </ul>
+
+  <p><strong>Azure Text to Speech</strong></p>
+  <ul>
+   <li><strong>特徴</strong>: Neural TTS技術で自然な音声。多言語対応、カスタムボイス作成可能。</li>
+   <li><strong>価格</strong>: 従量課金制、無料枠あり。</li>
+   <li><strong>利点</strong>: 高精度な音声認識とAzureサービスとの統合。</li>
+  </ul>
+
+
+  <h2>Speech-to-Text</h2>
+
+  <p><strong>Google Cloud Speech-to-Text</strong></p>
+  <ul>
+   <li><strong>精度と速度</strong>: 高精度で迅速。300以上の言語と方言に対応。</li>
+   <li><strong>機能</strong>: リアルタイムストリーミング、カスタム語彙、音声自動検出。</li>
+   <li><strong>価格</strong>: 従量課金制、無料枠あり。</li>
+  </ul>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+  <h4>Amazon Transcribe・Azure Speech to Text</h4>
+
+  <p><strong>Amazon Transcribe</strong></p>
+  <ul>
+   <li><strong>精度と速度</strong>: 高精度、特に英語で優秀。</li>
+   <li><strong>機能</strong>: リアルタイムストリーミング、カスタム語彙、スピーカー識別、音声自動検出。</li>
+   <li><strong>価格</strong>: 従量課金制、無料枠あり。</li>
+  </ul>
+
+  <p><strong>Azure Speech to Text</strong></p>
+  <ul>
+   <li><strong>精度と速度</strong>: 高精度で迅速、Microsoftサービスとの統合がスムーズ。</li>
+   <li><strong>機能</strong>: リアルタイムストリーミング、カスタム語彙、スピーカー識別、音声自動検出、テキスト翻訳。</li>
+   <li><strong>価格</strong>: 従量課金制、無料枠あり。</li>
+  </ul>
+
+
+  <h2>Natural Language AI</h2>
+
+  <p><strong>Natural Language AI</strong><br>
+   Google CloudのNLPサービス。エンティティ認識、感情分析、構文解析、コンテンツ分類が可能。</p>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+  <h4>Amazon Comprehend・Azure Text Analytics</h4>
+
+  <p><strong>Amazon Comprehend</strong><br>
+   AWSのNLPサービス。エンティティ認識、感情分析、キーフレーズ抽出、カスタム分類、カスタムエンティティ認識が特徴。</p>
+
+  <p><strong>Azure Text Analytics</strong><br>
+   Microsoft AzureのNLPサービス。エンティティ認識、感情分析、キーフレーズ抽出、言語検出、PII検出が可能。</p>
+
+
+  ●●●●●●●●●●●
+
+  <h2>Vision AI</h2>
+  <p><strong>Google Cloud Vision AI</strong></p>
+  <ul>
+   <li><strong>機能</strong>: 画像ラベリング、顔認識、ランドマーク検出、OCR、安全検索など。</li>
+   <li><strong>強み</strong>: 高精度の認識とカスタムモデル作成が可能。</li>
+  </ul>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+  <h4>Amazon Rekognition Image・Azure Computer Vision</h4>
+
+  <p><strong>Amazon Rekognition Image</strong></p>
+  <ul>
+   <li><strong>機能</strong>: 物体、シーン、顔の検出と分析、テキスト抽出、有名人認識、不適切コンテンツ検出、顔の比較と検索。</li>
+   <li><strong>強み</strong>: 高いスケーラビリティとコスト効率。</li>
+  </ul>
+
+  <p><strong>Azure Computer Vision</strong></p>
+  <ul>
+   <li><strong>機能</strong>: 画像ラベリング、物体検出、OCR、顔認識、ブランドやランドマーク認識、不適切コンテンツ検出。</li>
+   <li><strong>強み</strong>: Microsoftエコシステムとの統合が容易。</li>
+  </ul>
+
+
+  <h2>Document AI</h2>
+
+  <p><strong>Google Cloud Document AI</strong></p>
+  <ul>
+   <li><strong>機能</strong>: OCRでテキストを抽出し、構造化データに変換。特定のドキュメントタイプに強い。</li>
+   <li><strong>強み</strong>: GoogleのNLP技術を活用し、コンテキストに基づいた解析が得意。</li>
+  </ul>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+  <h4>Amazon Textract・Azure Form Recognizer</h4>
+
+  <p><strong>Amazon Textract</strong></p>
+  <ul>
+   <li><strong>機能</strong>: スキャンされたドキュメントや画像からテキスト、表、フォームデータを抽出。手書きテキストや複雑な表の解析に強い。</li>
+   <li><strong>強み</strong>: AWSの他のサービスとシームレスに統合可能。</li>
+  </ul>
+
+  <p><strong>Azure Form Recognizer</strong></p>
+  <ul>
+   <li><strong>機能</strong>: フォームや請求書からデータを抽出し、構造化データとして提供。カスタムモデルも作成可能。</li>
+   <li><strong>強み</strong>: Azureの他のAIサービスと統合しやすく、柔軟なカスタマイズが可能。</li>
+  </ul>
+
+
+  <h2>Vertex AI</h2>
+
+  <p><strong>Google Cloud Vertex AI</strong></p>
+  <ul>
+   <li><strong>概要</strong>: Google CloudのVertex AIは、機械学習モデルの構築、デプロイ、スケーリングを簡単に行える統合プラットフォーム。</li>
+   <li><strong>特徴</strong>:
+    <ul>
+     <li><strong>統合環境</strong>: データの準備からモデルのデプロイまで一貫して行える。</li>
+     <li><strong>AutoML</strong>: コーディングなしでモデルを自動生成。</li>
+     <li><strong>BigQueryとの連携</strong>: 大規模データの処理が容易。</li>
+    </ul>
+   </li>
+  </ul>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+
+  <h4>Amazon SageMaker・Azure AI Platform</h4>
+
+  <p><strong>Amazon SageMaker</strong></p>
+  <ul>
+   <li><strong>概要</strong>: Amazon SageMakerは、データサイエンティストや開発者が高品質な機械学習モデルを迅速に構築、訓練、デプロイできるようにするための包括的なサービス。</li>
+   <li><strong>特徴</strong>:
+    <ul>
+     <li><strong>Jupyterノートブック</strong>: データ分析やモデル構築に便利。</li>
+     <li><strong>自動モデルチューニング</strong>: ハイパーパラメータの自動最適化。</li>
+     <li><strong>エンドツーエンドのMLワークフロー</strong>: データ準備からデプロイまでカバー。</li>
+    </ul>
+   </li>
+  </ul>
+
+  <p><strong>Azure AI Platform</strong></p>
+  <ul>
+   <li><strong>概要</strong>: Microsoft AzureのAIプラットフォームは、AIモデルの構築、トレーニング、デプロイをサポートするクラウドベースのサービス。</li>
+   <li><strong>特徴</strong>:
+    <ul>
+     <li><strong>Azure Machine Learning</strong>: 機械学習モデルのトレーニングとデプロイを支援。</li>
+     <li><strong>Cognitive Services</strong>: 画像認識や自然言語処理などのプリビルトAIサービス。</li>
+     <li><strong>Power BIとの統合</strong>: データの可視化が容易。</li>
+    </ul>
+   </li>
+  </ul>
+
+
+  <h2>Google Cloud Armor</h2>
+  <p>Google Cloudが提供するセキュリティサービスは、主にウェブサイトやアプリケーションをインターネット上の攻撃から守るために使われます。<br>
+   例えば、DDoS攻撃（多数のコンピュータから一斉に大量のリクエストを送ることでターゲットのサーバーをダウンさせる攻撃）を検出し、ブロックすることで、ウェブサイトやアプリケーションを守ります。<br>
+   また、ウェブアプリケーションファイアウォール（WAF）機能を持ち、SQLインジェクションやクロスサイトスクリプティングなどの攻撃を防ぐためのセキュリティ機能も提供しています。<br>
+   さらに、ユーザーは自分のアプリケーションに合わせたセキュリティルールを設定することができ、特定の攻撃パターンに対して柔軟に対応できます。<br>
+   例えば、オンラインショップを運営している場合、Cloud Armorを使うことで、サイトがDDoS攻撃を受けても攻撃をブロックしてくれるので、サイトがダウンするリスクが減ります。<br>
+   WAF機能により顧客の個人情報を狙った攻撃からサイトを守ることができ、カスタムルールを設定することで特定の攻撃に対して迅速に対応できるため、安心してビジネスを運営することができます。</p>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</p>
+
+  <h4>AWS WAF、 AWS Shield</h4>
+
+  <p><strong>AWS WAF</strong></p>
+  <ul>
+   <li><strong>目的</strong>: Webアプリケーションをアプリケーション層の攻撃から保護。</li>
+   <li><strong>対応脅威</strong>: XSS、SQLインジェクションなど。</li>
+   <li><strong>保護対象</strong>: HTTP/HTTPSリクエスト。</li>
+   <li><strong>レイヤー</strong>: アプリケーション層（レイヤー7）。</li>
+   <li><strong>特徴</strong>: カスタムルール作成可能。</li>
+  </ul>
+
+  <p><strong>AWS Shield</strong></p>
+  <ul>
+   <li><strong>目的</strong>: AWSリソースをDDoS攻撃から保護。</li>
+   <li><strong>対応脅威</strong>: DDoS攻撃（レイヤー3/4/7）。</li>
+   <li><strong>保護対象</strong>: ネットワーク層とアプリケーション層。</li>
+   <li><strong>レイヤー</strong>: レイヤー3、4、7。</li>
+   <li><strong>特徴</strong>: Shield Standardは自動保護（無料）、Shield Advancedは強化保護（有料）。</li>
+  </ul>
+
+  <p><strong>選び方</strong></p>
+  <ul>
+   <li><strong>アプリケーション層の攻撃</strong>対策: AWS WAF。</li>
+   <li><strong>DDoS攻撃</strong>対策: AWS Shield。</li>
+  </ul>
+
+  <h4>Azure Web Application Firewall (WAF)</h4>
+
+  <p><strong>Azure Web Application Firewall (WAF)</strong></p>
+  <ul>
+   <li><strong>目的</strong>: WebアプリケーションをSQLインジェクションやクロスサイトスクリプティング（XSS）などの一般的な攻撃から保護。</li>
+   <li><strong>対応脅威</strong>: SQLインジェクション、XSS、悪意のあるボット、DDoS攻撃など。</li>
+   <li><strong>保護対象</strong>: HTTP/HTTPSリクエスト。</li>
+   <li><strong>レイヤー</strong>: アプリケーション層（レイヤー7）。</li>
+   <li><strong>特徴</strong>:
+    <ul>
+     <li><strong>カスタムルール</strong>: ユーザー定義のルールセットを作成可能。</li>
+     <li><strong>管理ルールセット</strong>: OWASP Top 10の脅威に対応する管理ルールセットを提供。</li>
+     <li><strong>リアルタイム監視</strong>: Azure Monitorと連携して、セキュリティアラートやログをリアルタイムで監視。</li>
+     <li><strong>自動化</strong>: REST APIを使用してDevOpsプロセスを自動化し、セキュリティポスチャを向上。</li>
+     <li><strong>展開の容易さ</strong>: 追加のソフトウェアエージェントなしで簡単に展開可能。</li>
+    </ul>
+   </li>
+  </ul>
+
+  <h2>Google Cloud Pub/Sub</h2>
+  メッセージを送信するサービス（パブリッシャー）とメッセージを受け取るサービス（サブスクライバー）をつなぐ、リアルタイムのメッセージングサービスです。<br>
+  これを使うと、異なるアプリケーション間でメッセージをやり取りすることができます。</p>
+  <p>Pub/Subのメッセージというのは、上記通りアプリケーション間でデータをやり取りするためのものであり、一般的に言うところの電子メールとは異なります。<br>
+   例えば、注文情報やログデータ、通知など、システム間でリアルタイムに送受信されるデータとなります。</p>
+
+  <p><strong>基本的な仕組み</strong></p>
+  <ol>
+   <li><strong>トピックの作成</strong>: パブリッシャーがメッセージを送信するための「トピック」を作成。</li>
+   <li><strong>メッセージの公開</strong>: パブリッシャーがトピックにメッセージを送信（公開）。</li>
+   <li><strong>サブスクリプションの作成</strong>: サブスクライバーがトピックに対して「サブスクリプション」を作成し、メッセージを受け取る準備をする。</li>
+   <li><strong>メッセージの受信</strong>: サブスクライバーがサブスクリプションを通じてメッセージを受信。</li>
+  </ol>
+
+  <p><strong>メリット</strong></p>
+  <ul>
+   <li><strong>非同期通信</strong>: メッセージの送信と受信が独立して行われ、システムの柔軟性が向上。</li>
+   <li><strong>スケーラビリティ</strong>: 大量のメッセージを効率的に処理し、システムの負荷を分散。</li>
+   <li><strong>信頼性</strong>: メッセージが確実に配信されるよう設計。</li>
+  </ul>
+
+  <p><strong>具体例</strong></p>
+  <p>オンラインショッピングサイトで注文が発生した場合、注文情報を「注文トピック」に公開します。<br>
+   配送システムや在庫管理システムはこのトピックにサブスクライブしており、注文情報を受け取って処理を開始します。<br>
+   このような形で各システムが独立して動作しつつ、必要な情報をリアルタイムで共有できるようになります。</p>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</a>
+
+  <h4>Amazon Kinesis・Azure Event Hubs</h4>
+
+  <p>「Amazon Kinesis」と「Azure Event Hubs」はどちらもリアルタイムデータストリーミングサービスですが、それぞれに特徴があります。</p>
+
+  <p><strong>Amazon Kinesis</strong><br>
+   <strong>Amazon Kinesis</strong>は、リアルタイムで大規模なデータストリームを処理するためのAWSのサービスです。
+  </p>
+
+  <ul>
+   <li><strong>スケーラビリティ</strong>：手動でシャードの容量を調整し、スループットを細かく制御可能。</li>
+   <li><strong>データ処理オプション</strong>：Kinesis Data Analytics、Lambda、Kinesis Data Firehoseなどをサポート。</li>
+   <li><strong>統合</strong>：他のAWSサービスとの統合が容易。</li>
+   <li><strong>プロトコル</strong>：HTTPS、AWS SDKs、Kinesis Producer Libraryをサポート。</li>
+  </ul>
+
+  <p><strong>Azure Event Hubs</strong><br>
+   <strong>Azure Event Hubs</strong>は、Microsoft Azureのイベントストリーミングプラットフォームです。
+  </p>
+
+  <ul>
+   <li><strong>スケーラビリティ</strong>：データ量に応じて自動的にスケールする動的パーティショニングを使用。</li>
+   <li><strong>プロトコル</strong>：AMQP、Kafka、HTTPSをサポート。</li>
+   <li><strong>統合</strong>：他のAzureサービスとの統合が容易。</li>
+   <li><strong>価格設定</strong>：使用量に基づいた柔軟な価格設定オプション。</li>
+  </ul>
+
+  <p><strong>主な違い</strong><br>
+  <ul>
+   <li><strong>スケーリング方法</strong>：Kinesisは手動でシャードを調整、Event Hubsは自動スケール。</li>
+   <li><strong>データ処理オプション</strong>：Kinesisはより多くのデータ処理オプションを提供。</li>
+   <li><strong>プロトコルのサポート</strong>：Event HubsはKafkaをサポート。</li>
+  </ul>
+
+  <p>どちらのサービスも高いスループットと低遅延を提供しますが、使用するクラウド環境や統合したい他のサービスによって選択が異なるかもしれません。</p>
+
+
+  <h2>Dataflow</h2>
+  <p>Google CloudのDataflowは、バッチ処理とストリーム処理の両方をサポートするデータ処理サービスです。</p>
+  <p>Apache Beamというオープンソースのプログラミングモデルを使用して、Java、Python、Goなどの言語でデータ処理パイプラインを作成できます。</p>
+  <p>自動スケーリング機能により、データ量に応じてリソースを増減します。</p>
+  <p>Googleがリソース管理を行うため、ユーザーはインフラの管理を気にせずにデータ処理に集中できます。</p>
+  <p>データの移動や複製、ETLワークフロー、BIダッシュボードの駆動、リアルタイムの機械学習、センサーデータやログデータの処理などのユースケースに対応する、効率的なデータ処理を可能にするツールです。</p>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</a>
+
+  <h4>Amazon Kinesis Data Firehose・Azure Stream Analytics</h4>
+  <p>どちらもリアルタイムデータ処理を行うためのサービスですが、それぞれ異なる特徴とユースケースがあります。</p>
+
+  <p><strong>Amazon Kinesis Data Firehose</strong>は、主にデータの収集と転送に特化しています。<br>
+   データをリアルタイムで取り込み、Amazon S3、Amazon Redshift、Amazon Elasticsearch Service、またはSplunkなどのデスティネーションに自動的に配信します。<br>
+   Firehoseは、データのバッファリング、圧縮、暗号化、変換などの機能を提供し、設定が簡単で、ほとんどの管理作業を自動化します。</p>
+
+  <p>一方、<strong>Azure Stream Analytics</strong>は、リアルタイムのデータストリームを分析するためのサービスです。<br>
+   複数のデータソースからデータを取り込み、SQLベースのクエリを使用してデータを処理し、分析結果をAzure Blob Storage、Azure SQL Database、Azure Cosmos DB、Power
+   BIなどに出力します。<br>
+   Stream Analyticsは、複雑なイベント処理（CEP）をサポートし、IoTデータの分析やリアルタイムダッシュボードの作成に適しています。</p>
+
+
+  <h2>Cloud Spanner</h2>
+
+  <p>Googleが提供するデータベースサービスです。<br>
+   データベースとは、情報を整理して保存するためのシステムのことです。<br>
+   例えば、オンラインショッピングサイトでは、商品情報や顧客情報をデータベースに保存しています。</p>
+
+  <ol>
+   <li><strong>完全管理型</strong>：Googleがすべての管理を行うため、ユーザーはデータベースの設定やメンテナンスを気にする必要がありません。</li>
+   <li><strong>グローバルスケール</strong>：世界中のどこからでも同じデータにアクセスできるように設計されています。これにより、大規模なアプリケーションでもスムーズに動作します。</li>
+   <li><strong>高い可用性</strong>：データが複数の場所に自動的にコピーされるため、システム障害が発生してもデータが失われることはありません。</li>
+   <li><strong>一貫性</strong>：データの整合性が保たれるため、どの場所からアクセスしても常に最新のデータを取得できます。</li>
+  </ol>
+
+  <p>簡単に言うと、Cloud Spannerは大規模なアプリケーション向けに設計された、信頼性が高く、管理が簡単なデータベースサービスです。</p>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</a>
+
+  <h4>Amazon Aurora・Azure SQL Database</h4>
+
+  <p>どちらもクラウドベースのリレーショナルデータベースサービスですが、いくつかの重要な違いがあります。</p>
+
+  <p><strong>Amazon Aurora</strong></p>
+  <ul>
+   <li><strong>開発元と互換性</strong>:
+    <ul>
+     <li><strong>開発元</strong>: Amazon Web Services (AWS) が提供。</li>
+     <li><strong>互換性</strong>: MySQLおよびPostgreSQLと互換性があり、これらのデータベースからの移行が容易。</li>
+    </ul>
+   </li>
+   <li><strong>パフォーマンスとスケーラビリティ</strong>:
+    <ul>
+     <li><strong>パフォーマンス</strong>: 高性能で、標準的なMySQLの最大5倍、PostgreSQLの最大3倍のスループットを提供。</li>
+     <li><strong>スケーラビリティ</strong>: 自動スケーリング機能を持ち、必要に応じてリソースを動的に調整可能。</li>
+    </ul>
+   </li>
+   <li><strong>高可用性と耐障害性</strong>:
+    <ul>
+     <li><strong>高可用性</strong>: マルチアベイラビリティゾーンにデータを自動的にレプリケートし、障害発生時にもデータベースの継続運用が可能。</li>
+    </ul>
+   </li>
+  </ul>
+
+  <p><strong>Azure SQL Database</strong></p>
+  <ul>
+   <li><strong>開発元と互換性</strong>:
+    <ul>
+     <li><strong>開発元</strong>: Microsoft Azure が提供。</li>
+     <li><strong>互換性</strong>: SQL Serverと互換性があり、SQL Serverからの移行がスムーズ。</li>
+    </ul>
+   </li>
+   <li><strong>パフォーマンスとスケーラビリティ</strong>:
+    <ul>
+     <li><strong>パフォーマンス</strong>: 高性能なクエリ処理を提供し、特にビジネスインテリジェンスやデータ分析に強みがある。</li>
+     <li><strong>スケーラビリティ</strong>: サーバーレスオプションを提供し、ワークロードに応じて自動的にスケールアップ/ダウンが可能。</li>
+    </ul>
+   </li>
+   <li><strong>高可用性と耐障害性</strong>:
+    <ul>
+     <li><strong>高可用性</strong>: 自動フェイルオーバー機能を持ち、データの冗長性を確保。</li>
+     <li><strong>耐障害性</strong>: 地理的に分散したデータセンターを利用し、データの安全性を確保。</li>
+    </ul>
+   </li>
+  </ul>
+
+  <p><strong>まとめノート</strong></p>
+  <ul>
+   <li><strong>Amazon Aurora</strong>は、MySQLやPostgreSQLとの互換性を重視し、高いパフォーマンスとスケーラビリティを提供します。</li>
+   <li><strong>Azure SQL Database</strong>は、SQL Serverとの互換性を持ち、ビジネスインテリジェンスやデータ分析に強みがあります。</li>
+  </ul>
+  <p>どちらのサービスも高可用性と耐障害性を備えており、用途や既存のシステム環境に応じて選択することが重要です。</p>
+
+
+  <h2>Cloud SQL</h2>
+  <p>Google Cloudが提供するフルマネージドなリレーショナルデータベースサービスです。<br>
+   データベースの管理が簡単になり、開発者はアプリケーションの開発に集中できます。<br>
+   リレーショナルデータベース（RDB）は、データを表形式で管理し、表同士を関連付けて複雑なデータ構造を表現できるデータベースです。<br>
+   例えば、顧客情報や注文情報を別々の表に保存し、それらを関連付けることで効率的にデータを管理できます。</p>
+
+  <p><strong>Cloud SQLの特徴</strong></p>
+  <ol>
+   <li><strong>フルマネージド</strong>: Googleがデータベースの運用管理を行い、バックアップやアップデートの手間を省く。</li>
+   <li><strong>高可用性</strong>: 障害が発生してもデータベースが利用可能な状態を保つ仕組みがある。</li>
+   <li><strong>スケーラビリティ</strong>: リソースを簡単に増減でき、負荷が高まった場合でも対応可能。</li>
+   <li><strong>セキュリティ</strong>: データは保存時も転送時も暗号化され、セキュリティが確保されている。</li>
+  </ol>
+
+  <p><strong>利用シーン</strong></p>
+  <p>Cloud SQLは、特にWebアプリケーションの開発やデータ分析の基盤として利用されることが多いです。<br>
+   例えば、オンラインショップの顧客データや注文データを管理するのに適しています。</p>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</a>
+
+  <h4>Amazon Relational Database Service（RDS）、 Amazon Aurora</h4>
+
+  <p>どちらもAWSが提供するリレーショナルデータベースサービス。<br>
+   プロジェクトの要件に最適なデータベースサービスを選択するために違いを理解しておくこと。</p>
+
+  <p><strong>Amazon RDS</strong></p>
+  <ul>
+   <li><strong>概要</strong>: Amazon RDSは、MySQL、PostgreSQL、MariaDB、Oracle、SQL
+    Serverなど、複数のデータベースエンジンをサポートするフルマネージドなリレーショナルデータベースサービス。</li>
+   <li><strong>特徴</strong>:
+    <ul>
+     <li><strong>柔軟性</strong>: 複数のデータベースエンジンを選択可能。</li>
+     <li><strong>管理機能</strong>: 自動バックアップ、パッチ適用、スケーリングなどの管理機能を提供。</li>
+     <li><strong>可用性</strong>: マルチAZ配置で高可用性を実現。</li>
+    </ul>
+   </li>
+  </ul>
+
+  <p><strong>Amazon Aurora</strong></p>
+  <ul>
+   <li><strong>概要</strong>: Amazon Auroraは、MySQLおよびPostgreSQLと互換性のある高性能なリレーショナルデータベースエンジン。<br>
+    RDSの一部として提供されるが、独自のアーキテクチャを持ち、クラウド環境に最適化されている。</li>
+   <li><strong>特徴</strong>:
+    <ul>
+     <li><strong>パフォーマンス</strong>: MySQLの最大5倍、PostgreSQLの最大3倍のパフォーマンスを提供。</li>
+     <li><strong>高可用性</strong>: 自動フェイルオーバー、マルチAZ配置、分散ストレージにより高い可用性を実現。</li>
+     <li><strong>スケーラビリティ</strong>: ストレージの自動スケーリング機能により、最大64TBまで自動的にスケールアップ可能。</li>
+     <li><strong>コスト効率</strong>: 高性能を維持しつつ、コスト効率の良い運用が可能。</li>
+    </ul>
+   </li>
+  </ul>
+
+  <h4>Azure Database for MySQL、Azure Database for PostgreSQL</h4>
+
+  <p>どちらもMicrosoft Azureが提供するフルマネージドなリレーショナルデータベースサービス。</p>
+
+  <p><strong>Azure Database for MySQL</strong></p>
+  <ul>
+   <li><strong>概要</strong>: MySQLデータベースをクラウド上で簡単に構築、管理、運用できるサービス。</li>
+   <li><strong>特徴</strong>:
+    <ul>
+     <li><strong>デプロイモデル</strong>: フレキシブルサーバーとシングルサーバーの2つのデプロイモデルを提供。</li>
+     <li><strong>高可用性</strong>: マルチAZ配置により高可用性を実現。</li>
+     <li><strong>スケーラビリティ</strong>: ビジネスの成長に合わせてリソースを柔軟に拡張可能。</li>
+     <li><strong>セキュリティ</strong>: データ暗号化や自動バックアップなどのセキュリティ機能を提供。</li>
+    </ul>
+   </li>
+  </ul>
+
+  <p><strong>Azure Database for PostgreSQL</strong></p>
+  <ul>
+   <li><strong>概要</strong>: PostgreSQLデータベースをクラウド上で簡単に構築、管理、運用できるサービス。</li>
+   <li><strong>特徴</strong>:
+    <ul>
+     <li><strong>デプロイモデル</strong>: フレキシブルサーバーとシングルサーバーの2つのデプロイモデルを提供。</li>
+     <li><strong>高可用性</strong>: マルチAZ配置により高可用性を実現。</li>
+     <li><strong>スケーラビリティ</strong>: ビジネスの成長に合わせてリソースを柔軟に拡張可能。</li>
+     <li><strong>セキュリティ</strong>: データ暗号化や自動バックアップなどのセキュリティ機能を提供。</li>
+    </ul>
+   </li>
+  </ul>
+
+  <p><strong>主な違い</strong></p>
+  <ul>
+   <li><strong>データベースエンジン</strong>: MySQLとPostgreSQLという異なるデータベースエンジンを使用。</li>
+   <li><strong>パフォーマンスチューニング</strong>: PostgreSQLは、特定のクエリやワークロードに対して高度なパフォーマンスチューニングが可能。</li>
+   <li><strong>エコシステムと拡張性</strong>: PostgreSQLは、豊富な拡張機能やカスタマイズオプションを提供し、特定のニーズに合わせた柔軟なデータベース運用が可能。</li>
+  </ul>
+
+
+  <h2>Anthos</h2>
+
+  <p><strong>Anthos</strong>は、Google
+   Cloudが提供する<strong>ハイブリッドクラウドおよびマルチクラウド環境を管理するためのプラットフォーム</strong>。オンプレミス（自社のデータセンター）や他のクラウドサービス（AWSやAzureなど）を含む複数の環境でアプリケーションを一元管理できる。
+  </p>
+
+  <p><strong>主な特徴</strong></p>
+  <ol>
+   <li><strong>Kubernetesベース</strong>: AnthosはKubernetesを基盤とし、アプリケーションのデプロイや管理を効率化。</li>
+   <li><strong>サービスメッシュ</strong>: Istioを使用してマイクロサービス間の通信を管理し、セキュリティと可視性を向上。</li>
+   <li><strong>設定管理</strong>: GitOpsアプローチでインフラとアプリケーションの設定を一元管理。</li>
+   <li><strong>セキュリティ</strong>: ポリシー管理、暗号化、アクセス制御などのセキュリティ機能を提供。</li>
+  </ol>
+
+  <p><strong>利用シーン</strong></p>
+  <ul>
+   <li><strong>ハイブリッドクラウド展開</strong>: オンプレミスとクラウドを統合し、アプリケーションを柔軟に配置。</li>
+   <li><strong>マルチクラウド戦略</strong>: 複数のクラウドプロバイダーにまたがるアプリケーション管理を統一。</li>
+   <li><strong>アプリケーションモダナイゼーション</strong>: レガシーアプリケーションをコンテナ化し、最新のアーキテクチャに移行。</li>
+  </ul>
+
+  <p class="gra">AWS・Azureで同様の機能を持つプロダクト</a>
+
+  <h4>Amazon EKS Anywhere、 Amazon ECS Anywhere、 AWS Outposts</h4>
+  <h4>Azure Arc</h4>
+
+
+  <p><strong>Amazon EKS Anywhere</strong>: オンプレミスや他のクラウド環境でKubernetesクラスターを管理。</p>
+  <p><strong>Amazon ECS Anywhere</strong>: オンプレミスや他のクラウド環境でコンテナオーケストレーションを管理。</p>
+  <p><strong>AWS Outposts</strong>: AWSのクラウドサービスをオンプレミス環境に拡張するハードウェアソリューション。</p>
+
+  <p><strong>Amazon EKS
+    Anywhere</strong>は、Kubernetesクラスターをオンプレミス環境で実行できるサービス。AWSのEKSと同じKubernetes管理機能をオンプレミスや他のクラウド環境で利用できる。クラウドとオンプレミスのハイブリッド環境で一貫したKubernetes運用が可能。
+  </p>
+
+  <p><strong>Amazon ECS Anywhere</strong>は、Amazon
+   ECSの機能をオンプレミス環境でも利用できるサービス。AWSのクラウドサービスと同じコンテナオーケストレーション機能をオンプレミスや他のクラウド環境で利用できる。既存のインフラを活用しながら、コンテナ化されたアプリケーションを管理可能。
+  </p>
+
+  <p><strong>AWS
+    Outposts</strong>は、AWSのインフラとサービスをオンプレミス環境に拡張するハードウェアソリューション。AWSのクラウドサービス（EC2、EBS、RDSなど）を自社データセンターで実行でき、低レイテンシーで一貫したハイブリッドクラウド環境を構築可能。長期的なハードウェア導入が必要な場合に適している。
+  </p>
+
+  <p><strong>Azure Arc</strong>は、オンプレミスやマルチクラウド環境でのリソース管理を一元化するためのサービス。</p>
+
+  <p><strong>主な機能と利点</strong></p>
+  <ul>
+   <li><strong>一元管理</strong>: Azureポータルでオンプレミスや他のクラウド環境のサーバー、Kubernetesクラスター、データベースを一元管理。</li>
+   <li><strong>ハイブリッド環境のサポート</strong>: Azure Arcはオンプレミス、エッジ、マルチクラウド環境でのリソース管理をサポートし、Azureのサービスを拡張。</li>
+   <li><strong>Azureサービスの利用</strong>: Azureの管理機能やセキュリティ機能をオンプレミスや他のクラウド環境でも利用可能。Azure MonitorやAzure
+    Policyでリソースの監視やコンプライアンス管理ができる。</li>
+   <li><strong>データサービス</strong>: Azure ArcでAzure SQL Managed InstanceやAzure Database for
+    PostgreSQLなどのデータサービスをオンプレミスや他のクラウド環境で実行可能。</li>
+  </ul>
+
+  <p><strong>利用シナリオ</strong></p>
+  <ul>
+   <li><strong>サーバー管理</strong>: WindowsおよびLinuxの物理サーバーや仮想マシンをAzureポータルで管理。</li>
+   <li><strong>Kubernetesクラスター管理</strong>: 任意のKubernetesクラスターをAzure Arcに接続し、Azure Policyでポリシー駆動型の管理を実現。</li>
+   <li><strong>データベース管理</strong>: Azure Arc対応のデータサービスを使用して、オンプレミスや他のクラウド環境でデータベースを管理し、スケーラビリティやセキュリティを向上。</li>
+  </ul>
+
+  <p>Azure Arcは、複雑なハイブリッドおよびマルチクラウド環境をシンプルに管理し、Azureの一貫した管理体験を提供するツール。</p>
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/cloudinfo.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <meta charset="UTF-8">
+ <title>個人サイト用の画像をまとめて操作するPython</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="主にPythonの書き方を紹介しているページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta name="keywords" content="個人サイト, Python, コマンドプロンプト">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="個人サイト用の画像をまとめて操作するPython">
+ <meta property="og:description" content="主にPythonの書き方を紹介しているページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/pyimg.html">
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-bash.min.js"></script>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+ <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "個人サイト用の画像をまとめて操作するPython",
+        "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/pyimg.html",
+        "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+    }
+    </script>
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">個人サイト用の画像をまとめて操作するPython</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!--ハンバーガーメニュー-->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰
+    メニューを開く</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!--ハンバーガーメニューここまで-->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="個人サイト用の画像をまとめて操作するPythonの目次を開く ▼"
+   data-close-text="個人サイト用の画像をまとめて操作するPythonの目次を閉じる ▲">個人サイト用の画像をまとめて操作するPythonの目次を開く ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>個人サイト用の画像をまとめて操作するPython</span></h1>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(51).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p><a href="/contents/pynote.html">Webサイト制作の効率を上げるPython</a>では、主にExcelやPDFの処理に関するものを掲載しました。<br>
+    むしろこちらの画像処理に関するもののほうが一般的かと思いますね。<br>
+    特に大量の画像を扱う場合、そのファイル名リストを作ってまとめてhtml掲載するなど、普通に手作業でやると膨大な手間を要するシーンがあります。<br>
+    また、大きな画像が多かった場合にレスポンスに悪影響を与えてしまい、それらのサイズ調整が必要になることもあるでしょう。<br>
+    画像を１枚１枚、イラストソフトで開いて縮小していくなんて、気が遠くなってしまいます…</p>
+  </div>
+
+
+  <p>ここではそういった諸問題を解決できるPythonスクリプトを紹介していきます。</p>
+
+  <h2>このpythonページの要約</h2>
+  <ul>
+   <li>画像を一括操作するpythonスクリプトの事例集です。</li>
+   <li>pythonそのものの説明は<a href="/contents/pynote.html">Webサイト制作の効率を上げるPython</a>に譲っています。</li>
+   <li>コードの例を示し、具体的に説明しています。</li>
+  </ul>
+
+  <h3>このページに関する注意事項</h3>
+  <p>当Webサイト作成者は、例示を目的としてマークアップ及びプログラミング例を提供しており、明示または黙示にかかわらず、いかなる責任も負わないものとします。<br>
+   このページは、説明されているマークアップ及びプログラミング言語、手順を作成およびデバッグするために使用される各種ツールに読者が精通していることを前提にしています。<br>
+   このページは、特定の機能を説明するのに役立つ可能性がありますが、当Webサイト作成者がこれらの例を変更した上で、特定の要件を満たすために追加の機能を提供したり、システムを構築したりすることはできません。<br>
+   加えて、この例の手順に従う場合は、読者の各種ファイルを事前にバックアップすることを推奨いたします。</p>
+
+  <h3>個人サイトに上げる画像には様々なサイズがある</h3>
+  <p>大きな画像を大量に掲載すると、目に見えてWebページのレスポンスは落ちていきます。<br>
+   とはいえ画像ファイルというのは往々にしてサイズがまちまちであり、大きな画像だけを調べてからサイズ調整するのは相当な労力となってしまいます。<br>
+   Webサイトに上げようとしている画像はどんなサイズなのか、調べる必要が出てくるでしょう。<br>
+   一括処理の対象範囲を絞らないと、十分に小さいサイズの画像まで縮めてしまったりするからです。</p>
+
+  <h4>PIL（Python Imaging Library）のインストール</h4>
+  <p>PIL（Python Imaging Library）はPythonに標準で含まれていないため、別途インストールが必要です。<br>
+   ただ、現在はPILの後継であるPillowを使用するのが一般的です。<br>
+   PillowはPILと互換性があり、より多くの機能とサポートを提供しています。<br>
+   次のコマンドを実行すると、Pillowがインストールされ、スクリプト内で from PIL import Image として使用できるようになります。</p>
+
+  <p class="gra">Pillowをインストール</p>
+  <div class="code-container">
+   <pre><code class="language-bash">
+pip install Pillow
+            </code></pre>
+  </div>
+
+
+  <p>pythonで画像処理をさせようとすると、だいたいPILライブラリが必要になってくるんじゃないかな？<br>
+   pythonをWeb制作に使う人なら、わりと早期に入れるライブラリだと思います。</p>
+
+  <h2>複数画像の大きさをまとめて調査する</h2>
+  <p>ここで紹介するのは画像の大きさをいっぺんに調査できるスクリプトです。<br>
+   まずはこのスクリプトを実行して、Webページのレスポンスに大きな影響がありそうな巨大な画像があるかどうか、一括で調べるのです。<br>
+   圧縮やサイズ変更を施す必要がある画像のリストを用意する段階ですね。</p>
+
+  <p class="codegra" id="image_size_py">複数画像の大きさをまとめて調査するimage_size.py</p>
+  <div class="code-container">
+   <pre><code class="language-python">
+import os  # OSモジュールをインポートして、ファイルやディレクトリの操作を行います
+from PIL import Image  # PIL（Python Imaging Library）からImageクラスをインポートして、画像を操作します
+
+# 指定されたディレクトリ内の画像ファイルのサイズを取得する関数
+def get_image_sizes(directories):
+    image_sizes = []  # 画像サイズを格納するリストを初期化します
+    for directory in directories:  # 各ディレクトリについてループします
+        for filename in os.listdir(directory):  # ディレクトリ内の各ファイルについてループします
+            if filename.endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')):  # 画像ファイルの拡張子をチェックします
+                filepath = os.path.join(directory, filename)  # ファイルパスを作成します
+                with Image.open(filepath) as img:  # 画像ファイルを開きます
+                    width, height = img.size  # 画像の幅と高さを取得します
+                    image_sizes.append(f"{filename} ({directory}): {width}x{height}")  # 画像サイズ情報をリストに追加します
+    return image_sizes  # 画像サイズ情報のリストを返します
+
+# 画像サイズ情報をテキストファイルに保存する関数
+def save_sizes_to_file(image_sizes, output_file):
+    with open(output_file, 'w') as file:  # 出力ファイルを開きます（書き込みモード）
+        for size in image_sizes:  # 各画像サイズ情報についてループします
+            file.write(size + '\n')  # 画像サイズ情報をファイルに書き込みます
+
+# メインプログラム
+if __name__ == "__main__":
+    # 画像ファイルが含まれるディレクトリのパスを指定します
+    directories = [r'C:\Users\image',
+                    r'C:\Users\paint']
+    # 出力ファイルのフルパスを指定します
+    output_file = r'C:\Users\image_sizes.txt'
+    # 画像サイズ情報を取得します
+    image_sizes = get_image_sizes(directories)
+    # 画像サイズ情報をファイルに保存します
+    save_sizes_to_file(image_sizes, output_file)
+    # 処理完了メッセージを表示します
+    print(f"Image sizes have been saved to {output_file}")
+                </code></pre>
+  </div>
+
+  <p>このスクリプトは、指定されたフォルダ内の画像ファイルのサイズ（幅と高さ）を取得し、その情報をテキストファイルに保存しています。<br>
+   上記にあるのはコメントアウトを入れたスクリプトですが、改めて説明しましょう。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(52).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <dl>
+    <dt>必要なライブラリのインポート</dt>
+    <dd>os：ファイルやディレクトリの操作を行うための標準ライブラリ</dd>
+    <dd>PIL（Pillow）：画像を開いたり、サイズを取得するためのライブラリ</dd>
+
+    <dt>関数の定義</dt>
+    <dd>get_image_sizes(directories)：指定されたフォルダ（ディレクトリ）内の画像ファイルのサイズを取得し、リストにまとめる関数</dd>
+    <dd>save_sizes_to_file(image_sizes, output_file)：画像サイズのリストをテキストファイルに保存する関数</dd>
+
+    <dt>メイン処理</dt>
+    <dd>directories：画像ファイルが保存されているフォルダのパスをリストで指定</dd>
+    <dd>output_file：画像サイズの情報を保存するテキストファイルのパスを指定</dd>
+    <dd>get_image_sizes(directories)を呼び出して、画像サイズのリストを取得</dd>
+    <dd>save_sizes_to_file(image_sizes, output_file)を呼び出して、取得した画像サイズのリストをテキストファイルに保存</dd>
+    <dd>最後に、処理が完了したことを知らせるメッセージを表示</dd>
+   </dl>
+  </div>
+
+  <p>このスクリプトを実行すると、指定したフォルダ内のすべての画像ファイルのサイズがテキストファイルに記録されます。<br>
+   例えば、image_sizes.txtというファイルに「画像名(フォルダ名)幅x高さ」という形式で保存されます。<br>
+   まずはこのようにして手持ちの画像を調査して、大きすぎる画像があるかどうかを調べるのです。<br>
+   シンプルなリスト形式を定義して出力させれば、人の目でも一目瞭然でしょ？</p>
+
+
+
+
+  <h2>画像のファイルサイズを調整する</h2>
+  <p>スマホのカメラで撮影した景色とかね。<br>
+   高解像度で、画像のファイルサイズが大きかったりします。<br>
+   でも旅行に行った時の写真とか、このサイトであれば草花の写真は掲載したいもの。<br>
+   ここでは画像のファイルサイズを2MB以下になるまで、一括して調整できるスクリプトを紹介します。</p>
+
+  <h3>複数画像のファイルサイズをまとめて変更するpython</h3>
+
+  <p>このスクリプトは、指定されたフォルダ内の画像ファイルをJPEG形式で保存し、さらにファイルサイズが2MB以下になるまで画質を調整するものです。<br>
+   次世代の画像ファイル形式でも良いのですが、まだまだ古いデバイスも現役で活躍していることが予想されるので。<br>
+   あと数年経ったらまとめて変換しちゃおうと思っていますが、今のところはjpeg形式で十分でしょう。
+  </p>
+
+  <p>このスクリプトの流れは以下の通りですが、私の組み方が正解とは限らないです。</p>
+  <ol>
+   <li>指定されたフォルダ内のすべてのファイルをチェック</li>
+   <li>画像ファイル（.png, .jpg, .jpeg）のみを対象とする</li>
+   <li>画像ファイルをJPEG形式で保存し、初期の画質を85に設定</li>
+   <li>画像ファイルのサイズが2MBを超えている場合、画質を10%ずつ下げて再保存</li>
+   <li>すべての画像ファイルの処理が完了したら、メッセージを表示</li>
+  </ol>
+
+  <p class="codegra" id="flower_resize_py">複数画像のファイルサイズをまとめて変更するflower_resize.py</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+import os  # ファイルやディレクトリの操作を行うための標準ライブラリ
+from PIL import Image  # 画像を開いたり、保存したりするためのライブラリ
+
+# 画像ファイルが保存されているフォルダのパスを指定
+directory = r'C:\Users\flower'
+
+# 指定されたフォルダ内のすべてのファイルをループで処理
+for filename in os.listdir(directory):
+    # ファイルが画像ファイル（.png, .jpg, .jpeg）であるかをチェック
+    if filename.lower().endswith(('.png', '.jpg', '.jpeg')):
+        img_path = os.path.join(directory, filename)  # 画像ファイルのフルパスを取得
+        with Image.open(img_path) as img:  # 画像ファイルを開く
+            new_img_path = os.path.join(directory, filename)  # 新しい画像ファイルのパスを設定
+            quality = 85  # 初期の画質設定（0〜100の範囲で指定）
+            img.save(new_img_path, 'JPEG', quality=quality)  # 画像をJPEG形式で保存
+
+            # 画像ファイルのサイズが2MBを超えている場合、画質を下げて再保存
+            while os.path.getsize(new_img_path) > 2 * 1024 * 1024:  # 2MB = 2 * 1024 * 1024バイト
+                img = Image.open(new_img_path)  # 再度画像ファイルを開く
+                quality = int(quality * 0.9)  # 画質を10%下げる
+                img.save(new_img_path, 'JPEG', quality=quality)  # 画質を下げて再保存
+
+print("画像の処理が完了しました。")  # 処理完了のメッセージを表示
+            </code></pre>
+  </div>
+
+  <p>このスクリプトはかなり汎用性が高いんですよね。<br>
+   大量の画像ファイルを一括して同じファイル形式にできて、ついでに圧縮までやってくれます。<br>
+   昔からそうですが、基本的に私はファイルサイズが2MB以下になるまで画質を調整してますね。<br>
+   完璧にやっているわけでもありませんが、だいたいの画像をそのくらいのサイズにしておけば、Webサイトに著しい悪影響は出ません。</p>
+
+  <dl>
+   <dt>ライブラリのインポート</dt>
+   <dd>os：ファイルやディレクトリの操作を行うための標準ライブラリ</dd>
+   <dd>PIL（Pillow）：画像を開いたり、保存したりするためのライブラリ</dd>
+
+   <dt>フォルダの指定</dt>
+   <dd>directory：画像ファイルが保存されているフォルダのパスを指定</dd>
+
+   <dt>画像ファイルの処理</dt>
+   <dd>指定されたフォルダ内のすべてのファイルをチェック</dd>
+   <dd>ファイルが画像ファイル（.png, .jpg, .jpeg）であるかを確認</dd>
+   <dd>画像ファイルを開き、JPEG形式で保存します。このとき、初期の画質を85に設定</dd>
+
+   <dt>ファイルサイズのチェックと調整</dt>
+   <dd>保存した画像ファイルのサイズが2MBを超えている場合、画質を10%ずつ下げて再保存</dd>
+   <dd>この処理を、ファイルサイズが2MB以下になるまで繰り返す</dd>
+
+   <dt>処理完了のメッセージ</dt>
+   <dd>すべての画像ファイルの処理が完了したら、「画像の処理が完了しました。」というメッセージを表示</dd>
+  </dl>
+
+  <p>画像ファイルのサイズを効率的に管理するのは重要ですよ。<br>
+   言い換えると、この画像管理が大変な部分かと思います。<br>
+   テキストデータにみたいに手軽に一括置換とかできるわけじゃないからね。</p>
+
+
+
+  <h2>画像のサイズをまとめて変更する</h2>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(54).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>Webサイトのレスポンスに悪影響が出ないよう、画像を調整する方法はいろいろあります。</p>
+   <ul>
+    <li>許容範囲まで画質を下げることで対応する</li>
+    <li>サイズを小さくすることで対応する</li>
+    <li>画像のファイル形式を変更して対応する</li>
+   </ul>
+   <p>ここで紹介するのはサイズを小さくするものです。<br>
+    もともとモバイル端末で閲覧する人が多いのですから、少々画像が小さくても問題はありません。<br>
+    どうしても大きい画像を用意したいのであれば、テキストベースのハイパーリンクを付けて別途表示することもできます。</p>
+  </div>
+
+
+  <h3>画像の大きさをまとめて変えるpython</h3>
+  <p>このスクリプトは scale=0.8 ですから、80%まで小さくします。<br>
+   0.3なら30% 、0.5なら50% となりますね。<br>
+   上述の画像サイズをまとめて取得するスクリプトを使って画像の大きさを知ることができたら、その大きさに従って小分けしても良いですね。<br>
+   各フォルダに分けて保管しておけば、このような画像の大きさをまとめて変えるスクリプトも走らせやすいです。</p>
+
+  <p class="codegra" id="image_aspect_compression_big80_py">複数画像をまとめて80%小さくするimage_aspect_compression_big80.py</p>
+  <p>ちなみにこんなに長いファイル名にするのはお勧めしないです😅<br>
+   運用面で混乱しないことを最優先にしているから、こうなるってだけですよ。</p>
+  <div class="code-container">
+   <pre><code class="language-python">
+# PIL (Python Imaging Library) の Image モジュールと os モジュールをインポート
+from PIL import Image
+import os
+
+# 画像ファイルのパスをリストとして定義
+image_paths = [
+    r"C:\Users\red.png",
+    r"C:\Users\blue.png",
+    r"C:\Users\sky.jpg",
+    r"C:\Users\sea.jpg",
+]
+
+# 画像をリサイズする関数を定義
+def resize_image(image_path, scale=0.8):
+    # 画像を開く
+    with Image.open(image_path) as img:
+        # 画像の元のサイズを取得
+        width, height = img.size
+        # 新しいサイズを計算
+        new_size = (int(width * scale), int(height * scale))
+        # 画像をリサイズ
+        resized_img = img.resize(new_size, Image.LANCZOS)
+        # リサイズした画像を保存
+        resized_img.save(image_path)
+
+# 各画像ファイルに対してリサイズ関数を実行
+for image_path in image_paths:
+    resize_image(image_path)
+
+# すべての画像がリサイズされたことを表示
+print("すべての画像がリサイズされました。")
+            </code></pre>
+  </div>
+
+  <p>先ほども書きましたが、scale=0.8 となっているので、画像の大きさは80%まで小さくなります。<br>
+   一方、0.3と書けば30% 、0.5なら50% となりますね。<br>
+   スクリプトを少し変えてから実行するだけで、複数の画像をいっぺんに指定のサイズへ変更できるのです。<br>
+   例えば、次のスクリプトは50%まで画像を小さくするものですが、scale のところ以外は変わりません。</p>
+
+
+  <p class="codegra" id="image_aspect_compression_middle50_py2">複数画像をまとめて50%小さくするimage_aspect_compression_middle50.py
+  </p>
+  <div class="code-container">
+   <pre><code class="language-python">
+from PIL import Image
+import os
+
+image_paths = [
+    r"C:\Users\red.png",
+    r"C:\Users\blue.png",
+    r"C:\Users\sky.jpg",
+    r"C:\Users\sea.jpg",
+]
+
+def resize_image(image_path, scale=0.5):
+    with Image.open(image_path) as img:
+        width, height = img.size
+        new_size = (int(width * scale), int(height * scale))
+        resized_img = img.resize(new_size, Image.LANCZOS)
+        resized_img.save(image_path)
+
+for image_path in image_paths:
+    resize_image(image_path)
+
+print("すべての画像がリサイズされました。")
+                    </code></pre>
+  </div>
+
+  <h4>複数画像もスクリプトで処理できる部分がある</h4>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(55).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>このセクションで書いてきた２つのスクリプトは、指定された画像ファイルをリサイズして保存するものです。<br>
+    このスクリプトのケースでは、実行するとリスト内のすべての画像が50%のサイズにリサイズされます。<br>
+    レスポンシブデザインが重要な現在のWeb制作において、このタイプのスクリプトは使用頻度も極めて高いです。<br>
+    画像のリサイズなんかいちいち手作業でやっていると、誤って画像を消してしまったり、ケアレスミスの確率が上がっていきます。<br>
+    退屈な単調作業は人を疲弊させます。<br>
+    続けてスクリプトを示しながら各部分の説明を書いていきますね。</p>
+  </div>
+
+
+  <h5>１．ライブラリのインポート</h5>
+  <div class="code-container">
+   <pre><code class="language-python">
+from PIL import Image
+import os
+                </code></pre>
+  </div>
+  <p>PIL（Python Imaging Library）の Image モジュールと os モジュールをインポートしています。</p>
+
+
+  <h5>２．画像ファイルのパスをリストとして定義</h5>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+image_paths = [
+    r"C:\Users\red.png",
+    r"C:\Users\blue.png",
+    r"C:\Users\sky.jpg",
+    r"C:\Users\sea.jpg",
+]
+                </code></pre>
+  </div>
+  <p>リサイズする画像ファイルのパスをリストにまとめています。</p>
+
+  <h5>３．画像をリサイズする関数を定義</h5>
+  <div class="code-container">
+   <pre><code class="language-python">
+def resize_image(image_path, scale=0.5):
+    with Image.open(image_path) as img:
+        width, height = img.size
+        new_size = (int(width * scale), int(height * scale))
+        resized_img = img.resize(new_size, Image.LANCZOS)
+        resized_img.save(image_path)
+                        </code></pre>
+  </div>
+  <p>resize_image 関数は、画像ファイルのパスとリサイズのスケールを受け取り、画像をリサイズして保存します。<br>
+   Image.open(image_path) で画像を開きます。<br>
+   img.size で元の画像の幅と高さを取得します。<br>
+   new_size で新しいサイズを計算します（この場合、元のサイズの50%）。<br>
+   img.resize(new_size, Image.LANCZOS) で画像をリサイズします。<br>
+   resized_img.save(image_path) でリサイズした画像を元のパスに保存します。</p>
+
+  <h5>４．各画像ファイルに対してリサイズ関数を実行</h5>
+  <div class="code-container">
+   <pre><code class="language-python">
+for image_path in image_paths:
+    resize_image(image_path)
+                    </code></pre>
+  </div>
+  <p>リスト内の各画像ファイルに対して resize_image 関数を呼び出し、リサイズを実行します。</p>
+
+  <h5>５．完了メッセージを表示</h5>
+  <div class="code-container">
+   <pre><code class="language-python">
+print("すべての画像がリサイズされました。")
+                </code></pre>
+  </div>
+  <p>すべての画像がリサイズされたことを示すメッセージを表示します。</p>
+
+
+  <h2>画像リストからhtmlコードを作成するプログラム</h2>
+
+  <p>画像を扱うスクリプトは他の目的にも転用可能な、汎用性の高いものが多いんですよね。<br>
+   このスクリプトは次のような動作となっています。</p>
+  <ol>
+   <li>画像ファイルの名称をリストにしたテキストデータを用意</li>
+   <li>そのテキストデータから画像ファイル名と拡張子を読み込む</li>
+   <li>読み込んだ画像ファイル名と拡張子をhtmlのテンプレートに挿入する</li>
+   <li>作成されたhtmlコードを出力する</li>
+  </ol>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/flower1(56).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>今回は画像ファイルとしていますが、ファイル名と拡張子をリストにしたテキストデータさえあれば良いのですから、他のファイル種別であっても応用が利きます。<br>
+    画像を何枚も並べるhtmlを一瞬で作ることができますし、それはpdfでもmp4でも同じです。<br>
+    繰り返し貼り付けられるようなhtmlコードについては、このようにスクリプトで処理できることが多いです。
+   </p>
+  </div>
+
+  <p class="codegra" id="image_add_py">複数の画像が並ぶWebページを作成するimage_add.py</p>
+  <div class="code-container">
+   <pre><code class="language-python">
+# 'filelist.txt' というファイルを読み込み、UTF-8 エンコーディングで開く
+with open('filelist.txt', 'r', encoding='utf-8') as file:
+    # ファイルの各行を読み込み、改行を削除してリストに格納
+    filenames = [line.strip() for line in file.readlines()]
+
+# HTML テンプレートを定義
+html_template = """
+&lt;div class=&quot;content&quot;&gt;
+    &lt;img src=&quot;icon/{0}&quot; alt=&quot;{1}&quot; class=&quot;graphicmini right-image fade-in-out&quot;&gt;
+    &lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+"""
+
+# HTML 出力を初期化
+html_output = ""
+# ファイル名リストをループして処理
+for filename in filenames:
+    # ファイル名と拡張子を分割
+    name, _ = filename.rsplit('.', 1)
+    # テンプレートにファイル名と名前を挿入して HTML 出力に追加
+    html_output += html_template.format(filename, name)
+
+# 'output.html' というファイルを UTF-8 エンコーディングで開き、書き込みモードにする
+with open('output.html', 'w', encoding='utf-8') as output_file:
+    # 生成した HTML コードを書き込む
+    output_file.write(html_output)
+
+# HTML コード生成完了のメッセージを表示
+print("HTMLコードを生成しました。")
+            </code></pre>
+  </div>
+
+  <p>このスクリプトは、filelist.txt からファイル名を読み込み、それぞれのファイル名を使ってHTMLコードを生成し、output.html に書き込むものです。<br>
+   このようにしてhtmlコードを作ってしまえば、実際にレイアウトを整えるのもラクです。<br>
+   手作業でやってたら大変ですよ？<br>
+   応用が利く汎用性の高いプログラムですので、ちょっとコードを貼りつつ詳しく説明します。</p>
+
+
+  <h5>１．ファイルを読み込む</h5>
+  <div class="code-container">
+   <pre><code class="language-python">
+with open('filelist.txt', 'r', encoding='utf-8') as file:
+filenames = [line.strip() for line in file.readlines()]
+            </code></pre>
+  </div>
+  <p>ここでは、filelist.txt というテキストファイルを開き、その中の各行を読み取ってリストに保存しています。<br>
+   line.strip() は各行の前後の空白を取り除きます。</p>
+
+
+  <h5>２．HTMLテンプレートを定義する</h5>
+  <div class="code-container">
+   <pre><code class="language-python">
+html_template = """
+&lt;div class=&quot;content&quot;&gt;
+&lt;img src=&quot;icon/{0}&quot; alt=&quot;{1}&quot; class=&quot;graphicmini right-image fade-in-out&quot;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+"""
+            </code></pre>
+  </div>
+  <p>これは、画像とその説明を含むHTMLのテンプレートです。<br>
+   {0} と {1} は後でファイル名と説明に置き換えられます。</p>
+
+
+  <h5>３．HTMLコードを生成する</h5>
+  <div class="code-container">
+   <pre><code class="language-python">
+html_output = ""
+for filename in filenames:
+    name, _ = filename.rsplit('.', 1)
+    html_output += html_template.format(filename, name)
+            </code></pre>
+  </div>
+  <p>ここでは、各ファイル名についてテンプレートを使ってHTMLコードを生成しています。<br>
+   filename.rsplit('.', 1) はファイル名から拡張子を取り除き、name として保存します。</p>
+
+  <p>ちなみにここで「<strong>生成</strong>」という言葉を使っていますが、これはPythonが生成AIという話ではありませんからね？<br>
+   丁寧に言うと、Pythonという生成AIを使ってHTMLを作らせていますという話ではありませんよということです。<br>
+   Pythonという言語を使ってプログラミングを行い、そのスクリプトを実行することによってHTMLが記述されるという意味です。<br>
+   すでにPythonが何かをご存じの方であれば問題ないけどね。<br>
+   昨今のSNSを見る限り、このような但し書きは必要でしょう。</p>
+
+
+  <h5>４．生成したHTMLコードを書き込む</h5>
+  <div class="code-container">
+   <pre><code class="language-python">
+with open('output.html', 'w', encoding='utf-8') as output_file:
+output_file.write(html_output)
+            </code></pre>
+  </div>
+
+  <p>生成したHTMLコードを output.html というファイルに書き込みます。</p>
+
+  <h5>５．メッセージを表示する</h5>
+  <div class="code-container">
+   <pre><code class="language-python">
+print("HTMLコードを生成しました。")
+            </code></pre>
+  </div>
+  <p>最後に、「HTMLコードを生成しました。」というメッセージを表示します。</p>
+
+
+  <p>このようにして、filelist.txt に書かれたファイル名を使って、画像タグを含むHTMLファイルが生成されます。<br>
+   ちょっとスクリプトを変えれば、filelist.txt に書かれたファイル名を使って、PDFへのリンクを含むHTMLファイルを生成させることも可能です。</p>
+
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/pyimg.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>
