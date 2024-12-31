@@ -13,5 +13,7 @@
 .git
 .gitignore
 
-# PHP Composer dependencies:
-/vendor/
+# Python virtual environment:
+/venv/
+__pycache__/
+*.pyc

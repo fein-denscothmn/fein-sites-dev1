@@ -20,6 +20,7 @@
  <link rel="stylesheet" type="text/css" href="/css/collapsible.css">
  <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
  <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" type="text/css" href="/css/album.css">
  <link rel="stylesheet" type="text/css" href="/css/lua.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -56,6 +57,7 @@
  <script src="/script/feinfade.js"></script>
  <script src="/script/feinScroll.js"></script>
  <script src="/script/tab.js"></script>
+ <script src="/script/album.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
@@ -224,6 +226,27 @@
    <p><strong>
      関連ページ</strong>：<a href="/another-eden/lua.html">アナザーエデンのプログラミングを個人サイトで試す</a></p>
   </div>
+
+  <div class="feinalbum-container" id="feinalbum1">
+   <div class="feinalbum">
+    <div class="feinalbum-page">
+     <img src="/another-eden/anaimage/ライザ検討中.jpg" alt="ライザ検討中">
+    </div>
+    <div class="feinalbum-page">
+     <img src="/another-eden/anaimage/ライザこれでいい.jpg" alt="ライザこれでいい">
+    </div>
+    <div class="feinalbum-page">
+     <img src="/another-eden/anaimage/ライザできたー！.jpg" alt="ライザできたー！">
+    </div>
+    <div class="feinalbum-page">
+     <img src="/another-eden/anaimage/ライザ解説.jpg" alt="ライザ解説">
+    </div>
+   </div>
+   <button class="feinalbum-prev">前のページ</button>
+   <button class="feinalbum-next">次のページ</button>
+  </div>
+
+  <p>ライザリン・シュタウトに出逢わなければ、この着想に辿り着けなかったです。</p>
 
   <h3 id="target_atelier">🌟ソースコードのアトリエ</h3>
 
@@ -633,7 +656,10 @@ for container in document.select('.atelier-container'):
    <div class="atelier-tab-content" data-content="3">
 
     <p>GitHubアカウントを作成して、Visual Studio(Atelier) Codeからリポジトリを管理する手順です。<br>
-     ここからがソースコード管理らしくなってくるかな。</p>
+     ここからがソースコード管理らしくなってくるかな。<br>
+     念のため、本格的に使いたい人は<a href="https://github.com/pricing">Get the complete developer
+      platform.</a>をよく見て、自分の開発状況で費用が発生するかどうかを確認しましょう。<br>
+     まずはprivateで使ってみて、慣れてきたらpublicにするのがお勧めです。</p>
 
     <p class="gra">Visual Studio(Atelier) CodeのGitHub連携</p>
     <ol>
@@ -641,7 +667,16 @@ for container in document.select('.atelier-container'):
      <li>コマンドパレットを開いて検索バーに「GitHub: Sign in」と入力し、表示された「GitHub: Sign in」を選択<br>
       ブラウザが開き、GitHubアカウントにサインインするためのページが表示される</li>
     </ol>
-    <p>これでVSCodeからGitHubにリポジトリを公開できるようになります。</p>
+    <p>これでVSCodeからGitHubにリポジトリを公開できるようになります。<br>
+     ひとまず次の用語を覚えておくと混乱が少ないです。</p>
+
+    <dl>
+     <dt>ローカルリポジトリ</dt>
+     <dd>開発者のコンピュータ上にあるリポジトリ</dd>
+
+     <dt>リモートリポジトリ</dt>
+     <dd>GitHubのクラウド上に保存されたリポジトリ</dd>
+    </dl>
 
     <p class="gra">GitHubのリポジトリをプライベートにする</p>
     <div class="content">
@@ -755,6 +790,173 @@ git push -u origin main
    </div><!--3タブの分岐点-->
   </div>
 
+
+
+  <h4>Githubのリモートレポジトリを公開する際の注意</h4>
+  <p>ここでは、次の内容を書いていきます。</p>
+  <ul>
+   <li>コード管理という目的に必要ないものを公開しないための設定</li>
+   <li>privateからpublicに変更する手順</li>
+  </ul>
+
+  <button class="collapsible">タップして開く ▼</button>
+  <div class="collapsiblecontent">
+
+   <p>まずは基礎的な使い方をご紹介した後、プライベートにする流れをお伝えしました。そのほうがリスクもないからです。<br>
+    しかし、パブリックにしたいケースもあるかと。─ 本来はpublicにして扱うものだけどね。 ─<br>
+    GitHubはソースコードの管理や共有を行う場所です。<br>
+    AI学習が問題になっている今、人様が懸命に描いた絵まで公開する必要はありません。</p>
+
+   <p class="gra">公開したくないデータを決める</p>
+   <p>まず、次のように「.gitignore」へ公開したくないファイルやディレクトリを記載します。<br>
+    .gitignoreファイルはルートディレクトリに設置しましょう。</p>
+   <div class="code-container">
+    <pre><code class="language-bash">
+# 特定のファイルを除外
+/www/himitu1.xml
+/www/himitu2.txt
+
+# 特定のディレクトリを除外
+www/another-eden/anaimage/
+www/another-eden/icon/
+www/image/
+www/paint/
+
+</code></pre>
+   </div>
+   <p>これで、ローカルレポジトリからリモートレポジトリへアップされないファイルやディレクトリが指定された、「除外リスト」ができたことになります。</p>
+
+   <p class="gra">.gitignoreを上げる</p>
+   <p>後からでも良いのですが、この段階で「.gitignore」をリモートレポジトリへプッシュしてしまいます。</p>
+   <div class="code-container">
+    <pre><code class="language-bash">
+git add .gitignore
+git commit -m "Update .gitignore to exclude specific files and directories"
+git push origin main
+
+</code></pre>
+   </div>
+
+   <p>このGitコマンドを説明します。</p>
+
+   <p>
+    <span class="codecolor">git add .gitignore</span>:<br>
+    <span class="codecolor">.gitignore</span>ファイルの変更をステージングエリアに追加するコマンドです。<br>
+    このコマンドは指定された<span class="codecolor">.gitignore</span>ファイルをステージングエリアに追加します。
+   </p>
+
+   <p>
+    <span class="codecolor">git commit -m "Update .gitignore to exclude specific files and directories"</span>:<br>
+    ステージングエリアに追加された変更をコミットするコマンドです。<br>
+    <span class="codecolor">-m</span>オプションは、コミットメッセージを指定します。<br>
+    このコミットメッセージは「特定のファイルやディレクトリを除外するために<span class="codecolor">.gitignore</span>を更新」という意味ですね。
+   </p>
+
+   <p>
+    <span class="codecolor">git push origin main</span>:<br>
+    ローカルリポジトリの変更をリモートリポジトリ（<span class="codecolor">origin</span>）の<span
+     class="codecolor">main</span>ブランチにプッシュするコマンドです。<br>
+    <span class="codecolor">origin</span>はリモートリポジトリのデフォルト名で、<span class="codecolor">main</span>はブランチ名です。<br>
+    これでローカルレポジトリの「.gitignore」がリモートリポジトリに反映されます。
+   </p>
+
+   <p class="gra">.gitignoreを確認してファイル退避</p>
+   <p>この段階で、リモートレポジトリでは非公開となるローカルレポジトリのファイルが設定されています。<br>
+    念のためGitHubのWebにあるリモートレポジトリを確認し、.gitignoreが反映されていることを確認しましょう。<br>
+    それから、ローカルレポジトリから公開したくないファイルやディレクトリを一時的に他のディレクトリへ移動しておきます。<br>
+    ローカルレポジトリに、一時的なデータの欠損が発生している状態を作るのです。</p>
+
+   <p class="gra">欠損があるローカルレポジトリをプッシュ</p>
+   <p>公開したくないファイルやディレクトリが含まれていない状態のローカルレポジトリを、リモートレポジトリへプッシュします。</p>
+
+   <div class="code-container">
+    <pre><code class="language-bash">
+git add .gitignore
+git commit -m "Update .gitignore to exclude specific files and directories"
+git push origin main
+
+</code></pre>
+   </div>
+
+   <p>
+    <span class="codecolor">git add .</span>:<br>
+    現在のディレクトリ内のすべての変更をステージングエリアに追加するコマンドです。<br>
+    ここで言う「変更」には、新しく作成したファイル、変更されたファイル、削除されたファイルが含まれます。
+    <br>
+    <span class="codecolor">.</span> はカレントディレクトリを意味し、その下にあるすべてのファイルとディレクトリを対象とします。
+   </p>
+
+   <p>
+    <span class="codecolor">git commit -m "Remove sensitive files and update repository"</span>:<br>
+    ステージングエリアに追加された変更をコミットするコマンドです。
+    <br>
+    <span class="codecolor">-m</span> オプションはコミットメッセージを指定します。<br>
+    この場合、コミットメッセージは "Remove sensitive files and update
+    repository" です。<br>
+    公開したくないファイルを削除し、リポジトリを更新したことを示しています。
+   </p>
+
+   <p>
+    <span class="codecolor">git push origin main</span>:<br>
+    ローカルリポジトリの変更をリモートリポジトリ（<span class="codecolor">origin</span>）の <span class="codecolor">main</span>
+    ブランチにプッシュするコマンドです。
+    <br>
+    <span class="codecolor">origin</span> はリモートリポジトリのデフォルト名で、<span class="codecolor">main</span>
+    はブランチ名です。<br>
+    これでローカルの変更がリモートリポジトリに反映されます。<br>
+    つまり、欠損があるローカルレポジトリをプッシュしたことになります。
+   </p>
+
+   <p class="gra">ローカルレポジトリを元に戻す</p>
+   <p>ローカルレポジトリへ、上述の手順で退避させておいたファイルやディレクトリを戻します。<br>
+    上記で公開したくないファイルを欠損させたローカルレポジトリをプッシュしましたが、このままでは本番のWebサイトにも欠損が発生してしまいます。─ 開発環境によるけどね。 ─<br>
+    GitHubに無用なデータを公開しなければ良いだけですから、改めてローカルレポジトリを元に戻しましょう。</p>
+
+   <p class="gra">除外設定があるローカルレポジトリをプッシュ</p>
+   <p>この段階のローカルレポジトリは、公開したくないファイルやディレクトリが含まれているものの、「.gitignore」による除外設定が効いている状態です。<br>
+    これをリモートレポジトリへプッシュします。</p>
+
+   <div class="code-container">
+    <pre><code class="language-bash">
+git add .
+git commit -m "Update repository with .gitignore in place"
+git push origin main
+
+</code></pre>
+   </div>
+
+   <p>
+    <span class="codecolor">git add .</span>:<br>
+    現在のディレクトリ内のすべての変更をステージングエリアに追加するコマンドです。<br>
+    新しく作成したファイルや変更されたファイルが含まれます。<br>
+    <span class="codecolor">.</span> はカレントディレクトリを意味し、その下にあるすべてのファイルとディレクトリを対象とします。
+   </p>
+
+   <p>
+    <span class="codecolor">git commit -m "Update repository with .gitignore in place"</span>:<br>
+    ステージングエリアに追加された変更をコミットするコマンドです。<br>
+    <span class="codecolor">-m</span> オプションは、コミットメッセージを指定します。<br>
+    この場合、コミットメッセージは "Update repository with .gitignore in
+    place" です。<br>
+    これは、<span class="codecolor">.gitignore</span> ファイルを更新したことを示しています。
+   </p>
+
+   <p>
+    <span class="codecolor">git push origin main</span>:<br>
+    ローカルリポジトリの変更をリモートリポジトリ（<span class="codecolor">origin</span>）の <span class="codecolor">main</span>
+    ブランチにプッシュするコマンドです。<br>
+    <span class="codecolor">origin</span> はリモートリポジトリのデフォルト名で、<span class="codecolor">main</span>
+    はブランチ名です。<br>
+    これでローカルの変更がリモートリポジトリに反映されます。<br>
+    つまり、除外設定があるローカルレポジトリをプッシュしたことになります。
+   </p>
+
+   <p class="gra">リモートレポジトリを確認</p>
+   <p>GitHubのWebにあるリモートレポジトリを確認し、公開したくないファイルやディレクトリが存在しないことを確認しましょう。<br>
+    後は普段通りgithubを使うだけです。<br>
+    これで、githubをpublicにしても、公開したくないファイルはwebで閲覧できなくなります。<br>
+    言い変えると、リモートリポジトリには公開したくないファイルが含まれない状態を維持できるってことですね。</p>
+  </div>
 
   <h3>🌟頻用する素材と錬金釜</h3>
 
