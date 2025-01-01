@@ -395,7 +395,7 @@
  object-fit: contain;
 }
 
-button {
+.feinalbum-container button {
  margin: 10px;
  padding: 8px 12px;
  border: none;
@@ -408,19 +408,16 @@ button {
  transition: background-color 0.3s, transform 0.3s;
 }
 
-button:hover {
+.feinalbum-container button:hover {
  background-color: #65C9A9;
  transform: translateY(-2px);
 }
 
-button:active {
+.feinalbum-container button:active {
  background-color: #4CB38B;
  transform: translateY(0);
 }
 
-.feinalbum-hidden {
- display: none;
-}
     </code></pre>
   </div>
 
@@ -538,7 +535,7 @@ button:active {
    <dd>画像の比率を保ちつつページ内に収めます。</dd>
   </dl>
 
-  <p><span class="codecolor"> button</span><br>
+  <p><span class="codecolor">.feinalbum-container button</span><br>
    ページ移動ボタンに適用されるクラスです。</p>
   <dl>
    <dt>margin: 10px</dt>
@@ -572,7 +569,7 @@ button:active {
    <dd>背景色と変形のアニメーションを設定します。</dd>
   </dl>
 
-  <p><span class="codecolor"> buttonhover</span><br>
+  <p><span class="codecolor">.feinalbum-container button:hover</span><br>
    ボタンにマウスが乗ったときのスタイルを設定します。</p>
   <dl>
    <dt>backgroundcolor: #65C9A9</dt>
@@ -582,7 +579,7 @@ button:active {
    <dd>ボタンが少し浮き上がるように見せます。</dd>
   </dl>
 
-  <p><span class="codecolor"> buttonactive</span><br>
+  <p><span class="codecolor">.feinalbum-container button:active</span><br>
    ボタンがクリックされたときのスタイルを設定します。</p>
   <dl>
    <dt>backgroundcolor: #4CB38B</dt>
