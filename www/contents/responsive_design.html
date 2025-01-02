@@ -258,19 +258,21 @@
    画面の表示制御はメディアクエリでやるから、body {}側にいろいろ書いちゃうとトラブルの元になるからね。<br>
   </p>
 
-  <p>次は、もう少し手を加えてみましょう。どの画面もちゃんとレスポンシブデザインでなければ意味がないからね。</p>
-
   <h2>ちょっと工夫したレスポンシブデザイン</h2>
+
+  <p>次は、もう少し手を加えてみましょう。<br>
+   どの画面もちゃんとレスポンシブデザインにしたいものです。<br>
+   完璧にするのは難しいですが。</p>
+
+  <p class="codegra" id="responsivedesign_style">レスポンシブデザインを作るstyle.css</p>
   <div class="code-container">
    <pre><code class="language-css">
-/* responsive design ●start●*/
 .abcdcontainer { /* コンテナの幅を90%に設定し、中央揃えにします */
   width: 90%;
   margin: 0 auto;
   box-sizing: border-box; /* パディングとボーダーを含めたボックスサイズを設定します */
 }
 
-/* Mobile adjustments */
 @media (max-width: 600px) { /* 画面幅が600px以下の場合のスタイルを設定します */
   .abcdcontainer { /* フォントサイズを0.875emに設定し、上下のパディングを10pxにします */
     font-size: 0.875em;
@@ -283,7 +285,6 @@
   }
 }
 
-/* Computer adjustments */
 @media (min-width: 601px) { /* 画面幅が601px以上の場合のスタイルを設定します */
   .abcdcontainer { /* コンテナの最大幅を1200pxに設定し、左右のパディングを150pxにします */
     width: 100%;
@@ -296,11 +297,11 @@
     height: 80vh;
   }
 }
-/* responsive design ●end●*/
+
     </code></pre>
   </div>
 
-  <h3>CSSにおける「コンテナ」とは何か</h3>
+  <h3>CSSにおけるコンテナ</h3>
   <p>CSSで「コンテナ」という言葉は、一般的に<strong>要素を囲むためのボックス</strong>のことです。<br>
    このボックスは、他の要素をまとめて整理し、レイアウトを整えるために使用されます。<br>
    具体的な役割を書いていきますね。</p>

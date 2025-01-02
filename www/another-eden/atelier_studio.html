@@ -271,9 +271,9 @@
 
   <div class="atelier-container">
    <div class="atelier-tabs">
-    <div class="atelier-tab" data-tab="1">CSS</div>
-    <div class="atelier-tab" data-tab="2">JavaScript</div>
-    <div class="atelier-tab" data-tab="3">Python</div>
+    <div class="atelier-tab" data-tab="1"><i class="fab fa-css3-alt"></i>CSS</div>
+    <div class="atelier-tab" data-tab="2"><i class="fab fa-js-square"></i>JavaScript</div>
+    <div class="atelier-tab" data-tab="3"><i class="fab fa-python"></i>Python</div>
    </div>
    <div class="atelier-tab-content" data-content="1">
     <p>リンクをタップすると、コードの解説ページへジャンプします。</p>
@@ -281,18 +281,27 @@
     <p class="gra">カテゴリー分けしたcss</p>
 
     <ul>
+     <li><a href="/another-eden/lua.html#lua_css">lua.css</a> Luaによるプルダウンメニューをサポートする<br><span
+       class="small-orange-text">※Luaというのは、アナザーエデンで使われているプログラミング言語の一つです。<br>
+       普通、静的Webサイト上で稼働させるものではありませんけどね。</span></li>
+
      <li><a href="/contents/pdf_preview.html#pdf_css">pdf.css</a> デフォルトでPDFをプレビュー表示する</li>
      <li><a href="/contents/pdf_preview.html#addpdf_css">addpdf.css</a> 複数のPDFがある場合</li>
-     <li><a href="/contents/graphic_css.html#flower_css">flower.css</a> 写真を飾る</li>
      <li><a href="/contents/album_script.html#album_css">album.css</a> イラストアルバムを作る</li>
      <li><a href="/contents\javascriptinfo.html#collapsible_css">collapsible.css</a> 折り畳みエリアを作る</li>
      <li><a href="/contents\codeinfo.html#symbol_css">symbol.css</a> バナーをCSSで作成する</li>
+     <li><a href="/contents\no_copying.html#imgcut_css">imgcut.css</a> 画像をカットしつつ１枚のイラストとして表示する</li>
+     <br>
     </ul>
 
     <div class="content">
      <img src="/another-eden/anaimage/アンペル競争.jpg" alt="アンペル競争" class="graphicsaki right-image fade-in-out">
 
      <dl>
+      <dt>flower.css</dt>
+      <dd><a href="/contents/graphic_css.html#flower_css">写真を飾る</a></dd>
+      <dd><a href="/contents/googledrive.html#gdriveflower_css">Google Driveから画像を持ってくる</a></dd>
+
       <dt>video.css</dt>
       <dd><a href="/contents/videopage.html#normal_video_css">通常版の動画を掲載する</a></dd>
       <dd><a href="/contents/videopage.html#google_video_css">Google Drive版の動画を掲載する</a></dd>
@@ -300,11 +309,10 @@
       <dt>header.css</dt>
       <dd><a href="/contents\codeinfo.html#headeranimation_css">ヘッダー画像にアニメーションを付ける</a></dd>
       <dd><a href="/contents\codeinfo.html#headerglobal_css">グローバルナビゲーションを構成する</a></dd>
-     </dl>
 
-     <dt>footer.css</dt>
-     <dd><a href="/contents\javascript_footer.html#scrollbutton_footer_css">スクロールトップボタン</a></dd>
-     <dd>編集中</dd>
+      <dt>footer.css</dt>
+      <dd><a href="/contents\javascript_footer.html#scrollbutton_footer_css">スクロールトップボタン</a></dd>
+      <dd>編集中</dd>
      </dl>
 
     </div>
@@ -314,8 +322,6 @@
     <p>colors.css<br>
      feinheadline1.css<br>
      feinpan.css<br>
-     imgcut.css<br>
-     lua.css<br>
      menu.css</p>
 
     <p>システムの解説ページ👉：<a href="/contents/color.html#target_system">基礎的なシステムとルール</a></p>
@@ -327,9 +333,9 @@
      <li><a href="/contents/pdf_preview.html#pdf_js">pdf.js</a> デフォルトでPDFをプレビュー表示する</li>
      <li><a href="/contents/pdf_preview.html#addpdf_js">addpdf.js</a> 複数のPDFがある場合</li>
      <li><a href="/contents/album_script.html#album_js">album.js</a> イラストアルバムを作る</li>
-     <li><a href="/contents\javascriptinfo.html#collapsible_js">collapsible.js</a> 折り畳みエリアを作る</li>
-     <li><a href="/contents\javascriptinfo.html#feinfade_js">feinfade.js</a> 画像のフェードイン＋アウトのアニメーションを作る</li>
-     </li>
+     <li><a href="/contents/javascriptinfo.html#collapsible_js">collapsible.js</a> 折り畳みエリアを作る</li>
+     <li><a href="/contents/javascriptinfo.html#feinfade_js">feinfade.js</a> 画像のフェードイン＋アウトのアニメーションを作る</li>
+     <li><a href="/contents/no_copying.html#imgcut_js">imgcut.js</a> 画像をカットしつつ１枚のイラストとして表示する</li>
     </ul>
 
     <div class="content">
@@ -351,7 +357,6 @@
      color.js<br>
      common.js<br>
      feinheadline1.js<br>
-     imgcut.js<br>
      menu.js<br>
      tab.js<br>
      underline.js</p>
@@ -970,7 +975,7 @@ git push origin main
 
   <div class="tabs-fein">
    <button class="tab-fein" data-tab="pane1-fein">Creation Procedure</button>
-   <button class="tab-fein" data-tab="pane2-fein">HTML elements</button>
+   <button class="tab-fein" data-tab="pane2-fein"><i class="fab fa-html5"></i>HTML elements</button>
   </div>
   <!--●１タブの開始地点●-->
   <div id="pane1-fein" class="tab-pane-fein active">
@@ -1044,6 +1049,7 @@ git push origin main
     <li><a href="/contents\graphic_css.html#grastaimage_style">グラスタ表の火力20倍の話に添える画像</a></li>
     <li><a href="/contents\graphic_css.html#imagesize_style">画像によって大きさを使い分ける</a></li>
     <li><a href="/contents\javascriptinfo.html#fadeanimation_style">フェードインとフェードアウトの画像アニメーション</a></li>
+    <li><a href="/contents\responsive_design.html#responsivedesign_style">レスポンシブデザインを作る</a></li>
    </ul>
 
 
@@ -1196,16 +1202,13 @@ body {
  background-color: white;
 }
 
-/* responsive design ●start●*/
-/* Checked */
+/* ★レスポンシブデザイン */
 .feincontainer {
  width: 90%;
  margin: 0 auto;
  box-sizing: border-box;
 }
 
-/* Mobile adjustments */
-/* Checked */
 @media (max-width: 600px) {
  .feincontainer {
   font-size: 0.875em;
@@ -1218,8 +1221,6 @@ body {
  }
 }
 
-/* Computer adjustments */
-/* Checked */
 @media (min-width: 601px) {
  .feincontainer {
   width: 100%;
@@ -1232,9 +1233,6 @@ body {
   height: 80vh;
  }
 }
-
-/* Checked */
-/* responsive design ●end●*/
 
 /* ★箇条書きの余分な余白を削除する */
 ul,
