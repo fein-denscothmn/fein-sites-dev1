@@ -284,87 +284,159 @@ document.addEventListener("DOMContentLoaded", function() {
 
   <p>では、まずは挿入されるhtmlコードを書いてみます。</p>
 
-  <p class="codegra">各ページに共通する記載：htmlファイル</p>
+  <p class="codegra" id="footer_html">フッターの共通記載：commongdl.html</p>
   <div class="code-container">
    <pre><code class="language-html">
 &lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;ja&quot;&gt;
+
 &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;ヘッダー補足内容&lt;/title&gt;
+ &lt;meta charset=&quot;UTF-8&quot;&gt;
+ &lt;title&gt;fein&#39;s personal siteのヘッダー補足内容&lt;/title&gt;
 &lt;/head&gt;
+
 &lt;body&gt;
-    &lt;div class=&quot;commongdl&quot;&gt;
-        &lt;div class=&quot;footer-links&quot;&gt;
-            &lt;a href=&quot;/page/rss.html&quot;&gt;&lt;i class=&quot;fas fa-file-alt&quot;&gt;&lt;/i&gt; 更新のお知らせ&lt;/a&gt;
-            &lt;a href=&quot;/page/policy.html&quot;&gt;&lt;i class=&quot;fas fa-file-alt&quot;&gt;&lt;/i&gt; サイトポリシー&lt;/a&gt;
-            &lt;a href=&quot;/page/form.html&quot;&gt;&lt;i class=&quot;fas fa-envelope&quot;&gt;&lt;/i&gt; お問い合わせ&lt;/a&gt;
-        &lt;/div&gt;
-        &lt;img src=&quot;/image/Google_badge.jpg&quot; alt=&quot;Google_badge&quot;
-            class=&quot;biggraphic&quot;&gt;
-        &lt;div class=&quot;social-links&quot;&gt;
-            &lt;a
-                href=&quot;https://url.com/&quot;&gt;&lt;i
-                    class=&quot;fas fa-blog&quot;&gt;&lt;/i&gt; Blog&lt;/a&gt;
-            &lt;a href=&quot;https://instagram.com/name&quot;&gt;&lt;i class=&quot;fab fa-instagram&quot;&gt;&lt;/i&gt; Instagram&lt;/a&gt;
-            &lt;a href=&quot;https://www.threads.net/@name&quot;&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot;
-                    viewBox=&quot;0 0 448 512&quot;&gt;
-                    &lt;path
-                        d=&quot;M331.12345&quot; /&gt;
-                &lt;/svg&gt; Threads&lt;/a&gt;
-            &lt;a href=&quot;https://twitter.com/name&quot;&gt;&lt;i class=&quot;fab fa-twitter&quot;&gt;&lt;/i&gt; Twitter&lt;/a&gt;
-            &lt;a href=&quot;https://bsky.app/profile/name.bsky.social&quot;&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot;
-                    viewBox=&quot;0 0 576 512&quot;&gt;
-                    &lt;path
-                        d=&quot;M407.12345&quot; /&gt;
-                &lt;/svg&gt; Bluesky&lt;/a&gt;
-        &lt;/div&gt;
-        &lt;p class=&quot;copyright&quot;&gt;
-            &amp;copy; &quot;name&quot; All rights reserved.&lt;br&gt;
-            本ホームページに掲載されている記事、写真、図表などの無断転載を禁じます。
-        &lt;/p&gt;
-    &lt;/div&gt;
+
+ &lt;div class=&quot;commongdl&quot;&gt;
+
+  &lt;div class=&quot;footer-links&quot;&gt;
+   &lt;a href=&quot;/contents/rss.html&quot;&gt;&lt;i class=&quot;fas fa-file-alt&quot;&gt;&lt;/i&gt; 更新のお知らせ&lt;/a&gt;
+   &lt;a href=&quot;/contents/policy.html&quot;&gt;&lt;i class=&quot;fas fa-file-alt&quot;&gt;&lt;/i&gt; サイトポリシー&lt;/a&gt;
+   &lt;a href=&quot;/contents/form.html&quot;&gt;&lt;i class=&quot;fas fa-envelope&quot;&gt;&lt;/i&gt; お問い合わせ&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;img src=&quot;/image/Google_Cloud _Digital_Leader_CIW.jpg&quot; alt=&quot;Google_Cloud _Digital_LeaderとCIWの合格バッジ&quot; class=&quot;biggraphic&quot;&gt;
+  &lt;div class=&quot;social-links&quot;&gt;
+   &lt;a href=&quot;https://github.com/fein-denscothmn&quot;&gt;&lt;i class=&quot;fab fa-github&quot;&gt;&lt;/i&gt; GitHub&lt;/a&gt;
+   &lt;a href=&quot;https://sites.google.com/view/feins-portal/%E7%A7%BB%E4%BD%8F%E6%88%A6%E8%A8%98%E3%83%96%E3%83%AD%E3%82%B0/note?authuser=0&quot;&gt;&lt;i class=&quot;fas fa-blog&quot;&gt;&lt;/i&gt; Blog&lt;/a&gt;
+   &lt;a href=&quot;https://instagram.com/fein.den_scoth_mn&quot;&gt;&lt;i class=&quot;fab fa-instagram&quot;&gt;&lt;/i&gt; Instagram&lt;/a&gt;
+   &lt;a href=&quot;https://www.threads.net/@fein.den_scoth_mn&quot;&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 448 512&quot;&gt;&lt;!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--&gt;&lt;path d=&quot;省略&quot; /&gt;&lt;/svg&gt; Threads&lt;/a&gt;
+   &lt;a href=&quot;https://twitter.com/Den_scoth_Mn&quot;&gt;&lt;i class=&quot;fab fa-twitter&quot;&gt;&lt;/i&gt; Twitter&lt;/a&gt;
+   &lt;a href=&quot;https://bsky.app/profile/feindenscothmn.bsky.social&quot;&gt;&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 576 512&quot;&gt;&lt;!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--&gt;&lt;path d=&quot;省略&quot; /&gt;&lt;/svg&gt; Bluesky&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;p class=&quot;copyright&quot;&gt;
+   &amp;copy; &quot;fein.den scoth mn&quot; All rights reserved.&lt;br&gt;
+   本ホームページに掲載されている記事、写真、図表などの無断転載を禁じます。
+  &lt;/p&gt;
+
+ &lt;/div&gt;
 &lt;/body&gt;
+
 &lt;/html&gt;
     </code></pre>
   </div>
 
-  <h2>Web標準について</h2>
-  <p>HTMLコードそのものについては説明不要と思われます。<br>
-   ここではWeb標準について、書いていきましょう。<br>
-   ウェブサイトビルダーで作成されたサイトはともかく、コードを書いていくことで作っていく個人サイトであれば、極力このWeb標準を意識すると良いです。<br>
-   構築段階で失敗しないからです。<br>
-   デザインやカッコいい動作は後から考えれば良いのですよ。</p>
+  <p>htmlの説明は省略します。<br>
+   本屋さんで教科書買った方が早いです。</p>
 
-  <p>Web標準とは、主にW3C（World Wide Web Consortium）によって策定された、Web技術に関する標準的な規格やガイドラインのことです。<br>
-   これらの標準は、Webブラウザやその他の閲覧環境に依存せず、どのような環境でも同じように表示・動作することを目的としています。</p>
+  <p class="codegra" id="common_footer_css">フッターの共通記載を浮き立たせる：footer.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* commongdl クラスのスタイル定義 */
+.commongdl {
+    padding: 10px 20px 20px 20px; /* 上に10ピクセル、右に20ピクセル、下に20ピクセル、左に20ピクセルの内側の余白を設定 */
+    border-radius: 10px; /* 角を10ピクセルの半径で丸める */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影を設定。影は上方向に0ピクセル、下方向に4ピクセル、ぼかし半径が8ピクセル、色は黒で透明度が10% */
+}
+    </code></pre>
+  </div>
+  <p>CSSはシンプルですね。<br>
+   フッターの共通記載となる部分は周囲から浮き立たせるようにしているだけです。</p>
 
-  <p class="gra">Web標準の主な目的</p>
-  <dl>
-   <dt>1. 互換性の確保</dt>
-   <dd>異なるブラウザやデバイス間で一貫した表示と動作を保証します。</dd>
-   <dt>2. アクセシビリティの向上</dt>
-   <dd>障害のある人々を含むすべてのユーザーがWebコンテンツにアクセスできるようにします。</dd>
-   <dt>3. 品質の向上</dt>
-   <dd>Webコンテンツの品質を高め、ユーザー体験を向上させます。</dd>
-  </dl>
+  <p class="codegra" id="common_js">フッターの共通記載を挿入する：common.js</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+function loadFooter() {
+    fetch('/externalization/commongdl.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('commongdl').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading commongdl.html:', error));
+}
+window.onload = loadFooter;
+    </code></pre>
+  </div>
 
-  <p class="gra">代表的なWeb標準</p>
+  <p>
+   このコードは指定されたHTMLファイル（commongdl.html）を非同期に読み込み、その内容を特定の要素（IDがcommongdlの要素）に挿入する機能を提供します。<br>
+   ページが読み込まれると、自動的にこの処理が実行されます。
+  </p>
 
-  <dl>
-   <dt>HTML</dt>
-   <dd>Webページの構造を定義するマークアップ言語。</dd>
-   <dt>CSS</dt>
-   <dd>Webページのスタイルやレイアウトを定義するスタイルシート言語。</dd>
-   <dt>JavaScript</dt>
-   <dd>Webページに動的な機能を追加するプログラミング言語。</dd>
-  </dl>
+  <p class="gra">1. 関数定義</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+function loadFooter() {
+    </code></pre>
+  </div>
 
-  <p class="gra">W3Cの役割</p>
-  <p>W3CはWeb技術の標準化を推進するために設立された非営利団体であり、HTMLやCSS、XMLなど多くの仕様を公開しています。<br>
-   Webの勉強をすれば、必ずと言って良いほど教わる組織ですね。<br>
-   このような組織が策定する標準仕様があることで、Web開発者は一貫したルールに基づいてWebサイトを構築でき、Webサイトの互換性や品質が保たれます。<br>
-   Web標準に準拠することで、開発者はより広範なユーザーに対してリッチなインタラクティブ体験を提供することができます。</p>
+  <p><span class="codecolor">loadFooter</span>という名前の関数を定義しています。<br>
+   この関数が後ほど実行されます。</p>
+
+  <p class="gra">2. fetchメソッドを使用してHTMLファイルを取得</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+fetch('/externalization/commongdl.html')
+    </code></pre>
+  </div>
+
+  <p><span class="codecolor">fetch</span>メソッドを使用して、指定されたURL（<span
+    class="codecolor">/externalization/commongdl.html</span>）からデータを取得します。<br>
+   <span class="codecolor">fetch</span>は、ネットワークリクエストを行い、Promiseオブジェクトを返します。
+  </p>
+
+  <p class="gra">3. レスポンスをテキストに変換</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+.then(response => response.text())
+   </code></pre>
+  </div>
+
+  <p><span class="codecolor">fetch</span>メソッドが成功した場合、<span
+    class="codecolor">then</span>メソッドが呼び出され、レスポンスオブジェクトをテキスト形式に変換します。<br>
+   この変換もPromiseオブジェクトを返します。</p>
+
+  <p class="gra">4. データを特定の要素に挿入</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+.then(data => {
+document.getElementById('commongdl').innerHTML = data;
+})
+    </code></pre>
+  </div>
+
+  <p>さらに<span class="codecolor">then</span>メソッドをチェーンして、取得したデータ（HTMLの内容）をIDが<span
+    class="codecolor">commongdl</span>の要素に挿入します。<br>
+   このコードによって、<span class="codecolor">commongdl.html</span>の内容が指定された場所に表示されます。
+  </p>
+
+  <p class="gra">5. エラーハンドリング</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+.catch(error => console.error('Error loading commongdl.html:', error));
+    </code></pre>
+  </div>
+
+  <p><span class="codecolor">catch</span>メソッドを使用して、<span class="codecolor">fetch</span>または<span
+    class="codecolor">then</span>のどちらかでエラーが発生した場合にエラーメッセージをコンソールに表示します。</p>
+
+  <p class="gra">6. ページ読み込み時に関数を実行</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+window.onload = loadFooter;
+    </code></pre>
+  </div>
+
+  <p><span class="codecolor">window.onload</span>プロパティを使用して、ページが完全に読み込まれたときに<span
+    class="codecolor">loadFooter</span>関数を実行するように設定しています。<br>
+   これでページがロードされるたびにフッターの内容が動的に読み込まれるようになります。</p>
+
+
+
+
+
+
 
 
 
@@ -389,8 +461,9 @@ document.addEventListener("DOMContentLoaded", function() {
   <p><span class="codecolor">&lt;script src="../script/feinScroll.js"&gt;&lt;/script&gt;</span><br>
    外部のJavaScriptファイル feinScroll.js を読み込んでいます。<br>
    この「../script/feinScroll.js」という書き方も覚えておいた方が良いですね。<br>
-   特に相対参照については明確に理解しておかないと…<br>
-   「AIの言いなりホームページ」しか作れませんよ？</p>
+   あーでも、どうだろ。<br>
+   例えばこのサイトならindex.htmlの下にwwwフォルダがあり、そこから各種のコンテンツへ到達します。<br>
+   すると「/script/feinScroll.js」という書き方のほうが便利と感じることもあります。</p>
 
   <h4>スクロールを追いかけるボタンの実装（CSS）</h4>
   <p>こちらはCSSですが、もうちょっと短くしようかと思っているところです。<br>

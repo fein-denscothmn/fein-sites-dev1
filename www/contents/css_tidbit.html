@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <!-- Meta tags -->
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="CSSとJavaScriptの書き方に関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta name="keywords" content="個人サイト, CSS, JavaScript, 基礎">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="CSSの小ネタ、ちょっとしたUI作成">
+ <meta property="og:description" content="CSSの書き方に関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/css_tidbit.html">
+ <!-- Structured Data -->
+ <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CSSの小ネタ、ちょっとしたUI作成",
+      "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/css_tidbit.html",
+      "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+  }
+  </script>
+
+ <!-- CSS -->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <!-- JavaScript -->
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+
+ <!-- Google Fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+
+ <!-- Page Title -->
+ <title>CSSの小ネタ、ちょっとしたUI作成</title>
+
+ <!-- Favicon -->
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">CSSの小ネタ、ちょっとしたUI作成</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="CSSの小ネタ、ちょっとしたUI作成の目次を開く ▼"
+   data-close-text="CSSの小ネタ、ちょっとしたUI作成の目次を閉じる ▲">CSSの小ネタ、ちょっとしたUI作成の目次を開く
+   ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>CSSの小ネタ、ちょっとしたUI作成</span></h1>
+  <p>少し変わった罫線とか、チェックボックスだったり。<br>
+   小さな装飾が欲しいシーンもあります。<br>
+   ここではCSSの小ネタだったり、ちょっとした動きを出すようなコードを書いていきます。<br>
+   多少はJavaScriptも使いますよ。</p>
+
+  <h3>罫線のデザイン</h3>
+  <p>コンテンツの合間にちょっとしたスペースが欲しいけど、空白にしておくのも不自然…<br>
+   そんなタイミングで使います。</p>
+  <p class="codegra" id="hrdesign_style">隅に行くほど細く消えかかる罫線を作るstyle.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+hr.atelierflower {
+  border: none; /* 枠線を消す */
+  height: 10px; /* 要素の高さを設定 */
+  background: linear-gradient(to right, /* 左から右への線形グラデーション */
+    rgba(107, 142, 35, 0) 0%, /* 緑色の透明度0% */
+    rgba(107, 142, 35, 1) 20%, /* 緑色の透明度100% */
+    rgba(34, 139, 34, 0.5) 50%, /* 別の緑色の透明度50% */
+    rgba(107, 142, 35, 1) 80%, /* 緑色の透明度100% */
+    rgba(107, 142, 35, 0) 100% /* 緑色の透明度0% */
+  );
+  position: relative; /* 絶対位置の基準を設定 */
+  background-size: 100% 100%; /* 背景画像のサイズを設定 */
+  border-radius: 50%; /* 要素を円形にする */
+  margin: 20px 0; /* 上下の余白を設定 */
+}
+
+hr.atelierflower::before {
+  content: ""; /* 空のコンテンツを生成 */
+  position: absolute; /* 絶対位置に配置 */
+  top: 0; /* 上端を親要素に合わせる */
+  left: 50%; /* 左端を親要素の中央に合わせる */
+  transform: translateX(-50%); /* 要素を中央に寄せる */
+  width: 40px; /* 要素の幅を設定 */
+  height: 40px; /* 要素の高さを設定 */
+  background: radial-gradient(circle, /* 円形の放射グラデーション */
+    rgba(34, 139, 34, 0.5) 20%, /* 緑色の透明度50% */
+    rgba(255, 255, 255, 0) 70% /* 白色の透明度0% */
+  );
+  border-radius: 50%; /* 要素を円形にする */
+}
+
+</code></pre>
+  </div>
+
+  <p>
+   <span class="codecolor">content: "";</span> がちょっとしたポイントです。<br>
+   このプロパティは疑似要素（<span class="codecolor">::before</span> や <span class="codecolor">::after</span>）に対して働きます。<br>
+   なぜなら、疑似要素は <span class="codecolor">content</span> プロパティが定義されていないと表示されないためです。
+  </p>
+  <p>
+   上記コードの<span class="codecolor">content</span> プロパティは、疑似要素に対してテキストや画像などのコンテンツを挿入するために使用されます。<br>
+   空の文字列（<span class="codecolor">""</span>）を使用することで、特定のコンテンツを挿入しないまま、スタイルやレイアウトのために疑似要素を表示させることができるんですよね。
+  </p>
+  <p>
+   この罫線の例では<span class="codecolor">::before</span> 疑似要素を利用して、中央にグラデーションで装飾された円を表示しています。<br>
+   <span class="codecolor">content:
+    "";</span> がなければ、この疑似要素自体が表示されません。<br>
+   そのため、装飾が意図したとおりに見えるようにするために空のコンテンツを生成しています。
+  </p>
+  <p>SNSがセンシティブだからいちいち書かないといけないけど、ここで「生成」という言葉を使っているからといっても、それは画像生成AI等を意味しているわけではないので。<br>
+   ご承知おきください。</p>
+
+
+  <p class="codegra" id="hr_footer">両側が細くなる黒い罫線を作るfooter.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* feinhr IDのスタイル定義 */
+#feinhr {
+    border: none; /* 枠線を非表示にする */
+    height: 1px; /* 高さを1ピクセルに設定する */
+    background: linear-gradient(to right, transparent, black, transparent); /* 左から右にかけて透明から黒、再び透明へと変化する背景グラデーションを適用 */
+}
+
+</code></pre>
+  </div>
+  <p>上の罫線cssの単純バージョン。<br>
+   このサイトではフッターとの境界線として使っています。</p>
+
+  <h3>タップするとチェックマークが変化するUI</h3>
+  <p>リストものの説明文とか。<br>
+   文字通りチェックリストであるとか。<br>
+   そういったコンテンツにちょっとした動きを付けるために使ってます。</p>
+  <p class="codegra" id="checkdesign_style">タップするとチェックが変化するstyle.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+.inline-button {
+  display: inline; /* 要素をインライン表示に設定します */
+  font-size: 1rem; /* フォントサイズを1remに設定します */
+  padding: 5px 10px; /* 上下に5px、左右に10pxの余白を設定します */
+  cursor: pointer; /* マウスカーソルをポインターに変更します */
+  border: none; /* ボーダーをなしに設定します */
+  background-color: transparent; /* 背景色を透明に設定します */
+}
+
+</code></pre>
+  </div>
+  <p>ここはちょっと大切なことを説明しないとね。<br>
+   インライン要素とブロック要素です。</p>
+
+  <h2>インライン要素とブロック要素</h2>
+
+  <p class="gra">インライン要素（Inline Element）</p>
+  <ul>
+   <li>要素が横に並び、必要な幅だけを占有します。</li>
+   <li>通常、行の高さには影響を与えません。</li>
+   <li>他のインライン要素と同じ行に配置されます。</li>
+  </ul>
+  <p><strong>代表的なインライン要素:</strong></p>
+  <ul>
+   <li>&lt;span&gt;</li>
+   <li>&lt;a&gt;</li>
+   <li>&lt;img&gt;</li>
+   <li>&lt;strong&gt;</li>
+   <li>&lt;em&gt;</li>
+  </ul>
+
+  <p class="gra">ブロック要素（Block Element）</p>
+  <ul>
+   <li>要素は常に新しい行から開始され、その行全体の幅を占有します。</li>
+   <li>高さと幅を指定することができます。</li>
+   <li>他のブロック要素とは異なる行に配置されます。</li>
+  </ul>
+  <p><strong>代表的なブロック要素:</strong></p>
+  <ul>
+   <li>&lt;div&gt;</li>
+   <li>&lt;p&gt;</li>
+   <li>&lt;h1&gt; ～ &lt;h6&gt;</li>
+   <li>&lt;ul&gt; と &lt;li&gt;</li>
+   <li>&lt;table&gt;</li>
+  </ul>
+
+  <p>これらの違いを理解しておくとお得ですよ？<br>
+   要素をどのように配置してスタイルを適用するか。<br>
+   そういったことを考える際の選択肢が広がります。</p>
+
+  <p class="codegra" id="checkdesign_js">タップするとチェックが変化するunderline.js</p>
+  <p>underline.jsというのは私の編集都合です。お気になさらず。</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+document.addEventListener('DOMContentLoaded', () => {
+ const buttons = document.querySelectorAll('.inline-button');
+
+ buttons.forEach(button => {
+  button.addEventListener('click', () => {
+   if (button.textContent === '□') {
+    button.textContent = '✅';
+   } else {
+    button.textContent = '□';
+   }
+  });
+ });
+});
+
+</code></pre>
+  </div>
+
+  <h2>ボタンのクリックイベント</h2>
+  <p>このJavaScriptコードはページ内の特定のボタン（<span
+    class="codecolor">.inline-button</span>クラスを持つ要素）をクリックしたときに、そのボタンのテキストを変更する機能を実装しています。<br>
+   ボタンのテキストが「□」であれば「✅」に変更し、逆に「✅」であれば「□」に変更します。
+  </p>
+  <p>このクリックイベントも多用するんですよね。<br>
+   一つ一つ、書いていきます。</p>
+
+  <p class="gra">1. DOMContentLoadedイベント</p>
+  <p>
+   <span class="codecolor">document.addEventListener('DOMContentLoaded', () => { ... });</span><br>
+   DOMの読み込みが完了した後に実行される関数を登録します。
+  </p>
+
+  <p class="gra">2. ボタン要素の取得</p>
+  <p>
+   <span class="codecolor">const buttons = document.querySelectorAll('.inline-button');</span><br>
+   <span class="codecolor">.inline-button</span>クラスを持つ全てのボタン要素を取得します。
+  </p>
+
+  <p class="gra">3. イベントリスナーの追加</p>
+  <p>
+   <span class="codecolor">buttons.forEach(button => { ... });</span><br>
+   取得したボタン要素それぞれにクリックイベントリスナーを追加します。
+  </p>
+
+  <p class="gra">4. クリック時の動作</p>
+  <p>
+   <span class="codecolor">button.addEventListener('click', () => { ... });</span><br>
+   ボタンがクリックされたときの処理を定義します。<br>
+   <span class="codecolor">if (button.textContent === '□') { ... } else { ... }</span><br>
+   ボタンのテキストが「□」であれば「✅」に変更し、逆に「✅」であれば「□」に変更します。
+  </p>
+
+  <p class="gra">全体の流れ</p>
+  <ol>
+   <li>ページのDOMが完全に読み込まれると、<span class="codecolor">DOMContentLoaded</span>イベントが発生します。</li>
+   <li><span class="codecolor">.inline-button</span>クラスを持つ全てのボタン要素を取得し、<span class="codecolor">buttons</span>に格納します。
+   </li>
+   <li>取得したボタン要素のそれぞれにクリックイベントリスナーを追加します。</li>
+   <li>ボタンがクリックされると、そのボタンのテキストが「□」であれば「✅」に変更し、逆に「✅」であれば「□」に変更します。</li>
+  </ol>
+
+  <h2>DOMについて理解する</h2>
+
+  <p>DOMは「Document Object Model」の略で、ウェブページの構造を表現するためのオブジェクトモデルです。<br>
+   簡単に言うと、HTMLやXML文書をプログラムから操作できるようにするための仕組みです。</p>
+
+  <h4>DOMの基本概念</h4>
+
+  <dl>
+   <dt>ツリー構造</dt>
+   <dd>DOMは文書全体をツリー状の構造として表現します。<br>
+    各要素（タグ）はノードとして扱われ、そのノードは子ノードを持つことができます。</dd>
+   <dd>例えばHTML文書の場合、&lt;html&gt;タグがルートノードで、その下に&lt;head&gt;と&lt;body&gt;のノードが続きます。</dd>
+
+   <dt>ノード</dt>
+   <dd>ノードは文書の各部分を表します。<br>
+    主要なノードタイプには、要素ノード（&lt;div&gt;, &lt;p&gt;など）、テキストノード（要素内のテキスト）、属性ノード（id, classなど）があります。</dd>
+
+   <dt>API</dt>
+   <dd>DOMはJavaScriptなどのプログラミング言語から文書を操作するためのAPI（アプリケーションプログラミングインターフェース）を提供します。</dd>
+   <dd>DOMを使うことで、要素の取得や属性の変更、イベントの追加などが可能になります。</dd>
+  </dl>
+
+  <h4>DOMを使った基本操作</h4>
+  <ol>
+   <li><strong>要素の取得</strong>:
+    <ul>
+     <li><span class="codecolor">document.getElementById('id名')</span>：指定したIDの要素を取得します。</li>
+     <li><span class="codecolor">document.querySelector('セレクター')</span>：指定したセレクターに一致する最初の要素を取得します。</li>
+    </ul>
+   </li>
+   <li><strong>属性の変更</strong>:
+    <ul>
+     <li><span class="codecolor">element.setAttribute('属性名', '値')</span>：要素の属性を変更します。</li>
+     <li><span class="codecolor">element.classList.add('クラス名')</span>：要素にクラスを追加します。</li>
+    </ul>
+   </li>
+   <li><strong>イベントの追加</strong>:
+    <ul>
+     <li><span class="codecolor">element.addEventListener('イベント名', 関数)</span>：要素にイベントリスナーを追加します。<br>
+      例えば、今回のようにクリックイベントを追加する場合などですね。
+     </li>
+    </ul>
+   </li>
+  </ol>
+
+  <h4>DOMの具体例</h4>
+  <p>次にあるコードはDOMを使った簡単な例です。</p>
+
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;DOMの基本例&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;myDiv&quot;&gt;こんにちは、世界！&lt;/div&gt;
+    &lt;button id=&quot;myButton&quot;&gt;クリックしてね&lt;/button&gt;
+
+    &lt;script&gt;
+     document.addEventListener(&#39;DOMContentLoaded&#39;, () =&gt; {
+      const myDiv = document.getElementById(&#39;myDiv&#39;);
+      const myButton = document.getElementById(&#39;myButton&#39;);
+
+      myButton.addEventListener(&#39;click&#39;, () =&gt; {
+       myDiv.textContent = &#39;ボタンがクリックされました！&#39;;
+      });
+     });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+  </div>
+  <p>この例では、ボタンをクリックすると&lt;div&gt;のテキストが変わります。<br>
+   これがDOMを使った操作の基本的な使い方です。<br>
+   DOMの理解が深まると、ウェブ開発の様々な場面で役立つ知識となります。</p>
+
+  <h3>小さい画像を並べる</h3>
+  <p>ここで使われている<a href="/contents/codeinfo.html#flexcss">CSSのフレックスボックスレイアウト</a>については、すでに説明してあります。</p>
+  <p class="codegra" id="w3c_footer">w3cの小さい画像を横に並べるfooter.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* w3ccheck クラスに対してフレックスボックスを使用して、要素を中央に揃える */
+div.w3ccheck {
+    display: flex; /* フレックスボックスを使う */
+    align-items: center; /* 中央に揃える */
+}
+
+/* w3ccheck クラス内の img 要素に対して、右側に10ピクセルの余白を追加する */
+.w3ccheck img {
+    margin-right: 10px; /* 右側に10ピクセルの余白 */
+}
+
+</code></pre>
+  </div>
+  <p>このサイトの一番下にW3Cのマークがあります。<br>
+   それを並べるのに使っていますね。<br>
+   一応、W3CとWeb標準について書いてみますか。</p>
+
+  <h4>Web標準について</h4>
+  <p>ウェブサイトビルダーで作成されたサイトはともかく、コードを書いていくことで作っていく個人サイトであれば、極力このWeb標準を意識すると良いです。<br>
+   構築段階で失敗しないからです。<br>
+   デザインやカッコいい動作は後から考えれば良いのですよ。</p>
+
+  <p>Web標準とは、主にW3C（World Wide Web Consortium）によって策定された、Web技術に関する標準的な規格やガイドラインのことです。<br>
+   これらの標準は、Webブラウザやその他の閲覧環境に依存せず、どのような環境でも同じように表示・動作することを目的としています。</p>
+
+  <p class="gra">Web標準の主な目的</p>
+  <dl>
+   <dt>1. 互換性の確保</dt>
+   <dd>異なるブラウザやデバイス間で一貫した表示と動作を保証します。</dd>
+   <dt>2. アクセシビリティの向上</dt>
+   <dd>障害のある人々を含むすべてのユーザーがWebコンテンツにアクセスできるようにします。</dd>
+   <dt>3. 品質の向上</dt>
+   <dd>Webコンテンツの品質を高め、ユーザー体験を向上させます。</dd>
+  </dl>
+
+  <p class="gra">代表的なWeb標準</p>
+
+  <dl>
+   <dt>HTML</dt>
+   <dd>Webページの構造を定義するマークアップ言語。</dd>
+   <dt>CSS</dt>
+   <dd>Webページのスタイルやレイアウトを定義するスタイルシート言語。</dd>
+   <dt>JavaScript</dt>
+   <dd>Webページに動的な機能を追加するプログラミング言語。</dd>
+  </dl>
+
+  <p class="gra">W3Cの役割</p>
+  <p>W3CはWeb技術の標準化を推進するために設立された非営利団体であり、HTMLやCSS、XMLなど多くの仕様を公開しています。<br>
+   Webの勉強をすれば、必ずと言って良いほど教わる組織ですね。<br>
+   このような組織が策定する標準仕様があることで、Web開発者は一貫したルールに基づいてWebサイトを構築でき、Webサイトの互換性や品質が保たれます。<br>
+   Web標準に準拠することで、開発者はより広範なユーザーに対してリッチなインタラクティブ体験を提供することができます。</p>
+
+  <h3>ソースコードを美しく表示する</h3>
+
+  <p class="codegra" id="code_footer">ソースコードを綺麗に表示するfooter.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* コードコンテナのスタイル定義 */
+.code-container {
+    background-color: #2d2d2d; /* 背景色を暗い灰色に設定 */
+    border-radius: 8px; /* 角を8ピクセルの半径で丸める */
+    padding: 1px; /* 内側の余白を1ピクセルに設定 */
+    overflow: hidden; /* コンテナの内容があふれないようにする */
+    color: #f8f8f2; /* テキストの色を明るい灰色に設定 */
+    font-family: 'Courier New', Courier, monospace; /* フォントを等幅フォントに設定 */
+}
+
+/* pre要素のスタイル定義 */
+pre {
+    margin: 0 !important; /* マージンを0に強制的に設定 */
+    padding: 1px 20px !important; /* 内側の余白を上下1ピクセル、左右20ピクセルに強制的に設定 */
+    white-space: pre-wrap; /* テキストが改行されるように設定 */
+}
+
+/* codecolor クラスのスタイル定義 */
+.codecolor {
+    color: #0033ff; /* テキストの色を青色に設定 */
+}
+
+</code></pre>
+  </div>
+  <p>これはソースコードを表示するエリアに適用しているCSSです。<br>
+   本文中にコードを表示する時も青字にするか、太字にするかで差別化するだけで、codeタグは使っていないですね。<br>
+   なんか読みにくいし。<br>
+   <a href="https://prismjs.com/">prismjs</a>を使って各種の言語に応じたシンタックスハイライトを付けています。
+  </p>
+
+
+  <h3>特定範囲にテキストを書く</h3>
+  <p class="codegra" id="lefttext_footer">特定範囲内にテキスト表示するfooter.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* portal クラスのスタイル定義 */
+.portal {
+    text-align: left; /* テキストを左揃えにする */
+    width: 55%; /* 幅を55%に設定する */
+    margin-left: 0; /* 左の余白を0に設定する */
+    max-width: 100%; /* 最大幅を100%に設定する */
+}
+
+</code></pre>
+  </div>
+  <p>このサイトの一番下に私のポータルサイトの案内が掲載されていますが、スクロールトップボタンが右側にあるため、テキストは左側に寄せる必要があります。<br>
+   そのために書いているCSSですね。</p>
+
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/css_tidbit.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

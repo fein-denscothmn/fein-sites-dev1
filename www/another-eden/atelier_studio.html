@@ -307,13 +307,21 @@
       <dd><a href="/contents/videopage.html#google_video_css">Google Drive版の動画を掲載する</a></dd>
 
       <dt>header.css</dt>
-      <dd><a href="/contents\codeinfo.html#headeranimation_css">ヘッダー画像にアニメーションを付ける</a></dd>
-      <dd><a href="/contents\codeinfo.html#headerglobal_css">グローバルナビゲーションを構成する</a></dd>
+      <dd><a href="/contents/codeinfo.html#headeranimation_css">ヘッダー画像にアニメーションを付ける</a></dd>
+      <dd><a href="/contents/codeinfo.html#headerglobal_css">グローバルナビゲーションを構成する</a></dd>
 
       <dt>footer.css</dt>
-      <dd><a href="/contents\javascript_footer.html#scrollbutton_footer_css">スクロールトップボタン</a></dd>
-      <dd>編集中</dd>
+      <dd><a href="/contents/javascript_footer.html#scrollbutton_footer_css">スクロールトップボタン</a></dd>
+      <dd><a href="/contents/css_tidbit.html#w3c_footer">w3cの小さい画像を横に並べる</a></dd>
+      <dd><a href="/contents/css_tidbit.html#hr_footer">両側が細くなる黒い罫線を作る</a></dd>
+      <dd><a href="/contents/css_tidbit.html#code_footer">ソースコードを綺麗に表示する</a></dd>
+      <dd><a href="/contents/css_tidbit.html#lefttext_footer">特定範囲内にテキスト表示する</a></dd>
+      <dd><a href="/contents/javascript_footer.html#footer_html">フッターの共通記載：commongdl.html</a><br>
+       差し込まれるタイプの特別なhtmlファイルです。</dd>
+      <dd><a href="/contents/javascript_footer.html#common_footer_css">フッターの共通記載を浮き立たせる</a></dd>
+      <dd>sitemapから先は編集中</dd>
      </dl>
+
 
     </div>
 
@@ -336,6 +344,8 @@
      <li><a href="/contents/javascriptinfo.html#collapsible_js">collapsible.js</a> 折り畳みエリアを作る</li>
      <li><a href="/contents/javascriptinfo.html#feinfade_js">feinfade.js</a> 画像のフェードイン＋アウトのアニメーションを作る</li>
      <li><a href="/contents/no_copying.html#imgcut_js">imgcut.js</a> 画像をカットしつつ１枚のイラストとして表示する</li>
+     <li><a href="/contents/tabui.html#tab_js">tab.js</a> タブを作る</li>
+     <li><a href="/contents/javascript_footer.html#common_js">common.js</a> フッターの共通記載を挿入する</li>
     </ul>
 
     <div class="content">
@@ -347,19 +357,21 @@
      </dl>
 
      <dt>feinScroll.js</dt>
-     <dd><a href="/contents\javascript_footer.html#feinScroll_js">スクロールを追いかけるボタンを実装する</a></dd>
-     <dd><a href="/contents\javascriptinfo.html#imagescroll_feinScroll_js">ヘッダーのロゴ画像をスクロールする</a></dd>
+     <dd><a href="/contents/javascript_footer.html#feinScroll_js">スクロールを追いかけるボタンを実装する</a></dd>
+     <dd><a href="/contents/javascriptinfo.html#imagescroll_feinScroll_js">ヘッダーのロゴ画像をスクロールする</a></dd>
+     </dl>
+
+     <dt>underline.js</dt>
+     <dd><a href="/contents/css_tidbit.html#checkdesign_js">タップするとチェックが変化する</a></dd>
+     <dd>編集中</dd>
      </dl>
 
     </div>
 
     <p>
      color.js<br>
-     common.js<br>
      feinheadline1.js<br>
-     menu.js<br>
-     tab.js<br>
-     underline.js</p>
+     menu.js</p>
 
     <ul>
      <li>brython.js（このページにもあるJSツール）</li>
@@ -997,6 +1009,8 @@ git push origin main
      <dd>まとめて変更して抜け漏れを防ぐ</dd>
      <dt><button class="inline-button">□</button>文章をコピー</dt>
      <dd>画像やUIを作る前に文章のみ、過去のノートや<a href="https://sites.google.com/view/feins-portal/">fein's portal</a>からコピー＋リライト</dd>
+     <dt><button class="inline-button">□</button>metaタグ等の編集</dt>
+     <dd>文章を書けたら、要約部分等を仕上げる。</dd>
     </dl>
    </div>
 
@@ -1024,35 +1038,44 @@ git push origin main
 
     <p class="gra">コード管理</p>
     <ul>
-     <li>クリアしたWebページから順に長文を削除する。<br>
-      👉：<a href="/contents/site_create.html">個人サイト制作</a></li>
-     <li><a href="https://github.com/fein-denscothmn">GitHub</a>のリポジトリに「Fix: Update and improve web page
-      content」メッセージを添えつつソースコードをプッシュする</li>
+     <li>クリアしたWebページから順に長文を整理する。<br>
+      👉：特に<a href="/contents/site_create.html">個人サイト制作</a>のサイトマップ。</li>
+     <li><a href="https://github.com/fein-denscothmn">GitHub</a>のリポジトリに「fein write...」メッセージを添えつつ、ソースコードをステージ（Stage
+      Changes）→コミット（Commit）→プッシュ（Push）する。</li>
     </ul>
    </div>
 
    <p class="gra">基礎デザインを作っているstyle.css</p>
    <p>下部の「CSS elements」をタップすると、コード全体をチェックできます。</p>
-   <ul>
-    <li><a href="/contents\codeinfo.html#link_style">デフォルトの青に少し手を入れたリンク</a></li>
-    <li><a href="/contents\codeinfo.html#sitemaplink_style">サイトマップ用の目立つリンク</a></li>
-    <li><a href="/contents\codeinfo.html#mimics_style">見出しのように使う文字装飾を描く</a></li>
-    <li><a href="/contents\codeinfo.html#stickynote_style">立体的な付箋を描く</a></li>
-    <li><a href="/contents\codeinfo.html#bold_style">太字にして定義リストを読みやすくする</a></li>
-    <li><a href="/contents\codeinfo.html#spacer_style">手軽に余白を設定する</a></li>
-    <li><a href="/contents\codeinfo.html#list_style">箇条書きの余分な余白を削除する</a></li>
-    <li><a href="/contents\codeinfo.html#body_style">bodyを綺麗に整える</a></li>
-    <li><a href="/contents\codeinfo.html#utf8_style">文字コードをutf-8とする</a></li>
-    <li><a href="/contents\heading_css.html#heading_style">統一感を持たせた見出しを作る</a></li>
-    <li><a href="/contents\table_css.html#table_style">浮かび上がる表を作る</a></li>
-    <li><a href="/contents\graphic_css.html#tableimage_style">敢えて表の中に画像を入れる</a></li>
-    <li><a href="/contents\graphic_css.html#grastaimage_style">グラスタ表の火力20倍の話に添える画像</a></li>
-    <li><a href="/contents\graphic_css.html#imagesize_style">画像によって大きさを使い分ける</a></li>
-    <li><a href="/contents\javascriptinfo.html#fadeanimation_style">フェードインとフェードアウトの画像アニメーション</a></li>
-    <li><a href="/contents\responsive_design.html#responsivedesign_style">レスポンシブデザインを作る</a></li>
-   </ul>
+   <div class="content">
+    <img src="/another-eden/anaimage/ライザ杖.jpg" alt="ライザ杖" class="graphicsaki right-image fade-in-out">
 
+    <ul>
+     <li><a href="/contents/codeinfo.html#utf8_style">文字コードをutf-8とする</a></li>
+     <li><a href="/contents/codeinfo.html#body_style">bodyを綺麗に整える</a></li>
+     <li><a href="/contents/codeinfo.html#stickynote_style">立体的な付箋を描く</a></li>
+     <li><a href="/contents/codeinfo.html#spacer_style">手軽に余白を設定する</a></li>
+     <li><a href="/contents/table_css.html#table_style">浮かび上がる表を作る</a></li>
+     <li><a href="/contents/codeinfo.html#link_style">デフォルトの青に少し手を入れたリンク</a></li>
+     <li><a href="/contents/codeinfo.html#sitemaplink_style">サイトマップ用の目立つリンク</a></li>
+     <li><a href="/contents/codeinfo.html#mimics_style">見出しのように使う文字装飾を描く</a></li>
+     <li><a href="/contents/codeinfo.html#bold_style">太字にして定義リストを読みやすくする</a></li>
+     <li><a href="/contents/codeinfo.html#list_style">箇条書きの余分な余白を削除する</a></li>
+     <li><a href="/contents/codeinfo.html#fonesize_style">フォントサイズやカラーを指定する</a></li>
+     <li><a href="/contents/heading_css.html#heading_style">統一感を持たせた見出しを作る</a></li>
+     <li><a href="/contents/graphic_css.html#tableimage_style">敢えて表の中に画像を入れる</a></li>
+     <li><a href="/contents/graphic_css.html#grastaimage_style">グラスタ表の火力20倍の話に添える画像</a></li>
+     <li><a href="/contents/graphic_css.html#imagesize_style">画像によって大きさを使い分ける</a></li>
+     <li><a href="/contents/javascriptinfo.html#fadeanimation_style">フェードインとフェードアウトの画像アニメーション</a></li>
+     <li><a href="/contents/responsive_design.html#responsivedesign_style">レスポンシブデザインを作る</a></li>
+     <li><a href="/contents/tabui.html#tab_style">タブを作る</a></li>
+     <li><a href="/another-eden/atelier_studio.html#pythontab_style">PythonのタブUIを装飾する</a></li>
+     <li><a href="/contents/css_tidbit.html#checkdesign_style">タップするとチェックが変化する</a></li>
+     <li><a href="/contents/css_tidbit.html#hrdesign_style">隅に行くほど細く消えかかる罫線を作る</a></li>
+     <li>残りはWallpaperのみ</li>
+    </ul>
 
+   </div>
 
   </div>
   <!--●２タブの開始地点●-->
@@ -1171,8 +1194,18 @@ git push origin main
 </code></pre>
    </div>
 
-  </div>
+   <div class="spacer"></div>
 
+   <div class="code-container">
+    <pre><code class="language-html">
+&lt;!--本文中にコードを記載する場合に使う--&gt;
+&lt;span class=&quot;codecolor&quot;&gt;code &amp; programming&lt;/span&gt;
+
+</code></pre>
+   </div>
+
+  </div>
+  <!--●２タブの終了地点●-->
 
   <p class="gra">CSS elements</p>
   <button class="collapsible">タップして開く ▼</button>
@@ -1392,8 +1425,7 @@ p.codegra {
  margin-top: 30px;
 }
 
-/* Text settings ●start● */
-
+/* ★フォントサイズやカラーを指定する */
 span.small-orange-text {
  font-size: 0.9em;
  color: #cc3300;
@@ -1402,8 +1434,6 @@ span.small-orange-text {
 span.small-text {
  font-size: 0.8em;
 }
-
-/* Text settings ●end● */
 
 /* ★浮かび上がる表を作る */
 table {
@@ -1501,7 +1531,6 @@ img.graphicmini {
  border-radius: 10px;
 }
 
-/* Images to accompany the short story on the table */
 img.graphicsaki {
  margin: 10px;
  display: block;
@@ -1510,7 +1539,6 @@ img.graphicsaki {
  border-radius: 10px;
 }
 
-/* Wrap the text around the image to the right */
 img.right-image {
  float: right;
 }
@@ -1583,8 +1611,6 @@ img.horizontally {
  height: auto;
 }
 
-/* Image settings ●end● */
-
 /* ★サイトマップ用の目立つリンク */
 .custom-link {
  color: #1A73E8;
@@ -1606,7 +1632,7 @@ a:hover {
  color: #00A2ED;
 }
 
-/* タブ式表示 */
+/* ★タブを作る */
 .tabs-fein {
  display: flex;
  border-bottom: 1px solid #ccc;
@@ -1652,7 +1678,7 @@ a:hover {
  transform: translateX(0);
 }
 
-/* pythonによるタブ式表示 */
+/* ★PythonのタブUIを装飾する */
 .atelier-tab {
  display: inline-block;
  margin: 0 5px;
@@ -1682,7 +1708,7 @@ a:hover {
  display: block;
 }
 
-/* アトリエフラワー */
+/* ★隅に行くほど細く消えかかる罫線を作る */
 hr.atelierflower {
  border: none;
  height: 10px;
@@ -1712,9 +1738,9 @@ hr.atelierflower::before {
  border-radius: 50%;
 }
 
- /* アトリエページのチェックボタン */
+ /* ★タップするとチェックが変化する */
 .inline-button {
-  display: inline; /* ボタンをインライン表示にする */
+  display: inline;
   font-size: 1rem;
   padding: 5px 10px;
   cursor: pointer;
@@ -2225,7 +2251,7 @@ for tab in tabs:
   <h3>装飾要素のCSSコード</h3>
   <p>CSSはプログラミング風に考えると余計にこんがらがるので、単純にコメントアウトを付けてコードを紹介します。</p>
 
-  <p class="codegra">タブUIを装飾するcss</p>
+  <p class="codegra" id="pythontab_style">タブUIを装飾するstyle.css</p>
   <div class="code-container">
    <pre><code class="language-css">
 /* タブのスタイル */
@@ -2260,6 +2286,7 @@ for tab in tabs:
 .atelier-active-content {
  display: block; /* アクティブなコンテンツを表示 */
 }
+
 </code></pre>
   </div>
 
@@ -2329,7 +2356,6 @@ for tab in tabs:
   <!-- ライザ天上げ拡大.jpg
 ライザアルマ.jpg
 ライザ指輪.jpg
-ライザ杖.jpg
 ライザ頑張る.jpg
 錬金術極める.jpg
 ライザ喜顔.jpg

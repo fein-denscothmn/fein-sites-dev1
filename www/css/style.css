@@ -1,7 +1,7 @@
+/* ★文字コードをutf-8とする */
 @charset "UTF-8";
 
-/* body setting */
-/* Checked */
+/* ★bodyを綺麗に整える */
 body {
  font-family: 'Lato', 'Noto Sans JP', sans-serif;
  font-size: 15px;
@@ -15,16 +15,13 @@ body {
  background-color: white;
 }
 
-/* responsive design ●start●*/
-/* Checked */
+/* ★レスポンシブデザイン */
 .feincontainer {
  width: 90%;
  margin: 0 auto;
  box-sizing: border-box;
 }
 
-/* Mobile adjustments */
-/* Checked */
 @media (max-width: 600px) {
  .feincontainer {
   font-size: 0.875em;
@@ -37,8 +34,6 @@ body {
  }
 }
 
-/* Computer adjustments */
-/* Checked */
 @media (min-width: 601px) {
  .feincontainer {
   width: 100%;
@@ -52,22 +47,19 @@ body {
  }
 }
 
-/* Checked */
-/* responsive design ●end●*/
-
-/* list */
+/* ★箇条書きの余分な余白を削除する */
 ul,
 ol {
  margin-left: 0;
  padding-left: 25px;
 }
 
-/* spacer */
+/* ★手軽に余白を設定する */
 div.spacer {
  height: 20px;
 }
 
-/* words explained */
+/* ★太字にして定義リストを読みやすくする */
 dt {
  font-weight: bold;
 }
@@ -76,7 +68,7 @@ dd {
  margin-left: 10px;
 }
 
-/* Sticky note settings ●start● */
+/* ★立体的な付箋を描く */
 p.feintag {
  display: inline-block;
  position: relative;
@@ -104,9 +96,7 @@ p.feintag {
  filter: blur(4px);
 }
 
-/* Sticky note settings ●end● */
-
-/* Heading settings ●start● */
+/* ★統一感を持たせた見出しを作る */
 h1.background-waveimage-heading {
  background-image: url('../image/hone.png');
  background-size: contain;
@@ -194,9 +184,7 @@ h5 {
  color: rgba(0, 0, 0, 0.7);
 }
 
-/* Heading settings ●end● */
-
-/* Text settings ●start● */
+/* ★見出しのように使う文字装飾を描く */
 p.gra {
  display: block;
  width: fit-content;
@@ -217,6 +205,7 @@ p.codegra {
  margin-top: 30px;
 }
 
+/* ★フォントサイズやカラーを指定する */
 span.small-orange-text {
  font-size: 0.9em;
  color: #cc3300;
@@ -226,9 +215,7 @@ span.small-text {
  font-size: 0.8em;
 }
 
-/* Text settings ●end● */
-
-/* Table settings ●start● */
+/* ★浮かび上がる表を作る */
 table {
  width: 100%;
  border-collapse: collapse;
@@ -299,10 +286,7 @@ caption {
  margin: 10px 0;
 }
 
-/* Table settings ●end● */
-
-/* Image settings ●start● */
-/* large image */
+/* ★画像によって大きさを使い分ける */
 img.biggraphic {
  margin: 10px;
  display: block;
@@ -311,7 +295,6 @@ img.biggraphic {
  border-radius: 10px;
 }
 
-/* normal size image */
 img.graphic {
  margin: 10px;
  display: block;
@@ -320,7 +303,6 @@ img.graphic {
  border-radius: 10px;
 }
 
-/* small image */
 img.graphicmini {
  margin: 10px;
  display: block;
@@ -329,7 +311,6 @@ img.graphicmini {
  border-radius: 10px;
 }
 
-/* Images to accompany the short story on the table */
 img.graphicsaki {
  margin: 10px;
  display: block;
@@ -338,7 +319,6 @@ img.graphicsaki {
  border-radius: 10px;
 }
 
-/* Wrap the text around the image to the right */
 img.right-image {
  float: right;
 }
@@ -347,7 +327,7 @@ div.content {
  overflow: hidden;
 }
 
-/* Fade in and fade out animation */
+/* ★フェードインとフェードアウトの画像アニメーション */
 img.fade-in-out {
  opacity: 0;
  transition: opacity 1s ease-in-out;
@@ -366,7 +346,7 @@ img.wallpaper {
  border-radius: 10px;
 }
 
-/* Two side-by-side images to accompany the short story on the front */
+/* ★グラスタ表の火力20倍の話に添える画像 */
 .grastaimage {
  display: flex;
  justify-content: space-between;
@@ -380,7 +360,7 @@ img.wallpaper {
  border-radius: 10px;
 }
 
-/* image in table */
+/* ★敢えて表の中に画像を入れる */
 div.gtable {
  display: flex;
  flex-direction: column;
@@ -411,9 +391,7 @@ img.horizontally {
  height: auto;
 }
 
-/* Image settings ●end● */
-
-/* For site map of each corner. Link settings. ●start● */
+/* ★サイトマップ用の目立つリンク */
 .custom-link {
  color: #1A73E8;
  font-weight: bold;
@@ -425,9 +403,7 @@ img.horizontally {
  text-decoration: underline;
 }
 
-/* For site map of each corner. Link settings. ●end● */
-
-/* Links are unified settings. Google blue. Microsoft blue when hovering. ●start● */
+/* ★デフォルトの青に少し手を入れたリンク */
 a {
  color: #1A73E8;
 }
@@ -436,10 +412,7 @@ a:hover {
  color: #00A2ED;
 }
 
-/* Links are unified settings. Google blue. Microsoft blue when hovering. ●end● */
-
-
-/* タブ式表示 */
+/* ★タブを作る */
 .tabs-fein {
  display: flex;
  border-bottom: 1px solid #ccc;
@@ -485,7 +458,7 @@ a:hover {
  transform: translateX(0);
 }
 
-/* pythonによるタブ式表示 */
+/* ★PythonのタブUIを装飾する */
 .atelier-tab {
  display: inline-block;
  margin: 0 5px;
@@ -515,7 +488,7 @@ a:hover {
  display: block;
 }
 
-/* アトリエフラワー */
+/* ★隅に行くほど細く消えかかる罫線を作る */
 hr.atelierflower {
  border: none;
  height: 10px;
@@ -545,10 +518,9 @@ hr.atelierflower::before {
  border-radius: 50%;
 }
 
-/* アトリエページのチェックボタン */
+/* ★タップするとチェックが変化する */
 .inline-button {
  display: inline;
- /* ボタンをインライン表示にする */
  font-size: 1rem;
  padding: 5px 10px;
  cursor: pointer;

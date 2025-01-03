@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <!-- Meta tags -->
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="CSSとJavaScriptの書き方に関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta name="keywords" content="個人サイト, CSS, JavaScript, タブ">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="タブを使ってコンテンツを詰め込む">
+ <meta property="og:description" content="CSSの書き方に関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/tabui.html">
+ <!-- Structured Data -->
+ <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "タブを使ってコンテンツを詰め込む",
+      "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/tabui.html",
+      "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+  }
+  </script>
+
+ <!-- CSS -->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <!-- JavaScript -->
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+
+ <!-- Google Fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+
+ <!-- Page Title -->
+ <title>タブを使ってコンテンツを詰め込む</title>
+
+ <!-- Favicon -->
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">タブを使ってコンテンツを詰め込む</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="タブを使ってコンテンツを詰め込むの目次を開く ▼"
+   data-close-text="タブを使ってコンテンツを詰め込むの目次を閉じる ▲">タブを使ってコンテンツを詰め込むの目次を開く
+   ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>タブを使ってコンテンツを詰め込む</span></h1>
+
+  <p>タブを使ったレイアウトは特に利点が多いです。<br>
+   情報を整理し、ユーザーが簡単に必要な情報にアクセスできるようになります。<br>
+   一目で全体の構造が分かりやすい。<br>
+   ページがすっきりと見えて見た目も良いため、ユーザーが快適に閲覧できます。<br>
+   何より直感的な操作がキーポイントかと。<br>
+   タブは一貫したナビゲーションを提供して直感的に使えます。<br>
+   初めての訪問者でもすぐに操作できます。</p>
+
+  <p>このページでは、そういったタブ式レイアウトを初めとして、ちょっとしたUIの工夫について書いていきます。<br>
+   ゆくゆくはjQueryを使ったいろんなパターンとか、掲載していきますよ。</p>
+
+  <h3>このページに関する注意事項</h3>
+  <p>当Webサイト作成者は、例示を目的としてマークアップ及びプログラミング例を提供しており、明示または黙示にかかわらず、いかなる責任も負わないものとします。<br>
+   このページは、説明されているマークアップ及びプログラミング言語、手順を作成およびデバッグするために使用される各種ツールに読者が精通していることを前提にしています。<br>
+   このページは、特定の機能を説明するのに役立つ可能性がありますが、当Webサイト作成者がこれらの例を変更した上で、特定の要件を満たすために追加の機能を提供したり、システムを構築したりすることはできません。<br>
+   加えて、この例の手順に従う場合は、読者の各種ファイルを事前にバックアップすることを推奨いたします。</p>
+
+  <h2>タブを作るCSSとJavaScript</h2>
+  ライブラリを使うかどうかは、要件や好みによるでしょう。
+  無理にどっかのライブラリを使わなくても良いし、ここではまず簡単なコードを紹介していきます。
+
+
+  <p class="codegra" id="tab_style">タブを作るstyle.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* タブのコンテナを作成し、タブを横並びに配置 */
+.fein {
+ display: flex; /* フレックスボックスで配置 */
+ border-bottom: 1px solid #ccc; /* 下線を追加 */
+}
+
+/* タブのスタイルを定義 */
+.tab-fein {
+ border: 1px solid #ccc; /* 枠線を追加 */
+ padding: 10px 20px; /* 内側の余白を設定 */
+ border-radius: 10px 10px 0 0; /* 角を丸める */
+ background-color: rgba(173, 216, 230, 0.3); /* 背景色を薄い青に設定 */
+ cursor: pointer; /* マウスカーソルをポインターに変更 */
+}
+
+/* 最後のタブ以外に右の余白を設定 */
+.tab-fein:not(:last-child) {
+ margin-right: 5px; /* 右側の余白を5pxに設定 */
+}
+
+/* タブにホバーした際のスタイル */
+.tab-fein:hover {
+ background-color: rgba(173, 216, 230, 0.5); /* 背景色を濃くする */
+}
+
+/* アクティブなタブのスタイル */
+.tab-fein.active {
+ background-color: rgba(173, 216, 230, 0.7); /* より濃い背景色に設定 */
+ font-weight: bold; /* 文字を太字に変更 */
+ border-bottom: 3px solid #007BFF; /* 下線を青色に変更 */
+}
+
+/* タブの内容のスタイルを定義 */
+.tab-pane-fein {
+ position: absolute; /* 絶対位置に配置 */
+ width: 95%; /* 幅を95%に設定 */
+ opacity: 0; /* 初期状態は非表示 */
+ border: 1px solid #ccc; /* 枠線を追加 */
+ padding: 10px; /* 内側の余白を設定 */
+ border-radius: 5px; /* 角を丸める */
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影を追加 */
+ transform: translateX(-100%); /* 初期位置を左外に設定 */
+ transition: transform 0.5s ease, opacity 0.5s ease; /* トランジションを設定 */
+}
+
+/* アクティブなタブの内容を表示 */
+.tab-pane-fein.active {
+ position: static; /* 通常の配置に変更 */
+ opacity: 1; /* 表示 */
+ transform: translateX(0); /* 位置をリセット */
+}
+
+</code></pre>
+  </div>
+
+  <p>
+   トランジション（transition）はCSSで要素の状態が変化する際に、その変化を滑らかにアニメーションで表現するためのプロパティです。<br>
+   トランジションを使用することで、要素のスタイルが急激に変わるのではなく、段階的に変わるようになります。
+  </p>
+  <p>このコードでは、タブの内容が切り替わる際に次のようなトランジションが設定されています。</p>
+
+  <div class="code-container">
+   <pre><code class="language-css">
+transform: translateX(0); /* 位置をリセット */
+transition: transform 0.5s ease, opacity 0.5s ease; /* トランジションを設定 */
+
+</code></pre>
+  </div>
+
+  <h4>CSSトランジション</h4>
+
+  <p>
+   <span class="codecolor">transform: translateX(0);</span><br>
+   タブの内容の初期位置を設定しています。<br>
+   <span class="codecolor">translateX(-100%)</span>はタブの内容を左に100%ずらし、<span class="codecolor">translateX(0)</span>
+   は元の位置に戻します。
+  </p>
+  <p>
+   <span class="codecolor">opacity: 0;</span> と <span class="codecolor">opacity: 1;</span><br>
+   タブの内容の表示/非表示を設定しています。<br>
+   非アクティブ時は透明（<span class="codecolor">opacity: 0;</span>）、アクティブ時は表示（<span class="codecolor">opacity: 1;</span>）となります。
+  </p>
+  <p>
+   <span class="codecolor">transition: transform 0.5s ease, opacity 0.5s ease;</span><br>
+   これがトランジションの設定です。<br>
+   <span class="codecolor">transform</span> と <span class="codecolor">opacity</span> の変化を0.5秒かけてスムーズに実行します。<br>
+   <span class="codecolor">ease</span> は変化が始めはゆっくりで中間は速く、終わりにまたゆっくりになるように設定するイージング関数です。
+  </p>
+  <p>
+   このトランジションを使うことで、タブの内容が切り替わる際にアニメーション効果が適用され、ユーザーにとって視覚的に不自然な感覚を与えません。
+  </p>
+
+
+  <p class="codegra" id="tab_js">タブを作るtab.js</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+document.addEventListener('DOMContentLoaded', () => {
+ const tabsFein = document.querySelectorAll('.tab-fein');
+ const tabPanesFein = document.querySelectorAll('.tab-pane-fein');
+
+ tabsFein.forEach(tab => {
+  tab.addEventListener('click', () => {
+   const target = document.getElementById(tab.getAttribute('data-tab'));
+
+   tabsFein.forEach(tab => {
+    tab.classList.remove('active');
+   });
+
+   tabPanesFein.forEach(pane => {
+    pane.classList.remove('active');
+   });
+
+   tab.classList.add('active');
+   target.classList.add('active');
+  });
+ });
+
+ document.querySelector('.tab-fein').classList.add('active');
+ document.getElementById('pane1-fein').classList.add('active');
+});
+
+</code></pre>
+  </div>
+
+  <p>このJavaScriptコードについては、きちんと書いた方が良さそう。<br>
+   初めてこのタイプのコードにチャレンジしたときには、私は紙にぜんぶ書きださないと分からなかったです。<br>
+   では、次の順番に説明していきます。</p>
+  <ol>
+   <li>DOMContentLoadedイベント</li>
+   <li>要素の選択</li>
+   <li>イベントリスナーの追加</li>
+   <li>クラスの切り替え</li>
+   <li>初期状態の設定</li>
+  </ol>
+
+  <p class="gra">1. DOMContentLoadedイベント</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+document.addEventListener('DOMContentLoaded', () => {
+// コードの内容
+});
+
+</code></pre>
+  </div>
+
+  <p>
+   <span class="codecolor">DOMContentLoaded</span>イベントは、HTML文書が完全に読み込まれ、解析された時点で発生します。
+  </p>
+  <p>
+   このイベントはページ全体の読み込みが完了するのを待たずに、DOMの構造が読み込まれた時点で発生します。<br>
+   これでスクリプトの実行を早めることができます。
+  </p>
+
+  <p class="gra">2. 要素の選択</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+const tabsFein = document.querySelectorAll('.tab-fein');
+const tabPanesFein = document.querySelectorAll('.tab-pane-fein');
+
+</code></pre>
+  </div>
+
+  <p>
+   <span class="codecolor">querySelectorAll</span>メソッドは、指定されたCSSセレクターに一致する全ての要素を選択し、<span
+    class="codecolor">NodeList</span>オブジェクトとして返します。
+  </p>
+  <p>
+   ここでは、<span class="codecolor">.tab-fein</span>クラスと<span class="codecolor">.tab-pane-fein</span>クラスを持つ要素をそれぞれ取得しています。
+  </p>
+
+  <p class="gra">3. イベントリスナーの追加</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+tabsFein.forEach(tab => {
+tab.addEventListener('click', () => {
+// コードの内容
+});
+});
+
+</code></pre>
+  </div>
+
+  <p>
+   <span class="codecolor">forEach</span>メソッドを使って、全てのタブ要素に対してクリックイベントリスナーを追加しています。
+  </p>
+  <p>
+   <span class="codecolor">addEventListener</span>メソッドは、指定されたイベント（ここでは<span
+    class="codecolor">click</span>）が発生したときに実行される関数を登録します。
+  </p>
+
+  <p class="gra">4. クラスの切り替え</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+const target = document.getElementById(tab.getAttribute('data-tab'));
+
+tabsFein.forEach(tab => {
+tab.classList.remove('active');
+});
+
+tabPanesFein.forEach(pane => {
+pane.classList.remove('active');
+});
+
+tab.classList.add('active');
+target.classList.add('active');
+
+</code></pre>
+  </div>
+
+  <p>
+   <span class="codecolor">getElementById</span>メソッドを使って、クリックされたタブの<span
+    class="codecolor">data-tab</span>属性値と一致する要素を取得しています。
+  </p>
+  <p>
+   <span class="codecolor">classList</span>オブジェクトを使って、全てのタブとタブの内容から<span
+    class="codecolor">active</span>クラスを削除し、クリックされたタブとその内容に<span class="codecolor">active</span>クラスを追加しています。
+  </p>
+
+  <p class="gra">5. 初期状態の設定</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+document.querySelector('.tab-fein').classList.add('active');
+document.getElementById('pane1-fein').classList.add('active');
+
+</code></pre>
+  </div>
+
+  <p>
+   最初のタブとその内容を初期状態でアクティブにするために、<span class="codecolor">active</span>クラスを追加しています。
+  </p>
+
+  <p>これが全体の流れです。<br>
+   このコードはタブをクリックすると対応する内容が表示され、他のタブとその内容が非アクティブになるように動作します。<br>
+   ちょっと感覚的に分かりにくいかもしれませんが、１行ずつ読んでいけば、自然と全体が見えてきます。</p>
+
+
+
+
+
+
+
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/tabui.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>
