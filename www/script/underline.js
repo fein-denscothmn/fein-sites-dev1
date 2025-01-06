@@ -1,3 +1,4 @@
+// ★見出しに下線を引く
 document.addEventListener("DOMContentLoaded", function () {
  const h3s = document.querySelectorAll("h3");
 
@@ -13,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
  });
 });
 
-// アトリエページのチェックボタン
+// ★アトリエページのチェックボタン
 document.addEventListener('DOMContentLoaded', () => {
  const buttons = document.querySelectorAll('.inline-button');
 

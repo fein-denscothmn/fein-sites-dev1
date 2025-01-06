@@ -492,6 +492,158 @@ pre {
   </p>
 
 
+  <h3>見出しに赤い線を引く</h3>
+  <p>あまり目立つものではありませんが、頻繁に使うh3見出しに少しだけ色を付けています。<br>
+   ユーザーがh3見出しを視界に入れると、赤い下線がサッと引かれるようなアニメーションを付けているんですよね。<br>
+   JavaScriptとCSSをそれぞれ説明します。</p>
+
+  <p class="codegra" id="h3underline_js">h3見出しに赤い線を引くunderline.js</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+document.addEventListener("DOMContentLoaded", function () {
+ const h3s = document.querySelectorAll("h3");
+
+ window.addEventListener("scroll", function () {
+  h3s.forEach(function (h3) {
+   const rect = h3.getBoundingClientRect();
+   if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+    h3.classList.add("visible");
+   } else {
+    h3.classList.remove("visible");
+   }
+  });
+ });
+});
+
+</code></pre>
+  </div>
+
+  <p class="gra">DOMの読み込み完了後に実行</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+document.addEventListener("DOMContentLoaded", function () {
+
+</code></pre>
+  </div>
+
+  <p>この部分はHTML文書が完全に読み込まれた後に関数を実行するためのイベントリスナーを追加しています。<br>
+   スクリプトがページの要素にアクセスできるようになります。</p>
+
+  <p class="gra">h3要素をすべて取得</p>
+
+  <div class="code-container">
+   <pre><code class="language-javascript">
+const h3s = document.querySelectorAll("h3");
+
+</code></pre>
+  </div>
+  <p><span class="codecolor">querySelectorAll</span>メソッドを使用して、ページ内のすべての<span class="codecolor">h3</span>要素を取得し、<span
+    class="codecolor">h3s</span>という変数に保存します。</p>
+
+  <p class="gra">スクロールイベントリスナーの追加</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+window.addEventListener("scroll", function () {
+
+</code></pre>
+  </div>
+
+  <p>この部分ではウィンドウに対してスクロールイベントリスナーを追加しています。<br>
+   ユーザーがページをスクロールするたびに関数が実行されます。</p>
+
+  <p class="gra">各h3要素に対する処理</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+h3s.forEach(function (h3) {
+
+</code></pre>
+  </div>
+  <p><span class="codecolor">forEach</span>メソッドを使用して、取得したすべての<span class="codecolor">h3</span>要素に対して関数を実行します。</p>
+
+  <p class="gra">h3要素の位置を取得</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+const rect = h3.getBoundingClientRect();
+
+</code></pre>
+  </div>
+  <p><span class="codecolor">getBoundingClientRect</span>メソッドを使用して、各<span class="codecolor">h3</span>要素の位置とサイズを取得し、<span
+    class="codecolor">rect</span>という変数に保存します。</p>
+
+  <p class="gra">要素がビューポート内にあるかどうかの確認</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+
+</code></pre>
+  </div>
+  <p><span class="codecolor">rect</span>オブジェクトの<span class="codecolor">top</span>と<span
+    class="codecolor">bottom</span>プロパティを使用して、要素がビューポート（画面の表示領域）内にあるかどうかを確認します。</p>
+
+  <p class="gra">クラスの追加または削除</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+h3.classList.add("visible");
+} else {
+h3.classList.remove("visible");
+
+</code></pre>
+  </div>
+  <p>要素がビューポート内にある場合、<span class="codecolor">visible</span>クラスを追加します。<br>
+   要素がビューポート外にある場合、<span class="codecolor">visible</span>クラスを削除します。</p>
+
+  <p>このスクリプトはユーザーがページをスクロールしたときに、<span class="codecolor">h3</span>要素がビューポート内に入ったり出たりするのに応じて、<span
+    class="codecolor">visible</span>クラスを追加または削除します。<br>
+   このように動作させることで、<span class="codecolor">visible</span>クラスに関連付けられたスタイルやアニメーションを適用することができます。
+  </p>
+
+  <p>ここまでがJavaScriptの説明です。<br>
+   ここから、関連するCSSに移ります。</p>
+
+  <p>次のCSSコードはJavaScriptによって <span class="codecolor">visible</span> クラスが追加されたときに、<span class="codecolor">h3</span> 要素の
+   <span class="codecolor">::after</span> 疑似要素にアニメーションを適用、表示される効果を実現します。
+  </p>
+
+  <p class="codegra" id="h3underline_style">h3見出しに赤い線を引くstyle.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* h3要素のスタイル設定 */
+h3 {
+    display: block; /* 要素をブロックレベルに変更 */
+    width: fit-content; /* 要素の幅を内容に合わせる */
+    background: linear-gradient(to right, rgba(173, 216, 230, 0.2), rgba(173, 216, 230, 0)); /* 背景を右方向のグラデーションに設定 */
+    padding: 10px; /* 内側の余白を10pxに設定 */
+    border-radius: 15px; /* 角を15pxの半径で丸める */
+    margin-top: 30px; /* 上部の余白を30pxに設定 */
+    margin-bottom: 5px; /* 下部の余白を5pxに設定 */
+    position: relative; /* 要素を相対位置に設定 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影を設定 */
+}
+
+/* h3要素の疑似要素::afterのスタイル設定 */
+h3::after {
+    content: ''; /* 空のコンテンツを設定 */
+    position: absolute; /* 絶対位置に設定 */
+    bottom: -5px; /* 要素の下端から-5pxに設定 */
+    left: 0; /* 要素の左端に設定 */
+    width: 100%; /* 幅を100%に設定 */
+    height: 3px; /* 高さを3pxに設定 */
+    background: linear-gradient(to right, rgba(255, 0, 51, 0.5), rgba(255, 255, 255, 0.5)); /* 背景を右方向のグラデーションに設定 */
+    transform: scaleX(0); /* スケールを0に設定 */
+    transform-origin: bottom right; /* 変形の基点を右下に設定 */
+    transition: transform 0.5s ease-out; /* 変形のトランジションを設定 */
+}
+
+/* h3要素にvisibleクラスが付与されたときの疑似要素::afterのスタイル設定 */
+h3.visible::after {
+    transform: scaleX(1); /* スケールを1に設定（横方向に伸びる） */
+    transform-origin: bottom left; /* 変形の基点を左下に設定 */
+}
+
+</code></pre>
+  </div>
+  <p>このようにJavaScriptとCSSが合わさって、少しだけ見出し部分に視線が行くような効果を演出しています。</p>
+
   <h3>特定範囲にテキストを書く</h3>
   <p class="codegra" id="lefttext_footer">特定範囲内にテキスト表示するfooter.css</p>
   <div class="code-container">
@@ -508,6 +660,191 @@ pre {
   </div>
   <p>このサイトの一番下に私のポータルサイトの案内が掲載されていますが、スクロールトップボタンが右側にあるため、テキストは左側に寄せる必要があります。<br>
    そのために書いているCSSですね。</p>
+
+
+  <h3>フッターサイトマップ用のリンク</h3>
+  <p class="codegra" id="sitemaplink_footer">フッターに表示するサイトマップリンクを作るfooter.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* .sitemap クラスは、サイトマップのスタイルを定義します */
+.sitemap {
+ margin: 0 0 20px 0;  /* 上、右、下、左の順にマージンを設定：上0、右0、下20px、左0 */
+ padding: 20px;  /* 要素の内側に20ピクセルのパディングを設定 */
+ border: 1px solid #ddd;  /* 1ピクセルの薄い灰色の実線ボーダーを設定 */
+ border-radius: 10px;  /* 要素の角を10ピクセルの半径で丸める */
+ background-color: #f9f9f9;  /* 要素の背景色を薄い灰色に設定 */
+}
+
+/* .fa-sitemap クラスは、アイコンのスタイルを定義します */
+.fa-sitemap {
+ margin-right: 5px;  /* アイコンの右側に5ピクセルのマージンを設定 */
+}
+
+</code></pre>
+  </div>
+  <p>このサイトはいろんなカテゴリーについて書いているため、サイトマップを多重構造にしています。<br>
+   まず全てのページの下部にサイトマップがあり、そこをタップすると各テーマのサイトマップへジャンプする仕組みです。</p>
+
+
+  <h3>SNSの表示</h3>
+  <p>SNSリンクはあまり大仰に付けないようにしています。<br>
+   でも所在は分かるよう、余白を適度に取りつつね。</p>
+  <p class="codegra" id="sns_footer">SNSを表示するfooter.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* .social-links と .footer-links クラスは、リンクリストのスタイルを定義します */
+.social-links,
+.footer-links {
+display: block; /* 要素をブロック要素として表示 */
+text-align: left; /* テキストを左揃えに設定 */
+margin-bottom: 20px; /* 要素の下に20ピクセルの余白を設定 */
+}
+
+/* .social-links a と .footer-links a クラスは、リンクのスタイルを定義します */
+.social-links a,
+.footer-links a {
+color: #007bff; /* リンクのテキスト色を青に設定 */
+text-decoration: none; /* リンクの下線を削除 */
+padding: 0 10px; /* リンクの内側に左右10ピクセルのパディングを設定 */
+display: inline-block; /* 要素をインラインブロック要素として表示 */
+white-space: nowrap; /* テキストの改行を防止 */
+margin-top: 3px; /* リンクの上に3ピクセルの余白を設定 */
+margin-bottom: 3px; /* リンクの下に3ピクセルの余白を設定 */
+}
+
+/* .social-links a:hover と .footer-links a:hover クラスは、リンクのホバー時のスタイルを定義します */
+.social-links a:hover,
+.footer-links a:hover {
+color: #0056b3; /* リンクのテキスト色を濃い青に設定 */
+margin-top: 3px; /* リンクの上に3ピクセルの余白を設定 */
+margin-bottom: 3px; /* リンクの下に3ピクセルの余白を設定 */
+}
+
+/* svg クラスは、SVG要素のスタイルを定義します */
+svg {
+width: 14px; /* SVGの幅を14ピクセルに設定 */
+height: 14px; /* SVGの高さを14ピクセルに設定 */
+fill: #007bff; /* SVGの塗りの色を青に設定 */
+vertical-align: -2px; /* SVGを垂直方向に-2ピクセルずらして配置 */
+}
+
+/* メディアクエリ: 画面幅が600ピクセル以下の時のスタイルを定義します */
+@media (max-width: 600px) {
+
+/* .social-links と .footer-links クラスを縦並びに変更 */
+.social-links,
+.footer-links {
+flex-direction: column; /* フレックスボックスの方向を縦に設定 */
+}
+}
+
+</code></pre>
+  </div>
+
+  <h4>SVGについて</h4>
+  <p>SVG（Scalable Vector Graphics）は画像を表示するフォーマットです。</p>
+
+  <dl>
+   <dt>ベクター形式</dt>
+   <dd>SVGはベクター形式の画像ファイルであり、ピクセルベースのラスタ画像とは異なります。<br>
+    解像度に依存せずに拡大・縮小しても画質が劣化しません。</dd>
+
+   <dt>XMLベース</dt>
+   <dd>SVGファイルはXML（拡張マークアップ言語）形式で記述されており、テキストエディタで編集可能です。<br>
+    プログラムによる動的な生成や操作が容易になります。</dd>
+
+   <dt>軽量</dt>
+   <dd>一般的にSVGファイルはピクセルベースの画像ファイルよりもファイルサイズが小さいため、ウェブサイトの読み込み速度が向上します。</dd>
+
+   <dt>スタイルの柔軟性</dt>
+   <dd>SVGはCSSでスタイルを制御でき、アニメーションやインタラクションも可能です。<br>
+    例えば、ホバー時の色変更や回転アニメーションなどが簡単に実現できます。</dd>
+  </dl>
+
+  <p class="gra">SVGの基本構造</p>
+
+  <div class="code-container">
+   <pre><code class="language-xml">
+&lt;svg width=&quot;100&quot; height=&quot;100&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+  &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;40&quot; stroke=&quot;black&quot; stroke-width=&quot;3&quot; fill=&quot;red&quot; /&gt;
+&lt;/svg&gt;
+
+</code></pre>
+  </div>
+
+  <p>上記の例では、100x100ピクセルのSVGキャンバス内に半径40ピクセルの赤い円を描いています。<br>
+   また、SVGは直接HTMLに埋め込むことができます。<br>
+   これを私のサイトではSNSアイコンの表示に使っています。</p>
+
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+ &lt;title&gt;SVG Example&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+ &lt;svg width=&quot;100&quot; height=&quot;100&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+  &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;40&quot; stroke=&quot;black&quot; stroke-width=&quot;3&quot; fill=&quot;red&quot; /&gt;
+ &lt;/svg&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+</code></pre>
+  </div>
+
+  <p>このようにSVGはさまざまな用途で活用できるとともに、高品質で柔軟性のある画像を扱う際に非常に有用です。<br>
+   覚えておいて損はないかと思いますね。</p>
+
+  <h3>著作権の表示</h3>
+  <p>形式的な文言でも良いから、自作サイトに付けておいた方が良いです。<br>
+   特にSNSは自身で何かしらを発信することから、著作権関連の話題は頻繁に炎上します。<br>
+   昨今のAI問題など、記憶に新しいところです。</p>
+  <p class="codegra" id="copyright_footer">著作権を表示するfooter.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* .copyright クラスは、著作権表示のスタイルを定義します */
+.copyright {
+color: #555; /* テキストの色を薄い灰色に設定 */
+font-size: 12px; /* フォントサイズを12ピクセルに設定 */
+margin-top: 10px; /* 要素の上に10ピクセルの余白を設定 */
+}
+
+</code></pre>
+  </div>
+  <p>加えて、法律は言語の読み書きができれば無資格者でもある一定レベルの解釈が可能であることから、自身の発言の後ろ盾として引用される傾向が強いです。<br>
+   <a
+    href="https://laws.e-gov.go.jp/law/345AC0000000048">著作権法（昭和四十五年法律第四十八号）：e-GOV法令検索</a>というWebサイトもあるものの、専門知識と資格を持つ人ないしは組織の知見を信頼するほうが、安全と言えましょう。
+  </p>
+  <p>ちなみに上記CSSコードには特筆するようなものはありません。</p>
+
+  <h3>資格証の表示</h3>
+  <p>このWebサイトでは、作成者が保有している資格の一部を掲載しています。<br>
+   デジタルの資格証は大きさや形もまちまちであることから、画像ソフトウェアを用いてプレート化してからWebサイトに引っ張るようにしていますね。<br>
+   このタイプのロゴをCSSで適切に配置するのはけっこう大変なので…</p>
+  <p class="codegra" id="certifications_footer">資格証プレートを表示するfooter.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* .biggraphic クラスは、大きな画像のスタイルを定義します */
+.biggraphic {
+max-width: 100%; /* 画像の最大幅を親要素の100%に設定 */
+height: auto; /* 画像の高さを自動的に設定し、アスペクト比を保持 */
+border-radius: 10px; /* 画像の角を10ピクセルの半径で丸める */
+margin-bottom: 20px; /* 画像の下に20ピクセルの余白を設定 */
+}
+
+</code></pre>
+  </div>
+
+  <p>他業界のデジタル資格証は分かりませんが、IT関連の場合、合格するとたいていデジタル資格証の発行を促すメールが届きますよ。<br>
+   資格の認知および知識や技術の伝播を目的として、自身のSNSやWebサイトへ積極的に掲載するよう求められます。<br>
+   <span class="small-orange-text">でも、なぜか情報セキュリティマネジメント試験はデジタル資格証がないのです。<br>国家試験なのに、なぜでしょうね？</span>
+  </p>
+  <p>当然のことながら、このような資格証を掲示できるのは、試験に合格した有資格者のみです。<br>
+   他者のサイトやSNSに掲示されている資格証を盗用するようなことは、絶対にしてはなりません。</p>
 
 
   <!-- ●ここから人間用のフッター● -->

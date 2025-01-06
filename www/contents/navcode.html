@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+
+ <!-- Microsoft tag -->
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+
+ <meta charset="UTF-8">
+
+ <!--基本のメタタグ-->
+ <meta name="description" content="ナビゲーションメニューの作り方に関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta name="keywords" content="個人サイト, ナビゲーションメニュー, パンくずリスト">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="ナビゲーションメニューをCSS・JavaScriptで用意する">
+ <meta property="og:description" content="ナビゲーションメニューの作り方に関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/navcode.html">
+
+ <!--検索ヒット時のアイコン-->
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ナビゲーションメニューをCSS・JavaScriptで用意する",
+  "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/navcode.html",
+  "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+}
+</script>
+
+ <!--レスポンシブデザイン-->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!--CSS-->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <!--JavaScript-->
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <!-- gsapの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <!-- prismの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+
+ <!-- google fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+
+ <!--ページタイトル-->
+ <title>ナビゲーションメニューをCSS・JavaScriptで用意する</title>
+
+ <!--ASノーナのファビコン-->
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">ナビゲーションメニューをCSS・JavaScriptで用意する</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く
+    ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="ナビゲーションメニューをCSS・JavaScriptで用意するの目次を開く ▼"
+   data-close-text="ナビゲーションメニューをCSS・JavaScriptで用意するの目次を閉じる ▲">ナビゲーションメニューをCSS・JavaScriptで用意するの目次を開く
+   ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>ナビゲーションメニューをCSS・JavaScriptで用意する</span></h1>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(3).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>表題ではナビゲーションメニューと書いていますが、Webページを作る時に重要な要素をここで紹介します。<br>
+    パンくずリストは忘れられがちですが、閲覧者がWebサイト内で自分がどこにいるのか知るために重要な情報を提供します。<br>
+    検索ボックスはあったほうが良いけど、何かあった時に面倒だからGoogle製のボックスを設置しています。<br>
+    アコーディオン型の見出しは、特に長くなりがちなWebページの場合はあったほうがよいですね。<br>
+    個人的にはWebページごと切り替わってしまうページリンクは不要と考えています。</p>
+  </div>
+
+  <p>最後に、ハンバーガーメニューです。<br>
+   およそ個人でWebサイトを作ろうという話題になると必ず登場する「メニュー」ですよ。<br>
+   いろんな形があるけど、タップするとズラズラとリンクが表示されるハンバーガータイプのことを指していると考えて良いです。</p>
+
+  <p>ここでは、事後のメンテナンスまで含めてコードを紹介します。</p>
+
+  <h3>このページに関する注意事項</h3>
+  <p>当Webサイト作成者は、例示を目的としてマークアップ及びプログラミング例を提供しており、明示または黙示にかかわらず、いかなる責任も負わないものとします。<br>
+   このページは、説明されているマークアップ及びプログラミング言語、手順を作成およびデバッグするために使用される各種ツールに読者が精通していることを前提にしています。<br>
+   このページは、特定の機能を説明するのに役立つ可能性がありますが、当Webサイト作成者がこれらの例を変更した上で、特定の要件を満たすために追加の機能を提供したり、システムを構築したりすることはできません。<br>
+   加えて、この例の手順に従う場合は、読者の各種ファイルを事前にバックアップすることを推奨いたします。</p>
+
+  <h2>パンくずリスト</h2>
+  <p>これは賛否両論なんですが、私は付けるようにしています。<br>
+   私が閲覧者として他のサイトに行くときもパンくずリストを頼りにするからね。</p>
+
+  <p class="codegra" id="fainpan_html">パンくずリストを作るhtmlコード</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;div&gt;
+   &lt;ol class=&quot;breadcrumb&quot;&gt;
+    &lt;li class=&quot;breadcrumb-item&quot;&gt;&lt;a href=&quot;/&quot;&gt;Home（グラスタの場所一覧表〜入手範囲別〜）&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;breadcrumb-item&quot;&gt;&lt;a href=&quot;site_create.html&quot;&gt;個人サイト制作：サイトマップ&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;breadcrumb-item active&quot; aria-current=&quot;page&quot;&gt;ナビゲーションメニューをCSS・JavaScriptで用意する&lt;/li&gt;
+   &lt;/ol&gt;
+&lt;/div&gt;
+    </code></pre>
+  </div>
+
+  <p>パンくずリストを付けるメリットは、キリがないけどまとめるなら次のようになりますね。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(4).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <dl>
+    <dt>セマンティクスの向上</dt>
+    <dd>リストタグを使用することで、パンくずリストがリスト状のナビゲーション要素であることを明示的に示すことができます。<br>検索エンジンやスクリーンリーダーなどがコンテンツの意味を正しく理解しやすくなります。</dd>
+
+    <dt>アクセシビリティの向上</dt>
+    <dd>スクリーンリーダーなどの補助技術は、リストタグを使って構造化された情報を正確に読み上げることができます。<br>
+     視覚障害者にとって使いやすいWebサイトを作成することができます。<br>
+     アクセシビリティは注意した方が良いですよ？<br>
+     後回しにしないほうが良いと思う。</dd>
+
+    <dt>スタイルの一貫性</dt>
+    <dd>リストタグを使用することで、CSSを用いて統一されたスタイルを簡単に適用できます。<br>
+     例えば、リストアイテム間のスペースや区切り線などのスタイリングが容易になります。<br>
+     私のサイトにあるパンくずリストも、もうちょい工夫してみようかな？<br>
+     でもあんまりゴテゴテしてるデザインは好きじゃないんですよね…<br>
+     やはり自分で見てて満足できるクオリティーじゃないと。</dd>
+
+    <dt>モバイルフレンドリー</dt>
+    <dd>リストタグを使ったパンくずリストは、レスポンシブデザインにも適しています。<br>
+     異なる画面サイズに応じて、リストの表示を柔軟に調整することができます。</dd>
+
+    <dt>コードのシンプル化</dt>
+    <dd>リストタグを使うことで、コードがシンプルで読みやすくなり、メンテナンスや更新がしやすくなります。</dd>
+   </dl>
+
+   <p>次はパンくずリストのCSSですね。<br>
+    これは上記のような理由からリストタグを使いますが、表示の仕方をCSSでコントロールする必要があります。</p>
+  </div>
+
+  <h3>パンくずリストを作るCSS</h3>
+  <p class="codegra" id="fainpan_css">パンくずリストを作るfainpan.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* パンくずリスト全体のスタイル */
+.breadcrumb {
+    display: flex; /* フレックスボックスで横並びに配置 */
+    list-style: none; /* リストのスタイルをなしにする */
+    padding: 10px 15px; /* 内側の余白を調整 */
+    margin: 0; /* 外側の余白をなしにする */
+    background-color: #f8f9fa; /* 背景色を追加 */
+    border-radius: 5px; /* 角を丸くする */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影を追加 */
+    font-size: 0.7em; /* フォントサイズを調整 */
+}
+
+/* 各パンくずリストアイテムの間に区切りを追加 */
+.breadcrumb-item+.breadcrumb-item::before {
+    content: ">"; /* 区切り文字を設定 */
+    padding: 0 10px; /* 区切り文字の左右に余白を追加 */
+    color: #6c757d; /* 区切り文字の色を設定 */
+}
+
+/* パンくずリスト内のリンクのスタイル */
+.breadcrumb-item a {
+    text-decoration: none; /* リンクの下線をなしにする */
+    color: #1A73E8; /* リンクの文字色を設定 (Google blue) */
+    transition: color 0.3s ease; /* ホバー時の色変化にアニメーションを追加 */
+}
+
+/* リンクをホバーしたときのスタイル */
+.breadcrumb-item a:hover {
+    color: #00A2ED; /* リンクの文字色を変更 (Microsoft blue) */
+    text-decoration: underline; /* リンクに下線を追加 */
+}
+
+/* 現在のページのパンくずリストアイテムのスタイル */
+.breadcrumb-item.active {
+    font-weight: bold; /* 文字を太字にする */
+    color: #6c757d; /* 文字色を設定 */
+}
+    </code></pre>
+  </div>
+
+  <p>リストと言うと、箇条書きを連想しますよね？<br>
+   ここで <span class="codecolor">list-style: none;</span> を使うと、リストアイテムのデフォルトの箇条書きスタイル（通常はディスクや数字のようなマーカー）が取り除かれます。<br>
+   こういうのリストアイテムとか言ったりするけど、パンくずリストでは箇条書きのマーカーなしで表示するのが良いと思います。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(5).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>とはいえ、このプロパティはリストアイテムの配置方法には影響しません。<br>
+    そのままではリストのアイテム自体は箇条書き風の縦並びのままです。<br>
+    パンくずリストはアイテムを横並びに配置したいので、追加のCSSスタイルを使用する必要があります。<br>
+    例えば、次のようにフレックスボックスを使ってアイテムを横並びに配置できます。</p>
+  </div>
+
+  <div class="code-container">
+   <pre><code class="language-css">
+  .breadcrumb {
+  display: flex; /* フレックスボックスで横並びに配置 */
+  list-style: none; /* リストのスタイルをなしにする */
+  padding: 10px 15px;
+  margin: 0;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 0.7em;
+  }
+    </code></pre>
+  </div>
+
+  <p>この場合、<span class="codecolor">display: flex;</span> がリストアイテムを横並びに配置する役割を果たします。</p>
+  <p>次は検索ボックスですね。</p>
+
+  <h2>検索ボックス</h2>
+  <p>開口一番言っちゃうけど、自力実装はお勧めしないかな。<br>
+   検索システムなんてそうそう簡単に作れるもんじゃないし、作ったら作ったで面倒な要望案件の原因になります。</p>
+  <p class="codegra" id="fainpangoogle_css">検索ボックスを整えるfainpan.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* 検索コンテナのスタイル */
+.search-container {
+    width: 50%; /* 横幅を50%に設定 */
+    margin-top: 20px; /* パンくずリストの下に配置 */
+    margin-left: auto; /* 右側に配置 */
+    background-color: white; /* 背景色を白に設定 */
+    border-radius: 10px; /* 四隅を丸める */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影を追加 */
+    padding: 5px; /* 上下の内側の余白を縮小 */
+}
+
+/* 検索コンポーネントのスタイル */
+.gcse-search {
+    width: 100%; /* 横幅を親要素に合わせる */
+}
+
+/* 入力フィールドと検索ボタンのスタイル */
+input.gsc-input,
+input.gsc-search-button {
+    width: 100%; /* 入力フィールドとボタンの横幅を100%に設定 */
+    border-radius: 10px; /* 四隅を丸める */
+    padding: 5px; /* 上下の内側の余白を縮小 */
+}
+    </code></pre>
+  </div>
+  <p>私はGoogleの検索ボックスをそのまま借りてきて、上記のようにCSSでデザインしているだけです。<br>
+   ユーザーに入力させるUIを自力実装しないようにしてます。<br>
+   何かあると対応が大変だし、万が一のことがあってもこういう形ならサイト制作者に直接的な責任がかかりません。</p>
+
+  <h2>アコーディオン型の見出し</h2>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(6).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>この手のUIはいろんな実装方法がありますが、私の場合は見出しタグに連動して自動的に生成されるようにJavaScriptで組んでいます。<br>
+    もちろんjQuery等のライブラリを使っても良いしそれが一般的な形でもあるんだけど、まずは簡素なものを書いて設置しておき、様子を見ながらライブラリ等のツールを取り入れていく順番でやってますね。</p>
+  </div>
+
+  <p class="codegra" id="feinheadline_html">アコーディオン型の見出しを差し込むhtmlコード</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;button id=&quot;generate-headings&quot; data-open-text=&quot;ナビゲーションメニューをCSS・JavaScriptで用意するの目次を開く ▼&quot;
+   data-close-text=&quot;ナビゲーションメニューをCSS・JavaScriptで用意するの目次を閉じる ▲&quot;&gt;ナビゲーションメニューをCSS・JavaScriptで用意するの目次を開く
+   ▼&lt;/button&gt;
+～ ここにコンテンツ内容 ～
+ &lt;script src=&quot;/script/feinheadline1.js&quot;&gt;&lt;/script&gt;
+    </code></pre>
+  </div>
+
+  <p>このコードで <span class="codecolor">&lt;script src=&quot;/script/feinheadline1.js&quot;&gt;&lt;/script&gt;</span>
+   をページ末尾に持ってくる理由はいくつかあります。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(7).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <dl>
+    <dt>ページ読み込み速度の向上</dt>
+    <dd>htmlファイルを上から下へ順に解析・レンダリングしていく際に、スクリプトタグが先に来ると、そのスクリプトの読み込みと実行を待つ必要があります。<br>
+     結果的にページ全体の読み込みが遅くなるんだけど、まぁ普通はそんな気にしなくても大丈夫。</dd>
+
+    <dt>DOMの完全な読み込みの確保</dt>
+    <dd>スクリプトがDOM（Document Object Model）を操作する場合、スクリプトが実行される時点でDOMが完全に読み込まれている必要があります。<br>
+     DOMについての詳しい説明は<a href="contents/css_tidbit.html">CSSの小ネタ、ちょっとしたUI作成 > DOMについて理解する</a>をご覧ください。<br>
+     スクリプトタグをページの末尾に置くことで、全てのHTML要素が読み込まれた後にスクリプトが実行されます。<br>
+     これでDOMの操作が確実に行えるようになります。</dd>
+
+    <dt>依存関係の管理</dt>
+    <dd>スクリプトが依存する他のリソースが完全に読み込まれていることを確実にするため、スクリプトタグを末尾に置いたほうが良いです。<br>
+     これでスクリプトの実行時に必要なリソースが揃っていることを保証できます。<br>
+     ここで言うリソースというのは、同一Webページ内で使われているCSSや他のスクリプトを指します。</dd>
+   </dl>
+  </div>
+
+  <p>早い話が、変なバグに悩まされないようセオリー通りにやっているだけです。<br>
+   無理に変化球を投げると動作しないときの原因究明に大変な時間がかかってしまうからね。</p>
+
+  <h3>見出しを作るCSS</h3>
+  <p>見出しについては初めからフル表示されているものもありますよ。<br>
+   どちらでも良いのですが、私の場合はご覧のとおり長いWebページになりがちなので…<br>
+   閲覧者の動きがよりスムーズになるよう、工夫する必要があります。</p>
+  <p class="codegra" id="feinheadline_css">アコーディオン型の見出しを作るfeinheadline.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+@charset "UTF-8";
+
+/* 目次アイテムの基本スタイル */
+.toc-item {
+    color: #1A73E8; /* 文字の色 (Google blue) */
+    font-family: inherit; /* 親要素のフォントファミリーを継承 */
+    font-size: 100%; /* フォントサイズを100%に設定 */
+    margin: 0; /* 外側の余白をなしにする */
+    padding: 5px 0; /* 上下に5pxのパディング */
+    line-height: 2; /* 行間を2に設定 */
+    transition: color 0.3s ease-in-out; /* 色変化のアニメーションを追加 */
+    border-bottom: 1px solid #ddd; /* 各項目の下に薄いボーダーラインを追加 */
+    padding-bottom: 5px; /* ボーダーラインと内容の間に余白を追加 */
+}
+
+/* 目次アイテムをホバーしたときのスタイル */
+.toc-item:hover {
+    color: #00A2ED; /* 文字の色を変更 (Microsoft blue) */
+}
+
+/* インデントのスタイル */
+.indent-1 {
+    text-indent: 1em; /* 半角1字分のインデント */
+}
+
+.indent-3 {
+    text-indent: 3em; /* 半角3字分のインデント */
+}
+
+.indent-5 {
+    text-indent: 4em; /* 半角4字分のインデント */
+}
+
+/* 各見出しタグ用のスタイル */
+.toc-item-h1 a,
+.toc-item-h2 a,
+.toc-item-h3 a,
+.toc-item-h4 a,
+.feinheadline-h5 a,
+.toc-item-h6 a {
+    padding: 5px 10px; /* 内側の余白を追加 */
+}
+
+/* 目次生成ボタンのスタイル */
+#generate-headings {
+    background-color: transparent; /* 背景色を透明に設定 */
+    color: #1A73E8; /* 文字の色 (Google blue) */
+    font-family: inherit; /* 親要素のフォントファミリーを継承 */
+    font-size: 120%; /* フォントサイズを120%に設定 */
+    border-radius: 5px; /* 四隅を丸める */
+    border: none; /* ボーダーをなしにする */
+    text-decoration: underline; /* 下線を追加 */
+    cursor: pointer; /* カーソルをポインターに変更 */
+    text-align: left; /* テキストを左揃えにする */
+    background: linear-gradient(to bottom, rgba(173, 216, 230, 0.5), rgba(173, 216, 230, 0)); /* 背景のグラデーションを追加 */
+    font-weight: bold; /* 文字を太字にする */
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out; /* 背景色と文字色の変化にアニメーションを追加 */
+}
+
+/* 目次生成ボタンをホバーしたときのスタイル */
+#generate-headings:hover {
+    color: #00A2ED; /* 文字の色を変更 (Microsoft blue) */
+    background: linear-gradient(to bottom, rgba(173, 216, 230, 0.2), rgba(173, 216, 230, 0)); /* 背景のグラデーションを変更 */
+}
+
+/* 目次コンテナのスタイル */
+#toc-container {
+    margin-top: 1.5em; /* 上に余白を追加 */
+    height: 0; /* 初期状態の高さを0に設定 */
+    overflow: hidden; /* はみ出たコンテンツを隠す */
+    transition: height 0.5s ease-out; /* 高さの変化にアニメーションを追加 */
+}
+
+/* 目次コンテナが表示されたときのスタイル */
+#toc-container.show {
+    height: auto; /* 高さを自動に設定 */
+}
+    </code></pre>
+  </div>
+
+  <p>こういうページをご覧になるからはご存じと思いますが、「コンテナ」というのは、ある種の箱やエリアといったものを想像して頂けると分かりやすいかと。<br>
+   ここではCSSによるアニメーション設定について見ていきます。</p>
+
+  <h4>CSSのトランジションプロパティでアニメーションを追加</h4>
+
+  <p><span class="codecolor">transition: height 0.5s ease-out;</span> は、CSSのトランジションプロパティを用いて高さの変化にアニメーションを追加するものです。<br>
+   要素の高さが変更される際にスムーズなアニメーション効果が適用されます。<br>
+   このプロパティを詳しく見てみましょう。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(8).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <dl>
+    <dt>transition</dt>
+    <dd>トランジションプロパティ。<br>
+     どのプロパティの変化にアニメーションを適用するかを指定します。<br>
+     ここでは高さ（<span class="codecolor">height</span>）に対してアニメーションを適用しています。</dd>
+
+    <dt>height</dt>
+    <dd>トランジションを適用するプロパティ。<br>
+     要素の高さが変更される時にアニメーションが適用されます。<br>
+     上記通り、高さに対して設定しているわけです。</dd>
+
+    <dt>0.5s</dt>
+    <dd>トランジションの持続時間。<br>
+     ここでは0.5秒（500ミリ秒）で高さの変化が完了するように設定していますが…<br>
+     ちょっと悩んでいます。<br>
+     あるいは1秒とか、もっと遅いほうが良いのかもしれない。<br>
+     まぁそういう悩みから来るコード変更を徹底管理するために<a href="/another-eden/atelier_studio.html">ファンサイト制作のためのアトリエ</a>というページを作ったんだけどね。</dd>
+
+    <dt>ease-out</dt>
+    <dd>トランジションのイージング関数。<br>
+     アニメーションの速度変化を制御します。<br>
+     <span class="codecolor">ease-out</span>
+     はアニメーションの終わりをゆっくりとする効果があります。<br>
+     高さの変更が自然に見えるようになります。
+    </dd>
+   </dl>
+  </div>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(9).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>このプロパティの効果をまとめると、要素の高さが変更される際に、0.5秒間でスムーズなアニメーションを適用し、アニメーションの終わりをゆっくりとすることで、視覚的に自然な効果を実現します。<br>
+    細かいようですが、こういうことをやらないとカクカクしたページになっちゃいます。<br>
+    よく言われるところの「あぁ…個人サイトだね…」と感じにくくできるでしょう。</p>
+  </div>
+
+  <p>次はJavaScriptへ移ります。<br>
+   このCSSと密接に関連しているので、注意して頂ければと思います。</p>
+
+  <h3>見出しを作るJavaScript</h3>
+  <p>このコードは、ページが読み込まれた後に目次を自動生成し、ボタンをクリックすると目次の表示を切り替える仕組みを作っています。<br>
+   ここで作られたものが上述のCSSと絡んで、滑らかな見出しが自動的に生成されるようになります。</p>
+
+  <p class="codegra" id="feinheadline1_js">アコーディオン型の見出しを作るfeinheadline1.js</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+document.addEventListener("DOMContentLoaded", function () {
+ let headingsGenerated = false;
+ document.getElementById("generate-headings").addEventListener("click", function () {
+  let tocContainer = document.getElementById("toc-container");
+  let button = document.getElementById("generate-headings");
+  if (!headingsGenerated) {
+   if (!tocContainer) {
+    tocContainer = document.createElement("div");
+    tocContainer.id = "toc-container";
+   }
+   let headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+   headings.forEach((heading, index) => {
+    let id = `heading-${index + 1}`;
+    heading.id = id;
+    let tocItem = document.createElement("p");
+    tocItem.classList.add("toc-item");
+    switch (heading.tagName.toLowerCase()) {
+     case "h1":
+      tocItem.classList.add("toc-item-h1");
+      break;
+     case "h2":
+      tocItem.classList.add("toc-item-h2");
+      break;
+     case "h3":
+      tocItem.classList.add("indent-1");
+      break;
+     case "h4":
+      tocItem.classList.add("indent-3");
+      break;
+     case "h5":
+      tocItem.classList.add("indent-5", "feinheadline-h5");
+      heading.classList.add("feinheadline-h5");
+      break;
+     case "h6":
+      tocItem.classList.add("indent-5");
+      break;
+    }
+    let link = document.createElement("a");
+    link.href = `#${id}`;
+    link.textContent = heading.textContent;
+    tocItem.appendChild(link);
+    tocContainer.appendChild(tocItem);
+   });
+   document.getElementById("generate-headings").insertAdjacentElement('afterend', tocContainer);
+   headingsGenerated = true;
+  }
+  if (tocContainer.classList.contains("show")) {
+   tocContainer.style.height = "0";
+   button.textContent = button.getAttribute("data-open-text");
+  } else {
+   tocContainer.style.height = tocContainer.scrollHeight + "px";
+   button.textContent = button.getAttribute("data-close-text");
+  }
+  setTimeout(() => {
+   tocContainer.classList.toggle("show");
+  }, 10);
+ });
+});
+    </code></pre>
+  </div>
+
+  <h4>見出し作りを手作業でやるの？！</h4>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(10).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>いやいや…厳しいと思います。<br>
+    1ページ作るたびに新しい見出しが生まれるのですから、それらを全て挿入する作業を人力でなんて、現実味がないでしょう。<br>
+    ミスの原因にもなりますし、何かしらの形で自動生成されるようにした方が良いかと思います。<br>
+    ここで紹介しているのは、その一例です。<br>
+    段階的に説明していきますよ？<br>
+    まずは日本語で書いてから、各コードを具体的に説明してみます。</p>
+  </div>
+
+  <h4>見出し生成コードの動き</h4>
+  <p>Webページが読み込まれます。<br>
+   このページにあるスクリプトは、ページが完全に読み込まれると動き始めます。</p>
+
+  <p>まず、ページが全部読み込まれると、そのスクリプトが動き始めます。<br>
+   そして、「目次ボタン」がクリックされるのを待っています。<br>
+   ページの中にはたくさんの見出し（タイトル）があるのですが、これを一つ一つ拾って目次を作っていきます。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(12).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>ここが大変重要です。</p>
+   <p>見出しを一つ一つ拾って目次を作る部分がループ処理になっています。<br>
+    具体的には、<span class="codecolor">forEach</span> というループを使って、ページ内のすべての見出し要素（<span class="codecolor">h1</span> から <span
+     class="codecolor">h6</span>）を順番に処理しています。<br>
+    ループ処理を使うことで、ページ内のすべての見出しに対して同じ処理を繰り返し行い、それぞれの見出しに対応する目次の項目を作成しているのです。<br>
+    こうすることで、手作業ではなく自動的に目次を生成することができ、たとえページ内にたくさんの見出しがあっても正確に目次を作成することができます。<br>
+    このループ処理のおかげで、目次の生成が効率的かつ正確に行えるわけ。</p>
+  </div>
+
+  <p>さて、「目次ボタン」をクリックすると、スクリプトはまず目次を入れる箱を探します。<br>
+   その箱が見つからなかった場合は、新しく箱を作り出します。<br>
+   そして、見出しがまだ目次に追加されていないかを確認します。</p>
+
+  <p>次に、ページの中にある全ての見出しを探します。<br>
+   それぞれの見出しには特別なIDを付けて、目次の項目に追加します。<br>
+   この目次の項目はリンクになっていて、クリックするとその見出しにジャンプできます。</p>
+
+  <p>目次が完成したら、目次の箱を「目次ボタン」の後ろに置きます。<br>
+   これで、目次が再度作られることはありません。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(24).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>最後に、目次が表示されているかどうかを確認します。<br>
+    もし表示されていたら、目次を隠してボタンのテキストを「目次を開く」に変更します。<br>
+    逆に表示されていなかったら、目次を表示してボタンのテキストを「目次を閉じる」に変更します。</p>
+
+   <p>これがスクリプトの流れです。<br>
+    目次を自動的に生成し、クリックで表示・非表示を切り替える動きをしているってことですね！<br>
+    では、具体的にコードを見てみましょう。</p>
+  </div>
+
+  <h5>1. DOMの読み込み完了を待つ</h5>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+document.addEventListener("DOMContentLoaded", function () {
+    </code></pre>
+  </div>
+  <p><span class="codecolor">DOMContentLoaded</span> イベントは、HTMLが完全に読み込まれた後に実行されます。<br>
+   このイベントリスナー内にすべてのスクリプトが含まれています。<br>
+   ページが読み込まれると動き始めるということです。</p>
+
+  <h5>2. 状態の初期化</h5>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+let headingsGenerated = false;
+    </code></pre>
+  </div>
+  <p>目次が既に生成されたかどうかを追跡するためのフラグ変数です。<br>
+   目次がまだ作られていないか確認しないといけません。<br>
+   最初は <span class="codecolor">false</span> になっています。</p>
+
+  <h5>3. ボタンのクリックイベントを追加</h5>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+document.getElementById("generate-headings").addEventListener("click", function () {
+    </code></pre>
+  </div>
+  <p>ボタンがクリックされたときに実行される関数を定義しています。<br>
+   こちらはボタンクリックで動き始めるということです。</p>
+
+  <h4>目次コンテナの取得または作成</h4>
+  <p>次の4と5で、既に目次の箱（コンテナ）があるか確認し、無ければ新しい箱を作ります。</p>
+
+  <h5>4. 目次コンテナの取得</h5>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+let tocContainer = document.getElementById("toc-container");
+let button = document.getElementById("generate-headings");
+    </code></pre>
+  </div>
+  <p>まず、<span class="codecolor">getElementById</span> メソッドを使用して、<span class="codecolor">id</span> 属性が <span
+    class="codecolor">toc-container</span> の要素を取得します。<br>
+   この要素が目次コンテナです。<br>
+   また、<span class="codecolor">generate-headings</span> ボタンも同じ方法で取得します。</p>
+
+  <h5>5. 目次コンテナが既に存在するか確認</h5>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+if (!headingsGenerated) {
+    if (!tocContainer) {
+        tocContainer = document.createElement("div");
+        tocContainer.id = "toc-container";
+    }
+    </code></pre>
+  </div>
+  <p>目次コンテナが既に存在するか確認します。<br>
+   存在しない場合（<span class="codecolor">tocContainer</span> が <span class="codecolor">null</span>
+   の場合）には、新しい <span class="codecolor">div</span> 要素を作成し、その <span class="codecolor">id</span> を <span
+    class="codecolor">toc-container</span> に設定します。<br>
+   <span class="codecolor">headingsGenerated</span> フラグが <span class="codecolor">false</span>
+   の場合にのみ、新しい目次コンテナが作成されるようにしています。
+  </p>
+
+  <h5>6. 全ての見出し要素（h1〜h6）を取得</h5>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+let headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+    </code></pre>
+  </div>
+  <p><span class="codecolor">querySelectorAll</span> メソッドを使用して、ページ内の全ての見出し要素（<span class="codecolor">h1</span> から <span
+    class="codecolor">h6</span> まで）を取得します。<br>
+   ページ内の見出し（タイトル）を全部見つける部分ですね。</p>
+
+  <p>次の7～9で、各見出しごとに目次の項目を作ります。<br>
+   その項目にリンクを付けて、クリックするとその見出しに飛べるようにします。</p>
+
+  <h5>7. 各見出し要素に対して目次アイテムを作成</h5>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+headings.forEach((heading, index) => {
+    let id = `heading-${index + 1}`;
+    heading.id = id;
+    let tocItem = document.createElement("p");
+    tocItem.classList.add("toc-item");
+    </code></pre>
+  </div>
+  <p>各見出し要素をループして処理します。<br>
+   各見出し要素に一意のID（<span class="codecolor">heading-1</span>、<span class="codecolor">heading-2</span> など）を付与します。<br>
+   新しい <span class="codecolor">p</span> 要素を作成し、クラス <span class="codecolor">toc-item</span> を追加します。</p>
+
+  <h5>8. 見出しのタグに応じて目次アイテムにクラスを追加</h5>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+switch (heading.tagName.toLowerCase()) {
+    case "h1":
+        tocItem.classList.add("toc-item-h1");
+        break;
+    case "h2":
+        tocItem.classList.add("toc-item-h2");
+        break;
+    case "h3":
+        tocItem.classList.add("indent-1");
+        break;
+    case "h4":
+        tocItem.classList.add("indent-3");
+        break;
+    case "h5":
+        tocItem.classList.add("indent-5", "feinheadline-h5");
+        heading.classList.add("feinheadline-h5");
+        break;
+    case "h6":
+        tocItem.classList.add("indent-5");
+        break;
+}
+    </code></pre>
+  </div>
+  <p>見出しのタグ名に応じて、対応するクラスを目次アイテムに追加します。</p>
+
+  <h5>9. リンクを作成して目次アイテムに追加</h5>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+let link = document.createElement("a");
+link.href = `#${id}`;
+link.textContent = heading.textContent;
+tocItem.appendChild(link);
+tocContainer.appendChild(tocItem);
+    </code></pre>
+  </div>
+  <p>各見出しへのリンクを作成し、目次アイテム（<span class="codecolor">p</span> 要素）に追加します。<br>
+   目次アイテムを目次コンテナに追加します。</p>
+
+  <h5>10. 目次コンテナをボタンの後に挿入</h5>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+document.getElementById("generate-headings").insertAdjacentElement('afterend', tocContainer);
+headingsGenerated = true;
+    </code></pre>
+  </div>
+
+  <p>目次コンテナを生成ボタンの後に挿入し、<span class="codecolor">headingsGenerated</span> フラグを <span
+    class="codecolor">true</span>に更新します。<br>
+   これにより、目次が再生成されないようになります。<br>
+   目次の箱をボタンの後ろに配置し、目次が生成されたことを記録するといったイメージでしょうか。</p>
+
+  <h4>目次コンテナの表示/非表示の切り替え</h4>
+  <p>目次が表示されているかどうかを確認し、表示/非表示を切り替えます。<br>
+   ボタンのテキストも変更します。</p>
+
+  <h5>11. 目次コンテナの表示状態をチェック</h5>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+if (tocContainer.classList.contains("show")) {
+    tocContainer.style.height = "0";
+    button.textContent = button.getAttribute("data-open-text");
+} else {
+    tocContainer.style.height = tocContainer.scrollHeight + "px";
+    button.textContent = button.getAttribute("data-close-text");
+}
+    </code></pre>
+  </div>
+  <p><span class="codecolor">show</span> クラスが目次コンテナに含まれているかを確認します。<br>
+   含まれている場合は、目次コンテナの高さを <span class="codecolor">0</span> に設定し、ボタンのテキストを「目次を開く」に変更します。<br>
+   含まれていない場合は、目次コンテナの高さを内容に合わせて自動調整し、ボタンのテキストを「目次を閉じる」に変更します。</p>
+
+  <h5>12. トグルで目次コンテナの表示/非表示を切り替え</h5>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+setTimeout(() => {
+    tocContainer.classList.toggle("show");
+}, 10);
+    </code></pre>
+  </div>
+  <p>少し遅延させて、目次コンテナに <span class="codecolor">show</span> クラスをトグルで追加または削除します。<br>
+   この遅延により、アニメーションがスムーズに実行されます。</p>
+
+  <p>以上を持ちまして、ページの見出しを収集し、クリックで表示/非表示を切り替えられる目次を生成するスクリプトの説明となります。</p>
+
+
+  <h2>ハンバーガーメニュー</h2>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(25).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>まずは全体的なコード同士の関りについて説明が必要です。<br>
+    全てのページに「メニューを開く」をいうボタンがありますよね？<br>
+    その部分はハンバーガーメニューを差し込むhtmlコードです。<br>
+    それをタップするとJavaScriptが動作します。<br>
+    結果として何が起きるかというと、別に用意してある menu.html というメニューの中身を記述しているhtmlを、ハンバーガーメニューの入口である「メニューを開く」をいうボタンに差し込んでいるわけです。<br>
+    そして準備してあるCSSがデザインを担当しています。</p>
+   <p>まずはハンバーガーメニューを差し込むhtmlコードから。<br>
+    これは全てのページに設置する必要があります。</p>
+  </div>
+
+  <p class="codegra" id="menu_html">ハンバーガーメニューを差し込むhtmlコード</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;div class=&quot;fden-hamburger-menu&quot;&gt;
+   &lt;button class=&quot;fden-hamburger-button&quot; id=&quot;fden-hamburger-button&quot; onclick=&quot;toggleMenu()&quot;&gt;☰ メニューを開く
+    ▼&lt;/button&gt;
+   &lt;div class=&quot;fden-menu&quot; id=&quot;fden-menu&quot;&gt;
+    &lt;div id=&quot;fden-menu-content&quot;&gt;&lt;/div&gt;
+   &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script src=&quot;../script/menu.js&quot;&gt;&lt;/script&gt;
+    </code></pre>
+  </div>
+
+  <p>htmlコードそのものはそんなに複雑ではありません。<br>
+   ていうかなるべくシンプルに書くようにしているんだけどね。<br>
+   次は、ハンバーガーメニューの中身が記述されているhtmlファイルです。</p>
+
+  <p class="codegra" id="menumaker_html">ハンバーガーメニューを作るmenu.html</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+
+&lt;head&gt;
+ &lt;meta charset=&quot;UTF-8&quot;&gt;
+ &lt;title&gt;fein&#39;s personal siteのハンバーガーメニュー&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+ &lt;a href=&quot;/&quot; style=&quot;color:#1A73E8;&quot;&gt;ホーム（アナザーエデン グラスタの入手場所一覧）&lt;/a&gt;
+ &lt;a href=&quot;/another-eden/anaden_sitemap.html&quot; style=&quot;color:#1A73E8;&quot;&gt;アナザーエデン関連ページ・サイトマップ&lt;/a&gt;
+ &lt;a href=&quot;/another-eden/lua.html&quot; style=&quot;color:#1A73E8;&quot;&gt;アナザーエデンのプログラミングを個人サイトで試す&lt;/a&gt;
+ &lt;a href=&quot;/contents/form.html#star&quot; style=&quot;color:#1A73E8;&quot;&gt;🌟宿星の断片ドロップ調査&lt;/a&gt;
+ &lt;a href=&quot;/contents/form.html#dreamstar&quot; style=&quot;color:#1A73E8;&quot;&gt;🌟夢見と星跡の計算表&lt;/a&gt;
+ &lt;a href=&quot;/contents/site_create.html&quot; style=&quot;color:#1A73E8;&quot;&gt;個人サイトのホスティングとコンテンツ作成&lt;/a&gt;
+ &lt;a href=&quot;/contents/color.html&quot; style=&quot;color:#1A73E8;&quot;&gt;ウェブセーフカラーパレットなど便利ツール&lt;/a&gt;
+ &lt;a href=&quot;/another-eden/atelier_studio.html&quot; style=&quot;color:#1A73E8;&quot;&gt;ファンサイト制作のためのアトリエ&lt;/a&gt;
+ &lt;a href=&quot;/contents/protect.html&quot; style=&quot;color:#1A73E8;&quot;&gt;X（旧：Twitter）のAIからイラストなどを守る試み&lt;/a&gt;
+ &lt;div id=&quot;denmenu&quot;&gt;
+  &lt;a href=&quot;#&quot; class=&quot;fden-submenu-toggle1&quot; id=&quot;toggle-site-content&quot;
+   onclick=&quot;toggleSubMenu(&#39;fden-submenu2&#39;, &#39;toggle-site-content&#39;)&quot;&gt;上記以外のコンテンツも見る▼&lt;/a&gt;
+  &lt;div class=&quot;fden-submenu&quot; id=&quot;fden-submenu2&quot;&gt;
+   &lt;a href=&quot;/another-eden/anaden_beginner.html&quot; style=&quot;color:#1A73E8;&quot;&gt;アナザーエデンの初心者向けガイド&lt;/a&gt;
+   &lt;a href=&quot;/another-eden/anaden_story.html&quot; style=&quot;color:#1A73E8;&quot;&gt;アナザーエデンのコンテンツリスト&lt;/a&gt;
+   &lt;a href=&quot;/another-eden/anaden_boss.html&quot; style=&quot;color:#1A73E8;&quot;&gt;アナザーエデンの強敵リスト&lt;/a&gt;
+   &lt;a href=&quot;/another-eden/anaden_weapon.html&quot; style=&quot;color:#1A73E8;&quot;&gt;アナデンで揃えたい武器やバッジなど&lt;/a&gt;
+   &lt;a href=&quot;/another-eden/another-eden_feinpdf.html&quot; style=&quot;color:#1A73E8;&quot;&gt;アナザーエデン：feinが書いたレポート集&lt;/a&gt;
+   &lt;a href=&quot;/contents/x_exoduslink.html&quot; style=&quot;color:#1A73E8;&quot;&gt;個人サイトのリンク掲載をご希望の方へ&lt;/a&gt;
+
+  &lt;/div&gt;
+
+  &lt;a href=&quot;#&quot; class=&quot;fden-submenu-toggle2&quot; id=&quot;toggle-popular-pages&quot;
+   onclick=&quot;toggleSubMenu(&#39;fden-submenu1&#39;, &#39;toggle-popular-pages&#39;)&quot;&gt;ポータルサイトで人気のページを見る▼&lt;/a&gt;
+  &lt;div class=&quot;fden-submenu&quot; id=&quot;fden-submenu1&quot;&gt;
+   &lt;a href=&quot;https://sites.google.com/view/feins-portal/&quot;
+    style=&quot;display: flex; align-items: center; text-decoration: none; color: #00A2ED;&quot;&gt;
+    &lt;img src=&quot;/image/anafish.png&quot; alt=&quot;アナザーエデンのバディ_ピスケ&quot; style=&quot;width: 8%; height: auto; margin-right: 10px;&quot;&gt;
+    fein&#39;s portal（ポータルサイト）へ戻ります
+   &lt;/a&gt;
+   &lt;a href=&quot;https://tinyurl.com/2xpfx4ws&quot; style=&quot;color:#00A2ED;&quot;&gt;グラスタの場所一覧表～入手範囲別～&lt;/a&gt;
+   &lt;a href=&quot;https://tinyurl.com/279lmdze&quot; style=&quot;color:#00A2ED;&quot;&gt;SNSによるアナデンのソシャゲ化を避けるコツ&lt;/a&gt;
+   &lt;a href=&quot;https://tinyurl.com/2aoxa9zd&quot; style=&quot;color:#00A2ED;&quot;&gt;feinのアナデン戦闘史_vol1&lt;/a&gt;
+   &lt;a href=&quot;https://tinyurl.com/255tplla&quot; style=&quot;color:#00A2ED;&quot;&gt;feinのアナデン戦闘史_vol2&lt;/a&gt;
+   &lt;a href=&quot;https://tinyurl.com/2bc29bx7&quot; style=&quot;color:#00A2ED;&quot;&gt;feinのアナデン戦闘史_vol3&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;a href=&quot;https://tinyurl.com/2ay3bltd&quot; style=&quot;color:#00A2ED;&quot;&gt;サイト制作者について&lt;/a&gt;
+ &lt;/div&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+    </code></pre>
+  </div>
+
+  <p>単なるリンクのリストですよ。<br>
+   コードもいたってシンプル。<br>
+   これがJavaScriptによって全てのページに差し込まれ、CSSによってデザインされる。<br>
+   そうするとハンバーガーメニューになるわけです。</p>
+
+  <p>では、CSSの説明に移ります。</p>
+
+  <h3>メニューを作るCSS</h3>
+  <p>細々したデザインはそうでもないんだけど、ここの特徴はアニメーション設定になるでしょうか。<br>
+   閲覧者が頻繁にタップするポイントなので、カクカクした動きにならないようにしています。</p>
+
+  <p class="codegra" id="menu_css">ハンバーガーメニューを作るmenu.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* ハンバーガーメニューのコンテナスタイル */
+.fden-hamburger-menu {
+    position: relative; /* 相対位置を指定 */
+}
+
+/* ハンバーガーボタンのスタイル */
+.fden-hamburger-button {
+    font-size: 16px; /* フォントサイズを設定 */
+    cursor: pointer; /* カーソルをポインターに変更 */
+    color: #1A73E8; /* ボタンの文字色を設定 (Google blue) */
+    background: linear-gradient(to bottom, rgba(173, 216, 230, 0.5), rgba(173, 216, 230, 0)); /* 背景のグラデーションを追加 */
+    border: none; /* ボーダーをなしにする */
+    padding: 10px; /* 内側の余白を設定 */
+    border-radius: 5px; /* 四隅を丸める */
+    font-weight: bold; /* 文字を太字にする */
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out; /* 背景色と文字色の変化にアニメーションを追加 */
+}
+
+/* ハンバーガーボタンをホバーしたときのスタイル */
+.fden-hamburger-button:hover {
+    background: linear-gradient(to bottom, rgba(173, 216, 230, 0.2), rgba(173, 216, 230, 0)); /* 背景のグラデーションを変更 */
+}
+
+/* メニューのスタイル */
+.fden-menu {
+    display: none; /* 初期状態で非表示 */
+    position: absolute; /* 絶対位置を指定 */
+    top: 40px; /* 上から40pxの位置に配置 */
+    left: 0; /* 左端に配置 */
+    background-color: white; /* 背景色を白に設定 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 影を追加 */
+    z-index: 1000; /* 重なり順を設定 */
+    opacity: 0; /* 初期状態で透明 */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* 透明度と変形にアニメーションを追加 */
+    transform: translateY(-10px); /* 初期状態で少し上に移動 */
+}
+
+/* メニューが表示されたときのスタイル */
+.fden-menu.show {
+    display: block; /* 表示 */
+    opacity: 1; /* 不透明に設定 */
+    transform: translateY(0); /* 元の位置に移動 */
+}
+
+/* メニュー内のリンクのスタイル */
+.fden-menu a {
+    display: block; /* ブロック要素として表示 */
+    padding: 15px; /* 内側の余白を設定 */
+    text-decoration: none; /* 下線をなしにする */
+    color: black; /* 文字色を黒に設定 */
+    transition: background 0.3s ease-in-out; /* 背景色の変化にアニメーションを追加 */
+}
+
+/* メニュー内のリンクをホバーしたときのスタイル */
+.fden-menu a:hover {
+    background-color: #e0e0e0; /* 背景色を変更 */
+}
+
+/* サブメニューのスタイル */
+.fden-submenu {
+    display: none; /* 初期状態で非表示 */
+    padding-left: 20px; /* 左に余白を設定 */
+    opacity: 0; /* 初期状態で透明 */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* 透明度と変形にアニメーションを追加 */
+    transform: translateY(-10px); /* 初期状態で少し上に移動 */
+}
+
+/* サブメニューが表示されたときのスタイル */
+.fden-submenu.show {
+    display: block; /* 表示 */
+    opacity: 1; /* 不透明に設定 */
+    transform: translateY(0); /* 元の位置に移動 */
+}
+
+/* サブメニューのトグルボタン1のスタイル */
+.fden-menu .fden-submenu-toggle1 {
+    font-weight: bold; /* 文字を太字にする */
+    color: #1A73E8; /* 文字色を設定 (Google blue) */
+    cursor: pointer; /* カーソルをポインターに変更 */
+}
+
+/* サブメニューのトグルボタン2のスタイル */
+.fden-menu .fden-submenu-toggle2 {
+    font-weight: bold; /* 文字を太字にする */
+    color: #00A2ED; /* 文字色を設定 (Microsoft blue) */
+    cursor: pointer; /* カーソルをポインターに変更 */
+}
+
+/* ビューポートの幅が768px以下の場合のスタイル */
+@media (max-width: 768px) {
+    .fden-hamburger-button {
+        font-size: 14px; /* フォントサイズを14pxに設定 */
+        padding: 8px; /* 内側の余白を縮小 */
+    }
+
+    .fden-menu a {
+        padding: 10px; /* 内側の余白を縮小 */
+    }
+}
+    </code></pre>
+  </div>
+
+  <p>このコードにはいくつかのアニメーションが含まれていますが、主に<span class="codecolor">transition</span>プロパティを使用しています。</p>
+
+  <h4>メニューのアニメーション設定</h4>
+  <p>ここはちょっと細かく分かれているんですよね。<br>
+   重要なポイントでありながら、あまり大仰なアニメーションは付けたくないです。<br>
+   今のところ、次のような設定で落ち着いています。</p>
+
+  <h5>ハンバーガーボタンのアニメーション</h5>
+  <div class="code-container">
+   <pre><code class="language-css">
+transition: background 0.3s ease-in-out, color 0.3s ease-in-out; /* 背景色と文字色の変化にアニメーションを追加 */
+
+</code></pre>
+  </div>
+
+  <dl>
+   <dt>背景色と文字色のアニメーション</dt>
+   <dd>この<span class="codecolor">transition</span>プロパティ：背景色と文字色が変化する際にアニメーションを追加します。</dd>
+   <dd><span class="codecolor">0.3s</span>はアニメーションの持続時間：変化が0.3秒で完了することを示しています。</dd>
+   <dd><span class="codecolor">ease-in-out</span>はイージング関数：アニメーションの始まりと終わりがスムーズになる効果があります。</dd>
+  </dl>
+
+  <h5>メニューの表示・非表示のアニメーション</h5>
+
+  <p class="gra">初期状態</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+opacity: 0; /* 初期状態で透明 */
+transition: opacity 0.5s ease, transform 0.5s ease; /* 透明度と変形にアニメーションを追加 */
+transform: translateY(-10px); /* 初期状態で少し上に移動 */
+
+</code></pre>
+  </div>
+
+  <dl>
+   <dt>透明度と変形のアニメーション</dt>
+   <dd><span class="codecolor">opacity: 0;</span>：メニューが初期状態で透明であることを示しています。</dd>
+   <dd><span class="codecolor">transition: opacity 0.5s ease, transform 0.5s ease;</span>：透明度と位置の変化に0.5秒のアニメーションを追加します。
+   </dd>
+   <dd><span class="codecolor">transform: translateY(-10px);</span>：メニューが初期状態で少し上に移動していることを示しています。</dd>
+  </dl>
+
+  <p class="gra">表示状態</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+.fden-menu.show {
+    display: block; /* 表示 */
+    opacity: 1; /* 不透明に設定 */
+    transform: translateY(0); /* 元の位置に移動 */
+}
+
+</code></pre>
+  </div>
+
+  <dl>
+   <dt>表示時のアニメーション</dt>
+   <dd><span class="codecolor">opacity: 1;</span>：メニューが完全に表示されることを示しています。</dd>
+   <dd><span class="codecolor">transform: translateY(0);</span>：メニューが元の位置に移動していることを示しています。</dd>
+   <dd><span class="codecolor">transition</span>プロパティ：これらの変化がスムーズにアニメーションされます。</dd>
+  </dl>
+
+  <h5>メニュー内のリンクのアニメーション</h5>
+  <div class="code-container">
+   <pre><code class="language-css">
+transition: background 0.3s ease-in-out; /* 背景色の変化にアニメーションを追加 */
+
+</code></pre>
+  </div>
+
+  <dl>
+   <dt>背景色のアニメーション</dt>
+   <dd><span class="codecolor">transition: background 0.3s ease-in-out;</span>：リンクの背景色が変化する際にアニメーションを追加します。</dd>
+   <dd><span class="codecolor">0.3s</span>はアニメーションの持続時間：変化が0.3秒で完了することを示しています。</dd>
+   <dd><span class="codecolor">ease-in-out</span>はイージング関数：アニメーションの始まりと終わりがスムーズになる効果があります。</dd>
+  </dl>
+
+  <h5>サブメニューのアニメーション</h5>
+
+  <p class="gra">初期状態</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+opacity: 0; /* 初期状態で透明 */
+transition: opacity 0.5s ease, transform 0.5s ease; /* 透明度と変形にアニメーションを追加 */
+transform: translateY(-10px); /* 初期状態で少し上に移動 */
+
+</code></pre>
+  </div>
+
+  <dl>
+   <dt>透明度と変形のアニメーション</dt>
+   <dd><span class="codecolor">opacity: 0;</span>：サブメニューが初期状態で透明であることを示しています。</dd>
+   <dd><span class="codecolor">transition: opacity 0.5s ease, transform 0.5s ease;</span>：透明度と位置の変化に0.5秒のアニメーションを追加します。
+   </dd>
+   <dd><span class="codecolor">transform: translateY(-10px);</span>：サブメニューが初期状態で少し上に移動していることを示しています。</dd>
+  </dl>
+
+  <p class="gra">表示状態</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+.fden-submenu.show {
+    display: block; /* 表示 */
+    opacity: 1; /* 不透明に設定 */
+    transform: translateY(0); /* 元の位置に移動 */
+}
+
+</code></pre>
+  </div>
+
+  <dl>
+   <dt>表示時のアニメーション</dt>
+   <dd><span class="codecolor">opacity: 1;</span>：サブメニューが完全に表示されることを示しています。</dd>
+   <dd><span class="codecolor">transform: translateY(0);</span>：サブメニューが元の位置に移動していることを示しています。</dd>
+   <dd><span class="codecolor">transition</span>プロパティ：これらの変化がスムーズにアニメーションされます。</dd>
+  </dl>
+
+  <p>全体的に、もう少し遅いほうが良いのかもしれない。<br>
+   あと、このハンバーガーメニューはワンタッチで移動できるサブメニューのような役割を果たしています。<br>
+   ページ移動のメインになるのはグローバルナビゲーションとサイトマップ。<br>
+   だからあまり多くのリンクを設定しないようにしていますね。</p>
+
+  <h3>メニューを作るJavaScript</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(26).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>上述したけども、個人でサイトを作ろうとしたときに必ずと言って良いほど話題になるのが、このサイトにもある「メニュー」です。<br>
+    CSSだけで組むこともできますが、素直にJavaScriptを交えたほうがラクかと思いますね。<br>
+    このサイトではグローバルナビゲーションをメインとして、このハンバーガーメニューはサブメニューとして活躍してもらってます。</p>
+  </div>
+
+  <p class="codegra" id="menu_js">ハンバーガーメニューを作るmenu.js</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+function toggleMenu() {
+ var menu = document.getElementById('fden-menu');
+ var button = document.getElementById('fden-hamburger-button');
+ if (menu.classList.contains('show')) {
+  menu.classList.remove('show');
+  button.innerHTML = '☰ メニューを開く ▼';
+  setTimeout(function () {
+   menu.style.display = 'none';
+  }, 300);
+ } else {
+  menu.style.display = 'block';
+  button.innerHTML = '× メニューを閉じる ▲';
+  setTimeout(function () {
+   menu.classList.add('show');
+  }, 10);
+ }
+}
+
+function toggleSubMenu(id, buttonId) {
+ var submenu = document.getElementById(id);
+ var button = document.getElementById(buttonId);
+ if (submenu.classList.contains('show')) {
+  submenu.classList.remove('show');
+  button.innerHTML = button.innerHTML.replace('▲', '▼');
+  setTimeout(function () {
+   submenu.style.display = 'none';
+  }, 300);
+ } else {
+  submenu.style.display = 'block';
+  button.innerHTML = button.innerHTML.replace('▼', '▲');
+  setTimeout(function () {
+   submenu.classList.add('show');
+  }, 10);
+ }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+ fetch('../menu/menu.html')
+  .then(response => response.text())
+  .then(data => {
+   document.getElementById('fden-menu-content').innerHTML = data;
+  });
+
+ document.addEventListener('click', function (event) {
+  var menu = document.getElementById('fden-menu');
+  var button = document.getElementById('fden-hamburger-button');
+  var isClickInside = menu.contains(event.target) || button.contains(event.target);
+  if (!isClickInside && menu.classList.contains('show')) {
+   menu.classList.remove('show');
+   button.innerHTML = '☰ メニューを開く ▼';
+   setTimeout(function () {
+    menu.style.display = 'none';
+   }, 300);
+  }
+ });
+});
+    </code></pre>
+  </div>
+
+  <h4>全てのページのメニューを手作りするの？！</h4>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(27).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>さっきも似たようなこと書いたけど。<br>
+    いやいや…現実味がないと思いますよ？<br>
+    全てのページで内容を統一しなければいけないのに。<br>
+    一応Visual Studio Codeは複数ファイルの一括置換ができますが、あまり長いコードを多数のファイルで置換させていると、あるいはどこかでミスが出ていても気付けない可能性があります。<br>
+    私はグローバルナビゲーションでしか一括置換はやっていないですね。<br>
+    SEOの観点からもhtmlコードの直接記述であることが望ましいからです。<br>
+    しかし、閲覧者の利便性を確保するのがハンバーガーメニューの目的なのですから、ここは何かしらの方法でスクリプトによる自動生成をしたほうが良いでしょう。</p>
+  </div>
+
+
+  <h4>メニューのJavaScript概要</h4>
+  <p>では、このスクリプトについて詳細な説明を行います。</p>
+
+  <p class="gra">メニューを開閉する機能</p>
+  <p>
+   ボタンをクリックすると、メニューが開いたり閉じたりします。<br>
+   メニューが表示されている場合は、<span class="codecolor">'show'</span> クラスを削除し、300ミリ秒後にメニューを非表示にします。<br>
+   メニューが非表示の場合は、メニューを表示し、<span class="codecolor">'show'</span> クラスを追加します。ボタンのテキストも適宜変更されます。
+  </p>
+
+  <p class="gra">サブメニューを開閉する機能</p>
+  <p>
+   サブメニューの開閉もメインメニューと同様に動作します。<br>
+   指定されたIDのサブメニューが表示されている場合は、<span class="codecolor">'show'</span> クラスを削除し、300ミリ秒後に非表示にします。<br>
+   非表示の場合は、サブメニューを表示し、<span class="codecolor">'show'</span> クラスを追加します。ボタンのテキストも適宜変更されます。
+  </p>
+
+  <p class="gra">ページの読み込み完了後の処理</p>
+  <p>
+   ページが完全に読み込まれた後、指定されたURLからメニューのHTMLファイルを取得し、その内容をメニューコンテンツに挿入します。
+  </p>
+
+  <p class="gra">クリックイベントの処理</p>
+  <p>
+   ページ内でクリックが発生すると、そのクリックがメニューやボタンの内部で発生したかどうかをチェックします。<br>
+   もしメニューやボタンの外部でクリックが発生し、メニューが表示されている場合は、メニューを閉じます。
+  </p>
+
+
+  <h5>toggleMenu関数</h5>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+function toggleMenu() {
+ var menu = document.getElementById('fden-menu');
+ var button = document.getElementById('fden-hamburger-button');
+ if (menu.classList.contains('show')) {
+  menu.classList.remove('show');
+  button.innerHTML = '☰ メニューを開く ▼';
+  setTimeout(function () {
+   menu.style.display = 'none';
+  }, 300);
+ } else {
+  menu.style.display = 'block';
+  button.innerHTML = '× メニューを閉じる ▲';
+  setTimeout(function () {
+   menu.classList.add('show');
+  }, 10);
+ }
+}
+
+</code></pre>
+  </div>
+
+  <p class="gra">1. メニューとボタンの取得</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+var menu = document.getElementById('fden-menu');
+var button = document.getElementById('fden-hamburger-button');
+   </code></pre>
+  </div>
+  <p><span class="codecolor">menu</span> にはIDが <span class="codecolor">'fden-menu'</span> の要素を取得します。<br>
+   <span class="codecolor">button</span> にはIDが <span class="codecolor">'fden-hamburger-button'</span> の要素を取得します。
+  </p>
+
+  <p class="gra">2. メニューの表示/非表示を切り替え</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+if (menu.classList.contains('show')) {
+ menu.classList.remove('show');
+ button.innerHTML = '☰ メニューを開く ▼';
+ setTimeout(function () {
+  menu.style.display = 'none';
+ }, 300);
+} else {
+ menu.style.display = 'block';
+ button.innerHTML = '× メニューを閉じる ▲';
+ setTimeout(function () {
+  menu.classList.add('show');
+ }, 10);
+}
+
+   </code></pre>
+  </div>
+  <p>メニューのクラスリストに <span class="codecolor">'show'</span> が含まれているかをチェックします。<br>
+   含まれている場合、メニューから <span class="codecolor">'show'</span> クラスを削除し、ボタンのテキストを変更し、300ミリ秒後にメニューを非表示にします。<br>
+   含まれていない場合、メニューを表示し、ボタンのテキストを変更し、10ミリ秒後にメニューに <span class="codecolor">'show'</span> クラスを追加します。</p>
+
+  <h5>toggleSubMenu関数</h5>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+function toggleSubMenu(id, buttonId) {
+ var submenu = document.getElementById(id);
+ var button = document.getElementById(buttonId);
+ if (submenu.classList.contains('show')) {
+  submenu.classList.remove('show');
+  button.innerHTML = button.innerHTML.replace('▲', '▼');
+  setTimeout(function () {
+   submenu.style.display = 'none';
+  }, 300);
+ } else {
+  submenu.style.display = 'block';
+  button.innerHTML = button.innerHTML.replace('▼', '▲');
+  setTimeout(function () {
+   submenu.classList.add('show');
+  }, 10);
+ }
+}
+
+</code></pre>
+  </div>
+
+  <p class="gra">1. サブメニューとボタンの取得</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+var submenu = document.getElementById(id);
+var button = document.getElementById(buttonId);
+   </code></pre>
+  </div>
+  <p><span class="codecolor">submenu</span> には指定されたIDの要素を取得します。<br>
+   <span class="codecolor">button</span> には指定されたIDのボタン要素を取得します。
+  </p>
+
+  <p class="gra">2. サブメニューの表示/非表示を切り替え</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+if (submenu.classList.contains('show')) {
+ submenu.classList.remove('show');
+ button.innerHTML = button.innerHTML.replace('▲', '▼');
+ setTimeout(function () {
+  submenu.style.display = 'none';
+ }, 300);
+} else {
+ submenu.style.display = 'block';
+ button.innerHTML = button.innerHTML.replace('▼', '▲');
+ setTimeout(function () {
+  submenu.classList.add('show');
+ }, 10);
+}
+   </code></pre>
+  </div>
+  <p>サブメニューのクラスリストに <span class="codecolor">'show'</span> が含まれているかをチェックします。<br>
+   含まれている場合、サブメニューから <span class="codecolor">'show'</span> クラスを削除し、ボタンのテキストを変更し、300ミリ秒後にサブメニューを非表示にします。<br>
+   含まれていない場合、サブメニューを表示し、ボタンのテキストを変更し、10ミリ秒後にサブメニューに <span class="codecolor">'show'</span> クラスを追加します。</p>
+
+  <h5>DOMContentLoadedイベントとその他のイベントリスナー</h5>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+document.addEventListener('DOMContentLoaded', function () {
+ fetch('../menu/menu.html')
+  .then(response => response.text())
+  .then(data => {
+   document.getElementById('fden-menu-content').innerHTML = data;
+  });
+
+ document.addEventListener('click', function (event) {
+  var menu = document.getElementById('fden-menu');
+  var button = document.getElementById('fden-hamburger-button');
+  var isClickInside = menu.contains(event.target) || button.contains(event.target);
+  if (!isClickInside && menu.classList.contains('show')) {
+   menu.classList.remove('show');
+   button.innerHTML = '☰ メニューを開く ▼';
+   setTimeout(function () {
+    menu.style.display = 'none';
+   }, 300);
+  }
+ });
+});
+
+</code></pre>
+  </div>
+
+  <p class="gra">1. DOMContentLoaded イベント</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+document.addEventListener('DOMContentLoaded', function () {
+ fetch('../menu/menu.html')
+  .then(response => response.text())
+  .then(data => {
+   document.getElementById('fden-menu-content').innerHTML = data;
+  });
+   </code></pre>
+  </div>
+  <p>ページのDOMが完全に読み込まれた後に実行される関数を設定します。<br>
+   <span class="codecolor">fetch</span> メソッドで <span class="codecolor">../menu/menu.html</span> ファイルを取得し、その内容を <span
+    class="codecolor">fden-menu-content</span> 要素に挿入します。
+  </p>
+
+  <p class="gra">2. クリックイベント</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+document.addEventListener('click', function (event) {
+ var menu = document.getElementById('fden-menu');
+ var button = document.getElementById('fden-hamburger-button');
+ var isClickInside = menu.contains(event.target) || button.contains(event.target);
+ if (!isClickInside && menu.classList.contains('show')) {
+  menu.classList.remove('show');
+  button.innerHTML = '☰ メニューを開く ▼';
+  setTimeout(function () {
+   menu.style.display = 'none';
+  }, 300);
+ }
+});
+   </code></pre>
+  </div>
+  <p>ドキュメント全体に対してクリックイベントリスナーを追加します。<br>
+   クリックがメニューまたはボタンの内部でない場合、メニューを閉じる処理を行います。</p>
+
+  <h4>htmlファイルを多数のWebページで共有する</h4>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower3/flower3(1).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>このハンバーガーメニューでやっているのは、htmlファイルを多数のWebページで共有するというものです。<br>
+    これをやらないと、メンテナンスに異常に時間がかかるWebサイトになってしまうんですよね。<br>
+    メニューの中身となるhtmlファイルを別途用意しておいて、それをJavaScriptを用いて各ページに差し込んでいく。<br>
+    そうすることで、メニューの中身となるhtmlファイルを書き換えれば全てのWebページに中身が反映されます。<br>
+    特にこういうハンバーガーメニューみたいな階層構造になっているメニューの場合、そのように作り込んでおけば、後がラクでしょ？</p>
+  </div>
+
+  <h3>グローバルナビゲーションを作るJavaScript</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower3/flower3(2).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>このサイトは次のように一連のナビゲーションを設置しています。</p>
+   <ol>
+    <li>一番上にあるグローバルナビゲーション</li>
+    <li>次に来るパンくずリスト</li>
+    <li>パンくずリスト直下に検索ボックス</li>
+    <li>検索ボックス直下にハンバーガーメニュー</li>
+    <li>ページトップの画像の直下にアコーディオン型の見出し</li>
+    <li>ページ下部にあるサイトマップは、見出しからジャンプできる</li>
+   </ol>
+   <p>そして閲覧者がスクロールしていくと、スクロールトップボタンが出現し、いつでもページトップに戻れるようになっています。</p>
+   <p>ページの行き来を左右とするなら、ページの読み進めを上下運動として、それぞれ行き止まりにぶつからないようにしているんだよね。<br>
+    このグローバルナビゲーションにつけた小さなアニメーションは、それを目にすることで大きなリンクテキストを際立たせる効果があります。</p>
+  </div>
+
+  <p class="codegra" id="globalmenu_js">グローバルナビゲーションを目立たせるmenu.js</p>
+
+  <div class="code-container">
+   <pre><code class="language-javascript">
+document.addEventListener("DOMContentLoaded", function () {
+ const links = document.querySelectorAll(".animated-link");
+ links.forEach(link => {
+  link.classList.add("loaded");
+ });
+});
+    </code></pre>
+  </div>
+
+  <p>このサイトではグローバルナビゲーション用の専用UIを実装するのではなく、アンダーラインのアニメーションを添えることで、少し目立たせるに留めています。<br>
+   グローバルナビゲーションとして稼働させるには<a href="/contents/codeinfo.html#headerglobal_css">グローバルナビゲーションを構成する</a>にあるCSSが別途必要です。<br>
+   では、JavaScriptの説明に移ります。</p>
+
+  <p><span class="codecolor">document.addEventListener("DOMContentLoaded", function () { ... });</span></p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower3/flower3(3).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+
+   <ul>
+    <li>ドキュメント（ウェブページ）の内容が完全に読み込まれ、DOM（ドキュメントオブジェクトモデル）が構築されたときに実行される関数を設定しています。</li>
+    <li><span class="codecolor">"DOMContentLoaded"</span>
+     イベントは、すべてのスクリプトやスタイルシートが読み込まれる前にトリガーされるため、ページの要素を操作するために安全なタイミングです。</li>
+   </ul>
+
+   <p><span class="codecolor">const links = document.querySelectorAll(".animated-link");</span></p>
+
+   <ul>
+    <li><span class="codecolor">document.querySelectorAll</span> メソッドを使って、クラス名 <span
+      class="codecolor">".animated-link"</span> を持つすべての要素を選択し、それらを <span class="codecolor">links</span> という変数に格納します。
+    </li>
+    <li><span class="codecolor">links</span> には、選択された要素のリストが NodeList オブジェクトとして保存されます。</li>
+   </ul>
+  </div>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower3/flower3(4).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>ここで、一つ注意点があります。<br>
+    上述の NodeList はJavaScriptのデータ構造の一つです。<br>
+    querySelectorAll メソッドの結果として返されるもので、選択されたDOM要素のリストを保持します。<br>
+    NodeListは配列に似ていますが、一部の配列メソッドは使用できません。<br>
+    このように、querySelectorAll メソッドによって返されるオブジェクトは NodeList と呼ばれるデータ構造です。<br>
+    これで複数の要素に対してループ処理を行うことができます。</p>
+  </div>
+
+  <p>ここらへんを書き込もうとすると、かなりの物量になりそうですね…<br>
+   querySelectorAll メソッドについても、どこかで触れていきたいと思います。<br>
+   ここで簡単に説明すると、querySelectorAll
+   メソッドはJavaScriptで使用されるメソッドの一つで、指定されたCSSセレクターに一致するすべての要素を選択するために使います。<br>
+   ドキュメント内の特定の条件を満たす全ての要素を検索し、その結果を NodeList
+   というオブジェクトとして返してるんだよね。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower3/flower3(6).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p><span class="codecolor">links.forEach(link => { link.classList.add("loaded"); });</span></p>
+   <ul>
+    <li><span class="codecolor">links</span> 内の各要素（ここでは <span class="codecolor">link</span> と呼ばれる）に対して、<span
+      class="codecolor">forEach</span> ループを使用して繰り返し処理を行います。</li>
+    <li>ループ内で、各要素に対して <span class="codecolor">classList.add("loaded")</span> メソッドを呼び出し、その要素に <span
+      class="codecolor">"loaded"</span> というクラスを追加します。</li>
+   </ul>
+  </div>
+
+
+  <p>このスクリプトの役割は、ページのDOMが完全に読み込まれた後、特定のアニメーションを持つリンク要素に <span class="codecolor">"loaded"</span>
+   クラスを追加することです。<br>
+   これで<a href="/contents/codeinfo.html#headerglobal_css">グローバルナビゲーションを構成する</a>にあるCSSにて、スタイルやアニメーションを制御できるようになります。</p>
+
+
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/navcode.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

@@ -65,8 +65,6 @@
  <script src="/script/feinfade.js"></script>
  <script src="/script/album.js"></script>
  <script src="/script/feinScroll.js"></script>
- <script src="/script/brython.js"></script>
- <script src="/script/brython_stdlib.js"></script>
  <!-- gsapの読み込み -->
  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
  <!-- prismの読み込み -->
@@ -155,172 +153,8 @@
   <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
 
   <h1 class="background-waveimage-heading"><span>ウェブセーフカラーパレットなど便利ツール</span></h1>
-  <p>以前<a href="/contents/rss.html">このサイトとポータルサイトの更新履歴</a>にあった<strong>このサイト制作に必要な作業環境の一覧</strong>をこちらに移しました。<br>
-   当初から分かっていたことではあったけど、作業環境が複雑化して手元で管理し切れないので、全てこちらのWebサイトへツール群を移行します。<br>
-   ただ、このサイトに来訪されるお客様にも意味が分かるように一文を書き添えていきます。</p>
 
-  <h2>このサイト制作に必要な作業環境の一覧</h2>
-  <p>個人的に何かしらプラットフォームを公開した経験がある人には伝わると思うのですが、手元がごちゃごちゃしてきませんか？<br>
-   構築した環境のバックアップなんかやってられないし、趣味が苦行になっては本末転倒なので。<br>
-   このサイト制作に必要な作業環境の一覧をご紹介しつつ、私の道具箱やツール類を整理します。</p>
-
-  <h3 id="target_system">🌟基礎的なシステムとルール</h3>
-  <div class="flowerclearfix">
-   <div class="flowerfade-out">
-    <img src="/flower2/flower2(17).JPG" alt="フェードアウト効果の草花写真">
-   </div>
-   <p>このWebサイトは、ソースコードとシステムを分けて管理しています。<br>
-    昔の私が困ったところは、これから個人サイトを作ろうとする人も困るポイントかと思うのです。<br>
-    このサイトの運用実績を残しつつ、いろんな人の参考になるような仕組みとしていきたいですね。</p>
-  </div>
-
-  <div class="atelier-container">
-   <div class="atelier-tabs">
-    <div class="atelier-tab" data-tab="1">image</div>
-    <div class="atelier-tab" data-tab="2">system</div>
-    <div class="atelier-tab" data-tab="3">spec</div>
-   </div>
-   <div class="atelier-tab-content" data-content="1">
-
-    <p>まず、個人用GoogleアカウントとWeb公開用Googleアカウントを分けています。<br>
-     その上でデータ共有はアルバム共有機能等を使い、必ず一手は手作業を挟まないとWebに公開できません。<br>
-     誤操作による画像投稿事故を避けるためです。</p>
-    <p>開発環境データはOneDriveと連携し、意識せずとも常時バックアップできている仕組みとしています。</p>
-    <p class="gra">画像の管理・バックアップ</p>
-    <dl>
-     <dt><a href="https://photos.google.com/">Googleフォト</a></dt>
-     <dd>スマホのGoogleフォトからWebサイト用のGoogleアカウントとアルバム共有。ここと直接リンクせず、必ずGoogleドライブへ移し替えるか、ダウンロードしてからデプロイし直すプロセスを挟む。</dd>
-     <dt><a href="https://drive.google.com/">Googleドライブ</a></dt>
-     <dd>ソースコード以外の全公開可能データを格納し、いったんGoogle Sitesで公開運用。時間の経過を待ってからこちらのプラットフォームへ移す。</dd>
-     <dt><a href="https://sites.google.com/view/feins-portal/">fein's portal</a>(Google Sites)</dt>
-     <dd>最終的に形にならずとも、いったんこちらに公開して目に見えるコンテンツにしておく。Webサイトとしてまとめあげるのはこちらのプラットフォームへ委ねる。</dd>
-     <dt>ゲームのスクリーンショット特有のトリミング</dt>
-     <dd>左右に生まれる空白をPython(<span class="small-orange-text">105trimming.py</span>)でまとめてカットして手作業を回避する。</dd>
-     <dt>画像のファイル名をまとめて確保</dt>
-     <dd>新規Webページを作る時には画像をまとめて連携するため、画像ファイル名をPython(<span
-       class="small-orange-text">file_list.py</span>)で取得。予めimgタグの準備をしておく。</dd>
-     <dt>大きすぎる画像をまとめてリサイズ</dt>
-     <dd>大きすぎる画像はWebページの負荷となるため、Python(<span
-       class="small-orange-text">image_aspect_compression_middle50.pyなど</span>)を用いて、まとめてリサイズする。</dd>
-    </dl>
-    <p>コードのリストページ👉：<a href="/another-eden/atelier_studio.html#target_atelier">ソースコードのアトリエ</a></p>
-
-   </div>
-
-   <div class="atelier-tab-content" data-content="2">
-    <p>systemと言っても区分は難しいですけどね。<br>
-     とりあえず暫定的に。</p>
-
-    <p>編集中</p>
-
-    <p class="gra">その他</p>
-    <dl>
-     <dt>W3Cのvalidator</dt>
-     <dd><a href="https://validator.w3.org/nu/">Nu Html Checker</a></dd>
-     <dd><a href="https://validator.schema.org/">schema.orgのバリデータ</a></dd>
-     <dd><a href="https://www.xml-sitemaps.com/validate-xml-sitemap.html">XMLのバリデーター</a></dd>
-
-     <dt>Google系のツール</dt>
-     <dd><i class="fab fa-google"></i> Google Cloud・<i class="fab fa-google-drive"></i> Google Sites</dd>
-     <dd><i class="fa-solid fa-wifi"></i> App Engine(Python Runtime) ／ Cloud Storage</dd>
-
-     <dt>Microsoft系のツール</dt>
-     <dd><i class="fa-brands fa-windows"></i> Microsoft 365</dd>
-     <dd><i class="fa-solid fa-hard-drive"></i> <a href="https://onedrive.live.com/">OneDrive</a></dd>
-     <dd><i class="fas fa-code"></i> <a href="https://vscode.dev/?vscode-lang=ja">Visual Studio Code for the Web</a>
-     </dd>
-    </dl>
-
-
-    <p>コードのリストページ👉：<a href="/another-eden/atelier_studio.html#target_atelier">ソースコードのアトリエ</a></p>
-
-   </div>
-
-   <div class="atelier-tab-content" data-content="3">
-    <p>もう10年くらいかな…<br>
-     低スペックのパソコンしか使ってないです。<br>
-     クラウドが注目されている今、個人でハイスペックパソコンを購入する必要がある状況は限られたものかと。<br>
-     <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>を作っていた時なんか、eMMC (embedded
-     MultiMediaCard) でさえなかったですね。
-    </p>
-
-    <p class="codegra"><i class="fa-solid fa-laptop"></i> My favorite PC</p>
-    <dl>
-     <dt><i class="fa-solid fa-server"></i> CPU Information</dt>
-     <dd>Current Clock Speed: 1114 MHz<br>
-      Name: Intel(R) Celeron(R) N4500 @ 1.10GHz<br>
-      Number of Cores: 2<br></dd>
-     <dt><i class="fa-solid fa-memory"></i> Memory Information</dt>
-     <dd>Capacity: 4 GB (4294967296 bytes)<br>
-      Speed: 3200 MHz<br></dd>
-     <dt><i class="fa-solid fa-database"></i> Disk Information</dt>
-     <dd>Model: Kingston X29128<br>
-      Size: 125 GB (125172311040 bytes)</dd>
-    </dl>
-
-    <p>購入するパソコンに迷うなら、御自身のやりたいことを明確にして店員さんに聞くのが一番良いと思います。<br>
-     私だってパソコンショップで店員さんを頼りますよ？<br>
-     相手は、リアルのプロなのですから。</p>
-
-    <p>コードのリストページ👉：<a href="/another-eden/atelier_studio.html#target_atelier">ソースコードのアトリエ</a></p>
-
-   </div>
-  </div>
-
-  <p>Using VS Code, search for class="codegra".<br>
-   class="gra" is a representation that mimics a heading.</p>
-  <p>Google Sites resumed on July 4, 2023.<br>
-   Google Cloud started on September 15, 2024.</p>
-
-  <hr class="atelierflower">
-
-  <script type="text/python">
-from browser import document, timer
-
-def show_tab(event):
-    container = event.target.closest('.atelier-container')
-    tabs = container.select('.atelier-tab')
-    contents = container.select('.atelier-tab-content')
-
-    for tab in tabs:
-        tab.classList.remove('atelier-active-tab')
-    for content in contents:
-        content.classList.remove('atelier-active-content')
-        content.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out'
-        content.style.transform = 'translateX(-100%)'
-        content.style.opacity = '0'
-        content.style.visibility = 'hidden'
-
-    event.target.classList.add('atelier-active-tab')
-    tab_id = event.target.getAttribute('data-tab')
-    active_content = container.select(f'[data-content="{tab_id}"]')[0]
-    active_content.classList.add('atelier-active-content')
-
-    def show_content():
-        active_content.style.visibility = 'visible'
-        active_content.style.opacity = '1'
-        active_content.style.transform = 'translateX(0)'
-
-    timer.set_timeout(show_content, 50)
-
-for container in document.select('.atelier-container'):
-    tabs = container.select('.atelier-tab')
-    if tabs:
-        tabs[0].classList.add('atelier-active-tab')
-        container.select('.atelier-tab-content')[0].classList.add('atelier-active-content')
-        for tab in tabs:
-            tab.bind('click', show_tab)
-    </script>
-
-  <script>
-   window.addEventListener('load', () => {
-    brython({ debug: 1, selector: ".atelier-container" });
-   });
-  </script>
-
-
-  <h5>退屈な作業はパソコンにやらせる</h5>
-  <p>これかなり重要だと思いますね。<br>
+  <p>退屈な作業をパソコンにやらせるの、かなり重要だと思いますね。<br>
    いろーんなpythonを用意していますが、例えばファイルの規則性あるリネーム等をいちいち手作業していると、個人サイト制作が趣味から業務へ変容します。<br>
    やってて楽しくない<strong>業務</strong>は、可能な限りパソコンにやらせるのが鉄則でしょ。</p>
   <p class="codegra" id="105trimming_py">左側のみ105ピクセル分トリミングする105trimming.py</p>
@@ -454,7 +288,176 @@ print("すべての画像がリサイズされました。")
   <p>Webセーフカラーは216色のカラーパレットで構成されています。<br>
    この216色はデバイスやブラウザを問わず同じように表示されるように設計されていて、安心して使えるカラーです。<br>
    赤・緑・青（RGB）の各色が6段階（0, 51, 102, 153, 204, 255）で表現される組み合わせから成り立っており、「6 × 6 × 6 = 216色」となります。<br>
-   例えば、「#FF0000」は純粋な赤色、「#00FF00」は緑、「#0000FF」は青です。</p>
+   例えば、「#FF0000」は純粋な赤色、「#00FF00」は緑、「#0000FF」は青です。<br>
+   ここから、上記カラーパレットを作っているコードの説明に移ります。</p>
+
+
+  <p class="codegra" id="color_js">Webセーフカラーを作るcolor.js</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+const colors = [
+ '00', '33', '66', '99', 'CC', 'FF'
+];
+
+const palette = document.getElementById('palette');
+
+colors.forEach(r => {
+ colors.forEach(g => {
+  colors.forEach(b => {
+   const color = `#${r}${g}${b}`;
+   const colorBox = document.createElement('div');
+   colorBox.className = 'color-box';
+   colorBox.style.backgroundColor = color;
+
+   const colorCode = document.createElement('div');
+   colorCode.className = 'color-code';
+   colorCode.textContent = color;
+
+   colorBox.appendChild(colorCode);
+   palette.appendChild(colorBox);
+
+   colorBox.addEventListener('click', () => {
+    navigator.clipboard.writeText(color).then(() => {
+     alert(`Color code copied.: ${color}`);
+    });
+   });
+  });
+ });
+});
+
+</code></pre>
+  </div>
+
+  <p>このJavaScriptコードはすべての組み合わせを生成してカラーパレットを作成し、それぞれの色をクリックすると色コードがクリップボードにコピーされる機能を持っています。</p>
+
+  <p class="gra">1. 色の定義</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+const colors = ['00', '33', '66', '99', 'CC', 'FF'];
+
+</code></pre>
+  </div>
+  <p><span class="codecolor">colors</span>配列には、16進数表記で使用する赤、緑、青の値が含まれています。</p>
+
+  <p class="gra">2. パレットの取得</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+const palette = document.getElementById('palette');
+
+</code></pre>
+  </div>
+
+  <p>HTML内の<span class="codecolor">id="palette"</span>を持つ要素を取得し、<span class="codecolor">palette</span>変数に保存します。</p>
+
+  <p class="gra">3. 色の組み合わせを生成</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+colors.forEach(r => {
+    colors.forEach(g => {
+        colors.forEach(b => {
+            const color = `#${r}${g}${b}`;
+
+</code></pre>
+  </div>
+
+  <p>三重の<span class="codecolor">forEach</span>ループを使って、赤(<span class="codecolor">r</span>)、緑(<span
+    class="codecolor">g</span>)、青(<span class="codecolor">b</span>)のすべての組み合わせを生成します。</p>
+  <p><span class="codecolor">color</span>には各組み合わせの16進数の色コードが設定されます（例: <span class="codecolor">#FF00CC</span>）。</p>
+
+  <p class="gra">4. 色のボックスを作成</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+const colorBox = document.createElement('div');
+colorBox.className = 'color-box';
+colorBox.style.backgroundColor = color;
+
+</code></pre>
+  </div>
+
+  <p><span class="codecolor">div</span>要素を作成し、クラス名<span class="codecolor">color-box</span>を設定します。</p>
+  <p><span class="codecolor">backgroundColor</span>スタイルを生成された色コードで設定します。</p>
+
+  <p class="gra">5. 色コードの表示</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+const colorCode = document.createElement('div');
+colorCode.className = 'color-code';
+colorCode.textContent = color;
+
+</code></pre>
+  </div>
+
+  <p><span class="codecolor">div</span>要素を作成し、クラス名<span class="codecolor">color-code</span>を設定します。</p>
+  <p><span class="codecolor">textContent</span>を色コードで設定します。</p>
+
+  <p class="gra">6. 色ボックスに色コードを追加</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+colorBox.appendChild(colorCode);
+   palette.appendChild(colorBox);
+
+</code></pre>
+  </div>
+
+  <p>色ボックス内に色コードを追加し、その色ボックスをパレットに追加します。</p>
+
+  <p class="gra">7. クリックイベントの追加</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+colorBox.addEventListener('click', () => {
+    navigator.clipboard.writeText(color).then(() => {
+        alert(`Color code copied.: ${color}`);
+    });
+});
+
+</code></pre>
+  </div>
+
+  <p>色ボックスがクリックされたときのイベントリスナーを追加します。<br>
+   色コードをクリップボードにコピーし、コピー完了のアラートを表示します。</p>
+  <p>このコードにより、16進数のカラーパレットが動的に生成され、ユーザーが色をクリックするとその色コードがコピーされる機能が実現されます。</p>
+
+
+  <p class="codegra" id="color_css">Webセーフカラーを作るcolor.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+@charset "UTF-8"; /* ファイルの文字コードをUTF-8に指定 */
+
+/* 色のボックスのスタイル設定 */
+.color-box {
+    width: 50px; /* 幅を50pxに設定 */
+    height: 50px; /* 高さを50pxに設定 */
+    display: inline-block; /* インラインブロック要素として表示 */
+    margin: 2px; /* 余白を2pxに設定 */
+    position: relative; /* 相対位置に設定 */
+    cursor: pointer; /* カーソルをポインタに変更 */
+}
+
+/* 色コードのスタイル設定 */
+.color-code {
+    position: absolute; /* 絶対位置に設定 */
+    bottom: 0; /* 下端に位置を設定 */
+    left: 0; /* 左端に位置を設定 */
+    right: 0; /* 右端に位置を設定 */
+    background: rgba(255, 255, 255, 0.7); /* 背景色を半透明の白に設定 */
+    text-align: center; /* 文字を中央揃えに設定 */
+    font-size: 12px; /* フォントサイズを12pxに設定 */
+    display: none; /* デフォルトで非表示に設定 */
+}
+
+/* 色のボックスにホバーしたときの色コードのスタイル設定 */
+.color-box:hover .color-code {
+    display: block; /* ホバー時に表示に変更 */
+}
+
+</code></pre>
+  </div>
+
+
+
+
+
+
 
   <p>昔は頻用されたようですが、現在のデバイスやブラウザは性能も高く、必ずしもWebセーフカラーにこだわる必要はありません。<br>
    でも私は基本原則として、このWebセーフカラーを使うようにしています。<br>

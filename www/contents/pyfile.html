@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <meta charset="UTF-8">
+ <title>地味で便利なPythonによるファイル操作</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="主にPythonの書き方を紹介しているページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta name="keywords" content="個人サイト, Python, コマンドプロンプト">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="地味で便利なPythonによるファイル操作">
+ <meta property="og:description" content="主にPythonの書き方を紹介しているページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/pyfile.html">
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-bash.min.js"></script>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+ <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "地味で便利なPythonによるファイル操作",
+        "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/pyfile.html",
+        "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+    }
+    </script>
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">地味で便利なPythonによるファイル操作</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!--ハンバーガーメニュー-->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰
+    メニューを開く</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!--ハンバーガーメニューここまで-->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="地味で便利なPythonによるファイル操作の目次を開く ▼"
+   data-close-text="地味で便利なPythonによるファイル操作の目次を閉じる ▲">地味で便利なPythonによるファイル操作の目次を開く ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>地味で便利なPythonによるファイル操作</span></h1>
+  <p>Python、とても流行していますね！<br>
+   弊サイトにもいろんなキーワードで来訪者があります。<br>
+   書店に行くと機械学習関連のPython書籍が多く見られますが、ここではちょっとしたファイル操作に関するPythonスクリプトを掲載します。<br>
+   中にはコマンドプロンプトで実行できるものもあるんだけど、ある種のCLIツールみたいに手元にスクリプトを置いておくと、後から簡単に実行できて便利だからね。</p>
+
+  <h3>このページに関する注意事項</h3>
+  <p>当Webサイト作成者は、例示を目的としてマークアップ及びプログラミング例を提供しており、明示または黙示にかかわらず、いかなる責任も負わないものとします。<br>
+   このページは、説明されているマークアップ及びプログラミング言語、手順を作成およびデバッグするために使用される各種ツールに読者が精通していることを前提にしています。<br>
+   このページは、特定の機能を説明するのに役立つ可能性がありますが、当Webサイト作成者がこれらの例を変更した上で、特定の要件を満たすために追加の機能を提供したり、システムを構築したりすることはできません。<br>
+   加えて、この例の手順に従う場合は、読者の各種ファイルを事前にバックアップすることを推奨いたします。</p>
+
+  <h2>ファイル名をまとめて変更</h2>
+  <p>Windowsでまとめてリネームすると、なぜかファイル名に半角スペースが挿入されるんですよね。<br>
+   初めから意図して変更しても良いんだけど、自動的に数字を振ってくれるのは助かる。<br>
+   そこで、GUIベースでファイルリネームしてから半角スペースをPythonで削除しちゃってます。</p>
+
+  <p class="codegra" id="file_space_py">ファイルから半角スペースを削除するfile_space.py</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+import os
+
+directory = r'C:\Users\アレコレ\Desktop\flower3'
+
+for filename in os.listdir(directory):
+    old_filepath = os.path.join(directory, filename)
+    new_filename = filename.replace(' ', '')  # 半角スペースを削除
+    new_filepath = os.path.join(directory, new_filename)
+    os.rename(old_filepath, new_filepath)
+
+print("ファイル名のリネームが完了しました。")
+    </code></pre>
+  </div>
+
+  <p>まぁ、ちょっとした手元の小ネタですよ。<br>
+   スクリプトの説明は次のとおり。</p>
+
+  <dl>
+   <dt>モジュールのインポート</dt>
+   <dd>
+    <span class="codecolor">os</span>モジュールをインポートして、ディレクトリ操作やファイル名の変更を行います。
+   </dd>
+   <dt>ディレクトリの指定</dt>
+   <dd>
+    <span class="codecolor">directory</span>変数に、対象となるディレクトリのパスを指定します。
+   </dd>
+   <dt>ディレクトリ内のファイルをリストアップ</dt>
+   <dd>
+    <span class="codecolor">os.listdir(directory)</span>を使用して、指定したディレクトリ内のすべてのファイル名を取得します。
+   </dd>
+   <dt>各ファイル名のリネーム</dt>
+   <dd>
+    取得したファイル名を一つずつ処理します。<br>
+    <span class="codecolor">old_filepath</span>に元のファイルのパスを、<span
+     class="codecolor">new_filename</span>にファイル名から半角スペースを削除した新しいファイル名を設定します。<br>
+    <span class="codecolor">new_filepath</span>に新しいファイル名のフルパスを設定し、<span class="codecolor">os.rename(old_filepath,
+     new_filepath)</span>でファイル名を変更します。
+   </dd>
+   <dt>完了メッセージの表示</dt>
+   <dd>
+    すべてのファイル名のリネームが完了した後、完了メッセージを表示します。
+   </dd>
+  </dl>
+
+  <h2>ファイル数をまとめて数える</h2>
+  <p>これは私の個人都合に限りなく近いですね。<br>
+   CSSやJavaScriptはほとんど機会ないけど、htmlに関してはまとめて一括操作したいことがあるんです。<br>
+   グローバルナビゲーションを変更したりとか。<br>
+   そういう時にいちいち手作業でやってたら、日が暮れるどころか年越ししちゃいますよ。<br>
+   現在自分のサイトにいくつのhtmlページがあるのか、正確な数を把握するのに使ってます。</p>
+
+  <p class="codegra" id="file_sum_py">HTML・CSS・JavaScriptのファイルを数えるfile_sum.py</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+import os
+
+def count_files(directory, extension):
+    count = 0
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            if file.endswith(extension):
+                count += 1
+    return count
+
+# メインディレクトリを指定
+main_directory = r'C:\Users\アレコレ\OneDrive\_fein\google cloud\fein-sites-dev1\www'
+
+# 各ファイルタイプの総数を計算
+total_html_files = count_files(main_directory, '.html')
+total_css_files = count_files(main_directory, '.css')
+total_js_files = count_files(main_directory, '.js')
+
+# HTMLファイルは2を引く
+html_result = total_html_files - 2
+
+# 結果を表示
+print(f"{html_result} の HTMLファイルがあります")
+print(f"{total_css_files} の CSSファイルがあります")
+print(f"{total_js_files} の JavaScriptファイルがあります")
+    </code></pre>
+  </div>
+  <p>htmlファイル数から2を引いているのは、私個人の環境によるものです。<br>
+   このサイトには直接的にWebページとしては表示されないものの、htmlページの構成要素の一部として使われる commongdl.html と menu.html という2つのファイルが存在します。<br>
+   この2つは例外として扱わないと、ファイル数を確認してからまとめてスクリプトを実行する時に支障が出る可能性があるんですよね。<br>
+   他の様々なhtmlファイルは一貫して似たような構造を持たせているのです。<br>
+   そうすることによって、柔軟な運用が効くようになる。<br>
+   VS Codeやスクリプトを使ってhtmlファイルをミスなく一括操作しやすいってわけです。<br>
+   では、スクリプトの説明に移りましょう。</p>
+
+  <dl>
+   <dt>モジュールのインポート</dt>
+   <dd>
+    <span class="codecolor">os</span>モジュールをインポートして、ディレクトリの操作を行います。
+   </dd>
+   <dt>count_files関数の定義</dt>
+   <dd>
+    指定されたディレクトリ内のファイル数を数えます。<br>
+    <span class="codecolor">directory</span>はディレクトリのパス、<span class="codecolor">extension</span>はファイルの拡張子です。<br>
+    ディレクトリを再帰的に探索し、指定された拡張子で終わるファイルの数をカウントして返します。
+   </dd>
+   <dt>メインディレクトリの指定</dt>
+   <dd>
+    <span class="codecolor">main_directory</span>変数に、対象となるメインディレクトリのパスを指定します。
+   </dd>
+   <dt>ファイルタイプの総数を計算</dt>
+   <dd>
+    <span class="codecolor">count_files</span>関数を使用して、<span class="codecolor">.html</span>、<span
+     class="codecolor">.css</span>、<span class="codecolor">.js</span>ファイルの総数を計算します。
+   </dd>
+   <dt>HTMLファイル数の調整</dt>
+   <dd>
+    HTMLファイルの総数から2を引きます。<br>
+    これが私固有の要件に応じた調整となります。
+   </dd>
+   <dt>結果の表示</dt>
+   <dd>
+    計算された各ファイルタイプの総数をプリントします。
+   </dd>
+  </dl>
+
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/pyfile.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

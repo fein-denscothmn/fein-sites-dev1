@@ -323,6 +323,14 @@ img.right-image {
  float: right;
 }
 
+img.wallpaper {
+ margin: 10px;
+ display: block;
+ width: 40%;
+ height: auto;
+ border-radius: 10px;
+}
+
 div.content {
  overflow: hidden;
 }
@@ -335,15 +343,6 @@ img.fade-in-out {
 
 img.fade-in-out.visible {
  opacity: 1;
-}
-
-/* Wallpaper to accompany the short story on the table */
-img.wallpaper {
- margin: 10px;
- display: block;
- width: 40%;
- height: auto;
- border-radius: 10px;
 }
 
 /* ★グラスタ表の火力20倍の話に添える画像 */
@@ -379,7 +378,7 @@ div.gtable {
  margin: auto;
 }
 
-/* Unique class name. Horizontal alignment of images. */
+/* ★画像を左右に並べる */
 .horizontally-container {
  display: flex;
  border-radius: 10px;

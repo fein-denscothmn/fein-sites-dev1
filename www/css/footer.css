@@ -82,7 +82,7 @@ pre {
  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* sitemap ●start● */
+/* ★フッターに表示するサイトマップリンクを作る */
 .sitemap {
  margin: 0 0 20px 0;
  padding: 20px;
@@ -95,7 +95,7 @@ pre {
  margin-right: 5px;
 }
 
-/* Google Cloud Certificate */
+/* ★資格証の表示 */
 .biggraphic {
  max-width: 100%;
  height: auto;
@@ -103,7 +103,7 @@ pre {
  margin-bottom: 20px;
 }
 
-/* SNS links */
+/* ★SNSの表示 */
 .social-links,
 .footer-links {
  display: block;
@@ -129,7 +129,6 @@ pre {
  margin-bottom: 3px;
 }
 
-/* Setting SVG color and size */
 svg {
  width: 14px;
  height: 14px;
@@ -145,10 +144,9 @@ svg {
  }
 }
 
+/* ★著作権の表示 */
 .copyright {
  color: #555;
  font-size: 12px;
  margin-top: 10px;
 }
-
-/* footer settings ●end● */

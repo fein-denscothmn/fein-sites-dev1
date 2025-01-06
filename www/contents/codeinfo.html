@@ -301,80 +301,93 @@ background-color: white;  /* 背景色の設定 */
 
   <h2>グローバルナビゲーションの外観を整える</h2>
 
+  <p>このスタイルはリンクにホバーしたり特定のクラスが追加されたりすると、アンダーラインがアニメーションで表示されるという効果を作り出しています。<br>
+   グローバルナビゲーションとして稼働させるには<a href="/contents/navcode.html#globalmenu_js">グローバルナビゲーションを目立たせる</a>にあるJavaScriptが別途必要です。<br>
+   このサイトではグローバルナビゲーション用の専用UIを実装するのではなく、アンダーラインのアニメーションを添えることで、少し目立たせるに留めています。</p>
+
   <p class="codegra" id="headerglobal_css">グローバルナビゲーションを構成するheader.css</p>
   <div class="code-container">
    <pre><code class="language-css">
+/* アンダーラインアニメーションのキーフレームを定義 */
 @keyframes underline-animation {
  from {
-  width: 0;
-  background: #00CC00;
+  width: 0; /* 初期幅は0 */
+  background: #00CC00; /* 初期背景色は緑 */
  }
-
  to {
-  width: 100%;
-  background: #4285F4;
+  width: 100%; /* 最終幅は100% */
+  background: #4285F4; /* 最終背景色は青 */
  }
 }
 
+/* アニメーション対象のリンク要素の基本スタイル */
 .animated-link {
- position: relative;
- color: #4285F4;
- text-decoration: none;
+ position: relative; /* 要素を相対位置に設定 */
+ color: #4285F4; /* リンクのテキスト色を青に設定 */
+ text-decoration: none; /* テキストの下線を削除 */
 }
 
+/* アニメーション対象のリンク要素の擬似要素::afterを定義 */
 .animated-link::after {
- content: "";
- position: absolute;
- left: 0;
- bottom: -2px;
- width: 0;
- height: 2px;
- background: #00CC00;
- transition: width 0.5s;
+ content: ""; /* 擬似要素の内容を空に設定 */
+ position: absolute; /* 要素を絶対位置に設定 */
+ left: 0; /* 擬似要素の左端を親要素に揃える */
+ bottom: -2px; /* 擬似要素の下端を親要素から少し下げる */
+ width: 0; /* 初期幅を0に設定 */
+ height: 2px; /* 高さを2pxに設定 */
+ background: #00CC00; /* 初期背景色を緑に設定 */
+ transition: width 0.5s; /* 幅の変化を0.5秒でアニメーション */
 }
 
+/* "loaded" クラスが追加されたリンク要素の擬似要素::afterを定義 */
 .animated-link.loaded::after {
- width: 100%;
- background: #4285F4;
- animation: underline-animation 2s forwards;
+ width: 100%; /* 幅を100%に設定 */
+ background: #4285F4; /* 背景色を青に変更 */
+ animation: underline-animation 2s forwards; /* アンダーラインアニメーションを2秒間かけて実行 */
 }
 
+/* ナビゲーションバーのスタイル */
 .den_nav {
- background: linear-gradient(to bottom, rgba(173, 216, 230, 0.5), rgba(173, 216, 230, 0));
- color: #4285F4;
- padding: 10px;
- border-radius: 20px;
+ background: linear-gradient(to bottom, rgba(173, 216, 230, 0.5), rgba(173, 216, 230, 0)); /* 背景をグラデーションに設定 */
+ color: #4285F4; /* テキスト色を青に設定 */
+ padding: 10px; /* 内側の余白を10pxに設定 */
+ border-radius: 20px; /* 角を丸くする */
 }
 
+/* ホームアイコンのスタイル */
 .feinhome {
- width: 50px;
- margin-left: 3px;
- margin-top: 3px;
- display: block;
- position: relative;
- top: 3px;
- left: 3px;
+ width: 50px; /* 幅を50pxに設定 */
+ margin-left: 3px; /* 左マージンを3pxに設定 */
+ margin-top: 3px; /* 上マージンを3pxに設定 */
+ display: block; /* ブロック要素として表示 */
+ position: relative; /* 相対位置に設定 */
+ top: 3px; /* 上から3pxに位置 */
+ left: 3px; /* 左から3pxに位置 */
 }
 
+/* ナビゲーションメニューのスタイル */
 .den_nav ul {
- list-style-type: none;
- margin: 0;
- padding: 0;
- display: flex;
- flex-wrap: wrap;
+ list-style-type: none; /* リストのデフォルトの箇条書きを削除 */
+ margin: 0; /* 外側の余白をなしに設定 */
+ padding: 0; /* 内側の余白をなしに設定 */
+ display: flex; /* 子要素を横並びに表示 */
+ flex-wrap: wrap; /* 子要素を折り返す */
 }
 
+/* リスト項目のスタイル */
 .den_nav ul li {
- margin-right: 20px;
- margin-bottom: 10px;
+ margin-right: 20px; /* 右マージンを20pxに設定 */
+ margin-bottom: 10px; /* 下マージンを10pxに設定 */
 }
 
+/* リスト内のリンクのスタイル */
 .den_nav ul li a {
- color: #4285F4;
+ color: #4285F4; /* リンクのテキスト色を青に設定 */
 }
 
+/* リンクにホバーしたときのスタイル */
 .den_nav ul li a:hover {
- color: #0078D4;
+ color: #0078D4; /* リンクのテキスト色を濃い青に変更 */
 }
 
 </code></pre>

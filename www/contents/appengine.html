@@ -444,57 +444,107 @@ handlers:
   <p>この例では、/static URLに一致するリクエストがstaticディレクトリ内のファイルにマッピングされます。</p>
 
   <h2>app.yamlの構文例</h2>
-  <p class="gra">下記コードのコピペはお勧めできません</p>
-  <p>費用がかかる可能性がありますよ。<br>
+  <p><span class="small-orange-text">下記コードのコピペはお勧めできません。</span></p>
+  <p>Webアプリケーションのレベルやアクセス数によっては費用がかかる可能性がありますよ。<br>
    あくまでも私の環境に沿った上でのコードですから、ちゃんと意味を理解してから書いた方が良いです。
   </p>
+  <p class="codegra" id="app_yaml">Google App Engine の app.yaml</p>
   <div class="code-container">
    <pre><code class="language-yaml">
-runtime: python38  # Python 3.8のランタイムを使用
-instance_class: F1  # 使用するインスタンスタイプ
-env: standard  # 標準環境でデプロイ
+runtime: python312
+instance_class: F1
+env: standard
 
 runtime_config:
-  document_root: www  # ドキュメントルートのディレクトリを指定
+  document_root: www
 
 automatic_scaling:
-  min_idle_instances: 0  # 最小アイドルインスタンス数
-  max_idle_instances: 2  # 最大アイドルインスタンス数
-  max_concurrent_requests: 100  # インスタンスごとの最大同時リクエスト数
+  min_idle_instances: 0
+  max_idle_instances: 3
+  max_concurrent_requests: 200
 
 handlers:
-- url: /  # ルートURLにアクセスがあったとき
-  static_files: www/index.html  # www/index.htmlを返す
-  upload: www/index.html  # アップロードするファイルパスの指定
+- url: /
+  static_files: www/index.html
+  upload: www/index.html
 
-- url: /favicon.ico  # /favicon.icoにアクセスがあったとき
-  static_files: www/favicon.ico  # www/favicon.icoを返す
-  upload: www/favicon.ico  # アップロードするファイルパスの指定
+- url: /favicon.ico
+  static_files: www/favicon.ico
+  upload: www/favicon.ico
 
-- url: /(.*)  # 任意のURLにアクセスがあったとき（正規表現を使用）
-  static_files: www/\1  # wwwディレクトリ内の対応するファイルを返す
-  upload: www/(.*)  # アップロードするファイルパスの指定
+- url: /(.*)
+  static_files: www/\1
+  upload: www/(.*)
 
 </code></pre>
   </div>
 
-  <h4>app.yaml構文例の説明</h4>
+  <h4>YAML 設定ファイルの説明</h4>
+  <p><span class="codecolor">1. runtime: python312</span><br>
+   使用するランタイム環境を指定します。<br>
+   私の場合、Python 3.12 を使用しています。</p>
+
+  <p><span class="codecolor">2. instance_class: F1</span><br>
+   使用するインスタンスのクラスを指定します。<br>
+   <span class="codecolor">F1</span> クラスのインスタンスを使用しています。<br>
+   これは無料の低トラフィック用インスタンスクラスです。
+  </p>
+
+  <p><span class="codecolor">3. env: standard</span><br>
+   環境を標準環境として指定します。</p>
+
+  <p><span class="codecolor">4. runtime_config:</span><br>
+   ランタイムの設定情報を定義するセクションです。</p>
+  <p><span class="codecolor">document_root: www</span><br>
+   ドキュメントルートを指定しています。<br>
+   私の場合、アプリケーションのルートディレクトリが <span class="codecolor">www</span> フォルダです。</p>
+
+  <p><span class="codecolor">5. automatic_scaling:</span><br>
+   自動スケーリングの設定を指定するセクションです。</p>
   <ul>
-   <li><strong>runtime:</strong> Python 3.8ランタイムを使用することを指定しています。</li>
-   <li><strong>instance_class:</strong> 使用するインスタンスのタイプを指定しています。この場合はF1タイプ。</li>
-   <li><strong>env:</strong> デプロイする環境を指定しています。この場合は標準環境。</li>
-   <li><strong>runtime_config:</strong> ドキュメントルートのディレクトリを指定しています。</li>
-   <li><strong>automatic_scaling:</strong>
-    自動スケーリングの設定を行います。ここでは、最小アイドルインスタンス数、最大アイドルインスタンス数、インスタンスごとの最大同時リクエスト数を設定しています。</li>
-   <li><strong>handlers:</strong> 各URLパターンに対応するハンドラを設定しています。特定のURLにアクセスがあったときに、対応する静的ファイルを返す設定です。
-    <ul>
-     <li><strong>url: /</strong>: ルートURLにアクセスがあったとき、<code>www/index.html</code>を返す。</li>
-     <li><strong>url: /favicon.ico</strong>:
-      <code>/favicon.ico</code>にアクセスがあったとき、<code>www/favicon.ico</code>を返す。
-     </li>
-     <li><strong>url: /(.*)</strong>: 任意のURLにアクセスがあったとき、<code>www</code>ディレクトリ内の対応するファイルを返す。正規表現を使用しています。</li>
-    </ul>
+   <li><span class="codecolor">min_idle_instances: 0</span><br>
+    最小アイドルインスタンス数を 0 に設定します。<br>
+    インスタンスがアイドル状態になったとき、それを保持する最小の数です。</li>
+   <li><span class="codecolor">max_idle_instances: 3</span><br>
+    最大アイドルインスタンス数を 3 に設定します。<br>
+    インスタンスがアイドル状態になったとき、それを保持する最大の数です。</li>
+   <li><span class="codecolor">max_concurrent_requests: 200</span><br>
+    1 つのインスタンスで同時に処理できるリクエストの最大数を 200 に設定します。</li>
+  </ul>
+
+  <p><span class="codecolor">6. handlers:</span><br>
+   URL ハンドラーのリストを定義するセクションです。<br>
+   各ハンドラーが特定の URL パターンに対してどのような操作を行うかを指定します。</p>
+  <ul>
+   <li><span class="codecolor">url: /</span><br>
+    <span class="codecolor">/</span> に一致する URL に対するハンドラーを指定します。
    </li>
+   <ul>
+    <li><span class="codecolor">static_files: www/index.html</span><br>
+     静的ファイル <span class="codecolor">www/index.html</span> を提供します。</li>
+    <li><span class="codecolor">upload: www/index.html</span><br>
+     GAE にデプロイするときに <span class="codecolor">www/index.html</span> をアップロードします。</li>
+   </ul>
+   <li><span class="codecolor">url: /favicon.ico</span><br>
+    <span class="codecolor">/favicon.ico</span> に一致する URL に対するハンドラーを指定します。
+   </li>
+   <ul>
+    <li><span class="codecolor">static_files: www/favicon.ico</span><br>
+     静的ファイル <span class="codecolor">www/favicon.ico</span> を提供します。
+    </li>
+    <li><span class="codecolor">upload: www/favicon.ico</span><br>
+     GAE にデプロイするときに <span class="codecolor">www/favicon.ico</span> をアップロードします。
+    </li>
+   </ul>
+   <li><span class="codecolor">url: /(.*)</span><br>
+    任意の URL に一致するハンドラーを指定します。<br>
+    正規表現 <span class="codecolor">(.*)</span> を使用して、どの URL にもマッチさせます。</li>
+   <ul>
+    <li><span class="codecolor">static_files: www/\1</span><br>
+     URL に対応するファイルを <span class="codecolor">www</span> フォルダから提供します。</li>
+    <li><span class="codecolor">upload: www/(.*)</span><br>
+     GAE にデプロイするときに <span class="codecolor">www</span> フォルダ内の任意のファイルをアップロードします。</li>
+   </ul>
   </ul>
 
   <h3>GCP・AWS・Azureで独自ドメインを使う</h3>
