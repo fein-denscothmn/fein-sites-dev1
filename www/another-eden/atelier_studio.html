@@ -142,11 +142,10 @@
     fear戦のBGMなんか、ぶっ飛んでたよ。<br>
     もう何度も何度も聞いてます。<br>
     これはテンションが上がってしまったので、単なる感想文であったり、はたまた攻略一辺倒な記事とは一線を画すようなWebページを作りたいと強く感じました。<br>
-    そこで何をやろうか考えていたのですが…ネタバレの懸念もありますし…<br>
-
+    まず、ライザのアトリエに関する公式サイトには次のようなものがありますね。</p>
   </div>
 
-  <p>まず、ライザのアトリエに関する公式サイトには次のようなものがありますね。</p>
+
   <div class="scoth-dropdown">
    <button onclick="toggleDropdown('menu1', event)">ライザのアトリエ関連：公式サイトリスト</button>
    <div class="scoth-dropdown-content" id="menu1"></div>
@@ -212,17 +211,14 @@
   </script>
 
   <p>ライザ、めっちゃ可愛いよね✨</p>
-  <p>さてさて、せっかくこのように自由にUIを実装できるファンサイトを作っているのですから、それを最大限活かしていきましょう！<br>
-   アナザーエデンのゲーム内 ─ 具体的にはステータス画面 ─
-   にも登場するようなタブUIを実装しつつネタバレを回避し、私個人としても柔軟にゲームのことを書けるような…</p>
+
   <div class="content">
    <img src="/another-eden/anaimage/ライザ完成拡大版.jpg" alt="ライザ完成拡大版" class="graphicsaki right-image fade-in-out">
-
-   <p>そういう、ファンサイトの制作プロセスを作れる「アトリエ」を、ここに実装します。</p>
-   <p>「何を入れるのがいいかなぁー」<br>
-    「これでいいかな！」<br>
-    「やったぁー！ できた！」<br>
-    みたいな感じで、ライザみたいにWebサイトを調合しようかと！</p>
+   <p>さてさて、せっかくこのように自由にUIを実装できるプラットフォームを作っているのですから、それを最大限活かしていきましょう！<br>
+    具体的には、ファンサイトの制作プロセスを公開できる「アトリエ」をここに実装します。</p>
+   <p>自分だけのプラットフォームを<strong>調合</strong>するプロセスを公開しようかと。<br>
+    「ないなら 作ればいい！」<br>
+    これ、めっちゃかっこいい！</p>
    <p><strong>
      関連ページ</strong>：<a href="/another-eden/lua.html">アナザーエデンのプログラミングを個人サイトで試す</a></p>
   </div>
@@ -246,25 +242,11 @@
    <button class="feinalbum-next">次のページ</button>
   </div>
 
-  <p>ライザリン・シュタウトに出逢わなければ、この着想に辿り着けなかったです。</p>
+  <hr class="atelierflower">
 
   <h3 id="target_atelier">🌟ソースコードのアトリエ</h3>
+  <p>このサイトを構成するのに必要なCSSと、プログラムの解説ページへジャンプできるリンクです。</p>
 
-  <div class="content">
-   <img src="/another-eden/anaimage/atelier_anaden.jpg" alt="アナデンライザコラボ" class="wallpaper right-image fade-in-out">
-   <p>このサイトを構成するのに必要なコード・リストと、それらの解説ページへジャンプできるリンクです。<br>
-    どっちみち全てのコードについて学生時代のノートから移してくるつもりなので、基盤システムを書いてあるページと行き来できるようにしてあります。<br>
-    学生時代はこういうことができなかったのですよ。<br>
-    自分がやりやすいようなUIを整えた上で、システムとソースコードの管理を行う。<br>
-    これができなかった…
-   </p>
-   <p>でもこれからは違います。<br>
-    アナデンライザコラボは、私にとって大切な思い出となりましたね！<br>
-    錬金術やってるライザを見なければ、こういう方向の着想に至らなかった。</p>
-   <p>
-    「ないなら 作ればいい！」<br>
-    この姿勢、めっちゃかっこいいです！</p>
-  </div>
 
   <h4>Recipe for CSS and Programs</h4>
   <div class="spacer"></div>
@@ -322,10 +304,10 @@
 
       <dt>menu.css</dt>
       <dd><a href="/contents/navcode.html#menu_html">ハンバーガーメニューを差し込むhtmlコード</a><br>
-       <span class="small-orange-text">差し込み先のhtmlコードです。
+       <span class="small-orange-text">差し込み先のhtmlコードです。</span>
       </dd>
       <dd><a href="/contents/navcode.html#menumaker_html">ハンバーガーメニューを作るmenu.html</a><br>
-       <span class="small-orange-text">差し込まれるタイプの特別なhtmlファイルです。
+       <span class="small-orange-text">差し込まれるタイプの特別なhtmlファイルです。</span>
       </dd>
       <dd><a href="/contents/navcode.html#menu_css">ハンバーガーメニューを作る</a></dd>
 
@@ -372,30 +354,29 @@
      <li><a href="/contents/navcode.html#feinheadline1_js">feinheadline1.js</a> アコーディオン型の見出しを作る</li>
     </ul>
 
+
     <div class="content">
      <img src="/another-eden/anaimage/フィーネライザバー.jpg" alt="フィーネライザバー" class="graphicsaki right-image fade-in-out">
+     <dl>
+      <dt>video.js</dt>
+      <dd><a href="/contents/videopage.html#normal_video_js">通常版の動画を掲載する</a></dd>
+      <dd>Google Drive版は動画を掲載するのにJSが不要となっている</dd>
 
-     <dt>video.js</dt>
-     <dd><a href="/contents/videopage.html#normal_video_js">通常版の動画を掲載する</a></dd>
-     <dd>Google Drive版は動画を掲載するのにJSが不要となっている</dd>
+      <dt>feinScroll.js</dt>
+      <dd><a href="/contents/javascript_footer.html#feinScroll_js">スクロールを追いかけるボタンを実装する</a></dd>
+      <dd><a href="/contents/javascriptinfo.html#imagescroll_feinScroll_js">ヘッダーのロゴ画像をスクロールする</a></dd>
+
+      <dt>underline.js</dt>
+      <dd><a href="/contents/css_tidbit.html#checkdesign_js">タップするとチェックが変化する</a></dd>
+      <dd><a href="/contents/css_tidbit.html#h3underline_js">h3見出しに赤い線を引く</a></dd>
+
+      <dt>menu.js</dt>
+      <dd><a href="/contents/navcode.html#menu_js">ハンバーガーメニューを作る</a></dd>
+      <dd><a href="/contents/navcode.html#globalmenu_js">グローバルナビゲーションを目立たせる</a></dd>
      </dl>
-
-     <dt>feinScroll.js</dt>
-     <dd><a href="/contents/javascript_footer.html#feinScroll_js">スクロールを追いかけるボタンを実装する</a></dd>
-     <dd><a href="/contents/javascriptinfo.html#imagescroll_feinScroll_js">ヘッダーのロゴ画像をスクロールする</a></dd>
-     </dl>
-
-     <dt>underline.js</dt>
-     <dd><a href="/contents/css_tidbit.html#checkdesign_js">タップするとチェックが変化する</a></dd>
-     <dd><a href="/contents/css_tidbit.html#h3underline_js">h3見出しに赤い線を引く</a></dd>
-     </dl>
-
-     <dt>menu.js</dt>
-     <dd><a href="/contents/navcode.html#menu_js">ハンバーガーメニューを作る</a></dd>
-     <dd><a href="/contents/navcode.html#globalmenu_js">グローバルナビゲーションを目立たせる</a></dd>
-     </dl>
-
     </div>
+
+
     <p class="gra">JavaScriptライブラリやツール</p>
     <ul>
      <li><a href="https://brython.info/">brython.js・brython_stdlib.js</a></li>
@@ -460,13 +441,10 @@
 
   <div class="content">
    <img src="/another-eden/anaimage/ライザ星導覚醒前.jpg" alt="ライザ星導覚醒前" class="graphicsaki right-image fade-in-out">
-   <p>このタブUIですが、既にこのページのいろんな所に使われています。<br>
-    当然のことながら、既に<a
-     href="/contents/no_copying.html">AI学習や無断転載を防ぐプログラムの小ネタ集</a>にて実装している青色のタブUIとともに、今後もいろんなページで使えるものとなりました。<br>
+   <p>このタブUIは<a href="/contents/no_copying.html">AI学習や無断転載を防ぐプログラムの小ネタ集</a>にて実装している青色のタブUIとともに、今後もいろんなページで使えるものです。<br>
     ただ単にPython使うなら、FlaskやDjangoのほうが一般的なんだけどね。<br>
-    でもそれだとWebサイトの引っ越ししたくなった時に支障が出る可能性もあるのです。</p>
+    でもそれだとWebサイトの引っ越ししたくなった時に支障が出る可能性もあるからさ。</p>
   </div>
-  <hr class="atelierflower">
 
   <script type="text/python">
 from browser import document, timer
@@ -598,8 +576,8 @@ for container in document.select('.atelier-container'):
      Gitはツールであり、GitHubはそのツールを使ってオンラインでコードを管理するサービスです。</p>
 
     <p class="gra">Windows用Gitのダウンロード</p>
-    <a href="https://git-scm.com/downloads/win">Windows用Gitのダウンロード</a>を開いてダウンロードし、まずはgitをインストールします。<br>
-    gitインストール時に戸惑いがちな設定は次のような項目があるかと。</p>
+    <p><a href="https://git-scm.com/downloads/win">Windows用Gitのダウンロード</a>を開いてダウンロードし、まずはgitをインストールします。<br>
+     gitインストール時に戸惑いがちな設定は次のような項目があるかと。</p>
 
     <div class="content">
      <img src="/another-eden/anaimage/gitインストール直後.png" alt="gitインストール直後" class="biggraphic fade-in-out">
@@ -996,14 +974,10 @@ git push origin main
 
   <h3>🌟頻用する素材と錬金釜</h3>
 
-  <p>このアトリエページは、表面上は子供っぽいキャラクターごっこです。<br>
-   でも実際は、「私自身のコード管理」と「訪問者向けのコード解説」を両立させたUIとして、機能しています。</p>
-
+  <p>このアトリエページは、表面上は子供っぽいキャラクターごっこです。</p>
   <div class="content">
    <img src="/another-eden/anaimage/Visual_mariel_Code.jpg" alt="Visual_mariel_Code" class="biggraphic fade-in-out">
-   <p>せっかくライザごっこをしているのですから、頻用する合成材料を置く場所を作りましょう。<br>
-    ライザのアトリエにもそういったスペースはあるはず？！<br>
-    一通りの「素材」が揃った今なら…そういったUIを作り込むことも可能です！</p>
+   <p>でも実際は、「私自身のコード管理」と「訪問者向けのコード解説」を両立させたUIとして、機能しています。</p>
   </div>
 
   <h4>Recipe for CSS and HTML</h4>
@@ -1931,6 +1905,56 @@ hr.atelierflower::before {
    </div>
   </div>
 
+  <h3>🌟ソースコードの管理とUI/UX（経験者向けのお話）</h3>
+  <p>このページは、少女趣味なキャラクターごっこそのものでしょう。<br>
+   でも、自分でコードを書いて何かしらの開発をしたことがある人になら、おそらく私の意図が伝わるのではないかと思っています。</p>
+
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザコラボシュゼット.jpg" alt="ライザコラボシュゼット" class="graphicsaki right-image fade-in-out">
+   <p>要するに、私がやりたかったのは次のようなことです。</p>
+   <ol>
+    <li>開発者が自分だけでやるコード管理は杜撰になりがち。</li>
+    <li>いくら決意しようが根性しようが、どーせ徹底されない。</li>
+    <li>でもソースコード管理をちゃんとやらないと、遅かれ早かれWebサイトの拡張に必ず支障が出る。</li>
+    <li>自分だけでやると杜撰になるなら、他人様の目があるところでソースコード管理をしよう。</li>
+   </ol>
+   <p>分かりやすい話だと思いませんか？<br>
+    自分が書いてきたコードの説明文を、外部の人にも分かるようにちゃんと書く。<br>
+    これは仕事の現場でもよく聞く<strong>「マニュアルの整備」</strong>に他なりません。</p>
+  </div>
+
+  <div class="content">
+   <img src="/another-eden/anaimage/錬金術極める.jpg" alt="錬金術極める" class="graphicsaki right-image fade-in-out">
+   <p>このページがあることで、外部向けに広大なWeb制作マニュアルを提供しつつ、私はソースコードの<strong>マニュアル</strong>をいつでも参照できるようになったわけです。<br>
+    ソースコード同士の関係が、自分で分からなくなる。<br>
+    数年前に自分で書いたプログラムを、忘れてしまう。<br>
+    これがあるから新しいUIを作れなくなるし、結果としてUXが下がる。</p>
+
+  </div>
+  <p>Webサイトの超長期的な拡大と発展のために考案した、継続可能で自分自身にもメリットがあるこの仕組みを、改めて「Visual Atelier Code」と名付けます。<br>
+   そしてこの仕組みを思い付くきっかけになったのが…ライザリン・シュタウトという、愛らしいキャラクターだったのですよ！</p>
+
+  <h4>Markdown記法とREADME：このサイトの説明書</h4>
+  <p><a href="https://github.com/fein-denscothmn/fein-sites-dev1/blob/main/README.md">当WebサイトのREADME</a><br>
+   Markdown記法で書かれた、このサイトの説明書です。</p>
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザアルマ.jpg" alt="ライザとアルマ" class="graphicsaki right-image fade-in-out">
+
+   <p>Markdown記法はHTMLより簡単な、構造化されたテキストファイルの書き方です。<br>
+    <span class="codecolor">#</span>の数で見出しを作り、<br>
+    <span class="codecolor">|--|--|</span>を組み合わせて表を作り、<br>
+    <span class="codecolor">*</span>で箇条書きもできて、<br>
+    <span class="codecolor">![代替テキスト](ファイルのパス)</span>によって画像の表示さえできます。
+   </p>
+
+   <p>そんなに使用頻度は高くないけど、とても便利ですよ。<br>
+    .docxなどのワープロソフトで書かれたファイルは、OSが変わるとうまく表示できなかったりします。<br>
+    しかしMarkdown記法で構造化されたテキストファイルであれば、読みやすいレイアウトを維持したままOSを問わず表示されます。<br>
+    HTML（HyperText Markup Language）はWebページの内容を構造化するためのマークアップ言語ですが、これと似ていますね。<br>
+    Markdown記法で書かれたテキストは、とっても簡単にHTML文書にすることもできる。<br>
+    だからWebページの下書きとしても便利に使えます。</p>
+  </div>
+
   <h2>PythonでタブUIを実装する</h2>
 
   <div class="content">
@@ -2425,14 +2449,6 @@ for tab in tabs:
 
   <!--
   <div class="content">
-   <img src="/another-eden/anaimage/ライザコラボシュゼット.jpg" alt="ライザコラボシュゼット" class="graphicsaki right-image fade-in-out">
-
-   <p>他にもいろいろスクショ集めましょうね！</p>
-
-  </div>-->
-
-  <!--
-  <div class="content">
    <img src="/another-eden/anaimage/ルドヴィカ全体.jpg" alt="ルドヴィカ全体" class="graphicsaki right-image fade-in-out">
 
    <p>他にもいろいろスクショ集めましょうね！</p>
@@ -2441,10 +2457,8 @@ for tab in tabs:
 
 
   <!-- ライザ天上げ拡大.jpg
-ライザアルマ.jpg
 ライザ指輪.jpg
 ライザ頑張る.jpg
-錬金術極める.jpg
 ライザ喜顔.jpg
 ライザ渋顔.jpg
 ライザ笑顔.jpg -->
