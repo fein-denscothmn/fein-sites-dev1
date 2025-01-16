@@ -13,6 +13,7 @@
  <meta property="og:image" content="/image/アナザーエデンのバディ_ピスケ.png">
  <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/atelier_studio.html">
  <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/pdf.css">
  <link rel="stylesheet" type="text/css" href="/css/header.css">
  <link rel="stylesheet" type="text/css" href="/css/footer.css">
  <link rel="stylesheet" type="text/css" href="/css/flower.css">
@@ -57,6 +58,8 @@
  <script src="/script/feinfade.js"></script>
  <script src="/script/feinScroll.js"></script>
  <script src="/script/tab.js"></script>
+ <script src="/script/pdf.js" defer></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
  <script src="/script/album.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
@@ -562,17 +565,17 @@ for container in document.select('.atelier-container'):
       <li><a href="https://marketplace.visualstudio.com/VSCode">Extensions for Visual Studio Code</a></li>
       <li><a href="https://marketplace.visualstudio.com/items?itemName=shalldie.background">background</a>
       </li>
-      <li><a
-        href="https://www.neputa-note.net/2022/02/vscode-extensions-background/">VSCodeの背景画像（background）を設定してテンションを上げる</a>
+      <li><a href="https://www.neputa-note.net/2022/02/vscode-extensions-background/">VS
+        Codeの背景画像（background）を設定してテンションを上げる</a>
       </li>
-      <li><a href="https://qiita.com/niimi_ToB/items/5c6c8ca1d738060a02ff">推しをみながらコードを書きたい！！【VSCodeに背景画像を設定】</a></li>
+      <li><a href="https://qiita.com/niimi_ToB/items/5c6c8ca1d738060a02ff">推しをみながらコードを書きたい！！【VS Codeに背景画像を設定】</a></li>
      </ul>
     </div>
 
    </div><!--1タブの分岐点-->
    <div class="atelier-tab-content" data-content="2">
 
-    <p>何も設定していない状態でVScodeのソース管理を開くと、「Windows用Gitのダウンロード」とあります。<br>
+    <p>何も設定していない状態でVS Codeのソース管理を開くと、「Windows用Gitのダウンロード」とあります。<br>
      Gitはツールであり、GitHubはそのツールを使ってオンラインでコードを管理するサービスです。</p>
 
     <p class="gra">Windows用Gitのダウンロード</p>
@@ -604,7 +607,7 @@ for container in document.select('.atelier-container'):
       ★Git from the command line and also from 3re-party software<br>
       ・Use Git and optional Unix tools from the Command Prompt</dd>
      <dd>コマンドプロンプトや他のターミナル（例：PowerShell）からもGitコマンドを利用できます。<br>
-      また、他のサードパーティのソフトウェア（例：VSCode、Sourcetreeなど）でもGitを利用できるようになります。<br>
+      また、他のサードパーティのソフトウェア（例：VS Code、Sourcetreeなど）でもGitを利用できるようになります。<br>
       このオプションが最も汎用的で、多くのユーザーにとって便利だと思いますね。</dd>
 
      <dt>Choosing the SSH executable</dt>
@@ -683,7 +686,7 @@ for container in document.select('.atelier-container'):
      <li>コマンドパレットを開いて検索バーに「GitHub: Sign in」と入力し、表示された「GitHub: Sign in」を選択<br>
       ブラウザが開き、GitHubアカウントにサインインするためのページが表示される</li>
     </ol>
-    <p>これでVSCodeからGitHubにリポジトリを公開できるようになります。<br>
+    <p>これでVS CodeからGitHubにリポジトリを公開できるようになります。<br>
      ひとまず次の用語を覚えておくと混乱が少ないです。</p>
 
     <dl>
@@ -711,7 +714,7 @@ for container in document.select('.atelier-container'):
     <p>もしくは、GitHubリポジトリ一覧ページで、リポジトリ名の横に鍵のアイコンが表示されていれば、リポジトリはプライベートです。</p>
 
     <p class="gra">Gitのステータス表示と操作</p>
-    <p>GitHubとの連携直後、VSCodeでファイル名が緑色になると思います。<br>
+    <p>GitHubとの連携直後、VS Codeでファイル名が緑色になると思います。<br>
      加えて右側に「A」と表示されているはずで、それはGitのステータス表示です。<br>
      それぞれの意味と、続く操作を説明しますね。</p>
 
@@ -745,7 +748,7 @@ for container in document.select('.atelier-container'):
      <p>Gitが開発者のコミットを追跡するために、まずはユーザー名とメールアドレスを設定する必要があります。</p>
     </div>
 
-    <p><strong>1. VSCodeのターミナルを開く</strong></p>
+    <p><strong>1. VS Codeのターミナルを開く</strong></p>
     <p><strong>2.グローバルなユーザー名とメールアドレスの設定</strong></p>
 
     <div class="code-container">
@@ -1004,8 +1007,9 @@ git push origin main
      <dd>属性が近い同一ディレクトリにあるhtmlファイルをコピー</dd>
      <dt><button class="inline-button">□</button>ページタイトルとURLを置換</dt>
      <dd>まとめて変更して抜け漏れを防ぐ</dd>
-     <dt><button class="inline-button">□</button>文章をコピー</dt>
-     <dd>画像やUIを作る前に文章のみ、過去のノートや<a href="https://sites.google.com/view/feins-portal/">fein's portal</a>からコピー＋リライト</dd>
+     <dt><button class="inline-button">□</button>文章をコピー&リライト</dt>
+     <dd>ソースコードはOneDrive、他は<a href="/contents/vscode.html#vscode_browserlite">VS CodeのBrowser lite</a>→
+      https://sites.google.com/view/feins-portal/</dd>
      <dt><button class="inline-button">□</button>metaタグ等の編集</dt>
      <dd>文章を書けたら、要約部分等を仕上げる。</dd>
     </dl>
@@ -1023,7 +1027,7 @@ git push origin main
        href="/fish/fish_sitemap.html">アウトドアのエリア</a>
      </dd>
      <dt><button class="inline-button">□</button>公開前のチェック</dt>
-     <dd>ローカルサーバーで稼働するモバイルアプリ化したWebサイトを操作</dd>
+     <dd>モバイルアプリ化したWebサイトもしくは、<a href="/contents/vscode.html#vscode_liveserver">VS CodeのLive Server</a>を操作してみる</dd>
     </dl>
    </div>
 
@@ -1031,7 +1035,8 @@ git push origin main
     <img src="/another-eden/anaimage/ヘブンズクエーサー.jpg" alt="ヘブンズクエーサー.jpg" class="biggraphic fade-in-out">
     <p>🌟フェイタルドライブの「ヘブンズクエーサー」をキメる！！🌟<br>
      じゃなくて…<br>
-     Google Cloud SDK Shell で gcloud app deploy を実行して公開！</p>
+     <a href="/contents/cloudinfo.html#gcloudtool">Google Cloud SDK Shell</a> で gcloud app deploy を実行して公開！
+    </p>
    </div>
 
    <p class="gra">GitHubによるコード管理</p>
@@ -1954,6 +1959,24 @@ hr.atelierflower::before {
     Markdown記法で書かれたテキストは、とっても簡単にHTML文書にすることもできる。<br>
     だからWebページの下書きとしても便利に使えます。</p>
   </div>
+
+  <h2>アナザーエデン・ファンサイトのご案内</h2>
+  <p>これは、私がTwitterにあった各種のコンテンツを全てWebサイトへ移行させた時に作ったものです。<br>
+   ゲームについて個人サイトを作ろうということなら、ここにあるだけで十分かと思いますね。</p>
+
+  <div class="feinpdf-container" data-url="/another-eden/fein_report/ファンサイト(1).pdf">
+   <div id="feinpdf-viewer"></div>
+   <div class="feinpdfcontrols">
+    <button id="prev-page">前のページへ</button>
+    <span>Page: <span id="page-num"></span> / <span id="page-count"></span></span>
+    <button id="next-page">次のページへ</button>
+   </div>
+  </div>
+
+  <p>PDF本体をご覧になりたい方は<a href="/another-eden/fein_report/ファンサイト(1).pdf">アナザーエデン・ファンサイトのご案内.pdf版</a>をどうぞ。<br>
+   でも上部のプレビューでも十分かと思います。</p>
+
+  <hr class="atelierflower">
 
   <h2>PythonでタブUIを実装する</h2>
 

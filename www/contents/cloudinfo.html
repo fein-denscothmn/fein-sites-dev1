@@ -3,28 +3,10 @@
 <html lang="ja">
 
 <head>
- <!-- Google tag (gtag.js) -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
- <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-
-  gtag('config', 'G-827JM6N5CS');
- </script>
-
- <!-- Microsoft tag -->
- <script>
-  (function (c, l, a, r, i, t, y) {
-   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-  })(window, document, "clarity", "script", "obazqypsh8");
- </script>
-
  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
- <!--基本のメタタグ-->
+ <!-- SEOメタタグ -->
  <meta name="description" content="クラウドに個人サイトを作る方法。GCP・AWS・Azureの３通りを書いていきます。">
  <meta name="keywords" content="個人サイト, GCP・AWS・Azure, クラウド">
  <meta name="robots" content="index, follow">
@@ -33,48 +15,67 @@
  <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
  <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/cloudinfo.html">
 
- <!--検索ヒット時のアイコン-->
+ <!-- アイコン -->
+ <link rel="icon" sizes="32x32" href="../favicon.ico" type="image/x-icon">
+
+ <!-- Googleタグ (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+
+ <!-- Microsoftタグ -->
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+
+ <!-- JSON-LD構造化データ -->
  <script type="application/ld+json">
-{
+ {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "個人サイトをGCP・AWS・Azureのどれかで作る",
   "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/cloudinfo.html",
   "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
-}
-</script>
+ }
+ </script>
 
- <!--レスポンシブデザイン-->
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
- <!--CSS-->
+ <!-- CSSスタイルシート -->
  <link rel="stylesheet" type="text/css" href="/css/style.css">
  <link rel="stylesheet" type="text/css" href="/css/header.css">
  <link rel="stylesheet" type="text/css" href="/css/footer.css">
- <link rel="stylesheet" type="text/css" href="../css/menu.css">
- <link rel="stylesheet" type="text/css" href="../css/feinpan.css">
- <link rel="stylesheet" type="text/css" href="../css/feinheadline1.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
 
- <!--JavaScript-->
- <script src="../script/underline.js"></script>
- <script src="../script/feinfade.js"></script>
- <script src="../script/feinScroll.js"></script>
- <!-- gsapの読み込み -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <!-- JavaScript -->
+ <script src="/script/underline.js" defer></script>
+ <script src="/script/feinfade.js" defer></script>
+ <script src="/script/feinScroll.js" defer></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" defer></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" defer></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-bash.min.js" defer></script>
 
- <!-- google fonts -->
+ <!-- Googleフォント -->
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link
   href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
   rel="stylesheet">
 
- <!--ページタイトル-->
+ <!-- ページタイトル -->
  <title>個人サイトをGCP・AWS・Azureのどれかで作る</title>
-
- <!--ASノーナのファビコン-->
- <link rel="icon" sizes="32x32" href="../favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -135,6 +136,7 @@
   <div class="spacer"></div>
   <button id="generate-headings" data-open-text="個人サイトをGCP・AWS・Azureのどれかで作るの目次を開く ▼"
    data-close-text="個人サイトをGCP・AWS・Azureのどれかで作るの目次を閉じる ▲">個人サイトをGCP・AWS・Azureのどれかで作るの目次を開く ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
   <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
   <p>このページに限ったことではありませんが、また後日、いろいろ画像を入れて綺麗にしていきますね。今の状態だと文章ばっかり…。でも、用は足りると思います。</p>
 
@@ -142,12 +144,7 @@
 
   <h1 class="background-waveimage-heading"><span>GCP・AWS・Azureの比較とサービス紹介</span></h1>
 
-  <p>個人サイトとは直接関係ないものも含めて、重要なクラウドサービスのプロダクトを書いていこうと思います。<br>
-   App Engineあたりは「<a
-    href="https://fein-sites-dev1.ew.r.appspot.com/contents/mywebsite.html">個人サイト制作で知っておきたいクラウドサービス</a>」と情報が重複しちゃうかもしれないけどね。<br>
-   やりたいことによってはデータベースと接続したり、いろいろできるのですから。</p>
-
-  <p>また、このページでは次のように略称を用いることがあります。</p>
+  <p>このページでは次のように略称を用いることがあります。</p>
   <ul>
    <li>Google Cloud Platformは「GCP」</li>
    <li>Amazon Web Servicesは「AWS」</li>
@@ -578,113 +575,179 @@
    Athenaはアドホックなクエリやデータ探索に適しており、Redshiftは大規模なデータウェアハウスとしての利用に向いています。</p>
 
   <h4>Azure Synapse Analytics</h4>
-  データウェアハウスとビッグデータ分析を統合したエンタープライズ分析サービスで、データの取り込み、準備、管理、分析を一つのプラットフォームで行うことができます。
-  SQL技術とApache Spark技術を組み合わせており、Azure Data
-  Factoryと同じデータ統合エンジンを使用してETLパイプラインを簡単に作成できるほか、列レベルと行レベルのセキュリティや動的データマスキングなどの高度なセキュリティ機能を提供し、データの安全性を確保します。
-  また、データウェアハウス、データレイク、ビッグデータ分析システム全体でのスケーリングが可能で、Synapse
-  Studioを使用してデータの取り込み、調査、準備、調整、視覚化を一つのユーザーエクスペリエンスで行うことができるため、企業はデータから迅速に洞察を得ることができ、ビジネスの意思決定をサポートします。
+  <p>データウェアハウスとビッグデータ分析を統合したエンタープライズ分析サービスで、データの取り込み、準備、管理、分析を一つのプラットフォームで行うことができます。<br>
+   SQL技術とApache Spark技術を組み合わせており、Azure Data
+   Factoryと同じデータ統合エンジンを使用してETLパイプラインを簡単に作成できるほか、列レベルと行レベルのセキュリティや動的データマスキングなどの高度なセキュリティ機能を提供し、データの安全性を確保します。<br>
+   また、データウェアハウス、データレイク、ビッグデータ分析システム全体でのスケーリングが可能で、Synapse
+   Studioを使用してデータの取り込み、調査、準備、調整、視覚化を一つのユーザーエクスペリエンスで行うことができるため、企業はデータから迅速に洞察を得ることができ、ビジネスの意思決定をサポートします。</p>
 
+  <h2>Google Cloud SDK Shell</h2>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(182).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>Google Cloud SDK Shellと後述するGoogle Cloud SDKは、Google Cloud Platform（GCP）のリソースを管理するためのコマンドラインツールのセットです。<br>
+    gcloud・gsutil・bqなどのツールが含まれています。<br>
+    Google Cloud SDK Shellは、ローカルマシンにインストールし、コマンドラインからGCPのリソースを操作したり、スクリプトを実行して自動化したりするのに使用されます。</p>
+  </div>
 
+  <p>Google Cloud SDK Shellをインストールし、生成されたショートカットのプロパティを開くと、多くの場合 C:\Windows\system32\cmd.exe /k
+   ""C:\Users\ユーザー名\AppData\Local\Google\Cloud SDK\cloud_env.bat"" とリンク先に書いてあると思います。<br>
+   これはWindowsのコマンドプロンプト（cmd.exe）を起動し、そのコマンドプロンプト内で cloud_env.bat というバッチファイルを実行するコマンドです。</p>
 
+  <dl>
+   <dt>C:\Windows\system32\cmd.exe</dt>
+   <dd>コマンドプロンプト（cmd.exe）を起動するための実行ファイルのパスです。</dd>
+   <dt>/k</dt>
+   <dd>コマンドプロンプトを実行した後にそのままウィンドウを開いたままにしておくオプションです。<br>
+    /c だとコマンドを実行後にウィンドウを閉じます。</dd>
+   <dt>"C:\Users\ユーザー名\AppData\Local\Google\Cloud SDK\cloud_env.bat"</dt>
+   <dd>実行するバッチファイル（cloud_env.bat）のパスです。<br>
+    このファイルはGoogle Cloud SDKの環境変数を設定するスクリプトです。</dd>
+  </dl>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(183).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>つまり、このショートカットはGoogle Cloud SDKの必要な環境設定を行うバッチファイルを実行するために使われます。<br>
+    cloud_env.bat がGoogle Cloud
+    SDKのコマンドを実行するための環境設定を行うので、バッチファイルを実行した後にGoogle Cloud SDKのコマンドが利用できるようになるのです。</p>
 
+   <p>Google Cloud SDK Shell は特定の実行ファイルを持ちません。<br>
+    そうではなく、必要な環境変数や設定をバッチファイル（cloud_env.bat）を通じてコマンドプロンプトで設定し、そこで Google
+    Cloud SDK のコマンドを実行する形になっています。<br>
+    よって、VS Codeのターミナルでgcloudツール（Google Cloud SDK Shellの略）を使いたい場合、次のようにCLI操作します。</p>
+  </div>
 
-  <h2>Google Cloud SDK Shell・Google Cloud Shell</h2>
-  <p>Google Cloud SDK ShellとGoogle Cloud Shellは異なるものです。<br>
-   それぞれの特徴を簡単に見ていきます。</p>
+  <p class="codegra" id="gcloudtool">VS Codeのターミナルでgcloudツールを使う</p>
+  <div class="code-container">
+   <pre><code class="language-bash">
+"C:\Users\ユーザー名\AppData\Local\Google\Cloud SDK\cloud_env.bat"
+cd C:\Users\ユーザー名\OneDrive\_fein\google cloud\fein-sites-dev1
+# 2行目はアプリケーション設定ファイルの場所
 
-  <ul>
-   <li><strong>ブラウザからアクセス可能</strong><br>
-    Google Cloud Shellは、ウェブブラウザから直接アクセスできます。特別なソフトウェアをインストールする必要がなく、どこからでも利用できます。</li>
+</code></pre>
+  </div>
+  <p>例えばApp Engineでデプロイする際に用いるコマンドである gcloud app deploy は、デプロイするアプリケーションの設定ファイルである app.yaml を必要とします。<br>
+   これらのファイルが私の場合 fein-sites-dev1 ディレクトリにあるため、cd で移動してやる必要があるということです。<br>
+   ちなみに cloud_env.bat というバッチファイルを開いてみると、私の場合は次のように書かれています。</p>
 
-   <li><strong>事前にインストールされたツール</strong><br>
-    Cloud Shellには、Google Cloud CLI（gcloudコマンド）やその他の便利なツールが事前にインストールされています。すぐにコマンドを実行してプロジェクトを管理できます。</li>
+  <div class="code-container">
+   <pre><code class="language-bash">
+ECHO OFF
+CLS
+SET PATH=C:\Users\ユーザー名\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin;%PATH%;
+cd C:\Users\ユーザー名\AppData\Local\Google\Cloud SDK
+ECHO Welcome to the Google Cloud CLI! Run "gcloud -h" to get the list of available commands.
+ECHO ---
+ECHO ON
 
-   <li><strong>コードエディタ</strong><br>
-    Cloud Shellには、統合されたコードエディタが含まれており、クラウド上で直接コードを編集、デバッグ、デプロイすることができます。</li>
+</code></pre>
+  </div>
 
-   <li><strong>仮想マシンのプレビュー</strong><br>
-    Cloud Shell上で仮想マシンを起動し、ウェブアプリケーションをプレビューすることができます。開発中のアプリケーションをすぐに確認できます。</li>
+  <p>このコマンドの意味は、次のようになります。</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(184).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <dl>
+    <dt>ECHO OFF</dt>
+    <dd>コマンドプロンプトの表示をオフにし、後続のコマンドが表示されないようにします。</dd>
 
-   <li><strong>クラウドリソースの管理</strong><br>
-    プロジェクトの作成、リソースの管理、アクセス権の設定など、さまざまな管理タスクをコマンドラインから簡単に実行できます。</li>
-  </ul>
+    <dt>CLS</dt>
+    <dd>コマンドプロンプトの画面をクリア（クリアスクリーン）します。</dd>
 
-  <p class="gra">Google Cloud SDK Shell</p>
-  <ul>
-   <li><strong>概要</strong>: Google Cloud SDKは、Google Cloud
-    Platform（GCP）のリソースを管理するためのコマンドラインツールのセットです。これには、<code>gcloud</code>、<code>gsutil</code>、<code>bq</code>などのツールが含まれています。
-   </li>
-   <li><strong>インストール</strong>: ローカルマシンにインストールして使用します。</li>
-   <li><strong>用途</strong>: コマンドラインからGCPのリソースを操作したり、スクリプトを実行して自動化したりするのに使用されます。</li>
-  </ul>
+    <dt>SET PATH=C:\Users\ユーザー名\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin;%PATH%</dt>
+    <dd>Google Cloud SDKのバイナリフォルダーを環境変数PATHに追加し、gcloudコマンドをどこからでも実行できるようにします。</dd>
 
-  <p class="gra">Google Cloud Shell</p>
-  <ul>
-   <li><strong>概要</strong>: Google Cloud Shellは、ブラウザからアクセスできるインタラクティブなシェル環境です。Google Cloud
-    SDKがプリインストールされており、すぐに使用できます。</li>
-   <li><strong>アクセス</strong>: ウェブブラウザから直接アクセス可能で、特別なインストールは不要です。</li>
-   <li><strong>用途</strong>: GCPのリソースを管理したり、コードを編集・デバッグしたりするための統合開発環境として使用されます。</li>
-  </ul>
+    <dt>cd C:\Users\ユーザー名\AppData\Local\Google\Cloud SDK</dt>
+    <dd>指定されたディレクトリ（Google Cloud SDKのフォルダー）に移動します。</dd>
 
-  <p><strong>主な違い</strong></p>
-  <ul>
-   <li><strong>インストールの必要性</strong>: Google Cloud SDKはローカルにインストールする必要がありますが、Google Cloud Shellはブラウザから直接利用できます。</li>
-   <li><strong>使用環境</strong>: Google Cloud SDKはローカル環境で使用し、Google Cloud Shellはクラウドベースの環境で使用します。</li>
-  </ul>
+    <dt>ECHO Welcome to the Google Cloud CLI! Run "gcloud -h" to get the list of available commands.</dt>
+    <dd>画面にメッセージを表示し、Google Cloud CLIの使用を歓迎し、<span class="codecolor">gcloud -h</span> コマンドで利用可能なコマンドの一覧を表示できることを案内します。
+    </dd>
 
-  <p>どちらもGCPの管理に便利なツールですが、用途や使用環境に応じて使い分けていきます。<br>
-   次に、Google Cloud SDK Shellを使う際に、最低限覚えておくと便利なコマンドをいくつか紹介します。</p>
+    <dt>ECHO ---</dt>
+    <dd>画面に区切り線（---）を表示します。</dd>
 
-  <p><strong>基本コマンド</strong></p>
+    <dt>ECHO ON</dt>
+    <dd>コマンドプロンプトの表示を再度オンにします。</dd>
+   </dl>
+  </div>
+
+  <p>次に、Google Cloud SDK Shellの便利なコマンドをいくつか紹介します。</p>
+
+  <h4>Google Cloud SDK Shell：基本のコマンド</h4>
   <ul>
    <li><strong>初期設定と認証</strong></li>
    <ul>
-    <li><code>gcloud init</code>: 初期設定を行い、プロジェクトや認証情報を設定</li>
-    <li><code>gcloud auth login</code>: Google Cloudにログイン</li>
-    <li><code>gcloud auth list</code>: 認証済みアカウントの一覧を表示</li>
+    <li><span class="codecolor">gcloud init</span>: 初期設定を行い、プロジェクトや認証情報を設定</li>
+    <li><span class="codecolor">gcloud auth login</span>: Google Cloudにログイン</li>
+    <li><span class="codecolor">gcloud auth list</span>: 認証済みアカウントの一覧を表示</li>
    </ul>
 
    <li><strong>プロジェクト管理</strong></li>
    <ul>
-    <li><code>gcloud projects list</code>: プロジェクトの一覧を表示</li>
-    <li><code>gcloud config set project [PROJECT_ID]</code>: デフォルトプロジェクトを設定</li>
+    <li><span class="codecolor">gcloud projects list</span>: プロジェクトの一覧を表示</li>
+    <li><span class="codecolor">gcloud config set project [PROJECT_ID]</span>: デフォルトプロジェクトを設定</li>
    </ul>
 
    <li><strong>コンポーネント管理</strong></li>
    <ul>
-    <li><code>gcloud components install [COMPONENT_ID]</code>: 特定のコンポーネントをインストール</li>
-    <li><code>gcloud components update</code>: gcloud CLIを最新バージョンに更新</li>
+    <li><span class="codecolor">gcloud components install [COMPONENT_ID]</span>: 特定のコンポーネントをインストール</li>
+    <li><span class="codecolor">gcloud components update</span>: gcloud CLIを最新バージョンに更新</li>
    </ul>
 
    <li><strong>情報取得</strong></li>
    <ul>
-    <li><code>gcloud info</code>: 現在のgcloud CLI環境の詳細を表示</li>
-    <li><code>gcloud version</code>: インストールされているgcloud CLIのバージョンを表示</li>
+    <li><span class="codecolor">gcloud info</span>: 現在のgcloud CLI環境の詳細を表示</li>
+    <li><span class="codecolor">gcloud version</span>: インストールされているgcloud CLIのバージョンを表示</li>
    </ul>
   </ul>
 
-  <p class="gra">App Engineでよく使うコマンド</p>
+  <h4>App Engineでよく使うコマンド</h4>
   <p>ここらへんを覚えておけば、スムーズにapp engineによるホームページ作成ができると思います。</p>
 
   <ul>
    <li><strong>アプリケーションのデプロイ</strong></li>
    <ul>
-    <li><code>gcloud app deploy</code>: App Engineにアプリケーションをデプロイ</li>
-    <li><code>gcloud app browse</code>: デプロイされたアプリケーションをブラウザで開く</li>
+    <li><span class="codecolor">gcloud app deploy</span>: App Engineにアプリケーションをデプロイ</li>
+    <li><span class="codecolor">gcloud app browse</span>: デプロイされたアプリケーションをブラウザで開く</li>
    </ul>
 
    <li><strong>アプリケーションの管理</strong></li>
    <ul>
-    <li><code>gcloud app describe</code>: App Engineアプリケーションの設定情報を表示</li>
-    <li><code>gcloud app logs tail -s default</code>: リアルタイムでアプリケーションのログを表示</li>
+    <li><span class="codecolor">gcloud app describe</span>: App Engineアプリケーションの設定情報を表示</li>
+    <li><span class="codecolor">gcloud app logs tail -s default</span>: リアルタイムでアプリケーションのログを表示</li>
    </ul>
 
    <li><strong>バージョン管理</strong></li>
    <ul>
-    <li><code>gcloud app versions list</code>: デプロイされたアプリケーションのバージョン一覧を表示</li>
-    <li><code>gcloud app versions delete [VERSION_ID]</code>: 特定のバージョンを削除</li>
+    <li><span class="codecolor">gcloud app versions list</span>: デプロイされたアプリケーションのバージョン一覧を表示</li>
+    <li><span class="codecolor">gcloud app versions delete [VERSION_ID]</span>: 特定のバージョンを削除</li>
    </ul>
   </ul>
+
+  <h2>Google Cloud Shell</h2>
+  <p>Google Cloud SDK Shellと同じく、GCPのリソースを管理したり、コードを編集・デバッグしたりするための統合開発環境として使用されます。<br>
+   主な違いはインストールの必要性と使用環境でしょう。<br>
+   Google Cloud SDKはローカルにインストールする必要がありますが、Google Cloud Shellはブラウザから直接利用できます。<br>
+   ローカル環境で使用するか、クラウドベースの環境で使用するかの違いですね。</p>
+
+  <p>どちらもGCPの管理に便利なツールですが、用途や使用環境に応じて使い分けていきます。<br>
+   私の場合VS Codeを使ってコード編集をするため、Google Cloud SDK Shellのほうが現状は便利です。</p>
+
+  <h5>VS Codeのターミナル（Terminal）</h5>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(185).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>VS Codeにはターミナル（Terminal）と呼ばれるコマンドラインエリアがあります。<br>
+    これを使用してコマンドラインインターフェイス（CLI）からさまざまな操作を行うことができます。<br>
+    VS Codeのターミナルは複数のシェルをサポートしており、ユーザーが選択したシェルを起動することができます。<br>
+    代表的なものは PowerShell、Command Prompt、Git Bashがあるでしょう。<br>
+    このターミナルは画面の下部に表示され、プロジェクトのビルド、デバッグ、Git操作などをコマンドラインで効率的に行うことができるツールです。</p>
+  </div>
 
 
   <h4>AWS CLI・Azure CLI</h4>
@@ -1032,7 +1095,6 @@
     </ul>
    </li>
   </ul>
-
 
   <h2>Cloud Identity</h2>
   <p>ユーザーやグループの管理を簡単にするためのツールです。<br>

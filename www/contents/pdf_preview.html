@@ -453,53 +453,68 @@
    <p class="codegra" id="pdf_js">デフォルトでPDFをプレビュー表示するpdf.js</p>
    <div class="code-container">
     <pre><code class="language-javascript">
-// PDF.jsの設定
-const url = '../another-eden/fein_report/grasta.pdf'; // PDFファイルのURLを設定
-const pdfjsLib = window['pdfjs-dist/build/pdf']; // PDF.jsライブラリを読み込む
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.min.js'; // ワーカーのURLを設定
+// HTMLからPDFファイルのURLを取得
+const container = document.querySelector('.feinpdf-container');
+const url = container.getAttribute('data-url'); // HTMLコードで指定したPDFファイルのURLを取得
 
-let pdfDoc = null,    // PDFドキュメントのオブジェクト
-    pageNum = 1,     // 現在のページ番号
-    pageRendering = false, // ページがレンダリング中かどうかのフラグ
-    pageNumPending = null, // 保留中のページ番号
+// PDF.jsライブラリの読み込み
+const pdfjsLib = window['pdfjs-dist/build/pdf'];
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.min.js';
+
+// 変数の初期化
+let pdfDoc = null,           // PDFドキュメントオブジェクト
+    pageNum = 1,             // 現在のページ番号
+    pageRendering = false,   // ページがレンダリング中かどうかのフラグ
+    pageNumPending = null,   // 保留中のページ番号
     feincanvas = document.createElement('canvas'), // キャンバス要素を作成
-    ctx = feincanvas.getContext('2d'); // キャンバスの2Dコンテキストを取得
+    ctx = feincanvas.getContext('2d');             // キャンバスの2Dコンテキストを取得
 
-// キャンバスをPDFビューアのコンテナに追加
+// キャンバス要素をPDFビューアのコンテナに追加
 document.getElementById('feinpdf-viewer').appendChild(feincanvas);
 
-// PDFをレンダリングする関数
+// ページをレンダリングする関数
 function renderPage(num) {
-    pageRendering = true;
+    pageRendering = true; // ページレンダリング中のフラグをセット
+
+    // PDFドキュメントからページを取得
     pdfDoc.getPage(num).then(page => {
-        const containerWidth = document.getElementById('feinpdf-viewer').clientWidth; // ビューアの幅を取得
-        const viewport = page.getViewport({ scale: 1 }); // ページのビューポートを取得
-        const scale = containerWidth / viewport.width; // スケールを計算
-        const scaledViewport = page.getViewport({ scale: scale }); // スケールを適用したビューポートを取得
+        const containerWidth = document.getElementById('feinpdf-viewer').clientWidth; // コンテナの幅を取得
+        const scale = 3; // 解像度を3倍に設定
+        const viewport = page.getViewport({ scale: scale }); // ビューポートを取得
 
-        feincanvas.height = scaledViewport.height; // キャンバスの高さを設定
-        feincanvas.width = scaledViewport.width; // キャンバスの幅を設定
+        // キャンバスのサイズを設定
+        feincanvas.height = viewport.height;
+        feincanvas.width = viewport.width;
 
+        // レンダリングコンテキストを設定
         const renderContext = {
             canvasContext: ctx,
-            viewport: scaledViewport
-        }; // レンダリングコンテキストを設定
+            viewport: viewport
+        };
 
-        const renderTask = page.render(renderContext); // ページをレンダリング
+        // ページをレンダリング
+        const renderTask = page.render(renderContext);
 
+        // レンダリング完了後の処理
         renderTask.promise.then(() => {
-            pageRendering = false; // レンダリングが終了
+            feincanvas.style.width = `${containerWidth}px`; // キャンバスの幅をコンテナの幅に調整
+            feincanvas.style.height = "auto";               // 高さは自動調整
+
+            pageRendering = false; // ページレンダリング中のフラグを解除
+
+            // 保留中のページがあればレンダリング
             if (pageNumPending !== null) {
-                renderPage(pageNumPending); // 保留中のページをレンダリング
+                renderPage(pageNumPending);
                 pageNumPending = null;
             }
         });
     });
 
-    document.getElementById('page-num').textContent = num; // 現在のページ番号を表示
+    // 現在のページ番号を表示
+    document.getElementById('page-num').textContent = num;
 }
 
-// 次のページをレンダリングする関数
+// 次のページをキューに入れる関数
 function queueRenderPage(num) {
     if (pageRendering) {
         pageNumPending = num; // ページレンダリングが保留中の場合、次のページ番号を設定
@@ -508,9 +523,9 @@ function queueRenderPage(num) {
     }
 }
 
-// PDFのドキュメントを取得してレンダリングを開始
+// PDFドキュメントを取得してレンダリングを開始
 pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
-    pdfDoc = pdfDoc_;
+    pdfDoc = pdfDoc_; // PDFドキュメントを保存
     document.getElementById('page-count').textContent = pdfDoc.numPages; // 総ページ数を表示
     renderPage(pageNum); // 最初のページをレンダリング
 });
@@ -532,6 +547,7 @@ document.getElementById('next-page').addEventListener('click', () => {
     pageNum++;
     queueRenderPage(pageNum); // 次のページをレンダリング
 });
+
     </code></pre>
    </div>
 
@@ -541,7 +557,7 @@ document.getElementById('next-page').addEventListener('click', () => {
      <img src="/flower1/flower1(96).JPG" alt="フェードアウト効果の草花写真">
     </div>
     <ul>
-     <li>最初にPDFファイルのURLを設定し、PDF.jsライブラリを読み込みます。</li>
+     <li>最初にHTMLコードで指定したPDFファイルのURLを取得し、PDF.jsライブラリを読み込みます。</li>
      <li>
       <code>pdfDoc</code>、<code>pageNum</code>、<code>pageRendering</code>、<code>pageNumPending</code>などの変数を定義し、PDFドキュメントやレンダリング状態を管理します。
      </li>
