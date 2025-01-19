@@ -523,39 +523,44 @@ for container in document.select('.atelier-container'):
     <div class="code-container">
      <pre><code class="language-json">
 {
- "extensions.ignoreRecommendations": true,
- "editor.fontFamily": "'Yu Gothic UI', 'Courier New', monospace",
- "workbench.settings.applyToAllProfiles": [
-  "editor.fontFamily"
- ],
- "editor.fontLigatures": false,
- "editor.wordWrap": "on",
- "files.insertFinalNewline": true,
- "editor.formatOnSave": true,
- "files.trimFinalNewlines": true,
- "files.trimTrailingWhitespace": true,
- "breadcrumbs.enabled": true,
- "workbench.tree.renderIndentGuides": "always",
- "editor.tabSize": 1,
- "editor.insertSpaces": true,
- "editor.autoIndent": "none",
- "editor.detectIndentation": false,
- "background.fullscreen": {
-  "images": [
-   "file:///C:/Users/ユーザー名/OneDrive/_fein/英数字.jpg"
+  "extensions.ignoreRecommendations": true,
+  "editor.fontFamily": "'Yu Gothic UI', 'Courier New', monospace",
+  "workbench.settings.applyToAllProfiles": [
+    "editor.fontFamily"
   ],
-  "opacity": 0.1,
-  "size": "900 900",
-  "position": "center",
-  "interval": 0
- }
+  "editor.fontLigatures": false,
+  "editor.wordWrap": "on",
+  "files.insertFinalNewline": true,
+  "editor.formatOnSave": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "breadcrumbs.enabled": true,
+  "workbench.tree.renderIndentGuides": "always",
+  "editor.tabSize": 1,
+  "editor.insertSpaces": true,
+  "editor.autoIndent": "none",
+  "editor.detectIndentation": false,
+  "background.fullscreen": {
+    "images": [
+      "file:///C:/Users/ユーザー名/OneDrive/_fein/reisalinstout.jpg"
+    ],
+    "opacity": 0.1,
+    "size": "900 900",
+    "position": "center",
+    "interval": 0
+  },
+  "terminal.integrated.fontFamily": "monospace",
+  "git.openRepositoryInParentFolders": "never",
+  "vscode-edge-devtools.webhintInstallNotification": true,
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.defaultProfile.windows": "Command Prompt"
 }
 
 </code></pre>
     </div>
 
     <p>普段使いするツールの設定ファイルだから、コメントアウトは付けていないです。<br>
-     ここも詳説しようかと思ってたけど、VS Codeを扱うレベルの人なら大丈夫でしょう。</p>
+     このコードの説明は<a href="/contents/vscode.html#settings_json">settings.jsonのコード例</a>にあります。</p>
 
     <p class="gra">参考サイト一覧</p>
     <button class="collapsible">タップして開く ▼</button>
@@ -1028,6 +1033,9 @@ git push origin main
      </dd>
      <dt><button class="inline-button">□</button>公開前のチェック</dt>
      <dd>モバイルアプリ化したWebサイトもしくは、<a href="/contents/vscode.html#vscode_liveserver">VS CodeのLive Server</a>を操作してみる</dd>
+     <dt><button class="inline-button">□</button>ビルドタスクの実行</dt>
+     <dd>VS Codeのタスクランナー機能で<a href="/contents/vscode.html#tasks_json">Run Google Cloud Commands</a>を実行する</dd>
+
     </dl>
    </div>
 
@@ -1035,7 +1043,7 @@ git push origin main
     <img src="/another-eden/anaimage/ヘブンズクエーサー.jpg" alt="ヘブンズクエーサー.jpg" class="biggraphic fade-in-out">
     <p>🌟フェイタルドライブの「ヘブンズクエーサー」をキメる！！🌟<br>
      じゃなくて…<br>
-     <a href="/contents/cloudinfo.html#gcloudtool">Google Cloud SDK Shell</a> で gcloud app deploy を実行して公開！
+     起動した<a href="/contents/cloudinfo.html#gcloudtool">Google Cloud SDK Shell</a> で gcloud app deploy を実行 → 公開する！
     </p>
    </div>
 

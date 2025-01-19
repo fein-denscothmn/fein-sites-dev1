@@ -244,6 +244,10 @@
      <dd>Ctrl + Shift + Tab</dd>
      <dt>タブを閉じる</dt>
      <dd>Ctrl + W</dd>
+     <dt>インデントの追加</dt>
+     <dd>範囲を指定してから「tab」</dd>
+     <dt>インデントの除去</dt>
+     <dd>範囲を指定してから「shift+tab」</dd>
     </dl>
    </div>
    <div class="atelier-tab-content" data-content="2">
@@ -251,9 +255,13 @@
     <dl>
      <dt>統合ターミナルを開く</dt>
      <dd>Ctrl + `（バッククオート）</dd>
-
      <dt>新しいターミナルを作成</dt>
      <dd>Ctrl + Shift + `（バッククオート）</dd>
+    </dl>
+
+    <dl>
+     <dt>ターミナルでの作業効率化</dt>
+     <dd>tasks.jsonを書き換えてCtrl + Shift + B</dd>
     </dl>
 
    </div>
@@ -316,12 +324,185 @@ for container in document.select('.atelier-container'):
 
   <hr class="atelierflower">
 
-  <h5>Visual Studio Codeの日本語化</h5>
-  <p>まず左側の「Extensions」から「Japanese Language Pack for VS Code」をインストールしてVS Codeを再起動します。</p>
+  <h2>Visual Studio Codeの日本語化</h2>
+  <p>左側の「Extensions」から「Japanese Language Pack for VS Code」をインストールしてVS Codeを再起動します。</p>
 
   <img src="/contents/itimages/vscode日本語化.png" alt="vscodeの日本語化" class="biggraphic fade-in-out">
 
-  <h5>Visual Studio Codeで複数ファイルを一括置換</h5>
+  <p>Microsoft公式から出ている拡張機能ですから、安心して使えますね。</p>
+
+  <h4>VS Codeのsettings.json</h4>
+  <p>次にあるコードはVisual Studio Codeのsetting.jsonです。<br>
+   快適に効率よく作業できるので、とっても重要だと思います。</p>
+
+  <p class="codegra" id="settings_json">settings.jsonのコード例</p>
+  <div class="code-container">
+   <pre><code class="language-json">
+{
+  // 拡張機能の推奨を無視する
+  "extensions.ignoreRecommendations": true,
+
+  // エディタのフォントファミリーを設定する
+  "editor.fontFamily": "'Yu Gothic UI', 'Courier New', monospace",
+
+  // この設定をすべてのプロファイルに適用する
+  "workbench.settings.applyToAllProfiles": [
+    "editor.fontFamily"
+  ],
+
+  // フォントの合字機能を無効にする
+  "editor.fontLigatures": false,
+
+  // エディタのワードラップをオンにする
+  "editor.wordWrap": "on",
+
+  // ファイルの最後に自動的に改行を追加する
+  "files.insertFinalNewline": true,
+
+  // ファイルの保存時にフォーマットを実行する
+  "editor.formatOnSave": true,
+
+  // ファイルの最後の不要な改行をトリム（削除）する
+  "files.trimFinalNewlines": true,
+
+  // 行末の空白をトリム（削除）する
+  "files.trimTrailingWhitespace": true,
+
+  // パスのナビゲーション機能を有効にする
+  "breadcrumbs.enabled": true,
+
+  // ツリービューのインデントガイドを常に表示する
+  "workbench.tree.renderIndentGuides": "always",
+
+  // タブのサイズを1に設定する
+  "editor.tabSize": 1,
+
+  // タブをスペースに変換する
+  "editor.insertSpaces": true,
+
+  // 自動インデントを無効にする
+  "editor.autoIndent": "none",
+
+  // インデントの検出を無効にする
+  "editor.detectIndentation": false,
+
+  // フルスクリーン時の背景画像設定
+  "background.fullscreen": {
+    "images": [
+      "file:///C:/Users/ユーザー名/OneDrive/_fein/reisalinstout.jpg"  // 表示する画像のパス
+    ],
+    "opacity": 0.1,  // 画像の透明度
+    "size": "900 900",  // 画像のサイズ
+    "position": "center",  // 画像の位置
+    "interval": 0  // 画像の変更間隔（0で固定）
+  },
+
+  // ターミナルのフォントファミリーを設定する
+  "terminal.integrated.fontFamily": "monospace",
+
+  // 親フォルダにあるリポジトリを開かないようにする
+  "git.openRepositoryInParentFolders": "never",
+
+  // VSCodeのエッジデベロッパーツールの通知を有効にする
+  "vscode-edge-devtools.webhintInstallNotification": true,
+
+  // ターミナルのフォントサイズを設定する
+  "terminal.integrated.fontSize": 14,
+
+  // Windowsで使用するデフォルトのターミナルプロファイルを設定する（Command Prompt）
+  "terminal.integrated.defaultProfile.windows": "Command Prompt"
+}
+
+</code></pre>
+  </div>
+
+  <p>Windowsのメモ帳は快適に動作するのですが、シンタックスハイライトがないんですよねー。</p>
+
+  <img src="/contents/itimages/notepad.png" alt="Windowsのメモ帳" class="graphic fade-in-out">
+
+  <p>VS Codeのようにシンタックスハイライトをしてくれれば、メモ帳は完璧だったと思います。</p>
+
+  <h2>VS Codeのターミナル機能</h2>
+  <p>ステータスバーを上に持ち上げるとターミナルまで出てきます。<br>
+   ちょっとしたコマンドプロンプトの作業であれば、ここでいつも済ませてますね。<br>
+   例えばここで python main.py と入力すれば、そのままpythonコードを実行することができるわけですよ。<br>
+   そういう意味でも、コマンドラインはある程度扱えると便利かと思います。</p>
+
+  <img src="/contents/itimages/vscodeコマンドプロンプト.png" alt="vscode内蔵のコマンドプロンプト" class="biggraphic fade-in-out">
+
+  <h2>VS Codeのタスクランナーを使う</h2>
+  <p>例えば私の場合、Google App Engineにデプロイする際にコマンドプロンプトで<span class="codecolor">"C:\Users\ユーザー名\AppData\Local\Google\Cloud
+    SDK\cloud_env.bat"</span>をして Google Cloud SDK Shell を開きます。<br>
+   それから Google Cloud SDK Shell で、
+   <span class="codecolor">cd C:\Users\ユーザー名\OneDrive\_fein\google cloud\fein-sites-dev1</span>とやってからデプロイする…<br>
+   この流れが基本ではあるのですが、ちょっとめんどくさい。<br>
+   でもVS Codeから出たくない😆ww<br>
+   そういう場合、VS Codeのタスクランナーを使ったりします。
+  </p>
+
+  <h4>タスクランナーの設定手順</h4>
+
+  <ol>
+   <li>メニューのターミナル</li>
+   <li>タスクの構成</li>
+   <li>テンプレートからtasks.jsonを生成</li>
+   <li>Others 任意の外部コマンドを実行する例</li>
+  </ol>
+
+  <p>これでtasks.jsonが生成されます。<br>
+   プロジェクトのルートディレクトリに.vscodeディレクトリが作成され、その下にtasks.jsonが生成されます。<br>
+   このtasks.jsonを、次のように書き換えます。</p>
+
+  <p class="codegra" id="tasks_json">tasks.jsonのコード例</p>
+  <div class="code-container">
+   <pre><code class="language-json">
+{
+  // タスクのバージョン
+  "version": "2.0.0",
+  // 実行するタスクのリスト
+  "tasks": [
+    {
+      // タスクのラベル（名前）
+      "label": "Run Google Cloud Commands",
+      // タスクのタイプ（シェルコマンドを使用）
+      "type": "shell",
+      // 使用するコマンド
+      "command": "cmd",
+      // コマンドの引数リスト
+      "args": [
+        // バッチファイルを実行し、ディレクトリを移動し、インタラクティブなシェルを開始
+        "/c",
+        "\"\"C:\\Users\\ユーザー名\\AppData\\Local\\Google\\Cloud SDK\\cloud_env.bat\" && cd \"C:\\Users\\ユーザー名\\OneDrive\\_fein\\google cloud\\fein-sites-dev1\" && cmd\""
+      ],
+      // 問題のマッチャー（なし）
+      "problemMatcher": [],
+      // タスクのグループ設定（ビルドタスクとして設定し、デフォルトタスクにする）
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
+
+</code></pre>
+  </div>
+
+  <p>このタイプの作業自動化であれば、ターミナルプロファイルを使う手もあるんです。<br>
+   でも環境やVSCodeのバージョンによって動作が異なる可能性があるし、他のプロファイルや設定と競合するかもしれません。<br>
+   予期しない動作を引き起こすと面倒なので、私ならこうするっていう設定例ですね。<br>
+   ちなみにタスクランナーはVS Codeの公式ドキュメントに基づいた機能であり、多くの開発者に利用されています。</p>
+
+
+  <h5>VS Codeのアウトライン機能</h5>
+  <p>長いコードを書くときにはアウトライン機能が便利です。<br>
+   htmlならh2やpといったタグのところで区切りがあるので、そこを辿りつつコードを書いていくことができます。</p>
+
+  <img src="/contents/itimages/vscodeアウトライン.png" alt="vscodeのアウトライン機能" class="biggraphic fade-in-out">
+
+
+  <h2>VS Codeで複数ファイルを一括置換</h2>
+
   <p>他のテキストエディタでもできますが、Visual Studio Codeは特にやりやすいと感じますね。<br>
    複数のファイルをまとめて一気に置換できるのです。<br>
    これの有無で個人サイトの効率がまったく違うのですよ。<br>
@@ -330,99 +511,10 @@ for container in document.select('.atelier-container'):
 
   <img src="/contents/itimages/vscode置換前のメッセージ.png" alt="vscodeにおける置換前のメッセージ" class="biggraphic fade-in-out">
 
-  <h5>Visual Studio Codeで改行を含めた置換</h5>
-  <p>正規表現を使ってもいいですが、こういうコードも簡単に置換できます。</p>
-
-  <pre><code class="language-html">
-&lt;style&gt;
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f0f0f0;
-    }
-&lt;/style&gt;
-            </code></pre>
-  <p>軽微なテキスト処理ならこれで十分かと思います。</p>
-
-  <img src="/contents/itimages/vscode複数行置換.png" alt="vscodeによる複数行置換" class="biggraphic fade-in-out">
-
-  <h5>VS Codeのアウトライン機能</h5>
-  <p>長いコードを書くときにはアウトライン機能が便利です。<br>
-   htmlならh2やpといったタグのところで区切りがあるので、そこを辿りつつコードを書いていくことができます。</p>
-
-  <img src="/contents/itimages/vscodeアウトライン.png" alt="vscodeのアウトライン機能" class="biggraphic fade-in-out">
-
-  <h5>VS Codeのターミナル機能</h5>
-  <p>ステータスバーを上に持ち上げるとターミナルまで出てきます。<br>
-   ちょっとしたコマンドプロンプトの作業であれば、ここでいつも済ませてますね。<br>
-   例えばここで python main.py と入力すれば、そのままpythonコードを実行することができるわけですよ。<br>
-   そういう意味でも、コマンドラインはある程度扱えると便利かと思います。</p>
-
-  <img src="/contents/itimages/vscodeコマンドプロンプト.png" alt="vscode内蔵のコマンドプロンプト" class="biggraphic fade-in-out">
-
-  <h5>インデントの調整</h5>
-  <p>これも便利なプチ機能です。<br>
-   ソースコードを記載してWebサイトに掲載する時、インデントを調整したい時があります。</p>
-  <ul>
-   <li>範囲を指定してから「tab」でインデントの追加</li>
-   <li>範囲を指定してから「shift+tab」でインデントの除去</li>
-  </ul>
-  <p>これは覚えておいたほうがいい。<br>
-   知らないとソースコードを調整したい時、１行ずつbackspaceすることになります。</p>
-
-  <h4>VS Codeのsettings.json</h4>
-  <p>例えば、次にあるコードはVisual Studio Codeのsetting.jsonです。<br>
-   快適に効率よく作業できるかどうかが決まりますよ。<br>
-   とっても重要だと思います。<br>
-   とりあえずフォントは「Yu Gothic UI」が無難かも。<br>
-   日本語と英数字でバランスが取れていて見やすいです。</p>
-
-  <pre><code class="language-json">
-{
-    "extensions.ignoreRecommendations": true, // 拡張機能の推奨を無視
-    "editor.fontFamily": "'Yu Gothic UI', 'Courier New', monospace", // エディタのフォントファミリーを設定
-    "workbench.settings.applyToAllProfiles": [
-    "editor.fontFamily" // フォント設定をすべてのプロファイルに適用
-    ],
-    "editor.fontLigatures": false, // フォントリガチャを無効にする（特別な文字結合を表示しない）
-    "editor.wordWrap": "on", // テキストの折り返しを有効にする
-    "files.insertFinalNewline": true, // ファイルの最後に自動的に改行を挿入
-    "editor.formatOnSave": true, // 保存時に自動的にフォーマット
-    "files.trimFinalNewlines": true, // ファイルの最後の不要な改行を削除
-    "files.trimTrailingWhitespace": true, // 行末の不要な空白を削除
-    "breadcrumbs.enabled": true, // パスを表示するパンくずリストを有効にする
-    "workbench.tree.renderIndentGuides": "always" // フォルダ構造のインデントガイドを常に表示
-}
-
-</code></pre>
-
-  <p>私はVisual Studio Codeも使いますが、元祖メモ帳の使用頻度も高いですね。やっぱ簡単だし。<br>
-   もしくはLinuxのgedit。<br>
-   geditはUbuntuというLinuxディストリビューションにインストールされているテキストエディターです。<br>
-   Windowsで言うところのメモ帳ですよ。<br>
-   余計な機能は付いておらず、その気になればカスタマイズもできる。<br>
-   そのうえシンタックスハイライトもしてくれます。</p>
-
-  <p>そう、Windowsのメモ帳は快適に動作するのですが、シンタックスハイライトがないんですよねー。</p>
-
-  <img src="/contents/itimages/notepad.png" alt="Windowsのメモ帳" class="graphic fade-in-out">
-
-  <p>シンタックスハイライトをしてくれれば、メモ帳は完璧だったと思います。</p>
-
-  <h2>複数ファイルのコードブロックを差し替える</h2>
-  <p>上記の「Visual Studio Codeで複数ファイルを一括置換」にて、複数のファイルをまとめて一気に置換する方法を簡単に説明しました。<br>
-   ただ…実際には、例えば次のようなコードのブロックを丸ごと差し替えたいことが頻繁にあります。<br>
+  <p>ただ…実際には、例えば次のようなコードのブロックを丸ごと差し替えたいことが頻繁にあります。<br>
    これが１つや２つのページなら良いのですが、複数のページで差し替えるとなると大変なんです。</p>
 
-  <div class="code-container">
-   <pre><code class="language-html">
-&lt;body&gt;
-  &lt;h1&gt;こんにちは、世界！&lt;/h1&gt;
-    &lt;p&gt;これはテスト用のHTMLページです。&lt;/p&gt;
-&lt;/body&gt;
-            </code></pre>
-  </div>
+  <img src="/contents/itimages/vscode複数行置換.png" alt="vscodeによる複数行置換" class="biggraphic fade-in-out">
 
   <p>ここでやりたいのは、次のような検索と置換です。</p>
 
@@ -434,17 +526,14 @@ for container in document.select('.atelier-container'):
    <li>だからまとめて一気に置換したい</li>
   </ol>
 
-  <p>この事例では３つとなっていますが、これで30も300もhtmlファイルがあったらどうでしょう？<br>
-   その作業は非常に面倒であり、ほとんど現実味がないです。<br>
-   こういうところが、個人サイトの挫折ポイントになるんだよね。</p>
-
-  <p>そこで、初めからJavaScriptでhtmlコードを差し込んだり、PythonのFlaskというウェブアプリケーションフレームワークを使ったりします。<br>
-   でもどちらの方法も一長一短です。<br>
-   よって、特に明確な予定も立っていないのであれば、コードエディタでちゃちゃっとやってしまうのが手軽でしょう。</p>
+  <p>上の例では３つとなっていますが、これで30も300もhtmlファイルがあったらどうでしょう？<br>
+   その置換作業は非常に面倒であり、ほとんど現実味がないです。<br>
+   コードエディタでちゃちゃっとやってしまうか、PythonのBeautifulSoupあたりを使ってもいいよね。<br>
+   いずれにしても、手作業しないのが鉄則かと？</p>
 
   <h3>htmlファイルによってコードブロックのインデントが異なる</h3>
   <p>Web制作あるあるですが、同じコードでも各htmlファイルによって書式がばらついてしまうことがあります。<br>
-   次のようにインデントや改行が違ってきてしまうのです。<br>
+   次のようにインデントや改行ポイントが違ってきてしまう。<br>
    これをまとめて検索して引っかけようとすると、ちょっとしたコツが必要になってきます。</p>
 
   <div class="code-container">
@@ -476,59 +565,7 @@ for container in document.select('.atelier-container'):
    でもまとめて置換したい…<br>
    こういうときにどうすれば良いかというお話です。</p>
 
-
-  <h3>VSCodeで正規表現を使った検索・置換</h3>
-  <p>Visual Studio Code (VSCode)でインデントの性質に関わらず特定のコードを検索するには、正規表現を使うと便利です。<br>
-   まずは操作方法から書いていきます。</p>
-
-  <ol>
-   <li>検索パネルを開く：「Ctrl + F」を押して検索パネルを開く</li>
-   <li>正規表現を有効にする：検索パネルの右側にある「.*」アイコンをクリックして正規表現モードを有効にする</li>
-   <li>検索パターンを入力する：以下のように正規表現を入力する</li>
-  </ol>
-
-  <div class="code-container">
-   <pre><code class="language-html">
-\s*&lbrack; \t　&rbrack;*&lt;h1&gt;こんにちは、世界！&lt;/h1&gt;\s*&lbrack; \t　&rbrack;*&lt;p&gt;これはテスト用のHTMLページです。&lt;/p&gt;\s*&lbrack; \t　&rbrack;*&lt;/body&gt;
-⏎
-※検索ボックスに、改行も含めて入力する
-        </code></pre>
-  </div>
-
-  <img src="/contents/itimages/vscode_search.png" alt="vscodeにおける正規表現の使い方" class="biggraphic fade-in-out">
-
-  <p>このように改行⏎を含めることで、VSCodeは複数行にまたがるパターンを正しく検索できます。<br>
-   VSCodeの検索ボックスで正規表現を使用する際に、改行が含まれるかどうかが検索結果に影響する理由は、正規表現の処理方法にあります。</p>
-
-  <p class="gra">理由の説明</p>
-  <dl>
-   <dt>１．改行の扱い</dt>
-   <dd>正規表現の \s* は空白文字（スペース、タブ、改行など）を意味しますが、検索ボックスに入力する際に改行が含まれていないと、改行を含むパターンには一致しません。<br>
-    改行を含むパターンを検索するためには、実際に改行を含める必要があります。</dd>
-
-   <dt>２．VSCodeの検索ボックスの特性</dt>
-   <dd>VSCodeの検索ボックスは、デフォルトでは単一行の入力を前提としています。<br>
-    そのため、複数行にまたがるパターンを検索する場合、改行を明示的に含める必要があります。<br>
-    改行を含めることで、検索ボックスが複数行のパターンを正しく認識し、検索対象として一致させることができます。</dd>
-  </dl>
-
-  <p>この正規表現の意味を分解して説明すると、こうなります。<br>
-   この正規表現を使うことで、さまざまな種類の空白文字やインデントを考慮して検索することができます。</p>
-
-  <dl>
-   <dt>\s*</dt>
-   <dd>\s は「空白文字」を意味します。空白文字には、半角スペース、タブ、改行などが含まれます。<br>
-    * は「0個以上の繰り返し」を意味します。つまり、\s* は「0個以上の空白文字」を表します。</dd>
-
-   <dt>[ \t　]*</dt>
-   <dd>[] は「文字クラス」を意味し、括弧内のいずれかの文字を1つ選びます。<br>
-    ` `（半角スペース）、\t（タブ）、`　`（全角スペース）が含まれています。<br>
-    * は「0個以上の繰り返し」を意味します。つまり、[ \t　]* は「0個以上の半角スペース、タブ、全角スペースのいずれか」を表します。</dd>
-
-   <dt>結合した意味</dt>
-   <dd>\s*[ \t　]* は、「0個以上の空白文字（半角スペース、タブ、改行など）に続いて、0個以上の半角スペース、タブ、全角スペースのいずれか」を意味します。</dd>
-  </dl>
-
+  <p class="feintag">Pythonコードを記載予定だよ！</p><br>
 
   <h4>VS Codeに関する小話</h4>
   <p>そういえばVisual Studio Codeは「ウェブデザイン技能検定」の2級実技試験で、指定ソフトウェアとして使用されているんですよね。<br>
