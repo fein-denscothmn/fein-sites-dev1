@@ -3,6 +3,7 @@
 /www/pdf_sitemap.xml
 /www/sitemap.xml
 /www/robots.txt
+/.vscode/tasks.json
 /app.yaml
 
 # 特定のディレクトリを除外
