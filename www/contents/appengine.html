@@ -68,6 +68,7 @@
  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
  <!-- prismの読み込み -->
  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-bash.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-yaml.min.js"></script>
 
  <!-- google fonts -->
@@ -151,13 +152,621 @@
   <h1 class="background-waveimage-heading"><span>Google App Engineで広告なしサイト作成</span></h1>
   <p>Google App Engineは、あなたのWebサイトやアプリをインターネット上に簡単に公開できるサービス。<br>
    プログラムを書いたら、Googleのサーバーで動かせるようにしてくれます。<br>
-   面倒な設定は不要で、すぐに始められます。</p>
+   個人サイトを作り場合、大きく分けて次の2つが考えられます。</p>
 
-  <p>ただ…正直にお話をすると、まったくもってITの知識がゼロの状態だと、敷居が高いかもしれません。<br>
-   もし勉強するお時間があるなら、クラウドサービスのメリットを享受できますよ？<br>
-   下品な広告が付かない自由な個人サイトを、無料で作ることができてしまいます。</p>
+  <ol>
+   <li>既存のホームページ作成サービスを使う</li>
+   <li>HTMLを初めとするソースコードが書ける場合、クラウドを使う選択肢が出てくる</li>
+  </ol>
+
+  <p>ここでお話しするのは、主に後者です。</p>
+
+  <h2>Google App Engineの仕組み</h2>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(20).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>上記でGoogleのサーバーと書いたけど、App Engineはサーバーとはまた少し違うんですよね。</p>
+
+   <dl>
+    <dt>App Engineアプリの設定ファイル</dt>
+    <dd>App Engineを使うアプリには、app.yamlという設定ファイルが必要です。<br>
+     これはアプリの動作を指示する重要なファイルです。</dd>
+
+    <dt>runtimeエントリ</dt>
+    <dd>app.yamlファイルには、少なくとも「runtime（実行環境）」という設定が必要です。<br>
+     これはどのプログラミング言語を使うかを指定します。</dd>
+
+    <dt>各サービスの設定</dt>
+    <dd>アプリが複数の機能（サービス）を持っている場合、各サービスに専用のapp.yamlファイルが必要です。<br>
+     これがそのサービスの設定を行います。</dd>
+
+    <dt>defaultサービスの設定</dt>
+    <dd>まず最初にアプリの「default（デフォルト）サービス」に対してapp.yamlファイルを作成します。<br>
+     その後、追加のサービスに対してもそれぞれapp.yamlファイルを作成します。</dd>
+   </dl>
+  </div>
+
+  <h3>runtime（実行環境）</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(21).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>アプリケーションを実行するために必要な特定の設定や環境のことです。<br>
+    これには使うプログラミング言語やフレームワークが含まれます。</p>
+   <p>上述しましたが、App Engineは通常のサーバーとは少し違います。<br>
+    普通のサーバーは自分で設定や管理をする必要がありますが、App EngineはGoogleが提供する「マネージドサービス」と呼ばれるもので、サーバーの設定や管理をGoogleが行います。<br>
+    ユーザーはアプリケーションのコードと設定ファイルを用意するだけで、App Engineが自動的にリソースを割り当ててアプリケーションを実行してくれます。</p>
+
+   <p>簡単に言うと、runtimeを使って「私はこの言語（例えばPythonやJava）でアプリを動かします」とApp Engineに教えることで、App Engineがその言語に合った環境を準備してくれるのです。</p>
+  </div>
+
+  <h3>Pythonランタイムでウェブサイトをホスティングする</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(22).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>App Engine では、pythonランタイムを指定しても静的ウェブサイト（HTMLファイル、CSS、JavaScriptなど）をホスティングできます。<br>
+    私のWebサイトはこの仕組みを使っています。<br>
+    App Engineは柔軟なアプリケーションホスティングプラットフォームと表現することも可能ですよね。</p>
+
+   <dl>
+    <dt>静的ファイルのホスティング</dt>
+    <dd>App Engine は、静的ファイル（HTML、CSS、JavaScript、画像など）を効率的に配信する機能があります。</dd>
+    <dd>app.yaml ファイルで静的ファイルのディレクトリを指定することで、これらのファイルをアプリの一部として公開できます。</dd>
+
+    <dt>ディフォルトのサービス提供</dt>
+    <dd>Pythonランタイムを指定しても、特に Pythonコードが含まれていない場合、静的ファイルをそのまま提供できます。</dd>
+    <dd>つまり、Pythonランタイムを使っているという指定は、特定のサーバーサイドコードを実行するためのものであり、静的コンテンツの提供に影響を与えません。</dd>
+   </dl>
+  </div>
+
+  <p>ここで、シンプルな app.yaml の例を示してみましょう。</p>
+
+  <div class="code-container">
+   <pre><code class="language-yaml">
+runtime: python
+handlers:
+- url: /static
+static_dir: static/
+- url: /.*
+script: auto
+
+</code></pre>
+  </div>
+
+  <p>この構成では、/static ディレクトリ内のファイルを静的コンテンツとして配信し、その他のURLに対しては自動的にPythonスクリプトを実行します。<br>
+   このようにして、App Engine を使用して静的ウェブサイトを簡単にホスティングすることが可能です。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(23).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>このサイトの場合、Pythonランタイムを指定しているものの、実際には静的なファイルだけを公開している状態です。<br>
+    Pythonのコードが実行されていないため ─ 例外はあるけれど ─、Pythonランタイムの設定は単に環境として存在しているだけとなっているんですよね。<br>
+    つまり、App EngineではPythonランタイムを指定することで、必要な場合にPythonコードを実行するための環境が用意されますが、実際に提供されているのは静的なファイルということになります。<br>
+    この設定の利点は、将来的に動的なPythonコードを追加したい場合にすぐ対応できる柔軟性がある点です。</p>
+  </div>
+
+  <h3>App Engine の静的ファイル配信機能</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(25).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>App Engine は静的ファイルを効率的かつ安全に配信することができるのです。</p>
+
+   <dl>
+    <dt>キャッシュ機能</dt>
+    <dd>静的ファイルは一度リクエストされると、App Engine がそれをキャッシュに保存します。<br>
+     次回のリクエスト時には、キャッシュから高速に配信するため、ロード時間が短縮されます。</dd>
+
+    <dt>圧縮</dt>
+    <dd>App Engine は静的ファイルを自動的に圧縮し、配信の効率を上げます。<br>
+     ユーザーのデータ転送量が減り、ページの読み込み速度が向上します。</dd>
+
+    <dt>CDN（コンテンツ配信ネットワーク）統合</dt>
+    <dd>App Engine は Google の広範なCDNネットワークを活用して、世界中のユーザーに対して低遅延でファイルを配信します。<br>
+     地理的に遠くにいるユーザーにも高速にコンテンツを提供できます。</dd>
+
+    <dt>セキュリティ</dt>
+    <dd>静的ファイルはHTTPS（SSL/TLS）で配信されるため、データの盗聴や改ざんから守られます。</dd>
+
+    <dt>自動スケーリング</dt>
+    <dd>トラフィックが急増してもApp Engine が自動的にリソースをスケーリングして対応します。<br>
+     大量のアクセスにも耐えられるようになります。</dd>
+
+    <dt>静的ファイルのマッピング</dt>
+    <dd>app.yaml ファイルで静的ファイルのディレクトリを指定することで、特定のURLパスにファイルを簡単にマッピングできます。<br>
+     たとえば、 /static フォルダ内のすべてのファイルを /static/* のURLでアクセスできるように設定することができます。</dd>
+   </dl>
+  </div>
+
+  <h2>app.yaml構文の詳説</h2>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(296).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>app.yamlの構文では、URLやファイルパスのパターンを記述する際に、POSIX拡張正規表現を使用するので、使いやすい文字列パターンの指定が可能です。<br>
+    また、グループ化したパターンを後で参照する機能や、Perl拡張の特殊文字（例:\wや\d）もサポートされています。<br>
+    要するに、より柔軟で詳細なパターンマッチングができるということです。</p>
+
+   <p>ここで、yamlの事例を見てみましょう。</p>
+  </div>
 
 
+  <div class="code-container">
+   <pre><code class="language-yaml">
+runtime: python312
+instance_class: F2
+env_variables:
+BUCKET_NAME: "example-gcs-bucket"
+handlers:
+# Matches requests to /images/... to files in static/images/...
+- url: /images
+static_dir: static/images
+- url: /.*
+secure: always
+redirect_http_response_code: 301
+script: auto
+
+</code></pre>
+  </div>
+
+  <p><a href="https://cloud.google.com/appengine/docs/standard/reference/app-yaml?hl=ja&tab=python">App Engine
+    app.yaml リファレンス</a>も参考にして頂けるとよろしいかと。<br>
+   このyaml構文を詳しく説明すると、次のようになります。</p>
+
+  <div class="code-container">
+   <pre><code class="language-yaml">
+# アプリケーションのランタイム環境を指定します。この場合は Python 3.12 を使用します。
+runtime: python312
+
+# インスタンスのクラスを指定します。F2 は、適度なパフォーマンスとリソースを提供するクラスです。
+instance_class: F2
+
+# 環境変数を指定します。アプリケーション内で使用する設定値を管理します。
+env_variables:
+# Google Cloud Storage バケットの名前を指定します。
+BUCKET_NAME: "example-gcs-bucket"
+
+# リクエストを処理するためのハンドラーを定義します。
+handlers:
+# /images で始まるURLパスに対して、静的ディレクトリ static/images 内のファイルをマッピングします。
+# 例えば、/images/logo.png は static/images/logo.png にマッピングされます。
+- url: /images
+static_dir: static/images
+
+# すべてのリクエストに一致させます。/.* はすべての URL パスにマッチする正規表現です。
+- url: /.*
+# HTTP を HTTPS にリダイレクトします。secure: always は常に HTTPS を使用することを示します。
+secure: always
+# HTTP リダイレクトのレスポンスコードを 301（永久的なリダイレクト）に設定します。
+redirect_http_response_code: 301
+# スクリプト自動設定を使用します。script: auto は自動的に適切なスクリプトを選択することを示します。
+script: auto
+
+</code></pre>
+  </div>
+
+  <p>yaml構文を全て学ぼうとするとキリがないでしょう。<br>
+   しかしApp Engineを使う場合、Googleの公式ドキュメントに記載されている範囲内の情報くらいは把握しておくとラクです。</p>
+
+  <h5>app_engine_apis</h5>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(297).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p><span class="small-orange-text">※必ずしも設定する必要はありません。</span></p>
+   <p>これはApp Engineの最新の環境で昔からあるサービスを使いたい場合、この設定を「true」にする、という意味です。<br>
+    App Engineの中に、「App Engine APIs」という、アプリが利用するためのさまざまな機能やサービスを含むAPIがあります。<br>
+    2025年1月現在、App Engineの最新のランタイム環境は第2世代ランタイムです。─ ランタイム：アプリケーションが実行される環境のこと ─
+    一方、以前からある複数の機能やサービスをまとめて提供する従来のバンドルサービスは、第1世代から存在しています。<br>
+    このフィールドを「true」に設定することで、従来のバンドルサービスを第2世代ランタイムで使えるということです。</p>
+
+   <p>App Engineの従来のバンドルサービスには、次のような機能やツールが含まれています。</p>
+  </div>
+
+  <dl>
+   <dt>Memcache</dt>
+   <dd>高速のキャッシュサービス。アプリのパフォーマンス向上に役立ちます。</dd>
+
+   <dt>Mail</dt>
+   <dd>アプリケーションからメールを送信するためのサービス。</dd>
+
+   <dt>XMPP</dt>
+   <dd>メッセージング用プロトコルを使って、リアルタイム通信を可能にするサービス。</dd>
+
+   <dt>Blobstore</dt>
+   <dd>大量のデータ（画像や動画など）を保存するためのサービス。</dd>
+
+   <dt>Users</dt>
+   <dd>ユーザー認証を簡単に行うためのサービス。</dd>
+  </dl>
+
+  <p>これらのサービスはアプリケーション開発のさまざまなニーズに対応するためのものですね。<br>
+   第1世代からずっと使われている定番の機能です。<br>
+   第2世代ランタイムでもこれらを使いたい場合には、上記の説明のように、yamlファイルで設定を「true」にする必要があります。</p>
+
+  <h5>build_env_variables</h5>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(298).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p><span class="small-orange-text">※必ずしも設定する必要はありません。</span></p>
+   <p>この build_env_variables を使って、ビルド時に必要な情報を整理し、アプリケーションを正しく動作させる設定を行います。<br>
+    ビルド環境変数とはソフトウェアの構築 ─ しばしば「ビルド」と呼ばれる ─ 中に使用される設定情報です。<br>
+    例えばデータベースの接続情報やAPIキーなど、ビルド時に必要な情報をここで指定します。<br>
+    buildpacksはプログラムをビルドして実行可能な形式に変換するツールであり、ソースコードを受け取って、それを実行可能なアプリケーションにします。</p>
+
+   <p>つまり、app.yamlファイルの中で build_env_variables を使ってビルド環境変数を定義するというのは、ビルド中に必要な情報を指定しておくということです。<br>
+    少し事例を見てみましょう。</p>
+  </div>
+
+
+  <div class="code-container">
+   <pre><code class="language-yaml">
+build_env_variables:
+DATABASE_URL: "mysql://user:password@localhost:3306/mydatabase"
+API_KEY: "your-api-key"
+
+</code></pre>
+  </div>
+
+  <p>こうやって書くと、ビルド中に DATABASE_URL や API_KEY といった情報が使用されます。</p>
+
+  <h5>default_expiration</h5>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(300).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p><span class="small-orange-text">※必ずしも設定する必要はありません。</span></p>
+   <p>アプリケーションにある静的ファイル ─ 画像、CSS、JavaScriptなど ─ のキャッシュ期間を設定し、読み込み速度を改善するための設定です。<br>
+    キャッシュ期間とは、ファイルがブラウザやサーバーに保存される期間のことです。<br>
+    この期間中に再度そのファイルにアクセスすると、サーバーからではなくキャッシュから読み込まれます。<br>
+    するとWebコンテンツの表示が早くなります。</p>
+
+   <p>キャッシュ期間は、次のような単位の文字列を付け、数値と組み合わせて設定します。</p>
+  </div>
+
+
+  <ul>
+   <li><strong>d</strong> は日数（days）を表します。</li>
+   <li><strong>h</strong> は時間（hours）を表します。</li>
+   <li><strong>m</strong> は分（minutes）を表します。</li>
+   <li><strong>s</strong> は秒（seconds）を表します。</li>
+  </ul>
+
+  <p>例えば「4d 5h」と指定すると、そのファイルのキャッシュ有効期限は最初にリクエストされてから4日と5時間後になります。<br>
+   次に、app.yamlファイルへdefault_expirationを設定した例を示します。</p>
+
+  <div class="code-container">
+   <pre><code class="language-yaml">
+runtime: python312
+default_expiration: "4d 5h"
+handlers:
+# ...以下略
+
+</code></pre>
+  </div>
+
+  <p>この設定により、静的ファイルのキャッシュ有効期限が4日と5時間に設定されます。<br>
+   もしdefault_expirationを省略した場合、本番環境ではサーバーが自動的に有効期限を10分に設定します。</p>
+
+  <h5>entrypoint</h5>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(299).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p><span class="small-orange-text">※必ずしも設定する必要はありません。</span></p>
+   <p>アプリがどうやって起動するかを細かくコントロールできます。<br>
+    アプリがHTTPリクエスト（ウェブからのアクセス）を受け取るには、ポート8080でリッスンするウェブサーバーを起動する必要があります。─ ポート8080を使って外部からのアクセスを受け付ける準備をしている状態のことです ─<br>
+    entrypointには、そのためのコマンドを設定します。</p>
+   <p>当サイトのようにPythonを使っている場合、entrypointを指定しないと、App Engineが自動的にGunicornというウェブサーバーを起動してくれます。─ 詳しく後述します ─<br>
+    しかし特別な設定やカスタマイズをしたい場合は、自分でentrypointを指定することができます。<br>
+    例えば独自のサーバーを起動するコマンドを指定する場合は、app.yamlファイルに以下のように記述します。</p>
+  </div>
+
+  <div class="code-container">
+   <pre><code class="language-yaml">
+entrypoint: python my_server.py
+
+</code></pre>
+  </div>
+
+  <p>すでに上記で簡単に触れましたが、もしentrypointを明示的に指定しなかった場合でも、Google App
+   Engineが内部的にGunicornというウェブサーバーを使用してアプリを起動し、ポート8080でのリクエストを受け付けるようにしてくれます。<br>
+   Google App Engineがバックグラウンドで必要な設定を自動で行ってくれるので、ポート8080を手動で設定する必要がないわけです。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(296).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>Gunicorn（Green Unicorn）は、Pythonで書かれたWSGI（Web Server Gateway Interface）サーバーです。<br>
+    簡単に言えば、Pythonのウェブアプリケーションを効率的に動かすためのサーバーです。</p>
+
+   <dl>
+    <dt>パフォーマンス</dt>
+    <dd>軽量で、高性能なHTTPサーバーとして知られています。</dd>
+    <dt>互換性</dt>
+    <dd>多くのPythonフレームワーク（例：Django、Flaskなど）と互換性があります。</dd>
+    <dt>簡単な設定</dt>
+    <dd>設定が比較的簡単で、シンプルなコマンドで起動できます。</dd>
+    <dt>スケーラビリティ</dt>
+    <dd>複数のプロセスを使用してリクエストを処理するため、高トラフィックにも対応できます。</dd>
+   </dl>
+  </div>
+
+  <p>例えば、FlaskアプリケーションをGunicornで起動する場合は、以下のようにコマンドを実行します。</p>
+
+  <div class="code-container">
+   <pre><code class="language-bash">
+gunicorn myapp:app
+
+</code></pre>
+  </div>
+
+  <p>ここで、myappはPythonファイルの名前、appはFlaskアプリケーションのインスタンス名です。</p>
+
+  <p>このように既存の動作や設定を上書きして変更することをオーバーライド（override）と言うこともあります。<br>
+   App Engineが通常自動的に行う設定を変更して、自分で特別なサーバーの起動方法を指定したい場合に、そのコマンドをentrypointで設定することで、App
+   Engineが通常使う方法を「オーバーライド」することができるということです。</p>
+
+
+  <h2>個人サイト向けのapp.yaml設定</h2>
+
+  <p>App Engineの「app.yaml」ファイルは、Google App Engineアプリケーションのデプロイや動作に関する重要な情報をまとめて管理するためのものです。<br>
+   このファイルには、アプリケーションの動作に関するさまざまな設定が含まれています。</p>
+
+  <p class="gra">参考サイト</p>
+  <p><a href="https://yaml.org/">yaml.org</a></p>
+
+  <h3>ランタイムの指定</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(26).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>使用するプログラミング言語やランタイム環境を指定します。<br>
+    app.yamlファイルでは、アプリケーションがどのプログラミング言語やランタイム環境を使うかを指定することができます。<br>
+    これをもって、Google App Engineがアプリケーションを正しく実行するための環境を準備することになります。</p>
+  </div>
+
+
+  <p class="gra">プログラミング言語</p>
+  <p>アプリケーションが書かれている言語です。<br>
+   例えば、Python、Java、Node.jsなどです。</p>
+
+  <p class="gra">ランタイム環境</p>
+  <p>アプリケーションを実行するためのソフトウェア環境です。プログラミング言語に対応したランタイムが用意されています。<br>
+   例えば、Pythonを使ってアプリケーションを作成している場合、runtime:として記述されることになるでしょう。<br>
+   Python 3.9のランタイム環境を使用することを指定すると、Google App EngineはPython 3.9を使ってアプリケーションを実行します。<br>
+   同じようにnodejs14などを使うこともできます。<br>
+   このように、app.yamlファイルで使用するプログラミング言語やランタイム環境を指定することで、アプリケーションが正しく動作するように設定します。</p>
+
+  <h3>ハンドラの設定</h3>
+  <p>URLパスとそれに対応するリクエストハンドラを定義します。<br>
+   前述のようにapp.yamlは、Google App Engineでアプリケーションの設定を行うためのファイルです。<br>
+   このファイルの中で、「URLパス」と「リクエストハンドラ」を定義します。</p>
+
+  <p class="gra">URLパス</p>
+  <p>ユーザーがウェブブラウザに入力するアドレスの一部です。<br>
+   例えば、/homeや/aboutなどです。</p>
+
+  <p class="gra">リクエストハンドラ</p>
+  <p>特定のURLパスにアクセスがあったときに、そのリクエストを処理するプログラムや関数のことです。<br>
+   簡単に言うと、app.yamlファイルで「このURLにアクセスがあったら、このプログラムを実行してね」と指示を出している感じです。<br>
+   例えば、次のような設定があったとします。</p>
+
+  <div class="code-container">
+   <pre><code class="language-yaml">
+# yamlの記述内容
+handlers:
+- url: /home
+ script: home.app
+- url: /about
+ script: about.app
+  </code></pre>
+  </div>
+
+  <p>この場合、ユーザーが/homeにアクセスすると、home.appというプログラムが実行され、/aboutにアクセスすると、about.appというプログラムが実行されます。</p>
+
+  <h4>インスタンスの設定</h4>
+  <p>インスタンスのスケーリングやクラスを設定します。<br>
+   app.yamlファイルでインスタンスのスケーリングやクラスを設定することで、アプリケーションのパフォーマンスを最適化し、コストを管理することができます。</p>
+
+  <p class="gra">インスタンスのスケーリング</p>
+  <p>アプリケーションの負荷に応じてインスタンスの数を増減させる仕組みです。<br>
+   例えば、アクセスが多いときにはインスタンスを増やし、少ないときには減らすことで、効率的にリソースを使うことができます。</p>
+
+  <p class="gra">インスタンスのクラス</p>
+  <p>インスタンスの性能やコストに関する設定です。<br>
+   例えば、高性能なインスタンスを使うか、低コストなインスタンスを使うかを選ぶことができます。</p>
+
+  <p>例えば、次のようなことを指定していきます。</p>
+  <ul>
+   <li>[instance_class: F2]とすれば、F2クラスのインスタンスを使用することを指定しています。F2クラスは、比較的高性能なインスタンスですね。</li>
+   <li>[automatic_scaling]とすれば、自動スケーリングの設定です。</li>
+   <li>[min_instances: 1]とすれば、最低でも1つのインスタンスを常に稼働させることを指定しています。</li>
+   <li>[max_instances: 5]とすれば、最大で5つのインスタンスまで増やすことができることを指定しています。</li>
+  </ul>
+
+  <h4>環境変数の設定</h4>
+  <p>アプリケーションで使用する環境変数を定義します。<br>
+   環境変数を使うことで、アプリケーションのコードを変更せずに設定情報を変更することができます。<br>
+   セキュリティが向上し、設定の管理が簡単になります。</p>
+
+  <p class="gra">環境変数</p>
+  <p>アプリケーションが動作する際に必要な設定情報を外部から渡すためのものです。<br>
+   例えば、データベースの接続情報やAPIキーなど、アプリケーションのコードに直接書きたくない情報を環境変数として設定します。</p>
+
+  <p class="gra">app.yaml</p>
+  <p>ファイルで環境変数を定義することで、これらの情報を簡単に管理できます。</p>
+
+  <p>例えば、DATABASE_URL:
+   "mysql://user:password@localhost/dbname"としてデータベースの接続情報を指定します。この情報を使って、アプリケーションはデータベースに接続します。<br>
+   APIについてはAPI_KEY: "your-api-key-here"と書くことで、外部のサービスを利用するためのAPIキーを指定します。このキーを使って、アプリケーションは外部サービスにアクセスします。</p>
+
+  <h4>静的ファイルとディレクトリを設定する方法</h4>
+  <p class="gra">静的ファイルの設定</p>
+  静的ファイルを提供するためには、app.yamlファイルにstatic_filesまたはstatic_dirを使用してハンドラを定義します。
+
+  <h5>static_filesの使用例</h5>
+  static_filesを使用すると、特定のファイルパターンに一致するファイルを提供できます。
+
+  <div class="code-container">
+   <pre><code class="language-yaml">
+# yamlの記述内容
+- url: /static(.*)
+ static_files: static/\1
+ upload: static/(.*)
+  </code></pre>
+  </div>
+
+  <p><strong>(.*)</strong><br>
+   これは正規表現のパターンで、任意の文字列（0文字以上）にマッチします。<br>
+   括弧で囲まれているため、キャプチャグループとして機能します。<br>
+   つまり、マッチした部分を後で参照できるように保存します。</p>
+
+  <p><strong>\1</strong><br>
+   これはキャプチャグループの参照です。<br>
+   正規表現のパターンで最初にキャプチャされたグループ（この場合は(.*)）を指します。<br>
+   \1は最初のキャプチャグループ、\2は2番目のキャプチャグループ、というように続きます。</p>
+
+
+  <p class="gra">url: /static/(.*):</p>
+  <p>/static/に続く任意の文字列にマッチします。<br>
+   例えば、/static/image.pngや/static/css/style.cssなどです。</p>
+
+  <p class="gra">static_files: static/\1:</p>
+  <p>マッチしたURLのパスの部分（(.*)）をstatic/ディレクトリ内の対応するファイルにマッピングします。<br>
+   例えば、/static/image.pngがリクエストされた場合、static/image.pngファイルが提供されます。</p>
+
+  <p class="gra">upload: static/(.*):</p>
+  <p>App Engineにアップロードされるファイルのパスを指定します。<br>
+   static/ディレクトリ内の任意のファイルがアップロード対象となります。<br>
+   この設定があることで、/static/に続く任意のパスがstaticディレクトリ内の対応するファイルにマッピングされ、App Engineにアップロードされるファイルも同様に指定されます。</p>
+
+  <h5>static_dirの使用例</h5>
+  <p>static_dirを使用すると、ディレクトリ全体を静的ファイルとして提供できます。</p>
+
+  <div class="code-container">
+   <pre><code class="language-yaml">
+# yamlの記述内容
+- url: /static
+ static_dir: static
+  </code></pre>
+  </div>
+
+  <p>この例では、/static URLに一致するリクエストがstaticディレクトリ内のファイルにマッピングされます。</p>
+
+  <h2>app.yamlの構文例</h2>
+  <p><span class="small-orange-text">下記コードのコピペはお勧めできません。</span></p>
+  <p>Webアプリケーションのレベルやアクセス数によっては費用がかかる可能性がありますよ。<br>
+   あくまでも私の環境に沿った上でのコードですし、頻繁に変更しています。<br>
+   ちゃんと意味を理解してから書いた方が良いです。
+  </p>
+  <p class="codegra" id="app_yaml">Google App Engine の app.yaml</p>
+  <div class="code-container">
+   <pre><code class="language-yaml">
+runtime: python312
+instance_class: F1
+env: standard
+
+runtime_config:
+  document_root: www
+
+automatic_scaling:
+  min_idle_instances: 0
+  max_idle_instances: 3
+  max_concurrent_requests: 200
+
+handlers:
+- url: /
+  static_files: www/index.html
+  upload: www/index.html
+
+- url: /favicon.ico
+  static_files: www/favicon.ico
+  upload: www/favicon.ico
+
+- url: /(.*)
+  static_files: www/\1
+  upload: www/(.*)
+
+</code></pre>
+  </div>
+
+  <h4>YAML 設定ファイルの説明</h4>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(301).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p><span class="codecolor">1. runtime: python312</span><br>
+    使用するランタイム環境を指定します。<br>
+    私の場合、Python 3.12 を使用しています。</p>
+
+   <p><span class="codecolor">2. instance_class: F1</span><br>
+    使用するインスタンスのクラスを指定します。<br>
+    <span class="codecolor">F1</span> クラスのインスタンスを使用しています。<br>
+    これは無料の低トラフィック用インスタンスクラスです。
+   </p>
+
+   <p><span class="codecolor">3. env: standard</span><br>
+    環境を標準環境として指定します。</p>
+
+   <p><span class="codecolor">4. runtime_config:</span><br>
+    ランタイムの設定情報を定義するセクションです。</p>
+   <p><span class="codecolor">document_root: www</span><br>
+    ドキュメントルートを指定しています。<br>
+    私の場合、アプリケーションのルートディレクトリが <span class="codecolor">www</span> フォルダです。</p>
+
+   <p><span class="codecolor">5. automatic_scaling:</span><br>
+    自動スケーリングの設定を指定するセクションです。</p>
+   <ul>
+    <li><span class="codecolor">min_idle_instances: 0</span><br>
+     最小アイドルインスタンス数を 0 に設定します。<br>
+     インスタンスがアイドル状態になったとき、それを保持する最小の数です。</li>
+    <li><span class="codecolor">max_idle_instances: 3</span><br>
+     最大アイドルインスタンス数を 3 に設定します。<br>
+     インスタンスがアイドル状態になったとき、それを保持する最大の数です。</li>
+    <li><span class="codecolor">max_concurrent_requests: 200</span><br>
+     1 つのインスタンスで同時に処理できるリクエストの最大数を 200 に設定します。</li>
+   </ul>
+  </div>
+
+  <p><span class="codecolor">6. handlers:</span><br>
+   URL ハンドラーのリストを定義するセクションです。<br>
+   各ハンドラーが特定の URL パターンに対してどのような操作を行うかを指定します。</p>
+  <ul>
+   <li><span class="codecolor">url: /</span><br>
+    <span class="codecolor">/</span> に一致する URL に対するハンドラーを指定します。
+   </li>
+   <ul>
+    <li><span class="codecolor">static_files: www/index.html</span><br>
+     静的ファイル <span class="codecolor">www/index.html</span> を提供します。</li>
+    <li><span class="codecolor">upload: www/index.html</span><br>
+     GAE にデプロイするときに <span class="codecolor">www/index.html</span> をアップロードします。</li>
+   </ul>
+   <li><span class="codecolor">url: /favicon.ico</span><br>
+    <span class="codecolor">/favicon.ico</span> に一致する URL に対するハンドラーを指定します。
+   </li>
+   <ul>
+    <li><span class="codecolor">static_files: www/favicon.ico</span><br>
+     静的ファイル <span class="codecolor">www/favicon.ico</span> を提供します。
+    </li>
+    <li><span class="codecolor">upload: www/favicon.ico</span><br>
+     GAE にデプロイするときに <span class="codecolor">www/favicon.ico</span> をアップロードします。
+    </li>
+   </ul>
+   <li><span class="codecolor">url: /(.*)</span><br>
+    任意の URL に一致するハンドラーを指定します。<br>
+    正規表現 <span class="codecolor">(.*)</span> を使用して、どの URL にもマッチさせます。</li>
+   <ul>
+    <li><span class="codecolor">static_files: www/\1</span><br>
+     URL に対応するファイルを <span class="codecolor">www</span> フォルダから提供します。</li>
+    <li><span class="codecolor">upload: www/(.*)</span><br>
+     GAE にデプロイするときに <span class="codecolor">www</span> フォルダ内の任意のファイルをアップロードします。</li>
+   </ul>
+  </ul>
 
   <h2>個人サイトをクラウドサービスで公開する</h2>
   <div class="flowerclearfix">
@@ -299,253 +908,6 @@
 
   <p>Cloud Runはステートレスなアプリケーションを迅速にデプロイしたい場合やインフラ管理の手間を最小限に抑えたい場合、トラフィックの予測が難しい場合に向いてるかな。個人サイトに向いてるのはこっちだと思う。<br>
    GKEはステートフルなアプリケーションをデプロイしたい場合やKubernetesの高度な機能をフル活用したい場合、細かいカスタマイズが必要な場合に適しています。</p>
-
-
-
-  <h2>個人サイト向けのapp.yaml設定</h2>
-
-  <p>App Engineの「app.yaml」ファイルは、Google App Engineアプリケーションのデプロイや動作に関する重要な情報をまとめて管理するためのものです。<br>
-   このファイルには、アプリケーションの動作に関するさまざまな設定が含まれています。</p>
-
-  <p class="gra">参考サイト</p>
-  <p><a href="https://yaml.org/">yaml.org</a></p>
-
-  <h3>ランタイムの指定</h3>
-  <p>使用するプログラミング言語やランタイム環境を指定します。<br>
-   app.yamlファイルでは、アプリケーションがどのプログラミング言語やランタイム環境を使うかを指定することができます。<br>
-   これをもって、Google App Engineがアプリケーションを正しく実行するための環境を準備することになります。</p>
-
-  <p class="gra">プログラミング言語</p>
-  <p>アプリケーションが書かれている言語です。<br>
-   例えば、Python、Java、Node.jsなどです。</p>
-
-  <p class="gra">ランタイム環境</p>
-  <p>アプリケーションを実行するためのソフトウェア環境です。プログラミング言語に対応したランタイムが用意されています。<br>
-   例えば、Pythonを使ってアプリケーションを作成している場合、runtime:として記述されることになるでしょう。<br>
-   Python 3.9のランタイム環境を使用することを指定すると、Google App EngineはPython 3.9を使ってアプリケーションを実行します。<br>
-   同じようにnodejs14などを使うこともできます。<br>
-   このように、app.yamlファイルで使用するプログラミング言語やランタイム環境を指定することで、アプリケーションが正しく動作するように設定します。</p>
-
-  <h3>ハンドラの設定</h3>
-  <p>URLパスとそれに対応するリクエストハンドラを定義します。<br>
-   前述のようにapp.yamlは、Google App Engineでアプリケーションの設定を行うためのファイルです。<br>
-   このファイルの中で、「URLパス」と「リクエストハンドラ」を定義します。</p>
-
-  <p class="gra">URLパス</p>
-  <p>ユーザーがウェブブラウザに入力するアドレスの一部です。<br>
-   例えば、/homeや/aboutなどです。</p>
-
-  <p class="gra">リクエストハンドラ</p>
-  <p>特定のURLパスにアクセスがあったときに、そのリクエストを処理するプログラムや関数のことです。<br>
-   簡単に言うと、app.yamlファイルで「このURLにアクセスがあったら、このプログラムを実行してね」と指示を出している感じです。<br>
-   例えば、次のような設定があったとします</p>
-
-  <div class="code-container">
-   <pre><code class="language-yaml">
-# yamlの記述内容
-handlers:
-- url: /home
- script: home.app
-- url: /about
- script: about.app
-  </code></pre>
-  </div>
-
-  <p>この場合、ユーザーが/homeにアクセスすると、home.appというプログラムが実行され、/aboutにアクセスすると、about.appというプログラムが実行されます。</p>
-
-  <h4>インスタンスの設定</h4>
-  <p>インスタンスのスケーリングやクラスを設定します。<br>
-   app.yamlファイルでインスタンスのスケーリングやクラスを設定することで、アプリケーションのパフォーマンスを最適化し、コストを管理することができます。</p>
-
-  <p class="gra">インスタンスのスケーリング</p>
-  <p>アプリケーションの負荷に応じてインスタンスの数を増減させる仕組みです。<br>
-   例えば、アクセスが多いときにはインスタンスを増やし、少ないときには減らすことで、効率的にリソースを使うことができます。</p>
-
-  <p class="gra">インスタンスのクラス</p>
-  <p>インスタンスの性能やコストに関する設定です。<br>
-   例えば、高性能なインスタンスを使うか、低コストなインスタンスを使うかを選ぶことができます。</p>
-
-  <p>例えば、次のようなことを指定していきます。</p>
-  <ul>
-   <li>[instance_class: F2]とすれば、F2クラスのインスタンスを使用することを指定しています。F2クラスは、比較的高性能なインスタンスですね。</li>
-   <li>[automatic_scaling]とすれば、自動スケーリングの設定です。</li>
-   <li>[min_instances: 1]とすれば、最低でも1つのインスタンスを常に稼働させることを指定しています。</li>
-   <li>[max_instances: 5]とすれば、最大で5つのインスタンスまで増やすことができることを指定しています。</li>
-  </ul>
-
-  <h4>環境変数の設定</h4>
-  <p>アプリケーションで使用する環境変数を定義します。<br>
-   環境変数を使うことで、アプリケーションのコードを変更せずに設定情報を変更することができます。<br>
-   セキュリティが向上し、設定の管理が簡単になります。</p>
-
-  <p class="gra">環境変数</p>
-  <p>アプリケーションが動作する際に必要な設定情報を外部から渡すためのものです。<br>
-   例えば、データベースの接続情報やAPIキーなど、アプリケーションのコードに直接書きたくない情報を環境変数として設定します。</p>
-
-  <p class="gra">app.yaml</p>
-  <p>ファイルで環境変数を定義することで、これらの情報を簡単に管理できます。</p>
-
-  <p>例えば、DATABASE_URL:
-   "mysql://user:password@localhost/dbname"としてデータベースの接続情報を指定します。この情報を使って、アプリケーションはデータベースに接続します。<br>
-   APIについてはAPI_KEY: "your-api-key-here"と書くことで、外部のサービスを利用するためのAPIキーを指定します。このキーを使って、アプリケーションは外部サービスにアクセスします。</p>
-
-  <h4>静的ファイルとディレクトリを設定する方法</h4>
-  <p class="gra">静的ファイルの設定</p>
-  静的ファイルを提供するためには、app.yamlファイルにstatic_filesまたはstatic_dirを使用してハンドラを定義します。
-
-  <h5>static_filesの使用例</h5>
-  static_filesを使用すると、特定のファイルパターンに一致するファイルを提供できます。
-
-  <div class="code-container">
-   <pre><code class="language-yaml">
-# yamlの記述内容
-- url: /static(.*)
- static_files: static/\1
- upload: static/(.*)
-  </code></pre>
-  </div>
-
-  <p><strong>(.*)</strong><br>
-   これは正規表現のパターンで、任意の文字列（0文字以上）にマッチします。<br>
-   括弧で囲まれているため、キャプチャグループとして機能します。<br>
-   つまり、マッチした部分を後で参照できるように保存します。</p>
-
-  <p><strong>\1</strong><br>
-   これはキャプチャグループの参照です。<br>
-   正規表現のパターンで最初にキャプチャされたグループ（この場合は(.*)）を指します。<br>
-   \1は最初のキャプチャグループ、\2は2番目のキャプチャグループ、というように続きます。</p>
-
-
-  <p class="gra">url: /static/(.*):</p>
-  <p>/static/に続く任意の文字列にマッチします。<br>
-   例えば、/static/image.pngや/static/css/style.cssなどです。</p>
-
-  <p class="gra">static_files: static/\1:</p>
-  <p>マッチしたURLのパスの部分（(.*)）をstatic/ディレクトリ内の対応するファイルにマッピングします。<br>
-   例えば、/static/image.pngがリクエストされた場合、static/image.pngファイルが提供されます。</p>
-
-  <p class="gra">upload: static/(.*):</p>
-  <p>App Engineにアップロードされるファイルのパスを指定します。<br>
-   static/ディレクトリ内の任意のファイルがアップロード対象となります。<br>
-   この設定があることで、/static/に続く任意のパスがstaticディレクトリ内の対応するファイルにマッピングされ、App Engineにアップロードされるファイルも同様に指定されます。</p>
-
-
-  <h5>static_dirの使用例</h5>
-  <p>static_dirを使用すると、ディレクトリ全体を静的ファイルとして提供できます。</p>
-
-  <div class="code-container">
-   <pre><code class="language-yaml">
-# yamlの記述内容
-- url: /static
- static_dir: static
-  </code></pre>
-  </div>
-
-  <p>この例では、/static URLに一致するリクエストがstaticディレクトリ内のファイルにマッピングされます。</p>
-
-  <h2>app.yamlの構文例</h2>
-  <p><span class="small-orange-text">下記コードのコピペはお勧めできません。</span></p>
-  <p>Webアプリケーションのレベルやアクセス数によっては費用がかかる可能性がありますよ。<br>
-   あくまでも私の環境に沿った上でのコードですから、ちゃんと意味を理解してから書いた方が良いです。
-  </p>
-  <p class="codegra" id="app_yaml">Google App Engine の app.yaml</p>
-  <div class="code-container">
-   <pre><code class="language-yaml">
-runtime: python312
-instance_class: F1
-env: standard
-
-runtime_config:
-  document_root: www
-
-automatic_scaling:
-  min_idle_instances: 0
-  max_idle_instances: 3
-  max_concurrent_requests: 200
-
-handlers:
-- url: /
-  static_files: www/index.html
-  upload: www/index.html
-
-- url: /favicon.ico
-  static_files: www/favicon.ico
-  upload: www/favicon.ico
-
-- url: /(.*)
-  static_files: www/\1
-  upload: www/(.*)
-
-</code></pre>
-  </div>
-
-  <h4>YAML 設定ファイルの説明</h4>
-  <p><span class="codecolor">1. runtime: python312</span><br>
-   使用するランタイム環境を指定します。<br>
-   私の場合、Python 3.12 を使用しています。</p>
-
-  <p><span class="codecolor">2. instance_class: F1</span><br>
-   使用するインスタンスのクラスを指定します。<br>
-   <span class="codecolor">F1</span> クラスのインスタンスを使用しています。<br>
-   これは無料の低トラフィック用インスタンスクラスです。
-  </p>
-
-  <p><span class="codecolor">3. env: standard</span><br>
-   環境を標準環境として指定します。</p>
-
-  <p><span class="codecolor">4. runtime_config:</span><br>
-   ランタイムの設定情報を定義するセクションです。</p>
-  <p><span class="codecolor">document_root: www</span><br>
-   ドキュメントルートを指定しています。<br>
-   私の場合、アプリケーションのルートディレクトリが <span class="codecolor">www</span> フォルダです。</p>
-
-  <p><span class="codecolor">5. automatic_scaling:</span><br>
-   自動スケーリングの設定を指定するセクションです。</p>
-  <ul>
-   <li><span class="codecolor">min_idle_instances: 0</span><br>
-    最小アイドルインスタンス数を 0 に設定します。<br>
-    インスタンスがアイドル状態になったとき、それを保持する最小の数です。</li>
-   <li><span class="codecolor">max_idle_instances: 3</span><br>
-    最大アイドルインスタンス数を 3 に設定します。<br>
-    インスタンスがアイドル状態になったとき、それを保持する最大の数です。</li>
-   <li><span class="codecolor">max_concurrent_requests: 200</span><br>
-    1 つのインスタンスで同時に処理できるリクエストの最大数を 200 に設定します。</li>
-  </ul>
-
-  <p><span class="codecolor">6. handlers:</span><br>
-   URL ハンドラーのリストを定義するセクションです。<br>
-   各ハンドラーが特定の URL パターンに対してどのような操作を行うかを指定します。</p>
-  <ul>
-   <li><span class="codecolor">url: /</span><br>
-    <span class="codecolor">/</span> に一致する URL に対するハンドラーを指定します。
-   </li>
-   <ul>
-    <li><span class="codecolor">static_files: www/index.html</span><br>
-     静的ファイル <span class="codecolor">www/index.html</span> を提供します。</li>
-    <li><span class="codecolor">upload: www/index.html</span><br>
-     GAE にデプロイするときに <span class="codecolor">www/index.html</span> をアップロードします。</li>
-   </ul>
-   <li><span class="codecolor">url: /favicon.ico</span><br>
-    <span class="codecolor">/favicon.ico</span> に一致する URL に対するハンドラーを指定します。
-   </li>
-   <ul>
-    <li><span class="codecolor">static_files: www/favicon.ico</span><br>
-     静的ファイル <span class="codecolor">www/favicon.ico</span> を提供します。
-    </li>
-    <li><span class="codecolor">upload: www/favicon.ico</span><br>
-     GAE にデプロイするときに <span class="codecolor">www/favicon.ico</span> をアップロードします。
-    </li>
-   </ul>
-   <li><span class="codecolor">url: /(.*)</span><br>
-    任意の URL に一致するハンドラーを指定します。<br>
-    正規表現 <span class="codecolor">(.*)</span> を使用して、どの URL にもマッチさせます。</li>
-   <ul>
-    <li><span class="codecolor">static_files: www/\1</span><br>
-     URL に対応するファイルを <span class="codecolor">www</span> フォルダから提供します。</li>
-    <li><span class="codecolor">upload: www/(.*)</span><br>
-     GAE にデプロイするときに <span class="codecolor">www</span> フォルダ内の任意のファイルをアップロードします。</li>
-   </ul>
-  </ul>
 
   <h3>GCP・AWS・Azureで独自ドメインを使う</h3>
   <p>GCP、AWS、Azureのいずれかを使用して独自ドメインを購入し適用する方法をサーっと書きますか。<br>
