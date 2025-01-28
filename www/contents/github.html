@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+
+ <!-- Microsoft tag -->
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+
+ <meta charset="UTF-8">
+
+ <!--基本のメタタグ-->
+ <meta name="description" content="GitHubについて、基本的な扱い方を書いています。">
+ <meta name="keywords" content="個人サイト, GitHub, Git">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="GitHubを触ってみよう">
+ <meta property="og:description" content="GitHubについて、基本的な扱い方を書いています。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/github.html">
+
+ <!--検索ヒット時のアイコン-->
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "GitHubを触ってみよう",
+  "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/github.html",
+  "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+}
+</script>
+
+ <!--レスポンシブデザイン-->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!--CSS-->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" type="text/css" href="/css/album.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+
+ <!--JavaScript-->
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/album.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <script src="/script/brython.js"></script>
+ <script src="/script/brython_stdlib.js"></script>
+ <!-- gsapの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <!-- prismの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-bash.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-json.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
+ <!-- google fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+
+ <!--ページタイトル-->
+ <title>GitHubを触ってみよう</title>
+
+ <!--ASノーナのファビコン-->
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">GitHubを触ってみよう</li>
+   </ol>
+  </div>
+
+  <!--google検索-->
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く
+    ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="GitHubを触ってみようの目次を開く ▼"
+   data-close-text="GitHubを触ってみようの目次を閉じる ▲">GitHubを触ってみようの目次を開く
+   ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>GitHubを触ってみよう</span></h1>
+
+  <p>このページは<a href="/contents/vscode.html">Visual Studio Codeを触ってみよう</a>と併せてご覧いただけると、より分かりやすいかもしれません。<br>
+   GitHubをVisual Studio Code（VS Code）で使用することには、いくつかの重要な利点があります。<br>
+   開発作業の効率化するための便利な機能がいっぱいあるんですよね。</p>
+
+  <p>よく<strong>「サイトを共同編集しようぜ！」</strong>なんてのを耳にするけど…<br>
+   もし複数人でプロジェクト化したいのであれば、こういうツールを使ってやると良いですよ？</p>
+
+  <dl>
+   <dt>統合環境</dt>
+   <dd>VS CodeはGitHubとシームレスに統合されています。<br>
+    エディタ内から直接リポジトリのクローン作成、プッシュ、プル、ブランチの管理などが可能です。<br>
+    一貫した環境で作業を進められるため、時間と手間を大幅に削減できます。</dd>
+
+   <dt>コードレビューとコラボレーション</dt>
+   <dd>GitHubのプルリクエスト機能とVS Codeの統合により、コードレビューが簡単に行えます。<br>
+    チームメンバーとの共同作業がよりスムーズになり、リアルタイムでフィードバックを受け取ることができます。</dd>
+
+   <dt>拡張機能</dt>
+   <dd>GitHub用の専用拡張機能が多数存在します。<br>
+    例えばGitHub Pull Requests and
+    Issues拡張機能を使用すると、エディタ内から直接プルリクエストやイシューの管理が可能です。<br>
+    コードとプロジェクト管理が一体化され、開発効率が向上します。</dd>
+
+   <dt>バージョン管理の利便性</dt>
+   <dd>VS Code内で直接GitHubのバージョン管理機能を利用できるため、コードの変更履歴を簡単に追跡・管理できます。<br>
+    また、変更内容をステージングし、コミットする操作もエディタ内で完結します。</dd>
+
+   <dt>デプロイメントの自動化</dt>
+   <dd>GitHub Actionsを利用することで、自動デプロイメントやCI/CD（継続的インテグレーション / 継続的デリバリー）パイプラインの設定が行えます。<br>
+    VS
+    Codeのエディタ内からこれらの設定やモニタリングができるため、開発からデプロイまでのフローがスムーズになります。</dd>
+  </dl>
+
+  <h2>Gitのインストール</h2>
+
+  <p>何も設定していない状態でVS Codeのソース管理を開くと、「Windows用Gitのダウンロード」とあります。<br>
+   Gitはツールであり、GitHubはそのツールを使ってオンラインでコードを管理するサービスです。</p>
+
+  <p class="gra">Windows用Gitのダウンロード</p>
+  <p><a href="https://git-scm.com/downloads/win">Windows用Gitのダウンロード</a>を開いてダウンロードし、まずはgitをインストールします。<br>
+   gitインストール時に戸惑いがちな設定は次のような項目があるかと。</p>
+
+  <div class="content">
+   <img src="/another-eden/anaimage/gitインストール直後.png" alt="gitインストール直後" class="biggraphic fade-in-out">
+   <p>私が使っている選択肢の側に★マークを付けておきますね。</p>
+  </div>
+
+  <dl>
+   <dt>Choosing thr default editor used by Git</dt>
+   <dd>★Use Visual Studio Code as Git's default editor<br>
+    ・Use Visual Studio Code Insiders as Git's default editor</dd>
+   <dd>通常版のVisual Studio CodeをGitのデフォルトエディタとして使用する設定です。<br>
+    一般的に使われている安定版のVisual Studio Codeとなります。<br>
+    一方、Visual Studio Code Insidersは新機能や改善が早めに提供されるため、安定性においては通常版よりも若干リスクがあります。</dd>
+
+   <dt>Adjusting the name of the initial branch in new repositories</dt>
+   <dd>★Let's Git decide<br>
+    ・Override the default branch name for new repositories
+   </dd>
+   <dd>ブランチ名はアカウント名とは異なり、特定の変更履歴を指す名前です。<br>
+    開発中の異なるバージョンや機能を分けて管理するためのものであり、例えば「main」というブランチは通常、プロジェクトの主要な開発ラインを表します。</dd>
+
+   <dt>Adjusting your PATH enviroment</dt>
+   <dd>・Use Git from Git Bash only<br>
+    ★Git from the command line and also from 3re-party software<br>
+    ・Use Git and optional Unix tools from the Command Prompt</dd>
+   <dd>コマンドプロンプトや他のターミナル（例：PowerShell）からもGitコマンドを利用できます。<br>
+    また、他のサードパーティのソフトウェア（例：VS Code、Sourcetreeなど）でもGitを利用できるようになります。<br>
+    このオプションが最も汎用的で、多くのユーザーにとって便利だと思いますね。</dd>
+
+   <dt>Choosing the SSH executable</dt>
+   <dd>★Use bundled OpenSSH<br>
+    ・Use external OpenSSH</dd>
+   <dd>Use external OpenSSHは外部にインストールされているOpenSSHを使用しますが、後から変更することもできます。</dd>
+
+   <dt>Choosing HTTPS transport bakend</dt>
+   <dd>★Use the OpenSSL library<br>
+    ・Use the native Windows Secure Channel library</dd>
+   <dd>私の場合は特にクロスプラットフォーム環境や、OpenSSLの特性を活用したいシーンが増えてくると思うから。</dd>
+
+   <dt>Configuring the line ending conversions</dt>
+   <dd>★Checkout Windows-style, commit Unix-style line endings<br>
+    ・Check as-is, commit Unix-style line endings<br>
+    ・Check as-is, commit as-is</dd>
+   <dd>ファイルの改行コードに関する設定なのですが、Windows環境で作業しつつ、他の環境（例：Linux、macOS）と互換性を保つ必要があります。</dd>
+  </dl>
+
+  <p>次にConfiguring the terminal emulator to use with Git Bashの画面で次の選択肢があります。<br>
+   ここでの選択肢は、Git Bashを使用する際の端末エミュレータを選択するものです。</p>
+
+  <dl>
+   <dt>★Use MinTTY (the default terminal of MSYS2)</dt>
+   <dd>
+    MinTTYは、MSYS2プロジェクトに含まれるデフォルトのターミナルエミュレータで、外観やカスタマイズ性が高くUnix系のターミナルに似た操作感を提供します。<br>
+    標準のWindowsコンソールよりも高機能で、カラー表示やフォントの設定もできます。</dd>
+
+   <dt>Use Windows' default console window</dt>
+   <dd>
+    Windowsの標準コンソールウィンドウ（コマンドプロンプト）を使用します。<br>
+    特に追加の設定を行わずに利用でき、慣れ親しんだ環境で作業ができるというメリットがあります。
+   </dd>
+  </dl>
+
+  <p>どちらを選んでもGitの機能に影響はありませんが、ここはUse MinTTY (the default terminal of MSYS2)のほうがお勧めかな？<br>
+   Windowsに特化しなくてもいいし、コマンドプロンプトよりUnix系のターミナルに慣れたほうが良いと思うから。</p>
+
+  <dl>
+   <dt>Choose the default behavior of 'git pull'</dt>
+   <dd>★Fast-forward or merge<br>
+    ・Rebase<br>
+    ・Only ever fast-forward</dd>
+   <dd> 通常の開発フローを優先するならFast-forward or merge、<br>
+    クリーンな履歴を保ちたいならRebase、<br>
+    直線的な履歴を強制したいならOnly ever fast-forwardです。</dd>
+
+   <dt>Choose a credential helper</dt>
+   <dd>★Git Credential Manager<br>
+    ・None</dd>
+   <dd>Git Credential Manager（GCM）は、認証情報を簡単に管理するためのツールです。<br>
+    マイクロソフトアカウント、GitHubなど複数のプロバイダに対応しているので、普通はこっちかな。</dd>
+
+   <dt>Configuring extra options</dt>
+   <dd>★Enable file system caching<br>
+    ・Enable symbolic links</dd>
+   <dd>シンボリックリンクはどうかなー<br>
+    けっこう便利だけど、ここではファイル操作のパフォーマンス向上を重視する方向でやってます。</dd>
+  </dl>
+
+  <p>キリがないからこのへんで。<br>
+   ちなみに<a href="https://git-scm.com/downloads/guis?os=windows">GUI Clients</a>もあります。</p>
+
+  <h2>GitHubのアカウント登録</h2>
+
+  <p>GitHubアカウントを作成して、Visual Studio(Atelier) Codeからリポジトリを管理する手順です。<br>
+   ここからがソースコード管理らしくなってくるかな。<br>
+   念のため、本格的に使いたい人は<a href="https://github.com/pricing">Get the complete developer
+    platform.</a>をよく見て、自分の開発状況で費用が発生するかどうかを確認しましょう。<br>
+   まずはprivateで使ってみて、慣れてきたらpublicにするのがお勧めです。</p>
+
+  <p class="gra">Visual Studio(Atelier) CodeのGitHub連携</p>
+  <ol>
+   <li><a href="https://github.com/fein-denscothmn">GitHubアカウント</a>の作成</li>
+   <li>コマンドパレットを開いて検索バーに「GitHub: Sign in」と入力し、表示された「GitHub: Sign in」を選択<br>
+    ブラウザが開き、GitHubアカウントにサインインするためのページが表示される</li>
+  </ol>
+  <p>これでVS CodeからGitHubにリポジトリを公開できるようになります。<br>
+   ひとまず次の用語を覚えておくと混乱が少ないです。</p>
+
+  <dl>
+   <dt>ローカルリポジトリ</dt>
+   <dd>開発者のコンピュータ上にあるリポジトリ</dd>
+
+   <dt>リモートリポジトリ</dt>
+   <dd>GitHubのクラウド上に保存されたリポジトリ</dd>
+  </dl>
+
+  <p class="gra">GitHubのリポジトリをプライベートにする</p>
+  <div class="content">
+   <img src="/another-eden/anaimage/feingithub.png" alt="feingithub" class="biggraphic fade-in-out">
+   <p>プライベートリポジトリであれば、リポジトリの所有者と指定されたコラボレーターのみがアクセスできます。<br>
+    他の人はWeb上で貴方のコードを見ることはできません。</p>
+  </div>
+
+  <ul>
+   <li>GitHubにログインしてプライベートにしたいリポジトリのページに移動</li>
+   <li>リポジトリページの上部にある「Settings」タブをクリック</li>
+   <li>「General」セクションの「Danger Zone」までスクロール</li>
+   <li>「This repository is currently private.」と表示されていれば、リポジトリがプライベートになっている</li>
+  </ul>
+
+  <p>もしくは、GitHubリポジトリ一覧ページで、リポジトリ名の横に鍵のアイコンが表示されていれば、リポジトリはプライベートです。</p>
+
+  <p class="gra">Gitのステータス表示と操作</p>
+  <p>GitHubとの連携直後、VS Codeでファイル名が緑色になると思います。<br>
+   加えて右側に「A」と表示されているはずで、それはGitのステータス表示です。<br>
+   それぞれの意味と、続く操作を説明しますね。</p>
+
+  <dl>
+   <dt><span style="color: darkgreen;">緑色のファイル名 A</span></dt>
+   <dd>ファイルがGitに新規追加されたことを意味します。<br>
+    ステージングエリアに追加されており、次のコミットでリポジトリに追加される予定のファイルです。<br>
+    「A」は「Added」（追加）を意味します。<br>
+    そのファイルが新しく追加されたことを示しています。
+   </dd>
+  </dl>
+
+  <dl>
+   <dt><span style="color: darkgreen;">緑色のファイル名 U</span></dt>
+   <dd>Gitがそのファイルを「未追跡」（Untracked）として認識していることを示しています。<br>
+    Gitがまだそのファイルを追跡しておらず、リポジトリにコミットされていないという意味ですね。
+   </dd>
+  </dl>
+
+  <dl>
+   <dt><span style="color: darkorange;">橙色のファイル名 M</span></dt>
+   <dd>ファイルが変更されたことを示しています。<br>
+    既存のファイルに対して何らかの編集が加えられた状態です。<br>
+    「M」は「Modified」（変更）の略で、そのファイルが修正されたことを意味します。
+   </dd>
+  </dl>
+
+  <p class="gra">GitHubのリポジトリにプッシュする</p>
+  <div class="content">
+   <img src="/another-eden/anaimage/githubpush.png" alt="githubpush" class="biggraphic fade-in-out">
+   <p>Gitが開発者のコミットを追跡するために、まずはユーザー名とメールアドレスを設定する必要があります。</p>
+  </div>
+
+  <p><strong>1. VS Codeのターミナルを開く</strong></p>
+  <p><strong>2.グローバルなユーザー名とメールアドレスの設定</strong></p>
+
+  <div class="code-container">
+   <pre><code class="language-bash">
+git config --global user.name "your_name"
+git config --global user.email "your_email@example.com"
+
+</code></pre>
+  </div>
+
+  <p><strong>3. 設定の確認</strong></p>
+
+  <div class="code-container">
+   <pre><code class="language-bash">
+git config --global --list
+
+</code></pre>
+  </div>
+
+  <p>これでユーザー名とメールアドレスが設定され、コミットを行う準備が整いました。<br>
+   次は新しいリポジトリのセットアップです。</p>
+
+  <dl>
+   <dt>1. リポジトリの初期設定</dt>
+   <dd>
+    GitHubリポジトリにおける標準的なファイル構成を設定します。<br>
+    README・LICENSE・.gitignoreの3つを登録するほうが良いのですが、とりあえず静的ウェブサイトのソースコードならLICENSEは後回しで良いでしょう。
+   </dd>
+
+   <dt>2. ローカルリポジトリの初期化</dt>
+   <dd>
+    既にローカルにプロジェクトが存在する場合、ローカルリポジトリを初期化してリモートリポジトリに接続します。</dd>
+  </dl>
+
+  <div class="code-container">
+   <pre><code class="language-bash">
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/fein-denscothmn/fein-sites-dev1.git
+git branch -M main
+git push -u origin main
+
+</code></pre>
+  </div>
+
+  <dl>
+   <dt>3. リポジトリにファイルをアップロード</dt>
+   <dd>
+    GitHubのウェブインターフェースからもファイルをアップロードできます。
+   </dd>
+  </dl>
+
+  <p>これでリポジトリが初期設定され、プロジェクトのコードやファイルを簡単に管理できるようになります。<br>
+   ちなみに<a href="https://desktop.github.com/download/">GitHubのデスクトップ版</a>もあります。</p>
+
+  <h2>Githubのリモートレポジトリを公開する</h2>
+
+  <p>ここでは、Githubのリモートレポジトリを公開する際の注意について書いていきます。</p>
+  <ul>
+   <li>コード管理という目的に必要ないものを公開しないための設定</li>
+   <li>privateからpublicに変更する手順</li>
+  </ul>
+
+  <p>まずは基礎的な使い方をご紹介した後、プライベートにする流れをお伝えしました。そのほうがリスクもないからです。<br>
+   しかし、パブリックにしたいケースもあるかと。─ 本来はpublicにして扱うものだけどね。 ─<br>
+   GitHubはソースコードの管理や共有を行う場所です。<br>
+   AI学習が問題になっている今、人様が懸命に描いた絵まで公開する必要はありません。</p>
+
+  <p class="gra">公開したくないデータを決める</p>
+  <p>まず、次のように「.gitignore」へ公開したくないファイルやディレクトリを記載します。<br>
+   .gitignoreファイルはルートディレクトリに設置しましょう。</p>
+  <div class="code-container">
+   <pre><code class="language-bash">
+# 特定のファイルを除外
+/www/himitu1.xml
+/www/himitu2.txt
+
+# 特定のディレクトリを除外
+www/another-eden/anaimage/
+www/another-eden/icon/
+www/image/
+www/paint/
+
+</code></pre>
+  </div>
+  <p>これで、ローカルレポジトリからリモートレポジトリへアップされないファイルやディレクトリが指定された、「除外リスト」ができたことになります。</p>
+
+  <p class="gra">.gitignoreを上げる</p>
+  <p>後からでも良いのですが、この段階で「.gitignore」をリモートレポジトリへプッシュしてしまいます。</p>
+  <div class="code-container">
+   <pre><code class="language-bash">
+git add .gitignore
+git commit -m "Update .gitignore to exclude specific files and directories"
+git push origin main
+
+</code></pre>
+  </div>
+
+  <p>このGitコマンドを説明します。</p>
+
+  <p>
+   <span class="codecolor">git add .gitignore</span>:<br>
+   <span class="codecolor">.gitignore</span>ファイルの変更をステージングエリアに追加するコマンドです。<br>
+   このコマンドは指定された<span class="codecolor">.gitignore</span>ファイルをステージングエリアに追加します。
+  </p>
+
+  <p>
+   <span class="codecolor">git commit -m "Update .gitignore to exclude specific files and directories"</span>:<br>
+   ステージングエリアに追加された変更をコミットするコマンドです。<br>
+   <span class="codecolor">-m</span>オプションは、コミットメッセージを指定します。<br>
+   このコミットメッセージは「特定のファイルやディレクトリを除外するために<span class="codecolor">.gitignore</span>を更新」という意味ですね。
+  </p>
+
+  <p>
+   <span class="codecolor">git push origin main</span>:<br>
+   ローカルリポジトリの変更をリモートリポジトリ（<span class="codecolor">origin</span>）の<span
+    class="codecolor">main</span>ブランチにプッシュするコマンドです。<br>
+   <span class="codecolor">origin</span>はリモートリポジトリのデフォルト名で、<span class="codecolor">main</span>はブランチ名です。<br>
+   これでローカルレポジトリの「.gitignore」がリモートリポジトリに反映されます。
+  </p>
+
+  <p class="gra">.gitignoreを確認してファイル退避</p>
+  <p>この段階で、リモートレポジトリでは非公開となるローカルレポジトリのファイルが設定されています。<br>
+   念のためGitHubのWebにあるリモートレポジトリを確認し、.gitignoreが反映されていることを確認しましょう。<br>
+   それから、ローカルレポジトリから公開したくないファイルやディレクトリを一時的に他のディレクトリへ移動しておきます。<br>
+   ローカルレポジトリに、一時的なデータの欠損が発生している状態を作るのです。</p>
+
+  <p class="gra">欠損があるローカルレポジトリをプッシュ</p>
+  <p>公開したくないファイルやディレクトリが含まれていない状態のローカルレポジトリを、リモートレポジトリへプッシュします。</p>
+
+  <div class="code-container">
+   <pre><code class="language-bash">
+git add .gitignore
+git commit -m "Update .gitignore to exclude specific files and directories"
+git push origin main
+
+</code></pre>
+  </div>
+
+  <p>
+   <span class="codecolor">git add .</span>:<br>
+   現在のディレクトリ内のすべての変更をステージングエリアに追加するコマンドです。<br>
+   ここで言う「変更」には、新しく作成したファイル、変更されたファイル、削除されたファイルが含まれます。
+   <br>
+   <span class="codecolor">.</span> はカレントディレクトリを意味し、その下にあるすべてのファイルとディレクトリを対象とします。
+  </p>
+
+  <p>
+   <span class="codecolor">git commit -m "Remove sensitive files and update repository"</span>:<br>
+   ステージングエリアに追加された変更をコミットするコマンドです。
+   <br>
+   <span class="codecolor">-m</span> オプションはコミットメッセージを指定します。<br>
+   この場合、コミットメッセージは "Remove sensitive files and update
+   repository" です。<br>
+   公開したくないファイルを削除し、リポジトリを更新したことを示しています。
+  </p>
+
+  <p>
+   <span class="codecolor">git push origin main</span>:<br>
+   ローカルリポジトリの変更をリモートリポジトリ（<span class="codecolor">origin</span>）の <span class="codecolor">main</span>
+   ブランチにプッシュするコマンドです。
+   <br>
+   <span class="codecolor">origin</span> はリモートリポジトリのデフォルト名で、<span class="codecolor">main</span>
+   はブランチ名です。<br>
+   これでローカルの変更がリモートリポジトリに反映されます。<br>
+   つまり、欠損があるローカルレポジトリをプッシュしたことになります。
+  </p>
+
+  <p class="gra">ローカルレポジトリを元に戻す</p>
+  <p>ローカルレポジトリへ、上述の手順で退避させておいたファイルやディレクトリを戻します。<br>
+   上記で公開したくないファイルを欠損させたローカルレポジトリをプッシュしましたが、このままでは本番のWebサイトにも欠損が発生してしまいます。─ 開発環境によるけどね。 ─<br>
+   GitHubに無用なデータを公開しなければ良いだけですから、改めてローカルレポジトリを元に戻しましょう。</p>
+
+  <p class="gra">除外設定があるローカルレポジトリをプッシュ</p>
+  <p>この段階のローカルレポジトリは、公開したくないファイルやディレクトリが含まれているものの、「.gitignore」による除外設定が効いている状態です。<br>
+   これをリモートレポジトリへプッシュします。</p>
+
+  <div class="code-container">
+   <pre><code class="language-bash">
+git add .
+git commit -m "Update repository with .gitignore in place"
+git push origin main
+
+</code></pre>
+  </div>
+
+  <p>
+   <span class="codecolor">git add .</span>:<br>
+   現在のディレクトリ内のすべての変更をステージングエリアに追加するコマンドです。<br>
+   新しく作成したファイルや変更されたファイルが含まれます。<br>
+   <span class="codecolor">.</span> はカレントディレクトリを意味し、その下にあるすべてのファイルとディレクトリを対象とします。
+  </p>
+
+  <p>
+   <span class="codecolor">git commit -m "Update repository with .gitignore in place"</span>:<br>
+   ステージングエリアに追加された変更をコミットするコマンドです。<br>
+   <span class="codecolor">-m</span> オプションは、コミットメッセージを指定します。<br>
+   この場合、コミットメッセージは "Update repository with .gitignore in
+   place" です。<br>
+   これは、<span class="codecolor">.gitignore</span> ファイルを更新したことを示しています。
+  </p>
+
+  <p>
+   <span class="codecolor">git push origin main</span>:<br>
+   ローカルリポジトリの変更をリモートリポジトリ（<span class="codecolor">origin</span>）の <span class="codecolor">main</span>
+   ブランチにプッシュするコマンドです。<br>
+   <span class="codecolor">origin</span> はリモートリポジトリのデフォルト名で、<span class="codecolor">main</span>
+   はブランチ名です。<br>
+   これでローカルの変更がリモートリポジトリに反映されます。<br>
+   つまり、除外設定があるローカルレポジトリをプッシュしたことになります。
+  </p>
+
+  <p class="gra">リモートレポジトリを確認</p>
+  <p>GitHubのWebにあるリモートレポジトリを確認し、公開したくないファイルやディレクトリが存在しないことを確認しましょう。<br>
+   後は普段通りgithubを使うだけです。<br>
+   これで、githubをpublicにしても、公開したくないファイルはwebで閲覧できなくなります。<br>
+   言い変えると、リモートリポジトリには公開したくないファイルが含まれない状態を維持できるってことですね。</p>
+
+
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/github.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's
+     portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

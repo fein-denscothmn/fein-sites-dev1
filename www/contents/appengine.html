@@ -69,6 +69,7 @@
  <!-- prismの読み込み -->
  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-bash.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-yaml.min.js"></script>
 
  <!-- google fonts -->
@@ -511,6 +512,165 @@ gunicorn myapp:app
    App Engineが通常自動的に行う設定を変更して、自分で特別なサーバーの起動方法を指定したい場合に、そのコマンドをentrypointで設定することで、App
    Engineが通常使う方法を「オーバーライド」することができるということです。</p>
 
+  <h5>env_variables</h5>
+  <p><span class="small-orange-text">※必ずしも設定する必要はありません。</span></p>
+  <p>Google App Engine (GAE) では app.yaml でアプリの設定を行います。<br>
+   このファイルの中で、環境変数を定義できます。<br>
+   環境変数はプログラムにとって重要な情報を外部から渡すための仕組みです。<br>
+   例えばある設定値をプログラム内で直接書くのではなく、外部からその値を与えることで、プログラムの再利用性が向上したり、設定の変更が容易になります。</p>
+
+  <p>App Engineにおける環境変数は、以下のルールに従って定義されます。</p>
+
+  <ul>
+   <li>キー（変数名）はアルファベットまたはアンダースコア (_) で始まり、その後に英数字またはアンダースコアが続く必要があります。<br>
+    例:MY_VARIABLE, ANOTHER_VAR123</li>
+   <li>ただし、GAE で始まる名前は予約されており、使用できません。</li>
+  </ul>
+
+  <p>具体的には、次のように app.yaml ファイルに環境変数を定義します。</p>
+
+  <div class="code-container">
+   <pre><code class="language-yaml">
+env_variables:
+DJANGO_SETTINGS_MODULE: "myapp.settings"
+
+</code></pre>
+  </div>
+
+  <p>Python では、定義した環境変数を os.environ という辞書を通じてアクセスできます。<br>
+   例えば、上記の環境変数を読み取るには次のようにします。</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+import os
+
+# 環境変数の値を取得
+settings_module = os.environ.get('DJANGO_SETTINGS_MODULE')
+print(settings_module) # "myapp.settings" と表示されるはずです。
+
+</code></pre>
+  </div>
+
+  <p>このように環境変数を使うことで、アプリの設定や変更が柔軟に行えるようになります。<br>
+   つまり、上記のようにapp.yamlファイルに環境変数を定義してからDjangoアプリをPythonで構成、Pythonスクリプト内で os モジュールを使用して環境変数を取得します。<br>
+   それからApp Engineにアプリをデプロイすると、指定した環境変数の値が読み取られ、"myapp.settings" と表示されるのです。</p>
+
+  <h5>error_handlers</h5>
+  <p><span class="small-orange-text">※必ずしも設定する必要はありません。</span></p>
+  <p>エラーハンドラはアプリでエラーが発生したときに表示されるカスタムエラーページを設定するためのものです。<br>
+   ユーザーがエラーに遭遇したときに見やすくわかりやすいページを提供できます。<br>
+   設定できる要素として、次のようなものがあります。</p>
+
+  <dl>
+   <dt>error_code</dt>
+   <dd>エラーの種類を指定するためのオプションの要素です。次のいずれかを指定できます。</dd>
+   <dd>over_quota: アプリがリソースの割り当てを超えたときに表示されます。</dd>
+   <dd>timeout: アプリからレスポンスが返される前に時間切れになったときに表示されます。</dd>
+
+   <dt>file</dt>
+   <dd>エラーが発生したときに表示される静的ファイル（HTMLファイルなど）のパスを指定します。指定されたファイルが表示され、ユーザーに対してエラーメッセージを提供します。</dd>
+  </dl>
+
+  <p>app.yamlには次のように記述します。</p>
+  <div class="code-container">
+   <pre><code class="language-yaml">
+error_handlers:
+- file: default_error.html
+- error_code: over_quota
+file: over_quota.html
+
+</code></pre>
+  </div>
+
+  <p>上記app.yamlだと、次のように動作します。<br>
+   default_error.html ファイルは、全てのエラーに対するデフォルトのエラーページとして表示されます。<br>
+   over_quota エラーの場合は、over_quota.html ファイルが表示されます。</p>
+
+  <p>注意点として、カスタムエラーページのファイルパスが他の静的ファイルハンドラのパスと重ならないようにすること。<br>
+   また、カスタムエラーページのデータサイズは10KB未満にする必要があります。<br>
+   このように設定することで、ユーザーに対してより分かりやすいエラーメッセージを表示することができます。</p>
+
+  <h5>handlers</h5>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(101).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p><span class="small-orange-text">※省略可能ではありますが、非常に重要な記述です。</span></p>
+   <p>簡単に言うと、URLパターンと処理方法のリストです。<br>
+    App Engineにおいて特定のURLにアクセスがあったときに、それをどのように処理するかを定義します。</p>
+
+   <dl>
+    <dt>動的コンテンツの処理</dt>
+    <dd>ユーザーが特定のURLにアクセスしたとき、プログラムコードを実行して、そのリクエストに応じた内容を返します。<br>
+     例えば、データベースからの情報を表示するなど。</dd>
+
+    <dt>静的ファイルの提供</dt>
+    <dd>画像や CSS、JavaScriptファイルなど、プログラムコードとは別にアップロードされた静的なファイルをユーザーに提供します。<br>
+     これらのファイルは、通常、デザインやインタラクティブな要素を実現するために使われます。</dd>
+   </dl>
+  </div>
+
+  <p>つまりhandlersは、どのURLにアクセスがあった場合にどのファイルやプログラムを使って応答するかを決める設定項目になります。<br>
+   アプリケーションの動作や見た目を柔軟にコントロールするために必要な記述でしょう。</p>
+
+  <h5>inbound_services</h5>
+  <p><span class="small-orange-text">※必ずしも記述する必要はありません。</span></p>
+  <p>Google App Engine上でアプリケーションが特定のリクエストを受け取れるようにするための設定です。<br>
+   これらのサービスを有効にすることで、アプリケーションが適切に動作するようになります。<br>
+   アプリケーションが受け取るインバウンドリクエストを指定します。─ 外部からのものという意味です。 ─</p>
+
+  <p>warmup は特に「ウォームアップリクエスト」を有効にする設定です。<br>
+   ウォームアップリクエストとは、App Engineが新しいインスタンス（アプリケーションのコピー）を起動する際に、そのインスタンスを事前に準備しておくためのリクエストです。<br>
+   ユーザーがアクセスする前にインスタンスを温めておき、応答時間を短縮することができます。</p>
+
+  <p>inbound_services セクションを使って warmup を有効にするためのコードを見てみましょう。</p>
+
+  <div class="code-container">
+   <pre><code class="language-yaml">
+  inbound_services:
+  - warmup
+
+</code></pre>
+  </div>
+
+  <p>この設定を行うことで、新しいインスタンスが起動される際に自動的にウォームアップリクエストが送信され、アプリケーションがより迅速に応答できるようになります。</p>
+
+  <h2>App Engineにおけるインスタンス</h2>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(102).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>App Engine でアプリケーションを実行するために「インスタンス」という単位が使われます。<br>
+    インスタンスは、実際にアプリケーションコードを実行する環境のことです。<br>
+    この言葉は非常に重要です。</p>
+
+   <p>「inbound_servicesセクションを使ってwarmupを有効にする」説明文中にて、新しいインスタンス（アプリケーションのコピー）という表現を使っています。<br>
+    この「コピー」という言葉が指しているのは、アプリケーションそのものではなく、アプリケーションの実行環境の複製です。<br>
+    つまり、同じアプリケーションコードを実行する複数の環境（インスタンス）が存在するという意味です。</p>
+  </div>
+
+
+  <p>アプリケーションが人気で多くのユーザーがアクセスする場合、一つのインスタンスだけでは対応できません。<br>
+   そのため、App Engine は必要に応じて新しいインスタンスを起動し、負荷を分散させます。<br>
+   この仕組みがあることで、アクセスが増えてもアプリケーションが速く、安定して動作するようになります。</p>
+
+  <p>Googleのものに限らず、クラウドに関連する用語は専門的に感じられることがあります。<br>
+   ここで、デプロイとインスタンスについておさらいしてみましょう。</p>
+  <dl>
+   <dt>デプロイ</dt>
+   <dd>ユーザーがアプリケーションを App Engine にアップロードすることを意味します。</dd>
+
+   <dt>インスタンス</dt>
+   <dd>デプロイされたアプリケーションを実行するための複数の環境です。<br>
+    これが「コピー」と言われることもあります。</dd>
+  </dl>
+
+  <p>App Engineについて小話をしてみますね？<br>
+   例えば、あなたが大人気のレストランを経営しているとしましょう。<br>
+   一つのキッチン（インスタンス）だけでは全てのお客様に迅速に料理を提供するのが難しいため、複数のキッチン（インスタンス）を用意します。<br>
+   それぞれのキッチンでは同じメニュー（アプリケーションコード）が作られますが、複数のキッチンがあることで多くのお客様に対応できるようになります。<br>
+   こんな感じで、App Engine では負荷に応じて新しいインスタンス（キッチン）を起動し、アプリケーションがスムーズに動作するようにしているのです。</p>
+
 
   <h2>個人サイト向けのapp.yaml設定</h2>
 
@@ -529,7 +689,6 @@ gunicorn myapp:app
     app.yamlファイルでは、アプリケーションがどのプログラミング言語やランタイム環境を使うかを指定することができます。<br>
     これをもって、Google App Engineがアプリケーションを正しく実行するための環境を準備することになります。</p>
   </div>
-
 
   <p class="gra">プログラミング言語</p>
   <p>アプリケーションが書かれている言語です。<br>
@@ -768,6 +927,8 @@ handlers:
    </ul>
   </ul>
 
+  <p class="feintag">ここから先は、また後日加筆します</p><br>
+
   <h2>個人サイトをクラウドサービスで公開する</h2>
   <div class="flowerclearfix">
    <div class="flowerfade-out">
@@ -783,13 +944,11 @@ handlers:
     静的ウェブサイトやシングルページアプリケーション（SPA）のホスティングを提供し、グローバルCDN、カスタムドメイン、継続的デプロイなどの機能を備えています。</p>
   </div>
 
-
   <p>情報商材屋ではないのでね。今は骨組みだけですが、徐々に内容を具体化していきます。<br>
    個人サイトについてX（旧Twitter）でよく話題になるhtml・css・JavaScriptというのは、要するにフロントエンドに関するコードなんですよね。<br>
    バックエンドは、例えば私がローカルサーバーを立てるのにインストールしたPythonなんかがそうです。<br>
    それで、ここでお話ししているクラウドというのは…一言で書くのは極めて難しいですが、インフラと言えば良いでしょうか。<br>
    個人サイト作るだけなのにサーバー実機なんか買わないでしょ？</p>
-
 
   <h2>ホスティング先のクラウド選び</h2>
   まずは料金が安いGoogle Cloudから探してみるのがいいんじゃないかな。<br>

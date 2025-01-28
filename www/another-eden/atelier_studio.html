@@ -500,18 +500,257 @@ for container in document.select('.atelier-container'):
    実際はVisual Studio Codeをカスタマイズしただけです。<br>
    リアルの私は錬金術を使えないので、せめてWeb制作でライザごっこをしてみようかと！</p>
 
+  <h4>Recipe for CSS and HTML</h4>
+  <div class="spacer"></div>
   <div class="atelier-container">
    <div class="atelier-tabs">
-    <div class="atelier-tab" data-tab="1">settings.json</div>
-    <div class="atelier-tab" data-tab="2">Git</div>
-    <div class="atelier-tab" data-tab="3">GitHub</div>
+    <div class="atelier-tab" data-tab="1">Creation</div>
+    <div class="atelier-tab" data-tab="2">HTML</div>
+    <div class="atelier-tab" data-tab="3">settings.json</div>
    </div>
    <div class="atelier-tab-content" data-content="1">
+
+    <p>□をタップすると✅に変化します。<br>
+     手書きコードによるWebサイトは煩雑になりがちです。<br>
+     でも手作業を回避しつつパターン化すれば、漏れなく作っていけますね。</p>
+
+    <p class="gra">新しいページを作成する</p>
+
+    <div class="content">
+     <img src="/another-eden/anaimage/ライザドヤ顔.jpg" alt="ライザドヤ顔.jpg" class="graphicmini right-image fade-in-out">
+     <dl>
+      <dt><button class="inline-button">□</button>画像などコード以外のファイル</dt>
+      <dd>「道具を組み合わせるWeb制作と錬金術」の手順で行う</dd>
+      <dt><button class="inline-button">□</button>元ページからコピー</dt>
+      <dd>属性が近い同一ディレクトリにあるhtmlファイルをコピー</dd>
+      <dt><button class="inline-button">□</button>ページタイトルとURLを置換</dt>
+      <dd>まとめて変更して抜け漏れを防ぐ</dd>
+      <dt><button class="inline-button">□</button>文章をコピー&リライト</dt>
+      <dd>ソースコードはOneDrive、他は<a href="/contents/vscode.html#vscode_browserlite">VS CodeのBrowser lite</a>→
+       https://sites.google.com/view/feins-portal/</dd>
+      <dt><button class="inline-button">□</button>metaタグ等の編集</dt>
+      <dd>文章を書けたら、要約部分等を仕上げる。</dd>
+     </dl>
+    </div>
+
+    <div class="content">
+     <img src="/another-eden/anaimage/ライザ驚顔.jpg" alt="ライザ驚顔.jpg" class="graphicmini right-image fade-in-out">
+     <dl>
+      <dt><button class="inline-button">□</button>デザインやUIを合成！</dt>
+      <dd>必要に応じて外部化されたCSSとJavaScriptを挿入する</dd>
+      <dt><button class="inline-button">□</button>画像を配置</dt>
+      <dd>ここにあるコードをコピーしてファイル名を変更する</dd>
+      <dt><button class="inline-button">□</button>サイトマップを通す</dt>
+      <dd><a href="/another-eden/anaden_sitemap.html">アナザーエデン</a>・<a href="/contents/site_create.html">個人サイト制作</a>・<a
+        href="/fish/fish_sitemap.html">アウトドアのエリア</a>
+      </dd>
+      <dt><button class="inline-button">□</button>公開前のチェック</dt>
+      <dd>モバイルアプリ化したWebサイトもしくは、<a href="/contents/vscode.html#vscode_liveserver">VS CodeのLive Server</a>を操作してみる</dd>
+      <dt><button class="inline-button">□</button>ビルドタスクの実行</dt>
+      <dd>VS Codeのタスク機能で<a href="/contents/vscode.html#tasks_json">Run Google Cloud Commands</a>を実行する</dd>
+
+     </dl>
+    </div>
+
+    <div class="content">
+     <img src="/another-eden/anaimage/ヘブンズクエーサー.jpg" alt="ヘブンズクエーサー.jpg" class="biggraphic fade-in-out">
+     <p>🌟フェイタルドライブの「ヘブンズクエーサー」をキメる！！🌟<br>
+      じゃなくて…<br>
+      起動した<a href="/contents/cloudinfo.html#gcloudtool">Google Cloud SDK Shell</a> で gcloud app deploy を実行 → 公開する！
+     </p>
+    </div>
+
+    <p class="gra">GitHubによるコード管理</p>
+    <p><a href="https://github.com/fein-denscothmn">GitHub</a>のリポジトリに「fein write...」メッセージを添えつつ、ソースコードをステージ（Stage
+     Changes）→コミット（Commit）→プッシュ（Push）する。</p>
+    <p>参考ページ👉 <a href="/contents/github.html">GitHubを触ってみよう</a></p>
+
+    <p class="gra">基礎デザインを作っているstyle.css</p>
+    <p>下部の「CSS elements」をタップすると、コード全体をチェックできます。</p>
+    <div class="content">
+     <img src="/another-eden/anaimage/ライザ杖.jpg" alt="ライザ杖" class="graphicsaki right-image fade-in-out">
+
+     <ul>
+      <li><a href="/contents/codeinfo.html#utf8_style">文字コードをutf-8とする</a></li>
+      <li><a href="/contents/codeinfo.html#body_style">bodyを綺麗に整える</a></li>
+      <li><a href="/contents/codeinfo.html#stickynote_style">立体的な付箋を描く</a></li>
+      <li><a href="/contents/codeinfo.html#spacer_style">手軽に余白を設定する</a></li>
+      <li><a href="/contents/table_css.html#table_style">浮かび上がる表を作る</a></li>
+      <li><a href="/contents/codeinfo.html#link_style">デフォルトの青に少し手を入れたリンク</a></li>
+      <li><a href="/contents/codeinfo.html#sitemaplink_style">サイトマップ用の目立つリンク</a></li>
+      <li><a href="/contents/codeinfo.html#mimics_style">見出しのように使う文字装飾を描く</a></li>
+      <li><a href="/contents/codeinfo.html#bold_style">太字にして定義リストを読みやすくする</a></li>
+      <li><a href="/contents/codeinfo.html#list_style">箇条書きの余分な余白を削除する</a></li>
+      <li><a href="/contents/codeinfo.html#fonesize_style">フォントサイズやカラーを指定する</a></li>
+      <li><a href="/contents/heading_css.html#heading_style">統一感を持たせた見出しを作る</a></li>
+      <li><a href="/contents/css_tidbit.html#h3underline_style">h3見出しに赤い線を引く</a><br>
+       <span class="small-orange-text">JavaScriptによるアニメーション設定が効いているので注意。</span>
+      </li>
+      <li><a href="/contents/graphic_css.html#tableimage_style">敢えて表の中に画像を入れる</a></li>
+      <li><a href="/contents/graphic_css.html#grastaimage_style">グラスタ表の火力20倍の話に添える画像</a></li>
+      <li><a href="/contents/graphic_css.html#imagesize_style">画像によって大きさを使い分ける</a><br>
+       <span class="small-orange-text">JavaScriptによるアニメーション設定が効いているので注意。</span>
+      </li>
+      <li><a href="/contents/graphic_css.html#horizon_style">画像を左右に並べる</a></li>
+      <li><a href="/contents/javascriptinfo.html#fadeanimation_style">フェードインとフェードアウトの画像アニメーション</a></li>
+      <li><a href="/contents/responsive_design.html#responsivedesign_style">レスポンシブデザインを作る</a></li>
+      <li><a href="/contents/tabui.html#tab_style">タブを作る</a></li>
+      <li><a href="/another-eden/atelier_studio.html#pythontab_style">PythonのタブUIを装飾する</a></li>
+      <li><a href="/contents/css_tidbit.html#checkdesign_style">タップするとチェックが変化する</a></li>
+      <li><a href="/contents/css_tidbit.html#hrdesign_style">隅に行くほど細く消えかかる罫線を作る</a></li>
+     </ul>
+
+    </div>
+    <p><span class="small-text">🔼All checks were completed on 20250104.</span></p>
+
+   </div><!--1タブの分岐点-->
+   <div class="atelier-tab-content" data-content="2">
+
+    <p>HTMLコードの解説はここではしませんが、どこのページでも使う部品のようなコードはあります。<br>
+     そういうのは１カ所にまとめておくと、ページ作成の手間を大幅に削減できます。</p>
+
+    <p class="gra">頻用するHTMLコード</p>
+
+    <div class="code-container">
+     <pre><code class="language-html">
+&lt;!--コードを記載する時の枠--&gt;
+&lt;div class=&quot;code-container&quot;&gt;
+    &lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</code></pre>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="code-container">
+     <pre><code class="language-html">
+&lt;!--通常サイズの画像とテキスト回り込み--&gt;
+&lt;div class=&quot;content&quot;&gt;
+    &lt;img src=&quot;Atelier.jpg&quot; alt=&quot;Illustration of the atelier&quot; class=&quot;graphic right-image fade-in-out&quot;&gt;
+
+&lt;/div&gt;
+
+</code></pre>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="code-container">
+     <pre><code class="language-html">
+&lt;!--ミニサイズの画像とテキスト回り込み--&gt;
+&lt;div class=&quot;content&quot;&gt;
+    &lt;img src=&quot;Atelier.jpg&quot; alt=&quot;Illustration of the atelier&quot; class=&quot;graphicmini right-image fade-in-out&quot;&gt;
+
+&lt;/div&gt;
+
+</code></pre>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="code-container">
+     <pre><code class="language-html">
+&lt;!--縦長の画像とテキスト回り込み--&gt;
+&lt;div class=&quot;content&quot;&gt;
+    &lt;img src=&quot;wallpaper.jpg&quot; alt=&quot;wallpaper&quot; class=&quot;wallpaper right-image fade-in-out&quot;&gt;
+
+&lt;/div&gt;
+
+</code></pre>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="code-container">
+     <pre><code class="language-html">
+&lt;!--ストレートに画像を掲載し、テキストの回り込みを行わない--&gt;
+&lt;img src=&quot;Atelier.jpg&quot; alt=&quot;Illustration of the atelier&quot; class=&quot;graphic fade-in-out&quot;&gt;
+
+</code></pre>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="code-container">
+     <pre><code class="language-html">
+&lt;!--大きな画像を掲載し、テキストの回り込みを行わない--&gt;
+&lt;div class=&quot;content&quot;&gt;
+    &lt;img src=&quot;Atelier.png&quot; alt=&quot;Illustration of the atelier&quot; class=&quot;biggraphic fade-in-out&quot;&gt;
+
+&lt;/div&gt;
+
+</code></pre>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="code-container">
+     <pre><code class="language-html">
+&lt;!--草花の写真を飾る--&gt;
+&lt;div class=&quot;flowerclearfix&quot;&gt;
+    &lt;div class=&quot;flowerfade-out&quot;&gt;
+        &lt;img src=&quot;/flower0/flower0(number).JPG&quot; alt=&quot;フェードアウト効果の草花写真&quot;&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+</code></pre>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="code-container">
+     <pre><code class="language-html">
+&lt;!--定義リストを作成する--&gt;
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;HyperText Markup Languageの略。Webページを作成するための言語。&lt;/dd&gt;
+
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Cascading Style Sheetsの略。HTML要素の見た目を整えるためのスタイルシート言語。&lt;/dd&gt;
+
+  &lt;dt&gt;JavaScript&lt;/dt&gt;
+  &lt;dd&gt;Webページに動的な動作を追加するためのプログラミング言語。&lt;/dd&gt;
+&lt;/dl&gt;
+
+</code></pre>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="code-container">
+     <pre><code class="language-html">
+&lt;!--本文中にコードを記載する場合に使う--&gt;
+&lt;span class=&quot;codecolor&quot;&gt;code &amp; programming&lt;/span&gt;
+
+</code></pre>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="code-container">
+     <pre><code class="language-html">
+&lt;!--小さめのオレンジテキスト--&gt;
+&lt;span class=&quot;small-orange-text&quot;&gt;orange text&lt;/span&gt;
+
+&lt;!--小さいテキスト--&gt;
+&lt;span class=&quot;small-text&quot;&gt;small text&lt;/span&gt;
+
+</code></pre>
+    </div>
+
+   </div><!--2タブの分岐点-->
+   <div class="atelier-tab-content" data-content="3">
 
     <p>Visual Studio CodeはMicrosoftのコードエディターですが、拡張機能のインストールと設定ファイルの記述で背景画像を付けられます。<br>
      settings.jsonはVS Codeの設定ファイルです。<br>
      Windowsなら多くの場合、C:\Users\ユーザー名\AppData\Roaming\Code\User\settings.json という位置にあると思います。<br>
-     ここの編集が必要なんだよね。<br>
+     ここの編集が必要なんだよね。</p>
+
+    <p>参考ページ👉 <a href="/contents/vscode.html">Visual Studio Codeを触ってみよう</a></p>
 
     <div class="content">
      <img src="/another-eden/anaimage/Visual_Atelier_Code.png" alt="Visual_Atelier_Code" class="biggraphic fade-in-out">
@@ -577,659 +816,8 @@ for container in document.select('.atelier-container'):
      </ul>
     </div>
 
-   </div><!--1タブの分岐点-->
-   <div class="atelier-tab-content" data-content="2">
-
-    <p>何も設定していない状態でVS Codeのソース管理を開くと、「Windows用Gitのダウンロード」とあります。<br>
-     Gitはツールであり、GitHubはそのツールを使ってオンラインでコードを管理するサービスです。</p>
-
-    <p class="gra">Windows用Gitのダウンロード</p>
-    <p><a href="https://git-scm.com/downloads/win">Windows用Gitのダウンロード</a>を開いてダウンロードし、まずはgitをインストールします。<br>
-     gitインストール時に戸惑いがちな設定は次のような項目があるかと。</p>
-
-    <div class="content">
-     <img src="/another-eden/anaimage/gitインストール直後.png" alt="gitインストール直後" class="biggraphic fade-in-out">
-     <p>私が使っている選択肢の側に★マークを付けておきますね。</p>
-    </div>
-
-    <dl>
-     <dt>Choosing thr default editor used by Git</dt>
-     <dd>★Use Visual Studio Code as Git's default editor<br>
-      ・Use Visual Studio Code Insiders as Git's default editor</dd>
-     <dd>通常版のVisual Studio CodeをGitのデフォルトエディタとして使用する設定です。<br>
-      一般的に使われている安定版のVisual Studio Codeとなります。<br>
-      一方、Visual Studio Code Insidersは新機能や改善が早めに提供されるため、安定性においては通常版よりも若干リスクがあります。</dd>
-
-     <dt>Adjusting the name of the initial branch in new repositories</dt>
-     <dd>★Let's Git decide<br>
-      ・Override the default branch name for new repositories
-     </dd>
-     <dd>ブランチ名はアカウント名とは異なり、特定の変更履歴を指す名前です。<br>
-      開発中の異なるバージョンや機能を分けて管理するためのものであり、例えば「main」というブランチは通常、プロジェクトの主要な開発ラインを表します。</dd>
-
-     <dt>Adjusting your PATH enviroment</dt>
-     <dd>・Use Git from Git Bash only<br>
-      ★Git from the command line and also from 3re-party software<br>
-      ・Use Git and optional Unix tools from the Command Prompt</dd>
-     <dd>コマンドプロンプトや他のターミナル（例：PowerShell）からもGitコマンドを利用できます。<br>
-      また、他のサードパーティのソフトウェア（例：VS Code、Sourcetreeなど）でもGitを利用できるようになります。<br>
-      このオプションが最も汎用的で、多くのユーザーにとって便利だと思いますね。</dd>
-
-     <dt>Choosing the SSH executable</dt>
-     <dd>★Use bundled OpenSSH<br>
-      ・Use external OpenSSH</dd>
-     <dd>Use external OpenSSHは外部にインストールされているOpenSSHを使用しますが、後から変更することもできます。</dd>
-
-     <dt>Choosing HTTPS transport bakend</dt>
-     <dd>★Use the OpenSSL library<br>
-      ・Use the native Windows Secure Channel library</dd>
-     <dd>私の場合は特にクロスプラットフォーム環境や、OpenSSLの特性を活用したいシーンが増えてくると思うから。</dd>
-
-     <dt>Configuring the line ending conversions</dt>
-     <dd>★Checkout Windows-style, commit Unix-style line endings<br>
-      ・Check as-is, commit Unix-style line endings<br>
-      ・Check as-is, commit as-is</dd>
-     <dd>ファイルの改行コードに関する設定なのですが、Windows環境で作業しつつ、他の環境（例：Linux、macOS）と互換性を保つ必要があります。</dd>
-    </dl>
-
-    <p>次にConfiguring the terminal emulator to use with Git Bashの画面で次の選択肢があります。<br>
-     ここでの選択肢は、Git Bashを使用する際の端末エミュレータを選択するものです。</p>
-
-    <dl>
-     <dt>★Use MinTTY (the default terminal of MSYS2)</dt>
-     <dd>
-      MinTTYは、MSYS2プロジェクトに含まれるデフォルトのターミナルエミュレータで、外観やカスタマイズ性が高くUnix系のターミナルに似た操作感を提供します。<br>
-      標準のWindowsコンソールよりも高機能で、カラー表示やフォントの設定もできます。</dd>
-
-     <dt>Use Windows' default console window</dt>
-     <dd>
-      Windowsの標準コンソールウィンドウ（コマンドプロンプト）を使用します。<br>
-      特に追加の設定を行わずに利用でき、慣れ親しんだ環境で作業ができるというメリットがあります。
-     </dd>
-    </dl>
-
-    <p>どちらを選んでもGitの機能に影響はありませんが、ここはUse MinTTY (the default terminal of MSYS2)のほうがお勧めかな？<br>
-     Windowsに特化しなくてもいいし、コマンドプロンプトよりUnix系のターミナルに慣れたほうが良いと思うから。</p>
-
-    <dl>
-     <dt>Choose the default behavior of 'git pull'</dt>
-     <dd>★Fast-forward or merge<br>
-      ・Rebase<br>
-      ・Only ever fast-forward</dd>
-     <dd> 通常の開発フローを優先するならFast-forward or merge、<br>
-      クリーンな履歴を保ちたいならRebase、<br>
-      直線的な履歴を強制したいならOnly ever fast-forwardです。</dd>
-
-     <dt>Choose a credential helper</dt>
-     <dd>★Git Credential Manager<br>
-      ・None</dd>
-     <dd>Git Credential Manager（GCM）は、認証情報を簡単に管理するためのツールです。<br>
-      マイクロソフトアカウント、GitHubなど複数のプロバイダに対応しているので、普通はこっちかな。</dd>
-
-     <dt>Configuring extra options</dt>
-     <dd>★Enable file system caching<br>
-      ・Enable symbolic links</dd>
-     <dd>シンボリックリンクはどうかなー<br>
-      けっこう便利だけど、ここではファイル操作のパフォーマンス向上を重視する方向でやってます。</dd>
-    </dl>
-
-    <p>キリがないからこのへんで。<br>
-     ちなみに<a href="https://git-scm.com/downloads/guis?os=windows">GUI Clients</a>もあります。</p>
-
-   </div><!--2タブの分岐点-->
-   <div class="atelier-tab-content" data-content="3">
-
-    <p>GitHubアカウントを作成して、Visual Studio(Atelier) Codeからリポジトリを管理する手順です。<br>
-     ここからがソースコード管理らしくなってくるかな。<br>
-     念のため、本格的に使いたい人は<a href="https://github.com/pricing">Get the complete developer
-      platform.</a>をよく見て、自分の開発状況で費用が発生するかどうかを確認しましょう。<br>
-     まずはprivateで使ってみて、慣れてきたらpublicにするのがお勧めです。</p>
-
-    <p class="gra">Visual Studio(Atelier) CodeのGitHub連携</p>
-    <ol>
-     <li><a href="https://github.com/fein-denscothmn">GitHubアカウント</a>の作成</li>
-     <li>コマンドパレットを開いて検索バーに「GitHub: Sign in」と入力し、表示された「GitHub: Sign in」を選択<br>
-      ブラウザが開き、GitHubアカウントにサインインするためのページが表示される</li>
-    </ol>
-    <p>これでVS CodeからGitHubにリポジトリを公開できるようになります。<br>
-     ひとまず次の用語を覚えておくと混乱が少ないです。</p>
-
-    <dl>
-     <dt>ローカルリポジトリ</dt>
-     <dd>開発者のコンピュータ上にあるリポジトリ</dd>
-
-     <dt>リモートリポジトリ</dt>
-     <dd>GitHubのクラウド上に保存されたリポジトリ</dd>
-    </dl>
-
-    <p class="gra">GitHubのリポジトリをプライベートにする</p>
-    <div class="content">
-     <img src="/another-eden/anaimage/feingithub.png" alt="feingithub" class="biggraphic fade-in-out">
-     <p>プライベートリポジトリであれば、リポジトリの所有者と指定されたコラボレーターのみがアクセスできます。<br>
-      他の人はWeb上で貴方のコードを見ることはできません。</p>
-    </div>
-
-    <ul>
-     <li>GitHubにログインしてプライベートにしたいリポジトリのページに移動</li>
-     <li>リポジトリページの上部にある「Settings」タブをクリック</li>
-     <li>「General」セクションの「Danger Zone」までスクロール</li>
-     <li>「This repository is currently private.」と表示されていれば、リポジトリがプライベートになっている</li>
-    </ul>
-
-    <p>もしくは、GitHubリポジトリ一覧ページで、リポジトリ名の横に鍵のアイコンが表示されていれば、リポジトリはプライベートです。</p>
-
-    <p class="gra">Gitのステータス表示と操作</p>
-    <p>GitHubとの連携直後、VS Codeでファイル名が緑色になると思います。<br>
-     加えて右側に「A」と表示されているはずで、それはGitのステータス表示です。<br>
-     それぞれの意味と、続く操作を説明しますね。</p>
-
-    <dl>
-     <dt><span style="color: darkgreen;">緑色のファイル名 A</span></dt>
-     <dd>ファイルがGitに新規追加されたことを意味します。<br>
-      ステージングエリアに追加されており、次のコミットでリポジトリに追加される予定のファイルです。<br>
-      「A」は「Added」（追加）を意味します。<br>
-      そのファイルが新しく追加されたことを示しています。
-     </dd>
-    </dl>
-
-    <dl>
-     <dt><span style="color: darkgreen;">緑色のファイル名 U</span></dt>
-     <dd>Gitがそのファイルを「未追跡」（Untracked）として認識していることを示しています。<br>
-      Gitがまだそのファイルを追跡しておらず、リポジトリにコミットされていないという意味ですね。
-     </dd>
-    </dl>
-
-    <dl>
-     <dt><span style="color: darkorange;">橙色のファイル名 M</span></dt>
-     <dd>ファイルが変更されたことを示しています。<br>
-      既存のファイルに対して何らかの編集が加えられた状態です。<br>
-      「M」は「Modified」（変更）の略で、そのファイルが修正されたことを意味します。
-     </dd>
-    </dl>
-
-    <p class="gra">GitHubのリポジトリにプッシュする</p>
-    <div class="content">
-     <img src="/another-eden/anaimage/githubpush.png" alt="githubpush" class="biggraphic fade-in-out">
-     <p>Gitが開発者のコミットを追跡するために、まずはユーザー名とメールアドレスを設定する必要があります。</p>
-    </div>
-
-    <p><strong>1. VS Codeのターミナルを開く</strong></p>
-    <p><strong>2.グローバルなユーザー名とメールアドレスの設定</strong></p>
-
-    <div class="code-container">
-     <pre><code class="language-bash">
-git config --global user.name "your_name"
-git config --global user.email "your_email@example.com"
-
-</code></pre>
-    </div>
-
-    <p><strong>3. 設定の確認</strong></p>
-
-    <div class="code-container">
-     <pre><code class="language-bash">
-git config --global --list
-
-</code></pre>
-    </div>
-
-    <p>これでユーザー名とメールアドレスが設定され、コミットを行う準備が整いました。<br>
-     次は新しいリポジトリのセットアップです。</p>
-
-    <dl>
-     <dt>1. リポジトリの初期設定</dt>
-     <dd>
-      GitHubリポジトリにおける標準的なファイル構成を設定します。<br>
-      README・LICENSE・.gitignoreの3つを登録するほうが良いのですが、とりあえず静的ウェブサイトのソースコードならLICENSEは後回しで良いでしょう。
-     </dd>
-
-     <dt>2. ローカルリポジトリの初期化</dt>
-     <dd>
-      既にローカルにプロジェクトが存在する場合、ローカルリポジトリを初期化してリモートリポジトリに接続します。</dd>
-    </dl>
-
-    <div class="code-container">
-     <pre><code class="language-bash">
-git init
-git add .
-git commit -m "Initial commit"
-git remote add origin https://github.com/fein-denscothmn/fein-sites-dev1.git
-git branch -M main
-git push -u origin main
-
-</code></pre>
-    </div>
-
-    <dl>
-     <dt>3. リポジトリにファイルをアップロード</dt>
-     <dd>
-      GitHubのウェブインターフェースからもファイルをアップロードできます。
-     </dd>
-    </dl>
-
-    <p>これでリポジトリが初期設定され、プロジェクトのコードやファイルを簡単に管理できるようになります。<br>
-     ちなみに<a href="https://desktop.github.com/download/">GitHubのデスクトップ版</a>もあります。</p>
-
-
    </div><!--3タブの分岐点-->
   </div>
-
-  <h4>Remote Repository on GitHub</h4>
-  <p>ここでは、Githubのリモートレポジトリを公開する際の注意について書いていきます。</p>
-  <ul>
-   <li>コード管理という目的に必要ないものを公開しないための設定</li>
-   <li>privateからpublicに変更する手順</li>
-  </ul>
-
-  <button class="collapsible">タップして開く ▼</button>
-  <div class="collapsiblecontent">
-
-   <p>まずは基礎的な使い方をご紹介した後、プライベートにする流れをお伝えしました。そのほうがリスクもないからです。<br>
-    しかし、パブリックにしたいケースもあるかと。─ 本来はpublicにして扱うものだけどね。 ─<br>
-    GitHubはソースコードの管理や共有を行う場所です。<br>
-    AI学習が問題になっている今、人様が懸命に描いた絵まで公開する必要はありません。</p>
-
-   <p class="gra">公開したくないデータを決める</p>
-   <p>まず、次のように「.gitignore」へ公開したくないファイルやディレクトリを記載します。<br>
-    .gitignoreファイルはルートディレクトリに設置しましょう。</p>
-   <div class="code-container">
-    <pre><code class="language-bash">
-# 特定のファイルを除外
-/www/himitu1.xml
-/www/himitu2.txt
-
-# 特定のディレクトリを除外
-www/another-eden/anaimage/
-www/another-eden/icon/
-www/image/
-www/paint/
-
-</code></pre>
-   </div>
-   <p>これで、ローカルレポジトリからリモートレポジトリへアップされないファイルやディレクトリが指定された、「除外リスト」ができたことになります。</p>
-
-   <p class="gra">.gitignoreを上げる</p>
-   <p>後からでも良いのですが、この段階で「.gitignore」をリモートレポジトリへプッシュしてしまいます。</p>
-   <div class="code-container">
-    <pre><code class="language-bash">
-git add .gitignore
-git commit -m "Update .gitignore to exclude specific files and directories"
-git push origin main
-
-</code></pre>
-   </div>
-
-   <p>このGitコマンドを説明します。</p>
-
-   <p>
-    <span class="codecolor">git add .gitignore</span>:<br>
-    <span class="codecolor">.gitignore</span>ファイルの変更をステージングエリアに追加するコマンドです。<br>
-    このコマンドは指定された<span class="codecolor">.gitignore</span>ファイルをステージングエリアに追加します。
-   </p>
-
-   <p>
-    <span class="codecolor">git commit -m "Update .gitignore to exclude specific files and directories"</span>:<br>
-    ステージングエリアに追加された変更をコミットするコマンドです。<br>
-    <span class="codecolor">-m</span>オプションは、コミットメッセージを指定します。<br>
-    このコミットメッセージは「特定のファイルやディレクトリを除外するために<span class="codecolor">.gitignore</span>を更新」という意味ですね。
-   </p>
-
-   <p>
-    <span class="codecolor">git push origin main</span>:<br>
-    ローカルリポジトリの変更をリモートリポジトリ（<span class="codecolor">origin</span>）の<span
-     class="codecolor">main</span>ブランチにプッシュするコマンドです。<br>
-    <span class="codecolor">origin</span>はリモートリポジトリのデフォルト名で、<span class="codecolor">main</span>はブランチ名です。<br>
-    これでローカルレポジトリの「.gitignore」がリモートリポジトリに反映されます。
-   </p>
-
-   <p class="gra">.gitignoreを確認してファイル退避</p>
-   <p>この段階で、リモートレポジトリでは非公開となるローカルレポジトリのファイルが設定されています。<br>
-    念のためGitHubのWebにあるリモートレポジトリを確認し、.gitignoreが反映されていることを確認しましょう。<br>
-    それから、ローカルレポジトリから公開したくないファイルやディレクトリを一時的に他のディレクトリへ移動しておきます。<br>
-    ローカルレポジトリに、一時的なデータの欠損が発生している状態を作るのです。</p>
-
-   <p class="gra">欠損があるローカルレポジトリをプッシュ</p>
-   <p>公開したくないファイルやディレクトリが含まれていない状態のローカルレポジトリを、リモートレポジトリへプッシュします。</p>
-
-   <div class="code-container">
-    <pre><code class="language-bash">
-git add .gitignore
-git commit -m "Update .gitignore to exclude specific files and directories"
-git push origin main
-
-</code></pre>
-   </div>
-
-   <p>
-    <span class="codecolor">git add .</span>:<br>
-    現在のディレクトリ内のすべての変更をステージングエリアに追加するコマンドです。<br>
-    ここで言う「変更」には、新しく作成したファイル、変更されたファイル、削除されたファイルが含まれます。
-    <br>
-    <span class="codecolor">.</span> はカレントディレクトリを意味し、その下にあるすべてのファイルとディレクトリを対象とします。
-   </p>
-
-   <p>
-    <span class="codecolor">git commit -m "Remove sensitive files and update repository"</span>:<br>
-    ステージングエリアに追加された変更をコミットするコマンドです。
-    <br>
-    <span class="codecolor">-m</span> オプションはコミットメッセージを指定します。<br>
-    この場合、コミットメッセージは "Remove sensitive files and update
-    repository" です。<br>
-    公開したくないファイルを削除し、リポジトリを更新したことを示しています。
-   </p>
-
-   <p>
-    <span class="codecolor">git push origin main</span>:<br>
-    ローカルリポジトリの変更をリモートリポジトリ（<span class="codecolor">origin</span>）の <span class="codecolor">main</span>
-    ブランチにプッシュするコマンドです。
-    <br>
-    <span class="codecolor">origin</span> はリモートリポジトリのデフォルト名で、<span class="codecolor">main</span>
-    はブランチ名です。<br>
-    これでローカルの変更がリモートリポジトリに反映されます。<br>
-    つまり、欠損があるローカルレポジトリをプッシュしたことになります。
-   </p>
-
-   <p class="gra">ローカルレポジトリを元に戻す</p>
-   <p>ローカルレポジトリへ、上述の手順で退避させておいたファイルやディレクトリを戻します。<br>
-    上記で公開したくないファイルを欠損させたローカルレポジトリをプッシュしましたが、このままでは本番のWebサイトにも欠損が発生してしまいます。─ 開発環境によるけどね。 ─<br>
-    GitHubに無用なデータを公開しなければ良いだけですから、改めてローカルレポジトリを元に戻しましょう。</p>
-
-   <p class="gra">除外設定があるローカルレポジトリをプッシュ</p>
-   <p>この段階のローカルレポジトリは、公開したくないファイルやディレクトリが含まれているものの、「.gitignore」による除外設定が効いている状態です。<br>
-    これをリモートレポジトリへプッシュします。</p>
-
-   <div class="code-container">
-    <pre><code class="language-bash">
-git add .
-git commit -m "Update repository with .gitignore in place"
-git push origin main
-
-</code></pre>
-   </div>
-
-   <p>
-    <span class="codecolor">git add .</span>:<br>
-    現在のディレクトリ内のすべての変更をステージングエリアに追加するコマンドです。<br>
-    新しく作成したファイルや変更されたファイルが含まれます。<br>
-    <span class="codecolor">.</span> はカレントディレクトリを意味し、その下にあるすべてのファイルとディレクトリを対象とします。
-   </p>
-
-   <p>
-    <span class="codecolor">git commit -m "Update repository with .gitignore in place"</span>:<br>
-    ステージングエリアに追加された変更をコミットするコマンドです。<br>
-    <span class="codecolor">-m</span> オプションは、コミットメッセージを指定します。<br>
-    この場合、コミットメッセージは "Update repository with .gitignore in
-    place" です。<br>
-    これは、<span class="codecolor">.gitignore</span> ファイルを更新したことを示しています。
-   </p>
-
-   <p>
-    <span class="codecolor">git push origin main</span>:<br>
-    ローカルリポジトリの変更をリモートリポジトリ（<span class="codecolor">origin</span>）の <span class="codecolor">main</span>
-    ブランチにプッシュするコマンドです。<br>
-    <span class="codecolor">origin</span> はリモートリポジトリのデフォルト名で、<span class="codecolor">main</span>
-    はブランチ名です。<br>
-    これでローカルの変更がリモートリポジトリに反映されます。<br>
-    つまり、除外設定があるローカルレポジトリをプッシュしたことになります。
-   </p>
-
-   <p class="gra">リモートレポジトリを確認</p>
-   <p>GitHubのWebにあるリモートレポジトリを確認し、公開したくないファイルやディレクトリが存在しないことを確認しましょう。<br>
-    後は普段通りgithubを使うだけです。<br>
-    これで、githubをpublicにしても、公開したくないファイルはwebで閲覧できなくなります。<br>
-    言い変えると、リモートリポジトリには公開したくないファイルが含まれない状態を維持できるってことですね。</p>
-  </div>
-
-  <h3>🌟頻用する素材と錬金釜</h3>
-
-  <p>このアトリエページは、表面上は子供っぽいキャラクターごっこです。</p>
-  <div class="content">
-   <img src="/another-eden/anaimage/Visual_mariel_Code.jpg" alt="Visual_mariel_Code" class="biggraphic fade-in-out">
-   <p>でも実際は、「私自身のコード管理」と「訪問者向けのコード解説」を両立させたUIとして、機能しています。</p>
-  </div>
-
-  <h4>Recipe for CSS and HTML</h4>
-  <div class="spacer"></div>
-  <div class="tabs-fein">
-   <button class="tab-fein" data-tab="pane1-fein">Creation Procedure</button>
-   <button class="tab-fein" data-tab="pane2-fein"><i class="fab fa-html5"></i>HTML elements</button>
-  </div>
-  <!--●１タブの開始地点●-->
-  <div id="pane1-fein" class="tab-pane-fein active">
-
-   <p>□をタップすると✅に変化します。<br>
-    手書きコードによるWebサイトは煩雑になりがちです。<br>
-    でも手作業を回避しつつパターン化すれば、漏れなく作っていけますね。</p>
-
-   <p class="gra">新しいページを作成する</p>
-
-   <div class="content">
-    <img src="/another-eden/anaimage/ライザドヤ顔.jpg" alt="ライザドヤ顔.jpg" class="graphicmini right-image fade-in-out">
-    <dl>
-     <dt><button class="inline-button">□</button>画像などコード以外のファイル</dt>
-     <dd>「道具を組み合わせるWeb制作と錬金術」の手順で行う</dd>
-     <dt><button class="inline-button">□</button>元ページからコピー</dt>
-     <dd>属性が近い同一ディレクトリにあるhtmlファイルをコピー</dd>
-     <dt><button class="inline-button">□</button>ページタイトルとURLを置換</dt>
-     <dd>まとめて変更して抜け漏れを防ぐ</dd>
-     <dt><button class="inline-button">□</button>文章をコピー&リライト</dt>
-     <dd>ソースコードはOneDrive、他は<a href="/contents/vscode.html#vscode_browserlite">VS CodeのBrowser lite</a>→
-      https://sites.google.com/view/feins-portal/</dd>
-     <dt><button class="inline-button">□</button>metaタグ等の編集</dt>
-     <dd>文章を書けたら、要約部分等を仕上げる。</dd>
-    </dl>
-   </div>
-
-   <div class="content">
-    <img src="/another-eden/anaimage/ライザ驚顔.jpg" alt="ライザ驚顔.jpg" class="graphicmini right-image fade-in-out">
-    <dl>
-     <dt><button class="inline-button">□</button>デザインやUIを合成！</dt>
-     <dd>必要に応じて外部化されたCSSとJavaScriptを挿入する</dd>
-     <dt><button class="inline-button">□</button>画像を配置</dt>
-     <dd>ここにあるコードをコピーしてファイル名を変更する</dd>
-     <dt><button class="inline-button">□</button>サイトマップを通す</dt>
-     <dd><a href="/another-eden/anaden_sitemap.html">アナザーエデン</a>・<a href="/contents/site_create.html">個人サイト制作</a>・<a
-       href="/fish/fish_sitemap.html">アウトドアのエリア</a>
-     </dd>
-     <dt><button class="inline-button">□</button>公開前のチェック</dt>
-     <dd>モバイルアプリ化したWebサイトもしくは、<a href="/contents/vscode.html#vscode_liveserver">VS CodeのLive Server</a>を操作してみる</dd>
-     <dt><button class="inline-button">□</button>ビルドタスクの実行</dt>
-     <dd>VS Codeのタスクランナー機能で<a href="/contents/vscode.html#tasks_json">Run Google Cloud Commands</a>を実行する</dd>
-
-    </dl>
-   </div>
-
-   <div class="content">
-    <img src="/another-eden/anaimage/ヘブンズクエーサー.jpg" alt="ヘブンズクエーサー.jpg" class="biggraphic fade-in-out">
-    <p>🌟フェイタルドライブの「ヘブンズクエーサー」をキメる！！🌟<br>
-     じゃなくて…<br>
-     起動した<a href="/contents/cloudinfo.html#gcloudtool">Google Cloud SDK Shell</a> で gcloud app deploy を実行 → 公開する！
-    </p>
-   </div>
-
-   <p class="gra">GitHubによるコード管理</p>
-   <p><a href="https://github.com/fein-denscothmn">GitHub</a>のリポジトリに「fein write...」メッセージを添えつつ、ソースコードをステージ（Stage
-    Changes）→コミット（Commit）→プッシュ（Push）する。</p>
-
-   <p class="gra">基礎デザインを作っているstyle.css</p>
-   <p>下部の「CSS elements」をタップすると、コード全体をチェックできます。</p>
-   <div class="content">
-    <img src="/another-eden/anaimage/ライザ杖.jpg" alt="ライザ杖" class="graphicsaki right-image fade-in-out">
-
-    <ul>
-     <li><a href="/contents/codeinfo.html#utf8_style">文字コードをutf-8とする</a></li>
-     <li><a href="/contents/codeinfo.html#body_style">bodyを綺麗に整える</a></li>
-     <li><a href="/contents/codeinfo.html#stickynote_style">立体的な付箋を描く</a></li>
-     <li><a href="/contents/codeinfo.html#spacer_style">手軽に余白を設定する</a></li>
-     <li><a href="/contents/table_css.html#table_style">浮かび上がる表を作る</a></li>
-     <li><a href="/contents/codeinfo.html#link_style">デフォルトの青に少し手を入れたリンク</a></li>
-     <li><a href="/contents/codeinfo.html#sitemaplink_style">サイトマップ用の目立つリンク</a></li>
-     <li><a href="/contents/codeinfo.html#mimics_style">見出しのように使う文字装飾を描く</a></li>
-     <li><a href="/contents/codeinfo.html#bold_style">太字にして定義リストを読みやすくする</a></li>
-     <li><a href="/contents/codeinfo.html#list_style">箇条書きの余分な余白を削除する</a></li>
-     <li><a href="/contents/codeinfo.html#fonesize_style">フォントサイズやカラーを指定する</a></li>
-     <li><a href="/contents/heading_css.html#heading_style">統一感を持たせた見出しを作る</a></li>
-     <li><a href="/contents/css_tidbit.html#h3underline_style">h3見出しに赤い線を引く</a><br>
-      <span class="small-orange-text">JavaScriptによるアニメーション設定が効いているので注意。</span>
-     </li>
-     <li><a href="/contents/graphic_css.html#tableimage_style">敢えて表の中に画像を入れる</a></li>
-     <li><a href="/contents/graphic_css.html#grastaimage_style">グラスタ表の火力20倍の話に添える画像</a></li>
-     <li><a href="/contents/graphic_css.html#imagesize_style">画像によって大きさを使い分ける</a><br>
-      <span class="small-orange-text">JavaScriptによるアニメーション設定が効いているので注意。</span>
-     </li>
-     <li><a href="/contents/graphic_css.html#horizon_style">画像を左右に並べる</a></li>
-     <li><a href="/contents/javascriptinfo.html#fadeanimation_style">フェードインとフェードアウトの画像アニメーション</a></li>
-     <li><a href="/contents/responsive_design.html#responsivedesign_style">レスポンシブデザインを作る</a></li>
-     <li><a href="/contents/tabui.html#tab_style">タブを作る</a></li>
-     <li><a href="/another-eden/atelier_studio.html#pythontab_style">PythonのタブUIを装飾する</a></li>
-     <li><a href="/contents/css_tidbit.html#checkdesign_style">タップするとチェックが変化する</a></li>
-     <li><a href="/contents/css_tidbit.html#hrdesign_style">隅に行くほど細く消えかかる罫線を作る</a></li>
-    </ul>
-
-   </div>
-   <p><span class="small-text">🔼All checks were completed on 20250104.</span></p>
-  </div>
-  <!--●２タブの開始地点●-->
-  <div id="pane2-fein" class="tab-pane-fein">
-
-   <p>HTMLコードの解説はここではしませんが、どこのページでも使う部品のようなコードはあります。<br>
-    そういうのは１カ所にまとめておくと、ページ作成の手間を大幅に削減できます。</p>
-
-   <p class="gra">頻用するHTMLコード</p>
-
-   <div class="code-container">
-    <pre><code class="language-html">
-&lt;!--コードを記載する時の枠--&gt;
-&lt;div class=&quot;code-container&quot;&gt;
-    &lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</code></pre>
-   </div>
-
-   <div class="spacer"></div>
-
-   <div class="code-container">
-    <pre><code class="language-html">
-&lt;!--通常サイズの画像とテキスト回り込み--&gt;
-&lt;div class=&quot;content&quot;&gt;
-    &lt;img src=&quot;Atelier.jpg&quot; alt=&quot;Illustration of the atelier&quot; class=&quot;graphic right-image fade-in-out&quot;&gt;
-
-&lt;/div&gt;
-
-</code></pre>
-   </div>
-
-   <div class="spacer"></div>
-
-   <div class="code-container">
-    <pre><code class="language-html">
-&lt;!--ミニサイズの画像とテキスト回り込み--&gt;
-&lt;div class=&quot;content&quot;&gt;
-    &lt;img src=&quot;Atelier.jpg&quot; alt=&quot;Illustration of the atelier&quot; class=&quot;graphicmini right-image fade-in-out&quot;&gt;
-
-&lt;/div&gt;
-
-</code></pre>
-   </div>
-
-   <div class="spacer"></div>
-
-   <div class="code-container">
-    <pre><code class="language-html">
-&lt;!--縦長の画像とテキスト回り込み--&gt;
-&lt;div class=&quot;content&quot;&gt;
-    &lt;img src=&quot;wallpaper.jpg&quot; alt=&quot;wallpaper&quot; class=&quot;wallpaper right-image fade-in-out&quot;&gt;
-
-&lt;/div&gt;
-
-</code></pre>
-   </div>
-
-   <div class="spacer"></div>
-
-   <div class="code-container">
-    <pre><code class="language-html">
-&lt;!--ストレートに画像を掲載し、テキストの回り込みを行わない--&gt;
-&lt;img src=&quot;Atelier.jpg&quot; alt=&quot;Illustration of the atelier&quot; class=&quot;graphic fade-in-out&quot;&gt;
-
-</code></pre>
-   </div>
-
-   <div class="spacer"></div>
-
-   <div class="code-container">
-    <pre><code class="language-html">
-&lt;!--大きな画像を掲載し、テキストの回り込みを行わない--&gt;
-&lt;div class=&quot;content&quot;&gt;
-    &lt;img src=&quot;Atelier.png&quot; alt=&quot;Illustration of the atelier&quot; class=&quot;biggraphic fade-in-out&quot;&gt;
-
-&lt;/div&gt;
-
-</code></pre>
-   </div>
-
-   <div class="spacer"></div>
-
-   <div class="code-container">
-    <pre><code class="language-html">
-&lt;!--草花の写真を飾る--&gt;
-&lt;div class=&quot;flowerclearfix&quot;&gt;
-    &lt;div class=&quot;flowerfade-out&quot;&gt;
-        &lt;img src=&quot;/flower0/flower0(number).JPG&quot; alt=&quot;フェードアウト効果の草花写真&quot;&gt;
-    &lt;/div&gt;
-
-&lt;/div&gt;
-
-</code></pre>
-   </div>
-
-   <div class="spacer"></div>
-
-   <div class="code-container">
-    <pre><code class="language-html">
-&lt;!--定義リストを作成する--&gt;
-&lt;dl&gt;
-  &lt;dt&gt;HTML&lt;/dt&gt;
-  &lt;dd&gt;HyperText Markup Languageの略。Webページを作成するための言語。&lt;/dd&gt;
-
-  &lt;dt&gt;CSS&lt;/dt&gt;
-  &lt;dd&gt;Cascading Style Sheetsの略。HTML要素の見た目を整えるためのスタイルシート言語。&lt;/dd&gt;
-
-  &lt;dt&gt;JavaScript&lt;/dt&gt;
-  &lt;dd&gt;Webページに動的な動作を追加するためのプログラミング言語。&lt;/dd&gt;
-&lt;/dl&gt;
-
-</code></pre>
-   </div>
-
-   <div class="spacer"></div>
-
-   <div class="code-container">
-    <pre><code class="language-html">
-&lt;!--本文中にコードを記載する場合に使う--&gt;
-&lt;span class=&quot;codecolor&quot;&gt;code &amp; programming&lt;/span&gt;
-
-</code></pre>
-   </div>
-
-   <div class="spacer"></div>
-
-   <div class="code-container">
-    <pre><code class="language-html">
-&lt;!--小さめのオレンジテキスト--&gt;
-&lt;span class=&quot;small-orange-text&quot;&gt;orange text&lt;/span&gt;
-
-&lt;!--小さいテキスト--&gt;
-&lt;span class=&quot;small-text&quot;&gt;small text&lt;/span&gt;
-
-</code></pre>
-   </div>
-
-  </div>
-  <!--●２タブの終了地点●-->
 
   <p class="gra">CSS elements</p>
   <button class="collapsible">タップして開く ▼</button>
@@ -1799,7 +1387,8 @@ hr.atelierflower::before {
    </div>
    <div class="atelier-tab-content" data-content="1">
 
-    <p>ここは2段構えでいきたいんですよね。</p>
+    <p>時間が経っても役に立つWebページって、どういうものでしょうね？</p>
+
     <p class="gra">何を入れるのがいいかなぁー</p>
     <div class="content">
      <img src="/another-eden/anaimage/ライザ錬成中1.jpg" alt="ライザ錬成中1" class="graphicsaki right-image fade-in-out">
@@ -1925,8 +1514,15 @@ hr.atelierflower::before {
    でも、自分でコードを書いて何かしらの開発をしたことがある人になら、おそらく私の意図が伝わるのではないかと思っています。</p>
 
   <div class="content">
+   <img src="/another-eden/anaimage/Visual_mariel_Code.jpg" alt="Visual_mariel_Code" class="biggraphic fade-in-out">
+  </div>
+
+  <p>「私自身のコード管理」と「訪問者向けのコード解説」を両立させたUIとして、このページを機能させたかったんだよね。<br>
+   キャラクターごっこの話ではなく、私がやりたかったことをきちんと説明するなら、次のようになります。</p>
+
+  <div class="content">
    <img src="/another-eden/anaimage/ライザコラボシュゼット.jpg" alt="ライザコラボシュゼット" class="graphicsaki right-image fade-in-out">
-   <p>要するに、私がやりたかったのは次のようなことです。</p>
+
    <ol>
     <li>開発者が自分だけでやるコード管理は杜撰になりがち。</li>
     <li>いくら決意しようが根性しようが、どーせ徹底されない。</li>

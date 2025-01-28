@@ -127,24 +127,16 @@
   <!-- ●ヘッダーここまで。直下でコンテンツ開始● -->
 
   <h1 class="background-waveimage-heading"><span>このサイトとポータルサイトの更新履歴</span></h1>
-  <p>ここと合わせて<a
-    href="https://sites.google.com/view/feins-portal/%E7%A7%BB%E4%BD%8F%E6%88%A6%E8%A8%98%E3%83%96%E3%83%AD%E3%82%B0/note?authuser=0">ブログ</a>も見て頂けると良いかと？<br>
-   当アカウントの動きにご興味があればですが。<br>
-   ていうかこのページ、分かりやすく人が来ます😆ww<br>
-   まぁ、ここから出発すれば手間なくチェックできるもんね。<br>
-   利便性は大切ということでしょう。</p>
-  <h2>更新スケジュール</h2>
 
   <div class="flowerclearfix">
    <div class="flowerfade-out">
     <img src="/flower2/flower2(43).JPG" alt="フェードアウト効果の草花写真">
    </div>
-   <p>さっと予定していた更新スケジュールでも書いてみようかな？<br>
-    見出しの下に本文がなかったから。</p>
+   <p>今後の更新スケジュールでも書いてみようかな？</p>
 
    <ol>
     <li>Eロン登場でTwitterがおかしくなる</li>
-    <li>即時更新可能なGoogleサイトへTwitterに置いてたコンテンツ類を特急で逃がす</li>
+    <li>即時更新可能なGoogleサイトへ、Twitterに置いていたコンテンツ類を特急で逃がす</li>
     <li>Googleサイト（<a href="https://sites.google.com/view/feins-portal/">fein's portal</a>）が落ち着く</li>
     <li>手書きコード＋PaaSによる、「<a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>」を構築
     </li>
@@ -156,41 +148,43 @@
 
   </div>
 
-  <h4>アナザーエデンの開発言語であるLuaを触ってみた</h4>
-  <p>これはチャレンジネタだと思うよ？<br>
-   実際にはLua以外にも様々な言語が使われているはずです。<br>
-   ひとまず箇条書きをやってみました。</p>
-
-  <div id="scoth"></div>
-
-  <script>
-   const luaCode = `
-            -- リンク付きの箇条書き？！？！
-            local items = {
-                {name = "アナザーエデン", link = "https://another-eden.jp/"},
-                {name = "ヘブンバーンズレッド", link = "https://heaven-burns-red.com/"},
-                {name = "WRIGHT FLYER STUDIOS", link = "https://www.wfs.games/"}
-            }
-
-            -- リンク付きの箇条書きリストを作成
-            local listHtml = '<ul>'
-            for _, item in ipairs(items) do
-                listHtml = listHtml .. '<li><a href="' .. item.link .. '">' .. item.name .. '</a></li>'
-            end
-            listHtml = listHtml .. '</ul>'
-
-            return listHtml
-        `;
-
-   const L = fengari.load(luaCode);
-   const result = L();
-
-   document.getElementById('scoth').innerHTML = result;
-  </script>
-
-  <p>Luaは触ったことがありませんが、詳しくは<a href="/another-eden/lua.html">アナザーエデンのプログラミングを個人サイトで試す</a>にてご紹介させて頂いております。</p>
-
   <p class="gra">更新履歴</p>
+
+  <h5>2025年1月28日の更新</h5>
+  <p><a href="/another-eden/atelier_studio.html">ファンサイト制作のためのアトリエ</a>からGitHub関連の記述を分離しました。</p>
+  <p><a href="/contents/github.html">GitHubを触ってみよう</a>を新設し、<a href="/contents/vscode.html">Visual Studio
+    Codeを触ってみよう</a>を編集しました。</p>
+
+  <div class="spacer"></div>
+
+  <h5>2025年1月24日の更新</h5>
+  <p>当面はこの3つを更新しつつ、特にBlueskyでIT系のお話をしていこうかと。<br>
+   ここに明記していなくても、今後はゴリゴリと更新されると思って頂いてけっこうです。</p>
+  <ul>
+   <li><a href="another-eden/anaden_sitemap.html">アナザーエデンのコーナー</a></li>
+   <li><a
+     href="https://sites.google.com/view/feins-portal/%E7%A7%BB%E4%BD%8F%E6%88%A6%E8%A8%98%E3%83%96%E3%83%AD%E3%82%B0/note?authuser=0">Blog</a>
+   </li>
+   <li><a href="/contents/appengine.html">Google App Engineで広告なしサイト作成</a></li>
+  </ul>
+
+  <div class="spacer"></div>
+
+  <h5>2025年1月23日の更新</h5>
+  <p>もうソースコード管理も考えなくて良いので、四方八方を更新しまくってます。</p>
+
+  <ul>
+   <li><a href="another-eden/anaden_sitemap.html">アナザーエデンのコーナー</a></li>
+   <li><a
+     href="https://sites.google.com/view/feins-portal/%E7%A7%BB%E4%BD%8F%E6%88%A6%E8%A8%98%E3%83%96%E3%83%AD%E3%82%B0/note?authuser=0">Blog</a>
+   </li>
+   <li><a href="/contents/appengine.html">Google App Engineで広告なしサイト作成</a></li>
+  </ul>
+
+  <p>すでにInstagramとBlueskyではお話したのですが、SNSアカウントの運用を今後はガラリと変えていきます。<br>
+   Twitterは今まで通りですが、Web制作系の話題については、技術レベルを下げていきます。</p>
+
+  <div class="spacer"></div>
 
   <h5>2025年1月21日の更新</h5>
   <p><a href="another-eden/anaden_sitemap.html">アナザーエデンのコーナー</a>を一通り更新しました。グラスタ表を初めとして、最新版にしてあります。</p>
@@ -201,8 +195,12 @@
     href="/another-eden/atelier_studio.html">ファンサイト制作のためのアトリエ</a>から辿れるようにしていくつもりです。<br>
    とは言え…どこからどこにでも辿れるようになっているけどね。</p>
 
+  <div class="spacer"></div>
+
   <h5>2025年1月14日の更新</h5>
   <p><a href="/another-eden/atelier_studio.html">ファンサイト制作のためのアトリエ</a>に、VS Codeのターミナルでgcloudツールを使うコマンドへリンクを追加しました。</p>
+
+  <div class="spacer"></div>
 
   <h5>2025年1月12日の更新</h5>
   <p><a href="/another-eden/atelier_studio.html">ファンサイト制作のためのアトリエ</a>に、次のガイドへのPDF及びリンクを追加しました。</p>
@@ -211,6 +209,8 @@
    <li>Visual Studio Codeの拡張機能：Live Server</li>
    <li>Visual Studio Codeの拡張機能：Browser Lite</li>
   </ul>
+
+  <div class="spacer"></div>
 
   <h5>2025年1月8日の更新</h5>
 
@@ -228,8 +228,7 @@
    <li>ソースコードの管理とUI/UX（経験者向けのお話）</li>
    <li>Markdown記法とREADME：このサイトの説明書</li>
   </ul>
-  <p>こういうの、後でこっそり追加するから意味があるんだよね😆ww<br>
-   私のやっていることは、少女趣味なキャラクターごっこにしか見えないでしょう。</p>
+  <p>私のやっていることは、少女趣味なキャラクターごっこにしか見えないでしょう。</p>
 
   <div class="spacer"></div>
 
@@ -291,8 +290,8 @@
   <p>既存ページのコード整理が全て完了。これを機に、ヘッダーの資格証を差し替えた。</p>
 
   <h4>2024年12月の更新</h4>
-  <p>大きく動いた時期です。
-   LuaやPythonをフロントエンドで動作させることで、ちょっとしたUIを導入することができました。
+  <p>大きく動いた時期です。<br>
+   LuaやPythonをフロントエンドで動作させることで、ちょっとしたUIを導入することができました。<br>
    また、<a href="/another-eden/atelier_studio.html">ファンサイト制作のためのアトリエ</a>により、長年に渡って悩み続けてきたソースコードの管理というテーマが解決しました。</p>
 
   <p><a href="/rss/rss202412.html">2024年12月の更新記録</a></p>
@@ -322,10 +321,39 @@
    完璧にするのは難しい側面がありますが、例えば <a href="/">グラスタの場所一覧表</a> のように複雑な構成及び画像が何枚も入っているようなページだと、体感レベルで大きな差が出るのです。
   </p>
 
-  <p class="gra">手持ち記事の陳列を最優先</p>
-  <p>できればページ全体が完成してから公開という型を守っていきたかったのですが、それをやっていると何年経っても手元が片付きません。<br>
-   恐縮ですが、何でもかんでもこのサイトへ文章等を逃がしまくる形へ、途中から変更しました。<br>
-   こちらのサイトであれば、どれほどページ追加をしようとナビゲーションが重くなったりはしません。</p>
+  <h4>アナザーエデンの開発言語であるLuaを触ってみた</h4>
+  <p>これはチャレンジネタだと思うよ？<br>
+   実際にはLua以外にも様々な言語が使われているはずです。<br>
+   ひとまず箇条書きをやってみました。</p>
+
+  <div id="scoth"></div>
+
+  <script>
+   const luaCode = `
+            -- リンク付きの箇条書き？！？！
+            local items = {
+                {name = "アナザーエデン", link = "https://another-eden.jp/"},
+                {name = "ヘブンバーンズレッド", link = "https://heaven-burns-red.com/"},
+                {name = "WRIGHT FLYER STUDIOS", link = "https://www.wfs.games/"}
+            }
+
+            -- リンク付きの箇条書きリストを作成
+            local listHtml = '<ul>'
+            for _, item in ipairs(items) do
+                listHtml = listHtml .. '<li><a href="' .. item.link .. '">' .. item.name .. '</a></li>'
+            end
+            listHtml = listHtml .. '</ul>'
+
+            return listHtml
+        `;
+
+   const L = fengari.load(luaCode);
+   const result = L();
+
+   document.getElementById('scoth').innerHTML = result;
+  </script>
+
+  <p>Luaは触ったことがありませんが、詳しくは<a href="/another-eden/lua.html">アナザーエデンのプログラミングを個人サイトで試す</a>にてご紹介させて頂いております。</p>
 
   <h4>これから先の構想</h4>
   <p>下のスクリーンショットには、rss202410.htmlというファイルが写っています。<br>

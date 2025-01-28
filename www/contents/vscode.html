@@ -26,7 +26,7 @@
 
  <!--基本のメタタグ-->
  <meta name="description" content="Visual Studio Codeについて、基本的な扱い方を書いています。">
- <meta name="keywords" content="個人サイト, ウェブセーフカラーパレット, バリデーター">
+ <meta name="keywords" content="個人サイト, Visual Studio Code, VS Code">
  <meta name="robots" content="index, follow">
  <meta property="og:title" content="Visual Studio Codeを触ってみよう">
  <meta property="og:description" content="Visual Studio Codeについて、基本的な扱い方を書いています">
@@ -179,7 +179,7 @@
    </ol>
    <p>この3の部分が面倒なんですよね…いちいちShift+F5するのかよって…<br>
     そこを解決してくれるのがVSCodeの拡張機能「Live Server」です。</p>
-   <p>VSCodeに限らず普段からコードエディターを触っている人なら、拡張機能のインストールは大丈夫かと。
+   <p>VSCodeに限らず普段からコードエディターを触っている人なら、拡張機能のインストールは大丈夫かと。<br>
     分かりにくいだろうと推測できる部分としては、Live Serverを使ってもCSSやJavaScriptが反映しないというトラブル。<br>
     けっこうお悩みの方が多かった印象です。<br>
     これはVSCodeで開くフォルダーに注意すると簡単に解決します。</p>
@@ -260,8 +260,10 @@
     </dl>
 
     <dl>
-     <dt>ターミナルでの作業効率化</dt>
-     <dd>tasks.jsonを書き換えてCtrl + Shift + B</dd>
+     <dt>タスクランナーの実行</dt>
+     <dd>Ctrl + Shift + B</dd>
+     <dt>タスクの実行</dt>
+     <dd>Ctrl + Shift + P (コマンドパレット) からTask: Run Task</dd>
     </dl>
 
    </div>
@@ -437,7 +439,7 @@ for container in document.select('.atelier-container'):
    <span class="codecolor">cd C:\Users\ユーザー名\OneDrive\_fein\google cloud\fein-sites-dev1</span>とやってからデプロイする…<br>
    この流れが基本ではあるのですが、ちょっとめんどくさい。<br>
    でもVS Codeから出たくない😆ww<br>
-   そういう場合、VS Codeのタスクランナーを使ったりします。
+   そういう場合、VS Codeのタスクランナーを使ったり、後述するタスクの実行からデプロイします。
   </p>
 
   <h4>タスクランナーの設定手順</h4>
@@ -493,6 +495,101 @@ for container in document.select('.atelier-container'):
    予期しない動作を引き起こすと面倒なので、私ならこうするっていう設定例ですね。<br>
    ちなみにタスクランナーはVS Codeの公式ドキュメントに基づいた機能であり、多くの開発者に利用されています。</p>
 
+  <h2>VS Codeのワークスペースを使った環境構築</h2>
+  <p>Visual Studio Code（VS Code）のワークスペースはプロジェクトを効率的に管理し、複数のフォルダや設定を統合するための概念です。<br>
+   ワークスペースを利用することで、プロジェクトの異なる部分を一元的に扱うことができます。</p>
+
+  <dl>
+   <dt>複数のフォルダの管理：</dt>
+   <dd>ワークスペースは、一つのプロジェクトに関連する複数のフォルダを開いて管理できます。<br>
+    異なるディレクトリに保存されているプロジェクトファイルを一括で操作できます。</dd>
+
+   <dt>個別の設定：</dt>
+   <dd>ワークスペースごとに独自の設定（エディタの設定、タスク、拡張機能の設定など）を持つことができます。<br>
+    プロジェクトに特化した設定を適用できます。</dd>
+
+   <dt>ワークスペース構成ファイル：</dt>
+   <dd>.code-workspace ファイルとして保存されるワークスペース設定ファイルがあります。<br>
+    このファイルでフォルダのパス、設定、タスクなどが定義します。</dd>
+  </dl>
+
+  <p> 例えば私の場合、次のような環境となっています。<br>
+   C:\Users\ユーザー名\OneDrive\_fein\google cloud\fein-sites-dev1\www<br>
+   この直下にindex.html（いわゆるトップページ）があります。<br>
+   C:\Users\ユーザー名\OneDrive\_fein\google cloud\fein-sites-dev1<br>
+   この直下にwwwフォルダとapp.yamlがあります。</p>
+
+  <p>この場合、wwwフォルダはウェブサイトのルートディレクトリとして機能します。<br>
+   ここには index.html があり、これはウェブサイトのトップページです。<br>
+   fein-sites-dev1フォルダは、Google App Engineのルートディレクトリとして機能します。<br>
+   このフォルダには www フォルダと app.yaml ファイルが含まれています。<br>
+   app.yaml は、App Engineの設定ファイルであり、デプロイ時にApp Engineに対してこのディレクトリがルートディレクトリであることを示します。<br>
+   これでwwwフォルダ内のウェブコンテンツを正しくサーブでき、fein-sites-dev1フォルダはApp Engine環境の設定として機能するという仕組みです。</p>
+
+  <p>次のjsonファイルは、私のワークスペースの基礎的な設定です。</p>
+
+  <p class="codegra" id="tasks_json">.code-workspaceファイルの例</p>
+  <div class="code-container">
+   <pre><code class="language-json">
+{
+ "folders": [
+  {
+      "path": "../../fein-sites-dev1/www"
+  },
+  {
+      "path": "../.."
+  }
+ ],
+ "settings": {
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "on",
+  "files.exclude": {
+   "**/.git": true,
+   "**/.DS_Store": true,
+   "**/node_modules": true
+  },
+  "files.autoSave": "afterDelay",
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "extensions.ignoreRecommendations": false,
+  "workbench.colorTheme": "Visual Studio Dark",
+  "window.zoomLevel": 1
+ }
+}
+
+</code></pre>
+  </div>
+
+  <p>settingsの部分は柔軟に変えていくけどね。<br>
+   "path": "../../fein-sites-dev1/www" というパスは、現在の .code-workspace ファイルの場所から相対的に指定されています。<br>
+   "path": "../.." も同じく相対パスで指定されています。<br>
+   このパスは現在の .code-workspace ファイルから2つ上の階層（つまり C:\Users\ユーザー名\OneDrive\_fein\）を指します。<br>
+   このように自分が頻用するディレクトリをワークスペースに追加した上で、上述したタスクを実行することができます。</p>
+
+  <h4>タスクの実行</h4>
+  <p>あるいは、タスクランナーを使うよりこちらのほうが感覚的に分かりやすいかもしれません。</p>
+
+  <dl>
+   <dt>Visual Studio Codeを開く：</dt>
+   <dd>既に <span class="codecolor">C:\Users\ユーザー名\OneDrive\_fein\google cloud\fein-sites-dev1\www</span>
+    フォルダをワークスペースとして開いていることを確認する。</dd>
+
+   <dt>ターミナルを開く：</dt>
+   <dd>Ctrl + Shift + P キーを押して、コマンドパレットを開きます。</dd>
+
+   <dt>タスクの実行：</dt>
+   <dd>コマンドパレットが開いたら、「Task: Run Task」と入力し、Enter キーを押します。</dd>
+
+   <dt>タスクの選択：</dt>
+   <dd>表示されたタスクのリストから <span class="codecolor">Run Google Cloud Commands</span> を矢印キーで選び、Enter キーを押して実行します。</dd>
+  </dl>
+
+
+  <p> この手順で tasks.json に設定されたビルドタスクが実行され、Google Cloud SDKの環境がセットアップされます。<br>
+   タスクランナーを使うも良し。<br>
+   こうやってワークスペースを作った上でタスク実行をしても良し。<br>
+   何かやるたびにVS Codeから外に出ていると、作業効率も落ちます。<br>
+   せっかくVS Code内でコマンドプロンプトやシェルが操作できるのですから、可能な限り活かしていきたいものですね。 </p>
 
   <h5>VS Codeのアウトライン機能</h5>
   <p>長いコードを書くときにはアウトライン機能が便利です。<br>
