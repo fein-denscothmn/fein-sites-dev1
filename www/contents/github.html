@@ -28,7 +28,7 @@
  <meta name="description" content="GitHubについて、基本的な扱い方を書いています。">
  <meta name="keywords" content="個人サイト, GitHub, Git">
  <meta name="robots" content="index, follow">
- <meta property="og:title" content="GitHubを触ってみよう">
+ <meta property="og:title" content="Webサイトの共同制作とGitHub">
  <meta property="og:description" content="GitHubについて、基本的な扱い方を書いています。">
  <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
  <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/github.html">
@@ -38,7 +38,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "GitHubを触ってみよう",
+  "name": "Webサイトの共同制作とGitHub",
   "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/github.html",
   "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
 }
@@ -81,7 +81,7 @@
   rel="stylesheet">
 
  <!--ページタイトル-->
- <title>GitHubを触ってみよう</title>
+ <title>Webサイトの共同制作とGitHub</title>
 
  <!--ASノーナのファビコン-->
  <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
@@ -111,7 +111,7 @@
    <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
     <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
-    <li class="breadcrumb-item active" aria-current="page">GitHubを触ってみよう</li>
+    <li class="breadcrumb-item active" aria-current="page">Webサイトの共同制作とGitHub</li>
    </ol>
   </div>
 
@@ -145,22 +145,100 @@
   </div>
 
   <div class="spacer"></div>
-  <button id="generate-headings" data-open-text="GitHubを触ってみようの目次を開く ▼"
-   data-close-text="GitHubを触ってみようの目次を閉じる ▲">GitHubを触ってみようの目次を開く
+  <button id="generate-headings" data-open-text="Webサイトの共同制作とGitHubの目次を開く ▼"
+   data-close-text="Webサイトの共同制作とGitHubの目次を閉じる ▲">Webサイトの共同制作とGitHubの目次を開く
    ▼</button><!--目次の自動生成-->
   <div class="spacer"></div>
   <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
 
   <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
 
-  <h1 class="background-waveimage-heading"><span>GitHubを触ってみよう</span></h1>
+  <h1 class="background-waveimage-heading"><span>Webサイトの共同制作とGitHub</span></h1>
+  <p>Webサイトを作ろうという流れになると、必ずと言って良いほど話題になるのが共同制作。<br>
+   このようなサイトを共同制作する場合、普通はGitHubのようなソースコードの管理ツールを使うものです。<br>
+   複数人で作業をする時、各々の書いているコードの進捗状況を管理したり、コンフリクトを解消するために使うんだよね。<br>
+   このページでは、Webサイトを共同制作するときの注意点から出発し、GitHubの初期設定をするところまで進めていきます。</p>
 
-  <p>このページは<a href="/contents/vscode.html">Visual Studio Codeを触ってみよう</a>と併せてご覧いただけると、より分かりやすいかもしれません。<br>
-   GitHubをVisual Studio Code（VS Code）で使用することには、いくつかの重要な利点があります。<br>
-   開発作業の効率化するための便利な機能がいっぱいあるんですよね。</p>
+  <p>こういう話はですね…<br>
+   うんちくを並べるより、現実的なことをサラッと書いてしまった方が伝わると思ってますね。</p>
 
-  <p>よく<strong>「サイトを共同編集しようぜ！」</strong>なんてのを耳にするけど…<br>
-   もし複数人でプロジェクト化したいのであれば、こういうツールを使ってやると良いですよ？</p>
+  <h2>記事を書けばお金になる</h2>
+  <p>Webサイトの周りにはいろんなお仕事がありますよ。<br>
+   例えば、いま私が書いているような文章を書くお仕事もあります。<br>
+   <a href="https://crowdworks.jp/">クラウドワークス</a>というページをご覧いただけるとすぐ分かります。
+  </p>
+  <div class="content">
+   <img src="/contents/itimages/クラウドワークス1.png" alt="クラウドワークス" class="biggraphic fade-in-out">
+  </div>
+
+  <p>いかがでしょうか？<br>
+   給料の高低は別にしても、文筆の仕事もあるでしょ？<br>
+   他人様のWebサイトのために文章を書き、それを提供する。<br>
+   これは立派な仕事なわけです。</p>
+
+  <div class="content">
+   <img src="/contents/itimages/クラウドワークス2.png" alt="クラウドワークス" class="biggraphic fade-in-out">
+  </div>
+
+  <p>もちろん実際に報酬も出ます。<br>
+   頑張って頂ければ、ちょっとしたゲームのガチャ代くらいなら稼げますよ。─ 年末調整云々等は一般常識ですから、ここでは割愛させて頂きます。 ─</p>
+
+  <h3>フリーでお小遣い稼ぎをする時の注意点</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(250).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>こういう場所だと、なかには報酬をバックレるような業者がいたりします。<br>
+    見積書・納品書・請求書など、ちゃんとしていただきまして。<br>
+    これらも常識の範囲内なので詳しくは書きませんが、いろんなことが自己責任となります。</p>
+   <p>私も学生時代にやってたことありますよ？<br>
+    防災グッズに関するブログ記事を書いたり、グローバルナビゲーション用のプログラムを提供したり。<br>
+    ちゃんと報酬がもらえます。<br>
+    こういうフリーの活動は、アルバイトみたいに時間の縛りがないのがメリットですよね。</p>
+  </div>
+
+  <h3>Webサイトの共同制作とお金</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(251).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>よく見る流れが、次のようなものです。<br>
+    私は以前、自分の好きなゲームでファンサイトを作ろうなんて呼びかけをしたことがありました。<br>
+    その時に一番懸念していたのが、こういう流れだったのです。</p>
+   <ul>
+    <li>プログラミングが得意なA君に、プルダウンメニューを作ってもらおう！</li>
+    <li>絵が上手なB美ちゃんに、イラストを描いてもらおう！</li>
+    <li>文章が上手なC子ちゃんに、ストーリーを書いてもらおう！</li>
+   </ul>
+   <p><strong>でも、何をどうするかは俺が決める。広告も貼ってアフィリエイトしよう。だって、このサイトは俺のものだから。</strong></p>
+  </div>
+
+  <p>分かりやすいよう、ちょっとした物語にしてみました。<br>
+   こういうの、度が過ぎるとトラブルになります。<br>
+   Webサイトの共同制作なんて、なんかプロジェクトリーダーにでもなったみたいでウキウキしちゃうもの。<br>
+   特に慣れない初心者さんはそうですし、このような流れは私もSNSで昔から目にしてきました。<br>
+   技術を借りる側も、そして技術を貸す側も、十分に注意する必要があると私は思います。<br>
+   とはいったものの…<br>
+   こういうのって実際にトラブルを目の当たりにしないと分からないもんだけどね（笑）</p>
+
+  <hr class="atelierflower">
+
+  <p>さて！
+   そんなこんなをクリアできたら、いよいよWebサイトを共同制作することになります。<br>
+   次からはソースコードの管理ツールであるGitHubについて、お話します。</p>
+
+  <h2>GitHubを触ってみよう</h2>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(252).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>ここからは<a href="/contents/vscode.html">Visual Studio Codeを触ってみよう</a>と併せてご覧いただけると、より分かりやすいかもしれません。<br>
+    GitHubをVisual Studio Code（VS Code）で使用することには、いくつかの重要な利点があります。<br>
+    開発作業の効率化するための便利な機能がいっぱいあるんですよね。</p>
+
+   <p>よく<strong>「サイトを共同編集しようぜ！」</strong>なんてのを耳にするけど…<br>
+    もし複数人でプロジェクト化したいのであれば、こういうツールを使ってやると良いですよ？</p>
+  </div>
 
   <dl>
    <dt>統合環境</dt>
@@ -202,97 +280,117 @@
    <p>私が使っている選択肢の側に★マークを付けておきますね。</p>
   </div>
 
-  <dl>
-   <dt>Choosing thr default editor used by Git</dt>
-   <dd>★Use Visual Studio Code as Git's default editor<br>
-    ・Use Visual Studio Code Insiders as Git's default editor</dd>
-   <dd>通常版のVisual Studio CodeをGitのデフォルトエディタとして使用する設定です。<br>
-    一般的に使われている安定版のVisual Studio Codeとなります。<br>
-    一方、Visual Studio Code Insidersは新機能や改善が早めに提供されるため、安定性においては通常版よりも若干リスクがあります。</dd>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(253).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <dl>
+    <dt>Choosing thr default editor used by Git</dt>
+    <dd>★Use Visual Studio Code as Git's default editor<br>
+     ・Use Visual Studio Code Insiders as Git's default editor</dd>
+    <dd>通常版のVisual Studio CodeをGitのデフォルトエディタとして使用する設定です。<br>
+     一般的に使われている安定版のVisual Studio Codeとなります。<br>
+     一方、Visual Studio Code Insidersは新機能や改善が早めに提供されるため、安定性においては通常版よりも若干リスクがあります。</dd>
 
-   <dt>Adjusting the name of the initial branch in new repositories</dt>
-   <dd>★Let's Git decide<br>
-    ・Override the default branch name for new repositories
-   </dd>
-   <dd>ブランチ名はアカウント名とは異なり、特定の変更履歴を指す名前です。<br>
-    開発中の異なるバージョンや機能を分けて管理するためのものであり、例えば「main」というブランチは通常、プロジェクトの主要な開発ラインを表します。</dd>
+    <dt>Adjusting the name of the initial branch in new repositories</dt>
+    <dd>★Let's Git decide<br>
+     ・Override the default branch name for new repositories
+    </dd>
+    <dd>ブランチ名はアカウント名とは異なり、特定の変更履歴を指す名前です。<br>
+     開発中の異なるバージョンや機能を分けて管理するためのものであり、例えば「main」というブランチは通常、プロジェクトの主要な開発ラインを表します。</dd>
 
-   <dt>Adjusting your PATH enviroment</dt>
-   <dd>・Use Git from Git Bash only<br>
-    ★Git from the command line and also from 3re-party software<br>
-    ・Use Git and optional Unix tools from the Command Prompt</dd>
-   <dd>コマンドプロンプトや他のターミナル（例：PowerShell）からもGitコマンドを利用できます。<br>
-    また、他のサードパーティのソフトウェア（例：VS Code、Sourcetreeなど）でもGitを利用できるようになります。<br>
-    このオプションが最も汎用的で、多くのユーザーにとって便利だと思いますね。</dd>
+    <dt>Adjusting your PATH enviroment</dt>
+    <dd>・Use Git from Git Bash only<br>
+     ★Git from the command line and also from 3re-party software<br>
+     ・Use Git and optional Unix tools from the Command Prompt</dd>
+    <dd>コマンドプロンプトや他のターミナル（例：PowerShell）からもGitコマンドを利用できます。<br>
+     また、他のサードパーティのソフトウェア（例：VS Code、Sourcetreeなど）でもGitを利用できるようになります。<br>
+     このオプションが最も汎用的で、多くのユーザーにとって便利だと思いますね。</dd>
 
-   <dt>Choosing the SSH executable</dt>
-   <dd>★Use bundled OpenSSH<br>
-    ・Use external OpenSSH</dd>
-   <dd>Use external OpenSSHは外部にインストールされているOpenSSHを使用しますが、後から変更することもできます。</dd>
+    <dt>Choosing the SSH executable</dt>
+    <dd>★Use bundled OpenSSH<br>
+     ・Use external OpenSSH</dd>
+    <dd>Use external OpenSSHは外部にインストールされているOpenSSHを使用しますが、後から変更することもできます。</dd>
 
-   <dt>Choosing HTTPS transport bakend</dt>
-   <dd>★Use the OpenSSL library<br>
-    ・Use the native Windows Secure Channel library</dd>
-   <dd>私の場合は特にクロスプラットフォーム環境や、OpenSSLの特性を活用したいシーンが増えてくると思うから。</dd>
+    <dt>Choosing HTTPS transport bakend</dt>
+    <dd>★Use the OpenSSL library<br>
+     ・Use the native Windows Secure Channel library</dd>
+    <dd>私の場合は特にクロスプラットフォーム環境や、OpenSSLの特性を活用したいシーンが増えてくると思うから。</dd>
 
-   <dt>Configuring the line ending conversions</dt>
-   <dd>★Checkout Windows-style, commit Unix-style line endings<br>
-    ・Check as-is, commit Unix-style line endings<br>
-    ・Check as-is, commit as-is</dd>
-   <dd>ファイルの改行コードに関する設定なのですが、Windows環境で作業しつつ、他の環境（例：Linux、macOS）と互換性を保つ必要があります。</dd>
-  </dl>
+    <dt>Configuring the line ending conversions</dt>
+    <dd>★Checkout Windows-style, commit Unix-style line endings<br>
+     ・Check as-is, commit Unix-style line endings<br>
+     ・Check as-is, commit as-is</dd>
+    <dd>ファイルの改行コードに関する設定なのですが、Windows環境で作業しつつ、他の環境（例：Linux、macOS）と互換性を保つ必要があります。</dd>
+   </dl>
+  </div>
 
-  <p>次にConfiguring the terminal emulator to use with Git Bashの画面で次の選択肢があります。<br>
-   ここでの選択肢は、Git Bashを使用する際の端末エミュレータを選択するものです。</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(254).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>次にConfiguring the terminal emulator to use with Git Bashの画面で次の選択肢があります。<br>
+    ここでの選択肢は、Git Bashを使用する際の端末エミュレータを選択するものです。</p>
 
-  <dl>
-   <dt>★Use MinTTY (the default terminal of MSYS2)</dt>
-   <dd>
-    MinTTYは、MSYS2プロジェクトに含まれるデフォルトのターミナルエミュレータで、外観やカスタマイズ性が高くUnix系のターミナルに似た操作感を提供します。<br>
-    標準のWindowsコンソールよりも高機能で、カラー表示やフォントの設定もできます。</dd>
+   <dl>
+    <dt>★Use MinTTY (the default terminal of MSYS2)</dt>
+    <dd>
+     MinTTYは、MSYS2プロジェクトに含まれるデフォルトのターミナルエミュレータで、外観やカスタマイズ性が高くUnix系のターミナルに似た操作感を提供します。<br>
+     標準のWindowsコンソールよりも高機能で、カラー表示やフォントの設定もできます。</dd>
 
-   <dt>Use Windows' default console window</dt>
-   <dd>
-    Windowsの標準コンソールウィンドウ（コマンドプロンプト）を使用します。<br>
-    特に追加の設定を行わずに利用でき、慣れ親しんだ環境で作業ができるというメリットがあります。
-   </dd>
-  </dl>
+    <dt>Use Windows' default console window</dt>
+    <dd>
+     Windowsの標準コンソールウィンドウ（コマンドプロンプト）を使用します。<br>
+     特に追加の設定を行わずに利用でき、慣れ親しんだ環境で作業ができるというメリットがあります。
+    </dd>
+   </dl>
+  </div>
 
-  <p>どちらを選んでもGitの機能に影響はありませんが、ここはUse MinTTY (the default terminal of MSYS2)のほうがお勧めかな？<br>
-   Windowsに特化しなくてもいいし、コマンドプロンプトよりUnix系のターミナルに慣れたほうが良いと思うから。</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(255).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>どちらを選んでもGitの機能に影響はありませんが、ここはUse MinTTY (the default terminal of MSYS2)のほうがお勧めかな？<br>
+    Windowsに特化しなくてもいいし、コマンドプロンプトよりUnix系のターミナルに慣れたほうが良いと思うから。</p>
 
-  <dl>
-   <dt>Choose the default behavior of 'git pull'</dt>
-   <dd>★Fast-forward or merge<br>
-    ・Rebase<br>
-    ・Only ever fast-forward</dd>
-   <dd> 通常の開発フローを優先するならFast-forward or merge、<br>
-    クリーンな履歴を保ちたいならRebase、<br>
-    直線的な履歴を強制したいならOnly ever fast-forwardです。</dd>
+   <dl>
+    <dt>Choose the default behavior of 'git pull'</dt>
+    <dd>★Fast-forward or merge<br>
+     ・Rebase<br>
+     ・Only ever fast-forward</dd>
+    <dd> 通常の開発フローを優先するならFast-forward or merge、<br>
+     クリーンな履歴を保ちたいならRebase、<br>
+     直線的な履歴を強制したいならOnly ever fast-forwardです。</dd>
 
-   <dt>Choose a credential helper</dt>
-   <dd>★Git Credential Manager<br>
-    ・None</dd>
-   <dd>Git Credential Manager（GCM）は、認証情報を簡単に管理するためのツールです。<br>
-    マイクロソフトアカウント、GitHubなど複数のプロバイダに対応しているので、普通はこっちかな。</dd>
+    <dt>Choose a credential helper</dt>
+    <dd>★Git Credential Manager<br>
+     ・None</dd>
+    <dd>Git Credential Manager（GCM）は、認証情報を簡単に管理するためのツールです。<br>
+     マイクロソフトアカウント、GitHubなど複数のプロバイダに対応しているので、普通はこっちかな。</dd>
 
-   <dt>Configuring extra options</dt>
-   <dd>★Enable file system caching<br>
-    ・Enable symbolic links</dd>
-   <dd>シンボリックリンクはどうかなー<br>
-    けっこう便利だけど、ここではファイル操作のパフォーマンス向上を重視する方向でやってます。</dd>
-  </dl>
+    <dt>Configuring extra options</dt>
+    <dd>★Enable file system caching<br>
+     ・Enable symbolic links</dd>
+    <dd>シンボリックリンクはどうかなー<br>
+     けっこう便利だけど、ここではファイル操作のパフォーマンス向上を重視する方向でやってます。</dd>
+   </dl>
+  </div>
 
   <p>キリがないからこのへんで。<br>
    ちなみに<a href="https://git-scm.com/downloads/guis?os=windows">GUI Clients</a>もあります。</p>
 
   <h2>GitHubのアカウント登録</h2>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(256).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>GitHubアカウントを作成して、Visual Studio(Atelier) Codeからリポジトリを管理する手順です。<br>
+    ここからがソースコード管理らしくなってくるかな。<br>
+    念のため、本格的に使いたい人は<a href="https://github.com/pricing">Get the complete developer
+     platform.</a>をよく見て、自分の開発状況で費用が発生するかどうかを確認しましょう。<br>
+    まずはprivateで使ってみて、慣れてきたらpublicにするのがお勧めです。</p>
+  </div>
 
-  <p>GitHubアカウントを作成して、Visual Studio(Atelier) Codeからリポジトリを管理する手順です。<br>
-   ここからがソースコード管理らしくなってくるかな。<br>
-   念のため、本格的に使いたい人は<a href="https://github.com/pricing">Get the complete developer
-    platform.</a>をよく見て、自分の開発状況で費用が発生するかどうかを確認しましょう。<br>
-   まずはprivateで使ってみて、慣れてきたらpublicにするのがお勧めです。</p>
 
   <p class="gra">Visual Studio(Atelier) CodeのGitHub連携</p>
   <ol>
@@ -328,33 +426,38 @@
   <p>もしくは、GitHubリポジトリ一覧ページで、リポジトリ名の横に鍵のアイコンが表示されていれば、リポジトリはプライベートです。</p>
 
   <p class="gra">Gitのステータス表示と操作</p>
-  <p>GitHubとの連携直後、VS Codeでファイル名が緑色になると思います。<br>
-   加えて右側に「A」と表示されているはずで、それはGitのステータス表示です。<br>
-   それぞれの意味と、続く操作を説明しますね。</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(257).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>GitHubとの連携直後、VS Codeでファイル名が緑色になると思います。<br>
+    加えて右側に「A」と表示されているはずで、それはGitのステータス表示です。<br>
+    それぞれの意味と、続く操作を説明しますね。</p>
 
-  <dl>
-   <dt><span style="color: darkgreen;">緑色のファイル名 A</span></dt>
-   <dd>ファイルがGitに新規追加されたことを意味します。<br>
-    ステージングエリアに追加されており、次のコミットでリポジトリに追加される予定のファイルです。<br>
-    「A」は「Added」（追加）を意味します。<br>
-    そのファイルが新しく追加されたことを示しています。
-   </dd>
-  </dl>
+   <dl>
+    <dt><span style="color: darkgreen;">緑色のファイル名 A</span></dt>
+    <dd>ファイルがGitに新規追加されたことを意味します。<br>
+     ステージングエリアに追加されており、次のコミットでリポジトリに追加される予定のファイルです。<br>
+     「A」は「Added」（追加）を意味します。<br>
+     そのファイルが新しく追加されたことを示しています。
+    </dd>
+   </dl>
 
-  <dl>
-   <dt><span style="color: darkgreen;">緑色のファイル名 U</span></dt>
-   <dd>Gitがそのファイルを「未追跡」（Untracked）として認識していることを示しています。<br>
-    Gitがまだそのファイルを追跡しておらず、リポジトリにコミットされていないという意味ですね。
-   </dd>
-  </dl>
+   <dl>
+    <dt><span style="color: darkgreen;">緑色のファイル名 U</span></dt>
+    <dd>Gitがそのファイルを「未追跡」（Untracked）として認識していることを示しています。<br>
+     Gitがまだそのファイルを追跡しておらず、リポジトリにコミットされていないという意味ですね。
+    </dd>
+   </dl>
 
-  <dl>
-   <dt><span style="color: darkorange;">橙色のファイル名 M</span></dt>
-   <dd>ファイルが変更されたことを示しています。<br>
-    既存のファイルに対して何らかの編集が加えられた状態です。<br>
-    「M」は「Modified」（変更）の略で、そのファイルが修正されたことを意味します。
-   </dd>
-  </dl>
+   <dl>
+    <dt><span style="color: darkorange;">橙色のファイル名 M</span></dt>
+    <dd>ファイルが変更されたことを示しています。<br>
+     既存のファイルに対して何らかの編集が加えられた状態です。<br>
+     「M」は「Modified」（変更）の略で、そのファイルが修正されたことを意味します。
+    </dd>
+   </dl>
+  </div>
 
   <p class="gra">GitHubのリポジトリにプッシュする</p>
   <div class="content">
@@ -385,17 +488,22 @@ git config --global --list
   <p>これでユーザー名とメールアドレスが設定され、コミットを行う準備が整いました。<br>
    次は新しいリポジトリのセットアップです。</p>
 
-  <dl>
-   <dt>1. リポジトリの初期設定</dt>
-   <dd>
-    GitHubリポジトリにおける標準的なファイル構成を設定します。<br>
-    README・LICENSE・.gitignoreの3つを登録するほうが良いのですが、とりあえず静的ウェブサイトのソースコードならLICENSEは後回しで良いでしょう。
-   </dd>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(258).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <dl>
+    <dt>1. リポジトリの初期設定</dt>
+    <dd>
+     GitHubリポジトリにおける標準的なファイル構成を設定します。<br>
+     README・LICENSE・.gitignoreの3つを登録するほうが良いのですが、とりあえず静的ウェブサイトのソースコードならLICENSEは後回しで良いでしょう。
+    </dd>
 
-   <dt>2. ローカルリポジトリの初期化</dt>
-   <dd>
-    既にローカルにプロジェクトが存在する場合、ローカルリポジトリを初期化してリモートリポジトリに接続します。</dd>
-  </dl>
+    <dt>2. ローカルリポジトリの初期化</dt>
+    <dd>
+     既にローカルにプロジェクトが存在する場合、ローカルリポジトリを初期化してリモートリポジトリに接続します。</dd>
+   </dl>
+  </div>
 
   <div class="code-container">
    <pre><code class="language-bash">
@@ -486,13 +594,19 @@ git push origin main
   </p>
 
   <p class="gra">.gitignoreを確認してファイル退避</p>
-  <p>この段階で、リモートレポジトリでは非公開となるローカルレポジトリのファイルが設定されています。<br>
-   念のためGitHubのWebにあるリモートレポジトリを確認し、.gitignoreが反映されていることを確認しましょう。<br>
-   それから、ローカルレポジトリから公開したくないファイルやディレクトリを一時的に他のディレクトリへ移動しておきます。<br>
-   ローカルレポジトリに、一時的なデータの欠損が発生している状態を作るのです。</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(259).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>この段階で、リモートレポジトリでは非公開となるローカルレポジトリのファイルが設定されています。<br>
+    念のためGitHubのWebにあるリモートレポジトリを確認し、.gitignoreが反映されていることを確認しましょう。<br>
+    それから、ローカルレポジトリから公開したくないファイルやディレクトリを一時的に他のディレクトリへ移動しておきます。<br>
+    ローカルレポジトリに、一時的なデータの欠損が発生している状態を作るのです。</p>
 
-  <p class="gra">欠損があるローカルレポジトリをプッシュ</p>
-  <p>公開したくないファイルやディレクトリが含まれていない状態のローカルレポジトリを、リモートレポジトリへプッシュします。</p>
+   <p class="gra">欠損があるローカルレポジトリをプッシュ</p>
+   <p>公開したくないファイルやディレクトリが含まれていない状態のローカルレポジトリを、リモートレポジトリへプッシュします。</p>
+  </div>
+
 
   <div class="code-container">
    <pre><code class="language-bash">
@@ -533,9 +647,14 @@ git push origin main
   </p>
 
   <p class="gra">ローカルレポジトリを元に戻す</p>
-  <p>ローカルレポジトリへ、上述の手順で退避させておいたファイルやディレクトリを戻します。<br>
-   上記で公開したくないファイルを欠損させたローカルレポジトリをプッシュしましたが、このままでは本番のWebサイトにも欠損が発生してしまいます。─ 開発環境によるけどね。 ─<br>
-   GitHubに無用なデータを公開しなければ良いだけですから、改めてローカルレポジトリを元に戻しましょう。</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(260).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>ローカルレポジトリへ、上述の手順で退避させておいたファイルやディレクトリを戻します。<br>
+    上記で公開したくないファイルを欠損させたローカルレポジトリをプッシュしましたが、このままでは本番のWebサイトにも欠損が発生してしまいます。─ 開発環境によるけどね。 ─<br>
+    GitHubに無用なデータを公開しなければ良いだけですから、改めてローカルレポジトリを元に戻しましょう。</p>
+  </div>
 
   <p class="gra">除外設定があるローカルレポジトリをプッシュ</p>
   <p>この段階のローカルレポジトリは、公開したくないファイルやディレクトリが含まれているものの、「.gitignore」による除外設定が効いている状態です。<br>
@@ -582,7 +701,13 @@ git push origin main
    これで、githubをpublicにしても、公開したくないファイルはwebで閲覧できなくなります。<br>
    言い変えると、リモートリポジトリには公開したくないファイルが含まれない状態を維持できるってことですね。</p>
 
-
+  <h5>コードを書かないGitHub？！</h5>
+  <p>HTMLなどのコードを書かずにWeb公開できる、ホームページ作成サービスがいろいろありますよね。<br>
+   文章を書くだけで良いので便利ですが、その文章の管理にGitHubを使うこともあるようです。<br>
+   要するに多数の記事の管理にGitHubを使うという。<br>
+   でもちょっとイメージしにくいかな？<br>
+   普通の文章なら、それこそMarkdown記法だけで十分だと思うし。<br>
+   まぁでも、アイデアとしてはおもしろいよね！</p>
 
   <!-- ●ここから人間用のフッター● -->
   <hr id="feinhr">
