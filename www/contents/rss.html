@@ -2,19 +2,19 @@
 <html lang="ja">
 
 <head>
-<link rel="manifest" href="/manifest.json">
+ <link rel="manifest" href="/manifest.json">
 
-<script>
+ <script>
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(registration => {
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      })
-      .catch(error => {
-        console.log('ServiceWorker registration failed: ', error);
-      });
+   navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+     console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    })
+    .catch(error => {
+     console.log('ServiceWorker registration failed: ', error);
+    });
   }
-</script>
+ </script>
 
  <meta charset="UTF-8">
  <title>このサイトとポータルサイトの更新履歴</title>
@@ -163,6 +163,13 @@
   </div>
 
   <p class="gra">更新履歴</p>
+
+  <h5>2025年2月1日の更新</h5>
+  <p>このサイトがアプリになりました。<br>
+   それに伴い、<a href="/contents/pwa.html">個人サイトをそのまんまアプリにする方法</a>を新規作成しました。<br>
+   また、<a href="/another-eden/atelier_studio.html">ファンサイト制作のためのアトリエ</a>を大きく修正し、アナデンのゲーム部分の攻略ネタも掲載しました。</p>
+
+  <div class="spacer"></div>
 
   <h5>2025年1月30日の更新</h5>
   <p>以前はGitHubのことを集中的に書いていた<a href="/contents/github.html">Webサイトの共同制作とGitHub</a>に、開発めいたコード記述を伴わない個人サイト向けの記述を加えました。</p>

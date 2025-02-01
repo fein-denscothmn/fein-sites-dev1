@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <link rel="manifest" href="/manifest.json">
+
+ <script>
+  if ('serviceWorker' in navigator) {
+   navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+     console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    })
+    .catch(error => {
+     console.log('ServiceWorker registration failed: ', error);
+    });
+  }
+ </script>
+
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+
+ <!-- Microsoft tag -->
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+
+ <meta charset="UTF-8">
+
+ <!--基本のメタタグ-->
+ <meta name="description" content="個人サイトをそのまんまアプリにする、プログレッシブウェブアプリという方法をご案内します。">
+ <meta name="keywords" content="個人サイト, Visual Studio Code, VS Code">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="個人サイトをそのまんまアプリにする方法">
+ <meta property="og:description" content="個人サイトをそのまんまアプリにする、プログレッシブウェブアプリという方法をご案内します。">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/pwa.html">
+
+ <!--検索ヒット時のアイコン-->
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "個人サイトをそのまんまアプリにする方法",
+  "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/pwa.html",
+  "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+}
+</script>
+
+ <!--レスポンシブデザイン-->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!--CSS-->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/lua.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+
+ <!--JavaScript-->
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <script src="/script/fengari-web.js"></script>
+ <!-- gsapの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <!-- prismの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-json.min.js"></script>
+ <!-- google fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+
+ <!--ページタイトル-->
+ <title>個人サイトをそのまんまアプリにする方法</title>
+
+ <!--ASノーナのファビコン-->
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">個人サイトをそのまんまアプリにする方法</li>
+   </ol>
+  </div>
+
+  <!--google検索-->
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く
+    ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="個人サイトをそのまんまアプリにする方法の目次を開く ▼"
+   data-close-text="個人サイトをそのまんまアプリにする方法の目次を閉じる ▲">個人サイトをそのまんまアプリにする方法の目次を開く
+   ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+
+  <p>プログレッシブウェブアプリのインストールや操作方法だけをご覧になりたい方は、目次に🌟マークが付いている部分をタップしてください。<br>
+   すぐにジャンプできますよ！</p>
+
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>個人サイトをそのまんまアプリにする方法</span></h1>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(130).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p> 「アプリを自分で作れたらなぁ…」<br>
+    インターネットで遊んでいる人なら、たいていの人がチラっと思ったことがあるのでは？<br>
+    大変恐縮ではございますが、私で良ければ道案内を致します。<br>
+    次のようにしてみてはいかがでしょう。</p>
+   <ol>
+    <li>自分でWebサイトを作る</li>
+    <li>作ったWebサイトを Progressive Web Application ( PWA ) プログレッシブウェブアプリにする</li>
+   </ol>
+   <p>では、プログレッシブウェブアプリの作り方をご紹介します🎵</p>
+  </div>
+
+
+  <h2>IT知識に関する推奨レベル</h2>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(131).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>「ハードウェア系」などと呼ばれる、パソコン本体の知識だけでは厳しいです。<br>
+    このページは次のような方を対象として書かれています。</p>
+   <ul>
+    <li>Webサイトの構造・公開方法の基礎的事項について把握しており、実際にやったことがある</li>
+    <li>フロントエンド技術・バックエンド技術について基礎的な知識がある</li>
+    <li>HTMLを読み書きできる</li>
+    <li>CSSもある程度は調べながら書ける</li>
+    <li>JavaScriptもある程度は調べながら書ける</li>
+    <li>スマホではなく、パソコンないしはパソコン同等の機能を持つデバイスを持っている</li>
+   </ul>
+  </div>
+
+  <p>ていうか、このページに来る人の大多数がこのくらいかと。<br>
+   いわゆる「開発者」と呼ばれる人たちですね。<br>
+   しかしプログレッシブウェブアプリそのものが新しい技術ですから、これから敷居が下がってくる可能性はあります。</p>
+
+  <h2>プログレッシブウェブアプリを作る手順</h2>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(132).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>この手のWebページはたいてい「PWAとは何ぞや？」といった能書きから始まります😆ww<br>
+    でも私の場合、いきなり手順から初めます。<br>
+    その後で具体的なコードを掲載しましょう。<br>
+    合間を縫って「PWAとは何ぞや？」というお話をさせて頂きます。</p>
+
+   <p>プログレッシブウェブアプリ（PWA）を作る手順は以下の通りです。<br>
+    簡単に概要を説明しますね。</p>
+  </div>
+
+  <dl>
+   <dt>1. ベーシックなウェブアプリを作成</dt>
+   <dd>HTML, CSS, JavaScriptを使って、基本的なウェブアプリを作成します。<br>
+    まずは、動作するシンプルなウェブサイトを構築しましょう。</dd>
+
+   <dt>2. HTTPSを使用</dt>
+   <dd>PWAはHTTPSでホストされる必要があります。<br>
+    SSL証明書を取得して、ウェブサイトをHTTPSで提供しましょう。</dd>
+
+   <dt>3. マニフェストファイルを作成</dt>
+   <dd><span class="codecolor">manifest.json</span> ファイルを作成して、アプリのメタデータを定義します。<br>
+    これには、アプリの名前、アイコン、テーマカラー、起動URLなどが含まれます。
+   </dd>
+
+   <dt>4. サービスワーカーを登録</dt>
+   <dd><span class="codecolor">service-worker.js</span> ファイルを作成し、ウェブアプリに登録します。<br>
+    これでオフライン機能やキャッシュ管理が可能になります。</dd>
+
+   <dt>5. マニフェストファイルとサービスワーカーをHTMLにリンク</dt>
+   <dd><span class="codecolor">index.html</span> ファイルの &lt;head&gt; セクションにリンクを追加して、マニフェストファイルとサービスワーカーを登録します。</dd>
+
+   <dt>6. テストとデプロイ</dt>
+   <dd>アプリをテストし、PWAとして正しく動作することを確認します。<br>
+    最後に、クラウドサービスを利用してデプロイします。</dd>
+  </dl>
+
+  <p>これが基本的なPWAの作成手順です。<br>
+   だから、何はともあれ自分でWebサイトを作れないと話が始まらないんだよね。</p>
+
+
+  <h3>1. ベーシックなウェブアプリを作成</h3>
+  <p> 【HTML, CSS, JavaScriptを使って、基本的なウェブアプリを作成します。まずは、動作するシンプルなウェブサイトを構築しましょう。】</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(133).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>これは説明不要でしょうね。<br>
+    コンテンツがなければアプリもクソもありません。<br>
+    参考までにお伝えしておくと、できる限り息の長い話題がお勧めですよ？<br>
+    そもそもHTML, CSS, JavaScriptを使って基本的なウェブアプリを作成すること自体が大変な作業です。</p>
+
+   <p>流行りのパソコンパーツではなく、パソコンの基礎知識<br>
+    流行のファッションではなく、無難な洋服選び<br>
+    話題のニュースではなく、国際社会と経済の関係</p>
+  </div>
+
+  <p>こんな感じで、話題の賞味期限が短いものは避けると良いです。<br>
+   旬が短い話題ばかりだと、一生懸命Webサイトを作っても3か月後には陳腐化しちゃうでしょ？</p>
+
+  <h4>プログレッシブウェブアプリ（PWA）とは</h4>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(134).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>プログレッシブウェブアプリ（PWA）とは、ウェブアプリケーションとネイティブアプリケーションの利点を組み合わせたものです。<br>
+    ウェブアプリケーションというのは、簡単に言えば「ホームページ」などです。<br>
+    ネイティヴアプリケーションというのは、巷でアプリアプリと呼ばれているものです。</p>
+  </div>
+
+  <dl>
+   <dt>インストール可能</dt>
+   <dd>PWAはユーザーがホーム画面に追加して、ネイティブアプリのように使用することができます。</dd>
+
+   <dt>オフライン対応</dt>
+   <dd>サービスワーカーを使用して、オフラインでも動作するように設計されています。ネットワークが不安定な状況でも使用できます。</dd>
+
+   <dt>レスポンシブ</dt>
+   <dd>さまざまなデバイスや画面サイズに対応するように設計されており、スマートフォン、タブレット、デスクトップなど、どんなデバイスでも快適に使えます。</dd>
+
+   <dt>プッシュ通知</dt>
+   <dd>プッシュ通知を利用して、ユーザーにリアルタイムで情報を提供することができます。</dd>
+
+   <dt>高速なパフォーマンス</dt>
+   <dd>キャッシュ機能を活用して、迅速にコンテンツを読み込むことができ、ユーザー体験を向上させます。</dd>
+
+   <dt>セキュア</dt>
+   <dd>HTTPSを必須とし、セキュリティを確保しています。</dd>
+
+   <dt>自動アップデート</dt>
+   <dd>バージョン管理と自動アップデートが行われ、ユーザーが常に最新の機能を利用できるようになっています。</dd>
+  </dl>
+
+  <p>PWAはこれらの特徴を活かして、ウェブの利便性とネイティブアプリのユーザーエクスペリエンスを融合させたアプリケーションです。<br>
+   でも全てを導入する必要もないんですよね。<br>
+   私のアプリの場合、例えばプッシュ通知は入れていません。<br>
+   プッシュされてくると鬱陶しいことがあるでしょ？</p>
+
+  <h3>2. HTTPSを使用</h3>
+  <p>【PWAはHTTPSでホストされる必要があります。SSL証明書を取得して、ウェブサイトをHTTPSで提供しましょう。】</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(135).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>と言いたいのですが、これはもう素直にクラウドサービスを使った方がラクですよ？<br>
+    言い変えると、クラウドサービスにデプロイすれば https を自動的に提供してくれます。<br>
+    そうではない状況はいくらでもあるのですが、あんまり掘り下げるとキリがないし、このWebページの話題から外れてしまいます。</p>
+
+   <p>私が使っているのは Google App Engine です。<br>
+    Google App Engineは自動的に無料のSSL証明書を生成し、HTTPSでサイトを提供するための設定を行ってくれます。<br>
+    閲覧者はHTTPSを使用して、安全にウェブサイトにアクセスすることができるのです。<br>
+    他のクラウドサービスなら、次のようなものがあります。</p>
+  </div>
+
+  <dl>
+   <dt>Firebase Hosting</dt>
+   <dd>デフォルトでSSL証明書が組み込まれており、すべてのコンテンツが安全に配信されます。</dd>
+
+   <dt>Cloud Run</dt>
+   <dd>自動的にHTTPSを有効にし、安全な接続を提供します。</dd>
+
+   <dt>Azure Static Web Apps</dt>
+   <dd>HTTPSをサポートしており、すべての静的コンテンツが安全に配信されます。</dd>
+
+   <dt>AWS Amplify</dt>
+   <dd>自動的にSSL証明書をプロビジョニングし、HTTPSを有効にします。</dd>
+  </dl>
+
+  <p>どのサービスを選ぶかは、他の機能やニーズに応じて決めると良いでしょう。<br>
+   ただクラウドは非常に注目を集めており、仕様が変わる可能性を否定できません。<br>
+   御自身でも調べるようにしてください。</p>
+
+  <h4>このページに関する注意事項</h4>
+  <p><span class="small-orange-text">ちょっと硬いけど、ここいらへんで注意書きをしておきますね？<br>
+    たとえ詳しそうな人が話していることでも、ネットにある情報は決して鵜呑みにしない。これは「鉄則」です。</span></p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(136).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>当Webサイト作成者は、例示を目的としてマークアップ及びプログラミング例を提供しており、明示または黙示にかかわらず、いかなる責任も負わないものとします。<br>
+    このページは、説明されているマークアップ及びプログラミング言語、手順を作成およびデバッグするために使用される各種ツールに読者が精通していることを前提にしています。<br>
+    このページは、特定の機能を説明するのに役立つ可能性がありますが、当Webサイト作成者がこれらの例を変更した上で、特定の要件を満たすために追加の機能を提供したり、システムを構築したりすることはできません。<br>
+    加えて、この例の手順に従う場合は、読者の各種ファイルを事前にバックアップすることを推奨いたします。</p>
+  </div>
+
+  <h3>3. マニフェストファイルを作成</h3>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(260).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>【manifest.json ファイルを作成して、アプリのメタデータを定義します。これには、アプリの名前、アイコン、テーマカラー、起動URLなどが含まれます。】</p>
+   <p>ここからいよいよコードの記載です。<br>
+    manifest.json はウェブアプリの名刺のようなものです。<br>
+    アプリの名前、アイコン、テーマカラーなどを定義し、ホーム画面に追加するときの設定とか、アプリとして表示する際の情報を提供します。<br>
+    つまり、ウェブアプリがどんなものか、どう見えるかをブラウザに教える役割を持っています。<br>
+    さっそく見ていきましょう。</p>
+  </div>
+
+  <p class="codegra" id="manifest_json">PWAのメタデータを定義するmanifest.json</p>
+  <div class="code-container">
+   <pre><code class="language-json">
+{
+ "name": "fein's App",
+ "short_name": "fein's App",
+ "description": "fein has transformed a static website with a simple design & simple front-end technology into a progressive web app.",
+ "start_url": "/index.html",
+ "display": "standalone",
+ "background_color": "#ffffff",
+ "theme_color": "#000000",
+ "icons": [
+  {
+   "src": "/icons/kyabiaicon.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/icons/rikuicon.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ]
+}
+
+</code></pre>
+  </div>
+
+  <p><span class="codecolor">"name": "fein's App",</span><br>
+   アプリのフルネームです。<br>
+   この名前はアプリストアやインストール時に表示されます。</p>
+
+  <p><span class="codecolor">"short_name": "fein's App",</span><br>
+   アプリの短い名前です。<br>
+   ホームスクリーンに追加された際に表示される名前です。</p>
+
+  <p><span class="codecolor">"description": "fein has transformed a static website with a simple design & simple
+    front-end technology into a progressive web app.",</span><br>
+   アプリの説明文です。<br>
+   アプリの目的や特徴について簡単に説明しています。</p>
+
+  <p><span class="codecolor">"start_url": "/index.html",</span><br>
+   アプリが起動する際に最初に読み込むURLです。<br>
+   通常はアプリのホームページが指定されます。</p>
+
+  <p><span class="codecolor">"display": "standalone",</span><br>
+   アプリの表示スタイルを設定します。<br>
+   <span class="codecolor">standalone</span> は、アプリがネイティブアプリのように独立して表示されることを意味します。
+  </p>
+
+  <p><span class="codecolor">"background_color": "#ffffff",</span><br>
+   アプリの背景色を指定します。<br>
+   初期画面の背景色として使用されます。</p>
+
+  <p><span class="codecolor">"theme_color": "#000000",</span><br>
+   アプリのテーマカラーを指定します。<br>
+   ブラウザやデバイスのUIに反映される色です。</p>
+
+  <p><span class="codecolor">"icons": [</span><br>
+   アプリのアイコンを指定します。<br>
+   以下に複数のアイコンを指定しています。</p>
+
+  <p><span class="codecolor">{</span><br>
+   <span class="codecolor">"src": "/icons/kyabiaicon.png",</span><br>
+   <span class="codecolor">"sizes": "192x192",</span><br>
+   <span class="codecolor">"type": "image/png"</span><br>
+   <span class="codecolor">},</span><br>
+   192x192ピクセルのPNG画像がアイコンとして使われます。
+  </p>
+
+  <p><span class="codecolor">{</span><br>
+   <span class="codecolor">"src": "/icons/rikuicon.png",</span><br>
+   <span class="codecolor">"sizes": "512x512",</span><br>
+   <span class="codecolor">"type": "image/png"</span><br>
+   <span class="codecolor">}</span><br>
+   512x512ピクセルのPNG画像がアイコンとして使われます。<br>
+   複数サイズのアイコンを指定することで、異なるデバイスや表示状況に対応できます。
+  </p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(261).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>manifest.json は、PWA（プログレッシブウェブアプリのことだよ？）のルートディレクトリに置くのが一般的です。<br>
+    多くの静的webサイトの場合、index.html や他の主要なファイルと同じディレクトリに配置します。<br>
+    別の場所でも動作すると思いますが、上述したように新しい技術ですから、セオリーに習った方が良いと思います。<br>
+    次のような理由があるんだよね。</p>
+  </div>
+
+  <dl>
+   <dt>アクセスの容易さ</dt>
+   <dd>manifest.json ファイルは、ブラウザがPWAとしてアプリを認識するために読み込む必要があります。<br>
+    ルートディレクトリに配置することで、<span class="codecolor">&lt;link rel=&quot;manifest&quot;
+     href=&quot;/manifest.json&quot;&gt;</span> タグを使って簡単に参照できます。</dd>
+
+   <dt>標準的な配置</dt>
+   <dd>多くのガイドラインやドキュメントが、manifest.json をルートディレクトリに配置することを推奨しています。<br>
+    他の開発者がプロジェクトを理解しやすくなります。</dd>
+
+   <dt>簡潔な構造</dt>
+   <dd>ファイル構造がシンプルで分かりやすくなります。<br>
+    PWAの重要なファイルが一箇所に集まっているため、管理や更新が容易です。</dd>
+  </dl>
+
+  <p>それから index.html ファイルで manifest.json をリンクすると、ブラウザは manifest.json を正しく読み込み、PWAとしての機能を提供することができます。</p>
+
+  <div class="scoth-dropdown">
+   <button onclick="toggleDropdown('menu1')">参考サイトと関連ページ</button>
+   <div class="scoth-dropdown-content" id="menu1"></div>
+  </div>
+
+  <script>
+   const luaCode1 = `
+        local items = {
+            {name = "Progressive Web Apps:Empowering Your PWA：Google公式ページ", link = "https://developers.google.com/codelabs/pwa-training/pwa05--empowering-your-pwa#0"},
+            {name = "プログレッシブ Web アプリ (PWA) の概要：Microsoft公式ページ", link = "https://learn.microsoft.com/ja-jp/microsoft-edge/progressive-web-apps-chromium/"},
+            {name = "Webサイトの共同制作とGitHub：当サイトのページ", link = "https://fein-sites-dev1.ew.r.appspot.com/contents/github.html"},
+            {name = "ファンサイト制作のためのアトリエ：当サイトのページ", link = "https://fein-sites-dev1.ew.r.appspot.com/another-eden/atelier_studio.html"}
+        }
+
+        local dropdownHtml = ""
+        for _, item in ipairs(items) do
+            dropdownHtml = dropdownHtml .. '<a href="' .. item.link .. '">' .. item.name .. '</a>'
+        end
+
+        return dropdownHtml
+    `;
+
+   const L1 = fengari.load(luaCode1);
+   const result1 = L1();
+
+   document.getElementById('menu1').innerHTML = result1;
+
+   function toggleDropdown(menuId) {
+    var menu = document.getElementById(menuId);
+    if (menu.style.display === "block") {
+     menu.style.opacity = "0";
+     setTimeout(function () {
+      menu.style.display = "none";
+     }, 500);
+    } else {
+     menu.style.display = "block";
+     setTimeout(function () {
+      menu.style.opacity = "1";
+     }, 10);
+    }
+    event.stopPropagation();
+   }
+
+   document.addEventListener("click", function () {
+    var menus = document.getElementsByClassName("scoth-dropdown-content");
+    for (var i = 0; i < menus.length; i++) {
+     if (menus[i].style.display === "block") {
+      menus[i].style.opacity = "0";
+      setTimeout(function (menu) {
+       menu.style.display = "none";
+      }, 500, menus[i]);
+     }
+    }
+   });
+
+   var dropdowns = document.getElementsByClassName('scoth-dropdown');
+   for (var i = 0; i < dropdowns.length; i++) {
+    dropdowns[i].addEventListener("click", function (event) {
+     event.stopPropagation();
+    });
+   }
+  </script>
+
+  <p>GoogleとMicrosoftの公式ページは少々読みにくいですが…お時間があれば目を通すことをお勧めします。</p>
+
+  <h4>個人サイトをアプリとしてリリースできるかも？！</h4>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(265).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>PWAは言葉通り、アプリです。<br>
+    だからアプリとしてリリースできるのですよ。<br>
+    リリース先のストアには次のものがあります。</p>
+
+   <ul>
+    <li>Microsoft Store</li>
+    <li>Google Play</li>
+    <li>Apple Store</li>
+    <li>Meta Quest Store</li>
+   </ul>
+  </div>
+
+  <p>特にGoogle PlayやApple Storeはお馴染みですよね？<br>
+   これらのストアではPWAをアプリとして公開し、ユーザーがインストールして利用可能にできます。<br>
+   プログレッシブウェブアプリは、マジもんのアプリなんです🥱<br>
+   アプリとしての要件を満たして審査を通しつつ、開発者アカウントを作って費用を支払えば、個人で作ったWebサイトをアプリ配信できちゃいます。<br>
+   そういう意味でも、しっかりとWebサイトを作って頂くのが最優先ですよね。</p>
+
+  <h3>4. サービスワーカーを登録</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(266).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>【service-worker.js ファイルを作成し、ウェブアプリに登録します。これでオフライン機能やキャッシュ管理が可能になります。】</p>
+   <p>次はJavaScriptです。<br>
+    Service-worker.jsは、ウェブアプリをオフラインでも使えるようにするスクリプトです。<br>
+    ウェブページをバックグラウンドで操作し、ネットが無くても以前見たページを表示したり、プッシュ通知を送ったりできます。</p>
+  </div>
+
+  <p class="codegra" id="service-worker_js">オフラインキャッシュとバックグラウンドタスクを管理するservice-worker.js</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+const CACHE_NAME = 'fein-cache-v1';
+const urlsToCache = [
+ '/index.html'
+];
+
+self.addEventListener('install', event => {
+ event.waitUntil(
+  caches.open(CACHE_NAME)
+   .then(cache => {
+    return cache.addAll(urlsToCache);
+   })
+ );
+});
+
+self.addEventListener('fetch', event => {
+ event.respondWith(
+  caches.match(event.request)
+   .then(response => {
+    return response || fetch(event.request);
+   })
+ );
+});
+
+</code></pre>
+  </div>
+
+  <p>上述したように、このコードはウェブアプリがオフラインでも動作できるようにするためのものです。<br>
+   サービスワーカーは、ブラウザのバックグラウンドで実行され、キャッシュを管理して、ウェブページのリソースをオフラインでも提供できるようにします。<br>
+   とは言え、私はオフライン動作機能については、さほど重視していません。<br>
+   だからキャッシュするURLのリストも index.html のみ。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(271).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>あまり多くをキャッシュさせてもユーザーのデバイスに負担がかかるし、スマホの通信は常に通ってるもんでしょ？<br>
+    それより、ブラウザのUIではなくアプリのUIとして表示させることが優先順位高いと考えていますね。<br>
+    単純に見やすく、コンテンツとしてのクオリティーが高いからです。<br>
+    加えて、プログレッシブウェブアプリの実装方法は、マルチクラウドを視野に入れると身動きが取りやすいということもあるよね。</p>
+  </div>
+
+  <dl>
+   <dt>キャッシュ名の設定</dt>
+   <dd><span class="codecolor">const CACHE_NAME = 'fein-cache-v1';</span><br>
+    キャッシュを識別するための名前です。<br>
+    バージョン管理に使います。
+   </dd>
+
+   <dt>キャッシュするURLのリスト</dt>
+   <dd><span class="codecolor">const urlsToCache = [<br>
+     '/index.html'<br>];</span><br>
+    キャッシュに追加するリソースのURLをリスト化しています。<br>
+    今回は <span class="codecolor">index.html</span>だけをキャッシュします。</dd>
+
+   <dt>インストールイベントのリスナー</dt>
+   <dd><span class="codecolor">self.addEventListener('install', event => {<br> event.waitUntil(<br>
+     caches.open(CACHE_NAME)<br> .then(cache => {<br> return cache.addAll(urlsToCache);<br> })<br>
+     );<br>});</span><br>サービスワーカーがインストールされるときに発生するイベントです。</dd>
+   <dd>- <span class="codecolor">event.waitUntil</span>：インストールが完了するまで待機させます。</dd>
+   <dd>- <span class="codecolor">caches.open(CACHE_NAME)</span>：指定されたキャッシュ名でキャッシュを開きます。</dd>
+   <dd>- <span class="codecolor">cache.addAll(urlsToCache)</span>：リスト内のすべてのURLをキャッシュに追加します。</dd>
+
+   <dt>フェッチイベントのリスナー</dt>
+   <dd><span class="codecolor">self.addEventListener('fetch', event => {<br> event.respondWith(<br>
+     caches.match(event.request)<br> .then(response => {<br> return response || fetch(event.request);<br> })<br>
+     );<br>});</span><br>
+    ウェブページのリソースがリクエストされるときに発生するイベントです。</dd>
+   <dd>- <span class="codecolor">event.respondWith</span>：カスタムレスポンス（ここではキャッシュされたリソース）を返すために使用されます。</dd>
+   <dd>- <span class="codecolor">caches.match(event.request)</span>：リクエストされたリソースがキャッシュにあるかどうかをチェックします。</dd>
+   <dd>- <span class="codecolor">response</span> がキャッシュに存在する場合はそれを返し、存在しない場合はネットワークからリクエストします。</dd>
+  </dl>
+
+  <p>私も様子を見つつ、あるいは古いキャッシュを削除するスクリプトとかも入れると良いだろうなーと思っているところです。<br>
+   そもそもindex.html 以外のURLもキャッシュすることで、オフラインでもより多くのページやリソースを利用できるようになるのですから。<br>
+   オンライン時の高速なページ読み込みや、ネットワーク負荷の軽減も期待できるでしょう。<br>
+   それらを鑑みた上で、利用者のストレージを圧迫しないバランスを考えていくわけです。<br>
+   普通にやるなら、スタイルシート（CSS）、JavaScriptファイル、画像ファイルなどもキャッシュすることをおすすめします。</p>
+
+  <h4>プログレッシブウェブアプリ（PWA）の将来性</h4>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(272).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>PWAは比較的新しい技術であり、ウェブアプリケーションの開発とユーザー体験を大きく進化させるものとして注目されています。<br>
+    特に次のようなポイントがあるでしょうね。</p>
+
+   <dl>
+    <dt>ユーザーエクスペリエンスの向上</dt>
+    <dd>PWAはネイティブアプリのようにスムーズでレスポンシブな操作感を提供しつつ、ウェブのアクセス性を維持しています。<br>
+     これが本当に大切なんですよ。<br>
+     ウェブのアクセス性を維持できるのです。<br>
+     これによって、ユーザーはデバイスに依存せずに高品質な体験を享受できます。</dd>
+
+    <dt>アップデートの柔軟性</dt>
+    <dd>PWAはウェブベースのため、開発者が更新を行うとユーザーは自動的に最新バージョンを利用できます。<br>
+     ユーザーはアプリのアップデートに付き合うことなく、常に最新の機能やセキュリティ対策が適用されます。<br>
+    </dd>
+
+    <dt>マルチプラットフォーム対応</dt>
+    <dd>PWAはブラウザさえあれば、どのプラットフォームでも同じように動作します。<br>
+     開発者は一度の開発で多くのデバイスに対応可能です。<br>
+     これはまさに、いま私がやっていることです！</dd>
+   </dl>
+  </div>
+
+  <p>これらの理由からPWAは非常に先進的であり、従来のウェブアプリやネイティブアプリの制約を克服する新しいアプローチとして注目を集めているんですよね。</p>
+
+  <h3>5. マニフェストファイルとサービスワーカーをHTMLにリンク</h3>
+  <p>【index.html ファイルの &lt;head&gt; セクションにリンクを追加して、マニフェストファイルとサービスワーカーを登録します。】</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(279).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>ここはちょっと説明が必要なんだよ…<br>
+    基本的には、index.htmlだけにマニフェストファイルとサービスワーカーのリンクを追加すれば十分です。<br>
+    なぜなら、サービスワーカーは一度インストールされると、指定したスコープ内の全てのページに対して機能するからです。<br>
+    ただし、注意すべきポイントがいくつかあります。</p>
+  </div>
+
+  <p><strong>スコープの設定</strong><br>
+   サービスワーカーのスコープ（影響範囲）は、サービスワーカーの登録時に指定できます。<br>
+   通常はサービスワーカーが置かれたディレクトリとそのサブディレクトリがスコープに含まれます。例えば、index.htmlに次のように記述する場合を考えてみましょう。</p>
+
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;script&gt;
+ if (&#39;serviceWorker&#39; in navigator) {
+  navigator.serviceWorker.register(&#39;/service-worker.js&#39;)
+   .then(registration =&gt; {
+    console.log(&#39;ServiceWorker registration successful with scope: &#39;, registration.scope);
+   })
+   .catch(error =&gt; {
+    console.log(&#39;ServiceWorker registration failed: &#39;, error);
+   });
+ }
+&lt;/script&gt;
+
+</code></pre>
+  </div>
+
+  <p>この場合、/service-worker.js が置かれているディレクトリとそのサブディレクトリがスコープに含まれます。</p>
+
+  <p><strong>2. マニフェストファイルのリンク</strong><br>
+   マニフェストファイルはアプリの外観や動作に関するメタデータを提供するため、主要なHTMLファイル（例えば、index.html）にリンクを追加すればOKです。<br>
+   ほとんどのブラウザは、一度マニフェストファイルを読み込めば、その設定をすべてのページに適用します。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(250).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>ここまでで、index.html にマニフェストファイルとサービスワーカーのリンクを追加すれば、他のページにも適用されることが分かります。<br>
+    ただし、サービスワーカーのスコープを確認して、必要に応じて適切に設定することが重要になってくるんです。<br>
+    サービスワーカーの「スコープ」とは、サービスワーカーが管理・操作できる範囲（URLの範囲）のことを指します。<br>
+    簡単に言うと、サービスワーカーが影響を与えることができるウェブページやリソースの範囲です。<br>
+    ちょっと説明しますね？</p>
+  </div>
+
+  <dl>
+   <dt>スコープの範囲</dt>
+   <dd>サービスワーカーのスコープは、サービスワーカーがどのディレクトリやファイルに対して動作するかを決定します。</dd>
+   <dd>例えば、<span class="codecolor">/service-worker.js</span> がルートディレクトリ（<span
+     class="codecolor">/</span>）に置かれている場合、そのスコープはルートディレクトリ以下の全てのファイルとディレクトリになります。</dd>
+
+   <dt>スコープの設定</dt>
+   <dd>サービスワーカーの登録時にスコープを指定することができます。</dd>
+  </dl>
+
+  <p>次の例では、スコープを明示的に設定しています。</p>
+
+  <div class="code-container">
+   <pre><code class="language-javascript">
+navigator.serviceWorker.register('/service-worker.js', { scope: '/' })
+  .then(registration => {
+    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+  })
+  .catch(error => {
+    console.log('ServiceWorker registration failed: ', error);
+  });
+
+</code></pre>
+  </div>
+
+  <p>ここではスコープをルートディレクトリに設定しているため、ルートディレクトリ以下のすべてのファイルに対してサービスワーカーが機能します。<br>
+   サービスワーカーを一度登録すれば、そのスコープ内の全てのページで機能するため、効率的にキャッシュ管理やオフライン機能を提供できますよね。<br>
+   また、スコープ内のリソースがキャッシュされることで、オフライン時でも素早くページが読み込まれます。<br>
+   しかしこのスコープが広すぎると、不要なファイルやリソースまでキャッシュしてしまう可能性があるため、適切な範囲を設定することが重要ということになります。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(251).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>ここ、けっこう難しいのですよ。<br>
+    私もどうするのが一番良いのか、迷っています。<br>
+    とりあえず今は、全てのHTMLファイルにマニフェストファイルとサービスワーカーをリンクしています。<br>
+    そうやって多くのHTMLファイルに同じコードを追加してしまったとしても、大きな問題は起きないからです。<br>
+    次のようなことを考慮しているんだよね。</p>
+  </div>
+
+  <dl>
+   <dt>冗長なコード</dt>
+   <dd>すべてのHTMLファイルに同じコードが追加されると、冗長になるでしょうね。<br>
+    でも、機能的には問題ありません。</dd>
+
+   <dt>一貫性の確保</dt>
+   <dd>この方法で、すべてのページが確実にサービスワーカーとマニフェストファイルを利用できるようになります。</dd>
+
+   <dt>パフォーマンス</dt>
+   <dd>多少のパフォーマンスに影響があるかもしれませんが、今のブラウザはこの程度のスクリプトの重複を効率的に処理します。</dd>
+  </dl>
+
+  <p>あるいは、index.html のみに追加して他のページでは削除しても良いかもしれませんね？<br>
+   しかし、すべてのHTMLファイルに追加されていても、正常に動作することが期待されます。<br>
+   まぁここに関しては、今後の課題にしましょう。<br>
+   ではでは、実際のソースコードを見ていきます。</p>
+
+  <p class="codegra" id="pwahead">PWAのメタデータを設定し、サービスワーカーを登録するためのコード</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;head&gt;
+&lt;!--他のhead要素は省略--&gt;
+ &lt;link rel=&quot;manifest&quot; href=&quot;/manifest.json&quot;&gt;
+
+ &lt;script&gt;
+  if (&#39;serviceWorker&#39; in navigator) {
+   navigator.serviceWorker.register(&#39;/service-worker.js&#39;)
+    .then(registration =&gt; {
+     console.log(&#39;ServiceWorker registration successful with scope: &#39;, registration.scope);
+    })
+    .catch(error =&gt; {
+     console.log(&#39;ServiceWorker registration failed: &#39;, error);
+    });
+  }
+ &lt;/script&gt;
+&lt;!--他のhead要素は省略--&gt;
+&lt;/head&gt;
+
+</code></pre>
+  </div>
+
+  <p>
+   このコードはウェブアプリのマニフェストファイルをリンクし、サービスワーカーを登録するためのものです。<br>
+   サービスワーカーの登録が成功すると、ブラウザのコンソールに成功メッセージが表示され、失敗した場合はエラーメッセージが表示されます。
+  </p>
+
+  <p>
+   <span class="codecolor">&lt;link rel="manifest" href="/manifest.json"&gt;</span><br>
+   ブラウザに対してウェブアプリの情報（例えば、アイコンや名前）を提供する <span class="codecolor">manifest.json</span> ファイルへのリンクを設定しています。<br>
+   ユーザーがウェブアプリをホーム画面に追加する際、アイコンやアプリ名が正しく表示されます。
+  </p>
+
+  <p>
+   次に、<span class="codecolor">&lt;script&gt;から &lt;/script&gt;</span> で囲まれている部分は、サービスワーカーを登録するためのスクリプトです。<br>
+   サービスワーカーは、オフライン機能やプッシュ通知などを提供するための背景スクリプトです。<br>
+   <span class="codecolor">if ('serviceWorker' in navigator)</span>
+   は、ブラウザがサービスワーカーをサポートしているかどうかを確認しています。<br>
+   サポートされている場合にのみ、以下のコードが実行されます。
+  </p>
+
+  <p>
+   <span class="codecolor">navigator.serviceWorker.register('/service-worker.js')</span><br>
+   この行は、<span class="codecolor">/service-worker.js</span>
+   ファイルをサービスワーカーとして登録しています。<br>
+   ここでサービスワーカーがブラウザにインストールされ、管理できるようになります。
+  </p>
+
+  <p>
+   <span class="codecolor">.then(registration =&gt; {<br>
+    &nbsp;&nbsp;console.log('ServiceWorker registration successful with scope: ', registration.scope);<br>
+    })</span><br>
+   サービスワーカーの登録が成功すると、この部分が実行されます。<br>
+   <span class="codecolor">console.log</span> は、登録が成功したことと、そのスコープ（適用範囲）をブラウザのコンソールに表示します。
+  </p>
+
+  <p>
+   <span class="codecolor">.catch(error =&gt; {<br>
+    &nbsp;&nbsp;console.log('ServiceWorker registration failed: ', error);<br>
+    })</span><br>
+   サービスワーカーの登録が失敗した場合、この部分が実行されます。<br>
+   <span class="codecolor">console.log</span> は、失敗したこととそのエラー内容をブラウザのコンソールに表示します。
+  </p>
+
+  <p>このセクションは少し長引いてしまったね。<br>
+   あともう一息です。</p>
+
+  <h3>6. テストとデプロイ</h3>
+  <p>【アプリをテストし、PWAとして正しく動作することを確認します。最後に、クラウドサービスを利用してデプロイします。】</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(252).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>初めてアプリ化するときには、ちゃんとローカルサーバを立てたほうが良いかな。<br>
+    <a href="/contents/pynote.html">Webサイト制作の効率を上げるPython</a>というページに「PythonによるHTTPサーバー構築」というセクションがあるので、そちらを参照してください。<br>
+    <a href="/contents/vscode.html">Visual Studio Codeを触ってみよう</a>というページにある Live Server はあくまでも確認用みたいなもんだからさ。<br>
+    しっかりとブラウザで動きをチェックしたほうが良いということです。<br>
+    いったんやってしまえば、次からは Live Server だけでいけるよ。
+   </p>
+  </div>
+
+  <h2 id="Progressive_Web_Application">🌟プログレッシブウェブアプリを動かしてみよう</h2>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(253).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>普通のアプリと変わらないから、特に難しいことはないですよ？<br>
+    ここまで長々と書いてきた内容は、開発者側の都合です。<br>
+    プログレッシブウェブアプリにおいて、スマホとパソコンで共通しているのは、ブラウザから直接インストールできる点ですかね。<br>
+    いちいちApple storeとかに行かなくて良いです🥱<br>
+    アンインストールも自由。<br>
+    どっちみち普通のWebサイトとして機能するのだから、より広い画面で見たい時なんかにインストールしていただければ。</p>
+  </div>
+
+  <p>このサイトはソースコードやVS Codeの解説、加えてアナザーエデンのグラスタ表あたりに来訪者が多いです。<br>
+   特にソースコードの解説ページは、ブラウザで見るのが窮屈なケースもあるでしょうから。<br>
+   ユーザーの利便性を向上させるための実装ですよね。</p>
+
+  <h3>🌟スマホから見たプログレッシブウェブアプリ</h3>
+  <p>初めて私のサイトに来訪された方は、あるいはインストールを促すポップアップが出る可能性もあります。<br>
+   その時はとりあえずキャンセルで良いと思う。</p>
+  <div class="content">
+   <img src="/contents/itimages/pwainfo/スマホpwa1.jpg" alt="スマホpwa1" class="biggraphic fade-in-out">
+  </div>
+  <p>課題に感じているのは、後からインストールする場合です。<br>
+   プログレッシブウェブアプリそのものが新しい技術であるため、ブラウザの操作も今後は変わっていく可能性があります。<br>
+   現在の操作もちょっと分かりにくいよね…<br>
+   ホームへショートカットを作る機能をタップすると、インストールとショートカットの両方の選択肢が出てくる。</p>
+
+  <div class="content">
+   <img src="/contents/itimages/pwainfo/スマホpwa2.jpg" alt="スマホpwa2" class="biggraphic fade-in-out">
+  </div>
+  <p>このサイトに限らず、現代ではモバイルデバイスからのアクセスが圧倒的に多いはずです。<br>
+   だからレスポンシブデザインが必須条件なわけで。<br>
+   いずれにしても画面は小さいので、狭苦しいと感じる方はインストールしてくださいな。<br>
+   スマホの容量はほっとんど食わないようにしているので。</p>
+
+  <h3>🌟パソコンから見たプログレッシブウェブアプリ</h3>
+  <p>パソコンのアプリ、というかソフトウェアとしてインストールもできます。<br>
+   プログレッシブウェブアプリへ対応したWebサイトへアクセスすると、アドレスバーの右側にタイルみたいなボタンが出てくるのですよ。</p>
+  <div class="content">
+   <img src="/contents/itimages/pwainfo/PCインストール時.png" alt="PCインストール時" class="biggraphic fade-in-out">
+  </div>
+
+  <p>あとはクリックをポンポンしていくだけでインストールできます。<br>
+   普段からパソコンに慣れている方なら、余裕過ぎると思う。<br>
+   Webサイトを見やすくするために額縁を取り付けるようなイメージですよね。</p>
+
+  <div class="content">
+   <img src="/contents/itimages/pwainfo/PCインストール前.png" alt="PCインストール前" class="biggraphic fade-in-out">
+  </div>
+
+  <p>マジのソフトウェアとして動作するので、スタートボタンやタスクバーにも登録できちゃいます。<br>
+   でもプログレッシブウェブアプリの本性は静的webサイトなんだよ。</p>
+
+  <div class="content">
+   <img src="/contents/itimages/pwainfo/PCインストールからスタートボタン.png" alt="PCインストールからスタートボタン" class="biggraphic fade-in-out">
+  </div>
+
+  <p>パソコンの場合、全画面表示なんかも簡単にできますよね。<br>
+   だからインストールしてもスマホほど利便性の向上は感じられないかも。</p>
+
+  <div class="content">
+   <img src="/contents/itimages/pwainfo/PCインストール後.png" alt="PCインストール後" class="biggraphic fade-in-out">
+  </div>
+
+  <p>ちなみにアプリのサイズもマウスで簡単に調整できます。<br>
+   このサイトはレスポンシブデザインなので、ウィンドウを縦長にすれば自動的にモバイルデバイスとしての表示形態に切り替わります。</p>
+
+  <h5>これからも記載は増えるだろうなー</h5>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(254).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+
+   <p>プログレッシブウェブアプリは、まだまだこれからの技術です。<br>
+    中にはネイティヴアプリが減っていってプログレッシブウェブアプリが増えていくなんていう専門家もいるよね。<br>
+    実際にどうなるかは分からないけど、開発者側にもユーザー側にもメリットがいっぱいあるから、発展していくと見て間違いないでしょう。<br>
+    このページも、どんどん拡張していくことになるでしょうね？<br>
+    あんまり大きなページになってきたら、またどこかで区切って分けていくさ。</p>
+  </div>
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/pwa.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's
+     portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

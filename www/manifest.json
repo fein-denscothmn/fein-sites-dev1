@@ -1,6 +1,7 @@
 {
- "name": "fein's personal App",
- "short_name": "fein's personal App",
+ "name": "fein's App",
+ "short_name": "fein's App",
+ "description": "fein has transformed a static website with a simple design & simple front-end technology into a progressive web app.",
  "start_url": "/index.html",
  "display": "standalone",
  "background_color": "#ffffff",

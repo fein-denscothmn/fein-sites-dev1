@@ -3,19 +3,19 @@
 <html lang="ja">
 
 <head>
-<link rel="manifest" href="/manifest.json">
+ <link rel="manifest" href="/manifest.json">
 
-<script>
+ <script>
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(registration => {
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      })
-      .catch(error => {
-        console.log('ServiceWorker registration failed: ', error);
-      });
+   navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+     console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    })
+    .catch(error => {
+     console.log('ServiceWorker registration failed: ', error);
+    });
   }
-</script>
+ </script>
 
  <meta charset="UTF-8">
  <title>個人サイトのホスティングとコンテンツ作成</title>
@@ -143,6 +143,7 @@
     <p><a href="/contents/sitestep.html" class="custom-link">個人サイトの「やることリスト」</a></p>
     <p><a href="/contents/vscode.html" class="custom-link">Visual Studio Codeを触ってみよう</a></p>
     <p><a href="/contents/github.html" class="custom-link">Webサイトの共同制作とGitHub</a></p>
+    <p><a href="/contents/pwa.html" class="custom-link">個人サイトをそのまんまアプリにする方法</a></p>
     <p><a href="/contents/x_exodus.html" class="custom-link">X（旧：Twitter）の変化にどう対処するか</a></p>
     <p><a href="/contents/protect.html" class="custom-link">X（旧：Twitter）のAIからイラストなどを守る試み</a></p>
     <p><a href="/contents/no_copying.html" class="custom-link">AI学習や無断転載を防ぐプログラムの小ネタ集</a></p>

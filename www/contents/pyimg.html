@@ -3,19 +3,19 @@
 <html lang="ja">
 
 <head>
-<link rel="manifest" href="/manifest.json">
+ <link rel="manifest" href="/manifest.json">
 
-<script>
+ <script>
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(registration => {
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      })
-      .catch(error => {
-        console.log('ServiceWorker registration failed: ', error);
-      });
+   navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+     console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    })
+    .catch(error => {
+     console.log('ServiceWorker registration failed: ', error);
+    });
   }
-</script>
+ </script>
 
  <meta charset="UTF-8">
  <title>個人サイト用の画像をまとめて操作するPython</title>
@@ -645,10 +645,72 @@ print("HTMLコードを生成しました。")
   </div>
   <p>最後に、「HTMLコードを生成しました。」というメッセージを表示します。</p>
 
-
   <p>このようにして、filelist.txt に書かれたファイル名を使って、画像タグを含むHTMLファイルが生成されます。<br>
    ちょっとスクリプトを変えれば、filelist.txt に書かれたファイル名を使って、PDFへのリンクを含むHTMLファイルを生成させることも可能です。</p>
 
+  <h2>画像同士を結合して1つの画像にする</h2>
+  <p>大したことない作業に思えるでしょ？<br>
+   でも、これをペイントなり画像ソフトウェアでやるのは、意外とめんどうなんだよね。<br>
+   いちいちソフトを起動してマウス操作でやることを考えると気が重くなります…</p>
+
+  <p class="codegra" id="photo_sum_py">画像同士を結合するphoto_sum.py</p>
+  <div class="code-container">
+   <pre><code class="language-python">
+from PIL import Image
+
+image1 = Image.open(r'C:\Users\ユーザー名\Downloads\photos001\カルナジェネシスの影勝利.jpg')
+image2 = Image.open(r'C:\Users\ユーザー名\Downloads\photos001\カルナジェネシスの影冒険の書.jpg')
+
+total_width = image1.width
+total_height = image1.height + image2.height
+
+combined_image = Image.new('RGB', (total_width, total_height))
+
+combined_image.paste(image1, (0, 0))
+combined_image.paste(image2, (0, image1.height))
+
+combined_image.save('combined_image1.jpg')
+            </code></pre>
+  </div>
+
+  <p><span class="codecolor">1. from PIL import Image</span><br>
+   PIL（Python Imaging Library）というライブラリをインポートします。<br>
+   このライブラリを使って画像の操作を行います。</p>
+
+  <p><span class="codecolor">2. image1 = Image.open(r'C:\Users\ユーザー名\Downloads\photos001\カルナジェネシスの影勝利.jpg')</span><br>
+   1つ目の画像ファイルを開きます。<br>
+   この画像ファイルのパスを指定します。</p>
+
+  <p><span class="codecolor">3. image2 =
+    Image.open(r'C:\Users\ユーザー名\Downloads\photos001\カルナジェネシスの影冒険の書.jpg')</span><br>
+   2つ目の画像ファイルを開きます。<br>
+   同様に、画像ファイルのパスを指定します。</p>
+
+  <p><span class="codecolor">4. total_width = image1.width</span><br>
+   新しい画像の幅を決めます。<br>
+   今回は、2つの画像が同じ幅であると仮定し、1つ目の画像の幅を新しい画像の幅に設定します。</p>
+
+  <p><span class="codecolor">5. total_height = image1.height + image2.height</span><br>
+   新しい画像の高さを決めます。<br>
+   2つの画像の高さの合計を新しい画像の高さに設定します。</p>
+
+  <p><span class="codecolor">6. combined_image = Image.new('RGB', (total_width, total_height))</span><br>
+   新しい画像を作成します。<br>
+   RGBモードで、指定した幅と高さの空の画像を作ります。</p>
+
+  <p><span class="codecolor">7. combined_image.paste(image1, (0, 0))</span><br>
+   1つ目の画像を新しい画像の上部（左上隅）に貼り付けます。</p>
+
+  <p><span class="codecolor">8. combined_image.paste(image2, (0, image1.height))</span><br>
+   2つ目の画像を1つ目の画像の下に貼り付けます。<br>
+   位置は1つ目の画像の高さだけ下になります。</p>
+
+  <p><span class="codecolor">9. combined_image.save('combined_image1.jpg')</span><br>
+   結合した新しい画像を保存します。<br>
+   ファイル名を指定して保存します。</p>
+
+  <p>これはゲームのスクショを掲示する時に使ってるやつですね。<br>
+   凄い量の画像があるのですから、そんなのを1枚1枚並べてたら…年が明けてしまいますよ？</p>
 
   <!-- ●ここから人間用のフッター● -->
   <hr id="feinhr">

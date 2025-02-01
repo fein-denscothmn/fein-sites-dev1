@@ -2,19 +2,19 @@
 <html lang="ja">
 
 <head>
-<link rel="manifest" href="/manifest.json">
+ <link rel="manifest" href="/manifest.json">
 
-<script>
+ <script>
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(registration => {
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      })
-      .catch(error => {
-        console.log('ServiceWorker registration failed: ', error);
-      });
+   navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+     console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    })
+    .catch(error => {
+     console.log('ServiceWorker registration failed: ', error);
+    });
   }
-</script>
+ </script>
 
  <meta charset="UTF-8">
  <title>ファンサイト制作のためのアトリエ</title>
@@ -446,6 +446,7 @@
        複数画像をまとめて80%小さくする<br>
        image_aspect_compression_small20.pyは数字を変えるだけです</li>
       <li><a href="/contents/pyimg.html#image_add_py">image_add.py</a> 複数の画像が並ぶWebページを作成する</li>
+      <li><a href="/contents/pyimg.html#photo_sum_py">photo_sum.py</a> 画像同士を結合する</li>
       <li><a href="/contents/pyfile.html#file_space_py">file_space.py</a> ファイルから半角スペースを削除する</li>
       <li><a href="/contents/pyfile.html#file_sum_py">file_sum.py</a> HTML・CSS・JavaScriptのファイルを数える<br><span
         class="small-orange-text">特にVS Codeで一括置換をする前に実行します。</span></li>
@@ -514,13 +515,13 @@ for container in document.select('.atelier-container'):
    実際はVisual Studio Codeをカスタマイズしただけです。<br>
    リアルの私は錬金術を使えないので、せめてWeb制作でライザごっこをしてみようかと！</p>
 
-  <h4>Recipe for CSS and HTML</h4>
+  <h4 id="manifest_json_light">Steps for Application Development</h4>
   <div class="spacer"></div>
   <div class="atelier-container">
    <div class="atelier-tabs">
     <div class="atelier-tab" data-tab="1">Creation</div>
     <div class="atelier-tab" data-tab="2">HTML</div>
-    <div class="atelier-tab" data-tab="3">settings.json</div>
+    <div class="atelier-tab" data-tab="3">json</div>
    </div>
    <div class="atelier-tab-content" data-content="1">
 
@@ -759,6 +760,33 @@ for container in document.select('.atelier-container'):
    </div><!--2タブの分岐点-->
    <div class="atelier-tab-content" data-content="3">
 
+    <p>ここではWebサイトをプログレッシブウェブアプリにする方法の概説と、Visual Studio Codeの設定ファイルについて書いています。</p>
+
+    <p class="gra">manifest.json</p>
+    <p>簡単に言うと、プログレッシブウェブアプリとは次のようなものです。</p>
+    <div class="content">
+     <img src="/another-eden/anaimage/ライザ喜顔.jpg" alt="Illustration of the atelier"
+      class="graphicmini right-image fade-in-out">
+     <ul>
+      <li>アプリなんだけど、俗に言う「ほーむぺーじ」の利点がそのまま残っている。</li>
+      <li>インストールしなくても、中身を自由に閲覧できて触れる。</li>
+      <li>インストールした閲覧者は、その「ほーむぺーじ」をアプリとして見やすい画面で思いっきり活用できる。</li>
+      <li>アプリだから普通の「ほーむぺーじ」とは違い、Microsoft Store・Google Play・Apple Store・Meta Quest Storeにて配信が可能。</li>
+     </ul>
+    </div>
+
+    <p>必要なソースコードは manifest.json だけではなく、プログレッシブウェブアプリそのものが比較的新しい技術です。<br>
+     そのため、<a href="/contents/pwa.html">個人サイトをそのまんまアプリにする方法</a>にて、次のソースコードをまとめて掲載しています。</p>
+    <ul>
+     <li><a href="/contents/pwa.html#pwahead">PWAのメタデータを設定し、サービスワーカーを登録するためのコード</a></li>
+     <li><a href="/contents/pwa.html#service-worker_js">オフラインキャッシュとバックグラウンドタスクを管理するservice-worker.js</a></li>
+     <li><a href="/contents/pwa.html#manifest_json">PWAのメタデータを定義するmanifest.json</a></li>
+    </ul>
+
+    <div class="content">
+     <img src="/another-eden/anaimage/ライザコラボエンディング.jpg" alt="ライザコラボエンディング" class="biggraphic fade-in-out">
+    </div>
+    <p class="gra">settings.json</p>
     <p>Visual Studio CodeはMicrosoftのコードエディターですが、拡張機能のインストールと設定ファイルの記述で背景画像を付けられます。<br>
      settings.jsonはVS Codeの設定ファイルです。<br>
      Windowsなら多くの場合、C:\Users\ユーザー名\AppData\Roaming\Code\User\settings.json という位置にあると思います。<br>
@@ -1596,6 +1624,19 @@ hr.atelierflower::before {
   <p>PDF本体をご覧になりたい方は<a href="/another-eden/fein_report/ファンサイト(1).pdf">アナザーエデン・ファンサイトのご案内.pdf版</a>をどうぞ。<br>
    でも上部のプレビューでも十分かと思います。</p>
 
+  <h2>私のサイトがアプリになりました</h2>
+  <div class="content">
+   <img src="/contents/itimages/feinapp.png" alt="feinapp" class="graphicsaki right-image fade-in-out">
+   <p>詳しくは<a href="/contents/pwa.html">個人サイトをそのまんまアプリにする方法</a>にて。<br>
+    超簡単な説明だけで良ければ、このページの「<a href="#manifest_json_light">Steps for Application Development</a>にある json タブ」にてご紹介しております。
+   </p>
+   <p>この見出し通りの状況なのですが、ここに詳しく書くのは無理ゲーだよ…<br>
+    ちゃんと別にWebページが必要です。<br>
+    一言お気持ち表明するなら、もう初めっからアプリ化するつもりでした。<br>
+    だって今の時代、普通に考えてアプリのほうが有利じゃん。<br>
+    でも静的Webサイトのメリットを捨てないのが、プログレッシブウェブアプリなんです。</p>
+  </div>
+
   <hr class="atelierflower">
 
   <h2>PythonでタブUIを実装する</h2>
@@ -2060,22 +2101,58 @@ for tab in tabs:
   </div>
 
 
+  <h2>カルナジェネシスの影</h2>
+  <p>アナザーエデン、ライザのアトリエコラボおもしろかったですね！<br>
+   ここから先はゲームそのもののお話です。<br>
+   私はカルナジェネシスの影から真っ先に取り掛かったのですよ。<br>
+   どーせなら錬成コンテンツを全て終わらせてからやれば良かったのかもしれませんが、「ひと夏の冒険者達の星譜」が入手できるとすればおそらく裏ボスだろうと考えました。</p>
   <div class="content">
-   <img src="/another-eden/anaimage/クラウディア天上げ.jpg" alt="クラウディア天上げ" class="graphicsaki right-image fade-in-out">
-
-   <p>他にもいろいろスクショ集めましょうね！</p>
-
+   <img src="/another-eden/anaimage/カルナジェネシスの影戦闘シーン.jpg" alt="カルナジェネシスの影戦闘シーン" class="biggraphic fade-in-out">
   </div>
 
+  <p>なかなかの難易度であったと記憶しているけど、ASソイラで敵の攻撃は原則受けるようにしていました。<br>
+   固定ダメージもソイラで受けるのですが、私のソイラは天255なのでね…<br>
+   HPバッジやらも盛った上での話ですよ。<br>
+   オーラ等を見ると魔法パーティーが良さそうだったから、シェンファ＋ASフィーネで攻めることにしました。</p>
+
   <div class="content">
-   <img src="/another-eden/anaimage/ライザコラボfear終盤.jpg" alt="ライザコラボfear終盤" class="graphicsaki right-image fade-in-out">
-
-   <p>他にもいろいろスクショ集めましょうね！</p>
-
+   <img src="/another-eden/anaimage/カルナジェネシスの影勝利シーン.jpg" alt="カルナジェネシスの影勝利シーン" class="biggraphic fade-in-out">
   </div>
+
+  <p>状態異常付与がとにかくめんどうなんだよね。<br>
+   そこもASソイラで受けつつ、テトラで回復する流れを作ったかな。<br>
+   んでもって復活するたびに攻撃が激しくなるから、ステラバーストとアナザーフォースのタイミングを考えるようにして。<br>
+   シェンファのテッセラクト強いですよ。<br>
+   相手のバフをひっくり返すタイミングがここでも重要だった。<br>
+   シェンファとASフィーネは相性良いですよね。</p>
+
 
   <div class="content">
    <img src="/another-eden/anaimage/ライザ星導覚醒.jpg" alt="ライザ星導覚醒" class="graphicsaki right-image fade-in-out">
+
+   <p>倒してみたらなんと、「真・気鋭の錬金術士の証」が手に入ったのです。<br>
+    真っ先にライザリンシュタウトのVCグラスタを入手できて大満足！<br>
+    ちょうどこのページのコード管理を思い付いていたあたりでさ…、加えてSE職への切り替わり＋港町への引っ越しで多忙な時期だったから、ネタバレどころかTwitterもぜんぜん見る暇がなかった。<br>
+    強敵戦の入手アイテムで驚けるのは、ネタバレ価値観＋大暴れのコンボも良い仕事をしたものだと思ったね😆ww</p>
+
+  </div>
+
+  <h5>少しの非効率がモチベを奪う</h5>
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザコラボfear終盤.jpg" alt="ライザコラボfear終盤" class="graphicsaki right-image fade-in-out">
+   <p>コード＋記事資産が手元にない場合、Webサイト制作は大仕事となります。<br>
+    また、SNSでは「俺のほうがもっとスゲェことできる!!」というドヤりあいが頻繁に発生し、そういう風土が知識&技術を習得する際の妨げとなります。<br>
+    特にこうして自らコードを書いてWebアプリケーションを構築していくような「Web開発」の領域に首を突っ込んだ場合、SNSからくる競争意識の悪影響を受けていると、学びも遊びも中途半端になってしまう…</p>
+   <p>大いにゲームで遊び、大いに自分の学びを進められる環境を作るためにもね？<br>
+    単純作業は極力パソコンにやってもらった方が良いでしょう。<br>
+    このページからジャンプできるソースコードはWeb開発に必要な知識のうちのほんの一部に過ぎませんが…<br>
+    誰かの役に立てば嬉しいです🎵</p>
+  </div>
+
+  <hr class="atelierflower">
+
+  <div class="content">
+   <img src="/another-eden/anaimage/クラウディア天上げ.jpg" alt="クラウディア天上げ" class="graphicsaki right-image fade-in-out">
 
    <p>他にもいろいろスクショ集めましょうね！</p>
 
@@ -2102,7 +2179,6 @@ for tab in tabs:
   <!-- ライザ天上げ拡大.jpg
 ライザ指輪.jpg
 ライザ頑張る.jpg
-ライザ喜顔.jpg
 ライザ渋顔.jpg
 ライザ笑顔.jpg -->
 
