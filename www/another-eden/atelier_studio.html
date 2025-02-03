@@ -2,20 +2,6 @@
 <html lang="ja">
 
 <head>
- <link rel="manifest" href="/manifest.json">
-
- <script>
-  if ('serviceWorker' in navigator) {
-   navigator.serviceWorker.register('/service-worker.js')
-    .then(registration => {
-     console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    })
-    .catch(error => {
-     console.log('ServiceWorker registration failed: ', error);
-    });
-  }
- </script>
-
  <meta charset="UTF-8">
  <title>ファンサイト制作のためのアトリエ</title>
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,6 +12,20 @@
  <meta property="og:description" content="アナザーエデンというスマートフォンゲームで使われているプログラミング言語をhtmlページで動作させてみました。">
  <meta property="og:image" content="/image/アナザーエデンのバディ_ピスケ.png">
  <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/atelier_studio.html">
+ <link rel="manifest" href="/manifest.json">
+
+ <!-- 構造化データ -->
+ <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ファンサイト制作のためのアトリエ",
+      "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/atelier_studio.html",
+      "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+    }
+    </script>
+
+ <!-- CSSファイル -->
  <link rel="stylesheet" type="text/css" href="/css/style.css">
  <link rel="stylesheet" type="text/css" href="/css/pdf.css">
  <link rel="stylesheet" type="text/css" href="/css/header.css">
@@ -39,6 +39,14 @@
  <link rel="stylesheet" type="text/css" href="/css/lua.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+
+ <!-- Googleタグマネージャー -->
  <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
  <script>
   window.dataLayer = window.dataLayer || [];
@@ -46,6 +54,8 @@
   gtag('js', new Date());
   gtag('config', 'G-827JM6N5CS');
  </script>
+
+ <!-- Microsoftタグ -->
  <script>
   (function (c, l, a, r, i, t, y) {
    c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
@@ -53,21 +63,8 @@
    y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
   })(window, document, "clarity", "script", "obazqypsh8");
  </script>
- <script type="application/ld+json">
- {
-   "@context": "https://schema.org",
-   "@type": "Organization",
-   "name": "ファンサイト制作のためのアトリエ",
-   "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/atelier_studio.html",
-   "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
- }
- </script>
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link
-  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-  rel="stylesheet">
- <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+
+ <!-- JavaScriptファイル -->
  <script src="/script/underline.js"></script>
  <script src="/script/feinfade.js"></script>
  <script src="/script/feinScroll.js"></script>
@@ -84,6 +81,19 @@
  <script src="/script/fengari-web.js"></script>
  <script src="/script/brython.js"></script>
  <script src="/script/brython_stdlib.js"></script>
+
+ <!-- Service Workerの登録 -->
+ <script>
+  if ('serviceWorker' in navigator) {
+   navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+     console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    })
+    .catch(error => {
+     console.log('ServiceWorker registration failed: ', error);
+    });
+  }
+ </script>
 </head>
 
 <body>
@@ -450,6 +460,7 @@
       <li><a href="/contents/pyfile.html#file_space_py">file_space.py</a> ファイルから半角スペースを削除する</li>
       <li><a href="/contents/pyfile.html#file_sum_py">file_sum.py</a> HTML・CSS・JavaScriptのファイルを数える<br><span
         class="small-orange-text">特にVS Codeで一括置換をする前に実行します。</span></li>
+      <li><a href="/contents/pyfile.html#pwa_py">pwa.py</a> 多数のhtmlファイルにまとめてコードを挿入する</li>
      </ul>
     </div>
 
@@ -792,7 +803,7 @@ for container in document.select('.atelier-container'):
      Windowsなら多くの場合、C:\Users\ユーザー名\AppData\Roaming\Code\User\settings.json という位置にあると思います。<br>
      ここの編集が必要なんだよね。</p>
 
-    <p>参考ページ👉 <a href="/contents/vscode.html">Visual Studio Codeを触ってみよう</a></p>
+    <p>その他、拡張機能などの解説は<a href="/contents/vscode.html">Visual Studio Codeを触ってみよう</a>をご覧ください。</p>
 
     <div class="content">
      <img src="/another-eden/anaimage/Visual_Atelier_Code.png" alt="Visual_Atelier_Code" class="biggraphic fade-in-out">

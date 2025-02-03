@@ -3,42 +3,9 @@
 <html lang="ja">
 
 <head>
-<link rel="manifest" href="/manifest.json">
-
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(registration => {
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      })
-      .catch(error => {
-        console.log('ServiceWorker registration failed: ', error);
-      });
-  }
-</script>
-
- <!-- Google tag (gtag.js) -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
- <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-
-  gtag('config', 'G-827JM6N5CS');
- </script>
-
- <!-- Microsoft tag -->
- <script>
-  (function (c, l, a, r, i, t, y) {
-   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-  })(window, document, "clarity", "script", "obazqypsh8");
- </script>
-
  <meta charset="UTF-8">
-
- <!--基本のメタタグ-->
+ <title>Visual Studio Codeを触ってみよう</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <meta name="description" content="Visual Studio Codeについて、基本的な扱い方を書いています。">
  <meta name="keywords" content="個人サイト, Visual Studio Code, VS Code">
  <meta name="robots" content="index, follow">
@@ -46,22 +13,20 @@
  <meta property="og:description" content="Visual Studio Codeについて、基本的な扱い方を書いています">
  <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
  <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/vscode.html">
+ <link rel="manifest" href="/manifest.json">
 
- <!--検索ヒット時のアイコン-->
+ <!-- 構造化データ -->
  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Visual Studio Codeを触ってみよう",
-  "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/vscode.html",
-  "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
-}
-</script>
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Visual Studio Codeを触ってみよう",
+      "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/vscode.html",
+      "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+    }
+    </script>
 
- <!--レスポンシブデザイン-->
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
- <!--CSS-->
+ <!-- CSSファイル -->
  <link rel="stylesheet" type="text/css" href="/css/style.css">
  <link rel="stylesheet" type="text/css" href="/css/header.css">
  <link rel="stylesheet" type="text/css" href="/css/footer.css">
@@ -72,33 +37,56 @@
  <link rel="stylesheet" type="text/css" href="/css/album.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&display=swap"
+  rel="stylesheet">
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
 
- <!--JavaScript-->
+ <!-- Googleタグマネージャー -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+
+ <!-- Microsoftタグ -->
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+
+ <!-- JavaScriptファイル -->
  <script src="/script/underline.js"></script>
  <script src="/script/feinfade.js"></script>
  <script src="/script/album.js"></script>
  <script src="/script/feinScroll.js"></script>
  <script src="/script/brython.js"></script>
  <script src="/script/brython_stdlib.js"></script>
- <!-- gsapの読み込み -->
  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
- <!-- prismの読み込み -->
  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-bash.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-json.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
- <!-- google fonts -->
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link
-  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-  rel="stylesheet">
 
- <!--ページタイトル-->
- <title>Visual Studio Codeを触ってみよう</title>
-
- <!--ASノーナのファビコン-->
- <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+ <!-- Service Workerの登録 -->
+ <script>
+  if ('serviceWorker' in navigator) {
+   navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+     console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    })
+    .catch(error => {
+     console.log('ServiceWorker registration failed: ', error);
+    });
+  }
+ </script>
 </head>
 
 <body>
@@ -340,6 +328,23 @@ for container in document.select('.atelier-container'):
 
   <hr class="atelierflower">
 
+  <h2>W3C Web Validatorでミスを防ぐ</h2>
+  <p>意外とやりがちなのが、htmlコードの初歩的なミスです。<br>
+   タグを閉じ忘れたり、余計なタグを入れていたり。<br>
+   完璧にやるのは難しいですが、少しでもラクになるように工夫すると良いかも。<br>
+   次の画像はhtmlコードでミスをしていて、W3C Web Validatorから指摘を受けているシーンです。</p>
+  <div class="content">
+   <img src="/contents/itimages/W3CWebValidator.png" alt="W3C Web Validator" class="biggraphic fade-in-out">
+
+  </div>
+  <p>pタグの閉じる部分にppと書いてしまっています。<br>
+   これを修正すれば、下部のパネルに「ワークスペースで問題は検出されていません。」と表示されます。</p>
+
+  <p>W3C Web ValidatorはVS Codeの拡張機能で、htmlのミスを検出してくれるんですよね。<br>
+   インストールすればステータスバーに W3C validation と出てくるので、それをクリックすればチェックしてくれます。<br>
+   いくらプログラムを修正してもまともに動作しないときは、意外にもhtmlを書き間違えていたりするものですよ？<br>
+   慣れてきた上級者ほどハマりやすいと思うから、何度でも基礎に帰るのをお勧めします。</p>
+
   <h2>Visual Studio Codeの日本語化</h2>
   <p>左側の「Extensions」から「Japanese Language Pack for VS Code」をインストールしてVS Codeを再起動します。</p>
 
@@ -542,7 +547,7 @@ for container in document.select('.atelier-container'):
 
   <p>次のjsonファイルは、私のワークスペースの基礎的な設定です。</p>
 
-  <p class="codegra" id="tasks_json">.code-workspaceファイルの例</p>
+  <p class="gra">.code-workspaceファイルの例</p>
   <div class="code-container">
    <pre><code class="language-json">
 {

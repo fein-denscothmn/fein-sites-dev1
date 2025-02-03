@@ -3,20 +3,6 @@
 <html lang="ja">
 
 <head>
-<link rel="manifest" href="/manifest.json">
-
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(registration => {
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      })
-      .catch(error => {
-        console.log('ServiceWorker registration failed: ', error);
-      });
-  }
-</script>
-
  <meta charset="UTF-8">
  <title>アナザーエデン グラスタの入手場所一覧</title>
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,30 +13,7 @@
  <meta property="og:description" content="アナザーエデンのグラスタに関するページ。おおよそ難易度やストーリーで行く場所に応じて、その場で入手できるグラスタをまとめてあります。">
  <meta property="og:image" content="image/アナザーエデンのバディ_ピスケ.png">
  <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/">
- <link rel="stylesheet" type="text/css" href="/css/style.css">
- <link rel="stylesheet" type="text/css" href="/css/header.css">
- <link rel="stylesheet" type="text/css" href="/css/footer.css">
- <link rel="stylesheet" type="text/css" href="/css/collapsible.css">
- <link rel="stylesheet" type="text/css" href="/css/menu.css">
- <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
- <link rel="stylesheet" type="text/css" href="/css/pdf.css">
- <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
- <link rel="stylesheet" type="text/css" href="/css/album.css">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
- <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', 'G-827JM6N5CS');
- </script>
- <script>
-  (function (c, l, a, r, i, t, y) {
-   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-  })(window, document, "clarity", "script", "obazqypsh8");
- </script>
+
  <!--検索ヒット時のアイコン-->
  <script type="application/ld+json">
   {
@@ -429,12 +392,46 @@
 }
 </script>
  <!-- schema.orgのスクリプトここまで -->
+
+ <link rel="manifest" href="/manifest.json">
+
+ <!-- CSSファイル -->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/collapsible.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" type="text/css" href="/css/pdf.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/album.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link
   href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
   rel="stylesheet">
  <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+
+ <!-- Googleタグマネージャー -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+
+ <!-- Microsoftタグ -->
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+
+ <!-- JavaScriptファイル -->
  <script src="/script/underline.js"></script>
  <script src="/script/feinfade.js"></script>
  <script src="/script/feinScroll.js"></script>
@@ -443,6 +440,19 @@
  <script src="/script/collapsible.js"></script>
  <script src="/script/album.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+
+ <!-- Service Workerの登録 -->
+ <script>
+  if ('serviceWorker' in navigator) {
+   navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+     console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    })
+    .catch(error => {
+     console.log('ServiceWorker registration failed: ', error);
+    });
+  }
+ </script>
 </head>
 
 <body>

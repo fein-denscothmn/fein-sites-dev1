@@ -3,19 +3,19 @@
 <html lang="ja">
 
 <head>
-<link rel="manifest" href="/manifest.json">
+ <link rel="manifest" href="/manifest.json">
 
-<script>
+ <script>
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(registration => {
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      })
-      .catch(error => {
-        console.log('ServiceWorker registration failed: ', error);
-      });
+   navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+     console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    })
+    .catch(error => {
+     console.log('ServiceWorker registration failed: ', error);
+    });
   }
-</script>
+ </script>
 
  <meta charset="UTF-8">
  <title>地味で便利なPythonによるファイル操作</title>
@@ -278,6 +278,163 @@ print(f"{total_js_files} の JavaScriptファイルがあります")
     計算された各ファイルタイプの総数をプリントします。
    </dd>
   </dl>
+
+  <h2>多数のhtmlファイルにまとめて加筆する</h2>
+  <p>Web制作あるあるだと思うのですが、後から多数のhtmlファイルに特定のコードを挿入したいことがあります。<br>
+   そんなときにもPythonは便利に使えます。<br>
+   VS Codeのデフォルト機能でやることもできるけど、ちょっとでも指定を間違えると大惨事になってしまったりする。<br>
+   このPythonでやる方法もバックアップが必要であることは変わりませんが、狙ったポイントにコードを入れやすいと感じます。</p>
+
+  <p class="codegra" id="pwa_py">多数のhtmlファイルにまとめてコードを挿入するpwa.py</p>
+  <div class="code-container">
+   <pre><code class="language-python">
+import os
+
+directory = 'C:/Users/ciwhc/Desktop/pwahtml'
+
+manifest_link = '&lt;link rel=&quot;manifest&quot; href=&quot;/manifest.json&quot;&gt;\n'
+service_worker_script = '''
+&lt;script&gt;
+  if (&#39;serviceWorker&#39; in navigator) {
+    navigator.serviceWorker.register(&#39;/service-worker.js&#39;)
+      .then(registration =&gt; {
+        console.log(&#39;ServiceWorker registration successful with scope: &#39;, registration.scope);
+      })
+      .catch(error =&gt; {
+        console.log(&#39;ServiceWorker registration failed: &#39;, error);
+      });
+  }
+&lt;/script&gt;
+'''
+
+for filename in os.listdir(directory):
+    if filename.endswith(&quot;.html&quot;):
+        file_path = os.path.join(directory, filename)
+        with open(file_path, &#39;r&#39;, encoding=&#39;utf-8&#39;) as file:
+            content = file.read()
+
+        if &#39;&lt;head&gt;&#39; in content:
+            new_content = content.replace(&#39;&lt;head&gt;&#39;, &#39;&lt;head&gt;\n&#39; + manifest_link + service_worker_script)
+        else:
+            continue
+
+        with open(file_path, &#39;w&#39;, encoding=&#39;utf-8&#39;) as file:
+            file.write(new_content)
+
+print(&quot;すべてのHTMLファイルにPWAコードを挿入しました。&quot;)
+
+</code></pre>
+  </div>
+
+  <p>このPythonコードは特定のフォルダ内にあるすべてのHTMLファイルに、Progressive Web App (PWA) 関連のコードを自動的に挿入するものです。</p>
+
+  <p><strong>1. モジュールのインポート</strong></p>
+  <div class="code-container">
+   <pre><code class="language-python">
+import os
+
+</code></pre>
+  </div>
+
+  <p>os モジュールはオペレーティングシステムとの対話を行うために使用されます。<br>
+   このコードでは、ディレクトリの内容を一覧表示したり、ファイルパスを操作するために使用しています。</p>
+
+  <p><strong>2. ディレクトリの設定</strong></p>
+  <div class="code-container">
+   <pre><code class="language-python">
+directory = 'C:/Users/ciwhc/Desktop/pwahtml'
+
+</code></pre>
+  </div>
+
+  <p>この変数には、操作対象となるHTMLファイルが保存されているディレクトリのパスを指定します。</p>
+
+  <p><strong>3. 挿入するPWAコードの定義</strong></p>
+  <div class="code-container">
+   <pre><code class="language-python">
+manifest_link = '&lt;link rel=&quot;manifest&quot; href=&quot;/manifest.json&quot;&gt;\n'
+service_worker_script = '''
+&lt;script&gt;
+  if (&#39;serviceWorker&#39; in navigator) {
+    navigator.serviceWorker.register(&#39;/service-worker.js&#39;)
+      .then(registration =&gt; {
+        console.log(&#39;ServiceWorker registration successful with scope: &#39;, registration.scope);
+      })
+      .catch(error =&gt; {
+        console.log(&#39;ServiceWorker registration failed: &#39;, error);
+      });
+  }
+&lt;/script&gt;
+'''
+
+</code></pre>
+  </div>
+  <p><span class="codecolor">manifest_link</span><br>
+   マニフェストファイルへのリンクが含まれています。</p>
+  <p><span class="codecolor">service_worker_script</span><br>
+   サービスワーカーを登録するためのJavaScriptコードが含まれています。</p>
+
+  <p><strong></strong></p> 4. ディレクトリ内のファイルのループ処理
+  <div class="code-container">
+   <pre><code class="language-python">
+for filename in os.listdir(directory):
+
+</code></pre>
+  </div>
+  <p><span class="codecolor">os.listdir(directory)</span><br>
+   指定したディレクトリ内のすべてのファイルとフォルダを一覧表示します。</p>
+  <p><span class="codecolor">for filename in os.listdir(directory):</span> <br>
+   ディレクトリ内の各ファイルに対してループを行います。</p>
+
+  <p><strong>5. HTMLファイルの処理</strong></p>
+  <div class="code-container">
+   <pre><code class="language-python">
+if filename.endswith(&quot;.html&quot;):
+    file_path = os.path.join(directory, filename)
+    with open(file_path, &#39;r&#39;, encoding=&#39;utf-8&#39;) as file:
+        content = file.read()
+
+    if &#39;&lt;head&gt;&#39; in content:
+        new_content = content.replace(&#39;&lt;head&gt;&#39;, &#39;&lt;head&gt;\n&#39; + manifest_link + service_worker_script)
+    else:
+        continue
+
+    with open(file_path, &#39;w&#39;, encoding=&#39;utf-8&#39;) as file:
+        file.write(new_content)
+
+</code></pre>
+  </div>
+  <p><span class="codecolor">if filename.endswith(".html"):</span><br>
+   ファイルがHTMLファイルかどうかを確認します。</p>
+  <p><span class="codecolor"> file_path = os.path.join(directory, filename)</span><br>
+   ファイルのフルパスを取得します。</p>
+  <p><span class="codecolor"> with open(file_path, 'r', encoding='utf-8') as file:</span><br>
+   HTMLファイルを読み込むためにファイルを開きます。</p>
+  <p><span class="codecolor"> content = file.read()</span><br>
+   ファイルの内容を文字列として読み込みます。</p>
+  <p><span class="codecolor"> if '&lt;head&gt;' in content:</span><br>
+   ファイルに &lt;head&gt; タグが含まれているかを確認します。</p>
+  <p><span class="codecolor"> new_content = content.replace('&lt;head&gt;', '&lt;head&gt;\n' + manifest_link +
+    service_worker_script)</span><br>
+   &lt;head&gt; タグの直後にPWAコードを挿入します。</p>
+  <p><span class="codecolor"> with open(file_path, 'w', encoding='utf-8') as file:</span><br>
+   変更された内容をファイルに書き込むためにファイルを開きます。</p>
+  <p><span class="codecolor"> file.write(new_content)</span><br>
+   変更された内容を書き込みます。</p>
+
+
+  <p><strong>6. 完了メッセージの表示</strong></p>
+  <div class="code-container">
+   <pre><code class="language-python">
+print("すべてのHTMLファイルにPWAコードを挿入しました。")
+
+</code></pre>
+  </div>
+  <p>最後に、処理が完了したことを示すメッセージを表示します。</p>
+  <p>他にも狙った部分のコードをまとめて変更したりとか、いろいろできます。<br>
+   後からまとめてデザイン部分を変更したくなるとか、よくあるからね。<br>
+   そこらへんは追って書いていこうかと思います。</p>
+
 
 
   <!-- ●ここから人間用のフッター● -->
