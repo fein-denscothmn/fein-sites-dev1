@@ -1,6 +1,5 @@
 # プロジェクト名
-**fein's personal site**<br>
-*fein's portal*
+**fein's app**<br>
 
 # URL
 [Progressive Web Application（PWA）](https://fein-sites-dev1.ew.r.appspot.com/)<br>
