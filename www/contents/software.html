@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<!-- ●ここから人間用のヘッダー● -->
+<html lang="ja">
+
+<head>
+ <link rel="manifest" href="/manifest.json">
+
+ <script>
+  if ('serviceWorker' in navigator) {
+   navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+     console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    })
+    .catch(error => {
+     console.log('ServiceWorker registration failed: ', error);
+    });
+  }
+ </script>
+
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+
+ <!-- Microsoft tag -->
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+
+ <meta charset="UTF-8">
+
+ <!--基本のメタタグ-->
+ <meta name="description" content="パソコンのソフトウェアを作る方法を解説したページ。Web制作の技術で作れてしまいます">
+ <meta name="keywords" content="個人サイト, パソコンソフト, node.js">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="Web制作の技術でソフトウェアを作る">
+ <meta property="og:description" content="パソコンのソフトウェアを作る方法を解説したページ。Web制作の技術で作れてしまいます">
+ <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/software.html">
+
+ <!--検索ヒット時のアイコン-->
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Web制作の技術でソフトウェアを作る",
+  "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/software.html",
+  "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+}
+</script>
+
+ <!--レスポンシブデザイン-->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!--CSS-->
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ <!--JavaScript-->
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <!-- gsapの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <!-- prismの読み込み -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-bash.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-json.min.js"></script>
+
+ <!-- google fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+
+ <!--ページタイトル-->
+ <title>Web制作の技術でソフトウェアを作る</title>
+
+ <!--ASノーナのファビコン-->
+ <link rel="apple-touch-icon" sizes="180x180" href="/icons/appleicon.png">
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="site_create.html">個人サイト制作：サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Web制作の技術でソフトウェアを作る</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く
+    ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="../script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="Web制作の技術でソフトウェアを作るの目次を開く ▼"
+   data-close-text="Web制作の技術でソフトウェアを作るの目次を閉じる ▲">Web制作の技術でソフトウェアを作るの目次を開く
+   ▼</button><!--目次の自動生成-->
+
+  <p>おそらく注目されるのは、ソフトウェアの配布部分でしょう。<br>
+   🌟マークのところですよ。</p>
+
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>Web制作の技術でソフトウェアを作る</span></h1>
+
+  <p>Web制作の技術は幅広く使えるんですよね。<br>
+   このページの主旨は「HTML・CSS・JavaScriptでパソコンソフトを作ろう」というものです。<br>
+   その気になればいくらでも機能拡張できますし、ちょっとした便利ソフトくらいなら、わりと簡単に作れるもんですよ？</p>
+  <p>それでは、まず私が作った「フローティング・ランチャー」をご紹介した後、実際の手順とソースコードへ話題を移します。</p>
+
+  <h2>マルチプラットフォーム対応のフローティング・ランチャー</h2>
+  <p>私は整理されたデスクトップが好きです。<br>
+   ある日、壁紙を邪魔しないランチャーソフトが欲しくなったのですが、フリーソフトで「これだ！」と思うソフトを見つけられませんでした😵‍💫<br>
+   ずっとLinuxを使っていて、Windowsが久しぶりだったこともあってね…<br>
+   そこで、自分でこういうソフトを作っちゃったのですよ。</p>
+
+  <div class="content">
+   <img src="/contents/itimages/pwainfo/feinlauncher.png" alt="feinlauncher" class="biggraphic fade-in-out">
+  </div>
+
+  <p>これはWindows11のデスクトップです。<br>
+   壁紙はアナザーエデンというゲームのものですよ。<br>
+   綺麗でしょう？<br>
+   ちょっとランチャーソフトだけを拡大しましょうか。</p>
+
+  <img src="/contents/itimages/pwainfo/feinlauncher_mini.png" alt="feinlauncher" class="graphic fade-in-out">
+
+  <p>こういう感じの、テキストベースのフローティング・ランチャーです。<br>
+   でも最前面には表示させず、あくまでも自分が使っているソフトが主体となるようにしてます。<br>
+  </p>
+  <p>また、Windows・Mac・Linuxを問わず動作します。<br>
+   元がWeb技術だからさ。<br>
+   新しくLinuxをインストールしても、このソフトは活躍してくれるでしょう。</p>
+
+  <p class="gra">自作ソフトをスタートアップに登録する</p>
+  <p>何も自作ソフトに限ったことではありませんが、Windows11の起動時にソフトを起動するには、次のようにします。</p>
+
+  <dl>
+   <dt>1. ショートカットの作成</dt>
+   <dd>fein_launcher.exe ファイルを右クリックし、「ショートカットの作成」を選択します。</dd>
+
+   <dt>2. スタートアップフォルダを開く</dt>
+   <dd>スタートメニューの検索バーに「shell:startup」と入力し、Enterキーを押します。</dd>
+
+   <dt>3. ショートカットをスタートアップフォルダに移動</dt>
+   <dd>作成したショートカットを、開いたスタートアップフォルダにドラッグ＆ドロップします。</dd>
+  </dl>
+
+  <p>これで次回Windowsを起動すると、<strong>fein_launcher.exe</strong> によってフローティング・ランチャーが自動的に起動するようになります。<br>
+   では、そろそろ実際の作り方へ話題を移しましょう。</p>
+
+  <h2>Web技術でソフトウェアを作る手順</h2>
+  <p>いろんな方法があるのですが、私は次のようなやり方をしています。</p>
+
+  <dl>
+   <dt>Node.js</dt>
+   <dd>JavaScriptを使ってサーバーサイドのプログラムを書けるツール。</dd>
+
+   <dt>npm</dt>
+   <dd>Node.jsのためのパッケージ管理ツール。ライブラリやツールを簡単にインストール・管理できる。</dd>
+
+   <dt>Electron</dt>
+   <dd>Web技術（HTML、CSS、JavaScript）でデスクトップアプリを作るためのフレームワーク。</dd>
+  </dl>
+
+  <p>上記３つを使ってソフトを作る手順は、次の通りです。</p>
+
+  <ol>
+   <li>Node.jsとnpmをインストール</li>
+   <li>プロジェクトディレクトリの作成</li>
+   <li>Electronのインストール</li>
+   <li>リソースとなるファイルの作成</li>
+   <li>ソフトウェアの起動テスト</li>
+   <li>ソフトウェアのビルドとパッケージング</li>
+  </ol>
+
+  <p>初めてやる時にありがちなつまづきポイントは「環境構築」です。<br>
+   勉強すれば、ある程度のコードを書くくらいなら難しくないんですよね。<br>
+   だからレンタルサーバーにちょっとしたホームページを作るくらいなら、わりと手軽にできちゃいます。<br>
+   でも環境構築まで必要な開発になってくると、なかなか厳しい状況もあるでしょう。<br>
+   このページではそういう部分にも解説を添えつつ、簡単なフローティング・ランチャーを作っていきます。</p>
+
+  <p>ではいよいよソースコードを書いていきますが、その前に一言形式的なご挨拶をしておきますね。</p>
+
+  <h4>このページに関する注意事項</h4>
+  <p>当Webサイト作成者は、例示を目的としてマークアップ及びプログラミング例を提供しており、明示または黙示にかかわらず、いかなる責任も負わないものとします。<br>
+   このページは、説明されているマークアップ及びプログラミング言語、手順を作成およびデバッグするために使用される各種ツールに読者が精通していることを前提にしています。<br>
+   このページは、特定の機能を説明するのに役立つ可能性がありますが、当Webサイト作成者がこれらの例を変更した上で、特定の要件を満たすために追加の機能を提供したり、システムを構築したりすることはできません。<br>
+   加えて、この例の手順に従う場合は、読者の各種ファイルを事前にバックアップすることを推奨いたします。</p>
+
+  <h3>Node.jsとnpmをインストール</h3>
+  <p>まずはNode.jsをインストールします。</p>
+  <ol>
+   <li><a href="https://nodejs.org/">Node.jsの公式サイト</a>にアクセスします。</li>
+   <li>WindowsやMac、Linuxのインストーラがあるので、自分のOSに合ったものを選んでダウンロードします。</li>
+   <li>ダウンロードしたインストーラを実行し、画面の指示に従ってインストールを完了します。</li>
+  </ol>
+
+  <p>次はnpmの確認です。</p>
+
+  <ol>
+   <li>Node.jsをインストールすると、自動的にnpmもインストールされます。</li>
+   <li>インストールが完了したら、コマンドプロンプトやターミナルを開いて以下のコマンドを入力し、バージョン情報が表示されることを確認します。</li>
+  </ol>
+
+  <div class="code-container">
+   <pre><code class="language-bash">
+node -v
+npm -v
+
+</code></pre>
+  </div>
+
+  <p>これでNode.jsとnpmが正しくインストールされたことを確認できます。</p>
+
+
+  <h4>npm (Node Package Manager)</h4>
+  <p>このページでは、Node.jsとElectronを使ってデスクトップアプリを作ろうとしています。<br>
+   Node.jsとnpmの関係性、そしてそれがなぜパソコンソフトを作れることに繋がるのか、ちょっと説明しましょう。</p>
+
+  <dl>
+   <dt>Node.js</dt>
+   <dd>
+    JavaScriptをサーバーサイドで実行するための環境です。<br>
+    通常、JavaScriptはWebブラウザ上で動作しますが、Node.jsを使うことで、サーバー側でもJavaScriptを動かすことができるようになります。
+   </dd>
+   <dt>npm</dt>
+   <dd>
+    Node.jsのパッケージマネージャーです。<br>
+    パッケージとは、Node.jsで利用できる様々な機能を持ったプログラムのことで、npmを使って簡単にインストールしたり、管理したりすることができます。
+   </dd>
+  </dl>
+
+  <p>Node.jsとnpmを使うことで、JavaScriptを使って様々な種類のソフトウェアを作ることができます。<br>
+   Webアプリケーションはもちろんのこと、デスクトップアプリケーションや、サーバー上で動作するプログラムも作成可能です。<br>
+   ちょっと紛らわしいように思えるけど、なにもパソコンがサーバーになるわけではありません。<br>
+   Node.jsで作成したプログラムは、様々な場所で実行することができるのです。</p>
+
+  <dl>
+   <dt>Webサーバー</dt>
+   <dd>
+    Node.jsで作ったプログラムをWebサーバー上で動かせば、Webアプリケーションとして公開することができます。
+   </dd>
+   <dt>デスクトップアプリケーション</dt>
+   <dd>
+    Electronというフレームワークを使えば、Node.jsとWeb技術を使ってWindowsやMacで動作するデスクトップアプリケーションを作成できます。
+   </dd>
+  </dl>
+
+  <p>このページでは、上記で言うところのデスクトップアプリケーションを作ろうとしているんですよね。</p>
+
+
+  <h3>プロジェクトディレクトリの作成</h3>
+  <p>プロジェクトなんて言うと大袈裟に聞こえますが、実際にこう呼ばれます。<br>
+   ここでやるのは、要するにソフトを作る場所を用意しましょうという、それだけですよ。<br>
+   きちんと言うなら、ここでやるのは新しいNode.jsプロジェクトを始めるための初期設定を行う手順です。</p>
+
+  <p>引き続き、コマンドプロンプトでの作業です。</p>
+  <div class="code-container">
+   <pre><code class="language-bash">
+mkdir fein_launcher
+cd fein_launcher
+
+</code></pre>
+  </div>
+
+  <dl>
+   <dt><span class="codecolor">mkdir fein_launcher</span></dt>
+   <dd>新しいディレクトリ（フォルダ）を作成しています。<br>
+    このディレクトリは、プロジェクトのファイルを整理するための専用の場所です。</dd>
+
+   <dt><span class="codecolor">cd fein_launcher</span></dt>
+   <dd>上記で作成したディレクトリに移動するコマンドです。<br>
+    次の作業をこの新しいディレクトリ内で行うことができます。</dd>
+  </dl>
+
+  <p><strong>npmプロジェクトの初期化</strong></p>
+  <div class="code-container">
+   <pre><code class="language-bash">
+npm init -y
+
+</code></pre>
+  </div>
+
+  <p><span class="codecolor">npm init -y</span>は、Node.jsのプロジェクトを初期化するためのコマンドです。<br>
+   このコマンドを実行すると、新しいプロジェクト用の <span class="codecolor">package.json</span> ファイルが自動的に作成されます。<br>
+   このファイルはプロジェクトの設定情報や依存関係を管理するために使用されます。</p>
+
+  <p>ひとまず、これでプロジェクトを始めるための基盤が整いました。<br>
+   次は、このプロジェクトに必要なライブラリやフレームワークをインストールして、実際の開発を進めることができます。</p>
+
+  <h4>npmプロジェクトの初期化</h4>
+  <p>npmプロジェクトの初期化Node.jsプロジェクトを整理し、管理するための重要なステップです。</p>
+
+  <dl>
+   <dt>プロジェクトの構成</dt>
+   <dd>
+    <span class="codecolor">npm init</span> コマンドを実行すると、プロジェクトの設定情報を含む <span class="codecolor">package.json</span>
+    ファイルが作成されます。<br>
+    このファイルには、プロジェクトの名前、バージョン、依存関係、スクリプトなどの情報が記載されます。
+   </dd>
+   <dt>依存関係の管理</dt>
+   <dd>
+    <span class="codecolor">package.json</span> ファイルは、プロジェクトが依存する外部パッケージやライブラリを管理するために使用されます。<br>
+    他の開発者がプロジェクトをクローンしても、必要なパッケージを簡単にインストールできます。
+   </dd>
+   <dt>バージョン管理</dt>
+   <dd>
+    <span class="codecolor">package.json</span> ファイルには、使用しているパッケージのバージョン情報が含まれます。<br>
+    プロジェクトの互換性を保ちながら開発を進めることができます。
+   </dd>
+  </dl>
+
+  <p>初期化（init）という言葉は、これらの設定を最初に行うことを意味しています。<br>
+   このステップをスキップすると、依存関係やプロジェクトの設定を正しく管理することが難しくなってしまうんです。</p>
+
+
+  <h3>Electronのインストール</h3>
+  <p>久しぶりにやったんだけど、やけに時間がかかりましたねー。<br>
+   実際にチャレンジされる方は、このコマンドを入れてからお風呂に入ると良いかも？</p>
+  <div class="code-container">
+   <pre><code class="language-bash">
+npm install electron --save-dev
+
+</code></pre>
+  </div>
+
+  <p>このElectronがあることで、HTML、CSS、JavaScriptでデスクトップアプリを作れるのです。<br>
+   <a
+    href="/contents/pwa.html">個人サイトをそのまんまアプリにする方法</a>というページでは、普通のホームページをプログレッシブウェブアプリとして構築し、いろんなパソコンやスマホにインストールできるようにしました。<br>
+   似たような雰囲気で、─ だいぶ違うけど。雰囲気を掴んでもらえれば… ─ 普通のパソコンの普通のソフトウェアだって作れてしまいます。<br>
+   こうしてみると、HTML、CSS、JavaScriptはとっても汎用性が高いと感じますね。
+  </p>
+
+  <h4>Node.jsとElectron</h4>
+  <p><a href="https://electronjs.org/">Electron</a> は GitHub（<a href="https://github.com/electron/electron">Electron
+    GitHub
+    リポジトリ</a>）が開発したオープンソースのフレームワークです。<br>
+   Electron を使うことで、Web 技術 (HTML, CSS, JavaScript) を使って Windows, macOS, Linux 向けのデスクトップアプリケーションを開発することができます。<br>
+   Electron 製のアプリケーションとして有名なのは、このあたりでしょうかね。</p>
+
+  <ul>
+   <li>Visual Studio Code (VS Code)</li>
+   <li>Slack</li>
+   <li>Discord</li>
+   <li>Atom</li>
+  </ul>
+
+  <p>ElectronはWeb開発の知識があればデスクトップアプリケーション開発を始められるという点で、多くの開発者に利用されています。<br>
+   私も学生時代にサイト制作とエレクトロンを行き来したもんですわ。</p>
+
+  <h4>Microsoft Edge</h4>
+  <p>現在のWindowsでプリインストールされているのはMicrosoft Edgeなので、このブラウザについても多少は理解を深める必要があります。<br>
+   Microsoft Edgeは、Chromiumベースのバージョン（Chromium
+   Edge）と、独自のEdgeHTMLエンジンを使ったバージョンがあります。最新のEdgeはChromiumベースであり、基本的にはChromiumと同じ技術を使用しています。<br>
+   Electron自体は、特定のChromiumバージョンを使って最適化されているため、Node.jsとEdge（特にChromiumベースのEdge）を使うというよりは、Electronが内部で適切にChromiumを扱う形で使用するのです。
+  </p>
+
+
+  <h3>リソースとなるファイルの作成</h3>
+
+  <p>fein_launcherというフォルダの下に、次のようにファイルとフォルダを作ります。</p>
+
+  <img src="/contents/itimages/pwainfo/launcherfile.png" alt="launcherfile" class="graphic fade-in-out">
+
+  <p>それぞれのファイルに、次のような役割を持たせていきます。</p>
+
+  <dl>
+   <dt>index.html</dt>
+   <dd>アプリのユーザーインターフェースを定義するためのHTMLファイル。<br>
+    ウェブページ、つまりソフトウェアの構造を表します。<br>
+    要するにフロントエンドですよね。</dd>
+
+   <dt>renderer.js</dt>
+   <dd>index.htmlと連携して動作するJavaScriptコードを記述するファイル。<br>
+    ユーザーの操作や表示を制御します。</dd>
+
+   <dt>style.css</dt>
+   <dd>アプリの見た目（デザインやスタイル）を設定するためのCSSファイル。<br>
+    レイアウトや色などを定義します。</dd>
+
+   <dt>main.js</dt>
+   <dd>エレクトロンアプリ全体の動作を制御するメインプロセスのコードを記述するファイル。<br>
+    ウィンドウの生成やアプリのライフサイクルを管理します。</dd>
+
+   <dt>package.json</dt>
+   <dd>プロジェクトの設定情報や依存関係を管理するファイル。<br>
+    アプリの名前やバージョン、使用するライブラリなどを記述します。</dd>
+
+   <dt>preload.js</dt>
+   <dd>レンダラープロセスとメインプロセス間で安全に通信するためのスクリプトを記述するファイル。<br>
+    必要なAPIをレンダラープロセスに公開します。</dd>
+  </dl>
+
+  <p>ちなみに、ここで紹介しているフローティング・ランチャーくらいであればpreload.jsの記述までは必要ありません。<br>
+   ローカルで使用する単純なランチャーアプリですからね。<br>
+   ただし、後々、アプリに追加機能を追加したくなった場合や、他のプロジェクトに拡張したい場合には、preload.js
+   を使ってセキュリティや機能性を向上させることができますよ？<br>
+   では、実際のコードを書いていきます。</p>
+
+  <h5>index.html</h5>
+  <p>このサイトではhtmlの意味までは掲載していません。<br>
+   次のコードをご覧いただければ分かるように、さほど難しいコードではないです。<br>
+   少し余計な記述もあるんだけど、これは私が後日ランチャーを拡張したくなったときのために書いてあるだけです。</p>
+  <p class="codegra" id="launcher_indexhtml">ユーザーインターフェースを定義するindex.html</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ja"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Start Menu&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+  &lt;meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="start-menu"&gt;
+    &lt;button id="start-button"&gt;fein menu&lt;/button&gt;
+    &lt;div id="menu-content" class="hidden"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Visual Atelier Code
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#" onclick="openVSCode()"&gt;VS code&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#" onclick="openFeinsApp()"&gt;fein's app&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#" onclick="openFeinsPortal()"&gt;fein's portal&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href="#" onclick="openEdge()"&gt;Microsoft Edge&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Another Eden
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"
+                onclick="openFile('C:\\Users\\ユーザー名\\OneDrive\\_fein\\google cloud\\web tools\\visual_studio_code\\anothereden.txt')"&gt;anothereden.txt&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"
+                onclick="openFile('C:\\Users\\ユーザー名\\OneDrive\\_fein\\google cloud\\web tools\\visual_studio_code\\document.txt')"&gt;document.txt&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"
+                onclick="openFile('C:\\Users\\ユーザー名\\OneDrive\\_fein\\google cloud\\web tools\\visual_studio_code\\sourcecode.txt')"&gt;sourcecode.txt&lt;/a&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script src="renderer.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+  </div>
+  <p>ただ、<span class="codecolor">onclick="openFeinsApp()"</span>とか、JavaScriptと繋がっている部分についてはけっこう大切な部分なので、見ておいていただけると。</p>
+
+  <h5>renderer.js</h5>
+
+  <p class="codegra" id="launcher_renderer">ユーザーの操作や表示を制御するrenderer.js</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+const { exec } = require('child_process');
+
+function openVSCode() {
+ exec('"C:\\Users\\ユーザー名\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"', (error, stdout, stderr) => {
+  if (error) {
+   console.error(`Error opening VS Code: ${error.message}`);
+   return;
+  }
+  console.log(`VS Code output: ${stdout}`);
+ });
+}
+
+function openEdge() {
+ exec('"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"', (error, stdout, stderr) => {
+  if (error) {
+   console.error(`Error opening Microsoft Edge: ${error.message}`);
+   return;
+  }
+  console.log(`Microsoft Edge output: ${stdout}`);
+ });
+}
+
+function openFile(filePath) {
+ const command = `start "" "${filePath}"`;
+ exec(command, (error, stdout, stderr) => {
+  if (error) {
+   console.error(`Error opening file ${filePath}: ${error.message}`);
+   return;
+  }
+  console.log(`File output: ${stdout}`);
+ });
+}
+
+function openFeinsApp() {
+ window.open('https://fein-sites-dev1.ew.r.appspot.com/', '_blank');
+}
+
+function openFeinsPortal() {
+ const command = '"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe" https://sites.google.com/view/feins-portal/';
+ exec(command, (error, stdout, stderr) => {
+  if (error) {
+   console.error(`Error opening Fein's Portal: ${error.message}`);
+   return;
+  }
+  console.log(`Fein's Portal output: ${stdout}`);
+ });
+}
+
+console.log('Script loaded');
+
+const startButton = document.getElementById('start-button');
+const menuContent = document.getElementById('menu-content');
+console.log(startButton);
+
+startButton.style.position = 'fixed';
+startButton.style.right = '10px';
+startButton.style.top = '10px';
+
+startButton.addEventListener('click', () => {
+ console.log('Start button clicked');
+ if (menuContent.classList.contains('hidden')) {
+  menuContent.classList.remove('hidden');
+  menuContent.style.display = 'block';
+ } else {
+  menuContent.classList.add('hidden');
+  menuContent.style.display = 'none';
+ }
+});
+
+document.querySelectorAll('#menu-content > ul > li').forEach((item) => {
+ const subMenu = item.querySelector('ul');
+ if (subMenu) {
+  item.addEventListener('click', (event) => {
+   event.stopPropagation();
+   if (subMenu.style.display === 'none' || !subMenu.style.display) {
+    subMenu.style.display = 'block';
+   } else {
+    subMenu.style.display = 'none';
+   }
+  });
+ }
+});
+
+</code></pre>
+  </div>
+
+  <p>このコードは、いくつかのアプリケーションを開いたり、ボタンの動作を制御するためのJavaScriptです。</p>
+
+  <p><strong>1. モジュールのインポート</strong></p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+const { exec } = require('child_process');
+
+</code></pre>
+  </div>
+  <p>ここでは、<span class="codecolor">child_process</span>モジュールの<span class="codecolor">exec</span>関数をインポートしています。</p>
+
+  <p>child_processモジュールは、Node.jsの標準モジュールの一つで、外部プログラムを実行するためのものです。<br>
+   このモジュールを使うことで、Node.jsからシェルコマンドや他のスクリプト、実行可能ファイルを呼び出すことができます。</p>
+
+  <p>その中でも、exec関数は指定されたコマンドを実行し、その結果をコールバック関数に渡すために使われます。<br>
+   例えば、他のプログラムやスクリプトを実行したり、OSのコマンドを実行する際に利用されます。</p>
+
+  <p>ここでは、次のような役割を持っています。</p>
+  <ul>
+   <li>Visual Studio CodeやMicrosoft Edgeなどの外部アプリケーションを起動する</li>
+   <li>ファイルを開く</li>
+   <li>特定のウェブサイトをブラウザで開く</li>
+  </ul>
+  <p>ランチャーらしいでしょ？<br>
+   child_processモジュールを使うことで、Node.jsアプリケーションからさまざまなシステム操作を簡単に行うことができるのです。</p>
+
+
+  <p><strong>2. VS Codeを開く関数</strong></p>
+  <p>この関数はVisual Studio Codeを開きます。<br>
+   エラーが発生した場合はエラーメッセージを表示します。</p>
+
+  <p><strong>Ⅰ. 関数の定義</strong></p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+function openVSCode() {
+
+</code></pre>
+  </div>
+  <p><span class="codecolor">openVSCode</span>という名前の関数を定義しています。<br>
+   この関数はVisual Studio Codeを開くために使います。</p>
+
+  <p><strong>Ⅱ. exec関数の呼び出し</strong></p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+exec('"C:\\Users\\ユーザー名\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"', (error, stdout, stderr) => {
+
+</code></pre>
+  </div>
+  <p></p><span class="codecolor">exec</span>関数を使って、指定されたパスにあるVisual Studio
+  Codeの実行ファイル（<span class="codecolor">Code.exe</span>）を起動します。<br>
+  <span class="codecolor">exec</span>関数は、Node.jsの<span class="codecolor">child_process</span>モジュールからインポートされています。
+  </p>
+
+  <p><strong>Ⅲ. コールバック関数</strong></p>
+  <p><span class="codecolor">exec</span>関数の第2引数としてコールバック関数を渡しています。<br>
+   このコールバック関数は、コマンドの実行が終了したときに呼び出されます。コールバック関数は3つの引数を受け取ります。</p>
+  <dl>
+   <dt><span class="codecolor">error</span></dt>
+   <dd>エラーが発生した場合、その情報が渡されます。</dd>
+   <dt><span class="codecolor">stdout</span></dt>
+   <dd>コマンドの標準出力が渡されます。</dd>
+   <dt><span class="codecolor">stderr</span></dt>
+   <dd>コマンドの標準エラー出力が渡されます。</dd>
+  </dl>
+
+
+  <p><strong>Ⅳ. エラーチェック</strong></p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+if (error) {
+  console.error(`Error opening VS Code: ${error.message}`);
+  return;
+}
+
+</code></pre>
+  </div>
+  <p>エラーが発生した場合、そのエラーメッセージをコンソールに出力し、関数の実行を終了します（<span class="codecolor">return</span>）。</p>
+
+  <p><strong></strong>Ⅴ. 標準出力のログ出力</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+console.log(`VS Code output: ${stdout}`);
+
+</code></pre>
+  </div>
+  <p>エラーが発生しなかった場合、Visual Studio Codeの実行結果（標準出力）をコンソールに出力します。<br>
+   この関数を実行すると、指定されたパスにあるVisual Studio Codeが起動されます。<br>
+   エラーが発生した場合はエラーメッセージが表示され、エラーが発生しなかった場合はVS Codeの標準出力がコンソールに表示されます。</p>
+
+  <p><strong>3. Edgeを開く関数</strong></p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+function openEdge() {
+  exec('"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"', (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Error opening Microsoft Edge: ${error.message}`);
+      return;
+    }
+    console.log(`Microsoft Edge output: ${stdout}`);
+  });
+}
+
+</code></pre>
+  </div>
+  <p>この関数はMicrosoft Edgeを開きます。<br>
+   動作は上記のVS Codeの関数と同様です。</p>
+
+
+  <p><strong>4. ファイルを開く関数</strong></p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+function openFile(filePath) {
+  const command = `start "" "${filePath}"`;
+  exec(command, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Error opening file ${filePath}: ${error.message}`);
+      return;
+    }
+    console.log(`File output: ${stdout}`);
+  });
+}
+
+</code></pre>
+  </div>
+  <p>この関数は指定されたファイルを開きます。<br>
+   <span class="codecolor">filePath</span>には開きたいファイルのパスを入力します。
+  </p>
+
+  <p><strong>5. fein's appを新しいタブで開く関数</strong></p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+function openFeinsApp() {
+  window.open('https://fein-sites-dev1.ew.r.appspot.com/', '_blank');
+}
+
+</code></pre>
+  </div>
+  <p>この関数は、指定されたURLを新しいタブで開きます。</p>
+
+  <p><strong>6. fein's PortalをEdgeで開く関数</strong></p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+function openFeinsPortal() {
+  const command = '"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe" https://sites.google.com/view/feins-portal/';
+  exec(command, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Error opening Fein's Portal: ${error.message}`);
+      return;
+    }
+    console.log(`Fein's Portal output: ${stdout}`);
+  });
+}
+
+</code></pre>
+  </div>
+  <p>この関数はfein's PortalをMicrosoft Edgeで開きます。</p>
+
+  <p><strong>7. ボタンとメニューの動作</strong></p>
+  <p>ここがちょっと長いですね。<br>
+   主にいくつかのアプリケーションを開いたり、Webサイトを表示したりするための関数と、ボタンをクリックしたときの動作を設定するものです。<br>
+   概要としては、次の通りです。</p>
+  <ul>
+   <li><span class="codecolor">startButton</span>というボタンの位置を固定し、画面の右上に配置しています。</li>
+   <li><span class="codecolor">startButton</span>がクリックされると、メニューの表示/非表示を切り替えます。</li>
+   <li>メニュー項目をクリックすると、そのサブメニューの表示/非表示を切り替えます。</li>
+  </ul>
+
+
+  <p><strong>Ⅰ. HTML要素の取得</strong></p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+const startButton = document.getElementById('start-button');
+const menuContent = document.getElementById('menu-content');
+
+</code></pre>
+  </div>
+
+  <p>ここでは、HTMLドキュメントから<span class="codecolor">start-button</span>と<span
+    class="codecolor">menu-content</span>というIDを持つ要素を取得しています。</p>
+
+  <p><strong>Ⅱ. ボタンの位置の設定</strong></p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+startButton.style.position = 'fixed';
+startButton.style.right = '10px';
+startButton.style.top = '10px';
+
+</code></pre>
+  </div>
+
+  <p>取得したボタン(<span class="codecolor">startButton</span>)の位置を画面の右上に固定しています。</p>
+
+  <p><strong>Ⅲ. ボタンのクリックイベントの設定</strong></p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+startButton.addEventListener('click', () => {
+  if (menuContent.classList.contains('hidden')) {
+    menuContent.classList.remove('hidden');
+    menuContent.style.display = 'block';
+  } else {
+    menuContent.classList.add('hidden');
+    menuContent.style.display = 'none';
+  }
+});
+
+</code></pre>
+  </div>
+  ボタンがクリックされたときの処理を設定しています。
+  <ul>
+   <li><span class="codecolor">menuContent</span>要素に<span
+     class="codecolor">hidden</span>というクラスが含まれているかどうかをチェックし、含まれている場合はクラスを削除し、メニューを表示します。</li>
+   <li><span class="codecolor">hidden</span>クラスが含まれていない場合はクラスを追加し、メニューを非表示にします。</li>
+  </ul>
+
+
+  <p><strong>Ⅳ. サブメニューのクリックイベントの設定</strong></p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+document.querySelectorAll('#menu-content > ul > li').forEach((item) => {
+  const subMenu = item.querySelector('ul');
+  if (subMenu) {
+    item.addEventListener('click', (event) => {
+      event.stopPropagation();
+      if (subMenu.style.display === 'none' || !subMenu.style.display) {
+        subMenu.style.display = 'block';
+      } else {
+        subMenu.style.display = 'none';
+      }
+    });
+  }
+});
+
+</code></pre>
+  </div>
+
+  <ul>
+   <li><span class="codecolor">#menu-content &gt; ul &gt; li</span>に該当するすべてのリスト項目（<span
+     class="codecolor">li</span>要素）を取得し、それぞれに対して処理を行っています。</li>
+   <li>リスト項目内にサブメニュー（<span class="codecolor">ul</span>要素）がある場合、そのサブメニューの表示/非表示を切り替えるクリックイベントを設定しています。</li>
+   <li>サブメニューが表示されていない場合は表示し、表示されている場合は非表示にします。</li>
+  </ul>
+
+  <p>このようにして、ボタンのクリックに応じてメニューの表示/非表示を制御し、さらにリスト項目をクリックするとそのサブメニューの表示/非表示も切り替えることができるようになります。</p>
+
+  <p>こんな感じかなー<br>
+   あんまり長々と説明しててもね。<br>
+   このフローティング・ランチャーもバージョンアップを重ねていくでしょうから、その折にまた再度書きましょうか。</p>
+
+  <h5>style.css</h5>
+  <p>あるいはこのWebサイトのように、軽いアニメーションでも付けようかと思っています。<br>
+   でもWindows11のスタートボタンもアニメーションはほとんど付いていないし、悩ましいところです。</p>
+  <p class="codegra" id="launcher_style">ランチャーソフトの見た目を設定するstyle.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* 全体の幅と高さを100%に設定し、余白とオーバーフローをリセット */
+body,
+html {
+ width: 100%; /* 要素の幅を100%に設定 */
+ height: 100%; /* 要素の高さを100%に設定 */
+ margin: 0; /* 余白を0に設定 */
+ overflow: hidden; /* 要素のコンテンツがはみ出さないようにする */
+ background: transparent; /* 背景を透明に設定 */
+ font-size: 12px; /* フォントサイズを12pxに設定 */
+ font-family: 'Lucida Handwriting', cursive; /* フォントファミリーを設定 */
+ color: #0078D4; /* 文字色を設定 */
+}
+
+/* body要素のスタイル設定 */
+body {
+ border-radius: 15px; /* 角を15pxの半径で丸くする */
+ overflow: hidden; /* コンテンツがはみ出さないようにする */
+ border: 1px solid rgba(0, 120, 215, 0.5); /* 半透明の1pxの境界線を設定 */
+ box-sizing: border-box; /* ボーダーとパディングを含めたボックスサイズを設定 */
+}
+
+/* #start-button要素のスタイル設定 */
+#start-button {
+ width: 120px; /* ボタンの幅を120pxに設定 */
+ height: 30px; /* ボタンの高さを30pxに設定 */
+ background-color: rgba(144, 238, 144, 0.4); /* 半透明の背景色を設定 */
+ border-radius: 30px / 15px; /* 楕円形の角を設定 */
+ border: none; /* 境界線をなしに設定 */
+ color: white; /* 文字色を白に設定 */
+ font-size: 12px; /* フォントサイズを12pxに設定 */
+ font-family: 'Lucida Handwriting', cursive; /* フォントファミリーを設定 */
+ cursor: pointer; /* マウスオーバー時のカーソルを指ポインターに設定 */
+ display: flex; /* フレックスボックスで配置 */
+ align-items: center; /* 垂直方向に中央揃え */
+ justify-content: center; /* 水平方向に中央揃え */
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 半透明の影を設定 */
+ position: fixed; /* スクロールしても固定位置 */
+ right: 10px; /* 右から10pxの位置に設定 */
+ top: 10px; /* 上から10pxの位置に設定 */
+}
+
+/* #start-buttonのホバー時のスタイル設定 */
+#start-button:hover {
+ background-color: rgba(102, 205, 170, 0.4); /* ホバー時の背景色を設定 */
+}
+
+/* #menu-content要素のスタイル設定 */
+#menu-content {
+ width: calc(100% - 40px); /* 幅を計算して設定 */
+ background-color: rgba(173, 216, 230, 0.2); /* 半透明の背景色を設定 */
+ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* 半透明の影を設定 */
+ padding: 10px; /* 内側の余白を10pxに設定 */
+ position: absolute; /* 絶対位置に設定 */
+ top: 60px; /* 上から60pxの位置に設定 */
+ right: 10px; /* 右から10pxの位置に設定 */
+ display: none; /* 非表示に設定 */
+ border-radius: 15px; /* 角を15pxの半径で丸くする */
+ border: none; /* 境界線をなしに設定 */
+ font-family: 'Lucida Handwriting', cursive; /* フォントファミリーを設定 */
+}
+
+/* 非表示要素の設定 */
+.hidden {
+ display: none; /* 非表示に設定 */
+}
+
+/* #menu-content内のul要素のスタイル設定 */
+#menu-content ul {
+ list-style: none; /* リストスタイルをなしに設定 */
+ padding: 0; /* 内側の余白を0に設定 */
+ margin: 0; /* 外側の余白を0に設定 */
+ font-family: 'Lucida Handwriting', cursive; /* フォントファミリーを設定 */
+}
+
+/* #menu-content内のli要素のスタイル設定 */
+#menu-content li {
+ padding: 5px; /* 内側の余白を5pxに設定 */
+ cursor: pointer; /* マウスオーバー時のカーソルを指ポインターに設定 */
+}
+
+/* 入れ子になったul要素のスタイル設定 */
+#menu-content ul ul {
+ padding-left: 20px; /* 左側の余白を20pxに設定 */
+ display: none; /* 非表示に設定 */
+}
+
+/* a要素のスタイル設定 */
+a {
+ color: #4285F4; /* リンクの文字色を設定 */
+ text-decoration: none; /* 下線をなしに設定 */
+ font-family: 'Lucida Handwriting', cursive; /* フォントファミリーを設定 */
+}
+
+/* a要素のホバー時のスタイル設定 */
+a:hover {
+ color: #0078D4; /* ホバー時の文字色を設定 */
+ text-decoration: underline; /* 下線を表示 */
+ font-family: 'Lucida Handwriting', cursive; /* フォントファミリーを設定 */
+}
+
+</code></pre>
+  </div>
+  <p>特別なことはやっていないです。<br>
+   フォントはちょっと気分で筆記体のものを入れてみたんだけど、あるいはまた変えようかしら？<br>
+   まだバージョン１ですから、これからいろいろ追記できる余地も欲しかったんですよね。</p>
+
+  <h5>main.js</h5>
+  <p>このコードはElectronを使用してシンプルなデスクトップアプリケーションを作成し、そのウィンドウの動作を制御します。</p>
+  <p class="codegra" id="launcher_main">エレクトロンアプリ全体の動作を制御するmain.js</p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+const { app, BrowserWindow } = require('electron');
+const path = require('path');
+
+function createWindow() {
+ const { screen } = require('electron');
+ const display = screen.getPrimaryDisplay();
+ const { width, height } = display.workAreaSize;
+
+ let win = new BrowserWindow({
+  width: width * 0.2,
+  height: height * 0.5,
+  x: width - width * 0.2,
+  y: 0,
+  frame: false,
+  transparent: true,
+  hasShadow: false,
+  alwaysOnTop: false,
+  webPreferences: {
+   preload: path.join(__dirname, 'preload.js'),
+   nodeIntegration: true,
+   contextIsolation: false,
+  }
+ });
+
+ win.loadFile('src/index.html');
+
+ win.setBackgroundColor('#00000000');
+ win.on('closed', () => {
+  win = null;
+  app.quit();
+ });
+}
+
+app.on('window-all-closed', () => {
+ app.quit();
+});
+
+app.whenReady().then(() => {
+ createWindow();
+
+ app.on('activate', () => {
+  if (BrowserWindow.getAllWindows().length === 0) {
+   createWindow();
+  }
+ });
+});
+
+</code></pre>
+  </div>
+
+
+
+
+  <p><strong>Ⅰ. モジュールのインポート</strong></p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+const { app, BrowserWindow } = require('electron');
+const path = require('path');
+
+</code></pre>
+  </div>
+
+  <ul>
+   <li><span class="codecolor">electron</span>から<span class="codecolor">app</span>と<span
+     class="codecolor">BrowserWindow</span>モジュールをインポートします。</li>
+   <li><span class="codecolor">app</span>はElectronの全体的なライフサイクルを制御し、<span
+     class="codecolor">BrowserWindow</span>はアプリケーションのウィンドウを作成・制御します。</li>
+  </ul>
+  <p><span class="codecolor">path</span>モジュールはファイルやディレクトリのパスを操作するためのものです。</p>
+
+  <p><strong>Ⅱ. ウィンドウを作成する関数の定義</strong></p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+function createWindow() {
+    const { screen } = require('electron');
+    const display = screen.getPrimaryDisplay();
+    const { width, height } = display.workAreaSize;
+
+    let win = new BrowserWindow({
+        width: width * 0.2,
+        height: height * 0.5,
+        x: width - width * 0.2,
+        y: 0,
+        frame: false,
+        transparent: true,
+        hasShadow: false,
+        alwaysOnTop: false,
+        webPreferences: {
+            preload: path.join(__dirname, 'preload.js'),
+            nodeIntegration: true,
+            contextIsolation: false,
+        }
+    });
+
+    win.loadFile('src/index.html');
+
+    win.setBackgroundColor('#00000000');
+    win.on('closed', () => {
+        win = null;
+        app.quit();
+    });
+}
+
+</code></pre>
+  </div>
+
+  <ul>
+   <li><span class="codecolor">screen.getPrimaryDisplay()</span>：プライマリディスプレイの情報を取得します。</li>
+   <li><span class="codecolor">BrowserWindow</span>オブジェクトの作成：ウィンドウの幅や高さ、位置、スタイル（フレームレス、透明など）を設定します。</li>
+   <li><span class="codecolor">webPreferences</span>：ウィンドウのWebコンテンツに関する設定。ここでは、プリロードスクリプトやノード統合などが設定されています。</li>
+   <li><span class="codecolor">win.loadFile('src/index.html')</span>：指定されたHTMLファイルを読み込みます。</li>
+   <li><span class="codecolor">win.setBackgroundColor('#00000000')</span>：ウィンドウの背景色を完全に透明に設定します。</li>
+   <li><span class="codecolor">win.on('closed', ...)</span>：ウィンドウが閉じられたときの処理。ウィンドウオブジェクトを<span
+     class="codecolor">null</span>にし、アプリケーションを終了します。</li>
+  </ul>
+
+
+  <p><strong>Ⅲ. 全てのウィンドウが閉じられたときの処理</strong></p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+app.on('window-all-closed', () => {
+    app.quit();
+});
+
+</code></pre>
+  </div>
+  <p>全てのウィンドウが閉じられたら、アプリケーションを終了します。</p>
+
+  <p><strong>Ⅳ. アプリケーションの準備ができたときの処理</strong></p>
+  <div class="code-container">
+   <pre><code class="language-javascript">
+app.whenReady().then(() => {
+    createWindow();
+
+    app.on('activate', () => {
+        if (BrowserWindow.getAllWindows().length === 0) {
+            createWindow();
+        }
+    });
+});
+
+</code></pre>
+  </div>
+  <ul>
+   <li>アプリケーションの準備ができたら、<span class="codecolor">createWindow</span>関数を呼び出してウィンドウを作成します。</li>
+   <li>すべてのウィンドウが閉じられている状態でアプリケーションがアクティブになった場合、新しいウィンドウを再作成します。</li>
+  </ul>
+
+  <h4>メインプロセス main.js・レンダラープロセス renderer.js</h4>
+  <p><strong>main.js</strong> はElectronアプリケーションのメインプロセス (main process) を制御するファイルです。<br>
+   Electronアプリでは、アプリケーションの全体的なライフサイクル管理やウィンドウの作成などの重要な部分がメインプロセスで行われます。<br>
+   一方、<strong>renderer.js</strong> はレンダラープロセス (renderer process)
+   のスクリプトであり、各ウィンドウ（またはウェブページ）の動作を制御します。<br>
+   レンダラープロセスは基本的にブラウザ環境で動作し、ユーザーインターフェイスやDOM操作などを担当します。</p>
+
+  <p>ここで、それぞれの役割と違いについて詳しく説明しておきますね。<br>
+   コード本体より、この考え方のほうが重要と思うから。</p>
+
+  <dl>
+   <dt>1. メインプロセス（main.js）</dt>
+   <dd>アプリケーションの起動、ウィンドウの作成、アプリケーション全体のイベント処理などを担当します。</dd>
+   <dd>Node.js のフル機能を利用でき、ファイルシステムアクセスやネイティブモジュールの使用が可能です。</dd>
+   <dd>複数のレンダラープロセスを管理します。</dd>
+
+   <dt>2. レンダラープロセス（renderer.js）</dt>
+   <dd>各ウィンドウ内で動作し、ユーザーインターフェイスのロジックや操作を担当します。</dd>
+   <dd>一般的にはブラウザ環境と似ており、HTML、CSS、JavaScriptを使用してDOM操作やユーザーインタラクションを実現します。</dd>
+   <dd>メインプロセスと通信するためには、ElectronのIPC（Inter-Process Communication）を使用します。</dd>
+  </dl>
+
+  <p>main.jsが必要な理由があるんですよね。<br>
+   これは普通の、巷で言うところの「ホームページ」にあるJavaScriptと違う側面でしょう。<br>
+   この役割分担により、Electronアプリは効率的かつ安全に動作します。<br>
+   renderer.jsだけではアプリケーションの全体的な管理ができないため、main.jsが必要になります。</p>
+
+  <dl>
+   <dt>ウィンドウ管理</dt>
+   <dd>新しいウィンドウの作成や既存ウィンドウの管理はメインプロセスで行われます。<span class="codecolor">renderer.js</span>だけではこれができません。</dd>
+
+   <dt>アプリケーションライフサイクルの管理</dt>
+   <dd>アプリケーションの起動、終了、再起動などの全体的な管理を担当します。</dd>
+
+   <dt>セキュリティ</dt>
+   <dd>ノード統合が有効になっている場合、メインプロセスがより信頼できる操作を行い、レンダラープロセスの潜在的なリスクを低減します。</dd>
+  </dl>
+
+  <p>ノード統合（Node
+   Integration）とは、ElectronアプリケーションのレンダラープロセスでNode.jsの機能を使用できるようにする設定です。<br>
+   通常、ブラウザ環境ではNode.jsの機能を直接使用することはできませんが、Electronではノード統合を有効にすることで、HTMLやJavaScriptを使っているレンダラープロセス内でもNode.jsのAPIやモジュールを利用できるようになります。
+  </p>
+
+  <p>ノード統合を有効にすることで、次のようなことが可能になるのです。</p>
+  <dl>
+   <dt>ファイルシステムへのアクセス:</dt>
+   <dd>Node.jsの<span class="codecolor">fs</span>モジュールを使用して、ファイルの読み書きやファイル操作が可能です。</dd>
+
+   <dt>ネイティブモジュールの使用:</dt>
+   <dd>Node.jsのネイティブモジュールを利用して、システムレベルの操作や外部パッケージの利用ができます。</dd>
+
+   <dt>サーバーとの通信:</dt>
+   <dd><span class="codecolor">http</span>や<span class="codecolor">https</span>モジュールを使用して、外部サーバーとの通信を行うことができます。</dd>
+  </dl>
+
+  <p>しかし、ノード統合を有効にすることにはリスクも伴います。<br>
+   特に、レンダラープロセス内のWebコンテンツが外部の悪意あるスクリプトによって操作されると、Node.jsのAPIが悪用される可能性があります。<br>
+   そのため、セキュリティ対策としては、信頼できるコンテンツのみを読み込む、またはコンテキスト分離（Context
+   Isolation）を有効にするなどの方法があります。</p>
+
+  <p>上述のmain.jsではノード統合が有効になっています。<br>
+   次のコードをご覧ください。</p>
+
+  <div class="code-container">
+   <pre><code class="language-javascript">
+webPreferences: {
+ preload: path.join(__dirname, 'preload.js'),
+ nodeIntegration: true, // ここでノード統合を有効にしている
+ contextIsolation: false,
+}
+
+</code></pre>
+  </div>
+
+  <p><span class="codecolor">webPreferences</span>オブジェクト内の<span class="codecolor">nodeIntegration:
+    true</span>という設定がノード統合を有効にしています。<br>
+   これはレンダラープロセス内でNode.jsの機能を使用することができる状態です。<br>
+   同時に、<span class="codecolor">contextIsolation: false</span>が設定されているため、レンダラープロセス内でのコンテキストの分離も無効になっています。<br>
+   これはセキュリティの観点から注意が必要な設定です。</p>
+
+  <p>ここまで見てきたように、ノード統合はElectronアプリケーションの柔軟性を高めるための機能ですが、使用する際にはセキュリティに十分注意する必要があります。<br>
+   renderer.jsを見ると、特定のアプリケーションやファイルを開くためにNode.jsのchild_processモジュールを使用していることが分かります。<br>
+   セキュリティを強化する設定に変更すると動作に影響を与える可能性が高いです。<br>
+   ノード統合を無効にすると、レンダラープロセス内でNode.jsの機能（requireやexecなど）にアクセスできなくなります。<br>
+   このため、現状のスクリプトでは以下の部分が動作しなくなるでしょう。<br>
+   コンテキスト分離を有効にすると、メインプロセスとレンダラープロセスが異なるJavaScriptコンテキストで動作するため、セキュリティが強化されますが、同様にNode.jsの機能に直接アクセスできなくなります。<br>
+   ノード統合を無効にしたり、コンテキスト分離を有効にする場合、次のようにプリロードスクリプトを使用して、メインプロセスとレンダラープロセス間で安全にデータをやり取りする方法があります。</p>
+
+  <h4>プリロードスクリプト preload.js</h4>
+  <p>上述したように、preload.jsはレンダラープロセスとメインプロセス間で安全に通信するためのスクリプトを記述するファイルであり、必要なAPIをレンダラープロセスに公開します。<br>
+   このプリロードスクリプト(<span class="codecolor">preload.js</span>)で、<span class="codecolor">contextBridge</span>と<span
+    class="codecolor">ipcRenderer</span>を使用して、メインプロセスの機能をレンダラープロセスから利用できるようにします。<br>
+   そうすればセキュリティを利かせつつ、このページで掲載している renderer.js も動作します。</p>
+
+  <div class="code-container">
+   <pre><code class="language-javascript">
+const { contextBridge, ipcRenderer } = require('electron');
+const { exec } = require('child_process');
+
+contextBridge.exposeInMainWorld('api', {
+ openVSCode: () => ipcRenderer.invoke('open-vscode'),
+ openEdge: () => ipcRenderer.invoke('open-edge'),
+ openFile: (filePath) => ipcRenderer.invoke('open-file', filePath),
+ openFeinsPortal: () => ipcRenderer.invoke('open-feins-portal')
+});
+
+</code></pre>
+  </div>
+
+  <p>上記のpreload.jsを書いてから、メインプロセスの main.js でIPC通信を設定しますよね。<br>
+   次に、レンダラープロセスの renderer.js を用いてプリロードスクリプトで公開されたAPIを使用します。<br>
+   こうやってやれば、セキュリティを強化しつつ、現在のスクリプトの機能を維持することができます。</p>
+
+  <p>まぁでも…すでにお話しましたが、ここで作っているのはローカルで稼働するシンプルなフローティング・ランチャーです。<br>
+   デザイン面や機能などをさらに拡張したくなった時に改めて考えれば良いわけで。<br>
+   現段階ではここまでやらずとも良いと判断しているってことですね。</p>
+
+  <h5>package.json</h5>
+  <p>ここまで、あまりにも長くなり過ぎました。<br>
+   このpackage.jsonも重要なコードであり、ちゃんと書かないとソフトウェアとしてまともに機能しません。</p>
+  <p class="codegra" id="launcher_package">プロジェクトの設定情報を管理するpackage.json</p>
+  <div class="code-container">
+   <pre><code class="language-json">
+{
+ "name": "fein_launcher",
+ "version": "1.0.0",
+ "main": "main.js",
+ "scripts": {
+  "start": "electron .",
+  "package-win": "electron-packager . fein_launcher --platform=win32 --arch=x64 --out=dist --overwrite",
+  "package-linux": "electron-packager . fein_launcher --platform=linux --arch=x64 --out=dist --overwrite",
+  "package-mac": "electron-packager . fein_launcher --platform=darwin --arch=x64 --out=dist --overwrite"
+ },
+ "devDependencies": {
+  "electron": "^xx.x.x",
+  "electron-packager": "^xx.x.x"
+ }
+}
+
+</code></pre>
+  </div>
+
+  <p>
+   package.jsonは、Node.jsプロジェクトの「設定ファイル」として機能し、プロジェクトの基本情報、依存パッケージ、実行可能なスクリプトなどを管理します。<br>
+   また、プロジェクトのセットアップやビルド、実行が簡単になります。<br>
+   このフローティング・ランチャーで使われているコードの説明を致しましょう。
+  </p>
+
+  <dl>
+   <dt>プロジェクト情報</dt>
+   <dd><span class="codecolor">name</span>: プロジェクト名です。この場合、プロジェクトの名前は <strong>fein_launcher</strong> です。</dd>
+   <dd><span class="codecolor">version</span>: プロジェクトのバージョンです。バージョン番号は <strong>1.0.0</strong> です。</dd>
+   <dd><span class="codecolor">main</span>: プロジェクトのエントリーポイントとなるファイルを指定します。この場合は <strong>main.js</strong> です。</dd>
+   <dt>スクリプト</dt>
+   <dd><span class="codecolor">scripts</span>: コマンドラインで実行できるスクリプトを定義します。この部分では以下のスクリプトが定義されています：</dd>
+   <dd><span class="codecolor">start</span>: <strong>electron .</strong> を実行すると、Electronアプリケーションが起動します。</dd>
+   <dd><span class="codecolor">package-win</span>: <strong>electron-packager . <strong>fein_launcher</strong>
+     --platform=win32
+     --arch=x64 --out=dist --overwrite</strong> を実行すると、Windows用のパッケージが作成されます。</dd>
+   <dd><span class="codecolor">package-linux</span>: <strong>electron-packager . <strong>fein_launcher</strong>
+     --platform=linux
+     --arch=x64 --out=dist --overwrite</strong> を実行すると、Linux用のパッケージが作成されます。</dd>
+   <dd><span class="codecolor">package-mac</span>: <strong>electron-packager . <strong>fein_launcher</strong>
+     --platform=darwin
+     --arch=x64 --out=dist --overwrite</strong> を実行すると、Mac用のパッケージが作成されます。</dd>
+
+   <dt>開発依存関係</dt>
+   <dd><span class="codecolor">devDependencies</span>: 開発中に必要な依存関係を定義します。この部分では次のような依存関係が定義されています。</dd>
+   <dd><span class="codecolor">electron</span>: <strong>^xx.x.x</strong>
+    Electronのバージョンを指定します。<strong>xx.x.x</strong>の部分には実際のバージョン番号が入ります。</dd>
+   <dd><span class="codecolor">electron-packager</span>: <strong>^xx.x.x</strong> Electronアプリケーションをパッケージ化するためのツールである
+    <strong>electron-packager</strong> のバージョンを指定します。
+   </dd>
+  </dl>
+
+  <p>electronとelectron-packagerのバージョン記述はサボっちゃいました😆ww<br>
+   いや…だって、この手の設定ファイルって凝り出すとキリないんだもん…<br>
+   バージョンアップしていくにつれて、少しずつ完璧な形へ近付けていきましょう。</p>
+
+  <h3>ソフトウェアの起動テスト</h3>
+  <p>次のコマンドでElectronアプリが起動します。<br>
+   開発を進めるには、上記のファイルにソースコードを記載しつつ、機能を追加していきます。</p>
+
+  <div class="code-container">
+   <pre><code class="language-bash">
+npm start
+
+</code></pre>
+  </div>
+  <p>ソフトウェアを終了するには、コマンドプロンプト内部でctrl+cを押してからyesで終了できます。</p>
+
+  <p>ここで、ほっとんどの場合バグが出ます。<br>
+   想定通りにソフトウェアが動いてくれないので、デバッグする必要がある。<br>
+   デバッグとは、プログラミングにおいて、プログラムの欠陥や誤り（バグ）を見つけ出し、取り除く作業のことです。<br>
+   いろんなやり方があるのですが、ここでは基本的なものを紹介します。<br>
+   次の画像をご覧ください。</p>
+
+  <div class="content">
+   <img src="/contents/itimages/pwainfo/debug1.png" alt="feinlauncher" class="biggraphic fade-in-out">
+  </div>
+
+  <p>まず、自分が作っているソフト上で Shift+Ctrl+I を押します。<br>
+   大きいソフトだったらいいけど、そうでない場合は上の画像のように大変操作しにくい開発者ツールが開いてしまうのです。<br>
+   そしたらソフトのサイズそのものを広げても良いし、右上にある縦に並んだ・を押していただきます。</p>
+
+  <div class="content">
+   <img src="/contents/itimages/pwainfo/debug2.png" alt="feinlauncher" class="biggraphic fade-in-out">
+  </div>
+
+  <p>またいろんな選択肢が出てきますが、ここでは「Undock into separate window」を押してみましょう。</p>
+
+  <div class="content">
+   <img src="/contents/itimages/pwainfo/debug3.png" alt="feinlauncher" class="biggraphic fade-in-out">
+  </div>
+
+  <p>これで、広々とした画面で開発者ツールを閲覧できるようになりました。</p>
+  <p>こうしたデバッグのツールはいろんな種類があり、非常に多機能です。<br>
+   とてもとても、全ての機能を網羅するのは難しいでしょう。<br>
+   でもとりあえず、ここのConsoleタブだけは見ておくと良いですよ？<br>
+   プログラムにバグがあれば、ここにエラーメッセージが出ます。<br>
+   そのメッセージについて調べながら、ソースコードを修正していくわけです。</p>
+
+  <h4>node_modules</h4>
+  <p>node.jsのエレクトロンでソフトウェアを作っていると、下の画像のように「node_modules」というフォルダができていることに気付くでしょう。<br>
+   バグではありませんよ？<br>
+   「node_modules」フォルダは、node.jsのプロジェクトにおいて、外部のライブラリやパッケージをインストールした際に生成されるフォルダです。</p>
+
+  <img src="/contents/itimages/pwainfo/node_modules.png" alt="feinlauncher" class="graphic fade-in-out">
+  <p>node.jsのプロジェクトでは、様々な外部のライブラリやパッケージを利用することができます。<br>
+   これらのライブラリやパッケージは、上述したnpm（Node Package
+   Manager）などのパッケージマネージャーを使ってインストールします。<br>
+   npmを使ってライブラリやパッケージをインストールすると、それらのファイルは「node_modules」フォルダ内に保存されます。<br>
+   つまり、「node_modules」フォルダは、プロジェクトが依存する外部のライブラリやパッケージをまとめて管理する場所なのです。</p>
+
+  <p>
+   「node_modules」フォルダは、サイズが大きくなりやすいという特徴があります。<br>
+   このページでやってるランチャーソフトくらいならいいけど、多くのライブラリやパッケージをインストールしているプロジェクトでは、「node_modules」フォルダが数GBになることもあります。<br>
+   そのため、Gitなどで「node_modules」フォルダを管理することは推奨されていません。<br>
+   代わりに、package.jsonファイルを使って、プロジェクトの依存関係を管理します。</p>
+
+  <h3>ソフトウェアのビルドとパッケージング</h3>
+  <p>「ビルド」は、ソースコードから実行可能な形式に変換する全体的なプロセスを指し、「パッケージング」はそのビルドされたファイルをインストーラなどの形で配布可能な形式にまとめるプロセスを指すことが一般的です。</p>
+
+  <p>ソフトを作ったら、それを手軽に実行できるようにしなければ意味がありません。これがビルドです。<br>
+   そして、ビルドされたものを一般ユーザーが使えるようにすると良いですね。これがパッケージングです。<br>
+   では、実際のやり方を見ていきましょう。</p>
+
+  <h5>electron-packager のインストール</h5>
+
+  <p>package.jsonのコード紹介にて、ビルドコマンドを記述していましたね？<br>
+   しかし、package.jsonにビルドコマンドを記述しても、electron-packager自体がインストールされていなければ実行できません。<br>
+   まずは、electron-packagerをプロジェクトにインストールしましょう。<br>
+   ターミナルで、プロジェクトのルートディレクトリに移動し、次のコマンドを実行します。</p>
+
+  <div class="code-container">
+   <pre><code class="language-bash">
+npm install electron-packager --save-dev
+
+</code></pre>
+  </div>
+
+  <p>これでelectron-packagerがプロジェクトの devDependencies としてインストールされます。</p>
+
+  <h5>ビルドコマンドの実行でソフトウェアが完成する</h5>
+  <p>electron-packagerのインストールが完了したら、いよいよビルドコマンドを実行します。<br>
+   package.jsonに記述したコマンドは npm scripts として登録されているので、次のように簡単に実行できます。</p>
+
+  <div class="code-container">
+   <pre><code class="language-bash">
+npm run &lt;script名&gt;
+
+</code></pre>
+  </div>
+
+  <p>例えば、Windows版をビルドする場合は、次のコマンドです。</p>
+
+  <div class="code-container">
+   <pre><code class="language-bash">
+npm run package-win
+
+</code></pre>
+  </div>
+  <p>このコマンドを実行すると、ソフトウェアを作っているフォルダに「dist」というフォルダが生成されるはずです。</p>
+  <img src="/contents/itimages/pwainfo/dist.png" alt="feinlauncher" class="graphic fade-in-out">
+  <p>このフォルダの中に、exeファイルが入っているんだよね。<br>
+   このランチャーソフトの場合は、次の画像のようになります。</p>
+
+  <img src="/contents/itimages/pwainfo/exefile.png" alt="feinlauncher" class="graphic fade-in-out">
+
+  <p>distフォルダの下にfein_launcher-win32-x64フォルダがあります。<br>
+   その中に「fein_launcher.exe」があるんだよね。<br>
+   これで、ソフトウェアの完成となります！</p>
+
+  <img src="/contents/itimages/pwainfo/resource1.png" alt="feinlauncher" class="graphic fade-in-out">
+
+  <p>さらにresurcesというフォルダを見てみましょう。<br>
+   中にはappフォルダがあり、その中に私が作ったJavaScriptなどが収まっている。</p>
+
+  <img src="/contents/itimages/pwainfo/resource2.png" alt="feinlauncher" class="graphic fade-in-out">
+
+  <p>加えて、srcフォルダの中を見れば、ちゃんとhtmlやcssも入っている。<br>
+   これが、私が作ったフローティング・ランチャーの仕組みです。</p>
+
+  <p>同様に、Linux版、Mac版をビルドする場合は、それぞれ次のコマンドを実行します。</p>
+
+  <div class="code-container">
+   <pre><code class="language-bash">
+npm run package-linux
+npm run package-mac
+
+</code></pre>
+  </div>
+
+  <p>ちなみにpackage.jsonへ次のように記述しておくと、<span class="codecolor">npm run
+    build</span>コマンドを実行するだけで、全てのプラットフォーム向けの実行ファイルを一度に生成することができます。<br>
+   私はやらないんだけどねー。</p>
+
+  <div class="code-container">
+   <pre><code class="language-bash">
+"build": "npm run package-win && npm run package-linux && npm run package-mac"
+
+</code></pre>
+  </div>
+
+  <p>さて、こうしてビルドが完了すると、package.jsonで指定した出力先<span class="codecolor">--out=dist</span>に、プラットフォームごとの実行ファイルが生成されます。</p>
+
+  <span class="codecolor">dist</span>ディレクトリの中身を確認し、目的の実行ファイルが存在することを確認しましょう。
+
+  <h4>electron-packager</h4>
+  <p>
+   electron-packagerは、Electronフレームワークを使って開発したアプリケーションを、Windows、macOS、Linuxといった各プラットフォームで配布可能な実行ファイルにパッケージングするためのツールです。<br>
+   Electronアプリを開発したら、それをエンドユーザーに配布する必要があります。<br>
+   しかし、ElectronアプリはWeb技術（HTML, CSS,
+   JavaScript）をベースにしているため、そのままでは各OSで実行することができません。<br>
+   そこで、electron-packagerのようなツールを使って、Electronアプリを各OSに対応した実行ファイルに変換（パッケージング）する必要があるのです。
+  </p>
+
+  <p>electron-packagerは、次のようなことをしてくれるのです。</p>
+
+  <dl>
+   <dt>クロスプラットフォーム対応</dt>
+   <dd>
+    Windows、macOS、Linuxといった主要なデスクトップOS向けの実行ファイルを生成できます。
+   </dd>
+   <dt>実行ファイルの生成</dt>
+   <dd>
+    アプリケーションのコードやリソースをまとめて、各OSで実行可能な形式の実行ファイル（.exe, .app, etc.）を生成します。
+   </dd>
+   <dt>パッケージング</dt>
+   <dd>
+    アプリケーションに必要なファイルや依存関係をまとめて、配布可能なパッケージ（インストーラーなど）を作成します。
+   </dd>
+  </dl>
+
+  <p>electron-packagerは、コマンドラインツールとして提供されています。<br>
+   通常は、Node.jsのnpmパッケージとしてインストールし、package.jsonにビルドコマンドを定義して使用します。<br>
+   上述したビルドとパッケージングの作業が、まさにそれです。<br>
+   基本的な使い方をおさらいしておきましょう。</p>
+
+  <p><span class="codecolor">npm install electron-packager --save-dev</span>でインストールするのは同じです。<br>
+   ビルドコマンドの意味を押さえておくと良いかもね？</p>
+
+  <ul>
+   <li><span class="codecolor">electron-packager</span>は、アプリのルートディレクトリとアプリ名</li>
+   <li><span class="codecolor">--platform=</span>は、プラットフォーム</li>
+   <li><span class="codecolor">--arch=</span>は、アーキテクチャ</li>
+   <li><span class="codecolor">--out=</span>は、出力先</li>
+  </ul>
+
+  <p>例えば、Windows向け実行ファイルの生成は次のようにコマンドします。</p>
+
+  <div class="code-container">
+   <pre><code class="language-bash">
+electron-packager . myapp --platform=win32 --arch=x64 --out=dist
+
+</code></pre>
+  </div>
+
+  <p>このコマンドを実行すると、現在のディレクトリ（.）にあるmyappというアプリを、Windows 64bit向けにパッケージングし、distディレクトリに出力します。</p>
+
+  <p>electron-packagerは、Electronアプリを各プラットフォーム向けに配布するために必要不可欠なツールですよね。<br>
+   これを使うことで、開発したアプリをより多くの人に利用してもらうことができるってこと。</p>
+
+  <h4>dependenciesとdevDependencies</h4>
+  <p>一応、devDependencies という言葉についても書いておこうかな。</p>
+  <p>Node.jsプロジェクトにおいて、外部のライブラリやツールを利用する場合、それらをプロジェクトにインストールする必要があります。<br>
+   これらの外部ライブラリやツールは、プロジェクトの「依存関係」と呼ばれることが多いです。<br>
+   この依存関係には、大きく分けてdependencies（依存）とdevDependencies（開発依存）の2種類があります。</p>
+
+  <dl>
+   <dt>dependencies</dt>
+   <dd>
+    アプリケーションの実行時に必要な依存関係
+   </dd>
+   <dt>devDependencies</dt>
+   <dd>
+    アプリケーションの開発時にのみ必要な依存関係
+   </dd>
+  </dl>
+
+  <p>electron-packagerはdevDependenciesなんですよ？<br>
+   electron-packagerは、Electronアプリをパッケージングするためのツールであり、アプリケーションの実行時には必要ありません。<br>
+   electron-packagerは、あくまで開発者がアプリをビルド・パッケージングする際に使用するツールです。<br>
+   そのため、electron-packagerはdevDependenciesとしてインストールされます。<br>
+   devDependenciesとしてインストールされたパッケージは、本番環境にデプロイされる際には含まれないということです。</p>
+
+  <h3>🌟完成したソフトウェアの配布</h3>
+  <p>Electron で作成したアプリを配布する方法はいくつかありますが、dist フォルダを zip 形式で圧縮することもその一つです。<br>
+   electron-packager や electron-builder などのツールを使ってアプリをビルドすると、通常、dist フォルダに実行ファイルや関連ファイルが生成されます。<br>
+   この dist フォルダを zip 形式で圧縮することで、配布しやすい形にまとめることができます。<br>
+   ただ、zip形式には次のようなメリットとデメリットがあることを押さえておきましょう。</p>
+
+  <dl>
+   <dt>手軽さ</dt>
+   <dd>
+    圧縮・解凍ソフトを使って簡単に圧縮・解凍できるため、受け取る側も手間がかかりません。
+   </dd>
+   <dt>ファイルサイズ</dt>
+   <dd>
+    圧縮することでファイルサイズを小さくできるため、配布やダウンロードにかかる時間を短縮できます。
+   </dd>
+   <dt>インストール</dt>
+   <dd>
+    zip 形式で配布する場合、受け取った側は自分で解凍し、実行ファイルを適切な場所に配置する必要があります。
+   </dd>
+   <dt>自動更新</dt>
+   <dd>
+    zip 形式では、アプリの自動更新機能を実現するのが難しい場合があります。
+   </dd>
+  </dl>
+
+  <p>このように、Electron アプリの配布方法として dist フォルダを zip 形式で圧縮することは一つの選択肢です。<br>
+   しかしよりユーザーフレンドリーな方法としては、インストーラー形式での配布が推奨されます。<br>
+   インストーラー形式では、受け取った側はインストーラーを実行するだけでアプリが適切な場所にインストールされ、必要な設定も自動的に行われます。<br>
+   また、自動更新機能も実装しやすくなります。<br>
+   Electron アプリならelectron-builderを使うのがやりやすいでしょうね。<br>
+   パッケージングするためのツールですが、インストーラーの作成機能も備わっています。</p>
+
+  <h2>個人のネット活動に流されないようにね！</h2>
+  <p>個人発のソフトウェアをむやみにインストールしてはならない理由…<br>
+   無数にあるけど、次のようなことはどこの教科書にも書いてあるのでは？<br>
+   私も子供の頃からもう…イヤってほど叩きこまれています。</p>
+
+  <p><strong>1. マルウェアのリスク</strong></p>
+  <p>個人サイトに公開されているexeファイルには、マルウェアやウイルスが含まれている可能性があります。<br>
+   これらの有害なプログラムは、コンピュータやネットワークに損害を与えたり、個人情報を盗み取ったりすることがあります。</p>
+
+  <p><strong>2. 信頼性の欠如</strong></p>
+  <p>公式のソースや信頼できるダウンロードサイトで提供されていないexeファイルは、その動作や品質が保証されていません。<br>
+   予期しない動作やシステムのクラッシュなどの問題が発生する可能性があります。</p>
+
+  <p><strong>3. プライバシーの侵害</strong></p>
+  <p>不正なexeファイルは、個人情報や機密情報を不正に収集する可能性があります。<br>
+   プライバシーが侵害されるリスクがあります。</p>
+
+  <p><strong>4. ライセンス違反</strong></p>
+  <p>正規のライセンスを持たないソフトウェアをダウンロードして使用することは、法的な問題を引き起こす可能性があります。<br>
+   違法なソフトウェアの使用は、ソフトウェアの開発者や著作権者に損害を与えるだけでなく、自身も法的なトラブルに巻き込まれるリスクがあります。</p>
+
+  <p><strong>5. セキュリティ更新の欠如</strong></p>
+  <p>公式のソースから提供されているソフトウェアは、セキュリティ更新やパッチが定期的に提供されますが、個人サイトで公開されているexeファイルはそのような更新が行われないことが多いため、セキュリティホールが放置されるリスクがあります。
+  </p>
+
+  <p>exeなどソフトウェアの実行ファイルをインストールする際には、必ず公式サイトや信頼できるダウンロードサイトから入手することを強くお勧めします。</p>
+
+  <h2>でも試してみたくなっちゃったら？</h2>
+  <p>人間には好奇心があり、それは大いに尊重されるべきものです。<br>
+   お勉強の原動力になるからね。<br>
+   GitHubなどを見ると、おもしろそうなソフトもいっぱいありますよ！<br>
+   とは言え、上述している背景から、私のフローティング・ランチャーのexeファイルは提供しません。<br>
+   でもソースコードはこうして全文公開して解説まで付けています。</p>
+  <p>言い変えると、このページに習って頂ければ、御自身で「マルチプラットフォーム対応のフローティング・ランチャー」を作れてしまいます😆ww<br>
+   それなら安全であることはもちろん、次のようなメリットが期待できるでしょう。</p>
+  <ul>
+   <li>デザインや機能を好きなだけ変更できる。</li>
+   <li>自分で作って自分で使うだけだから、セキュリティリスクはありません。ただし、お好みでいろんな機能を追加していくおつもりなら、話は別ですよ？</li>
+   <li>未経験の方にとっては、貴重な勉強の機会になる。</li>
+   <li>何よりこういうの、楽しいです！</li>
+   <li>（私がexeファイル等を撒き散らしているわけではないので、私自身の身も守れる。）</li>
+  </ul>
+  <p>今回は私の思い付きでフローティング・ランチャーでしたが、数か月後にはまた何かネタを思い付くかもしれません。<br>
+   そしたらこのランチャーに機能追加してバージョン2として、改めて公開しましょう。</p>
+
+  <p>最後に、要は「調子こいちゃう」から、トラブルになるのですよ。<br>
+   人からパクったソフトウェアを再配布してしまったりね。<br>
+   意外にも、技術的なことより人間の原始的な欲求がトラブルの原因であることが多いものです。<br>
+   節度を守りつつ、インターネットで遊べると良いですね🎵</p>
+
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/software.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>

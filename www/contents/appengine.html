@@ -857,6 +857,126 @@ runtime: python312
   <p>これらのランタイム環境を使用して、対応するプログラミング言語とバージョンでアプリケーションを実行することができます。<br>
    設定ファイルに指定することで、App Engineが自動的に適切なランタイムを使用してアプリケーションをデプロイ・実行する仕組みです。</p>
 
+  <h5>service</h5>
+  <p><span class="small-orange-text">※サービスを作成する場合には必須です。default サービスでは省略できます。</span></p>
+  <p>App Engineではウェブアプリケーションを「サービス」として管理します。<br>
+   このサービスには名前を付ける必要があります。<br>
+   サービスの設定は、アプリケーションの異なる部分を分けて管理するのに役立つでしょう。<br>
+   とりあえず一つのサービスを「default」として設定できます。<br>
+   この場合、特に名前を付ける必要はありません。<br>
+   サービス名やバージョン名には次のようなルールがあります。</p>
+
+  <dl>
+   <dt>使える文字</dt>
+   <dd>数字（0-9）、英字（a-z、A-Z）、ハイフン（-）</dd>
+
+   <dt>長さの制限</dt>
+   <dd>VERSION-dot-SERVICE-dot-PROJECT_ID という形式で、全体の長さが63文字以内にする必要があります。</dd>
+
+   <dt>ハイフンの位置</dt>
+   <dd>名前の先頭や末尾にハイフンは使えません。</dd>
+
+   <dt>名前の一意性</dt>
+   <dd>各サービスとバージョンには一意の名前を付ける必要があります。同じ名前を使ってはいけません。</dd>
+  </dl>
+
+  <p>app.yamlには次のように書きます。</p>
+  <div class="code-container">
+   <pre><code class="language-yaml">
+service: service-name
+
+</code></pre>
+  </div>
+
+  <p>この例では、サービス名として「service-name」を設定しています。<br>
+   この名前が他のサービス名やバージョン名と重複しないようにする必要があります。</p>
+
+  <h5>service_account</h5>
+  <p><span class="small-orange-text">※必ずしも設定する必要はありません。</span></p>
+  <p>特定のバージョンに関連付けられたサービスアカウントを指定するために使われます。<br>
+   このサービスアカウントは、他のGoogle Cloudサービスにアクセスする際に使われます。<br>
+   サービスアカウントを指定することで、アプリケーションが適切な権限でGoogle Cloudサービスにアクセスできるようになります。<br>
+   この設定はオプションですが、セキュリティや権限管理の観点から非常に重要です。<br>
+   例えば、データベースへのアクセスや、他のAPIを利用する際に必要な認証情報として機能します。<br>
+   形式は次の通りです。</p>
+
+  <span class="codecolor">[SERVICE_ACCOUNT_NAME]@[PROJECT_ID]<br>.iam.gserviceaccount.com</span>
+
+  <ul>
+   <li>SERVICE_ACCOUNT_NAME：サービスアカウントの名前</li>
+   <li>PROJECT_ID：プロジェクトのID</li>
+  </ul>
+
+  <p>yamlには次のように指定します。</p>
+
+  <div class="code-container">
+   <pre><code class="language-yaml">
+service_account: my-service-account@my-project-id.iam.gserviceaccount.com
+
+</code></pre>
+  </div>
+
+  <p>この例では、「my-service-account」という名前のサービスアカウントを「my-project-id」というプロジェクトに関連付けています。</p>
+
+  <h5>vpc_access_connector</h5>
+  <span class="small-orange-text">※必ずしも設定する必要はありません。</span>
+  <p>vpc_access_connector（PCアクセスコネクタ）は、アプリケーションが仮想プライベートクラウド（VPC）ネットワークの内部リソースにアクセスできるようにするための設定です。
+   サーバーレス環境（例えばGoogle CloudのApp Engine）で、この設定を使ってネットワークリソースにリクエストを送信することができます。
+   設定項目は次の通りです。</p>
+
+  <p><strong>name</strong></p>
+  <p>これは、サーバーレスVPCアクセスコネクタの完全修飾名です。<br>
+   形式は <span class="codecolor">"projects/PROJECT_ID/locations/REGION/<br>
+    connectors/CONNECTOR_NAME"</span> です。</p>
+
+  <dl>
+   <dt>PROJECT_ID</dt>
+   <dd>プロジェクトのID</dd>
+
+   <dt>REGION</dt>
+   <dd>リージョン（地域）</dd>
+
+   <dt>CONNECTOR_NAME</dt>
+   <dd>コネクタの名前</dd>
+  </dl>
+
+  <p>yamlでは、次のように書きます。</p>
+
+  <div class="code-container">
+   <pre><code class="language-yaml">
+vpc_access_connector:
+  name: "projects/my-project/locations/us-central1/connectors/my-connector"
+
+</code></pre>
+  </div>
+
+  <p><strong>egress_setting</strong></p>
+
+  <p>これはオプションで省略可能なんですよね。<br>
+   デフォルトは <span class="codecolor">private-ranges-only</span> です。<br>
+   設定値は次の通りです。</p>
+
+  <dl>
+   <dt>private-ranges-only (デフォルト)</dt>
+   <dd>内部IPアドレスへのリクエストはVPCネットワークに送信され、外部IPアドレスへのリクエストは公共のインターネットに送信されます。</dd>
+
+   <dt>all-traffic</dt>
+   <dd>すべてのリクエストがVPCネットワークに送信されます。</dd>
+  </dl>
+
+  <p>yamlには、次のように書きます。</p>
+  <div class="code-container">
+   <pre><code class="language-yaml">
+vpc_access_connector:
+  name: "projects/my-project/locations/us-central1/connectors/my-connector"
+  egress_setting: all-traffic
+
+</code></pre>
+  </div>
+
+  <p>要は vpc_access_connector の設定を使うことで、サーバーレスアプリケーションがVPCネットワークの内部リソースにアクセスできるようになるのです。<br>
+   特に内部システムやデータベースにアクセスする場合に役立ちます。</p>
+
   <h2>個人サイト向けのapp.yaml設定</h2>
 
   <p>App Engineの「app.yaml」ファイルは、Google App Engineアプリケーションのデプロイや動作に関する重要な情報をまとめて管理するためのものです。<br>

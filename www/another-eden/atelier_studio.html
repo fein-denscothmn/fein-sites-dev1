@@ -44,6 +44,7 @@
  <link
   href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
   rel="stylesheet">
+ <link rel="apple-touch-icon" sizes="180x180" href="/icons/appleicon.png">
  <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
 
  <!-- Googleタグマネージャー -->
@@ -525,8 +526,8 @@ for container in document.select('.atelier-container'):
    でもAtelierとStudioは同じような意味だから、言語が混ざっているだけで通りますよ。<br>
    実際はVisual Studio Codeをカスタマイズしただけです。<br>
    リアルの私は錬金術を使えないので、せめてWeb制作でライザごっこをしてみようかと！</p>
-
-  <h4 id="manifest_json_light">Steps for Application Development</h4>
+  manifest_json_light
+  <h4><span id="manifest_json_light">Steps for Application Development</span></h4>
   <div class="spacer"></div>
   <div class="atelier-container">
    <div class="atelier-tabs">
@@ -1637,16 +1638,28 @@ hr.atelierflower::before {
 
   <h2>私のサイトがアプリになりました</h2>
   <div class="content">
-   <img src="/contents/itimages/feinapp.png" alt="feinapp" class="graphicsaki right-image fade-in-out">
-   <p>詳しくは<a href="/contents/pwa.html">個人サイトをそのまんまアプリにする方法</a>にて。<br>
-    超簡単な説明だけで良ければ、このページの「<a href="#manifest_json_light">Steps for Application Development</a>にある json タブ」にてご紹介しております。
-   </p>
-   <p>この見出し通りの状況なのですが、ここに詳しく書くのは無理ゲーだよ…<br>
-    ちゃんと別にWebページが必要です。<br>
-    一言お気持ち表明するなら、もう初めっからアプリ化するつもりでした。<br>
-    だって今の時代、普通に考えてアプリのほうが有利じゃん。<br>
-    でも静的Webサイトのメリットを捨てないのが、プログレッシブウェブアプリなんです。</p>
+   <img src="Atelier.png" alt="Illustration of the atelier" class="biggraphic fade-in-out">
   </div>
+  <p>詳しくは<a href="/contents/pwa.html">個人サイトをそのまんまアプリにする方法</a>にて。<br>
+   超簡単な説明だけで良ければ、このページの「<a href="#manifest_json_light">Steps for Application Development</a>にある json タブ」にてご紹介しております。
+  </p>
+  <p>この見出し通りの状況なのですが、ここに詳しく書くのは無理ゲーだよ…<br>
+   ちゃんと別にWebページが必要です。<br>
+   一言お気持ち表明するなら、もう初めっからアプリ化するつもりでした。<br>
+   だって今の時代、普通に考えてアプリのほうが有利じゃん。<br>
+   でも静的Webサイトのメリットを捨てないのが、プログレッシブウェブアプリなんです。</p>
+
+  <h3>マルチプラットフォーム対応のフローティング・ランチャーを作りました</h3>
+  <p>詳しくは<a href="/contents/software.html">Web制作の技術でソフトウェアを作る</a>にて。</p>
+  <div class="content">
+   <img src="/contents/itimages/pwainfo/feinlauncher.png" alt="feinlauncher" class="biggraphic fade-in-out">
+  </div>
+  <p>こういう感じの、壁紙を極力邪魔しないテキストベースのランチャーです。<br>
+   上の画像の右上のほう…透き通ったランチャーがあるの、見えますか？<br>
+   これはアプリ化のように計画的なものではなく、完全な思い付きです。<br>
+   ソフトウェア作りに凝ってた頃のソースコードが発掘されたことも大きい。<br>
+   コード資産って…大切なんだと改めて思いました😅<br>
+   これからもバージョンアップしていきましょう！</p>
 
   <hr class="atelierflower">
 
