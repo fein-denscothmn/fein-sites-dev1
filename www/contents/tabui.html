@@ -3,20 +3,6 @@
 <html lang="ja">
 
 <head>
-<link rel="manifest" href="/manifest.json">
-
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(registration => {
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      })
-      .catch(error => {
-        console.log('ServiceWorker registration failed: ', error);
-      });
-  }
-</script>
-
  <!-- Meta tags -->
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,49 +13,61 @@
  <meta property="og:description" content="CSSの書き方に関するページ。可能な限り、教科書でもよく見るようなコードのみで構成しています。">
  <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
  <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/tabui.html">
- <!-- Structured Data -->
- <script type="application/ld+json">
-  {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "タブを使ってコンテンツを詰め込む",
-      "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/tabui.html",
-      "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
-  }
-  </script>
-
+ <!-- Favicon -->
+ <link rel="apple-touch-icon" sizes="180x180" href="/icons/appleicon.png">
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+ <!-- Page Title -->
+ <title>タブを使ってコンテンツを詰め込む</title>
+ <!-- Manifest -->
+ <link rel="manifest" href="/manifest.json">
  <!-- CSS -->
- <link rel="stylesheet" type="text/css" href="/css/style.css">
- <link rel="stylesheet" type="text/css" href="/css/header.css">
- <link rel="stylesheet" type="text/css" href="/css/footer.css">
- <link rel="stylesheet" type="text/css" href="/css/menu.css">
- <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
- <link rel="stylesheet" type="text/css" href="/css/flower.css">
- <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" href="/css/style.css">
+ <link rel="stylesheet" href="/css/header.css">
+ <link rel="stylesheet" href="/css/footer.css">
+ <link rel="stylesheet" href="/css/menu.css">
+ <link rel="stylesheet" href="/css/feinpan.css">
+ <link rel="stylesheet" href="/css/flower.css">
+ <link rel="stylesheet" href="/css/feinheadline1.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
- <!-- JavaScript -->
- <script src="/script/underline.js"></script>
- <script src="/script/feinfade.js"></script>
- <script src="/script/feinScroll.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
-
- <!-- Google Fonts -->
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link
   href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
   rel="stylesheet">
-
- <!-- Page Title -->
- <title>タブを使ってコンテンツを詰め込む</title>
-
- <!-- Favicon -->
-<link rel="apple-touch-icon" sizes="180x180" href="/icons/appleicon.png">
- <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+ <!-- Structured Data -->
+ <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "タブを使ってコンテンツを詰め込む",
+      "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/tabui.html",
+      "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+    }
+  </script>
+ <!-- JavaScript -->
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <script src="/script/brython.js"></script>
+ <script src="/script/brython_stdlib.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
+ <!-- Service Worker -->
+ <script>
+  if ('serviceWorker' in navigator) {
+   navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+     console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    })
+    .catch(error => {
+     console.log('ServiceWorker registration failed: ', error);
+    });
+  }
+ </script>
 </head>
+
 
 <body>
 
@@ -397,11 +395,474 @@ document.getElementById('pane1-fein').classList.add('active');
    ちょっと感覚的に分かりにくいかもしれませんが、１行ずつ読んでいけば、自然と全体が見えてきます。</p>
 
 
+  <h2>PythonでタブUIを実装する</h2>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(55).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>次はBrython（ブリトン）でタブUIの実装を試みます。<br>
+    Pythonのシンプルな文法を使ってフロントエンドの機能を実装でき、JavaScriptを深いレベルで学ぶ必要がなくなります。<br>
+    Pythonの知識だけでフロントエンド開発ができるツールなんですよね。<br>
+    JavaScriptに比べると若干パフォーマンスが劣るようですが、軽微なUIなら支障はありません。<br>
+    Pythonライブラリや機能にしても、全てを扱う必要はないのですから。</p>
+  </div>
+
+  <h5>Brython（Browser Pythonの略）について</h5>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(65).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>Pythonのコードを直接ブラウザ上で実行するためのライブラリです。<br>
+    JavaScriptの代わりにPythonを使用してフロントエンド開発を行うことができます。<br>
+    BrythonはPython 3の多くの機能をサポートしており、Pythonの標準ライブラリの一部も使用できます。<br>
+    方法は単純で、アナデンで使われているLuaを動かした時と同じように、HTMLファイルにスクリプトタグを追加するだけです。</p>
+  </div>
+
+  <p>さっそくコードを見てみましょう。</p>
+
+  <h3>BrythonのJSファイルを取得して関連付ける</h3>
+  <p>アナデンで使われているLuaを実装した時と似ています。<br>
+   ひとまず実行環境を用意してあげないと、Pythonがブラウザ上で動作しません。</p>
+  <p class="codegra" id="pythontab_html1">Brythonをhtmlファイルと関連付けるコード</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;head&gt;
+ &lt;script src=&quot;/script/brython.js&quot;&gt;&lt;/script&gt;
+ &lt;script src=&quot;/script/brython_stdlib.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+</code></pre>
+  </div>
+
+  <p>もうHTML・CSS・JavaScriptによるサイト構築の基礎についてはご存じのものとして話を進めます。</p>
+  <p>上記のように設定することで、Brythonの主要な機能と標準ライブラリを含めることができます。<br>
+   両方のファイルを使うとBrythonをフルに活用することができますよ。<br>
+   JavaScriptファイルの設置場所は御自身のサイトに合うようにパスを修正してください。</p>
 
 
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(66).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>まず、<a href="https://brython.info/">Brython公式サイト</a>から、<a
+     href="https://github.com/brython-dev/brython/releases">githubのBrythonリリースページ</a>へ移動します。<br>
+    そのサイトから「Brython-3.13.0.zip」をダウンロードします。<br>
+    zipを解凍すると、次のファイルが出てきます。</p>
+
+   <dl>
+    <dt>brython.js</dt>
+    <dd>Brythonの主要なスクリプトで、PythonコードをJavaScriptに変換して実行します。<br>
+     これがなければ、Brythonは動作しません。</dd>
+    <dt>brython_stdlib.js</dt>
+    <dd>Brythonの標準ライブラリを含むスクリプトです。<br>
+     Pythonの標準ライブラリの機能をブラウザ上で利用するために必要です。</dd>
+   </dl>
+
+   <p>インターネット越しにBrythonを使うこともできますが、自分のサイトのディレクトリに入れちゃった方が後がラクかと思います。</p>
+  </div>
+
+  <h3>HTMLの中にPythonを含める</h3>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(67).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>長くなるから、まだここではPythonまでは書かれていません。<br>
+    いったんhtml部分のみ記載しています。<br>
+    ポイントとなるのは、Brythonを使用してブラウザ内でPythonコードを実行しているところです。<br>
+    DOMの操作やイベントハンドリングを行う構成としてみました。<br>
+    JavaScriptはBrythonの初期化を行っているだけなので、主なロジックはPythonスクリプトに依存しています。</p>
+  </div>
+
+  <p class="codegra" id="pythontab_html2">タブUIの骨組みとなるhtmlコード</p>
+  <div class="code-container">
+   <pre><code class="language-html">
+&lt;div class=&quot;atelier-container&quot;&gt;
+ &lt;div class=&quot;atelier-tabs&quot;&gt;
+  &lt;div class=&quot;atelier-tab&quot; data-tab=&quot;1&quot;&gt;Tab 1&lt;/div&gt;
+  &lt;div class=&quot;atelier-tab&quot; data-tab=&quot;2&quot;&gt;Tab 2&lt;/div&gt;
+  &lt;div class=&quot;atelier-tab&quot; data-tab=&quot;3&quot;&gt;Tab 3&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;atelier-tab-content&quot; data-content=&quot;1&quot;&gt;Content for Tab 1&lt;/div&gt;
+ &lt;div class=&quot;atelier-tab-content&quot; data-content=&quot;2&quot;&gt;Content for Tab 2&lt;/div&gt;
+ &lt;div class=&quot;atelier-tab-content&quot; data-content=&quot;3&quot;&gt;Content for Tab 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;atelier-container&quot;&gt;
+ &lt;div class=&quot;atelier-tabs&quot;&gt;
+  &lt;div class=&quot;atelier-tab&quot; data-tab=&quot;4&quot;&gt;Tab 4&lt;/div&gt;
+  &lt;div class=&quot;atelier-tab&quot; data-tab=&quot;5&quot;&gt;Tab 5&lt;/div&gt;
+  &lt;div class=&quot;atelier-tab&quot; data-tab=&quot;6&quot;&gt;Tab 6&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;atelier-tab-content&quot; data-content=&quot;4&quot;&gt;Content for Tab 4&lt;/div&gt;
+ &lt;div class=&quot;atelier-tab-content&quot; data-content=&quot;5&quot;&gt;Content for Tab 5&lt;/div&gt;
+ &lt;div class=&quot;atelier-tab-content&quot; data-content=&quot;6&quot;&gt;Content for Tab 6&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script type=&quot;text/python&quot;&gt;
+python部分はここではいったん省略
+&lt;/script&gt;
+
+&lt;script&gt;
+ window.addEventListener(&#x27;load&#x27;, () =&gt; {
+  brython({ debug: 1, selector: &quot;.atelier-container&quot; });
+ });
+&lt;/script&gt;
+
+</code></pre>
+  </div>
+
+  <p>このコードの概要をざっと説明します。</p>
+  <p class="gra">HTMLの構造</p>
+  <dl>
+   <dt>タブコンテナ（.atelier-container）</dt>
+   <dd>2つのタブコンテナがあり、それぞれに複数のタブ（.atelier-tab）とタブコンテンツ（.atelier-tab-content）が含まれています。</dd>
+
+   <dt>タブ（.atelier-tab）</dt>
+   <dd>各タブは data-tab 属性で識別され、クリックすると対応するコンテンツが表示されます。</dd>
+
+   <dt>タブコンテンツ（.atelier-tab-content）</dt>
+   <dd>各タブに対応するコンテンツで、data-content 属性によってどのタブに対応するかが示されています。</dd>
+  </dl>
+
+  <p class="gra">Pythonスクリプト（省略されている部分）</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(68).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>タブのクリックイベントを処理し、対応するタブコンテンツの表示・非表示を制御するロジックなどが含まれています。（後述します）</p>
+
+   <p class="gra">JavaScriptの部分</p>
+   <p>ページの読み込み時にBrythonが初期化され、.atelier-container 内でPythonコードが実行されます。<br>
+    動作の流れとしては、次のような感じです。</p>
+   <ol>
+    <li>ページが読み込まれると、Brythonライブラリが初期化されます。</li>
+    <li>各タブをクリックすると、Pythonスクリプトによって対応するタブコンテンツが表示されます。</li>
+    <li>非アクティブなタブコンテンツは非表示になります。</li>
+   </ol>
+  </div>
+
+  <h3>Pythonコードの紹介</h3>
+  <p>いよいよここからPythonコードです。<br>
+   個人的にはJavaScriptでタブUIを作るよりラクだと感じるけど、まぁ好みかな？<br>
+   まずは簡単にさらーっと説明しますね。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(69).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p class="gra">タブ切り替えの説明</p>
+   <p>このコードは、タブをクリックすると、それに対応するコンテンツ（中身）を表示するものです。</p>
+
+   <dl>
+    <dt>タブを準備</dt>
+    <dd>タブ（ボタンみたいなもの）とその中身（コンテンツ）をまとめておきます。</dd>
+
+    <dt>タブをクリックすると</dt>
+    <dd>クリックされたタブを「アクティブ（選ばれた）」状態にして、そのタブの中身を表示するために準備します。</dd>
+
+    <dt>アニメーションをつける</dt>
+    <dd>タブの中身がスライドして出てくる動きをつけます。</dd>
+   </dl>
+
+   <p class="gra">全体の流れ</p>
+
+   <ul>
+    <li>ページを読み込むときに、最初のタブとその中身を表示します。</li>
+    <li>それぞれのタブにクリックしたときの動きを設定します。</li>
+    <li>タブをクリックすると、そのタブの中身がスライドして出てきます。</li>
+   </ul>
+  </div>
+
+  <p>これで、タブを切り替えるたびに対応する中身がアニメーションと一緒に表示されるようになります。</p>
+
+  <p class="codegra" id="pythontab_python">タブUIを作るPythonコード</p>
+  <div class="code-container">
+   <pre><code class="language-python">
+from browser import document, timer
+
+def show_tab(event):
+ container = event.target.closest('.atelier-container')
+ tabs = container.select('.atelier-tab')
+ contents = container.select('.atelier-tab-content')
+
+ for tab in tabs:
+  tab.classList.remove('atelier-active-tab')
+ for content in contents:
+  content.classList.remove('atelier-active-content')
+  content.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out'
+  content.style.transform = 'translateX(-100%)'
+  content.style.opacity = '0'
+  content.style.visibility = 'hidden'
+
+ event.target.classList.add('atelier-active-tab')
+ tab_id = event.target.getAttribute('data-tab')
+ active_content = container.select(f'[data-content="{tab_id}"]')[0]
+ active_content.classList.add('atelier-active-content')
+
+ def show_content():
+  active_content.style.visibility = 'visible'
+  active_content.style.opacity = '1'
+  active_content.style.transform = 'translateX(0)'
+
+ timer.set_timeout(show_content, 50)
+
+for container in document.select('.atelier-container'):
+ tabs = container.select('.atelier-tab')
+ if tabs:
+  tabs[0].classList.add('atelier-active-tab')
+  container.select('.atelier-tab-content')[0].classList.add('atelier-active-content')
+  for tab in tabs:
+      tab.bind('click', show_tab)
+
+</code></pre>
+  </div>
+
+  <p>アニメーションについてはCSSでやっても良いと思うのですが、Luaと違ってPythonなら多少は慣れているので。<br>
+   せっかくだからやってみましたよ。<br>
+   ちなみにこのタブUIで用いられるJavaScriptとPythonコードは、１つのWebページにつき１カ所に書かれていれば良いです。<br>
+   複数のタブを１つのWebページに実装しても、正常動作するようにしてあります。<br>
+   では、ここからは少し詳しくいきます。</p>
+
+  <p class="gra">必要なモジュールをインポート</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+from browser import document, timer
+
+</code></pre>
+  </div>
+
+  <dl>
+   <dt>document</dt>
+   <dd>ウェブページのDOM（Document Object Model）にアクセスするためのモジュールです。</dd>
+
+   <dt>timer</dt>
+   <dd>時間を指定して関数を実行するためのモジュールです。</dd>
+  </dl>
+
+  <p class="gra">タブを表示する関数を定義</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+def show_tab(event):
+    container = event.target.closest('.atelier-container')
+    tabs = container.select('.atelier-tab')
+    contents = container.select('.atelier-tab-content')
+
+</code></pre>
+  </div>
+
+  <dl>
+   <dt>show_tab関数</dt>
+   <dd>タブがクリックされたときに呼び出されます。</dd>
+
+   <dt>event.target</dt>
+   <dd>クリックされたタブ要素を指します。</dd>
+
+   <dt>closest('.atelier-container')</dt>
+   <dd>クリックされたタブの親要素であるコンテナを取得します。</dd>
+
+   <dt>tabs</dt>
+   <dd>コンテナ内のすべてのタブを取得します。</dd>
+
+   <dt>contents</dt>
+   <dd>コンテナ内のすべてのタブコンテンツを取得します。</dd>
+  </dl>
+
+  <p class="gra">現在のアクティブなタブとコンテンツを非アクティブにする</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+for tab in tabs:
+    tab.classList.remove('atelier-active-tab')
+for content in contents:
+    content.classList.remove('atelier-active-content')
+    content.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out'
+    content.style.transform = 'translateX(-100%)'
+    content.style.opacity = '0'
+    content.style.visibility = 'hidden'
+
+</code></pre>
+  </div>
+
+  <dl>
+   <dt>for tab in tabs</dt>
+   <dd>すべてのタブからatelier-active-tabクラスを削除します。</dd>
+
+   <dt>for content in contents</dt>
+   <dd>すべてのタブコンテンツからatelier-active-contentクラスを削除します。</dd>
+  </dl>
+
+  <p>ここで、タブコンテンツに対してアニメーション（スライドアウトとフェードアウト）を設定します。</p>
+
+  <p class="gra">クリックされたタブをアクティブにし、対応するコンテンツを表示</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+event.target.classList.add('atelier-active-tab')
+tab_id = event.target.getAttribute('data-tab')
+active_content = container.select(f'[data-content="{tab_id}"]')[0]
+active_content.classList.add('atelier-active-content')
+
+</code></pre>
+  </div>
+
+  <dl>
+   <dt>event.target.classList.add('atelier-active-tab')</dt>
+   <dd>クリックされたタブをアクティブにします。</dd>
+
+   <dt>tab_id</dt>
+   <dd>クリックされたタブのdata-tab属性の値を取得します。</dd>
+
+   <dt>active_content</dt>
+   <dd>対応するタブコンテンツを取得します。</dd>
+
+   <dt>active_content.classList.add('atelier-active-content')</dt>
+   <dd>対応するコンテンツをアクティブにします。</dd>
+  </dl>
+
+  <p class="gra">遅延してコンテンツを表示</p>
+
+  <div class="code-container">
+   <pre><code class="language-python">
+def show_content():
+    active_content.style.visibility = 'visible'
+    active_content.style.opacity = '1'
+    active_content.style.transform = 'translateX(0)'
+
+timer.set_timeout(show_content, 50)
+
+</code></pre>
+  </div>
+
+  <dl>
+   <dt>show_content関数</dt>
+   <dd>アクティブなタブコンテンツを表示するためのものです。</dd>
+
+   <dt>timer.set_timeout(show_content, 50)</dt>
+   <dd>50ミリ秒後にshow_content関数を実行します。</dd>
+  </dl>
+
+  <p class="gra">最後のforから始まっている部分</p>
+  <div class="code-container">
+   <pre><code class="language-python">
+for container in document.select('.atelier-container'):
+ tabs = container.select('.atelier-tab')
+ if tabs:
+  tabs[0].classList.add('atelier-active-tab')
+  container.select('.atelier-tab-content')[0].classList.add('atelier-active-content')
+  for tab in tabs:
+   tab.bind('click', show_tab)
+
+</code></pre>
+  </div>
+  <p>ここなんだよねー<br>
+   これはですねー…ウェブページ内のすべての「atelier-container」をループしているのです。<br>
+   アナザーエデンで言うところの、<strong>ループ攻略</strong>ですよ！</p>
+
+  <p>ちょっと詳しめにいきましょう。</p>
+
+  <p><strong>ウェブページ内のすべてのatelier-containerをループ</strong></p>
+  <div class="code-container">
+   <pre><code class="language-python">
+for container in document.select('.atelier-container'):
+
+</code></pre>
+  </div>
+  <p>このコードはウェブページ内にあるすべての .atelier-container クラスを持つ要素を見つけて、それぞれに対して同じ処理を行うためのループです。<br>
+   簡単に言うと、ページにあるすべての「タブコンテナ」を順番に処理します。</p>
 
 
+  <p><strong>初期設定として、最初のタブとタブコンテンツをアクティブに</strong></p>
+  <div class="code-container">
+   <pre><code class="language-python">
+if tabs:
+    tabs[0].classList.add('atelier-active-tab')
+    container.select('.atelier-tab-content')[0].classList.add('atelier-active-content')
 
+</code></pre>
+  </div>
+  <p>このコードはタブコンテナ内にタブ (.atelier-tab) が存在するかを確認しています (if tabs:)。<br>
+   もしタブが存在する場合、最初のタブ (tabs[0]) に atelier-active-tab クラスを追加して、それをアクティブ（選択された状態）にします。<br>
+   同様に、最初のタブコンテンツにも atelier-active-content クラスを追加して表示されるようにします。<br>
+   このコードがないと、ページがロードされたときに最初のタブとその内容が表示されなくなってしまうのです。</p>
+
+
+  <p><strong>各タブにクリックイベントをバインドし、タブがクリックされたときに show_tab 関数を実行します</strong></p>
+  <div class="code-container">
+   <pre><code class="language-python">
+for tab in tabs:
+    tab.bind('click', show_tab)
+
+</code></pre>
+  </div>
+  <p>このコードはコンテナ内のすべてのタブ（.atelier-tab）に対して、クリックイベント（クリックされたときに起こる処理）を設定しています。<br>
+   tab.bind('click', show_tab) は、各タブをクリックしたときに show_tab 関数を実行するように設定しています。<br>
+   つまり、タブがクリックされると、そのタブに対応するコンテンツを表示する処理が実行されるってこと。</p>
+
+
+  <h3>装飾要素のCSSコード</h3>
+  <p>CSSはプログラミング風に考えると余計にこんがらがるので、単純にコメントアウトを付けてコードを紹介します。</p>
+
+  <p class="codegra" id="pythontab_style">タブUIを装飾するstyle.css</p>
+  <div class="code-container">
+   <pre><code class="language-css">
+/* タブのスタイル */
+.atelier-tab {
+ display: inline-block; /* タブをインラインブロックに設定 */
+ margin: 0 5px; /* タブ間の左右マージンを5pxに設定 */
+ padding: 10px 20px; /* タブ内のパディングを上下10px、左右20pxに設定 */
+ border: 1px solid #ccc; /* タブの境界線を1pxの実線で#cccの色に設定 */
+ cursor: pointer; /* マウスカーソルをポインターに変更 */
+ border-top-left-radius: 10px; /* 左上の角を10pxの円弧に設定 */
+ border-top-right-radius: 10px; /* 右上の角を10pxの円弧に設定 */
+ background-color: rgba(144, 238, 144, 0.5); /* 背景色を半透明のライトグリーンに設定 */
+}
+
+/* タブコンテンツのスタイル */
+.atelier-tab-content {
+ display: none; /* デフォルトでは表示しない */
+ padding: 20px; /* コンテンツ内のパディングを20pxに設定 */
+ border-top: none; /* 上部の境界線をなしに設定 */
+ border: 1px solid #ccc; /* コンテンツの境界線を1pxの実線で#cccの色に設定 */
+ border-radius: 10px; /* 角を10pxの円弧に設定 */
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* コンテンツに影を付ける */
+ background-color: #fff; /* 背景色を白に設定 */
+}
+
+/* アクティブなタブのスタイル */
+.atelier-active-tab {
+ background-color: rgba(144, 238, 144, 1); /* 背景色を不透明のライトグリーンに設定 */
+}
+
+/* アクティブなタブコンテンツのスタイル */
+.atelier-active-content {
+ display: block; /* アクティブなコンテンツを表示 */
+}
+
+</code></pre>
+  </div>
+
+  <p>要するに、このCSSは「タブ」と「タブの中身」について、それぞれデザインしているのです。<br>
+   <a href="/contents/no_copying.html">AI学習や無断転載を防ぐプログラムの小ネタ集</a>ではJavaScriptを用いて青色のタブUIを実装しました。<br>
+   ここではPythonだから、緑色のタブUIにしてみたんだよね。
+  </p>
+
+  <h2>JavaScript以外の言語でも実装可能</h2>
+  <p>こういうのはフレームワークを使うのが普通ですが、ちょっとした変化球ですよね。</p>
+
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower2/flower2(70).JPG" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>html・css・JavaScriptでタブUIを作るのは一般的過ぎて退屈だから、このサイトのランタイムであるPythonを使ってやってみました。<br>
+    本来ならサーバー側で使う言語でも、こうやってフロントで動かせるのはおもしろいですよね。<br>
+    でもできるものとそうでないものがある。</p>
+
+   <p>タグUIは便利ですよ？<br>
+    冗長になりがちな記述を無理に縮めることなく収められますし、見た目もスッキリするからね。</p>
+  </div>
 
   <!-- ●ここから人間用のフッター● -->
   <hr id="feinhr">

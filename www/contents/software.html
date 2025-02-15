@@ -198,17 +198,21 @@
 
   <p class="gra">自作ソフトをスタートアップに登録する</p>
   <p>何も自作ソフトに限ったことではありませんが、Windows11の起動時にソフトを起動するには、次のようにします。</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(229).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <dl>
+    <dt>1. ショートカットの作成</dt>
+    <dd>fein_launcher.exe ファイルを右クリックし、「ショートカットの作成」を選択します。</dd>
 
-  <dl>
-   <dt>1. ショートカットの作成</dt>
-   <dd>fein_launcher.exe ファイルを右クリックし、「ショートカットの作成」を選択します。</dd>
+    <dt>2. スタートアップフォルダを開く</dt>
+    <dd>スタートメニューの検索バーに「shell:startup」と入力し、Enterキーを押します。</dd>
 
-   <dt>2. スタートアップフォルダを開く</dt>
-   <dd>スタートメニューの検索バーに「shell:startup」と入力し、Enterキーを押します。</dd>
-
-   <dt>3. ショートカットをスタートアップフォルダに移動</dt>
-   <dd>作成したショートカットを、開いたスタートアップフォルダにドラッグ＆ドロップします。</dd>
-  </dl>
+    <dt>3. ショートカットをスタートアップフォルダに移動</dt>
+    <dd>作成したショートカットを、開いたスタートアップフォルダにドラッグ＆ドロップします。</dd>
+   </dl>
+  </div>
 
   <p>これで次回Windowsを起動すると、<strong>fein_launcher.exe</strong> によってフローティング・ランチャーが自動的に起動するようになります。<br>
    では、そろそろ実際の作り方へ話題を移しましょう。</p>
@@ -229,14 +233,19 @@
 
   <p>上記３つを使ってソフトを作る手順は、次の通りです。</p>
 
-  <ol>
-   <li>Node.jsとnpmをインストール</li>
-   <li>プロジェクトディレクトリの作成</li>
-   <li>Electronのインストール</li>
-   <li>リソースとなるファイルの作成</li>
-   <li>ソフトウェアの起動テスト</li>
-   <li>ソフトウェアのビルドとパッケージング</li>
-  </ol>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(230).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <ol>
+    <li>Node.jsとnpmをインストール</li>
+    <li>プロジェクトディレクトリの作成</li>
+    <li>Electronのインストール</li>
+    <li>リソースとなるファイルの作成</li>
+    <li>ソフトウェアの起動テスト</li>
+    <li>ソフトウェアのビルドとパッケージング</li>
+   </ol>
+  </div>
 
   <p>初めてやる時にありがちなつまづきポイントは「環境構築」です。<br>
    勉強すれば、ある程度のコードを書くくらいなら難しくないんですよね。<br>
@@ -254,13 +263,18 @@
 
   <h3>Node.jsとnpmをインストール</h3>
   <p>まずはNode.jsをインストールします。</p>
-  <ol>
-   <li><a href="https://nodejs.org/">Node.jsの公式サイト</a>にアクセスします。</li>
-   <li>WindowsやMac、Linuxのインストーラがあるので、自分のOSに合ったものを選んでダウンロードします。</li>
-   <li>ダウンロードしたインストーラを実行し、画面の指示に従ってインストールを完了します。</li>
-  </ol>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(211).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <ol>
+    <li><a href="https://nodejs.org/">Node.jsの公式サイト</a>にアクセスします。</li>
+    <li>WindowsやMac、Linuxのインストーラがあるので、自分のOSに合ったものを選んでダウンロードします。</li>
+    <li>ダウンロードしたインストーラを実行し、画面の指示に従ってインストールを完了します。</li>
+   </ol>
 
-  <p>次はnpmの確認です。</p>
+   <p>次はnpmの確認です。</p>
+  </div>
 
   <ol>
    <li>Node.jsをインストールすると、自動的にnpmもインストールされます。</li>
@@ -295,24 +309,28 @@ npm -v
    </dd>
   </dl>
 
-  <p>Node.jsとnpmを使うことで、JavaScriptを使って様々な種類のソフトウェアを作ることができます。<br>
-   Webアプリケーションはもちろんのこと、デスクトップアプリケーションや、サーバー上で動作するプログラムも作成可能です。<br>
-   ちょっと紛らわしいように思えるけど、なにもパソコンがサーバーになるわけではありません。<br>
-   Node.jsで作成したプログラムは、様々な場所で実行することができるのです。</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(212).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>Node.jsとnpmを使うことで、JavaScriptを使って様々な種類のソフトウェアを作ることができます。<br>
+    Webアプリケーションはもちろんのこと、デスクトップアプリケーションや、サーバー上で動作するプログラムも作成可能です。<br>
+    ちょっと紛らわしいように思えるけど、なにもパソコンがサーバーになるわけではありません。<br>
+    Node.jsで作成したプログラムは、様々な場所で実行することができるのです。</p>
 
-  <dl>
-   <dt>Webサーバー</dt>
-   <dd>
-    Node.jsで作ったプログラムをWebサーバー上で動かせば、Webアプリケーションとして公開することができます。
-   </dd>
-   <dt>デスクトップアプリケーション</dt>
-   <dd>
-    Electronというフレームワークを使えば、Node.jsとWeb技術を使ってWindowsやMacで動作するデスクトップアプリケーションを作成できます。
-   </dd>
-  </dl>
+   <dl>
+    <dt>Webサーバー</dt>
+    <dd>
+     Node.jsで作ったプログラムをWebサーバー上で動かせば、Webアプリケーションとして公開することができます。
+    </dd>
+    <dt>デスクトップアプリケーション</dt>
+    <dd>
+     Electronというフレームワークを使えば、Node.jsとWeb技術を使ってWindowsやMacで動作するデスクトップアプリケーションを作成できます。
+    </dd>
+   </dl>
+  </div>
 
   <p>このページでは、上記で言うところのデスクトップアプリケーションを作ろうとしているんですよね。</p>
-
 
   <h3>プロジェクトディレクトリの作成</h3>
   <p>プロジェクトなんて言うと大袈裟に聞こえますが、実際にこう呼ばれます。<br>
@@ -355,25 +373,29 @@ npm init -y
 
   <h4>npmプロジェクトの初期化</h4>
   <p>npmプロジェクトの初期化Node.jsプロジェクトを整理し、管理するための重要なステップです。</p>
-
-  <dl>
-   <dt>プロジェクトの構成</dt>
-   <dd>
-    <span class="codecolor">npm init</span> コマンドを実行すると、プロジェクトの設定情報を含む <span class="codecolor">package.json</span>
-    ファイルが作成されます。<br>
-    このファイルには、プロジェクトの名前、バージョン、依存関係、スクリプトなどの情報が記載されます。
-   </dd>
-   <dt>依存関係の管理</dt>
-   <dd>
-    <span class="codecolor">package.json</span> ファイルは、プロジェクトが依存する外部パッケージやライブラリを管理するために使用されます。<br>
-    他の開発者がプロジェクトをクローンしても、必要なパッケージを簡単にインストールできます。
-   </dd>
-   <dt>バージョン管理</dt>
-   <dd>
-    <span class="codecolor">package.json</span> ファイルには、使用しているパッケージのバージョン情報が含まれます。<br>
-    プロジェクトの互換性を保ちながら開発を進めることができます。
-   </dd>
-  </dl>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(213).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <dl>
+    <dt>プロジェクトの構成</dt>
+    <dd>
+     <span class="codecolor">npm init</span> コマンドを実行すると、プロジェクトの設定情報を含む <span class="codecolor">package.json</span>
+     ファイルが作成されます。<br>
+     このファイルには、プロジェクトの名前、バージョン、依存関係、スクリプトなどの情報が記載されます。
+    </dd>
+    <dt>依存関係の管理</dt>
+    <dd>
+     <span class="codecolor">package.json</span> ファイルは、プロジェクトが依存する外部パッケージやライブラリを管理するために使用されます。<br>
+     他の開発者がプロジェクトをクローンしても、必要なパッケージを簡単にインストールできます。
+    </dd>
+    <dt>バージョン管理</dt>
+    <dd>
+     <span class="codecolor">package.json</span> ファイルには、使用しているパッケージのバージョン情報が含まれます。<br>
+     プロジェクトの互換性を保ちながら開発を進めることができます。
+    </dd>
+   </dl>
+  </div>
 
   <p>初期化（init）という言葉は、これらの設定を最初に行うことを意味しています。<br>
    このステップをスキップすると、依存関係やプロジェクトの設定を正しく管理することが難しくなってしまうんです。</p>
@@ -402,16 +424,20 @@ npm install electron --save-dev
     リポジトリ</a>）が開発したオープンソースのフレームワークです。<br>
    Electron を使うことで、Web 技術 (HTML, CSS, JavaScript) を使って Windows, macOS, Linux 向けのデスクトップアプリケーションを開発することができます。<br>
    Electron 製のアプリケーションとして有名なのは、このあたりでしょうかね。</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(214).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <ul>
+    <li>Visual Studio Code (VS Code)</li>
+    <li>Slack</li>
+    <li>Discord</li>
+    <li>Atom</li>
+   </ul>
 
-  <ul>
-   <li>Visual Studio Code (VS Code)</li>
-   <li>Slack</li>
-   <li>Discord</li>
-   <li>Atom</li>
-  </ul>
-
-  <p>ElectronはWeb開発の知識があればデスクトップアプリケーション開発を始められるという点で、多くの開発者に利用されています。<br>
-   私も学生時代にサイト制作とエレクトロンを行き来したもんですわ。</p>
+   <p>ElectronはWeb開発の知識があればデスクトップアプリケーション開発を始められるという点で、多くの開発者に利用されています。<br>
+    私も学生時代にサイト制作とエレクトロンを行き来したもんですわ。</p>
+  </div>
 
   <h4>Microsoft Edge</h4>
   <p>現在のWindowsでプリインストールされているのはMicrosoft Edgeなので、このブラウザについても多少は理解を深める必要があります。<br>
@@ -517,6 +543,20 @@ npm install electron --save-dev
   <p>ただ、<span class="codecolor">onclick="openFeinsApp()"</span>とか、JavaScriptと繋がっている部分についてはけっこう大切な部分なので、見ておいていただけると。</p>
 
   <h5>renderer.js</h5>
+  <p>上述していますが、ここでご紹介しているソフトウェアの基礎構造は、ファイルの整理とプロジェクトの構造を明確に保つためによく行われる方法です。</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(215).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>renderer.js、index.html、style.css などのファイルはアプリのUI（レンダラー）に関連するものであり、これらを src フォルダにまとめることで、プロジェクトの構造が整理され、理解しやすくなります。
+   </p>
+
+   <p>main.js はElectronアプリのメインプロセスを担当するファイルです。アプリ起動時に最初に実行されるため、ルートディレクトリに置かれます。<br>
+    package.json はプロジェクトの設定ファイルであり、依存関係やスクリプト、メタデータを含んでいます。<br>
+    npmや他のツールによる管理が容易になるため、ルートディレクトリに配置されます。<br>
+    preload.js はレンダラープロセスとメインプロセスの間でデータをやり取りするためのスクリプトです。<br>
+    セキュリティの理由からも、ルートディレクトリに置かれることが多いです。</p>
+  </div>
 
   <p class="codegra" id="launcher_renderer">ユーザーの操作や表示を制御するrenderer.js</p>
   <div class="code-container">
@@ -1022,9 +1062,6 @@ app.whenReady().then(() => {
 </code></pre>
   </div>
 
-
-
-
   <p><strong>Ⅰ. モジュールのインポート</strong></p>
   <div class="code-container">
    <pre><code class="language-javascript">
@@ -1121,14 +1158,19 @@ app.whenReady().then(() => {
   </ul>
 
   <h4>メインプロセス main.js・レンダラープロセス renderer.js</h4>
-  <p><strong>main.js</strong> はElectronアプリケーションのメインプロセス (main process) を制御するファイルです。<br>
-   Electronアプリでは、アプリケーションの全体的なライフサイクル管理やウィンドウの作成などの重要な部分がメインプロセスで行われます。<br>
-   一方、<strong>renderer.js</strong> はレンダラープロセス (renderer process)
-   のスクリプトであり、各ウィンドウ（またはウェブページ）の動作を制御します。<br>
-   レンダラープロセスは基本的にブラウザ環境で動作し、ユーザーインターフェイスやDOM操作などを担当します。</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(216).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p><strong>main.js</strong> はElectronアプリケーションのメインプロセス (main process) を制御するファイルです。<br>
+    Electronアプリでは、アプリケーションの全体的なライフサイクル管理やウィンドウの作成などの重要な部分がメインプロセスで行われます。<br>
+    一方、<strong>renderer.js</strong> はレンダラープロセス (renderer process)
+    のスクリプトであり、各ウィンドウ（またはウェブページ）の動作を制御します。<br>
+    レンダラープロセスは基本的にブラウザ環境で動作し、ユーザーインターフェイスやDOM操作などを担当します。</p>
 
-  <p>ここで、それぞれの役割と違いについて詳しく説明しておきますね。<br>
-   コード本体より、この考え方のほうが重要と思うから。</p>
+   <p>ここで、それぞれの役割と違いについて詳しく説明しておきますね。<br>
+    コード本体より、この考え方のほうが重要と思うから。</p>
+  </div>
 
   <dl>
    <dt>1. メインプロセス（main.js）</dt>
@@ -1158,22 +1200,27 @@ app.whenReady().then(() => {
    <dd>ノード統合が有効になっている場合、メインプロセスがより信頼できる操作を行い、レンダラープロセスの潜在的なリスクを低減します。</dd>
   </dl>
 
-  <p>ノード統合（Node
-   Integration）とは、ElectronアプリケーションのレンダラープロセスでNode.jsの機能を使用できるようにする設定です。<br>
-   通常、ブラウザ環境ではNode.jsの機能を直接使用することはできませんが、Electronではノード統合を有効にすることで、HTMLやJavaScriptを使っているレンダラープロセス内でもNode.jsのAPIやモジュールを利用できるようになります。
-  </p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(217).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>ノード統合（Node
+    Integration）とは、ElectronアプリケーションのレンダラープロセスでNode.jsの機能を使用できるようにする設定です。<br>
+    通常、ブラウザ環境ではNode.jsの機能を直接使用することはできませんが、Electronではノード統合を有効にすることで、HTMLやJavaScriptを使っているレンダラープロセス内でもNode.jsのAPIやモジュールを利用できるようになります。
+   </p>
 
-  <p>ノード統合を有効にすることで、次のようなことが可能になるのです。</p>
-  <dl>
-   <dt>ファイルシステムへのアクセス:</dt>
-   <dd>Node.jsの<span class="codecolor">fs</span>モジュールを使用して、ファイルの読み書きやファイル操作が可能です。</dd>
+   <p>ノード統合を有効にすることで、次のようなことが可能になるのです。</p>
+   <dl>
+    <dt>ファイルシステムへのアクセス:</dt>
+    <dd>Node.jsの<span class="codecolor">fs</span>モジュールを使用して、ファイルの読み書きやファイル操作が可能です。</dd>
 
-   <dt>ネイティブモジュールの使用:</dt>
-   <dd>Node.jsのネイティブモジュールを利用して、システムレベルの操作や外部パッケージの利用ができます。</dd>
+    <dt>ネイティブモジュールの使用:</dt>
+    <dd>Node.jsのネイティブモジュールを利用して、システムレベルの操作や外部パッケージの利用ができます。</dd>
 
-   <dt>サーバーとの通信:</dt>
-   <dd><span class="codecolor">http</span>や<span class="codecolor">https</span>モジュールを使用して、外部サーバーとの通信を行うことができます。</dd>
-  </dl>
+    <dt>サーバーとの通信:</dt>
+    <dd><span class="codecolor">http</span>や<span class="codecolor">https</span>モジュールを使用して、外部サーバーとの通信を行うことができます。</dd>
+   </dl>
+  </div>
 
   <p>しかし、ノード統合を有効にすることにはリスクも伴います。<br>
    特に、レンダラープロセス内のWebコンテンツが外部の悪意あるスクリプトによって操作されると、Node.jsのAPIが悪用される可能性があります。<br>
@@ -1229,13 +1276,18 @@ contextBridge.exposeInMainWorld('api', {
 </code></pre>
   </div>
 
-  <p>上記のpreload.jsを書いてから、メインプロセスの main.js でIPC通信を設定しますよね。<br>
-   次に、レンダラープロセスの renderer.js を用いてプリロードスクリプトで公開されたAPIを使用します。<br>
-   こうやってやれば、セキュリティを強化しつつ、現在のスクリプトの機能を維持することができます。</p>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(218).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <p>上記のpreload.jsを書いてから、メインプロセスの main.js でIPC通信を設定しますよね。<br>
+    次に、レンダラープロセスの renderer.js を用いてプリロードスクリプトで公開されたAPIを使用します。<br>
+    こうやってやれば、セキュリティを強化しつつ、現在のスクリプトの機能を維持することができます。</p>
 
-  <p>まぁでも…すでにお話しましたが、ここで作っているのはローカルで稼働するシンプルなフローティング・ランチャーです。<br>
-   デザイン面や機能などをさらに拡張したくなった時に改めて考えれば良いわけで。<br>
-   現段階ではここまでやらずとも良いと判断しているってことですね。</p>
+   <p>まぁでも…すでにお話しましたが、ここで作っているのはローカルで稼働するシンプルなフローティング・ランチャーです。<br>
+    デザイン面や機能などをさらに拡張したくなった時に改めて考えれば良いわけで。<br>
+    現段階ではここまでやらずとも良いと判断しているってことですね。</p>
+  </div>
 
   <h5>package.json</h5>
   <p>ここまで、あまりにも長くなり過ぎました。<br>
@@ -1268,36 +1320,79 @@ contextBridge.exposeInMainWorld('api', {
    このフローティング・ランチャーで使われているコードの説明を致しましょう。
   </p>
 
-  <dl>
-   <dt>プロジェクト情報</dt>
-   <dd><span class="codecolor">name</span>: プロジェクト名です。この場合、プロジェクトの名前は <strong>fein_launcher</strong> です。</dd>
-   <dd><span class="codecolor">version</span>: プロジェクトのバージョンです。バージョン番号は <strong>1.0.0</strong> です。</dd>
-   <dd><span class="codecolor">main</span>: プロジェクトのエントリーポイントとなるファイルを指定します。この場合は <strong>main.js</strong> です。</dd>
-   <dt>スクリプト</dt>
-   <dd><span class="codecolor">scripts</span>: コマンドラインで実行できるスクリプトを定義します。この部分では以下のスクリプトが定義されています：</dd>
-   <dd><span class="codecolor">start</span>: <strong>electron .</strong> を実行すると、Electronアプリケーションが起動します。</dd>
-   <dd><span class="codecolor">package-win</span>: <strong>electron-packager . <strong>fein_launcher</strong>
-     --platform=win32
-     --arch=x64 --out=dist --overwrite</strong> を実行すると、Windows用のパッケージが作成されます。</dd>
-   <dd><span class="codecolor">package-linux</span>: <strong>electron-packager . <strong>fein_launcher</strong>
-     --platform=linux
-     --arch=x64 --out=dist --overwrite</strong> を実行すると、Linux用のパッケージが作成されます。</dd>
-   <dd><span class="codecolor">package-mac</span>: <strong>electron-packager . <strong>fein_launcher</strong>
-     --platform=darwin
-     --arch=x64 --out=dist --overwrite</strong> を実行すると、Mac用のパッケージが作成されます。</dd>
-
-   <dt>開発依存関係</dt>
-   <dd><span class="codecolor">devDependencies</span>: 開発中に必要な依存関係を定義します。この部分では次のような依存関係が定義されています。</dd>
-   <dd><span class="codecolor">electron</span>: <strong>^xx.x.x</strong>
-    Electronのバージョンを指定します。<strong>xx.x.x</strong>の部分には実際のバージョン番号が入ります。</dd>
-   <dd><span class="codecolor">electron-packager</span>: <strong>^xx.x.x</strong> Electronアプリケーションをパッケージ化するためのツールである
-    <strong>electron-packager</strong> のバージョンを指定します。
-   </dd>
-  </dl>
+  <div class="flowerclearfix">
+   <div class="flowerfade-out">
+    <img src="/flower1/forest1(219).jpg" alt="フェードアウト効果の草花写真">
+   </div>
+   <dl>
+    <dt>プロジェクト情報</dt>
+    <dd><span class="codecolor">name</span>: プロジェクト名です。この場合、プロジェクトの名前は <strong>fein_launcher</strong> です。</dd>
+    <dd><span class="codecolor">version</span>: プロジェクトのバージョンです。バージョン番号は <strong>1.0.0</strong> です。</dd>
+    <dd><span class="codecolor">main</span>: プロジェクトのエントリーポイントとなるファイルを指定します。この場合は <strong>main.js</strong> です。</dd>
+    <dt>スクリプト</dt>
+    <dd><span class="codecolor">scripts</span>: コマンドラインで実行できるスクリプトを定義します。この部分では以下のスクリプトが定義されています：</dd>
+    <dd><span class="codecolor">start</span>: <strong>electron .</strong> を実行すると、Electronアプリケーションが起動します。</dd>
+    <dd><span class="codecolor">package-win</span>: <strong>electron-packager . <strong>fein_launcher</strong>
+      --platform=win32
+      --arch=x64 --out=dist --overwrite</strong> を実行すると、Windows用のパッケージが作成されます。</dd>
+    <dd><span class="codecolor">package-linux</span>: <strong>electron-packager . <strong>fein_launcher</strong>
+      --platform=linux
+      --arch=x64 --out=dist --overwrite</strong> を実行すると、Linux用のパッケージが作成されます。</dd>
+    <dd><span class="codecolor">package-mac</span>: <strong>electron-packager . <strong>fein_launcher</strong>
+      --platform=darwin
+      --arch=x64 --out=dist --overwrite</strong> を実行すると、Mac用のパッケージが作成されます。</dd>
+    <dt>開発依存関係</dt>
+    <dd><span class="codecolor">devDependencies</span>: 開発中に必要な依存関係を定義します。この部分では次のような依存関係が定義されています。</dd>
+    <dd><span class="codecolor">electron</span>: <strong>^xx.x.x</strong>
+     Electronのバージョンを指定します。<strong>xx.x.x</strong>の部分には実際のバージョン番号が入ります。</dd>
+    <dd><span class="codecolor">electron-packager</span>: <strong>^xx.x.x</strong> Electronアプリケーションをパッケージ化するためのツールである
+     <strong>electron-packager</strong> のバージョンを指定します。
+    </dd>
+   </dl>
+  </div>
 
   <p>electronとelectron-packagerのバージョン記述はサボっちゃいました😆ww<br>
    いや…だって、この手の設定ファイルって凝り出すとキリないんだもん…<br>
    バージョンアップしていくにつれて、少しずつ完璧な形へ近付けていきましょう。</p>
+
+  <h4>package-lock.json</h4>
+  <p>これも戸惑いを感じるファイルじゃないかな？<br>
+   プロジェクトのルートディレクトリに作られるもので、何かがおかしいわけじゃないです。<br>
+   ルートディレクトリに生成されるpackage-lock.jsonは、Node.jsのプロジェクトにおける依存関係を厳密に管理するためのファイルです。<br>
+   このファイルには、次のようにプロジェクトで使用される正確なパッケージバージョンと依存関係のツリーが記録されています。</p>
+
+  <dl>
+   <dt>依存関係の固定</dt>
+   <dd><span class="codecolor">package-lock.json</span>に記録されているバージョン番号により、プロジェクトの依存関係が一貫して再現されるため、異なる環境で同じ動作を保証します。</dd>
+
+   <dt>パフォーマンス向上</dt>
+   <dd>npmは<span class="codecolor">package-lock.json</span>を利用してパッケージのインストールを効率化し、インストール時間を短縮します。</dd>
+
+   <dt>セキュリティ</dt>
+   <dd>依存関係のツリーが明示されているため、潜在的な脆弱性のあるパッケージを特定しやすくなります。</dd>
+  </dl>
+
+  <p><span class="codecolor">package.json</span>と<span
+    class="codecolor">package-lock.json</span>は、Node.jsプロジェクトの依存関係管理において大切な役割を持っているんですよね。<br>
+   加えて、<span class="codecolor">package-lock.json</span>は手動で作成するのではなく、次のような状況で自動的に生成されます。</p>
+
+  <dl>
+   <dt>最初の依存関係のインストール時</dt>
+   <dd><span class="codecolor">npm install</span> を実行したときに、<span class="codecolor">package-lock.json</span>
+    がまだ存在しない場合、自動的に生成されます。</dd>
+
+   <dt>依存関係の追加または更新時</dt>
+   <dd><span class="codecolor">npm install &lt;パッケージ名&gt;</span> や <span class="codecolor">npm update</span>
+    を実行すると、依存関係が変更され、それに応じて <span class="codecolor">package-lock.json</span> も更新されます。</dd>
+
+   <dt>プロジェクトの初期化時</dt>
+   <dd>プロジェクトを初期化する際に依存関係が指定された場合（例：<span class="codecolor">npm init</span> 時に依存関係を追加）、<span
+     class="codecolor">package-lock.json</span> が生成されます。</dd>
+  </dl>
+
+  <p><span class="codecolor">package-lock.json</span>
+   は、プロジェクト内の依存関係を厳密に管理し、他の開発者が同じ依存関係でプロジェクトを再現できるようにするための重要なファイルです。<br>
+   なので、自分で手動で作成する必要はなく、npmが自動的に管理してくれます。</p>
 
   <h3>ソフトウェアの起動テスト</h3>
   <p>次のコマンドでElectronアプリが起動します。<br>

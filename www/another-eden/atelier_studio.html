@@ -5,11 +5,12 @@
  <meta charset="UTF-8">
  <title>ファンサイト制作のためのアトリエ</title>
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta name="description" content="アナザーエデンというスマートフォンゲームで使われているプログラミング言語をhtmlページで動作させてみました。">
- <meta name="keywords" content="プログラミング, アナザーエデン, Lua">
+ <meta name="description" content="アナザーエデンというスマートフォンゲームについて、ファンサイトを作りました。このWebページは、広告なしできちんとした個人サイトを作るためのマニュアルです。">
+ <meta name="keywords" content="プログラミング, アナザーエデン, 個人サイト制作">
  <meta name="robots" content="index, follow">
  <meta property="og:title" content="ファンサイト制作のためのアトリエ">
- <meta property="og:description" content="アナザーエデンというスマートフォンゲームで使われているプログラミング言語をhtmlページで動作させてみました。">
+ <meta property="og:description"
+  content="アナザーエデンというスマートフォンゲームについて、ファンサイトを作りました。このWebページは、広告なしできちんとした個人サイトを作るためのマニュアルです。">
  <meta property="og:image" content="/image/アナザーエデンのバディ_ピスケ.png">
  <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/atelier_studio.html">
  <link rel="manifest" href="/manifest.json">
@@ -37,6 +38,7 @@
  <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
  <link rel="stylesheet" type="text/css" href="/css/album.css">
  <link rel="stylesheet" type="text/css" href="/css/lua.css">
+ <link rel="stylesheet" type="text/css" href="/css/video.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
  <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,6 +72,7 @@
  <script src="/script/feinfade.js"></script>
  <script src="/script/feinScroll.js"></script>
  <script src="/script/tab.js"></script>
+ <script src="/script/video.js"></script>
  <script src="/script/pdf.js" defer></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
  <script src="/script/album.js"></script>
@@ -78,6 +81,7 @@
  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-json.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-bash.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-lua.min.js"></script>
  <script src="/script/collapsible.js"></script>
  <script src="/script/fengari-web.js"></script>
  <script src="/script/brython.js"></script>
@@ -526,8 +530,8 @@ for container in document.select('.atelier-container'):
    でもAtelierとStudioは同じような意味だから、言語が混ざっているだけで通りますよ。<br>
    実際はVisual Studio Codeをカスタマイズしただけです。<br>
    リアルの私は錬金術を使えないので、せめてWeb制作でライザごっこをしてみようかと！</p>
-  manifest_json_light
-  <h4><span id="manifest_json_light">Steps for Application Development</span></h4>
+
+  <h4>Steps for Application Development</h4>
   <div class="spacer"></div>
   <div class="atelier-container">
    <div class="atelier-tabs">
@@ -622,7 +626,7 @@ for container in document.select('.atelier-container'):
       <li><a href="/contents/javascriptinfo.html#fadeanimation_style">フェードインとフェードアウトの画像アニメーション</a></li>
       <li><a href="/contents/responsive_design.html#responsivedesign_style">レスポンシブデザインを作る</a></li>
       <li><a href="/contents/tabui.html#tab_style">タブを作る</a></li>
-      <li><a href="/another-eden/atelier_studio.html#pythontab_style">PythonのタブUIを装飾する</a></li>
+      <li><a href="/contents/tabui.html#pythontab_style">PythonのタブUIを装飾する</a></li>
       <li><a href="/contents/css_tidbit.html#checkdesign_style">タップするとチェックが変化する</a></li>
       <li><a href="/contents/css_tidbit.html#hrdesign_style">隅に行くほど細く消えかかる罫線を作る</a></li>
      </ul>
@@ -772,32 +776,8 @@ for container in document.select('.atelier-container'):
    </div><!--2タブの分岐点-->
    <div class="atelier-tab-content" data-content="3">
 
-    <p>ここではWebサイトをプログレッシブウェブアプリにする方法の概説と、Visual Studio Codeの設定ファイルについて書いています。</p>
+    <p>ここではVisual Studio Codeの設定ファイルについて書いています。</p>
 
-    <p class="gra">manifest.json</p>
-    <p>簡単に言うと、プログレッシブウェブアプリとは次のようなものです。</p>
-    <div class="content">
-     <img src="/another-eden/anaimage/ライザ喜顔.jpg" alt="Illustration of the atelier"
-      class="graphicmini right-image fade-in-out">
-     <ul>
-      <li>アプリなんだけど、俗に言う「ほーむぺーじ」の利点がそのまま残っている。</li>
-      <li>インストールしなくても、中身を自由に閲覧できて触れる。</li>
-      <li>インストールした閲覧者は、その「ほーむぺーじ」をアプリとして見やすい画面で思いっきり活用できる。</li>
-      <li>アプリだから普通の「ほーむぺーじ」とは違い、Microsoft Store・Google Play・Apple Store・Meta Quest Storeにて配信が可能。</li>
-     </ul>
-    </div>
-
-    <p>必要なソースコードは manifest.json だけではなく、プログレッシブウェブアプリそのものが比較的新しい技術です。<br>
-     そのため、<a href="/contents/pwa.html">個人サイトをそのまんまアプリにする方法</a>にて、次のソースコードをまとめて掲載しています。</p>
-    <ul>
-     <li><a href="/contents/pwa.html#pwahead">PWAのメタデータを設定し、サービスワーカーを登録するためのコード</a></li>
-     <li><a href="/contents/pwa.html#service-worker_js">オフラインキャッシュとバックグラウンドタスクを管理するservice-worker.js</a></li>
-     <li><a href="/contents/pwa.html#manifest_json">PWAのメタデータを定義するmanifest.json</a></li>
-    </ul>
-
-    <div class="content">
-     <img src="/another-eden/anaimage/ライザコラボエンディング.jpg" alt="ライザコラボエンディング" class="biggraphic fade-in-out">
-    </div>
     <p class="gra">settings.json</p>
     <p>Visual Studio CodeはMicrosoftのコードエディターですが、拡張機能のインストールと設定ファイルの記述で背景画像を付けられます。<br>
      settings.jsonはVS Codeの設定ファイルです。<br>
@@ -1458,26 +1438,26 @@ hr.atelierflower::before {
     <p class="gra">これでいいかな！</p>
     <div class="content">
      <img src="/another-eden/anaimage/ライザ錬成中2.jpg" alt="ライザ錬成中2" class="graphicsaki right-image fade-in-out">
-     <p>ちゃんと裏ボスなりストーリーなり、直接ゲームのことも書くからね？<br>
-      フォロワーさんの中には「忙しくてまだプレイできていない…」という人もいたから、まずはWeb制作について書いていきます。</p>
-     <p>何より私がライザごっこやりたくて仕方ないからね😆ww<br>
+     <p>ちゃんと裏ボスなりストーリーなり、直接ゲームのことも書いてありますよ。<br>
+      フォロワーさんの中には「忙しくてまだプレイできていない…」という人もいたから、まずはWeb制作について書いていました。</p>
+     <p>何より私がライザごっこやりたくて仕方なかったからね😆ww<br>
       錬金術はファンタジーですが、Web制作と重なる部分がとても多いと感じるんだよ。<br>
       大きな鍋がWebサーバーだもん。</p>
     </div>
 
     <div class="content">
      <img src="/another-eden/anaimage/ライザ錬成中3.jpg" alt="ライザ錬成中3" class="graphicsaki right-image fade-in-out">
-     <p>ゲーム部分の攻略等は、時間を経るとどうしても色褪せてしまいます。<br>
+     <p>ゲーム部分の攻略情報などは、時間を経るとどうしても色褪せてしまいます。<br>
       ライブサービスゲームだからそれは仕方ないんだけど、旬なうちに楽しむということは、旬が過ぎればそれまでということでもある。<br>
-      ネタバレの懸念も薄まるように、そして自分にとって良い思い出となるように、時間の経過を見つつ順次ゲームネタを書いていきましょう。</p>
+      ネタバレの懸念も薄まるように、そして自分にとって良い思い出となるように、時間の経過を見つつ順次ゲームネタを加えていきました。</p>
     </div>
 
     <p class="gra">やったぁー！ できた！</p>
     <div class="content">
      <img src="/another-eden/anaimage/ライザ錬成中4.jpg" alt="ライザ錬成中4" class="graphicsaki right-image fade-in-out">
-     <p>Pythonのコードネタは学生時代の勉強ノートから引っ張ってきたものです。<br>
-      当時はコードを書けても、私がフロントエンド・バックエンドの関連性を十分に理解できておらず、実装することができなかったのですよ。<br>
-      自分のパソコンで動作させるのが精一杯。<br>
+     <p>このサイトを構成しているソースコードは、学生時代の勉強ノートから引っ張ってきたものです。<br>
+      当時はコードを書けても、私がフロントエンド・バックエンドの関連性を十分に理解できておらず、実装することができなかったものもありますよ。<br>
+      Pythonなんか自分のパソコンで動作させるのが精一杯。<br>
       こうしてWeb公開にまで至らなかった。</p>
     </div>
    </div>
@@ -1504,10 +1484,15 @@ hr.atelierflower::before {
        class="small-orange-text">image_aspect_compression_middle50.pyなど</span>)を用いて、まとめてリサイズする。</dd>
     </dl>
 
-    <p>個人用GoogleアカウントとWeb公開用Googleアカウントを分けています。<br>
-     その上でデータ共有はアルバム共有機能等を使い、必ず一手は手作業を挟まないとWebに公開できません。<br>
-     誤操作による画像投稿事故を避けるためです。</p>
-    <p>開発環境データはOneDriveと連携し、意識せずとも常時バックアップできている仕組みとしています。</p>
+    <div class="content">
+     <img src="/another-eden/anaimage/ライザ考え中.jpg" alt="ライザ考え中" class="graphicsaki right-image fade-in-out">
+     <p>個人用GoogleアカウントとWeb公開用Googleアカウントを分けています。<br>
+      その上でデータ共有はアルバム共有機能等を使い、必ず一手は手作業を挟まないとWebに公開できません。<br>
+      誤操作による画像投稿事故を避けるためです。</p>
+     <p>開発環境データはOneDriveと連携し、意識せずとも常時バックアップできている仕組みとしています。</p>
+    </div>
+
+    <p>人間は必ずミスをするので、そもそもミスができないルートを決めちゃうのが私のやり方です。</p>
 
    </div>
    <div class="atelier-tab-content" data-content="3">
@@ -1535,25 +1520,27 @@ hr.atelierflower::before {
     </dl>
 
     <p class="gra"><i class="fa-solid fa-laptop"></i> My favorite PC</p>
-    <p>もう10年くらいかな…<br>
-     低スペックのパソコンしか使ってないです。<br>
-     クラウドが注目されている今、個人でハイスペックパソコンを購入する必要がある状況は限られたものかと。<br>
-     <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>を作っていた時なんか、eMMC (embedded
-     MultiMediaCard) でさえなかったですね。
-    </p>
-    <dl>
-     <dt><i class="fa-solid fa-server"></i> CPU Information</dt>
-     <dd>Current Clock Speed: 1114 MHz<br>
-      Name: Intel(R) Celeron(R) N4500 @ 1.10GHz<br>
-      Number of Cores: 2<br></dd>
-     <dt><i class="fa-solid fa-memory"></i> Memory Information</dt>
-     <dd>Capacity: 4 GB (4294967296 bytes)<br>
-      Speed: 3200 MHz<br></dd>
-     <dt><i class="fa-solid fa-database"></i> Disk Information</dt>
-     <dd>Model: Kingston X29128<br>
-      Size: 125 GB (125172311040 bytes)</dd>
-    </dl>
-
+    <div class="content">
+     <img src="/another-eden/anaimage/ライザ完成.jpg" alt="ライザ完成" class="graphicsaki right-image fade-in-out">
+     <p>もう10年くらいかな…<br>
+      低スペックのパソコンしか使ってないです。<br>
+      クラウドが注目されている今、個人でハイスペックパソコンを購入する必要がある状況は限られたものかと。<br>
+      <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>を作っていた時なんか、eMMC (embedded
+      MultiMediaCard) でさえなかったですね。
+     </p>
+     <dl>
+      <dt><i class="fa-solid fa-server"></i> CPU Information</dt>
+      <dd>Current Clock Speed: 1114 MHz<br>
+       Name: Intel(R) Celeron(R) N4500 @ 1.10GHz<br>
+       Number of Cores: 2<br></dd>
+      <dt><i class="fa-solid fa-memory"></i> Memory Information</dt>
+      <dd>Capacity: 4 GB (4294967296 bytes)<br>
+       Speed: 3200 MHz<br></dd>
+      <dt><i class="fa-solid fa-database"></i> Disk Information</dt>
+      <dd>Model: Kingston X29128<br>
+       Size: 125 GB (125172311040 bytes)</dd>
+     </dl>
+    </div>
     <p class="gra">memo</p>
     <p>Using VS Code, search for class="codegra".<br>
      class="gra" is a representation that mimics a heading.</p>
@@ -1636,212 +1623,92 @@ hr.atelierflower::before {
   <p>PDF本体をご覧になりたい方は<a href="/another-eden/fein_report/ファンサイト(1).pdf">アナザーエデン・ファンサイトのご案内.pdf版</a>をどうぞ。<br>
    でも上部のプレビューでも十分かと思います。</p>
 
-  <h2>私のサイトがアプリになりました</h2>
-  <div class="content">
-   <img src="Atelier.png" alt="Illustration of the atelier" class="biggraphic fade-in-out">
-  </div>
-  <p>詳しくは<a href="/contents/pwa.html">個人サイトをそのまんまアプリにする方法</a>にて。<br>
-   超簡単な説明だけで良ければ、このページの「<a href="#manifest_json_light">Steps for Application Development</a>にある json タブ」にてご紹介しております。
-  </p>
-  <p>この見出し通りの状況なのですが、ここに詳しく書くのは無理ゲーだよ…<br>
-   ちゃんと別にWebページが必要です。<br>
-   一言お気持ち表明するなら、もう初めっからアプリ化するつもりでした。<br>
-   だって今の時代、普通に考えてアプリのほうが有利じゃん。<br>
-   でも静的Webサイトのメリットを捨てないのが、プログレッシブウェブアプリなんです。</p>
+  <h2>PythonでタブUIを実装してみました</h2>
 
-  <h3>マルチプラットフォーム対応のフローティング・ランチャーを作りました</h3>
-  <p>詳しくは<a href="/contents/software.html">Web制作の技術でソフトウェアを作る</a>にて。</p>
-  <div class="content">
-   <img src="/contents/itimages/pwainfo/feinlauncher.png" alt="feinlauncher" class="biggraphic fade-in-out">
-  </div>
-  <p>こういう感じの、壁紙を極力邪魔しないテキストベースのランチャーです。<br>
-   上の画像の右上のほう…透き通ったランチャーがあるの、見えますか？<br>
-   これはアプリ化のように計画的なものではなく、完全な思い付きです。<br>
-   ソフトウェア作りに凝ってた頃のソースコードが発掘されたことも大きい。<br>
-   コード資産って…大切なんだと改めて思いました😅<br>
-   これからもバージョンアップしていきましょう！</p>
+  <p>このページにも使われている、コンテンツをぎゅっと濃縮できるUIです。<br>
+   詳しい説明とソースコードは、次のリンク先にあります。</p>
 
-  <hr class="atelierflower">
+  <ul>
+   <li><a href="/contents/tabui.html#pythontab_html1">Brythonをhtmlファイルと関連付けるコード</a></li>
+   <li><a href="/contents/tabui.html#pythontab_html2">タブUIの骨組みとなるhtmlコード</a></li>
+   <li><a href="/contents/tabui.html#pythontab_python">タブUIを作るPythonコード</a></li>
+  </ul>
 
-  <h2>PythonでタブUIを実装する</h2>
+  <p>Pythonは最近とても人気がありますね！<br>
+   これはいくつかの理由がありますが、特に機械学習とデータサイエンスの分野での利用が大きな要因となっています。<br>
+   ただ、もともとPythonはそのシンプルで直感的な構文、豊富なライブラリ、そして活発なコミュニティサポートのおかげで幅広い層に利用されていたんですよね。</p>
 
   <div class="content">
    <img src="/another-eden/anaimage/ルドヴィカ.jpg" alt="ルドヴィカ" class="graphicsaki right-image fade-in-out">
-   <p>ライザのアトリエと言うからには、試行錯誤の上での調合とその成功をテーマにしていきたいですね。<br>
-    ルドヴィカの物語は多くのユーザーの気持ちを掴んだのでは？<br>
-    まずはストーリーに直接触れなくて済む、タブUIの「調合」を、このアトリエで試みます。</p>
-
-   <p>ここで重要な「調合アイテム」は、Brython（ブリトン）です。<br>
-    Pythonのシンプルな文法を使ってフロントエンドの機能を実装でき、JavaScriptを深いレベルで学ぶ必要がなくなります。<br>
-    Pythonの知識だけでフロントエンド開発ができるツールなんですよね。<br>
-    JavaScriptに比べると若干パフォーマンスが劣るようですが、軽微なUIなら支障はありません。<br>
-    Pythonライブラリや機能にしても、全てを扱う必要はないのですから。</p>
+   <p>例えばCopilotやGeminiのようなAI（人工知能）も、Pythonと密接に関連しています。<br>
+    Pythonは機械学習・データ処理・自然言語処理などのライブラリが整っていることでAI開発の主要なツールとなっており、書店にも関連書籍が増えているのです。<br>
+    しかし、Pythonだけ書けても、AI開発ができるわけもなく…</p>
+   <p>このアプリケーションがデプロイされている Google Cloud では、AI開発が非常に活発に行われています。─ もちろん Microsoft Azure や Amazon Web Services でも ─<br>
+    「Google CloudのAI開発プラットフォーム」などという言い方をしますね。</p>
   </div>
 
-  <h5>Brython（Browser Pythonの略）について</h5>
+  <p>特にアナデンユーザーなら、Vertex AI という Google Cloud のプラットフォームに注目してみてはいかがでしょう？</p>
+
+  <h4>Google CloudとWFSのAI開発</h4>
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザ考え中表情.jpg" alt="ライザ考え中表情" class="graphicmini right-image fade-in-out">
+   <p><a href="https://iret.media/112383">【Google Cloud Next Tokyo 24】Vertex AI Search を使った社内向け AI チャット サービスの構築</a>
+    というページをご覧いただくと、株式会社WFSの先進的な試みについて読むことができます。<br>
+    各ゲームタイトル担当者の生産性向上を目的として、AI開発をしたみたいですね。<br>
+    これは凄いことだと思います。<br>
+    WFSは最先端の情報技術を使っていることになる！</p>
+   <p>あ、そうそう…<br>
+    Vertex AIはAIプロジェクトの構想からデプロイまでをカバーする、コードベースのデータサイエンス開発プラットフォームです。</p>
+  </div>
+
+  <p>さて、このようにAIとクラウドというのは、いろいろと関連しているのです。</p>
+
+  <h3>ライブラリとは何か？</h3>
   <div class="content">
    <img src="/another-eden/anaimage/ASフィーネとライザ.jpg" alt="ASフィーネとライザ" class="graphicsaki right-image fade-in-out">
-   <p>Pythonのコードを直接ブラウザ上で実行するためのライブラリです。<br>
-    JavaScriptの代わりにPythonを使用してフロントエンド開発を行うことができます。<br>
-    BrythonはPython 3の多くの機能をサポートしており、Pythonの標準ライブラリの一部も使用できます。<br>
-    方法は単純で、アナデンで使われているLuaを動かした時と同じように、HTMLファイルにスクリプトタグを追加するだけです。</p>
+   <p>プログラミングを考えるときに欠かせないのが「ライブラリ」です。<br>
+    ライブラリとは、特定の機能や操作を簡単に実行するために、再利用可能なコードの集まりを意味します。<br>
+    ライブラリを使うことで、開発者はゼロからすべてのコードを書く必要がなくなり、効率的にプログラムを作成することができます。</p>
+
+   <p>例えば上述のように、機械学習やデータ処理、自然言語処理など、さまざまな分野で役立つ関数やクラスがまとめられているライブラリがPythonにはたくさんあります。<br>
+    これらのライブラリを使うことで、特定のタスクを素早く実行できるようになるってことだね。</p>
   </div>
 
-  <p>さっそくコードを見てみましょう。</p>
+  <p>ライブラリはプログラム開発を効率化するための便利なツールセットであると言ってもいい。</p>
 
-  <h3>BrythonのJSファイルを取得して関連付ける</h3>
-  <p>アナデンで使われているLuaを実装した時と似ています。<br>
-   ひとまず実行環境を用意してあげないと、Pythonがブラウザ上で動作しません。</p>
-  <p class="codegra">Brythonをhtmlファイルと関連付けるコード</p>
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザ天上げ拡大.jpg" alt="ライザ天上げ拡大" class="graphicmini right-image fade-in-out">
+   <p>例えばこのサイトで使っている <a href="https://prismjs.com/index.html">Prism.js</a> はコードハイライト用のライブラリです。<br>
+    軽量で効率的に動作し、さまざまなプログラミング言語のコードをシンタックスハイライトすることができます。<br>
+    これを使うことでコードの可読性が向上し、開発者がコードをより簡単に理解できるようになります。</p>
+   <p>ソースコードの色分け表示なんか、いちいちCSSで細かく設定するなんて大変だよ…<br>
+    こういうポイントでライブラリを使うんです。</p>
+  </div>
+
+  <p>こんな感じで、綺麗にプログラムコードが表示されているでしょ？<br>
+   <a href="/another-eden/lua.html">アナザーエデンのプログラミングを個人サイトで試す</a>で書いた、アナザーエデンで使われているプログラミング言語「Lua」のソースコードです。
+  </p>
   <div class="code-container">
-   <pre><code class="language-html">
-&lt;head&gt;
- &lt;script src=&quot;/script/brython.js&quot;&gt;&lt;/script&gt;
- &lt;script src=&quot;/script/brython_stdlib.js&quot;&gt;&lt;/script&gt;
-&lt;/head&gt;
+   <pre><code class="language-lua">
+const luaCode1 = `
+    local items = {
+        {name = &quot;アナザーエデン&quot;, link = &quot;https://another-eden.jp/&quot;},
+        {name = &quot;ヘブンバーンズレッド&quot;, link = &quot;https://heaven-burns-red.com/&quot;},
+        {name = &quot;WRIGHT FLYER STUDIOS&quot;, link = &quot;https://www.wfs.games/&quot;}
+    }
+
+    local dropdownHtml = &quot;&quot;
+    for _, item in ipairs(items) do
+        dropdownHtml = dropdownHtml .. '&lt;a href=&quot;' .. item.link .. '&quot;&gt;' .. item.name .. '&lt;/a&gt;'
+    end
+
+    return dropdownHtml
+`;
 
 </code></pre>
   </div>
-
-  <p>もうHTML・CSS・JavaScriptによるサイト構築の基礎についてはご存じのものとして話を進めます。<br>
-   ここはコード紹介というより、ライザにあやかってファンサイトのUIを作っていくアトリエだからさ。</p>
-  <p>上記のように設定することで、Brythonの主要な機能と標準ライブラリを含めることができます。<br>
-   両方のファイルを使うとBrythonをフルに活用することができますよ。<br>
-   JavaScriptファイルの設置場所は御自身のサイトに合うようにパスを修正してください。</p>
-
-  <div class="content">
-   <img src="/another-eden/anaimage/ライザ考え中.jpg" alt="ライザ考え中" class="graphicsaki right-image fade-in-out">
-
-   <p>まず、<a href="https://brython.info/">Brython公式サイト</a>から、<a
-     href="https://github.com/brython-dev/brython/releases">githubのBrythonリリースページ</a>へ移動します。<br>
-    そのサイトから「Brython-3.13.0.zip」をダウンロードします。<br>
-    zipを解凍すると、次のファイルが出てきます。</p>
-
-   <dl>
-    <dt>brython.js</dt>
-    <dd>Brythonの主要なスクリプトで、PythonコードをJavaScriptに変換して実行します。<br>
-     これがなければ、Brythonは動作しません。</dd>
-    <dt>brython_stdlib.js</dt>
-    <dd>Brythonの標準ライブラリを含むスクリプトです。<br>
-     Pythonの標準ライブラリの機能をブラウザ上で利用するために必要です。</dd>
-   </dl>
-
-   <p>インターネット越しにBrythonを使うこともできますが、自分のサイトのディレクトリに入れちゃった方が後がラクかと思います。</p>
-  </div>
-
-  <h3>HTMLの中にPythonを含める</h3>
-  <div class="content">
-   <img src="/another-eden/anaimage/クラウディア星導覚醒.jpg" alt="クラウディア星導覚醒" class="graphicsaki right-image fade-in-out">
-
-   <p>長くなるから、まだここではPythonまでは書かれていません。<br>
-    いったんhtml部分のみ記載しています。<br>
-    ポイントとなるのは、Brythonを使用してブラウザ内でPythonコードを実行しているところです。<br>
-    DOMの操作やイベントハンドリングを行う構成としてみました。<br>
-    JavaScriptはBrythonの初期化を行っているだけなので、主なロジックはPythonスクリプトに依存しています。</p>
-
-  </div>
-
-  <p class="codegra">タブUIの骨組みとなるhtmlコード</p>
-  <div class="code-container">
-   <pre><code class="language-html">
-&lt;div class=&quot;atelier-container&quot;&gt;
- &lt;div class=&quot;atelier-tabs&quot;&gt;
-  &lt;div class=&quot;atelier-tab&quot; data-tab=&quot;1&quot;&gt;Tab 1&lt;/div&gt;
-  &lt;div class=&quot;atelier-tab&quot; data-tab=&quot;2&quot;&gt;Tab 2&lt;/div&gt;
-  &lt;div class=&quot;atelier-tab&quot; data-tab=&quot;3&quot;&gt;Tab 3&lt;/div&gt;
- &lt;/div&gt;
- &lt;div class=&quot;atelier-tab-content&quot; data-content=&quot;1&quot;&gt;Content for Tab 1&lt;/div&gt;
- &lt;div class=&quot;atelier-tab-content&quot; data-content=&quot;2&quot;&gt;Content for Tab 2&lt;/div&gt;
- &lt;div class=&quot;atelier-tab-content&quot; data-content=&quot;3&quot;&gt;Content for Tab 3&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;atelier-container&quot;&gt;
- &lt;div class=&quot;atelier-tabs&quot;&gt;
-  &lt;div class=&quot;atelier-tab&quot; data-tab=&quot;4&quot;&gt;Tab 4&lt;/div&gt;
-  &lt;div class=&quot;atelier-tab&quot; data-tab=&quot;5&quot;&gt;Tab 5&lt;/div&gt;
-  &lt;div class=&quot;atelier-tab&quot; data-tab=&quot;6&quot;&gt;Tab 6&lt;/div&gt;
- &lt;/div&gt;
- &lt;div class=&quot;atelier-tab-content&quot; data-content=&quot;4&quot;&gt;Content for Tab 4&lt;/div&gt;
- &lt;div class=&quot;atelier-tab-content&quot; data-content=&quot;5&quot;&gt;Content for Tab 5&lt;/div&gt;
- &lt;div class=&quot;atelier-tab-content&quot; data-content=&quot;6&quot;&gt;Content for Tab 6&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;script type=&quot;text/python&quot;&gt;
-python部分はここではいったん省略
-&lt;/script&gt;
-
-&lt;script&gt;
- window.addEventListener(&#x27;load&#x27;, () =&gt; {
-  brython({ debug: 1, selector: &quot;.atelier-container&quot; });
- });
-&lt;/script&gt;
-
-</code></pre>
-  </div>
-
-  <p>このコードの概要をざっと説明します。</p>
-  <p class="gra">HTMLの構造</p>
-  <dl>
-   <dt>タブコンテナ（.atelier-container）</dt>
-   <dd>2つのタブコンテナがあり、それぞれに複数のタブ（.atelier-tab）とタブコンテンツ（.atelier-tab-content）が含まれています。</dd>
-
-   <dt>タブ（.atelier-tab）</dt>
-   <dd>各タブは data-tab 属性で識別され、クリックすると対応するコンテンツが表示されます。</dd>
-
-   <dt>タブコンテンツ（.atelier-tab-content）</dt>
-   <dd>各タブに対応するコンテンツで、data-content 属性によってどのタブに対応するかが示されています。</dd>
-  </dl>
-
-  <p class="gra">Pythonスクリプト（省略されている部分）</p>
-  <div class="content">
-   <img src="/another-eden/anaimage/ライザ考え中表情.jpg" alt="ライザ考え中表情" class="graphicsaki right-image fade-in-out">
-
-   <p>タブのクリックイベントを処理し、対応するタブコンテンツの表示・非表示を制御するロジックなどが含まれています。（後述します）</p>
-
-   <p class="gra">JavaScriptの部分</p>
-   <p>ページの読み込み時にBrythonが初期化され、.atelier-container 内でPythonコードが実行されます。<br>
-    動作の流れとしては、次のような感じです。</p>
-   <ol>
-    <li>ページが読み込まれると、Brythonライブラリが初期化されます。</li>
-    <li>各タブをクリックすると、Pythonスクリプトによって対応するタブコンテンツが表示されます。</li>
-    <li>非アクティブなタブコンテンツは非表示になります。</li>
-   </ol>
-  </div>
-
-  <h3>Pythonコードの紹介</h3>
-  <p>いよいよここからPythonコードです。<br>
-   個人的にはJavaScriptでタブUIを作るよりラクだと感じるけど、まぁ好みかな？<br>
-   まずは簡単にさらーっと説明しますね。</p>
-
-  <div class="content">
-   <img src="/another-eden/anaimage/ライザ考え中拡大版.jpg" alt="ライザ考え中拡大版" class="graphicsaki right-image fade-in-out">
-   <p class="gra">タブ切り替えの説明</p>
-   <p>このコードは、タブをクリックすると、それに対応するコンテンツ（中身）を表示するものです。</p>
-
-   <dl>
-    <dt>タブを準備</dt>
-    <dd>タブ（ボタンみたいなもの）とその中身（コンテンツ）をまとめておきます。</dd>
-
-    <dt>タブをクリックすると</dt>
-    <dd>クリックされたタブを「アクティブ（選ばれた）」状態にして、そのタブの中身を表示するために準備します。</dd>
-
-    <dt>アニメーションをつける</dt>
-    <dd>タブの中身がスライドして出てくる動きをつけます。</dd>
-   </dl>
-
-   <p class="gra">全体の流れ</p>
-
-   <ul>
-    <li>ページを読み込むときに、最初のタブとその中身を表示します。</li>
-    <li>それぞれのタブにクリックしたときの動きを設定します。</li>
-    <li>タブをクリックすると、そのタブの中身がスライドして出てきます。</li>
-   </ul>
-
-  </div>
-
-  <p>これで、タブを切り替えるたびに対応する中身がアニメーションと一緒に表示されるようになります。</p>
-
-  <p class="codegra">タブUIを作るPythonコード</p>
+  <p>お次はプログラミング言語「Python」のソースコードです。<br>
+   ちょっと変則的かもしれませんが、このアプリでタブUIを動作させるときに使っています。</p>
   <div class="code-container">
    <pre><code class="language-python">
 from browser import document, timer
@@ -1882,250 +1749,111 @@ for container in document.select('.atelier-container'):
 
 </code></pre>
   </div>
+  <p>このようにライブラリを使うことで、私は余分な手間を省きつつも、見やすくソースコードをこのサイトに表示できています。</p>
 
-  <p>アニメーションについてはCSSでやっても良いと思うのですが、Luaと違ってPythonなら多少は慣れているので。<br>
-   せっかくだからやってみましたよ。<br>
-   ちなみにこのタブUIで用いられるJavaScriptとPythonコードは、１つのWebページにつき１カ所に書かれていれば良いです。<br>
-   複数のタブを１つのWebページに実装しても、正常動作するようにしてあります。<br>
-   では、ここからは少し詳しくいきます。</p>
-
-  <p class="gra">必要なモジュールをインポート</p>
-
-  <div class="code-container">
-   <pre><code class="language-python">
-from browser import document, timer
-
-</code></pre>
-  </div>
-
-  <dl>
-   <dt>document</dt>
-   <dd>ウェブページのDOM（Document Object Model）にアクセスするためのモジュールです。</dd>
-
-   <dt>timer</dt>
-   <dd>時間を指定して関数を実行するためのモジュールです。</dd>
-  </dl>
-
-  <p class="gra">タブを表示する関数を定義</p>
-
-  <div class="code-container">
-   <pre><code class="language-python">
-def show_tab(event):
-    container = event.target.closest('.atelier-container')
-    tabs = container.select('.atelier-tab')
-    contents = container.select('.atelier-tab-content')
-
-</code></pre>
-  </div>
-
-  <dl>
-   <dt>show_tab関数</dt>
-   <dd>タブがクリックされたときに呼び出されます。</dd>
-
-   <dt>event.target</dt>
-   <dd>クリックされたタブ要素を指します。</dd>
-
-   <dt>closest('.atelier-container')</dt>
-   <dd>クリックされたタブの親要素であるコンテナを取得します。</dd>
-
-   <dt>tabs</dt>
-   <dd>コンテナ内のすべてのタブを取得します。</dd>
-
-   <dt>contents</dt>
-   <dd>コンテナ内のすべてのタブコンテンツを取得します。</dd>
-  </dl>
-
-  <p class="gra">現在のアクティブなタブとコンテンツを非アクティブにする</p>
-
-  <div class="code-container">
-   <pre><code class="language-python">
-for tab in tabs:
-    tab.classList.remove('atelier-active-tab')
-for content in contents:
-    content.classList.remove('atelier-active-content')
-    content.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out'
-    content.style.transform = 'translateX(-100%)'
-    content.style.opacity = '0'
-    content.style.visibility = 'hidden'
-
-</code></pre>
-  </div>
-
-  <dl>
-   <dt>for tab in tabs</dt>
-   <dd>すべてのタブからatelier-active-tabクラスを削除します。</dd>
-
-   <dt>for content in contents</dt>
-   <dd>すべてのタブコンテンツからatelier-active-contentクラスを削除します。</dd>
-  </dl>
-
-  <p>ここで、タブコンテンツに対してアニメーション（スライドアウトとフェードアウト）を設定します。</p>
-
-  <p class="gra">クリックされたタブをアクティブにし、対応するコンテンツを表示</p>
-
-  <div class="code-container">
-   <pre><code class="language-python">
-event.target.classList.add('atelier-active-tab')
-tab_id = event.target.getAttribute('data-tab')
-active_content = container.select(f'[data-content="{tab_id}"]')[0]
-active_content.classList.add('atelier-active-content')
-
-</code></pre>
-  </div>
-
-  <dl>
-   <dt>event.target.classList.add('atelier-active-tab')</dt>
-   <dd>クリックされたタブをアクティブにします。</dd>
-
-   <dt>tab_id</dt>
-   <dd>クリックされたタブのdata-tab属性の値を取得します。</dd>
-
-   <dt>active_content</dt>
-   <dd>対応するタブコンテンツを取得します。</dd>
-
-   <dt>active_content.classList.add('atelier-active-content')</dt>
-   <dd>対応するコンテンツをアクティブにします。</dd>
-  </dl>
-
-  <p class="gra">遅延してコンテンツを表示</p>
-
-  <div class="code-container">
-   <pre><code class="language-python">
-def show_content():
-    active_content.style.visibility = 'visible'
-    active_content.style.opacity = '1'
-    active_content.style.transform = 'translateX(0)'
-
-timer.set_timeout(show_content, 50)
-
-</code></pre>
-  </div>
-
-  <dl>
-   <dt>show_content関数</dt>
-   <dd>アクティブなタブコンテンツを表示するためのものです。</dd>
-
-   <dt>timer.set_timeout(show_content, 50)</dt>
-   <dd>50ミリ秒後にshow_content関数を実行します。</dd>
-  </dl>
-
-  <p class="gra">最後のforから始まっている部分</p>
-  <div class="code-container">
-   <pre><code class="language-python">
-for container in document.select('.atelier-container'):
- tabs = container.select('.atelier-tab')
- if tabs:
-  tabs[0].classList.add('atelier-active-tab')
-  container.select('.atelier-tab-content')[0].classList.add('atelier-active-content')
-  for tab in tabs:
-   tab.bind('click', show_tab)
-
-</code></pre>
-  </div>
-  <p>ここなんだよねー<br>
-   これはですねー…ウェブページ内のすべての「atelier-container」をループしているのです。<br>
-   アナザーエデンで言うところの、<strong>ループ攻略</strong>ですよ！</p>
-
-  <p>ちょっと詳しめにいきましょう。</p>
-
-  <p><strong>ウェブページ内のすべてのatelier-containerをループ</strong></p>
-  <div class="code-container">
-   <pre><code class="language-python">
-for container in document.select('.atelier-container'):
-
-</code></pre>
-  </div>
-  <p>このコードはウェブページ内にあるすべての .atelier-container クラスを持つ要素を見つけて、それぞれに対して同じ処理を行うためのループです。<br>
-   簡単に言うと、ページにあるすべての「タブコンテナ」を順番に処理します。</p>
-
-
-  <p><strong>初期設定として、最初のタブとタブコンテンツをアクティブに</strong></p>
-  <div class="code-container">
-   <pre><code class="language-python">
-if tabs:
-    tabs[0].classList.add('atelier-active-tab')
-    container.select('.atelier-tab-content')[0].classList.add('atelier-active-content')
-
-</code></pre>
-  </div>
-  <p>このコードはタブコンテナ内にタブ (.atelier-tab) が存在するかを確認しています (if tabs:)。<br>
-   もしタブが存在する場合、最初のタブ (tabs[0]) に atelier-active-tab クラスを追加して、それをアクティブ（選択された状態）にします。<br>
-   同様に、最初のタブコンテンツにも atelier-active-content クラスを追加して表示されるようにします。<br>
-   このコードがないと、ページがロードされたときに最初のタブとその内容が表示されなくなってしまうのです。</p>
-
-
-  <p><strong>各タブにクリックイベントをバインドし、タブがクリックされたときに show_tab 関数を実行します</strong></p>
-  <div class="code-container">
-   <pre><code class="language-python">
-for tab in tabs:
-    tab.bind('click', show_tab)
-
-</code></pre>
-  </div>
-  <p>このコードはコンテナ内のすべてのタブ（.atelier-tab）に対して、クリックイベント（クリックされたときに起こる処理）を設定しています。<br>
-   tab.bind('click', show_tab) は、各タブをクリックしたときに show_tab 関数を実行するように設定しています。<br>
-   つまり、タブがクリックされると、そのタブに対応するコンテンツを表示する処理が実行されるってこと。</p>
-
-
-  <h3>装飾要素のCSSコード</h3>
-  <p>CSSはプログラミング風に考えると余計にこんがらがるので、単純にコメントアウトを付けてコードを紹介します。</p>
-
-  <p class="codegra" id="pythontab_style">タブUIを装飾するstyle.css</p>
-  <div class="code-container">
-   <pre><code class="language-css">
-/* タブのスタイル */
-.atelier-tab {
- display: inline-block; /* タブをインラインブロックに設定 */
- margin: 0 5px; /* タブ間の左右マージンを5pxに設定 */
- padding: 10px 20px; /* タブ内のパディングを上下10px、左右20pxに設定 */
- border: 1px solid #ccc; /* タブの境界線を1pxの実線で#cccの色に設定 */
- cursor: pointer; /* マウスカーソルをポインターに変更 */
- border-top-left-radius: 10px; /* 左上の角を10pxの円弧に設定 */
- border-top-right-radius: 10px; /* 右上の角を10pxの円弧に設定 */
- background-color: rgba(144, 238, 144, 0.5); /* 背景色を半透明のライトグリーンに設定 */
-}
-
-/* タブコンテンツのスタイル */
-.atelier-tab-content {
- display: none; /* デフォルトでは表示しない */
- padding: 20px; /* コンテンツ内のパディングを20pxに設定 */
- border-top: none; /* 上部の境界線をなしに設定 */
- border: 1px solid #ccc; /* コンテンツの境界線を1pxの実線で#cccの色に設定 */
- border-radius: 10px; /* 角を10pxの円弧に設定 */
- box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* コンテンツに影を付ける */
- background-color: #fff; /* 背景色を白に設定 */
-}
-
-/* アクティブなタブのスタイル */
-.atelier-active-tab {
- background-color: rgba(144, 238, 144, 1); /* 背景色を不透明のライトグリーンに設定 */
-}
-
-/* アクティブなタブコンテンツのスタイル */
-.atelier-active-content {
- display: block; /* アクティブなコンテンツを表示 */
-}
-
-</code></pre>
-  </div>
-
-  <p>要するに、このCSSは「タブ」と「タブの中身」について、それぞれデザインしているのです。<br>
-   <a href="/contents/no_copying.html">AI学習や無断転載を防ぐプログラムの小ネタ集</a>ではJavaScriptを用いて青色のタブUIを実装しました。<br>
-   ここではPythonだから、緑色のタブUIにしてみたんだよね。
-  </p>
-
-  <h2>PythonでタブUIができたー！！</h2>
-  <p>念願の「ライザごっこ」ができて、大変満足しております😆ww</p>
+  <h4>サイト制作者のAIに対する指針</h4>
 
   <div class="content">
-   <img src="/another-eden/anaimage/ライザ完成.jpg" alt="ライザ完成" class="graphicsaki right-image fade-in-out">
-   <p>html・css・JavaScriptでタブUIを作るのは一般的過ぎて退屈だから、このサイトの環境であるPythonを使って、フロントエンドで錬成してみました。<br>
-    ライザはアトリエで錬金術を使っていますが、リアルの私はそんなことできません。<br>
-    でも、こうしていくつかのWeb言語を「調合」し、Webサイトに自由なUIを「錬成」することならできます。</p>
+   <img src="/another-eden/anaimage/ライザ渋顔.jpg" alt="ライザ渋顔" class="graphicmini right-image fade-in-out">
+   <p>私のAIに対する指針についてお話しするなら、次の画像だけで十分かと思いますよ？<br>
+    Google Cloud の Digital Leader という試験における、公式模擬試験からの出題となっております。<br>
+    広い意味で、私の行動原則となっているものです。</p>
   </div>
 
+  <p><a
+    href="https://cloud.google.com/learn/certification/cloud-digital-leader/?_gl=1*1jigb4l*_up*MQ..&gclid=3e3ee5e4d73418209c90825490e0f0d2&gclsrc=3p.ds">Cloud
+    Digital Leader</a> のWebページにも詳細があります。</p>
 
-  <h2>カルナジェネシスの影</h2>
+  <img src="/contents/itimages/googlecloud模擬試験.png" alt="googlecloud模擬試験" class="biggraphic fade-in-out">
+
+  <p>詳しくは<a
+    href="https://fein-sites-dev1.ew.r.appspot.com/contents/x_exodus.html">X（旧：Twitter）の変化にどう対処するか</a>の「生成AIに関する対応」という欄にあります。
+  </p>
+
+  <h2>私のサイトがアプリになりました</h2>
+  <p>詳しくは<a href="/contents/pwa.html">個人サイトをそのまんまアプリにする方法</a>にて。</p>
+  <div class="content">
+   <img src="/contents/itimages/feinapp.png" alt="Illustration of the atelier" class="biggraphic fade-in-out">
+  </div>
+
+  <p>この見出し通りの状況なのですが、ここに詳しく書くのは無理ゲーだよ…<br>
+   ちゃんと別にWebページが必要です。<br>
+   一言お気持ち表明するなら、もう初めっからアプリ化するつもりでした。<br>
+   だって今の時代、普通に考えてアプリのほうが有利じゃん。</p>
+
+  <h4>プログレッシブウェブアプリは「ほーむぺーじ」の利点を生かせる</h4>
+  「Progressive Web App」というのはもちろんアプリなのですが、それでいて静的Webサイトのメリットを捨てていないのですよ。
+
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザ喜顔.jpg" alt="Illustration of the atelier"
+    class="graphicmini right-image fade-in-out">
+   <ul>
+    <li>アプリなんだけど、俗に言う「ほーむぺーじ」の利点がそのまま残っている。</li>
+    <li>インストールしなくても、中身を自由に閲覧できて触れる。</li>
+    <li>インストールした閲覧者は、その「ほーむぺーじ」をアプリとして見やすい画面で思いっきり活用できる。</li>
+    <li>アプリだから普通の「ほーむぺーじ」とは違い、Microsoft Store・Google Play・Apple Store・Meta Quest Storeにて配信が可能。</li>
+   </ul>
+  </div>
+
+  <p>必要なソースコードは manifest.json だけではなく、プログレッシブウェブアプリそのものが比較的新しい技術です。<br>
+   そのため、次のソースコードをまとめて掲載しています。</p>
+  <ul>
+   <li><a href="/contents/pwa.html#pwahead">PWAのメタデータを設定し、サービスワーカーを登録するためのコード</a></li>
+   <li><a href="/contents/pwa.html#service-worker_js">オフラインキャッシュとバックグラウンドタスクを管理するservice-worker.js</a></li>
+   <li><a href="/contents/pwa.html#manifest_json">PWAのメタデータを定義するmanifest.json</a></li>
+  </ul>
+
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザコラボエンディング.jpg" alt="ライザコラボエンディング" class="biggraphic fade-in-out">
+  </div>
+
+  <h2>マルチプラットフォーム対応のフローティング・ランチャーを作りました</h2>
+  <p>詳しくは<a href="/contents/software.html">Web制作の技術でソフトウェアを作る</a>にて。<br>
+   こういう感じの、壁紙を極力邪魔しないテキストベースのランチャーです。</p>
+  <div class="content">
+   <img src="/contents/itimages/pwainfo/feinlauncher.png" alt="feinlauncher" class="biggraphic fade-in-out">
+  </div>
+  <p>上の画像の右上のほう…透き通ったランチャーがあるの、見えますか？<br>
+   これはアプリ化のように計画的なものではなく、完全な思い付きです。<br>
+   ソフトウェア作りに凝ってた頃のソースコードが発掘されたことも大きい。</p>
+
+  <ul>
+   <li><a href="/contents/software.html#launcher_indexhtml">ユーザーインターフェースを定義するindex.html</a></li>
+   <li><a href="/contents/software.html#launcher_renderer">ユーザーの操作や表示を制御するrenderer.js</a></li>
+   <li><a href="/contents/software.html#launcher_style">ランチャーソフトの見た目を設定するstyle.css</a></li>
+   <li><a href="/contents/software.html#launcher_main">エレクトロンアプリ全体の動作を制御するmain.js</a></li>
+   <li><a href="/contents/software.html#launcher_package">プロジェクトの設定情報を管理するpackage.json</a></li>
+  </ul>
+
+  <div class="content">
+   <img src="/another-eden/anaimage/ルドヴィカ全体.jpg" alt="ルドヴィカ全体" class="biggraphic fade-in-out">
+  </div>
+
+  <p>コード資産って…大切なんだと改めて思いました😅<br>
+   これからもバージョンアップしていきましょう！</p>
+
+  <h4>Discordでも使われているエレクトロン製のソフト</h4>
+  <p>上述の私が作ったソフトウェアは、Electronという技術を使っています。</p>
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザ考え中拡大版.jpg" alt="ライザ考え中拡大版" class="graphicsaki right-image fade-in-out">
+   <p>Electronというのは JavaScript、HTML、CSS を使って、Windows、Mac、Linuxなどの異なるプラットフォームで動作するデスクトップアプリを開発するためのフレームワークです。</p>
+
+   <p>例えば、ゲーマー向けのSNSである Discord は、Electronを使用して開発されたアプリケーションです。<br>
+    マルチプラットフォームに対応しつつ、ネイティブアプリと同等のパフォーマンスを提供します。<br>
+    あと、私が頻用している Visual Studio Code (VS Code) もElectronで作られているんですよ？<br>
+    なんと、Web技術を使って高度な機能を持つ、開発者用のコードエディタまで作成できちゃうんですね。<br>
+    当然のようにマルチプラットフォーム対応であり、いろんな拡張機能でユーザーがカスタマイズできる拡張性まで備えているのです。</p>
+  </div>
+
+  <p>Visual Studio Codeは、皆様もリスクなく気楽に触れます。<br>
+   <a href="https://vscode.dev/?vscode-lang=ja">Visual Studio Code for the Web</a> をどうぞ。<br>
+   インストールしたソフトウェアとしての Visual Studio Code と、ほっとんど同じ操作感ですよ。
+  </p>
+
+  <p class="gra">ここからは ゲームのお話です</p>
+  <hr class="atelierflower">
+
+  <h2>🎮カルナジェネシスの影</h2>
   <p>アナザーエデン、ライザのアトリエコラボおもしろかったですね！<br>
    ここから先はゲームそのもののお話です。<br>
    私はカルナジェネシスの影から真っ先に取り掛かったのですよ。<br>
@@ -2156,15 +1884,83 @@ for tab in tabs:
 
    <p>倒してみたらなんと、「真・気鋭の錬金術士の証」が手に入ったのです。<br>
     真っ先にライザリンシュタウトのVCグラスタを入手できて大満足！<br>
-    ちょうどこのページのコード管理を思い付いていたあたりでさ…、加えてSE職への切り替わり＋港町への引っ越しで多忙な時期だったから、ネタバレどころかTwitterもぜんぜん見る暇がなかった。<br>
+    ちょうどこのページのコード管理を思い付いていたあたりでさ…<br>
+    加えてSE職への部署異動＋港町への引っ越しで多忙な時期だったから、ネタバレどころかTwitterもぜんぜん見る暇がなかった。<br>
     強敵戦の入手アイテムで驚けるのは、ネタバレ価値観＋大暴れのコンボも良い仕事をしたものだと思ったね😆ww</p>
-
   </div>
 
-  <h5>少しの非効率がモチベを奪う</h5>
+  <h2>🎮闇のアルターフォース</h2>
+  <p>ライザコラボは裏ボスも倒し、全てのコアアイテムも錬成済みです。<br>
+   上述の通りライブサービスゲームの攻略記事というのはWebページ自体の寿命も短いので、攻略も簡素に済ませますよ？<br>
+   星導覚醒実装後の敵でもあるし、すぐにインフレ頼みで倒せるようになります。</p>
+
+  <div class="content">
+   <img src="/another-eden/anaimage/闇のアルターフォース画像.jpg" alt="闇のアルターフォース画像" class="biggraphic fade-in-out">
+  </div>
+
+  <p>書きやすいし、箇条書きにしてみましょうか。</p>
+
+  <dl>
+   <dt>バフ8種のオーラ対策</dt>
+   <dd>Pグラスタと装備を制限することで対応しました。<br>
+    やたらと豪華なグラスタと装備を付けないことで、バフが8種を超えないようにしたんだよね。</dd>
+
+   <dt>立ち回り</dt>
+   <dd>シュゼットの魔界の槍撃とライザの英雄の意思、ESマリエルの救済の祈りとシェンファのトリニティ。<br>
+    加えてバディはテュシアとコロボで守り切れます。</dd>
+  </dl>
+
+
+  <div class="content">
+   <img src="/another-eden/anaimage/クラウディア星導覚醒.jpg" alt="クラウディア星導覚醒" class="graphicsaki right-image fade-in-out">
+
+   <dl>
+    <dt>ダメージソースはアナザーフォース</dt>
+    <dd>ステラバーストでシェンファのテッセラクトを当ててからアナフォ。<br>
+     これでHPゲージを丸ごと削りました。</dd>
+
+    <dt>復活後のゲージ</dt>
+    <dd>無理に壊さずとも対応できましたね。<br>
+     最終局面も過度にターン数をかけなければ大丈夫です。</dd>
+   </dl>
+
+   <p>でも、私の場合はシェンファ・シュゼット・マリエル・ガリアード・クラルテともに天冥255です。<br>
+    デバフ耐性グラスタも腕速知・属性・物理の3つを完備できたこともあるでしょう。</p>
+  </div>
+  <p>長く続けてればね。<br>
+   頻用するキャラに関しては、自ずと255になっていたりするもんです。</p>
+
+  <div class="custom-google-drive-container">
+   <h4>闇のアルターフォースの動画（Google Drive）</h4>
+   <p>倒した当時のアナザーフォースを再現しました。<br>
+    ライザの天が上がっているのと、細かい装備を覚えておらず、まったく同一とはいかなかったけど。<br>
+    でもだいたい同じです。</p>
+   <iframe src="https://drive.google.com/file/d/1dIurGSSleiflTA0vUzHkQ0zFKdf8JA-B/preview"
+    class="custom-google-drive-iframe" allow="autoplay" title="バフ8種のオーラ対策"></iframe>
+   <p class="google-drive-text"><i class="fab fa-google-drive"></i>This is a video on Google Drive.</p>
+  </div>
+
+  <p>倒すとクラウディアの真・VCグラスタがもらえますよ。<br>
+   クラウディアもどこかで天255にしようかな🎵</p>
+
+  <div class="content">
+   <img src="/another-eden/anaimage/クラウディア天上げ.jpg" alt="クラウディア天上げ" class="graphicsaki right-image fade-in-out">
+   <p>2024年12月から2025年1月にかけて、上述のようにすっごく忙しくて💦<br>
+    この闇のアルターフォースにしても、新幹線の中でプレイしていたような記憶がありますね。<br>
+    Twitterは皆様のネタバレ価値観を尊重することが優先ですから、スマホを開くときにはだいたいライザコラボという状態😆ww</p>
+  </div>
+
+  <p>なので、早期にいろいろクリアできました。<br>
+   私はいつもそうですが、ネタバレ・センシティブ期間中はSNSに浮かないほうが、ゲームに集中できますよ？<br>
+   別に配信後すぐに片っ端からクリアしなくても良いけど🥱<br>
+   今にして思えば、あのスクショやこのスクショを残しておけば良かったなどと考えているところです。</p>
+
+  <hr class="atelierflower">
+
+  <h3>少しの非効率がモチベを奪う</h3>
   <div class="content">
    <img src="/another-eden/anaimage/ライザコラボfear終盤.jpg" alt="ライザコラボfear終盤" class="graphicsaki right-image fade-in-out">
-   <p>コード＋記事資産が手元にない場合、Webサイト制作は大仕事となります。<br>
+   <p>ソースコードや記事資産が手元にない場合、Webサイト制作は大仕事となります。<br>
     また、SNSでは「俺のほうがもっとスゲェことできる!!」というドヤりあいが頻繁に発生し、そういう風土が知識&技術を習得する際の妨げとなります。<br>
     特にこうして自らコードを書いてWebアプリケーションを構築していくような「Web開発」の領域に首を突っ込んだ場合、SNSからくる競争意識の悪影響を受けていると、学びも遊びも中途半端になってしまう…</p>
    <p>大いにゲームで遊び、大いに自分の学びを進められる環境を作るためにもね？<br>
@@ -2173,38 +1969,12 @@ for tab in tabs:
     誰かの役に立てば嬉しいです🎵</p>
   </div>
 
-  <hr class="atelierflower">
-
-  <div class="content">
-   <img src="/another-eden/anaimage/クラウディア天上げ.jpg" alt="クラウディア天上げ" class="graphicsaki right-image fade-in-out">
-
-   <p>他にもいろいろスクショ集めましょうね！</p>
-
-  </div>
 
 
   <!--
-  <div class="content">
-   <img src="/another-eden/anaimage/ライザエンディング.jpg" alt="ライザエンディング" class="graphicsaki right-image fade-in-out">
-
-   <p>他にもいろいろスクショ集めましょうね！</p>
-
-  </div>-->
-
-  <!--
-  <div class="content">
-   <img src="/another-eden/anaimage/ルドヴィカ全体.jpg" alt="ルドヴィカ全体" class="graphicsaki right-image fade-in-out">
-
-   <p>他にもいろいろスクショ集めましょうね！</p>
-
-  </div>-->
-
-
-  <!-- ライザ天上げ拡大.jpg
-ライザ指輪.jpg
-ライザ頑張る.jpg
-ライザ渋顔.jpg
-ライザ笑顔.jpg -->
+/another-eden/anaimage/ライザ指輪.jpg
+/another-eden/anaimage/ライザ頑張る.jpg
+/another-eden/anaimage/ライザ笑顔.jpg -->
 
 
 
