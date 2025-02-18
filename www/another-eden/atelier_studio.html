@@ -162,8 +162,10 @@
   <button id="generate-headings" data-open-text="ファンサイト制作のためのアトリエの目次を開く ▼"
    data-close-text="ファンサイト制作のためのアトリエの目次を閉じる ▲">ファンサイト制作のためのアトリエの目次を開く ▼</button><!--目次の自動生成-->
   <div class="spacer"></div>
-
+  <p>ゲームの話は見出しに🎮マークを付けています。<br>
+   それ以外は無印か🌟マークが付いています。</p>
   <p><a href="anaden_sitemap.html">アナザーエデン関連ページ・サイトマップへ戻る</a></p>
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
 
   <!-- ●ヘッダーここまで。直下でコンテンツ開始● -->
   <h1 class="background-waveimage-heading"><span>ファンサイト制作のためのアトリエ</span></h1>
@@ -248,39 +250,58 @@
    <img src="/another-eden/anaimage/ライザ完成拡大版.jpg" alt="ライザ完成拡大版" class="graphicsaki right-image fade-in-out">
    <p>さてさて、せっかくこのように自由にUIを実装できるプラットフォームを作っているのですから、それを最大限活かしていきましょう！<br>
     具体的には、ファンサイトの制作プロセスを公開できる「アトリエ」をここに実装します。</p>
-   <p>自分だけのプラットフォームを<strong>調合</strong>するプロセスを公開しようかと。<br>
+   <p>自分だけのプラットフォームを<strong>調合</strong>するマニュアルを公開しようかと。<br>
     「ないなら 作ればいい！」<br>
     これ、めっちゃかっこいい！</p>
    <p><strong>
      関連ページ</strong>：<a href="/another-eden/lua.html">アナザーエデンのプログラミングを個人サイトで試す</a></p>
   </div>
 
+  <p>では、ファンサイト制作に関する話題を幅広く扱いつつ、合間にライザのアトリエコラボの感想を交えつつ、書いていきますね。</p>
+
+  <hr class="atelierflower">
+
+  <h2>🎮ライザに極グラスタをプレゼント</h2>
+
+  <p>このWebページを完成させた日の夜に、なんと宿星の断片が2つドロップしたのですよ。<br>
+   連発ではなかったけど、<a href="https://fein-sites-dev1.ew.r.appspot.com/contents/form.html#star">宿星の断片ドロップ調査</a>
+   から考えてみれば、異例の幸運と言わざる得ません。<br>
+   私はライザリンシュタウトを天255にするついでに、宿星の断片がどれほどドロップするものなのか調査しています。<br>
+   詳しくは上記リンク先をご覧ください。</p>
+
   <div class="feinalbum-container" id="feinalbum1">
    <div class="feinalbum">
     <div class="feinalbum-page">
-     <img src="/another-eden/anaimage/ライザ検討中.jpg" alt="ライザ検討中">
+     <img src="/another-eden/anaimage/極グラスタ光沢.jpg" alt="極グラスタ光沢">
     </div>
     <div class="feinalbum-page">
-     <img src="/another-eden/anaimage/ライザこれでいい.jpg" alt="ライザこれでいい">
+     <img src="/another-eden/anaimage/極グラスタライザ.jpg" alt="極グラスタライザ">
     </div>
     <div class="feinalbum-page">
-     <img src="/another-eden/anaimage/ライザできたー！.jpg" alt="ライザできたー！">
+     <img src="/another-eden/anaimage/宿星の断片1.jpg" alt="宿星の断片1">
     </div>
     <div class="feinalbum-page">
-     <img src="/another-eden/anaimage/ライザ解説.jpg" alt="ライザ解説">
+     <img src="/another-eden/anaimage/宿星の断片2.jpg" alt="宿星の断片2">
     </div>
    </div>
    <button class="feinalbum-prev">前のページ</button>
    <button class="feinalbum-next">次のページ</button>
   </div>
 
+  <p>このWebページが完成したのは2025年2月15日なのですが、この時点でライザの天は151。<br>
+   宿星の断片がどれほど落ちるのか記録しつつ、255まで頑張りますよ。<br>
+   加えて、ライザリンシュタウトのアクリルフィギュアを注文しています。<br>
+   届くのが楽しみです！</p>
+
   <hr class="atelierflower">
 
   <h3 id="target_atelier">🌟ソースコードのアトリエ</h3>
-  <p>このサイトを構成するのに必要なCSSと、プログラムの解説ページへジャンプできるリンクです。</p>
-
+  <p>このサイトを構成するのに必要なCSSと、プログラムの解説ページへジャンプできるリンクです。<br>
+   こんな感じでソースコードを書いていけば、このレベルのWebサイトであれば個人で作ることができますよ。</p>
 
   <h4>Recipe for CSS and Programs</h4>
+  <p>今は「アナザーエデンのファンサイト」ですからアフィリエイト目的で使うのはダメです。<br>
+   でも個人のサイトで楽しんで頂ける範囲であれば、リンク先のソースコードを自由に持って行ってかまいません。</p>
   <div class="spacer"></div>
 
   <div class="atelier-container">
@@ -532,6 +553,9 @@ for container in document.select('.atelier-container'):
    リアルの私は錬金術を使えないので、せめてWeb制作でライザごっこをしてみようかと！</p>
 
   <h4>Steps for Application Development</h4>
+  <p>ゲームのファンサイトに限らず、Webサイト制作に使うのは HTML・CSS・JavaScript だけではありません。<br>
+   手元の運用の工夫だったり、ソースコードの管理やバックアップ、コードエディターのカスタマイズなどなど。<br>
+   工夫すればするほど楽しく手間をかけず、そしてお金もかけずに楽しめます。</p>
   <div class="spacer"></div>
   <div class="atelier-container">
    <div class="atelier-tabs">
@@ -1412,6 +1436,7 @@ hr.atelierflower::before {
   </div>
 
   <h4>File and System Management</h4>
+  <p>ライザの 「何を入れるのがいいかなぁー・これでいいかな！・やったぁー！ できた！」 という3段階のセリフは、何かをクリエイトする時の人間の気持ちそのまんまだと思うのですよ。</p>
   <div class="spacer"></div>
   <div class="atelier-container">
    <div class="atelier-tabs">
@@ -1667,7 +1692,7 @@ hr.atelierflower::before {
   <div class="content">
    <img src="/another-eden/anaimage/ASフィーネとライザ.jpg" alt="ASフィーネとライザ" class="graphicsaki right-image fade-in-out">
    <p>プログラミングを考えるときに欠かせないのが「ライブラリ」です。<br>
-    ライブラリとは、特定の機能や操作を簡単に実行するために、再利用可能なコードの集まりを意味します。<br>
+    ライブラリとは、特定の機能や操作を簡単に実行するための、再利用可能なコードの集まりを意味します。<br>
     ライブラリを使うことで、開発者はゼロからすべてのコードを書く必要がなくなり、効率的にプログラムを作成することができます。</p>
 
    <p>例えば上述のように、機械学習やデータ処理、自然言語処理など、さまざまな分野で役立つ関数やクラスがまとめられているライブラリがPythonにはたくさんあります。<br>
@@ -1791,6 +1816,7 @@ for container in document.select('.atelier-container'):
     <li>アプリなんだけど、俗に言う「ほーむぺーじ」の利点がそのまま残っている。</li>
     <li>インストールしなくても、中身を自由に閲覧できて触れる。</li>
     <li>インストールした閲覧者は、その「ほーむぺーじ」をアプリとして見やすい画面で思いっきり活用できる。</li>
+    <li>常にサイレントアップデートだから、閲覧者はアプリのアップデートに付き合わなくていい。</li>
     <li>アプリだから普通の「ほーむぺーじ」とは違い、Microsoft Store・Google Play・Apple Store・Meta Quest Storeにて配信が可能。</li>
    </ul>
   </div>
@@ -1803,9 +1829,17 @@ for container in document.select('.atelier-container'):
    <li><a href="/contents/pwa.html#manifest_json">PWAのメタデータを定義するmanifest.json</a></li>
   </ul>
 
+  <h5>🎮ライザのアトリエコラボは大成功だったかと</h5>
+  <p>BGMもいいし、ストーリーもぜんぜん無理がなくて、おまけにばっちり感情移入できて。<br>
+   Twitterのタイムラインは後からさっと追いかけただけでしたが、大好評でしたね。</p>
   <div class="content">
    <img src="/another-eden/anaimage/ライザコラボエンディング.jpg" alt="ライザコラボエンディング" class="biggraphic fade-in-out">
   </div>
+
+  <p>可能であれば、続編を強く希望したいです。<br>
+   似たような雰囲気のRPG同士であるからか、アナザーエデンとライザのアトリエは自然に溶けあっていました。<br>
+   戦闘システムも無理がないのですよ。<br>
+   アナデンらしさも損なわず、ライザがまるで普通のアナデンキャラみたいに振る舞っています。</p>
 
   <h2>マルチプラットフォーム対応のフローティング・ランチャーを作りました</h2>
   <p>詳しくは<a href="/contents/software.html">Web制作の技術でソフトウェアを作る</a>にて。<br>
@@ -1824,13 +1858,20 @@ for container in document.select('.atelier-container'):
    <li><a href="/contents/software.html#launcher_main">エレクトロンアプリ全体の動作を制御するmain.js</a></li>
    <li><a href="/contents/software.html#launcher_package">プロジェクトの設定情報を管理するpackage.json</a></li>
   </ul>
+  <p>コード資産って…大切なんだと改めて思いました😅<br>
+   これからもバージョンアップしていきましょう！</p>
 
+  <hr class="atelierflower">
+  <h5>🎮ルドヴィカの実装希望！ ダメかな…</h5>
+  <p>私以外にも、ルドヴィカのプレイアブル化を希望している人はたくさんいると思うのですが？<br>
+   そういう意味でも、テイルズコラボみたいに続編をやって欲しいですね。</p>
   <div class="content">
    <img src="/another-eden/anaimage/ルドヴィカ全体.jpg" alt="ルドヴィカ全体" class="biggraphic fade-in-out">
   </div>
-
-  <p>コード資産って…大切なんだと改めて思いました😅<br>
-   これからもバージョンアップしていきましょう！</p>
+  <p>ライザの錬金術と、冒険に必要な道筋の開拓。<br>
+   そしてストーリーの進捗と徐々に明らかになっていく古城の秘密。<br>
+   これまでアナザーエデンはいろんなところとコラボしてきましたが、このライザのアトリエコラボが一番好きですね！</p>
+  <hr class="atelierflower">
 
   <h4>Discordでも使われているエレクトロン製のソフト</h4>
   <p>上述の私が作ったソフトウェアは、Electronという技術を使っています。</p>
@@ -1850,7 +1891,6 @@ for container in document.select('.atelier-container'):
    インストールしたソフトウェアとしての Visual Studio Code と、ほっとんど同じ操作感ですよ。
   </p>
 
-  <p class="gra">ここからは ゲームのお話です</p>
   <hr class="atelierflower">
 
   <h2>🎮カルナジェネシスの影</h2>
@@ -1931,7 +1971,7 @@ for container in document.select('.atelier-container'):
    頻用するキャラに関しては、自ずと255になっていたりするもんです。</p>
 
   <div class="custom-google-drive-container">
-   <h4>闇のアルターフォースの動画（Google Drive）</h4>
+   <h4>🎮闇のアルターフォースの動画</h4>
    <p>倒した当時のアナザーフォースを再現しました。<br>
     ライザの天が上がっているのと、細かい装備を覚えておらず、まったく同一とはいかなかったけど。<br>
     でもだいたい同じです。</p>

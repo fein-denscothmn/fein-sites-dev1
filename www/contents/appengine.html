@@ -98,6 +98,7 @@
 
  <!--ASノーナのファビコン-->
  <link rel="icon" sizes="32x32" href="../favicon.ico" type="image/x-icon">
+ <link rel="apple-touch-icon" sizes="180x180" href="/icons/appleicon.png">
 </head>
 
 <body>
@@ -1201,38 +1202,40 @@ handlers:
    URL ハンドラーのリストを定義するセクションです。<br>
    各ハンドラーが特定の URL パターンに対してどのような操作を行うかを指定します。</p>
   <ul>
-   <li><span class="codecolor">url: /</span><br>
+   <li>
+    <span class="codecolor">url: /</span><br>
     <span class="codecolor">/</span> に一致する URL に対するハンドラーを指定します。
+    <ul>
+     <li><span class="codecolor">static_files: www/index.html</span><br>
+      静的ファイル <span class="codecolor">www/index.html</span> を提供します。</li>
+     <li><span class="codecolor">upload: www/index.html</span><br>
+      GAE にデプロイするときに <span class="codecolor">www/index.html</span> をアップロードします。</li>
+    </ul>
    </li>
-   <ul>
-    <li><span class="codecolor">static_files: www/index.html</span><br>
-     静的ファイル <span class="codecolor">www/index.html</span> を提供します。</li>
-    <li><span class="codecolor">upload: www/index.html</span><br>
-     GAE にデプロイするときに <span class="codecolor">www/index.html</span> をアップロードします。</li>
-   </ul>
-   <li><span class="codecolor">url: /favicon.ico</span><br>
+   <li>
+    <span class="codecolor">url: /favicon.ico</span><br>
     <span class="codecolor">/favicon.ico</span> に一致する URL に対するハンドラーを指定します。
+    <ul>
+     <li><span class="codecolor">static_files: www/favicon.ico</span><br>
+      静的ファイル <span class="codecolor">www/favicon.ico</span> を提供します。</li>
+     <li><span class="codecolor">upload: www/favicon.ico</span><br>
+      GAE にデプロイするときに <span class="codecolor">www/favicon.ico</span> をアップロードします。</li>
+    </ul>
    </li>
-   <ul>
-    <li><span class="codecolor">static_files: www/favicon.ico</span><br>
-     静的ファイル <span class="codecolor">www/favicon.ico</span> を提供します。
-    </li>
-    <li><span class="codecolor">upload: www/favicon.ico</span><br>
-     GAE にデプロイするときに <span class="codecolor">www/favicon.ico</span> をアップロードします。
-    </li>
-   </ul>
-   <li><span class="codecolor">url: /(.*)</span><br>
+   <li>
+    <span class="codecolor">url: /(.*)</span><br>
     任意の URL に一致するハンドラーを指定します。<br>
-    正規表現 <span class="codecolor">(.*)</span> を使用して、どの URL にもマッチさせます。</li>
-   <ul>
-    <li><span class="codecolor">static_files: www/\1</span><br>
-     URL に対応するファイルを <span class="codecolor">www</span> フォルダから提供します。</li>
-    <li><span class="codecolor">upload: www/(.*)</span><br>
-     GAE にデプロイするときに <span class="codecolor">www</span> フォルダ内の任意のファイルをアップロードします。</li>
-   </ul>
+    正規表現 <span class="codecolor">(.*)</span> を使用して、どの URL にもマッチさせます。
+    <ul>
+     <li><span class="codecolor">static_files: www/\1</span><br>
+      URL に対応するファイルを <span class="codecolor">www</span> フォルダから提供します。</li>
+     <li><span class="codecolor">upload: www/(.*)</span><br>
+      GAE にデプロイするときに <span class="codecolor">www</span> フォルダ内の任意のファイルをアップロードします。</li>
+    </ul>
+   </li>
   </ul>
 
-  <p class="feintag">ここから先は、また後日加筆します</p><br>
+  <p class="feintag">ここから先は、また後日加筆します</p>
 
   <h2>個人サイトをクラウドサービスで公開する</h2>
   <div class="flowerclearfix">

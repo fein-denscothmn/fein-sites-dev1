@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+ <link rel="manifest" href="/manifest.json">
+
+ <script>
+  if ('serviceWorker' in navigator) {
+   navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+     console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    })
+    .catch(error => {
+     console.log('ServiceWorker registration failed: ', error);
+    });
+  }
+ </script>
+
+ <meta charset="UTF-8">
+ <title>2025年1月の更新記録</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="このサイトおよびポータルサイトの更新履歴を書いています。">
+ <meta name="keywords" content="個人サイト, 更新履歴, RSS">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="2025年1月の更新記録">
+ <meta property="og:description" content="このサイトおよびポータルサイトの更新履歴を書いています。">
+ <meta property="og:image" content="/image/アナザーエデンのバディ_ピスケ.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/rss/rss202501.html">
+ <link rel="stylesheet" type="text/css" href="/css/style.css">
+ <link rel="stylesheet" type="text/css" href="/css/header.css">
+ <link rel="stylesheet" type="text/css" href="/css/footer.css">
+ <link rel="stylesheet" type="text/css" href="/css/flower.css">
+ <link rel="stylesheet" type="text/css" href="/css/menu.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
+ <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
+ <link rel="stylesheet" type="text/css" href="/css/colors.css">
+ <link rel="stylesheet" type="text/css" href="/css/addpdf.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+ <script type="application/ld+json">
+ {
+   "@context": "https://schema.org",
+   "@type": "Organization",
+   "name": "2025年1月の更新記録",
+   "url": "https://fein-sites-dev1.ew.r.appspot.com/rss/rss202501.html",
+   "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+ }
+ </script>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+ <link rel="apple-touch-icon" sizes="180x180" href="/icons/appleicon.png">
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+ <script src="/script/underline.js"></script>
+ <script src="/script/feinfade.js"></script>
+ <script src="/script/feinScroll.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
+ <script src="/script/addpdf.js" defer></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <script src="/script/fengari-web.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
+
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="/contents/site_create.html">個人サイト制作：サイトマップ
+     </a></li>
+    <li class="breadcrumb-item"><a href="/contents/rss.html">このサイトとポータルサイトの更新履歴</a></li>
+    <li class="breadcrumb-item active" aria-current="page">2025年1月の更新記録</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く
+    ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="/script/menu.js"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+  <button id="generate-headings" data-open-text="2025年1月の更新記録の目次を開く ▼"
+   data-close-text="2025年1月の更新記録の目次を閉じる ▲">2025年1月の更新記録の目次を開く ▼</button><!--目次の自動生成-->
+
+
+  <!-- ●ヘッダーここまで。直下でコンテンツ開始● -->
+
+  <h1 class="background-waveimage-heading"><span>2025年1月の更新記録</span></h1>
+
+  <p>古い更新記録はこのようにして深い階層へ残していきます。</p>
+
+  <h5>2025年1月30日の更新</h5>
+  <p>以前はGitHubのことを集中的に書いていた<a href="/contents/github.html">Webサイトの共同制作とGitHub</a>に、開発めいたコード記述を伴わない個人サイト向けの記述を加えました。</p>
+
+  <div class="spacer"></div>
+
+  <h5>2025年1月28日の更新</h5>
+  <p><a href="/another-eden/atelier_studio.html">ファンサイト制作のためのアトリエ</a>からGitHub関連の記述を分離しました。</p>
+  <p><a href="/contents/github.html">Webサイトの共同制作とGitHub</a>を新設し、<a href="/contents/vscode.html">Visual Studio
+    Codeを触ってみよう</a>を編集しました。</p>
+
+  <div class="spacer"></div>
+
+  <h5>2025年1月24日の更新</h5>
+  <p>当面はこの3つを更新しつつ、特にBlueskyでIT系のお話をしていこうかと。<br>
+   ここに明記していなくても、今後はゴリゴリと更新されると思って頂いてけっこうです。</p>
+  <ul>
+   <li><a href="another-eden/anaden_sitemap.html">アナザーエデンのコーナー</a></li>
+   <li><a
+     href="https://sites.google.com/view/feins-portal/%E7%A7%BB%E4%BD%8F%E6%88%A6%E8%A8%98%E3%83%96%E3%83%AD%E3%82%B0/note?authuser=0">Blog</a>
+   </li>
+   <li><a href="/contents/appengine.html">Google App Engineで広告なしサイト作成</a></li>
+  </ul>
+
+  <div class="spacer"></div>
+
+  <h5>2025年1月23日の更新</h5>
+  <p>もうソースコード管理も考えなくて良いので、四方八方を更新しまくってます。</p>
+
+  <ul>
+   <li><a href="another-eden/anaden_sitemap.html">アナザーエデンのコーナー</a></li>
+   <li><a
+     href="https://sites.google.com/view/feins-portal/%E7%A7%BB%E4%BD%8F%E6%88%A6%E8%A8%98%E3%83%96%E3%83%AD%E3%82%B0/note?authuser=0">Blog</a>
+   </li>
+   <li><a href="/contents/appengine.html">Google App Engineで広告なしサイト作成</a></li>
+  </ul>
+
+  <p>すでにInstagramとBlueskyではお話したのですが、SNSアカウントの運用を今後はガラリと変えていきます。<br>
+   Twitterは今まで通りですが、Web制作系の話題については、技術レベルを下げていきます。</p>
+
+  <div class="spacer"></div>
+
+  <h5>2025年1月21日の更新</h5>
+  <p><a href="another-eden/anaden_sitemap.html">アナザーエデンのコーナー</a>を一通り更新しました。グラスタ表を初めとして、最新版にしてあります。</p>
+  <p><a
+    href="https://sites.google.com/view/feins-portal/%E7%A7%BB%E4%BD%8F%E6%88%A6%E8%A8%98%E3%83%96%E3%83%AD%E3%82%B0/note?authuser=0">Blog</a>を更新しました。
+  </p>
+  <p>Web開発という意味では、<a href="/contents/appengine.html">Google App Engineで広告なしサイト作成</a>を中心に今後は更新していきます。それらは全て<a
+    href="/another-eden/atelier_studio.html">ファンサイト制作のためのアトリエ</a>から辿れるようにしていくつもりです。<br>
+   とは言え…どこからどこにでも辿れるようになっているけどね。</p>
+
+  <div class="spacer"></div>
+
+  <h5>2025年1月14日の更新</h5>
+  <p><a href="/another-eden/atelier_studio.html">ファンサイト制作のためのアトリエ</a>に、VS Codeのターミナルでgcloudツールを使うコマンドへリンクを追加しました。</p>
+
+  <div class="spacer"></div>
+
+  <h5>2025年1月12日の更新</h5>
+  <p><a href="/another-eden/atelier_studio.html">ファンサイト制作のためのアトリエ</a>に、次のガイドへのPDF及びリンクを追加しました。</p>
+  <ul>
+   <li>アナザーエデン・ファンサイトのご案内</li>
+   <li>Visual Studio Codeの拡張機能：Live Server</li>
+   <li>Visual Studio Codeの拡張機能：Browser Lite</li>
+  </ul>
+
+  <div class="spacer"></div>
+
+  <h5>2025年1月8日の更新</h5>
+
+  <p>ソースコードのマニュアルが完成したので、これ以降は<a
+    href="/another-eden/anaden_sitemap.html">アナザーエデン関連ページ・サイトマップ</a>にあるページを中心に更新をしていきます。<br>
+   fein's portalからのコンテンツ移動も再開しました。<br>
+   またおもしろそうなノートが本棚から出てきたら、新しいUIを作りますよ。</p>
+
+  <div class="spacer"></div>
+
+  <h5>2025年1月7日の更新</h5>
+
+  <p><a href="/another-eden/atelier_studio.html">ファンサイト制作のためのアトリエ</a>に、次のコーナーを加筆した。</p>
+  <ul>
+   <li>ソースコードの管理とUI/UX（経験者向けのお話）</li>
+   <li>Markdown記法とREADME：このサイトの説明書</li>
+  </ul>
+  <p>私のやっていることは、少女趣味なキャラクターごっこにしか見えないでしょう。</p>
+
+  <div class="spacer"></div>
+
+  <h5>2025年1月6日の更新</h5>
+
+  <p><a href="/another-eden/atelier_studio.html">ファンサイト制作のためのアトリエ</a>にて、ソースコードとシステムの記載が完了した。</p>
+
+  <p><a href="/contents/navcode.html">ナビゲーションメニューをCSS・JavaScriptで用意する</a>を新設。メニューを構成するソースコードの紹介文を掲載した。</p>
+
+  <p>XML等を更新</p>
+
+  <div class="spacer"></div>
+
+  <h5>2025年1月2日の更新</h5>
+
+  <p><a href="/contents/form.html">お問い合わせ</a>ページにある「宿星の断片ドロップ調査」の下に「夢見と星跡の計算表」を掲載。<br>
+   Twitterで告知した上で、利便性向上のためメニューに特設リンクを追加。<br>
+   分かりやすいよう🌟マークを付け、視認性向上を図った。</p>
+
+  <p>この更新お知らせページが長大になってきたため、<a href="/rss/rss202411.html">2024年11月の更新記録</a>と<a
+    href="/rss/rss202412.html">2024年12月の更新記録</a>をそれぞれ作成。<br>
+   過去のお知らせは別ページへ逃がしました。</p>
+
+  <div class="spacer"></div>
+
+  <h5>2025年1月1日の更新</h5>
+
+  <section
+   style="padding: 20px; background: #f8f8f8; border: 1px solid #dcdcdc; border-radius: 10px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); margin: 20px;">
+   <p style="text-align: left; font-size: 16px; margin: 0; font-family: 'Sawarabi Mincho', serif;">
+    あけまして<br>&emsp;おめでとうございます。
+   </p>
+   <div style="margin: 20px 0;">
+    <img src="/another-eden/anaimage/ASフィーネ縦長.jpg" alt="ASフィーネ縦長"
+     style="float: left; max-width: 37.5%; height: auto; margin-right: 20px; border-radius: 10px;">
+    <p style="text-align: left; margin: 0; font-family: 'Sawarabi Mincho', serif;">
+     変化のない年などありませんが、2024年も忙しかったですね。<br>
+     SNSもアナザーエデンも環境が大きく変わりました。<br>
+     2025年もいろいろあることでしょう。<br>
+     今年もどうぞ、よろしくお願いいたします。
+    </p>
+    <div style="clear: both; height: 1px;"></div>
+   </div>
+   <div style="margin: 20px 0; clear: both;">
+    <img src="/menu/banner.png" alt="banner"
+     style="float: right; max-width: 30%; height: auto; border-radius: 10px; margin-left: 20px;">
+    <p style="text-align: left; margin: 0; font-family: 'Sawarabi Mincho', serif;">
+     私が何者であるかも、明かしてしまったね😆<br>
+     こういう人物です <i class="fa-sharp-duotone fa-solid fa-laptop-code"></i> <i class="fa-solid fa-wifi"></i> <i
+      class="fa-solid fa-code"></i><br>
+     でも引き続きアナデンアカウントのままですよ🎵
+    </p>
+   </div>
+  </section>
+
+  <p><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a>に宿星の断片ドロップ調査報告書という欄を新設。<br>
+   トップページから直接ジャンプできるようにした。</p>
+
+  <p>既存ページのコード整理が全て完了。これを機に、ヘッダーの資格証を差し替えた。</p>
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="/script/feinScroll.js"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="/externalization/common.js"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/rss/rss202501.html">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="/script/feinheadline1.js"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
+</body>
+
+</html>

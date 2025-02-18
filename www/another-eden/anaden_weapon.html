@@ -3,42 +3,8 @@
 <html lang="ja">
 
 <head>
-<link rel="manifest" href="/manifest.json">
-
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(registration => {
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      })
-      .catch(error => {
-        console.log('ServiceWorker registration failed: ', error);
-      });
-  }
-</script>
-
- <!-- Google tag (gtag.js) -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
- <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-
-  gtag('config', 'G-827JM6N5CS');
- </script>
-
- <!-- Microsoft tag -->
- <script>
-  (function (c, l, a, r, i, t, y) {
-   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-  })(window, document, "clarity", "script", "obazqypsh8");
- </script>
-
  <meta charset="UTF-8">
-
- <!--基本のメタタグ-->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <meta name="description" content="アナデンで揃えたい武器やバッジなどをまとめました。いっぱいあるのですが、最低限のものを書いてあります。">
  <meta name="keywords" content="アナザーエデン, 武器や防具, バッジ">
  <meta name="robots" content="index, follow">
@@ -46,22 +12,57 @@
  <meta property="og:description" content="アナデンで揃えたい武器やバッジなどをまとめました。いっぱいあるのですが、最低限のものを書いてあります。">
  <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
  <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/another-eden/anaden_weapon.html">
+ <link rel="apple-touch-icon" sizes="180x180" href="/icons/appleicon.png">
+ <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
+ <title>アナデンで揃えたい武器やバッジなど</title>
+ <link rel="manifest" href="/manifest.json">
 
- <!--検索ヒット時のアイコン-->
+ <!-- Google Tag Manager -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+ <!-- End Google Tag Manager -->
+
+ <!-- Microsoft Tag -->
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+ <!-- End Microsoft Tag -->
+
+ <script>
+  if ('serviceWorker' in navigator) {
+   navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+     console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    })
+    .catch(error => {
+     console.log('ServiceWorker registration failed: ', error);
+    });
+  }
+ </script>
+
+ <!-- Structured Data -->
  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "アナデンで揃えたい武器やバッジなど",
-  "url": "https://fein-sites-dev1.ew.r.appspot.com/another-eden/anaden_weapon.html",
-  "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
-}
-</script>
-
- <!--レスポンシブデザイン-->
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "アナデンで揃えたい武器やバッジなど",
+    "url": "https://fein-sites-dev1.ew.r.appspot.com/another-eden/anaden_weapon.html",
+    "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+  }
+ </script>
+ <!-- End Structured Data -->
 
  <!--CSS-->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
  <link rel="stylesheet" type="text/css" href="/css/style.css">
  <link rel="stylesheet" type="text/css" href="/css/header.css">
  <link rel="stylesheet" type="text/css" href="/css/footer.css">
@@ -70,27 +71,17 @@
  <link rel="stylesheet" type="text/css" href="/css/feinpan.css">
  <link rel="stylesheet" type="text/css" href="/css/feinheadline1.css">
  <link rel="stylesheet" type="text/css" href="/css/colors.css">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
  <!--JavaScript-->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
  <script src="../script/underline.js"></script>
  <script src="../script/feinfade.js"></script>
  <script src="../script/feinScroll.js"></script>
- <!-- gsapの読み込み -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
 
- <!-- google fonts -->
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <!-- Google Fonts -->
  <link
   href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
   rel="stylesheet">
-
- <!--ページタイトル-->
- <title>アナデンで揃えたい武器やバッジなど</title>
-
- <!--ASノーナのファビコン-->
- <link rel="icon" sizes="32x32" href="../favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -154,11 +145,9 @@
   <div class="spacer"></div>
   <p><a href="anaden_sitemap.html">アナザーエデン関連ページ・サイトマップへ戻る</a></p>
 
-
-
   <!-- ●人間用のヘッダーここまで。直下でコンテンツ開始● -->
 
-  <h1 class="background-waveimage-heading"><span>持っておきたいアイテム一覧表</span></h1>
+  <h1 class="background-waveimage-heading"><span>アナデンで揃えたい武器やバッジなど</span></h1>
 
   <p>アナザーエデンには便利なバッジやアイテムがいっぱいあります。<br>
    ここで紹介するのはごく一部です。<br>
@@ -222,8 +211,8 @@
       <td>ヴァイゼル山でバディアクション、緑風の村フィレイラで購入</td>
      </tr>
      <tr>
-      <td>気絶耐性バッジ（２つ）</td>
-      <td>ローテリベレ撃破、廻生</td>
+      <td>気絶耐性バッジ（３つ）</td>
+      <td>ローテリベレ撃破、廻生、異時層クンロン山脈</td>
      </tr>
      <tr>
       <td>ペイン耐性バッジ（２つ）</td>
