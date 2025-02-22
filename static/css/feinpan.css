@@ -1,0 +1,55 @@
+/* パンくずリストのデザイン */
+.breadcrumb {
+ display: flex;
+ list-style: none;
+ padding: 10px 15px;
+ margin: 0;
+ background-color: #f8f9fa;
+ border-radius: 5px;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ font-size: 0.7em;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+ content: ">";
+ padding: 0 10px;
+ color: #6c757d;
+}
+
+.breadcrumb-item a {
+ text-decoration: none;
+ color: #1A73E8;
+ transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+ color: #00A2ED;
+ text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+ font-weight: bold;
+ color: #6c757d;
+}
+
+/* 検索ボックスの調整 */
+.search-container {
+ width: 50%;
+ margin-top: 20px;
+ margin-left: auto;
+ background-color: white;
+ border-radius: 10px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ padding: 5px;
+}
+
+.gcse-search {
+ width: 100%;
+}
+
+input.gsc-input,
+input.gsc-search-button {
+ width: 100%;
+ border-radius: 10px;
+ padding: 5px;
+}

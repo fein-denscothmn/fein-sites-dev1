@@ -3,18 +3,464 @@
 
 <head>
  <meta charset="UTF-8">
- <title>フラスクアプリ</title>
- <link rel="stylesheet" href="{{ url_for('static', filename='pstyle.css') }}">
+ <title>fein's Flask</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="フロントエンド3言語によるWebサイトに慣れてきたら、何かしらのフレームワークを導入して開発するのも楽しいですよ。ここではPythonのFlaskをご紹介します。">
+ <meta name="keywords" content="Python, Flask, 個人サイト制作">
+ <meta name="robots" content="index, follow">
+ <meta property="og:title" content="個人サイトへPythonのFlaskを導入する">
+ <meta property="og:description"
+  content="フロントエンド3言語によるWebサイトに慣れてきたら、何かしらのフレームワークを導入して開発するのも楽しいですよ。ここではPythonのFlaskをご紹介します。">
+ <meta property="og:image" content="/static/images/anafish.png">
+ <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/top">
+ <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+
+
+ <!-- 構造化データ -->
+ <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "個人サイトへPythonのFlaskを導入する",
+      "url": "https://fein-sites-dev1.ew.r.appspot.com/top",
+      "logo": "https://fein-sites-dev1.ew.r.appspot.com/static/images/barracuda.jpg"
+    }
+    </script>
+
+ <!-- CSSファイル -->
+ <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/pstyle.css') }}">
+ <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+ <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/header.css') }}">
+ <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/footer.css') }}">
+ <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/flower.css') }}">
+ <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/menu.css') }}">
+ <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/collapsible.css') }}">
+ <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/feinpan.css') }}">
+ <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/feinheadline1.css') }}">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link
+  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+ <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='icons/appleicon.png') }}">
+ <link rel="icon" sizes="32x32" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+ <!-- Googleタグマネージャー -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-827JM6N5CS');
+ </script>
+
+ <!-- Microsoftタグ -->
+ <script>
+  (function (c, l, a, r, i, t, y) {
+   c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+   t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+   y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "obazqypsh8");
+ </script>
+
+ <!-- JavaScriptファイル -->
+ <script src="{{ url_for('static', filename='js/underline.js') }}"></script>
+ <script src="{{ url_for('static', filename='js/feinfade.js') }}"></script>
+ <script src="{{ url_for('static', filename='js/feinScroll.js') }}"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
+ <script src="{{ url_for('static', filename='js/album.js') }}"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-bash.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-json.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-yaml.min.js"></script>
+ <script src="{{ url_for('static', filename='js/collapsible.js') }}"></script>
+
+ <!-- Service Workerの登録 -->
+ <script>
+  if ('serviceWorker' in navigator) {
+   navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+     console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    })
+    .catch(error => {
+     console.log('ServiceWorker registration failed: ', error);
+    });
+  }
+ </script>
 </head>
 
 <body>
- <h1>フラスクアプリへようこそ</h1>
- <p>これはデモ用のシンプルなフラスクアプリです。</p>
- <button onclick="showMessage()">クリックしてね！</button>
- <script src="{{ url_for('static', filename='pscript.js') }}"></script>
 
- <p>元の<a href="/">fein's app</a>に戻る</p>
+ <nav class="den_nav">
+  <ul>
+   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
+      class="feinhome"></a></li>
+   <li><a href="/" class="animated-link">ホーム</a></li>
+   <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
+   <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
+   <li><a href="/contents/site_create.html" class="animated-link">個人サイト制作</a></li>
+   <li><a href="/contents/protect.html" class="animated-link">AI学習を防ぐ工夫</a></li>
+   <li><a href="/contents/rss.html" class="animated-link">更新のお知らせ</a></li>
+  </ul>
+ </nav>
 
+ <!--レスポンシブデザイン-->
+ <div class="feincontainer">
+
+
+  <!--パンくずリスト-->
+  <div>
+   <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home（グラスタの場所一覧表〜入手範囲別〜）</a></li>
+    <li class="breadcrumb-item"><a href="/another-eden/anaden_sitemap.html">アナザーエデン関連ページ・サイトマップ</a></li>
+    <li class="breadcrumb-item active" aria-current="page">個人サイトへPythonのFlaskを導入する</li>
+   </ol>
+  </div>
+
+  <div class="search-container">
+   <script async src="https://cse.google.com/cse.js?cx=07df877a5cdad4ece">
+   </script>
+   <div class="gcse-searchbox-only"></div>
+  </div>
+
+  <!-- ハンバーガーメニュー -->
+  <div class="fden-hamburger-menu">
+   <button class="fden-hamburger-button" id="fden-hamburger-button" onclick="toggleMenu()">☰ メニューを開く
+    ▼</button>
+   <div class="fden-menu" id="fden-menu">
+    <!-- メニュー内容は外部ファイルから読み込む -->
+    <div id="fden-menu-content"></div>
+   </div>
+  </div>
+  <script src="{{ url_for('static', filename='js/menu.js') }}"></script>
+  <!-- ハンバーガーメニューここまで -->
+
+  <!--サイトタイトル-->
+  <div class="header-frame">
+   <div class="header-container">
+    <img src="{{ url_for('static', filename='images/VisualAtelierCode.png') }}" alt="fein's personal site"
+     class="header-image">
+    <div class="header-text">
+     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="spacer"></div>
+
+  <button id="generate-headings" data-open-text="個人サイトへPythonのFlaskを導入するの目次を開く ▼"
+   data-close-text="個人サイトへPythonのFlaskを導入するの目次を閉じる ▲">個人サイトへPythonのFlaskを導入するの目次を開く ▼</button><!--目次の自動生成-->
+  <div class="spacer"></div>
+
+  <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
+
+  <!-- ●ヘッダーここまで。直下でコンテンツ開始● -->
+  <h1 class="background-waveimage-heading"><span>個人サイトへPythonのFlaskを導入する</span></h1>
+
+  <p class="feintag">工事中！</p><br>
+  <p>でも、意味が分かる方はコードを持って行っても良いですよ？</p>
+
+  <hr>
+
+  <p>これはデモ用のシンプルなFlaskアプリです。</p>
+
+  <button class="animated-button" onclick="showMessage()">クリックしてね！</button>
+
+  <p>元の<a href="/">fein's app</a>に戻る</p>
+
+  <script src="{{ url_for('static', filename='js/pscript.js') }}"></script>
+
+  <hr>
+
+  <p>main.py</p>
+  <div class="code-container">
+   <pre><code class="language-python">
+import os
+from flask import Flask, render_template, send_from_directory
+
+app = Flask(__name__)
+
+# ルート `/` で `index.html` をレンダリング
+@app.route('/')
+def serve_static_index():
+    return send_from_directory('www', 'index.html')
+
+# 静的ファイルを提供
+@app.route('/<path:filename>')
+def serve_static_files(filename):
+    return send_from_directory('www', filename)
+
+# Flask の動的コンテンツ
+@app.route('/top')
+def serve_flask_content():
+    return render_template('top.html')
+
+if __name__ == '__main__':
+    debug_mode = os.getenv('FLASK_DEBUG', 'False') == 'True'
+    app.run(debug=debug_mode)
+
+</code></pre>
+  </div>
+
+  <p>tasks.json</p>
+  <div class="code-container">
+   <pre><code class="language-json">
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Google Cloud SDK Shell を起動",
+            "type": "shell",
+            "command": "cmd",
+            "args": [
+                "/c",
+                "\"\"C:\\Users\\ユーザー名\\AppData\\Local\\Google\\Cloud SDK\\cloud_env.bat\" && cd \"C:\\Users\\ユーザー名\\OneDrive\\_fein\\google cloud\\fein-sites-dev1\" && cmd\""
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Flaskアプリを起動",
+            "type": "shell",
+            "command": "cmd",
+            "args": [
+                "/C",
+                "\"cd C:\\Users\\ユーザー名\\OneDrive\\_fein\\google cloud\\fein-sites-dev1 && set FLASK_DEBUG=True && python main.py\""
+            ],
+            "isBackground": true,
+            "problemMatcher": [
+                {
+                    "pattern": [
+                        {
+                            "regexp": ".",
+                            "file": 1,
+                            "location": 2,
+                            "message": 3
+                        }
+                    ],
+                    "background": {
+                        "activeOnStart": true,
+                        "beginsPattern": ".",
+                        "endsPattern": "."
+                    }
+                }
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated"
+            }
+        },
+        {
+            "label": "Edgeブラウザを開く",
+            "type": "shell",
+            "command": "cmd",
+            "args": [
+                "/C",
+                "timeout /T 2 & start msedge \"http://127.0.0.1:5000/\""
+            ],
+            "presentation": {
+                "echo": false,
+                "reveal": "never",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Flaskアプリ起動とブラウザを開く",
+            "dependsOn": [
+                "Flaskアプリを起動",
+                "Edgeブラウザを開く"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "echo": false,
+                "reveal": "never",
+                "focus": false,
+                "panel": "shared"
+            }
+        }
+    ]
+}
+
+</code></pre>
+  </div>
+
+  <p>Flaskアプリをローカルで起動</p>
+  <div class="code-container">
+   <pre><code class="language-bash">
+FLASK_DEBUG=True && python main.py
+
+</code></pre>
+  </div>
+
+
+  <p>requirements.txt</p>
+  <div class="code-container">
+   <pre><code class="language-txt">
+Flask==2.3.2
+gunicorn==20.1.0
+
+</code></pre>
+  </div>
+
+  <p>app.yaml</p>
+  <div class="code-container">
+   <pre><code class="language-yaml">
+runtime: python312
+instance_class: F1
+env: standard
+
+automatic_scaling:
+  min_idle_instances: 0
+  max_idle_instances: 1
+  max_concurrent_requests: 200
+
+env_variables:
+  FLASK_DEBUG: 'False'
+
+handlers:
+- url: /static
+  static_dir: static
+
+- url: /top
+  script: auto
+
+- url: /favicon.ico
+  static_files: www/favicon.ico
+  upload: www/favicon.ico
+
+- url: /
+  static_files: www/index.html
+  upload: www/index.html
+
+- url: /(.*)
+  static_files: www/\1
+  upload: www/(.*)
+  http_headers:
+    Cache-Control: "public, max-age=3600"
+
+entrypoint: gunicorn -b :$PORT main:app
+
+</code></pre>
+  </div>
+
+  <p>ディレクトリ構造</p>
+
+  <div class="code-container">
+   <pre><code class="language-txt">
+FEIN-SITES-DEV1/
+│  app.yaml          # App Engine の設定ファイル。デプロイと実行環境の設定を定義
+│  main.py           # Flask アプリケーションのメインファイル。ルートやサーバーの設定が含まれる
+│  README.md         # プロジェクトの概要や使い方を記述する説明ファイル
+│  requirements.txt  # アプリケーションが依存する Python パッケージをリストアップするファイル
+│
+├─static/            # 静的ファイル（CSS, JavaScript, 画像など）を配置するディレクトリ
+│   ├─ images/       # 画像ファイルを保存するサブディレクトリ
+│   │     example.jpg  # サンプル画像ファイル
+│   ├─ css/          # CSS ファイルを保存するサブディレクトリ
+│   │     pstyle.css   # プロジェクトのスタイルシート
+│   ├─ js/           # JavaScript ファイルを保存するサブディレクトリ
+│   │     pscript.js   # プロジェクトのスクリプト
+│
+├─templates/         # Flask のテンプレートファイル（HTML ファイル）を配置するディレクトリ
+│      top.html      # Flask アプリの動的コンテンツ用 HTML テンプレート
+│
+└─www/               # 静的ウェブサイトのルートディレクトリ。静的な HTML ファイルを配置
+    │  index.html      # 静的ウェブサイトのホームページ
+    │  .hintrc         # HTMLHint の設定ファイル（コード品質チェック用）
+    │  favicon.ico     # ブラウザのタブに表示されるアイコン
+    │  manifest.json   # PWA の設定ファイル。アプリのメタデータを定義
+    │  robots.txt      # 検索エンジンに対するクローリング設定ファイル
+    │  service-worker.js # PWA のサービスワーカー。オフライン対応やキャッシュ管理を実現
+    └─その他の静的ファイル  # 追加の HTML ファイルや画像など
+
+</code></pre>
+  </div>
+
+
+  <!-- ●ここから人間用のフッター● -->
+  <hr id="feinhr">
+  <div class="spacer"></div>
+
+  <section class="sitemap">
+   <h2 class="sitemap_heading">サイトマップ</h2>
+   <p><a href="/another-eden/anaden_sitemap.html"><i class="fas fa-sitemap"></i>
+     アナザーエデン関連ページ・サイトマップ</a></p>
+   <p>アナザーエデンの強敵戦やストーリーコンテンツのリスト、お勧めバッジなどを掲載したコーナーです。<br>
+    期間限定のない普通のRPGですので、初心者でも安心して続けていけるゲームとなっています。<br>
+    もっとも重要なグラスタについては、場所別に網羅した表があります。</p>
+
+
+   <div class="spacer"></div>
+   <p><a href="/contents/site_create.html"><i class="fas fa-sitemap"></i>
+     個人サイトのホスティングとコンテンツ作成</a></p>
+   <p>個人でウェブサイトを作るにはどうすればいいか。<br>
+    HTML・CSS・JavaScriptの書き方はもちろん、無料かつ広告なしでホームページを作る方法を掲載したコーナーです。<br>
+    Webデザインやレイアウトについても書いてあります。</p>
+   <div class="spacer"></div>
+   <p><a href="/fish/fish_sitemap.html"><i class="fas fa-sitemap"></i>魚釣りなどアウトドアのエリア</a></p>
+   <p>ゲームとパソコンだけじゃなく、アウトドアも趣味なんです。<br>
+    このコーナーでは魚釣りの記録とか、魚料理のレシピ、はたまたサイクリングなどなど。<br>
+    アウトドアに関連するコンテンツが詰め込まれています。</p>
+
+  </section>
+
+  <!-- ページ上部へ戻るボタン -->
+  <button id="scrollToTopBtn" onclick="scrollToTop()">ページ上部へ戻る</button>
+  <script src="{{ url_for('static', filename='js/feinScroll.js') }}"></script>
+
+  <div class="spacer"></div>
+
+  <footer>
+   <!--common google digital leader-->
+
+   <div id="commongdl"></div>
+   <script src="{{ url_for('static', filename='externalization/common.js') }}"></script>
+
+   <div class="spacer"></div>
+
+   <!--w3cバリデーターに合格していることを示す-->
+   <div class="w3ccheck">
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/top">
+     <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
+    </a>
+    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+     <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
+    </a>
+   </div>
+   <!--w3cバリデーターに合格していることを示す-->
+
+   <div class="spacer"></div>
+   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal
+     site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a>
+    を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+     const today = new Date();
+     const year = today.getFullYear();
+     const month = String(today.getMonth() + 1).padStart(2, '0');
+     const day = String(today.getDate()).padStart(2, '0');
+     const dateElement = document.getElementById('updated-date');
+     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+    });
+   </script>
+
+  </footer>
+
+ </div><!--レスポンシブデザイン-->
+
+ <script src="{{ url_for('static', filename='js/feinheadline1.js') }}"></script><!--見出しの自動生成-->
+
+ <!-- ●ここまで人間用のフッター。直下でbodyを閉める● -->
 </body>
 
 </html>

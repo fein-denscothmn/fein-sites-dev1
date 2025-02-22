@@ -498,7 +498,8 @@
    <img src="/another-eden/anaimage/ライザ星導覚醒前.jpg" alt="ライザ星導覚醒前" class="graphicsaki right-image fade-in-out">
    <p>このタブUIは<a href="/contents/no_copying.html">AI学習や無断転載を防ぐプログラムの小ネタ集</a>にて実装している青色のタブUIとともに、今後もいろんなページで使えるものです。<br>
     ただ単にPython使うなら、FlaskやDjangoのほうが一般的なんだけどね。<br>
-    でもそれだとWebサイトの引っ越ししたくなった時に支障が出る可能性もあるからさ。</p>
+    でもそれだとWebサイトの引っ越ししたくなった時に支障が出る可能性もある。<br>
+    そこで、このアプリではPythonのFlaskと静的Webサイト ─ 私はこれをプログレッシブウェブアプリにしてます ─ を共存させています。</p>
   </div>
 
   <script type="text/python">
@@ -545,12 +546,59 @@ for container in document.select('.atelier-container'):
    });
   </script>
 
+  <h3>🌟サーバーサイドスクリプト（経験者向け）</h3>
+
+  <p>サーバーサイドスクリプトに関する詳しい説明は、<a href="/top">個人サイトへPythonのFlaskを導入する</a>をご覧いただければと思います。<br>
+   実際にFlaskというフレームワークで作ったWebページとなっており、ソースコードも掲示しています。<br>
+   私のアプリは、次のようなディレクトリ構造になっているんだよね。</p>
+
+  <div class="code-container">
+   <pre><code class="language-txt">
+FEIN-SITES-DEV1/
+│  app.yaml          # App Engine の設定ファイル。デプロイと実行環境の設定を定義
+│  main.py           # Flask アプリケーションのメインファイル。ルートやサーバーの設定が含まれる
+│  README.md         # プロジェクトの概要や使い方を記述する説明ファイル
+│  requirements.txt  # アプリケーションが依存する Python パッケージをリストアップするファイル
+│
+├─static/            # 静的ファイル（CSS, JavaScript, 画像など）を配置するディレクトリ
+│   ├─ images/       # 画像ファイルを保存するサブディレクトリ
+│   │     example.jpg  # サンプル画像ファイル
+│   ├─ css/          # CSS ファイルを保存するサブディレクトリ
+│   │     pstyle.css   # プロジェクトのスタイルシート
+│   ├─ js/           # JavaScript ファイルを保存するサブディレクトリ
+│   │     pscript.js   # プロジェクトのスクリプト
+│
+├─templates/         # Flask のテンプレートファイル（HTML ファイル）を配置するディレクトリ
+│      top.html      # Flask アプリの動的コンテンツ用 HTML テンプレート
+│
+└─www/               # 静的ウェブサイトのルートディレクトリ。静的な HTML ファイルを配置
+    │  index.html      # 静的ウェブサイトのホームページ
+    │  .hintrc         # HTMLHint の設定ファイル（コード品質チェック用）
+    │  favicon.ico     # ブラウザのタブに表示されるアイコン
+    │  manifest.json   # PWA の設定ファイル。アプリのメタデータを定義
+    │  robots.txt      # 検索エンジンに対するクローリング設定ファイル
+    │  service-worker.js # PWA のサービスワーカー。オフライン対応やキャッシュ管理を実現
+    └─その他の静的ファイル  # 追加の HTML ファイルや画像など
+
+</code></pre>
+  </div>
+  <p>サーバーサイドスクリプトと言えば、昔はCGIと呼ばれる形で実装されていたと聞きます。</p>
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザ笑顔.jpg" alt="ライザ笑顔" class="graphicmini right-image fade-in-out">
+   <p>このサイトではPythonをサーバーサイドスクリプトとして活用するために、Flaskというフレームワークを導入しています。<br>
+    サーバーサイドスクリプトを使用することで、ユーザーのリクエストに応じて動的にコンテンツを生成できるようになるのです。<br>
+    他にもデータベース連携・セキュリティ強化・ビジネスロジックの実装・パフォーマンスの向上など、メリットが大きいんだよ。</p>
+  </div>
+
   <h3>🌟ビジュアル アトリエ コード</h3>
-  <p>私の開発環境は「ビジュアル アトリエ コード」です🎨✨<br>
-   なーんて、半分冗談なんだけどね。<br>
-   でもAtelierとStudioは同じような意味だから、言語が混ざっているだけで通りますよ。<br>
-   実際はVisual Studio Codeをカスタマイズしただけです。<br>
-   リアルの私は錬金術を使えないので、せめてWeb制作でライザごっこをしてみようかと！</p>
+  <div class="content">
+   <img src="/another-eden/anaimage/ライザ指輪.jpg" alt="ライザ指輪" class="graphic right-image fade-in-out">
+   <p>私の開発環境は「ビジュアル アトリエ コード」です🎨✨<br>
+    なーんて、半分冗談なんだけどね。<br>
+    でもAtelierとStudioは同じような意味だから、言語が混ざっているだけで通りますよ。<br>
+    実際はVisual Studio Codeをカスタマイズしただけです。<br>
+    リアルの私は錬金術を使えないので、せめてWeb制作でライザごっこをしてみようかと！</p>
+  </div>
 
   <h4>Steps for Application Development</h4>
   <p>ゲームのファンサイトに限らず、Webサイト制作に使うのは HTML・CSS・JavaScript だけではありません。<br>
@@ -2022,14 +2070,6 @@ for container in document.select('.atelier-container'):
     このページからジャンプできるソースコードはWeb開発に必要な知識のうちのほんの一部に過ぎませんが…<br>
     誰かの役に立てば嬉しいです🎵</p>
   </div>
-
-
-
-  <!--
-/another-eden/anaimage/ライザ指輪.jpg
-/another-eden/anaimage/ライザ笑顔.jpg -->
-
-
 
   <!-- ●ここから人間用のフッター● -->
   <hr id="feinhr">
