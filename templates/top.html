@@ -45,7 +45,7 @@
   href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
   rel="stylesheet">
  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='icons/appleicon.png') }}">
- <link rel="icon" sizes="32x32" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+ <link rel="icon" sizes="32x32" href="{{ url_for('static', filename='icons/favicon.ico') }}" type="image/x-icon">
 
  <!-- Googleタグマネージャー -->
  <script async src="https://www.googletagmanager.com/gtag/js?id=G-827JM6N5CS"></script>
@@ -158,25 +158,308 @@
 
   <p><a href="site_create.html">個人サイト制作：サイトマップへ戻る</a></p>
 
-  <!-- ●ヘッダーここまで。直下でコンテンツ開始● -->
-  <h1 class="background-waveimage-heading"><span>個人サイトへPythonのFlaskを導入する</span></h1>
-
   <p class="feintag">工事中！</p><br>
   <p>でも、意味が分かる方はコードを持って行っても良いですよ？</p>
-
   <hr>
-
   <p>これはデモ用のシンプルなFlaskアプリです。</p>
-
   <button class="animated-button" onclick="showMessage()">クリックしてね！</button>
-
   <p>元の<a href="/">fein's app</a>に戻る</p>
-
   <script src="{{ url_for('static', filename='js/pscript.js') }}"></script>
-
   <hr>
 
-  <p>main.py</p>
+  <!-- ●ヘッダーここまで。直下でコンテンツ開始● -->
+  <h1 class="background-waveimage-heading"><span>個人サイトへPythonのFlaskを導入する</span></h1>
+  <p>
+   Flaskは、Pythonというプログラミング言語を使って、ウェブサイトやウェブアプリケーションを作成するためのツールです。<br>
+   これを「ウェブフレームワーク」と呼びます。<br>
+   ウェブフレームワークは、ウェブアプリケーションを簡単に作るための土台や便利な機能を提供してくれるものです。<br>
+   Flaskはとても軽量でシンプルなフレームワークなのですよ。
+  </p>
+
+  <h2>Flaskのディレクトリ構造</h2>
+  <p>私のサイトは少しだけ変わった感じでFlaskを取り入れているので、基本的な導入方法を見ながらソースコードを書いていきます。</p>
+  <p>まずはFlaskプロジェクトの一般的なディレクトリ構造を示していきましょう。
+   この構造はコードを整理しやすくし、プロジェクトを拡張しやすくするためによく使われます。</p>
+
+  <p class="gra">Flaskの一般的なディレクトリ構造</p>
+  <div class="code-container">
+   <pre><code class="language-txt">
+my_flask_app/
+│
+├── app/
+│ ├── __init__.py
+│ ├── routes.py
+│ ├── models.py
+│ ├── static/
+│ │ ├── css/
+│ │ ├── js/
+│ │ └── images/
+│ └── templates/
+│ ├── layout.html
+│ └── index.html
+│
+├── venv/
+│ └── (仮想環境関連のファイル)
+│
+├── .gitignore
+├── config.py
+├── requirements.txt
+└── run.py
+
+</code></pre>
+  </div>
+  <p>それぞれのディレクトリやファイルが何を示しているか、説明していきますね。<br>
+   ちなみに「ディレクトリ」というのは「フォルダ」と解釈して頂いて構いません。</p>
+
+  <dl>
+   <dt>my_flask_app/</dt>
+   <dd>プロジェクトのルートディレクトリです。</dd>
+   <dt>app/</dt>
+   <dd>Flaskアプリケーションのメインディレクトリです。</dd>
+   <dt>__init__.py</dt>
+   <dd>Flaskアプリケーションを初期化するためのファイルです。Flaskインスタンスを作成し、ルートや設定をここで定義します。</dd>
+   <dt>routes.py</dt>
+   <dd>アプリケーションのルート（URL）を定義するファイルです。ルーティングのロジックがここに含まれます。</dd>
+   <dt>models.py</dt>
+   <dd>データベースのモデルを定義するファイルです。データベースとやり取りするクラスをここに記述します。</dd>
+   <dt>static/</dt>
+   <dd>静的ファイル（CSS、JavaScript、画像など）を格納するディレクトリです。</dd>
+   <dt>css/</dt>
+   <dd>スタイルシートを格納するサブディレクトリです。</dd>
+   <dt>js/</dt>
+   <dd>JavaScriptファイルを格納するサブディレクトリです。</dd>
+   <dt>images/</dt>
+   <dd>画像ファイルを格納するサブディレクトリです。</dd>
+   <dt>templates/</dt>
+   <dd>HTMLテンプレートを格納するディレクトリです。</dd>
+   <dt>layout.html</dt>
+   <dd>他のテンプレートが継承するベーステンプレートです。</dd>
+   <dt>index.html</dt>
+   <dd>ホームページのテンプレートです。</dd>
+   <dt>venv/</dt>
+   <dd>仮想環境を格納するディレクトリです。仮想環境は、プロジェクトごとにPythonパッケージを管理するためのものです。</dd>
+   <dt>.gitignore</dt>
+   <dd>Gitに無視させるファイルやディレクトリを記述するファイルです。仮想環境や一時ファイルなどをここにリストアップします。</dd>
+   <dt>config.py</dt>
+   <dd>アプリケーションの設定を行うファイルです。データベースの接続情報やセキュリティキーなどをここに記述します。</dd>
+   <dt>requirements.txt</dt>
+   <dd>プロジェクトで使用するPythonパッケージをリストアップするファイルです。これにより、他の開発者が同じ環境を再現できます。</dd>
+   <dt>run.py</dt>
+   <dd>アプリケーションを実行するためのスクリプトです。このスクリプトを実行することでFlaskサーバーが起動します。</dd>
+  </dl>
+
+  <p>このようなディレクトリ構造を使うことで、Flaskプロジェクトを効率的に管理し、拡張することができます。<br>
+   この中には私がまだ実装していないものも多数含まれていますが、現段階では動かせるというだけで、後日足していけば良いのですよ。<br>
+   初めから完璧に完璧に…なんてやってたら大変だからね。<br>
+   では、次に私のサイトのFlaskフレームワークのディレクトリ構造を見ていきます。</p>
+
+  <p class="codegra" id="feinsappFlask">fein's app のFlaskフレームワーク</p>
+
+  <div class="code-container">
+   <pre><code class="language-txt">
+FEIN-SITES-DEV1/
+│  app.yaml          # App Engine の設定ファイル。デプロイと実行環境の設定を定義
+│  main.py           # Flask アプリケーションのメインファイル。ルートやサーバーの設定が含まれる
+│  README.md         # プロジェクトの概要や使い方を記述する説明ファイル
+│  requirements.txt  # アプリケーションが依存する Python パッケージをリストアップするファイル
+│
+├─static/            # 静的ファイル（CSS, JavaScript, 画像など）を配置するディレクトリ
+│   ├─ images/       # 画像ファイルを保存するサブディレクトリ
+│   │     example.jpg  # サンプル画像ファイル
+│   ├─ css/          # CSS ファイルを保存するサブディレクトリ
+│   │     pstyle.css   # プロジェクトのスタイルシート
+│   ├─ js/           # JavaScript ファイルを保存するサブディレクトリ
+│   │     pscript.js   # プロジェクトのスクリプト
+│   └─その他のディレクトリや静的ファイル  # 普通のWebサイトの構造となっている
+│
+├─templates/         # Flask のテンプレートファイル（HTML ファイル）を配置するディレクトリ
+│      top.html      # Flask アプリの動的コンテンツ用 HTML テンプレート
+│
+│   【上側がFlaskフレームワーク。サーバーサイドスクリプトを活用した動的Webサイトです。】
+│   【下側が普通のホームぺージ。フロントエンド3言語による静的Webサイトです。】
+│
+└─www/               # 静的ウェブサイトのルートディレクトリ。静的な HTML ファイルを配置
+    │  index.html      # 静的ウェブサイトのホームページ
+    │  .hintrc         # HTMLHint の設定ファイル（コード品質チェック用）
+    │  favicon.ico     # ブラウザのタブに表示されるアイコン
+    │  manifest.json   # PWA の設定ファイル。アプリのメタデータを定義
+    │  robots.txt      # 検索エンジンに対するクローリング設定ファイル
+    │  service-worker.js # PWA のサービスワーカー。オフライン対応やキャッシュ管理を実現
+    └─その他のディレクトリや静的ファイル  # 普通のWebサイトの構造となっている
+
+</code></pre>
+  </div>
+
+  <p>私が作っているFlaskフレームワークの構造は、プロジェクトの拡張性とメンテナンス性を優先した設計にしています。<br>
+   プロジェクトが複雑化しても、できる限り管理しやすいように配慮してるんだよね。</p>
+  <p>Progressive Web App ─ PWA対応と呼びます ─ としての機能を持たせている点は、ユーザーエクスペリエンスの向上を考えたものです。<br>
+   venv ディレクトリ（仮想環境）はまだ作ってないですね。<br>
+   後述しますが、ローカルでPythonを実行してそのままブラウザで見てます。<br>
+   いずれいろいろ整えますが、その折にはまた解説ページ作りますよ。</p>
+
+  <p>ここで、ちょっと…このサイト全体の意図みたいなものを説明しておこうかな…</p>
+
+  <h4>2つの性質が異なるサイトを切り離せる</h4>
+  <p>これは私独特の意図ですよ。<br>
+   上述したけど、一般的なFlaskフレームワーク構造と、私のサイトのFlaskフレームワーク構造は、ちょーっとだけ異なります。<br>
+   app.yaml と main.py で全体をコントロールしているのですが、次のように2つのサイトに分かれているんです。</p>
+  <ol>
+   <li>index.html はフロントエンド3言語による普通のWebサイト</li>
+   <li>top.html はFlaskフレームワークによるサーバーサイドスクリプトを活用したWebサイト</li>
+  </ol>
+  <p>特定のページのURLを目指さない限り、私のWebサイトへアクセスすると、まずは 1 の index.html が表示されるよう、設定しています。<br>
+   2 の top.html が、まるで従属しているような実装のされ方となっています。</p>
+
+  <p>これら2つのサイトはそれぞれ templates と www、2つのディレクトリの配下にあります。<br>
+   CSS と JavaScript は共有していませんが、現状は2つのサイトで同じものを使っています。<br>
+   Flaskフレームワークを使った普通のWebサイトは、templates ディレクトリに html を格納しておくものなんですよね。─ もちろん例外などいくらでもありますが ─</p>
+
+  <p>Flaskに限らず、フレームワークというものには流行り廃りがあります。<br>
+   まず大丈夫だろうけど、Flaskもこれから何十年も使われ続けるとは限らない。<br>
+   非常に有名なフレームワークなので、終息するにしても、利用者のことを考えてくれるでしょう。<br>
+   でも未来のことは誰にも分かりません。</p>
+
+  <p>そこで、「フロントエンド3言語による普通のWebサイト」と「Flaskフレームワークによるサーバーサイドスクリプトを活用したWebサイト」を簡単に切り離せる仕組みにしたんです。<br>
+   次の画像なら少しは分かりやすいかも…</p>
+
+  <div class="content">
+   <img src="{{ url_for('static', filename='images/Flaskによる構造.jpg') }}" alt="Flaskによる構造" class="biggraphic fade-in-out">
+  </div>
+
+  <p>FEIN-SITES-DEV1/ が、App Engine のプロジェクトルートディレクトリに当たります。<br>
+   その配下にFlaskフレームワークがあり、加えて www という静的ウェブサイトのルートディレクトリがある。<br>
+   何か不測の事態が発生した時には、www ディレクトリだけを切り取り、別の場所へ簡単にデプロイできるのですよ。<br>
+   HTML・CSS・JavaScript だけで作った普通のホームページであれば、たいていどこのクラウドでも、容易に動かすことができるからです。<br>
+   Flaskフレームワークのコンテンツにしても、多少の停止はあるでしょうが、移転やリプレイスに耐えられるようにしたいな。</p>
+
+  <p>イーロン・マスクがTwitterをおもちゃにしたせいで、多くの人がSNSの移転を検討するようになりました。<br>
+   そういうのを見ていて、自分が持つコンテンツをいつでも移すことができるというのは、大きな強みになると考えているのです。</p>
+
+  <h3>静的Webサイトと動的Webサイト</h3>
+  <p>静的Webサイトは、主にHTML、CSS、JavaScriptなどの静的ファイルから構成され、サーバーからクライアントにそのまま配信されます。<br>
+   静的コンテンツはサーバー側で変更されず、クライアント側で表示される際には常に同じ内容になります。<br>
+   一般的に個人サイトとかホームページなどと呼ばれているのは、このタイプのWebサイトです。<br>
+   極端な話をすればHTMLだけでも構築できることから、初心者向けの簡単サイトのように言われがちですが、それは必ずしも正しくありません。<br>
+   シングルページアプリケーション（SPA）というものがあって、まるで動的サイトのような動きを実現することができます。</p>
+
+  <p>一方、動的Webサイトは、サーバーサイドスクリプトを活用してコンテンツを生成します。<br>
+   ユーザーの入力やデータベースの情報に応じて、動的にコンテンツが生成されます。<br>
+   このプロセスにはサーバー側のプログラミング言語やフレームワークが必要で、Flaskはその一例です。<br>
+   ここで、フレームワークとCGIの違いについて説明しておきましょう。</p>
+
+  <h4>フレームワークとCGIの違い</h4>
+  <p><strong>CGI（Common Gateway
+    Interface）</strong>はウェブサーバーとプログラム（通常はシェルスクリプトやプログラミング言語で書かれたスクリプト）との間のインターフェースです。<br>
+   1990年代初頭に開発されたもので、ウェブページが動的に生成されるための最初の手段の一つです。<br>
+   CGIプログラムは、クライアント（ユーザー）がリクエストを送ると、ウェブサーバーがそのリクエストをCGIプログラムに渡し、プログラムが処理を行い、その結果をサーバーに返して表示されます。<br>
+   一般的にCGIスクリプトはサーバー上で毎回新しくプロセスが生成されるため、パフォーマンスの面で効率が悪いことがあります。<br>
+   でも決めつけも良くないでしょうね。<br>
+   私はCGIを古典的手法と教わったけど、何か良い感じのCGIの実装方法があるのかもしれませんよ？</p>
+
+  <p>一方<strong>フレームワーク</strong>は特定の用途や機能に特化した一連のツールやライブラリ、規約を提供するソフトウェアです。<br>
+   フレームワークを使用することで、開発者は共通のタスクを効率的に行うことができ、コーディングの時間や労力を削減できます。<br>
+   例えば、ウェブ開発用のフレームワークには、Flask（Python）、Django（Python）、Ruby
+   on
+   Rails（Ruby）、Express（Node.js）などがあります。<br>
+   これらのフレームワークは、ルーティング、セッション管理、テンプレートエンジン、データベース接続など、ウェブアプリケーションを開発する際に頻繁に使われる機能を提供します。</p>
+
+  <h2>依存関係を管理するrequirements.txt</h2>
+  <p>requirements.txtとは、Pythonのプロジェクトで使用するパッケージ（ライブラリ）をリストアップしたテキストファイルです。<br>
+   このファイルは、プロジェクトの依存関係を管理し、他の開発者やデプロイ環境で同じパッケージを簡単にインストールできるようにするために使われます。</p>
+  <p class="codegra" id="flaskrequirements_txt">依存関係を管理するrequirements.txt</p>
+  <div class="code-container">
+   <pre><code class="language-txt">
+Flask==2.3.2
+gunicorn==20.1.0
+
+</code></pre>
+  </div>
+
+  <p>requirements.txtファイルには各パッケージの名前とバージョンが記載されているから、プロジェクトに必要な特定のバージョンのパッケージを確実にインストールすることができますよ。<br>
+   このファイルを使って依存関係をインストールするには、コマンドラインで以下のコマンドを実行します。</p>
+
+  <div class="code-container">
+   <pre><code class="language-bash">
+pip install -r requirements.txt
+
+</code></pre>
+  </div>
+
+  <p>pip install は、Pythonのパッケージ管理ツールである pip を使って、指定したパッケージをインストールするためのコマンドです。<br>
+   pip は、Pythonパッケージインデックス（PyPI）からパッケージをダウンロードし、インストールするのに使われます。<br>
+   では、次にこのテキストファイルとApp Engineの関係についてですね。</p>
+
+  <h3>App Engineとrequirements.txt</h3>
+  <p>requirements.txt をApp Engineに置かないと、Flaskは正常に動作しません。<br>
+   Flaskアプリケーションが動作するために必要なパッケージや依存関係がインストールされないからです。<br>
+   このファイルがないと、App Engineはアプリケーションに必要なパッケージを特定できず、結果として必要なライブラリが不足してしまいます。</p>
+
+  <p>FlaskはPythonのウェブフレームワークであり、他にも様々なライブラリと連携して動作します。<br>
+   requirements.txt には、そのFlaskアプリケーションが必要とするすべてのライブラリ（およびそのバージョン）がリストアップされています。<br>
+   例えば、上記のようにFlask本体やGunicornなどのライブラリが含まれます。<br>
+   このファイルをもとに、App Engineはアプリケーションの環境を正確に構築し、依存関係をインストールします。</p>
+
+  <p>App Engineがデプロイ時に requirements.txt を読み込み、指定されたパッケージをインストールすることで、アプリケーションが期待通りに動作する環境が整えられます。<br>
+   もしこのファイルがなければ、必要なパッケージがインストールされず、アプリケーションが正しく動作しないのですよ。</p>
+
+  <p>したがって、この requirements.txt をプロジェクトに含めることは、Flaskアプリケーションが正常に動作するために非常に重要です。<br>
+   これを「そういう仕様だから」と深く考えずに受け入れることもできますが、実際にはプロジェクトの依存関係を管理するために不可欠なファイルだと理解しておくと良いでしょう。</p>
+
+
+  <h3>App EngineとGunicorn</h3>
+  <p>Gunicorn（グニコーン）は、「Green Unicorn」の略で、Pythonで書かれたWSGI（Web Server Gateway
+   Interface）HTTPサーバーです。<br>
+   主にPythonのウェブフレームワーク（例えばFlaskやDjango）を本番環境で実行するために使用されます。<br>
+   Gunicornは、WSGIアプリケーションを効率的に処理するために設計されており、並行リクエストを処理するためのマルチプロセスモデルを採用しています。<br>
+   高いパフォーマンスとスケーラビリティが特徴となっていますね。</p>
+
+  <p>Google App EngineのPythonランタイムでは、GunicornのようなWSGIサーバーを利用することが推奨されており、公式ドキュメント（<a
+    href="https://cloud.google.com/appengine/docs?hl=ja">App Engine
+    ドキュメント</a>）にもそのように記載されています。<br>
+   つまり、Google App
+   Engineを利用する際に、FlaskアプリケーションをデプロイするためにGunicornを使用する設定を行う必要があります。<br>
+   ただし、一部の設定は自動的に行われることも、一応は覚えておくと良いかも。</p>
+
+  <p>上述したように、requirements.txt にGunicornを記載する理由は、デプロイ時にApp Engineがプロジェクトの依存関係を正確に把握し、必要なパッケージをインストールするためです。<br>
+   requirements.txt にGunicornを記載しておくことで、App Engineが依存関係を適切に解決し、Flaskアプリケーションを実行する準備が整います。<br>
+   公式ドキュメントでは、app.yaml ファイルでGunicornを使用してアプリケーションを起動する方法が説明されています。</p>
+
+  <div class="code-container">
+   <pre><code class="language-yaml">
+runtime: python39
+entrypoint: gunicorn -b :$PORT main:app
+
+handlers:
+- url: /.*
+script: auto
+
+</code></pre>
+  </div>
+
+  <p>この設定により、App Engineはデプロイ時にGunicornを利用してFlaskアプリケーションを起動します。<br>
+   手動でGunicornをインストールしなくても、requirements.txt にGunicornを記載することで、必要な依存関係が自動的にインストールされます。</p>
+
+  <h2>main.pyはFlaskアプリケーションのメインファイル</h2>
+  <p>このサイトのFlaskアプリケーションは、静的コンテンツ（HTML、CSS、画像など）と動的コンテンツ（テンプレートを使用した動的なウェブページ）を提供するための基本的な構成です。<br>
+   上述したように、簡単な構成から始めて、後から段階的に諸機能を実装しやすいようになっています。<br>
+   ひとまず、このソースコードの動作を簡単に説明しておきます。</p>
+
+  <dl>
+   <dt>ホームページを表示</dt>
+   <dd><span class="codecolor">/</span>にアクセスすると、<span class="codecolor">www</span>ディレクトリの<span
+     class="codecolor">index.html</span>が表示されます。</dd>
+
+   <dt>静的ファイルを提供</dt>
+   <dd>任意のファイルパス（例えば、<span class="codecolor">/styles.css</span>）にアクセスすると、<span
+     class="codecolor">www</span>ディレクトリ内の対応するファイルが表示されます。</dd>
+
+   <dt>動的コンテンツを表示</dt>
+   <dd><span class="codecolor">/top</span>にアクセスすると、<span class="codecolor">templates</span>ディレクトリの<span
+     class="codecolor">top.html</span>が表示されます。</dd>
+  </dl>
+  <p>では、実際のソースコードを見ていきましょう。</p>
+
+  <p class="codegra" id="flaskmain_py">Flaskのメインファイルとなるmain.py</p>
   <div class="code-container">
    <pre><code class="language-python">
 import os
@@ -190,7 +473,7 @@ def serve_static_index():
     return send_from_directory('www', 'index.html')
 
 # 静的ファイルを提供
-@app.route('/<path:filename>')
+@app.route('/&lt;path:filename&gt;')
 def serve_static_files(filename):
     return send_from_directory('www', filename)
 
@@ -206,111 +489,124 @@ if __name__ == '__main__':
 </code></pre>
   </div>
 
-  <p>tasks.json</p>
+  <p>上述したように、このFlaskアプリにしても、可能な限りリプレイスがやりやすいようにしていきたいものです。<br>
+   今後によりますが、このmain.pyは極力単純なままにしておき、サーバーサイドスクリプトを使ったいろんな動作はソースコードを分けていくことで実装をしていく予定です。</p>
+
+  <p><strong>1. インポートとアプリケーションの初期化</strong></p>
   <div class="code-container">
-   <pre><code class="language-json">
-{
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "Google Cloud SDK Shell を起動",
-            "type": "shell",
-            "command": "cmd",
-            "args": [
-                "/c",
-                "\"\"C:\\Users\\ユーザー名\\AppData\\Local\\Google\\Cloud SDK\\cloud_env.bat\" && cd \"C:\\Users\\ユーザー名\\OneDrive\\_fein\\google cloud\\fein-sites-dev1\" && cmd\""
-            ],
-            "problemMatcher": [],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        },
-        {
-            "label": "Flaskアプリを起動",
-            "type": "shell",
-            "command": "cmd",
-            "args": [
-                "/C",
-                "\"cd C:\\Users\\ユーザー名\\OneDrive\\_fein\\google cloud\\fein-sites-dev1 && set FLASK_DEBUG=True && python main.py\""
-            ],
-            "isBackground": true,
-            "problemMatcher": [
-                {
-                    "pattern": [
-                        {
-                            "regexp": ".",
-                            "file": 1,
-                            "location": 2,
-                            "message": 3
-                        }
-                    ],
-                    "background": {
-                        "activeOnStart": true,
-                        "beginsPattern": ".",
-                        "endsPattern": "."
-                    }
-                }
-            ],
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": true,
-                "panel": "dedicated"
-            }
-        },
-        {
-            "label": "Edgeブラウザを開く",
-            "type": "shell",
-            "command": "cmd",
-            "args": [
-                "/C",
-                "timeout /T 2 & start msedge \"http://127.0.0.1:5000/\""
-            ],
-            "presentation": {
-                "echo": false,
-                "reveal": "never",
-                "focus": false,
-                "panel": "shared"
-            }
-        },
-        {
-            "label": "Flaskアプリ起動とブラウザを開く",
-            "dependsOn": [
-                "Flaskアプリを起動",
-                "Edgeブラウザを開く"
-            ],
-            "problemMatcher": [],
-            "presentation": {
-                "echo": false,
-                "reveal": "never",
-                "focus": false,
-                "panel": "shared"
-            }
-        }
-    ]
-}
+   <pre><code class="language-python">
+import os
+from flask import Flask, render_template, send_from_directory
+
+app = Flask(__name__)
+
+</code></pre>
+  </div>
+  <dl>
+   <dt><span class="codecolor">import</span></dt>
+   <dd>
+    Pythonでは、他のモジュールやライブラリを使用するために<span class="codecolor">import</span>キーワードを使います。<br>
+    ここでは、<span class="codecolor">os</span>、<span class="codecolor">Flask</span>、<span
+     class="codecolor">render_template</span>、<span class="codecolor">send_from_directory</span>をインポートしています。
+   </dd>
+
+   <dt><span class="codecolor">Flask(__name__)</span></dt>
+   <dd>
+    Flaskアプリケーションを初期化します。<br>
+    <span class="codecolor">__name__</span>は現在のモジュール名を示します。
+   </dd>
+  </dl>
+
+  <p><strong>2. ルート / で index.html を提供</strong></p>
+  <div class="code-container">
+   <pre><code class="language-python">
+@app.route('/')
+def serve_static_index():
+return send_from_directory('www', 'index.html')
 
 </code></pre>
   </div>
 
-  <p>Flaskアプリをローカルで起動</p>
+  <dl>
+   <dt><span class="codecolor">@app.route('/')<span></dt>
+   <dd>ルート（エンドポイント）を定義します。<br>
+    <span class="codecolor">'/'</span>はウェブサイトのホームページ（トップページ）を意味します。
+   </dd>
+
+   <dt><span class="codecolor">send_from_directory<span></dt>
+   <dd>指定されたディレクトリからファイルを返します。<br>
+    ここでは、<span class="codecolor">www</span>ディレクトリの<span class="codecolor">index.html</span>ファイルを返します。</dd>
+  </dl>
+
+
+  <p><strong>3. 静的ファイルの提供</strong></p>
   <div class="code-container">
-   <pre><code class="language-bash">
-FLASK_DEBUG=True && python main.py
+   <pre><code class="language-python">
+@app.route('/&lt;path:filename&gt;')
+def serve_static_files(filename):
+return send_from_directory('www', filename)
 
 </code></pre>
   </div>
+  <dl>
+   <dt><span class="codecolor">@app.route('/&lt;path:filename&gt;')</span></dt>
+   <dd>任意のファイルパスを受け取るルートを定義します。<br>
+    <span class="codecolor">&lt;path:filename&gt;</span>は動的な部分で、URLに含まれるファイル名がここに入ります。
+   </dd>
+
+   <dt><span class="codecolor">send_from_directory('www', filename')</span></dt>
+   <dd>指定されたファイル名を持つファイルを<span class="codecolor">www</span>ディレクトリから返します。</dd>
+  </dl>
 
 
-  <p>requirements.txt</p>
+  <p><strong>4. Flask の動的コンテンツの提供</strong></p>
   <div class="code-container">
-   <pre><code class="language-txt">
-Flask==2.3.2
-gunicorn==20.1.0
+   <pre><code class="language-python">
+@app.route('/top')
+def serve_flask_content():
+return render_template('top.html')
 
 </code></pre>
   </div>
+  <dl>
+   <dt><span class="codecolor">@app.route('/top')</span></dt>
+   <dd><span class="codecolor">/top</span>というURLパスに対応するルートを定義します。</dd>
+
+   <dt><span class="codecolor">render_template('top.html')</span></dt>
+   <dd><span class="codecolor">templates</span>ディレクトリ内の<span
+     class="codecolor">top.html</span>テンプレートファイルをレンダリングして返します。<br>
+    テンプレートを使用することで、動的なコンテンツを生成できます。</dd>
+  </dl>
+
+
+  <p><strong>5. アプリケーションの実行</strong></p>
+  <div class="code-container">
+   <pre><code class="language-python">
+if __name__ == '__main__':
+debug_mode = os.getenv('FLASK_DEBUG', 'False') == 'True'
+app.run(debug=debug_mode)
+
+</code></pre>
+  </div>
+  <dl>
+   <dt><span class="codecolor">if __name__ == '__main__':</span></dt>
+   <dd>このスクリプトが直接実行されている場合にのみ、以下のコードを実行します。</dd>
+
+   <dt><span class="codecolor">os.getenv('FLASK_DEBUG', 'False') == 'True'</span></dt>
+   <dd>環境変数<span class="codecolor">FLASK_DEBUG</span>が<span class="codecolor">True</span>に設定されている場合にデバッグモードを有効にします。</dd>
+
+   <dt><span class="codecolor">app.run(debug=debug_mode)</span></dt>
+   <dd>Flaskアプリケーションを実行します。<br>
+    <span class="codecolor">debug=debug_mode</span>でデバッグモードを設定します。
+   </dd>
+  </dl>
+
+  <p>ここまで、依存関係を管理するrequirements.txtと、Flaskアプリケーションのメインファイルmain.pyを見てきました。<br>
+   次はApp Engineのyamlについてです。</p>
+
+
+  <p class="feintag">ここまでは、とりあえず原稿OKかな？</p>
+
 
   <p>app.yaml</p>
   <div class="code-container">
@@ -353,39 +649,24 @@ entrypoint: gunicorn -b :$PORT main:app
 </code></pre>
   </div>
 
-  <p>ディレクトリ構造</p>
 
+
+
+
+
+
+
+
+
+
+  <p>tasks.json</p>
   <div class="code-container">
-   <pre><code class="language-txt">
-FEIN-SITES-DEV1/
-│  app.yaml          # App Engine の設定ファイル。デプロイと実行環境の設定を定義
-│  main.py           # Flask アプリケーションのメインファイル。ルートやサーバーの設定が含まれる
-│  README.md         # プロジェクトの概要や使い方を記述する説明ファイル
-│  requirements.txt  # アプリケーションが依存する Python パッケージをリストアップするファイル
-│
-├─static/            # 静的ファイル（CSS, JavaScript, 画像など）を配置するディレクトリ
-│   ├─ images/       # 画像ファイルを保存するサブディレクトリ
-│   │     example.jpg  # サンプル画像ファイル
-│   ├─ css/          # CSS ファイルを保存するサブディレクトリ
-│   │     pstyle.css   # プロジェクトのスタイルシート
-│   ├─ js/           # JavaScript ファイルを保存するサブディレクトリ
-│   │     pscript.js   # プロジェクトのスクリプト
-│
-├─templates/         # Flask のテンプレートファイル（HTML ファイル）を配置するディレクトリ
-│      top.html      # Flask アプリの動的コンテンツ用 HTML テンプレート
-│
-└─www/               # 静的ウェブサイトのルートディレクトリ。静的な HTML ファイルを配置
-    │  index.html      # 静的ウェブサイトのホームページ
-    │  .hintrc         # HTMLHint の設定ファイル（コード品質チェック用）
-    │  favicon.ico     # ブラウザのタブに表示されるアイコン
-    │  manifest.json   # PWA の設定ファイル。アプリのメタデータを定義
-    │  robots.txt      # 検索エンジンに対するクローリング設定ファイル
-    │  service-worker.js # PWA のサービスワーカー。オフライン対応やキャッシュ管理を実現
-    └─その他の静的ファイル  # 追加の HTML ファイルや画像など
+   <pre><code class="language-json">
+
+●後で入れる●
 
 </code></pre>
   </div>
-
 
   <!-- ●ここから人間用のフッター● -->
   <hr id="feinhr">
