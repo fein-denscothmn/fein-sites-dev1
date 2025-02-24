@@ -35,7 +35,7 @@ function toggleSubMenu(id, buttonId) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
- fetch('../menu/menu.html')
+ fetch('/static/menu/menu.html')
   .then(response => response.text())
   .then(data => {
    document.getElementById('fden-menu-content').innerHTML = data;
