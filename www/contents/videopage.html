@@ -3,19 +3,19 @@
 <html lang="ja">
 
 <head>
-<link rel="manifest" href="/manifest.json">
+ <link rel="manifest" href="/manifest.json">
 
-<script>
+ <script>
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(registration => {
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      })
-      .catch(error => {
-        console.log('ServiceWorker registration failed: ', error);
-      });
+   navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+     console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    })
+    .catch(error => {
+     console.log('ServiceWorker registration failed: ', error);
+    });
   }
-</script>
+ </script>
 
  <meta charset="UTF-8">
  <title>Webサイトに動画を掲載する</title>
@@ -26,9 +26,9 @@
  <meta property="og:title" content="Webサイトに動画を掲載する">
  <meta property="og:description" content="Webサイトに動画を掲載するにはどうすれば良いでしょうか。せっかくやるなら、独自のレイアウトなどを設定できた方が良いですよね。">
  <meta property="og:image" content="../image/アナザーエデンのバディ_ピスケ.png">
- <meta property="og:url" content="https://fein-sites-dev1.ew.r.appspot.com/contents/videopage.html">
+ <meta property="og:url" content="https://feinatelier.org/contents/videopage.html">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="apple-touch-icon" sizes="180x180" href="/icons/appleicon.png">
+ <link rel="apple-touch-icon" sizes="180x180" href="/icons/appleicon.png">
  <link rel="icon" sizes="32x32" href="/favicon.ico" type="image/x-icon">
  <link rel="stylesheet" type="text/css" href="/css/style.css">
  <link rel="stylesheet" type="text/css" href="/css/header.css">
@@ -72,8 +72,8 @@
                 "@context": "https://schema.org",
                 "@type": "Organization",
                 "name": "Webサイトに動画を掲載する",
-                "url": "https://fein-sites-dev1.ew.r.appspot.com/contents/videopage.html",
-                "logo": "https://fein-sites-dev1.ew.r.appspot.com/image/barracuda.jpeg"
+                "url": "https://feinatelier.org/contents/videopage.html",
+                "logo": "https://feinatelier.org/image/barracuda.jpeg"
             }
             </script>
 </head>
@@ -82,8 +82,7 @@
 
  <nav class="den_nav">
   <ul>
-   <li><a href="https://fein-sites-dev1.ew.r.appspot.com/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク"
-      class="feinhome"></a></li>
+   <li><a href="https://feinatelier.org/"><img src="/menu/mspass.png" alt="このサイトのシンボルマーク" class="feinhome"></a></li>
    <li><a href="/" class="animated-link">ホーム</a></li>
    <li><a href="/another-eden/anaden_sitemap.html" class="animated-link">アナザーエデン</a></li>
    <li><a href="/fish/fish_sitemap.html" class="animated-link">アウトドアのエリア</a></li>
@@ -128,7 +127,7 @@
    <div class="header-container">
     <img src="../image/cloudsitetitle.jpg" alt="fein's personal site" class="header-image">
     <div class="header-text">
-     <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a>
+     <a href="https://feinatelier.org/">fein's personal site</a>
     </div>
    </div>
   </div>
@@ -1096,17 +1095,17 @@ convert_to_h264(input_file, output_file)
 
    <!--w3cバリデーターに合格していることを示す-->
    <div class="w3ccheck">
-    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/contents/videopage.html">
+    <a href="https://validator.w3.org/nu/?doc=https://feinatelier.org/contents/videopage.html">
      <img src="/image/HTML5_Logo_64.png" alt="Valid HTML5" height="31" style="width: auto;">
     </a>
-    <a href="https://validator.w3.org/nu/?doc=https://fein-sites-dev1.ew.r.appspot.com/css/style.css">
+    <a href="https://validator.w3.org/nu/?doc=https://feinatelier.org/css/style.css">
      <img style="border:0;width:88px;height:31px" src="/image/vcss-blue.png" alt="正当なCSSです!">
     </a>
    </div>
    <!--w3cバリデーターに合格していることを示す-->
 
    <div class="spacer"></div>
-   <p class="portal" id="updated-date">この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's
+   <p class="portal" id="updated-date">この <a href="https://feinatelier.org/">fein's
      personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's
      portal</a> を母体として、yyyy/mm/ddに至るまで更新し続けられています。</p>
    <script>
@@ -1116,7 +1115,7 @@ convert_to_h264(input_file, output_file)
      const month = String(today.getMonth() + 1).padStart(2, '0');
      const day = String(today.getDate()).padStart(2, '0');
      const dateElement = document.getElementById('updated-date');
-     dateElement.innerHTML = `この <a href="https://fein-sites-dev1.ew.r.appspot.com/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
+     dateElement.innerHTML = `この <a href="https://feinatelier.org/">fein's personal site</a> は、2023/7/4に開設された <a href="https://sites.google.com/view/feins-portal/">fein's portal</a> を母体として、${year}/${month}/${day}に至るまで更新し続けられています。`;
     });
    </script>
 
